@@ -1,0 +1,55 @@
+#container {
+
+}
+h1 {
+	font-size: 24px;
+}
+h2 {
+	margin-bottom: 6px;
+}
+#header, #main {
+	margin-bottom: 12px;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
+nav, section, aside {
+	display: inline-block;
+	vertical-align: top;
+}
+nav {
+	padding: 5px 6px;
+	width: 132px;
+	font-size: 12px;
+	background-color: #fafafa;
+}
+section {
+	padding: 0 12px;
+	width: 552px;
+}
+aside {
+	padding: 5px 6px;
+	width: 180px;
+	min-height: 300px;
+	background-color: #fafafa;
+}
+footer {
+	padding-bottom: 10px;
+	font-size: 11px;
+	color: #666;
+	text-align: center;
+}
+article {
+	margin-bottom: 22px;
+	font-size: 14px;
+}
+time {
+	font-size: 11px;
+	color: #666
+}
+#nav li {
+	margin: 0 0 10px 1.3em;
+	list-style: outside disc;
+}
+.more-info {
+	font-size: 11px;
+}

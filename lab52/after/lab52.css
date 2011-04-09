@@ -1,0 +1,44 @@
+sup, span.required {
+	color: #f00;
+	font-weight: bold;
+}
+form {
+	width: 418px;
+	overflow: hidden;
+}
+form#searcher {
+	margin-bottom: 60px;
+	text-align: right;
+}
+form#searcher input[type=text] {
+	width: 255px;
+}
+label {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin: 0 10px 24px 0;
+	width: 220px;
+	text-align: right;
+}
+form#data input {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-bottom: 24px;
+	width: 172px;
+}
+form#data input[type=submit] {
+	margin-left: 230px;
+	width: auto;
+	clear: both;
+}
+:invalid, .invalid, input.required { 
+	border-color: #e88;
+	-webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+	-moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+	box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+}
+input.required { 
+	border-color: #faee00;
+}

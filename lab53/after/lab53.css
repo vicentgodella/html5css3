@@ -1,0 +1,25 @@
+.vcard, .vevent {
+	margin-bottom: 32px;
+	padding: 10px;
+	border: 2px solid #ccc;
+	overflow: hidden;
+}
+.fn, .summary {
+	color: #000;
+	font-size: 150%;
+}
+.url {
+	text-decoration: none;
+}
+.url:hover {
+	text-decoration: underline;
+}
+.adr, .summary {
+	display: block;
+}
+.photo {
+	float: left;
+	margin: 0 10px 10px 0;
+	width: 160px;
+	height: auto;
+}

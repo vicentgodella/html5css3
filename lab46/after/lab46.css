@@ -1,0 +1,134 @@
+@-webkit-keyframes 'bounce' {
+	  0% { -webkit-transform: translateY(0); }
+	100% { -webkit-transform: translateY(-20px); }
+}
+@-webkit-keyframes 'indicator' {
+	  0% { opacity: 0; }
+	 80% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.dock {
+	margin: 50px auto;
+	width: 720px;
+	height: 310px;
+	color: #fff;
+	background: #000 url('background.jpg') 0 0 no-repeat;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0 1px 10px #141414;
+	-moz-box-shadow: 0 1px 10px #141414;
+	-webkit-box-shadow: 0 1px 10px #141414;
+}
+.dock ul {
+	position: relative;
+	top: 94px;
+	text-align: center;
+}
+.dock li {
+	margin: 0;
+	padding-bottom: 10px;
+	width: 106px;
+	height: 106px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	position: relative;
+	list-style: none;
+}
+.dock li a {
+	cursor: default;
+	outline: none;
+	text-decoration: none;
+}
+.dock .label {
+	position: absolute;
+	top: -36px;
+	left: 50%;
+	width: 150px;
+	margin-left: -75px;
+	text-align: center;
+	color: #fff;
+	display: none;
+}
+.dock li a:hover .label {
+	display: block;
+}
+.label em {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 4px 10px;
+	font-style: normal;
+	background: #000;
+	background: rgba(0, 0, 0, .7);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.label span {
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	margin-left: -5px;
+	width:0; 
+	height:0; 
+	border-left: 5px solid transparent; 
+	border-right: 5px solid transparent;
+	border-top: 5px solid rgba(0, 0, 0, .7);
+	border-bottom: 0;
+}
+.icon img {
+	position: absolute;
+	left: 5px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	width: 96px;
+}
+.dock li a:hover .icon img {
+	top: -10px;
+	left: 0;
+	width: 106px;
+}
+.indicator {
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: .7s;
+	-moz-transition-property: opacity;
+	-moz-transition-duration: .7s;
+	display: block;
+	width: 47px;
+	height: 24px;
+	position: absolute;
+	bottom: 4px;
+	left: 50%;
+	z-index: 20;
+	margin-left: -23px;
+	background: url('indicator.png') no-repeat 50% 100%;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.dock li:target .indicator {
+	-webkit-animation: 'indicator' 2s;
+	opacity: 1;
+}
+.dock li:active .icon {
+	opacity: .9;
+}
+.dock li:target .icon {
+	-webkit-animation-name: 'bounce';
+	-webkit-animation-duration: .3s;
+	-webkit-animation-iteration-count: 6;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-out;
+}
+#addressbook, #textedit {
+	top: 34px;
+}
+#ical, #itunes {
+	top: 12px;
+}
+.footer {
+	font-size: 10px;
+}

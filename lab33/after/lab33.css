@@ -1,0 +1,38 @@
+input, a {
+	float: left;
+	margin-right: 24px;
+	width: 78px;
+	height: 73px;
+	border: none;
+	cursor: pointer;
+	text-indent: -2500px;
+	background: transparent url('sprite.png') 0 0 no-repeat;
+}
+a span {
+	float: left;
+	text-indent: -2500px;
+}
+.button1 {
+	background-position: 0 0;
+}
+.button1:hover {
+	background-position: -78px 0;
+}
+.button2 {
+	background-position: -156px 0;
+}
+.button2:hover {
+	background-position: -234px 0;
+}
+.button3 {
+	background-position: -312px 0;
+}
+.button3:hover {
+	background-position: -390px 0;
+}
+.button4 {
+	background-position: -468px 0;
+}
+.button4:hover {
+	background-position: -545px 0;
+}

@@ -1,0 +1,38 @@
+input {
+	margin-right: 24px;
+	height: 56px;
+	line-height: 28px;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background: transparent url('sprite.png') 0 0 no-repeat;
+	text-transform: uppercase;
+}
+.button1 {
+	width: 91px;
+	background-position: 0 0;
+}
+.button1:hover {
+	background-position: -91px 0;
+}
+.button2 {
+	width: 99px;
+	background-position: -182px 0;
+}
+.button2:hover {
+	background-position: -281px 0;
+}
+.button3 {
+	width: 250px;
+	background-position: 0 -56px;
+}
+.button3:hover {
+	background-position: -250px -56px;
+}
+.button4 {
+	width: 91px;
+	color: #eee;
+	background-position: -380px 0;
+}
