@@ -1,3 +1,15 @@
+h2 {
+	margin-top: 100px;
+}
+p {
+	margin-bottom: 0;
+	font-size: 14px;
+}
+img {
+	width: 200px;
+	height: 350px;
+	float: right;
+}
 .card {
 	position: absolute;
 	left: 100px;
@@ -20,18 +32,6 @@
 
 	-moz-transform-origin: 20% 20%;
 	-webkit-transform-origin: 20% 20%;
-}
-h2 {
-	margin-top: 100px;
-}
-p {
-	margin-bottom: 0;
-	font-size: 14px;
-}
-img {
-	width: 200px;
-	height: 350px;
-	float: right;
 }
 .card1 {
 	top: 50px;
