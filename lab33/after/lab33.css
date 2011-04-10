@@ -1,38 +1,18 @@
-input, a {
+a {
 	float: left;
-	margin-right: 24px;
-	width: 78px;
-	height: 73px;
-	border: none;
-	cursor: pointer;
-	text-indent: -2500px;
-	background: transparent url('sprite.png') 0 0 no-repeat;
+	margin-right: 10px;
+	width: 128px;
+	height: 128px;
+   background: url('sprite_furry.png') no-repeat top left;
 }
 a span {
-	float: left;
-	text-indent: -2500px;
+	display: none;
 }
-.button1 {
-	background-position: 0 0;
-}
-.button1:hover {
-	background-position: -78px 0;
-}
-.button2 {
-	background-position: -156px 0;
-}
-.button2:hover {
-	background-position: -234px 0;
-}
-.button3 {
-	background-position: -312px 0;
-}
-.button3:hover {
-	background-position: -390px 0;
-}
-.button4 {
-	background-position: -468px 0;
-}
-.button4:hover {
-	background-position: -545px 0;
-}
+.sprite-delicious{ background-position: 0 0; } 
+.sprite-delicious:hover{ background-position: 0 -129px; } 
+.sprite-facebook{ background-position: 0 -258px; } 
+.sprite-facebook:hover{ background-position: 0 -387px; } 
+.sprite-rss{ background-position: 0 -516px; } 
+.sprite-rss:hover{ background-position: 0 -645px; } 
+.sprite-twitter{ background-position: 0 -774px; } 
+.sprite-twitter:hover{ background-position: 0 -903px; } 
