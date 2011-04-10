@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- saved from url=(0028)http://extrema-sistemas.com/ -->
 <html>
 <head>
 <meta charset="utf-8" />
@@ -10,7 +11,10 @@
 		nope: 'h5f.min.js', 
 		callback : function(url, result, key) {
 			H5F.setup(
-				[document.getElementById("searcher"),document.getElementById("data")], {
+				[
+					document.getElementById("searcher"),
+					document.getElementById("data")
+				], {
 				validClass: "valid",
 				invalidClass: "invalid",
 				requiredClass: "required"
@@ -25,7 +29,11 @@
 
 	{
 		test: Modernizr.inputtypes.date, 
-		nope: ['http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'], 
+		nope: [
+			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css',
+			'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 
+			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'
+			], 
 		callback : function(url, result, key) {
 			if (url == 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js') {
 				$(document).ready(function() {
