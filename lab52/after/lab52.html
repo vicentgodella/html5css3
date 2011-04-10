@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- saved from url=(0028)http://extrema-sistemas.com/ -->
 <html>
 <head>
 <meta charset="utf-8" />
@@ -9,7 +10,11 @@
 		test: Modernizr.inputtypes.email && Modernizr.input.required && Modernizr.input.placeholder, 
 		nope: 'h5f.min.js', 
 		callback : function(url, result, key) {
-			H5F.setup([document.getElementById("searcher"),document.getElementById("data")], {
+			H5F.setup(
+				[
+					document.getElementById("searcher"),
+					document.getElementById("data")
+				], {
 				validClass: "valid",
 				invalidClass: "invalid",
 				requiredClass: "required"
@@ -24,7 +29,11 @@
 
 	{
 		test: Modernizr.inputtypes.date, 
-		nope: ['http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'], 
+		nope: [
+			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css',
+			'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 
+			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'
+			], 
 		callback : function(url, result, key) {
 			if (url == 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js') {
 				$(document).ready(function() {
@@ -36,23 +45,25 @@
 
 	]);
 </script>
-<link rel="stylesheet" href="../../../960gs/reset.css" />
-<link rel="stylesheet" href="../../../960gs/text.css" />
-<link rel="stylesheet" href="../../style.css" />
+<link rel="stylesheet" href="../../lib/lab-style.css" />
 <link rel="stylesheet" href="lab52.css" />
 </head>
 <body>
 	<h1>Lab 5.2</h1>
-	<p>Formulario usando los nuevos atributos</p>
+	<p>Polyfill con Modernizr</p>
 	<form id="searcher">
-		<input type="text" name="q" placeholder="Introduzca texto para buscar" id="searchbox" pattern="[a-z0-9_-]{3,30}" />
+		<input type="text" name="q" placeholder="Introduzca texto para buscar" id="searchbox" pattern="[a-z0-9_-]{3,15}" autofocus/>
 		<input type="submit" value="Buscar" />
 	</form>
 
 	<form id="data">
 		<p>Los campos marcados con <span class="required">*</span> son obligatorios:</p>
-		<label for="recipient">Destinatario <sup>*</sup></label> <input type="text" name="recipient" required autofocus />
-		<label for="amount">Importe <sup>*</sup></label> <input type="number" name="amount" min="0" max="1000000" required />
+		<label for="recipient">Destinatario <sup>*</sup></label> <input type="text" name="recipient" required list="common-recipients">
+		<datalist id="common-recipients">
+			<option value="John Doe">
+			<option value="Jane Doe">
+		</datalist>
+		<label for="amount">Importe <sup>*</sup></label> <input type="number" name="amount" min="0" max="1000000" step="0.01" required />
 		<label for="email">E-mail de confirmación</label> <input type="email" name="email" />
 		<label for="phone">Teléfono para SMS de confirmación</label> <input type="tel" name="phone" />
 		<label for="periodicity">Periodicidad en semanas</label> <input type="range" name="periodicity" min="1" max="4" value="1" />
