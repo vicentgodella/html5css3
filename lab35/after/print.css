@@ -1,0 +1,14 @@
+body {
+	width: auto;
+	background-image: none;
+}
+a {
+	text-decoration: underline;
+}
+a:after {
+	content: " ("attr(href)") ";
+	font-size: 10pt;
+}
+#nav {
+	display: none;
+}
