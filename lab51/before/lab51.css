@@ -27,9 +27,3 @@ form#data input[type=submit] {
 	width: auto;
 	margin-top: 5px;
 }
-:invalid { 
-	border-color: #e88;
-	-webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-	-moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-	box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-}
