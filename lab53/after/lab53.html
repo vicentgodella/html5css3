@@ -3,50 +3,49 @@
 <head>
 <meta charset="utf-8" />
 <title>Lab 5.3</title>
-<link rel="stylesheet" href="../../../960gs/reset.css" />
-<link rel="stylesheet" href="../../../960gs/text.css" />
-<link rel="stylesheet" href="../../style.css" />
+<link rel="stylesheet" href="../../lib/lab-style.css" />
 <link rel="stylesheet" href="lab53.css" />
 </head>
 <body>
 	<h1>Lab 5.3</h1>
 	<p>Microformats</p>
 	
-	<div class="vcard">
-		<span class="fn org">Warfield Theatre</span>,
-		<span class="adr">
-			<span class="street-address">982 Market St</span>,
-			<span class="locality">San Francisco</span>,
-			<span class="region">CA</span>
-		</span>
-		<span class="geo">
-			<span class="latitude">
-				<span class="value-title" title="37.774929" ></span>
+	<div class="container">
+		<div class="vcard">
+			<img src="warfield.jpg" class="photo" />
+			<span class="fn org">Warfield Theatre</span>
+			<div class="adr">
+				<span class="street-address">982 Market St</span>,
+				<span class="locality">San Francisco</span>,
+				<span class="region">CA</span>
+			</div>
+			<span class="geo">
+				<abbr class="latitude" title="37.774929"></abbr> 
+				<abbr class="longitude" title="-122.419416"></abbr>
 			</span>
-			<span class="longitude">
-				<span class="value-title" title="-122.419416"></span>
-			</span>
-		</span>
-		<img src="warfield.jpg" class="photo" />
+		</div>	
+		
+		<ul class="events">
+			<li class="vevent">
+				<img src="event1.jpg" class="photo" />
+				<a href="http://www.example.com/events/spinaltap" class="url summary">Julius Caesar</a>
+				When:
+				<span class="dtstart">
+					Oct 15, 7:00PM<span class="value-title" title="2015-10-15T19:00-08:00"></span>
+				</span>
+			</li>
+			
+			<li class="vevent">
+				<img src="event2.jpg" class="photo" />
+				<a href="http://www.example.com/events/u2" class="url summary">Dog Musical Freestyle</a>
+				When:
+				<span class="dtstart">
+					Oct 16, 7:00PM<span class="value-title" title="2015-10-16T19:00-08:00"></span>
+				</span>
+			</li>
+		</ul>
+		
 	</div>
 	
-	<div class="vevent">
-		<a href="http://www.example.com/events/spinaltap" class="url summary">Spinal Tap</a>
-		<img src="spinal_tap.jpg" class="photo" />
-		When:
-		<span class="dtstart">
-			Oct 15, 7:00PM<span class="value-title" title="2015-10-15T19:00-08:00"></span>
-		</span>
-	</div>
-	
-	<div class="vevent">
-		<a href="http://www.example.com/events/u2" class="url summary">U2</a>
-		<img src="u2.jpg" class="photo" />
-		When:
-		<span class="dtstart">
-			Oct 16, 7:00PM<span class="value-title" title="2015-10-16T19:00-08:00"></span>
-		</span>
-	</div>
-
 </body>
 </html>

@@ -1,7 +1,7 @@
-h1 {
+h1, h2 {
 	font-size: 24px;
 }
-#main h1 {
+h2 {
 	margin-bottom: 6px;
 }
 #header, #main {
@@ -9,37 +9,39 @@ h1 {
 	padding: 10px 0;
 	border-bottom: 1px solid #ddd;
 }
-nav, section, aside {
+ul, #info {
 	display: inline-block;
 	vertical-align: top;
 }
-nav {
+ul#nav {
 	padding: 5px 6px;
 	width: 132px;
 	font-size: 12px;
 	background-color: #fafafa;
 }
-section {
+ul#articles {
+	list-style: none;
+	margin-bottom: 0;
 	padding: 0 12px;
 	width: 552px;
 }
-aside {
+#info {
 	padding: 5px 6px;
 	width: 180px;
 	min-height: 300px;
 	background-color: #fafafa;
 }
-footer {
+#footer {
 	padding-bottom: 10px;
 	font-size: 11px;
 	color: #666;
 	text-align: center;
 }
-article {
-	margin-bottom: 22px;
+ul#articles li {
+	margin: 0 0 22px 0;
 	font-size: 14px;
 }
-time {
+span {
 	font-size: 11px;
 	color: #666;
 }
