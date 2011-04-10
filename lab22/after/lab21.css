@@ -1,38 +1,13 @@
-#global {
-	margin: 0 auto;
-	width: 920px;
-	overflow: hidden;
-}
-#header {
-	border: 1px solid #ccc;
-	font-size: 24px;
-	text-align: center;
-}
 #section {
 	margin: 4px 0;
 	padding: 10px;
 	overflow: hidden;
-	border: 1px solid #ccc;
-	*overflow: visible; /* IE6 clearfix */
-	*height: 1%; /* IE6 clearfix */
-}
-#left-sidebar {
-	float: left;
-	margin-right: 12px;
-	width: 144px;
-	border: 1px solid #aaa;
 }
 #content {
 	float: left;
 	width: 718px;
 	padding: 0 10px;
 	border: 1px solid #dadada;
-}
-#footer {
-	padding: 10px;
-	text-align: center;
-	font-size: 16px;
-	border: 1px solid #ccc;
 }
 #content img {
 	float: left;
@@ -60,8 +35,14 @@ table th, table td {
 table tr:nth-child(even) {
 	background-color: #dfdfdf;
 }
-#nav li {
-	margin-bottom: 12px;
+#nav {
+	float: left;
+	margin: 0;
+	width: 144px;
+	list-style: none;
+}
+#nav  li {
+	margin-left: 0;
 }
 .active {
 	color: #000;
