@@ -28,17 +28,5 @@ li:target .sprite-facebook{ background-position: 0 -387px; }
 li:target .sprite-rss{ background-position: 0 -645px; } 
 .sprite-twitter{ background-position: 0 -774px; } 
 .sprite-twitter:hover,
-li:target .sprite-twitter{ background-position: 0 -903px; } 
-
-@-webkit-keyframes 'bounce' {
-	  0% { -webkit-transform: translateY(0); }
-	100% { -webkit-transform: translateY(-20px); }
-}
-li:target a {
-	-webkit-animation-name: 'bounce';
-	-webkit-animation-duration: .3s;
-	-webkit-animation-iteration-count: 6;
-	-webkit-animation-direction: alternate;
-	-webkit-animation-timing-function: ease-out;
-}
+li:target .sprite-twitter{ background-position: 0 -903px; }
 
