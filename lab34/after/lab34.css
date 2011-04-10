@@ -1,6 +1,7 @@
 body {
 	color: #ddd;
 	background-color: #123;
+	background-image: none;
 }
 a {
 	color: #fc3;
