@@ -4,14 +4,122 @@
 <meta charset="utf-8" />
 <title>Lab 3.3</title>
 <link rel="stylesheet" href="../../lib/lab-style.css" />
+<link rel="stylesheet" href="../../lib/960gs/960.css" />
 <link rel="stylesheet" href="lab33.css" />
 </head>
 <body>
-	<h1>Lab 3.3</h1>
-	<p>Barra de iconos</p>
-	<a href="#" class="sprite-delicious" title="delicious"><span>Delicious icon</span></a>
-	<a href="#" class="sprite-facebook" title="Facebook"><span>Facebook icon</span></a>
-	<a href="#" class="sprite-twitter" title="Twitter"><span>Twitter icon</span></a>
-	<a href="#" class="sprite-rss" title="RSS"><span>RSS icon</span></a>
+	<div>
+
+		<div>
+			<p class="description"><a href="#">Download</a> - Templates: Acorn, Fireworks, Flash, InDesign, GIMP, Inkscape, Illustrator, OmniGraffle, Photoshop, Visio, Exp&nbsp;Design. Also: PDF sketch sheets + CSS files. Repository at <a href="#">GitHub</a>.</p>
+		</div>
+		<div>
+			<h1><img src="img/logo.gif" alt="960 grid system" /></h1>
+		</div>
+		<div>
+			<p class="ads"><a href="#"><img src="img/ads.jpg" alt="Ads by fusion" /></a></p>
+		</div>
+
+		<div>
+			<p><a href="#" class="linkimg"><img src="img/button-left.gif" alt="custom css generator" /></a></p>
+		</div>
+		<div>
+			<p><a href="#" class="linkimg"><img src="img/button-middle.gif" alt="html layout generator" /></a></p>
+		</div>
+		<div>
+			<p><a href="#" class="linkimg"><img src="img/button-right.gif" alt="grid overlay bookmark" /></a></p>
+		</div>
+
+		<div>
+			 <h2>Essence</h2>
+		    <p>The 960 Grid System is an effort to streamline web development workflow by providing commonly used dimensions, based on a width of 960 pixels. There are two variants: 12 and 16 columns, which can be used separately or in tandem. <a href="#">Read more</a>.</p>
+		</div>
+		<div>
+			<h2>Dimensions</h2>
+			<p>The 12-column grid is divided into portions that are 60 pixels wide. The 16-column grid consists of 40 pixel increments. Each column has 10 pixels of margin on the left and right, which create 20 pixel wide gutters between columns. <a href="#">View demo</a>.</p>
+		</div>
+		<div>
+			<h2>Purpose</h2>
+			<p>The premise of the system is ideally suited to rapid prototyping, but it would work equally well when integrated into a production environment. There are printable sketch sheets, design layouts, and a CSS file that have identical measurements.</p>
+		</div>
+
+		<div>
+			<h2>More Columns</h2>
+			<p>For those more comfortable designing on a 24-column grid, an alternative version is also included. It consists of columns 30 pixels wide, with 10 pixel gutters, and a 5 pixel buffer on each side of the container. This keeps text from touching browser chrome &mdash; helpful for devices like the iPhone, where a lower-case "i" or "l" might be easily missed. <a href="#">View demo</a>.</p>
+		</div>
+		<div>
+			<h2>Source Order</h2>
+			<p>By utilizing the <em>push_XX</em> and <em>pull_XX</em> classes, elements can be rearranged, independent of the order in which they appear in the markup. This allows you to keep more pertinent info higher in the HTML, without sacrificing precision in your page layout. For instance, view the source code of this page to see how the <em>H1</em> tag has been re-positioned.</p>
+		</div>
+
+		<div>
+			<p class="info">
+				<a href="#" class="link">Keynote Wireframe Toolkit</a> &mdash; 12 col</a>
+				<a href="#" class="toogle"><img src="img/gridbutton.gif" alt="Show grid" /></a>
+			</p>
+			<img src="img/example_left.jpg" alt="Keynote Wireframe Toolkit" />
+		</div>
+		<div>
+			<p class="info">
+				<a href="#">Formalize CSS</a> &mdash; 12 col
+				<a href="#" class="toogle"><img src="img/gridbutton.gif" alt="Show grid" /></a>
+			</p>
+			<img src="img/example_right.jpg" alt="Keynote Wireframe Toolkit" />
+		</div>
+
+		<div>
+			 <h2>Code</h2>
+			 <p>View comprehensive code on the <a href="#">demo page</a>.</p>
+			 <p>To the right is an example of how the code works. The container specifies how many total columns exist, either 12 or 16. For the most part, you will only ever need to specify a class name of <em>grid_XX</em>, where <em>XX</em> represents the column width.</p>
+			 <p>If a grid unit contains grid children, the first child in a row will need a class of <em>alpha</em> and the last child in a row requires the class name <em>omega</em>. Likewise, if you want to insert empty space before or after a grid unit, use class <em>prefix_XX</em> or <em>suffix_XX</em>.</p>
+		</div>
+		<div>
+			<pre>&lt;div class="container_12"&gt;
+    &lt;div class="grid_7 prefix_1"&gt;
+        &lt;div class="grid_2 alpha"&gt;
+            ...
+        &lt;/div&gt;
+
+        &lt;div class="grid_3"&gt;
+            ...
+        &lt;/div&gt;
+        &lt;div class="grid_2 omega"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="grid_3 suffix_1"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+		</div>
+		<div>
+			<h2>Nine-Sixty</h2>
+			<p>All modern monitors support at least 1024 &times; 768 pixel resolution. 960 is divisible by 2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 20, 24, 30, 32, 40, 48, 60, 64, 80, 96, 120, 160, 192, 240, 320 and 480. This makes it a highly flexible base number to work with.</p>
+			<h2>Credits</h2>
+			<p>I drew inspiration from these individuals: <a href="#">Khoi Vinh</a>, <a href="#">Cameron Moll</a>, <a href="#">Olav Bjørkøy</a>, <a href="#">Brandon Schauer</a>, <a href="#">Jeff Croft</a>, <a href="#">Mark Boulton</a>, and <a href="#">Eric Meyer</a>. Their work spurred me to create my own. I &ldquo;stand on the shoulders of giants,&rdquo; so to speak.</p>
+		</div>
+
+		<div>
+			<h2>Plugins</h2>
+			<p>In addition to design template files, there are app plugins for Photoshop and Fireworks included in the official <a href="#">download</a>. Additionally, DMXzone has created a Dreamweaver <a href="#">extension</a> and <a href="#">templates</a>, available free to members of their site.</p>
+		</div>
+		<div>
+			<h2>Tutorials</h2>
+			<p>Web Designer Depot featured an <a href="#">article</a> on writing less code by styling tags directly. Nettuts has both a <a href="#">tutorial</a> and <a href="#">video</a>. WooThemes wrote a <a href="#">post</a> entitled &#8220;Why we love 960.gs.&#8221; There are also articles in Spanish <a href="#">[1]</a> <a href="#">[2]</a> and Swedish <a href="#">[1]</a> <a href="#">[2]</a>.</p>
+		</div>
+		<div>
+			<h2>Derivatives</h2>
+			<p>The 960 Grid System is free to use, and may be repurposed to meet your specific needs. Several projects have already spun off, including versions that were built to be <a href="#">fluid</a> and <a href="#">elastic</a>. Additionally, it is has been adapted as a theme for <a href="#">Drupal</a>.</p>
+		</div>
+
+		<div>
+			 <p class="footer"><a href="#">HTML</a> - <a href="#">CSS</a> - <a href="#">508</a> &mdash; 960 Grid System by <a href="#">Nathan Smith</a>.</p>
+		</div>
+		<div class="align_right">
+			<p class="footer">Licensed under <a href="#" rel="license">GPL</a> and <a href="#" rel="license">MIT</a>. Overlay effects via <a href="#">jQuery</a>.</p>
+		</div>
+
+	</div>
 </body>
 </html>

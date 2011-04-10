@@ -1,50 +1,37 @@
-body {
-	color: #ddd;
-	background-color: #123;
-	background-image: none;
-}
 a {
-	color: #fc3;
+	text-decoration: none;
 }
 a:hover {
-	color: #fff;
+	text-decoration: underline;
 }
-h2 {
-	font-size: 19px;
-	color: #fff;
-	font-weight: normal;
+#content {
+	float: left;
+	width: 718px;
+	padding: 0 10px;
+	border: 1px solid #dadada;
 }
-hr {
-	border-bottom: 1px dashed #666;
-	border-top: 1px solid #999;
-	margin-left: 10px;
-	margin-right: 10px;
-	padding: 2px 0 0;
+#content img {
+	float: left;
+	margin: 0 14px 10px 0;
+	width: 320px;
 }
-.linkimg {
-	display: block;
+.text {
+	float: left;
+	width: 364px;
+	margin-bottom: 20px;
+	padding: 0 10px;
 }
-.linkimg:hover {
-	background-color: #ddd;
+#nav {
+	float: left;
+	margin: 0;
+	width: 144px;
+	list-style: none;
 }
-.linkimg:hover img {
-	opacity: 0.9;
+#nav li {
+	margin-left: 0;
 }
-.align_right {
- text-align: right;
-}
-.description {
-	padding-top: 120px;
-}
-.ads {
-	padding-top: 100px;
-}
-.footer {
-	font-size: 11px;
-}
-pre {
-	background-color: #234;
-	font-size: 12px;
-	overflow: hidden;
-	padding: 10px 0 10px 15px;
+.active {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
 }

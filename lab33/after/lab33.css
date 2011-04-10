@@ -1,18 +1,50 @@
+body {
+	color: #ddd;
+	background-color: #123;
+	background-image: none;
+}
 a {
-	float: left;
+	color: #fc3;
+}
+a:hover {
+	color: #fff;
+}
+h2 {
+	font-size: 19px;
+	color: #fff;
+	font-weight: normal;
+}
+hr {
+	border-bottom: 1px dashed #666;
+	border-top: 1px solid #999;
+	margin-left: 10px;
 	margin-right: 10px;
-	width: 128px;
-	height: 128px;
-   background: url('sprite_furry.png') no-repeat top left;
+	padding: 2px 0 0;
 }
-a span {
-	display: none;
+.linkimg {
+	display: block;
 }
-.sprite-delicious{ background-position: 0 0; } 
-.sprite-delicious:hover{ background-position: 0 -129px; } 
-.sprite-facebook{ background-position: 0 -258px; } 
-.sprite-facebook:hover{ background-position: 0 -387px; } 
-.sprite-rss{ background-position: 0 -516px; } 
-.sprite-rss:hover{ background-position: 0 -645px; } 
-.sprite-twitter{ background-position: 0 -774px; } 
-.sprite-twitter:hover{ background-position: 0 -903px; } 
+.linkimg:hover {
+	background-color: #ddd;
+}
+.linkimg:hover img {
+	opacity: 0.9;
+}
+.align_right {
+ text-align: right;
+}
+.description {
+	padding-top: 120px;
+}
+.ads {
+	padding-top: 100px;
+}
+.footer {
+	font-size: 11px;
+}
+pre {
+	background-color: #234;
+	font-size: 12px;
+	overflow: hidden;
+	padding: 10px 0 10px 15px;
+}
