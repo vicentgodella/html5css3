@@ -10,7 +10,7 @@
 	<h1>Lab 5.1</h1>
 	<p>Formulario usando los nuevos atributos</p>
 	<form id="searcher">
-		<input type="text" name="q" placeholder="Introduzca texto para buscar" pattern="[a-z0-9_-]{3,15}" autofocus/>
+		<input type="text" name="q" placeholder="Introduzca texto para buscar" id="searchbox" pattern="[a-z0-9_-]{3,15}" autofocus/>
 		<input type="submit" value="Buscar" />
 	</form>
 
@@ -25,7 +25,7 @@
 		<label for="email">E-mail de confirmación</label> <input type="email" name="email" />
 		<label for="phone">Teléfono para SMS de confirmación</label> <input type="tel" name="phone" />
 		<label for="periodicity">Periodicidad en semanas</label> <input type="range" name="periodicity" min="1" max="4" value="1" />
-		<label for="initdate">Fecha de inicio <sup>*</sup></label> <input type="date" name="initdate" required />
+		<label for="initdate">Fecha de inicio <sup>*</sup></label> <input type="date" id="initdate" name="initdate" required />
 		<input type="submit" value="Enviar" />
 	</form>
 </body>
