@@ -35,3 +35,7 @@ a:hover {
 	font-weight: bold;
 	text-decoration: none;
 }
+
+img#qr-code {
+	display:none;
+}

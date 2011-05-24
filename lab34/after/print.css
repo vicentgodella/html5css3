@@ -12,3 +12,9 @@ a:after {
 #nav {
 	display: none;
 }
+img#qr-code {
+	display: block;
+	float: right;
+	margin-top: -25px;
+	width: 150px;
+}
