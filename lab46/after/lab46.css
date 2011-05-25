@@ -11,9 +11,12 @@ p {
 	column-gap: 20px;
 	margin-bottom: 20px;
 }
+#two-cols div {
+	overflow: hidden;
+}
 #two-cols img {
 	float: left;
-	margin: 5px 10px 0 0;
+	margin: 15px 10px 0 0;
 }
 #three-cols {
 	-moz-column-count: 3;

@@ -2,3 +2,31 @@ p {
 	margin-bottom: 20px;
 	text-align: justify;
 }
+#two-cols,
+#two-cols div {
+	margin-bottom: 20px;
+}
+#two-cols div {
+	clear: both;
+	overflow: hidden;
+}
+#two-cols img {
+	float: left;
+	margin: 5px 10px 0 0;
+}
+#three-cols img {
+	display: block;
+	margin: 0 auto 15px;
+}
+#article1 {
+	height: 113px;
+	width: 100px;
+}
+#article2 {
+	height: 143px;
+	width: 199px;
+}
+#article3 {
+	height: 174px;
+	width: 280px;
+}
