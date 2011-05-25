@@ -1,5 +1,5 @@
 p {
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	text-align: justify;
 }
 #two-cols {
@@ -9,6 +9,11 @@ p {
 	-webkit-column-gap: 20px;
 	column-count: 2;
 	column-gap: 20px;
+	margin-bottom: 20px;
+}
+#two-cols img {
+	float: left;
+	margin: 5px 10px 0 0;
 }
 #three-cols {
 	-moz-column-count: 3;
@@ -24,3 +29,20 @@ p {
 	column-rule-style: dotted;
 	column-rule-width: 3px;
 }
+#three-cols img {
+	display: block;
+	margin: 0 auto 15px;
+}
+#article1 {
+	height: 113px;
+	width: 100px;
+}
+#article2 {
+	height: 143px;
+	width: 199px;
+}
+#article3 {
+	height: 174px;
+	width: 280px;
+}
+
