@@ -1,64 +1,52 @@
-h1, h2 {
-	font-size: 24px;
-}
 h2 {
-	height: 64px;
-	margin-bottom: 6px;
+	margin-bottom: 0px;
+	line-height: 1em;
 }
-#main {
-	margin-bottom: 12px;
-	padding: 10px 0;
-	border-bottom: 1px solid #ddd;
+li {
+	list-style: none;
+	margin: 0;
 }
 ul, #info {
 	display: inline-block;
 	vertical-align: top;
+	padding: 0;
+}
+ul {
+	margin: 0 0 20px;
 }
 #nav {
-	padding: 5px 6px;
-	width: 132px;
-	font-size: 12px;
-	background-color: #fafafa;
-}
-#nav li {
-	margin: 0 0 10px 1.3em;
-	list-style: outside disc;
+	width: 90px;
 }
 #news {
-	list-style: none;
-	margin-bottom: 0;
-	padding: 0 12px;
 	width: 552px;
 }
 #news li {
-	margin: 0 0 22px 0;
-	font-size: 14px;
+	margin: 0 0 20px;
 }
-img.new {
+#news p {
+	margin-left: 87px;
+}
+.icon {
 	float: left;
 }
-h2 a {
-	display: block;
-	line-height: 25px;
-	padding-left: 5px;
-}
-span {
+.timestamp {
 	font-size: 11px;
 	color: #666;
-	padding-left: 5px;
-}
-#info {
-	padding: 5px 6px;
-	width: 180px;
-	min-height: 300px;
-	background-color: #fafafa;
 }
 #footer {
-	padding-bottom: 10px;
+	border-top: 1px solid #ddd;
+	padding: 10px 0;
 	font-size: 11px;
 	color: #666;
 	text-align: center;
+	background: #fff;
 }
-.more-info {
-	font-size: 11px;
+
+@media /* put your media query here */ {
+	body {
+		-webkit-text-size-adjust: 100%; /* required to use portrait in iphone */
+	}
+	h2 {
+		font-size: 20px;
+	}
 }
