@@ -50,3 +50,11 @@ input {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#9c9c9c',EndColorStr='#7c7c7c'); /* IE6,IE7 */
 	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#9c9c9c',EndColorStr='#7c7c7c')"; /* IE8 */
 }
+
+.ie .button3 {
+	border-color: #7c7c7c;
+	color: #eee;
+	background: #9c9c9c;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#9c9c9c',EndColorStr='#7c7c7c'); /* IE6,IE7 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#9c9c9c',EndColorStr='#7c7c7c')"; /* IE8 */
+}

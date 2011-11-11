@@ -1,1 +1,1 @@
-Para comenzar esta práctica, emplear el estado after de lab51
+Para comenzar esta práctica, emplear el estado after de lab51b

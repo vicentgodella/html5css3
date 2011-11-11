@@ -14,8 +14,6 @@ img {
 	overflow: hidden;
 	padding: 20px;
 	border: 2px solid #666;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
 	border-radius: 8px;
 }
 
@@ -27,18 +25,15 @@ img {
 
 	width: 393px;
 	height: 393px;
-	
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
+
 	border-radius: 8px;
 	
-	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 
 	-moz-transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 
 	-moz-transform-origin: 20% 20%;
