@@ -1,0 +1,29 @@
+.button-bar > li {
+	display: inline-block;
+	position: relative;
+	margin: 0 10px;
+}
+
+.button-bar > li > button {
+	width: 90px;
+	height: 40px;
+}
+
+.button-bar > li:hover > button[data-badge]:after {
+	content: attr(data-badge);
+
+	position: absolute;
+	top: -30%;
+	right: 5%;
+
+	font-size: 12px;
+	font-weight: bold;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	
+	background-color: #FFF0F0;
+	border-radius: 50%;
+	border: 2px solid #992A28;
+	color: #992A28;
+}

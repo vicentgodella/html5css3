@@ -1,0 +1,105 @@
+@import "compass";
+
+a {
+	cursor: pointer;
+}
+
+/* Color scheme:
+	The .right colors and the .left colors are approximately complementary.
+
+	(Feel free to ignore the rest of the details and stay with the complementary colors scheme)
+
+	In particular, the color of a dark (light) .right element is brighter (darker) than the
+	complementary of the corresponding light (dark) .left element.
+	
+	In simpler terms, the color of a .right element is 
+	a constrast-reduced version of the corresponding .left element.
+*/
+
+$contrast: 30%;
+$darkText: darken(#fff,$contrast);
+$darkBackground: lighten(#000,$contrast);
+
+.right, .left {
+	width: 47.5%;
+	padding: 0 1%;
+	margin-top: 100px;
+	float: left;
+}
+
+.right {
+	color: $darkText;
+	background-color: $darkBackground;
+}
+
+.entry {
+	text-align: center;
+}
+
+/* Links list */
+
+$linksLeftBackground: #dc7;
+$linksLeftShadow: #664;
+$linksRightBackground: darken(complement($linksLeftBackground),$contrast);
+$linksRightShadow: lighten(complement($linksLeftShadow),$contrast);
+$linksDiameter: 60px; 
+$linksMargin: 20px;
+
+.links {
+	/* 3 times the width of a single link, approximately  */
+	width: 3*($linksDiameter+2*$linksMargin)+10px;
+	margin-left: auto;
+	margin-right: auto;
+
+	li {
+		display: inline-block;
+
+		width: $linksDiameter;
+		/* height = width, in order to draw the circle properly*/
+		height: $linksDiameter;
+		margin: 0 $linksMargin;
+
+		@include border-radius(50%);
+
+		text-align: center;
+	}
+
+	a {
+		display: block;
+		line-height: $linksDiameter;
+	}
+
+	a:hover {
+		text-indent: 0%;
+		background: transparent;
+	}
+
+}
+
+.left  {
+	.links li {
+		background-color: $linksLeftBackground;
+	}	
+
+	.links li:hover{
+		@include box-shadow($linksLeftShadow 0 0 10px);
+	}
+
+	.like-link { @include replace-text("like-left.png") }
+	.hate-link { @include replace-text("hate-left.png") }
+	.share-link { @include replace-text("share-left.png") }
+}
+
+.right {
+	.links li {
+		background-color: $linksRightBackground;
+	}
+
+	.links li:hover{
+		@include box-shadow($linksRightShadow 0 0 10px);
+	}
+
+	.like-link { @include replace-text("like-right.png") }
+	.hate-link { @include replace-text("hate-right.png") }
+	.share-link { @include replace-text("share-right.png") }
+}

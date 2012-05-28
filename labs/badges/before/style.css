@@ -1,0 +1,9 @@
+.button-bar > li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.button-bar > li > button {
+	width: 90px;
+	height: 40px;
+}

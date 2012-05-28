@@ -1,0 +1,143 @@
+/* line 3, lab-sass.scss */
+a {
+  cursor: pointer;
+}
+
+/* Color scheme:
+	The .right colors and the .left colors are approximately complementary.
+
+	(Feel free to ignore the rest of the details and stay with the complementary colors scheme)
+
+	In particular, the color of a dark (light) .right element is brighter (darker) than the
+	complementary of the corresponding light (dark) .left element.
+	
+	In simpler terms, the color of a .right element is 
+	a constrast-reduced version of the corresponding .left element.
+*/
+/* line 23, lab-sass.scss */
+.right, .left {
+  width: 47.5%;
+  padding: 0 1%;
+  margin-top: 100px;
+  float: left;
+}
+
+/* line 30, lab-sass.scss */
+.right {
+  color: #b3b3b3;
+  background-color: #4d4d4d;
+}
+
+/* line 35, lab-sass.scss */
+.entry {
+  text-align: center;
+}
+
+/* Links list */
+/* line 48, lab-sass.scss */
+.links {
+  /* 3 times the width of a single link, approximately  */
+  width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 54, lab-sass.scss */
+.links li {
+  display: inline-block;
+  width: 60px;
+  /* height = width, in order to draw the circle properly*/
+  height: 60px;
+  margin: 0 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+}
+/* line 67, lab-sass.scss */
+.links a {
+  display: block;
+  line-height: 60px;
+}
+/* line 72, lab-sass.scss */
+.links a:hover {
+  text-indent: 0%;
+  background: transparent;
+}
+
+/* line 80, lab-sass.scss */
+.left .links li {
+  background-color: #ddcc77;
+}
+/* line 84, lab-sass.scss */
+.left .links li:hover {
+  -webkit-box-shadow: #666644 0 0 10px;
+  -moz-box-shadow: #666644 0 0 10px;
+  box-shadow: #666644 0 0 10px;
+}
+/* line 88, lab-sass.scss */
+.left .like-link {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('img/like-left.png?1325179188');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* line 89, lab-sass.scss */
+.left .hate-link {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('img/hate-left.png?1325179234');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* line 90, lab-sass.scss */
+.left .share-link {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('img/share-left.png?1325179166');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* line 94, lab-sass.scss */
+.right .links li {
+  background-color: #253896;
+}
+/* line 98, lab-sass.scss */
+.right .links li:hover {
+  -webkit-box-shadow: #8f8fb4 0 0 10px;
+  -moz-box-shadow: #8f8fb4 0 0 10px;
+  box-shadow: #8f8fb4 0 0 10px;
+}
+/* line 102, lab-sass.scss */
+.right .like-link {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('img/like-right.png?1337699324');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* line 103, lab-sass.scss */
+.right .hate-link {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('img/hate-right.png?1337699309');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* line 104, lab-sass.scss */
+.right .share-link {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('img/share-right.png?1337699335');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

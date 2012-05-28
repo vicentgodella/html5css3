@@ -1,0 +1,11 @@
+/* Ignore these rules */
+body {
+	background: url(../../lib/background.png) no-repeat;
+	margin-top: 10px;
+}
+
+.container > div {
+	margin-top: 100px;
+}
+
+/*              */

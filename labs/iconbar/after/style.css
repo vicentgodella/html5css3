@@ -1,0 +1,24 @@
+a {
+	cursor: pointer;
+	float: left;
+	margin-right: 10px;
+	width: 128px;
+	height: 128px;
+    background: url('sprite_furry.png') no-repeat top left;
+
+    text-indent: 110%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+
+
+.sprite-delicious{ background-position: 0 0; } 
+.sprite-delicious:hover{ background-position: 0 -129px; } 
+.sprite-facebook{ background-position: 0 -258px; } 
+.sprite-facebook:hover{ background-position: 0 -387px; } 
+.sprite-rss{ background-position: 0 -516px; } 
+.sprite-rss:hover{ background-position: 0 -645px; } 
+.sprite-twitter{ background-position: 0 -774px; } 
+.sprite-twitter:hover{ background-position: 0 -903px; } 
