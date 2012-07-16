@@ -1,0 +1,71 @@
+sup, span.required {
+  color: #f00;
+  font-weight: bold;
+}
+form {
+  width: 418px;
+  overflow: hidden;
+}
+form#searcher {
+  margin-bottom: 60px;
+  text-align: right;
+}
+form#searcher input[type=text] {
+  width: 255px;
+}
+label {
+    display: block;
+    margin-top: 5px;
+    overflow: hidden;
+}
+form#data input {
+    margin-bottom: 15px;
+    width: 172px;
+}
+form#data input[type=submit] {
+  display: block;
+  width: auto;
+  margin-top: 5px;
+}
+.form-container {
+  width: 300px;
+  float: left;
+}
+.kirby-container {
+  width: 200px;
+  float: left;
+}
+.kirby {
+  float: right;
+  width: 101px;
+  height: 87px;
+  background: url(kirbies.jpg) no-repeat -59px -133px;
+}
+option:disabled {
+  color: #ccc;
+  font-style: italic;
+}
+.kirby.developer {
+  background-position: -538px -252px;
+}
+.kirby.analyst  {
+  background-position: -299px -2113px;
+}
+.kirby.ap {
+    background-position: -58px -1118px;
+}
+.kirby.pm {
+    background-position: -177px -1245px;
+}
+.kirby.boss {
+  background-position: -420px 1375px;
+}
+.kirby.qa {
+  background-position: -536px -2485px;
+}
+.kirby.designer {
+  background-position: -58px -2483px;
+}
+.kirby.architect {
+  background-position: -180px -1865px;
+}
