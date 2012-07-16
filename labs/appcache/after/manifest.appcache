@@ -1,0 +1,19 @@
+CACHE MANIFEST
+
+CACHE:
+style.css
+js/awesomizer.js
+js/switcher.js
+/lib/lab-style.css
+/lib/960gs/reset.css
+/lib/960gs/text.css
+/lib/background.png
+
+
+FALLBACK:
+js/widget.js js/sorry.js
+
+
+NETWORK:
+*
+http://*

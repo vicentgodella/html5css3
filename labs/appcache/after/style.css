@@ -1,0 +1,31 @@
+
+h3, h4 {
+  text-align: center;
+}
+
+.app {
+  width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+ul {
+  width: 22em;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+ul > li {
+  display: inline-block;
+}
+
+textarea {
+  width: 250px;
+  height: 150px;
+  margin-right: 40px;
+}
+
+.twtr-widget {
+  float: right;
+}
