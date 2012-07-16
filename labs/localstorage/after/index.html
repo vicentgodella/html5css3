@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>LocalStorage</title>
+  <link rel="stylesheet" href="../../lib/lab-style.css"></link>
+  <link rel="stylesheet" href="../lib/style.css"></link>
+</head>
+
+<body>
+  <h1>Who are you?</h1>
+  <p>This page should remember your role selection even after refreshing the browser.
+
+  <div class="form-container"> 
+    <form action="#">
+      <select name="role">
+        <option value="" disabled selected>Please select your thing</option>
+        <option value="developer">developer</option>
+        <option value="ap">analyst programmer</option>
+        <option value="analyst">analyst</option>
+        <option value="architect">architect</option>
+        <option value="pm">project manager</option>
+        <option value="designer">web designer</option>
+        <option value="qa">quality assurance</option>
+        <option value="boss">da boss</option>
+      </select>
+      <div>      
+        <input type="submit" value="Remember!">  
+      </div>
+      </form>
+  </div>
+  <div class="kirby-container">
+    <div class="kirby"></div>
+  </div>
+  <p>Originally seen in <a href="http://vgcats.com">VGCats</a>.
+
+  <script charset="utf-8" src="../../lib/jquery.js"></script>
+  <script charset="utf-8" src="../lib/store.js"></script>
+  <script>
+    var 
+      settings = new Store('settings'),
+      currentRole = settings.get('role');
+    
+    // if there is a value in LocalStorage, use it
+    if (currentRole) {
+      $('select[name=role]').val(currentRole);
+      $('.kirby').addClass(currentRole);
+    }
+
+    $('select[name=role]').change(function(e) {
+      $('.kirby')[0].className = 'kirby ' + $(this).val();
+    });
+
+    // when the user clicks submit, save the selected value
+    $('form').submit(function(e) {
+      settings.set('role', $('select[name=role]').val());
+      $('body').append("<p>Nice! Now you just have to refresh the browser to use this value.");
+      e.preventDefault();
+    });
+  </script>
+
+</body>
+
+</html>
