@@ -42,7 +42,10 @@ ul {
 	background: #fff;
 }
 
-@media /* put your media query here */ {
+@media only screen and (max-width: 480px) {
+	
+	/* override your styles here */
+
 	body {
 		-webkit-text-size-adjust: 100%; /* required to use portrait in iphone */
 	}
