@@ -4,18 +4,6 @@ a {
 	cursor: pointer;
 }
 
-/* Color scheme:
-	The .right colors and the .left colors are approximately complementary.
-
-	(Feel free to ignore the rest of the details and stay with the complementary colors scheme)
-
-	In particular, the color of a dark (light) .right element is brighter (darker) than the
-	complementary of the corresponding light (dark) .left element.
-	
-	In simpler terms, the color of a .right element is 
-	a constrast-reduced version of the corresponding .left element.
-*/
-
 $contrast: 30%;
 $darkText: darken(#fff,$contrast);
 $darkBackground: lighten(#000,$contrast);
