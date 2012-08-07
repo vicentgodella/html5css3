@@ -5,16 +5,11 @@ a {
   cursor: pointer;
 }
 
-/* Color scheme:
-	The .right colors and the .left colors are approximately complementary.
-
-	(Feel free to ignore the rest of the details and stay with the complementary colors scheme)
-
-	In particular, the color of a dark (light) .right element is brighter (darker) than the
-	complementary of the corresponding light (dark) .left element.
-	
-	In simpler terms, the color of a .right element is 
-	a constrast-reduced version of the corresponding .left element.
+/* 
+  Color scheme
+  ============
+	The .right colors and the .left colors are (more or less) complementary.
+	Feel free to play with lighten() and darken() to adjust the text contrast and make it more readable.
 */
 
 .right, .left {
@@ -35,7 +30,7 @@ a {
   text-align: center;
 }
 
-/* SOCIAL LINKS */
+/* Social links */
 
 .links {
   /* 3 times the width of a single link, approximately  */
