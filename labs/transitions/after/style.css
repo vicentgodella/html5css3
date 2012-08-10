@@ -49,7 +49,7 @@ img {
 	-webkit-transform: translate(20px, 0) scale(.7) rotate(5deg);
 }
 
-.card:hover {
+.card:hover, .card:focus {
 	z-index: 999;
 	-moz-transform: scale(1) rotate(0);
 	-webkit-transform: scale(1) rotate(0);
