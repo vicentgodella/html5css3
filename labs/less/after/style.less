@@ -1,0 +1,120 @@
+@import "../3L";
+
+@entryPadding: 1%;
+@entryWidth: 99%/2 - 2*@entryPadding;
+
+@rightTextColor: #b3b3b3;
+@rightBgColor: #4d4d4d;
+
+@linkDiameter: 60px;
+@linkMargin: 20px;
+
+@linkListWidth: 3*(@linkDiameter + 2*@linkMargin) + 10px;
+
+@leftLinkBg: #ddcc77;
+@leftLinkShadow: #666644;
+
+@rightLinkBg: #253896;
+@rightLinkShadow: #8f8fb4;
+
+a {
+  cursor: pointer;
+}
+
+.entry {
+  text-align: center;
+}
+
+.right, .left {
+  width: @entryWidth;
+  padding: 0 @entryPadding;
+  margin-top: 100px;
+  float: left;
+}
+
+/* Links list */
+.links {
+  //3 times the width of a single link, approximately
+  width: @linkListWidth;
+
+  //Centering
+  margin-left: auto;
+  margin-right: auto;
+
+  li {
+    display: inline-block;
+    text-align: center;
+    
+    width: @linkDiameter;
+    // height = width, in order to draw the circle properly
+    height: @linkDiameter;
+    margin: 0 @linkMargin;
+    
+    //Border radius
+    .border-radius(50%);
+
+  }
+
+  a {
+    display: block;
+
+    // line-height = height, for vertical centering
+    line-height: @linkDiameter;
+
+    //Image replacement
+    .ir();
+    background-position: 50% 50%;
+
+    &:hover {
+      text-indent: 0%;
+      background: transparent;
+    }
+  }
+}
+
+/* Background and shadow for the links*/
+
+.left {
+  .links li {
+    background-color: @leftLinkBg;
+    &:hover {
+      .box-shadow(@leftLinkShadow 0 0 10px);
+    }
+  }
+  
+  .like-link {
+    background-image: url("img/like-left.png");
+  }
+
+  .hate-link {
+    background-image: url("img/hate-left.png");
+  }
+
+  .share-link {
+    background-image: url("img/share-left.png");
+  }
+}
+
+.right {
+  color: @rightTextColor;
+  background-color: @rightBgColor;
+
+  .links li {
+    background-color: @rightLinkBg;
+    &:hover {
+      .box-shadow(@rightLinkShadow 0 0 10px); 
+   }
+  }
+
+  .like-link {
+    background-image: url("img/like-right.png");
+  }
+
+  .hate-link {
+    background-image: url("img/hate-right.png");
+  }
+
+  .share-link {
+    background-image: url("img/share-right.png");
+  }
+}

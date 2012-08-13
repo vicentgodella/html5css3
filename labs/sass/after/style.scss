@@ -1,93 +1,116 @@
 @import "compass";
 
+$entryPadding: 1%;
+$entryWidth: 99%/2 - 2*$entryPadding;
+
+$rightTextColor: #b3b3b3;
+$rightBgColor: #4d4d4d;
+
+$linkDiameter: 60px;
+$linkMargin: 20px;
+
+$linkListWidth: 3*($linkDiameter + 2*$linkMargin) + 10px;
+
+$leftLinkBg: #ddcc77;
+$leftLinkShadow: #666644;
+
+$rightLinkBg: #253896;
+$rightLinkShadow: #8f8fb4;
+
+
 a {
-	cursor: pointer;
-}
-
-$contrast: 30%;
-$darkText: darken(#fff,$contrast);
-$darkBackground: lighten(#000,$contrast);
-
-.right, .left {
-	width: 47.5%;
-	padding: 0 1%;
-	margin-top: 100px;
-	float: left;
-}
-
-.right {
-	color: $darkText;
-	background-color: $darkBackground;
+  cursor: pointer;
 }
 
 .entry {
-	text-align: center;
+  text-align: center;
+}
+
+.right, .left {
+  width: $entryWidth;
+  padding: 0 $entryPadding;
+  margin-top: 100px;
+  float: left;
 }
 
 /* Links list */
-
-$linksLeftBackground: #dc7;
-$linksLeftShadow: #664;
-$linksRightBackground: darken(complement($linksLeftBackground),$contrast);
-$linksRightShadow: lighten(complement($linksLeftShadow),$contrast);
-$linksDiameter: 60px; 
-$linksMargin: 20px;
-
 .links {
-	/* 3 times the width of a single link, approximately  */
-	width: 3*($linksDiameter+2*$linksMargin)+10px;
-	margin-left: auto;
-	margin-right: auto;
+  //3 times the width of a single link, approximately
+  width: $linkListWidth;
 
-	li {
-		display: inline-block;
+  //Centering
+  margin-left: auto;
+  margin-right: auto;
 
-		width: $linksDiameter;
-		/* height = width, in order to draw the circle properly*/
-		height: $linksDiameter;
-		margin: 0 $linksMargin;
+  li {
+    display: inline-block;
+    text-align: center;
+    
+    width: $linkDiameter;
+    // height = width, in order to draw the circle properly
+    height: $linkDiameter;
+    margin: 0 $linkMargin;
+    
+    //Border radius
+    @include border-radius(50%);
+  }
 
-		@include border-radius(50%);
+  a {
+    display: block;
 
-		text-align: center;
-	}
+    // line-height = height, for vertical centering
+    line-height: $linkDiameter;
 
-	a {
-		display: block;
-		line-height: $linksDiameter;
-	}
-
-	a:hover {
-		text-indent: 0%;
-		background: transparent;
-	}
-
+    &:hover {
+      text-indent: 0%;
+      background: transparent;
+    }
+  }
 }
 
-.left  {
-	.links li {
-		background-color: $linksLeftBackground;
-	}	
+/* Background and shadow for the links*/
 
-	.links li:hover{
-		@include box-shadow($linksLeftShadow 0 0 10px);
-	}
+.left {
+  .links li {
+    background-color: $leftLinkBg;
+    &:hover {
+      @include box-shadow($leftLinkShadow 0 0 10px);
+    }
+  }
+  
+  .like-link {
+    @include replace-text("img/like-left.png");
+  }
 
-	.like-link { @include replace-text("like-left.png") }
-	.hate-link { @include replace-text("hate-left.png") }
-	.share-link { @include replace-text("share-left.png") }
+  .hate-link {
+    @include replace-text("img/hate-left.png");
+  }
+
+  .share-link {
+    @include replace-text("img/share-left.png");
+  }
 }
 
 .right {
-	.links li {
-		background-color: $linksRightBackground;
-	}
+  color: $rightTextColor;
+  background-color: $rightBgColor;
 
-	.links li:hover{
-		@include box-shadow($linksRightShadow 0 0 10px);
-	}
+  .links li {
+    background-color: $rightLinkBg;
+    &:hover {
+      @include box-shadow($rightLinkShadow 0 0 10px); 
+   }
+  }
 
-	.like-link { @include replace-text("like-right.png") }
-	.hate-link { @include replace-text("hate-right.png") }
-	.share-link { @include replace-text("share-right.png") }
+  .like-link {
+    @include replace-text("img/like-right.png");
+  }
+
+  .hate-link {
+    @include replace-text("img/hate-right.png");
+  }
+
+  .share-link {
+    @include replace-text("img/share-right.png");
+  }
 }

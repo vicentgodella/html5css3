@@ -3,10 +3,6 @@ a {
   cursor: pointer;
 }
 
-.entry {
-  text-align: center;
-}
-
 .right, .left {
   width: 47.5%;
   padding: 0 1%;
@@ -14,47 +10,44 @@ a {
   float: left;
 }
 
+
 .right {
   color: #b3b3b3;
   background-color: #4d4d4d;
 }
 
 
+.entry {
+  text-align: center;
+}
+
 /* Links list */
 .links {
-  /* 3 times the width of a single link, approximately */
+  /* 3 times the width of a single link, approximately  */
   width: 310px;
-
-  /* Centering */
   margin-left: auto;
   margin-right: auto;
 }
 
 .links li {
   display: inline-block;
-  text-align: center;
-  
   width: 60px;
-  /*  height = width, in order to draw the circle properly */
+  /* height = width, in order to draw the circle properly*/
   height: 60px;
   margin: 0 20px;
-  
-  /* Border radius */
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  
   border-radius: 50%;
+  text-align: center;
 }
 
 .links a {
   display: block;
-
-  /*  line-height = height, for vertical centering */
   line-height: 60px;
 
-  /* Text hiding */
+  /*Text hiding*/
   text-indent: 110%;
   white-space: nowrap;
   overflow: hidden;
