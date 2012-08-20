@@ -1,14 +1,14 @@
-/* line 21, style.scss */
+/* line 22, style.scss */
 a {
   cursor: pointer;
 }
 
-/* line 25, style.scss */
+/* line 26, style.scss */
 .entry {
   text-align: center;
 }
 
-/* line 29, style.scss */
+/* line 30, style.scss */
 .right, .left {
   width: 47.5%;
   padding: 0 1%;
@@ -17,13 +17,13 @@ a {
 }
 
 /* Links list */
-/* line 37, style.scss */
+/* line 38, style.scss */
 .links {
   width: 310px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 45, style.scss */
+/* line 46, style.scss */
 .links li {
   display: inline-block;
   text-align: center;
@@ -36,29 +36,29 @@ a {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 58, style.scss */
+/* line 59, style.scss */
 .links a {
   display: block;
   line-height: 60px;
 }
-/* line 64, style.scss */
+/* line 65, style.scss */
 .links a:hover {
   text-indent: 0%;
   background: transparent;
 }
 
 /* Background and shadow for the links*/
-/* line 74, style.scss */
+/* line 75, style.scss */
 .left .links li {
   background-color: #ddcc77;
 }
-/* line 76, style.scss */
+/* line 77, style.scss */
 .left .links li:hover {
   -webkit-box-shadow: #666644 0 0 10px;
   -moz-box-shadow: #666644 0 0 10px;
   box-shadow: #666644 0 0 10px;
 }
-/* line 81, style.scss */
+/* line 82, style.scss */
 .left .like-link {
   text-indent: 110%;
   white-space: nowrap;
@@ -67,7 +67,7 @@ a {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-/* line 85, style.scss */
+/* line 86, style.scss */
 .left .hate-link {
   text-indent: 110%;
   white-space: nowrap;
@@ -76,7 +76,7 @@ a {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-/* line 89, style.scss */
+/* line 90, style.scss */
 .left .share-link {
   text-indent: 110%;
   white-space: nowrap;
@@ -86,22 +86,22 @@ a {
   background-position: 50% 50%;
 }
 
-/* line 94, style.scss */
+/* line 95, style.scss */
 .right {
   color: #b3b3b3;
   background-color: #4d4d4d;
 }
-/* line 98, style.scss */
+/* line 99, style.scss */
 .right .links li {
   background-color: #253896;
 }
-/* line 100, style.scss */
+/* line 101, style.scss */
 .right .links li:hover {
   -webkit-box-shadow: #8f8fb4 0 0 10px;
   -moz-box-shadow: #8f8fb4 0 0 10px;
   box-shadow: #8f8fb4 0 0 10px;
 }
-/* line 105, style.scss */
+/* line 106, style.scss */
 .right .like-link {
   text-indent: 110%;
   white-space: nowrap;
@@ -110,7 +110,7 @@ a {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-/* line 109, style.scss */
+/* line 110, style.scss */
 .right .hate-link {
   text-indent: 110%;
   white-space: nowrap;
@@ -119,7 +119,7 @@ a {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-/* line 113, style.scss */
+/* line 114, style.scss */
 .right .share-link {
   text-indent: 110%;
   white-space: nowrap;

@@ -14,7 +14,7 @@ $linkListWidth: 3*($linkDiameter + 2*$linkMargin) + 10px;
 $leftLinkBg: #ddcc77;
 $leftLinkShadow: #666644;
 
-$rightLinkBg: #253896;
+$rightLinkBg: darken(complement($leftLinkBg), 30%);
 $rightLinkShadow: #8f8fb4;
 
 
