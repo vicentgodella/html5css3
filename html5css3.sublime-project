@@ -1,0 +1,37 @@
+{ 
+  "build_systems" : [
+    {
+      "name": "parse_slides",
+      "working_dir": "$project_path/slides",
+      "cmd": ["node_modules/jade/bin/jade", "$file", "--out", "generated"],
+      "selector": "source.jade"
+    },
+    {
+      "name": "compile_LESS",
+      "working_dir": "$project_path/slides",
+      "cmd": ["node_modules/less/bin/lessc", "less/style.less", "generated/assets/css/style.css"],
+      "selector": "source.css.less"
+    }
+  ],
+  "folders":
+  [
+    {
+      "path": "./labs",
+      "folder_exclude_patterns": ["node_modules"]
+    },
+    {
+      "path": "./slides",
+      "folder_exclude_patterns": ["node_modules"]
+    },
+    {
+      "path": ".",
+      "folder_exclude_patterns": ["slides", "labs"]
+    }
+  ],
+  "settings":
+  {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "word_wrap": "true"
+  }
+}

@@ -1,1 +1,5 @@
 *.orig
+node_modules
+*.sublime-workspace
+slides/generated/assets/css/style.css
+slides/generated/*.html

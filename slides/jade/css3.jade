@@ -1,0 +1,592 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title CSS3
+
+append slides
+  section
+    h1 CSS3
+
+  section
+    h2 W3C's recommendation
+    p Don't use it (yet)
+
+  section
+    h2 Current status
+    ul
+      li <strong>Explorer (9+):</strong> -ms-*
+      li <strong>Firefox:</strong> -moz-*
+      li <strong>Chrome, Safari:</strong> -webkit-*
+      li <strong>Opera (10+):</strong> -o-*
+
+
+  section
+    h2 A tale of browser parts
+    table.big-table
+      thead
+        tr
+          th Browser
+          th Layout engine
+          th Javascript engine
+      tbody
+        tr
+          td Chrome
+          td Webkit
+          td V8
+        tr
+          td Safari
+          td Webkit
+          td Nitro
+        tr
+          td Firefox
+          td Gecko
+          td TraceMonkey (3.5),
+            | <br/>
+            | JägerMonkey (4+)
+        tr
+          td Internet Explorer
+          td Trident
+          td Chakra
+        tr
+          td Android Browser
+          td Webkit
+          td V8
+
+  section
+    h2 CSS3 browser support
+    p Reasonable support in browsers
+    p 
+      a(href="http://delicious.com/html5css3/support") http://delicious.com/html5css3/support
+    p CSS and JS tricks to support legacy browsers
+
+  section
+    h2 Pixel perfect isn't necessary!
+    p Shadows, gradients, transitions, rounded corners...
+
+  section(data-state="lab")
+    h2 Lab: CSS3 maker
+    p Play with the new CSS styles
+
+  section
+    mixin browserSupport('All', '3.5+', '3.2+', '7+', '9.5+')
+    h2 New selectors
+    p Later general sibling
+    pre
+      code.
+        h2 ~ p { 
+          color: orange;
+        }
+    #ex-general-sibling
+      style
+        #ex-general-sibling .header { font-weight: bold; }
+        #ex-general-sibling .header ~ p { color: blue;}
+      p.header A header
+      p This p is styled
+      div This is a div
+      p This p is also styled
+
+  section
+    h2 New selectors
+    table
+      tr 
+        td [foo~="bar"] 
+        td &lt;div foo=”<span style="color: red">bar</span> whatever”&gt;
+      tr
+        td [foo^="bar"] 
+        td &lt;div foo=”<span style="color: red">bar</span>tender”&gt;
+      tr
+        td [foo$="bar"] 
+        td &lt;div foo=”tool<span style="color: red">bar</span>”&gt;
+      tr
+        td [foo*="bar"] 
+        td &lt;div foo=”sylla<span style="color: red">bar</span>y”&gt;
+      tr
+        td [foo|="bar"] 
+        td &lt;div foo=”<span style="color: red">bar</span>-tender”&gt;
+
+  section
+    section
+      mixin browserSupport('All', '3.5+', '3.2+', '9+', '9.5+')
+      h2 New pseudo-classes
+      table
+        tr
+          td :root
+          td Root element (<html>)
+        tr
+          td :only-child
+          td Applies if the element is the only child
+        tr
+          td :empty
+          td Applies to empty elements
+        tr
+          td :not
+          td Negates a simple element
+    section
+      h2 New pseudo-classes warning
+      p :not
+      pre
+        code.
+          .element:not(p) {
+            color: orange;
+          }
+      #ex-not
+        style
+          #ex-not .ex-not:not(p) {
+            color: orange;
+          }
+        span.ex-not I am a span
+        p.ex-not I'm a paragraph
+        ul.ex-not
+          li I'm in a list
+    section
+      h2 New pseudo-classes
+      p :only-child
+      pre
+        code.
+          li:only-child {
+            color: orange;
+          }
+      #ex-only-child
+        style 
+          #ex-only-child li:only-child {
+            color: orange;
+          }
+        ul
+          li I have no siblings
+        br
+        br
+        ol
+          li I have a brother
+          li I have a sister
+
+  section
+    section
+      h2 UI elements' states
+      p :enabled
+      p :disabled
+      p :checked
+    section
+      h2 UI elements' states
+      p :enabled
+      p :disabled
+      p :checked
+      pre
+        code.
+          :enabled {
+            background-color: #cdc;
+          }        
+          :disabled {
+            background-color: #dcc;
+          }       
+          :checked {
+            width: 5em;
+          }
+      #ex-ui-states
+        style
+          #ex-ui-states :checked {
+            width: 5em;
+          }
+          #ex-ui-states input:enabled {
+            background-color: #cdc;
+          }        
+          #ex-ui-states input:disabled {
+            background-color: #dcc;
+          }        
+        input(disabled)
+        input
+        form
+          input(type="radio", value=1, name="radio")
+          input(type="radio", value=1, name="radio")
+
+
+  section
+    h2 Element-preserving
+    p :first-of-type
+    p :last-of-type
+    p :nth-of-type(n)
+    p :only-of-type
+
+  section
+    h2 Reverse counting
+    p :nth-last-child(n)
+    p :nth-last-of-type
+
+  section
+    h2 Style selected text
+    p New pseudo-elements
+    p ::selection
+    p ::-moz-selection
+    p ::-webkit-selection
+
+  section
+    section#target-slide
+      mixin browserSupport('All', '3.5+', '3.2+', '?', '9.5+')
+      h2 :target
+      pre
+        code.
+          #{'<div id=”my_stuff”>'}
+          #{'  <p>Ey, look at me!</p>'}
+          #{'</div>'}
+          #{'<a href="#my_stuff">Go there</a>'}
+      pre
+        code.
+          div:target {
+            background-color: gray;
+          }
+      style
+        #target-slide:target {
+          background-color: gray;
+        }
+    section
+      a(href="#target-slide") Go there!
+
+  section
+    mixin browserSupport('All', 'All', 'All', '9+', '10.5+')
+    h2 Border radius
+    p {radius} <br>
+      | {topleft, bottomright} {topright, bottomleft } <br>
+      | {topleft} {topright} {bottomright} {bottomleft}
+    pre
+      code.
+        .container {
+          border: 10px solid orange;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+        }
+    #ex-border-radius
+      style
+        #ex-border-radius {
+          background-color: orange;
+          border: 20px solid orange;
+          -moz-border-radius: 20px;
+          -webkit-border-radius: 20px;
+          height: 100px;
+        }
+  section
+    h2 border-radius circles
+    p Circles as <strong>very</strong> rounded rectangles
+    div(style="width: 600px;\
+     height: 600px;\
+     position: fixed;\
+     top: 80%;\
+     left: 50%;\
+     border-radius: 50%;\
+     background-color: rgb(255,181,21);\
+     z-index: -10;")
+    pre
+      code.
+        .circle {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+
+  section(data-state="lab")
+    h2 Lab: Badges
+    p Add badges to a button bar that display data
+
+  section
+    mixin browserSupport('All', '3.5+', 'All', '9+', '10.5+')
+    h2 box-shadow
+    p {x offset} {y offset} {blur-radius} {color} <br>
+      | {x offset} {y offset} {blur} {spread} {color} <br>
+      | {shadow1}, {shadow2}, {shadow3}...
+    pre
+      code.
+        .container {
+          -moz-box-shadow: 10px 30px 5px #000;
+          -webkit-box-shadow: 10px 30px 5px #000;
+          box-shadow: 10px 30px 5px #000;
+        }
+    #ex-box-shadow
+      style
+        #ex-box-shadow {
+          -moz-box-shadow: 10px 30px 5px #000;
+          -webkit-box-shadow: 10px 30px 5px #000;
+          box-shadow: 10px 30px 5px #000;
+          height: 100px;
+        }
+
+  section
+    mixin browserSupport('All', '3.5+', 'All', '10+', '9.5+')
+    h2 text-shadow
+    p {x offset} {y offset} {blur-radius} {color} <br>
+      | {text-shadow1}, {text-shadow2}, ...
+    pre
+      code.
+        .container {
+          text-shadow: 5px 5px 5px #000;
+        }
+    #ex-text-shadow
+      style
+        #ex-text-shadow h3 {
+          text-shadow: 5px 5px 5px #000;
+        }
+      h3 I have a shadow
+
+  section
+    mixin browserSupport('10+', '3.6+', '5.1+', '10+', '11.1+')
+    h2 gradient
+    p 
+      strong Non standard: 
+      | different behavior for Firefox, Webkit and IE
+    pre
+      code.
+        background: #1E5799; /* old browsers */
+
+        background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 55%, #7db9e8 100%); /* firefox */
+
+        background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 55%, #7db9e8 100%); /* webkit*/
+
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* ie */
+    #ex-linear-gradient
+      style
+        #ex-linear-gradient {
+          height: 100px;
+          background: -moz-linear-gradient(top, #3F3F3F 10%, orange 90%);
+          background: -webkit-linear-gradient(top, #3F3F3F 10%, orange 90%);
+        }
+
+  section
+    mixin browserSupport('10+', '3.6+', '5.1+', '10+', '12+')
+    h2 Radial gradients
+    pre
+      code.
+        background-color: #0017ab;
+
+        background: -moz-radial-gradient(30% 50%, 40px 40px, #0017ab, #85c2ff 60%);
+        /*...*/
+        background: radial-gradient(30% 50%, 40px 40px, #0017ab, #85c2ff 60%)
+
+    #ex-radial-gradient
+      style
+        #ex-radial-gradient {
+          height: 100px;
+          background: -moz-radial-gradient(30% 50%, 40px 40px, #777, orange 60%);
+          background: -webkit-radial-gradient(30% 50%, 100px 100px, #777, orange 60%);
+        }
+
+  section
+    mixin browserSupport('All', 'All', 'All', '9+', '9.5+')
+    h2 rgba
+    p rgba<strong>(red, blue, green, alpha)</strong>
+    pre
+      code.
+        .using-opacity {
+          opacity: .5;
+        }
+        .using-rgba {
+          background-color: rgba(218, 37, 29, .5);
+        }
+    #ex-rgba
+      .using-opacity OPACITY
+      <br>
+      .using-rgba RGBA
+    style
+      .using-opacity {
+        background-color: rgb(218, 37, 29);
+        opacity: .3;
+        color: black;
+      }
+
+      .using-rgba {
+        background-color: rgba(218, 37, 29, .3);
+        color: black;
+      }
+
+  section
+    h2 Wherever a color fits in
+    p <strong>background, color, border, shadow</strong>
+    pre
+      code.
+        .block {
+          background: rgb(218, 37, 29); /* fallback */
+          background: rgba(218, 37, 29, .5);
+          text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        }
+  
+  section(data-state="lab")
+    h2 Lab: CSS3 buttons
+    p Repeat the buttons from previous module using just CSS3
+
+  section
+    mixin browserSupport('4+', '2+', '3.1+','8+', '9.5+') 
+    h2 box-sizing
+    p content-box | border-box | inherit
+    pre
+      code.
+        * {
+          box-sizing: border-box;
+        }
+
+  section
+    h2 box-sizing
+    p content-box | border-box | inherit
+    pre
+      code.
+        .box-model {
+          width: 200px;
+          height: 100px;
+          padding: 50px;
+          border-width: 20px;
+        }
+    div
+      style
+        .box-model {
+          width: 200px;
+          height: 100px;
+          display: inline-block;
+          margin: 20px;
+          padding: 50px;
+          border: 20px solid #333;
+          background-color: rgb(255,181,21);
+        }
+      .box-model(style="box-sizing: content-box;")
+      .box-model(style="box-sizing: border-box;")
+
+  section
+    mixin browserSupport('All', '3.6+', 'All', '9+', '10.5+')
+    h2 Multiple background images
+    p background-image: {image1}, {image2}, ...
+    pre
+      code.
+        background: url(image1.png) 10% 15% no-repeat,
+                    url(image2.png) 80% 70% no-repeat;
+    #ex-multiple-bg
+      style
+        #ex-multiple-bg {
+          height: 200px;
+          background: url(assets/img/html5.svg) 10% 15% no-repeat,
+                      url(assets/img/css3.svg) 80% 70% no-repeat;
+          background-size: auto 100px, auto 70px;
+        }
+
+  section
+    section
+      mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
+      h2 background-size
+      p {length} {percentage} {auto} {contain} {cover}
+      pre
+        code.
+          .container {
+            background: url(image.png) 40% 40% no-repeat;
+            background-size: 100px;
+          }
+      #ex-bg-size
+        style
+          #ex-bg-size {
+            height: 200px;
+            background: url(assets/img/css3.svg) no-repeat 40% 40%;
+            background-size: 100px;
+          }
+    section
+      mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
+      h2 background-size
+      p {length} {percentage} {auto} {contain} {cover}
+      pre
+        code.
+          .container {
+            background: url(image.png) 40% 40% no-repeat;
+            background-size: contain;
+          }
+      #ex-bg-size-2
+        style
+          #ex-bg-size-2 {
+            height: 200px;
+            background: url(assets/img/css3.svg) no-repeat 40% 40%;
+            background-size: contain;
+          }
+    section
+      mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
+      h2 background-size
+      p {length} {percentage} {auto} {contain} {cover}
+      pre
+        code.
+          .container {
+            background: url(image.png) 40% 40% no-repeat;
+            background-size: cover;
+          }
+      #ex-bg-size-3
+        style
+          #ex-bg-size-3 {
+            height: 200px;
+            background: url(assets/img/css3.svg) no-repeat 40% 40%;
+            background-size: cover;
+          }
+  section
+    mixin browserSupport('All', '3.5+', 'All', '10+', '10.5+')
+    h2 border-image
+    p {image-url} {top-width} {right-width} <br />
+      |  {bottom-width} {left-width} <br />
+      |  {horizontal-effect} {vertical-effect}
+    pre
+      code.
+        .container {
+          border: 20px solid #b1563c; /* Fallback */
+          border-image: url(image1.png) 30;
+        }
+    #ex-border-image
+      style
+        #ex-border-image  {
+          height: 100px;
+          border: 20px solid #b1563c; 
+          border-image: url(image1.png) 30;
+        }
+  section
+    mixin browserSupport('All', '3.5+', '3.2+', '6+', '10+')
+    h2 @font-face
+    pre
+      code.
+        @font-face {
+          font-family: 'permanentmarker';
+          src: url('pm.eot'); /* IE */
+          src: local('permanentmarker'),
+                 url('pm.ttf') format('truetype');
+        }
+
+        h1 {
+            font-family: permanentmarker;
+        }
+    #ex-font-face
+      style 
+        @font-face {
+            font-family: 'permanentmarker';
+            src: url('assets/font/PermanentMarker-webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }  
+        #ex-font-face h3 {
+          font-family: permanentmarker;
+          color: black;
+        }
+      h3 Permanent Marker
+
+  section
+    h2 Font formats
+    p The current de facto standard is <strong>Web Open Font Format (.woff)</strong>
+    table.big-table
+      thead
+        tr
+          | <th></th> <th>eot</th> <th>ttf/otf</th> <th>woff</th> <th>svg</th>
+      tbody
+        tr
+          | <td>Chrome</td>
+          | <td>no</td> <td>4+</td> <td>5+</td> <td>4+</td> 
+        tr
+          | <td>Safari</td>
+          | <td>no</td> <td>3.1+</td> <td>5.1+</td> <td>3.1+</td> 
+        tr
+          | <td>Firefox</td>
+          | <td>no</td> <td>3.5+</td> <td>3.6+</td> <td>no</td> 
+        tr
+          | <td>Internet Explorer</td>
+          | <td>5+</td> <td>9+</td> <td>9+</td> <td>no</td> 
+        tr
+          | <td>Android</td>
+          | <td>no</td> <td>2.2+</td> <td>no</td> <td>yes</td> 
+        tr
+          | <td>iPhone</td>
+          | <td>no</td> <td>no</td> <td>no</td> <td>yes</td> 

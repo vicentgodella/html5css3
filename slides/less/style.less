@@ -1,0 +1,123 @@
+
+@import "main";
+@import "theme";
+
+ul {
+  list-style: square;
+}
+
+//Lab slide
+.lab {
+  body {
+    background-color: #0a1c28;
+  }
+
+  h1, h2, h3, h4, h5, p {
+    color: white;
+  }
+}
+
+//Example divs
+[id^="ex-"] {
+  width: 80%;
+  .center();
+
+  margin-top: 20px;
+  border: 3px solid #3F3F3F;
+  border-radius: 10px;
+  padding: 10px;
+  
+  h1,h2,h3,h5,h5,h6 {
+    padding-top: 20px;
+  }
+}
+
+.reveal {
+  table {
+    .center();
+    font-size: 70%;
+    
+    th {
+      font-weight: bold;
+    }
+
+    th, td {
+      padding: 15px;
+    }
+  }
+}
+
+//Table based on Bootstrap's
+.big-table {
+  width: 100%;
+  border-spacing: 0;
+
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid @fontColor;
+  }
+
+  thead th {
+    vertical-align: bottom;
+  }
+
+  caption + thead tr:first-child th,
+  caption + thead tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + thead tr:first-child td,
+  thead:first-child tr:first-child th,
+  thead:first-child tr:first-child td {
+    border-top: 0;
+  }
+}
+
+//Browse support div
+
+.browser-support {
+  position: absolute;
+  top: -5%;
+  right: -60px;
+}
+
+@browserBgWidth: 50px;
+
+[class^="support-"] {
+
+  width: @browserBgWidth;
+  padding-top: @browserBgWidth;
+  margin-top: 10px;
+
+  background: url(../img/browsers.png) no-repeat 0 0;
+
+  span {
+    display: block;
+    .center();
+
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    
+    width: 40px;
+    margin-top: 5px;
+    border: 1px solid black;
+    color: gray;
+  }
+}
+
+.support-ff {
+  background-position: -@browserBgWidth 0;
+}
+
+.support-safari {
+  background-position: -2*@browserBgWidth 0;
+}
+
+.support-msie {
+  background-position: -3*@browserBgWidth 0;
+}
+
+.support-opera {
+  background-position: -4*@browserBgWidth 0;
+}
