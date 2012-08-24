@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>CSS3</title><link rel="stylesheet" href="assets/css/style.css"><!-- For syntax highlighting --><link rel="stylesheet" href="assets/css/zenburn.css"><script>// If the query includes 'print-pdf' we'll use the PDF print sheet
+document.write( '<link rel="stylesheet" href="assets/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+</script></head><body><div class="reveal"><!-- Used to fade in a background when a specific slide state is reached --><div class="state-background"></div><!-- Any section element inside of this container is displayed as a slide --><div class="slides"><section><h1>CSS3</h1></section><section><h2>W3C's recommendation</h2><p>Don't use it (yet)</p></section><section><h2>Current status</h2><ul><li><strong>Explorer (9+):</strong> -ms-*</li><li><strong>Firefox:</strong> -moz-*</li><li><strong>Chrome, Safari:</strong> -webkit-*</li><li><strong>Opera (10+):</strong> -o-*</li></ul></section><section><h2>A tale of browser parts</h2><table class="big-table"><thead><tr><th>Browser</th><th>Layout engine</th><th>Javascript engine</th></tr></thead><tbody><tr><td>Chrome</td><td>Webkit</td><td>V8</td></tr><tr><td>Safari</td><td>Webkit</td><td>Nitro</td></tr><tr><td>Firefox</td><td>Gecko</td><td>TraceMonkey (3.5),
+<br/>
+JägerMonkey (4+)</td></tr><tr><td>Internet Explorer</td><td>Trident</td><td>Chakra</td></tr><tr><td>Android Browser</td><td>Webkit</td><td>V8</td></tr></tbody></table></section><section><h2>CSS3 browser support</h2><p>Reasonable support in browsers</p><p> <a href="http://delicious.com/html5css3/support">http://delicious.com/html5css3/support</a></p><p>CSS and JS tricks to support legacy browsers</p></section><section><h2>Pixel perfect isn't necessary!</h2><p>Shadows, gradients, transitions, rounded corners...</p></section><section data-state="lab"><h2>Lab: CSS3 maker</h2><p>Play with the new CSS styles</p></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>3.2+</span></div><div class="support-msie"> <span>7+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>New selectors</h2><p>Later general sibling</p><pre><code>h2 ~ p { 
+  color: orange;
+}</code></pre><div id="ex-general-sibling"><style>#ex-general-sibling .header { font-weight: bold; }
+#ex-general-sibling .header ~ p { color: blue;}</style><p class="header">A header</p><p>This p is styled</p><div>This is a div</div><p>This p is also styled</p></div></section><section><h2>New selectors</h2><table><tr> <td>[foo~="bar"] </td><td>&lt;div foo=”<span style="color: red">bar</span> whatever”&gt;</td></tr><tr><td>[foo^="bar"] </td><td>&lt;div foo=”<span style="color: red">bar</span>tender”&gt;</td></tr><tr><td>[foo$="bar"] </td><td>&lt;div foo=”tool<span style="color: red">bar</span>”&gt;</td></tr><tr><td>[foo*="bar"] </td><td>&lt;div foo=”sylla<span style="color: red">bar</span>y”&gt;</td></tr><tr><td>[foo|="bar"] </td><td>&lt;div foo=”<span style="color: red">bar</span>-tender”&gt;</td></tr></table></section><section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>3.2+</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>New pseudo-classes</h2><table><tr><td>:root</td><td>Root element (<html>)</td></tr><tr><td>:only-child</td><td>Applies if the element is the only child</td></tr><tr><td>:empty</td><td>Applies to empty elements</td></tr><tr><td>:not</td><td>Negates a simple element</td></tr></table></section><section><h2>New pseudo-classes warning</h2><p>:not</p><pre><code>.element:not(p) {
+  color: orange;
+}</code></pre><div id="ex-not"><style>#ex-not .ex-not:not(p) {
+  color: orange;
+}</style><span class="ex-not">I am a span</span><p class="ex-not">I'm a paragraph</p><ul class="ex-not"><li>I'm in a list</li></ul></div></section><section><h2>New pseudo-classes</h2><p>:only-child</p><pre><code>li:only-child {
+  color: orange;
+}</code></pre><div id="ex-only-child"><style>#ex-only-child li:only-child {
+  color: orange;
+}</style><ul><li>I have no siblings</li></ul><br><br><ol><li>I have a brother</li><li>I have a sister</li></ol></div></section></section><section><section><h2>UI elements' states</h2><p>:enabled</p><p>:disabled</p><p>:checked</p></section><section><h2>UI elements' states</h2><p>:enabled</p><p>:disabled</p><p>:checked</p><pre><code>:enabled {
+  background-color: #cdc;
+}        
+:disabled {
+  background-color: #dcc;
+}       
+:checked {
+  width: 5em;
+}</code></pre><div id="ex-ui-states"><style>#ex-ui-states :checked {
+  width: 5em;
+}
+#ex-ui-states input:enabled {
+  background-color: #cdc;
+}        
+#ex-ui-states input:disabled {
+  background-color: #dcc;
+}        </style><input disabled><input><form><input type="radio" value="1" name="radio"><input type="radio" value="1" name="radio"></form></div></section></section><section><h2>Element-preserving</h2><p>:first-of-type</p><p>:last-of-type</p><p>:nth-of-type(n)</p><p>:only-of-type</p></section><section><h2>Reverse counting</h2><p>:nth-last-child(n)</p><p>:nth-last-of-type</p></section><section><h2>Style selected text</h2><p>New pseudo-elements</p><p>::selection</p><p>::-moz-selection</p><p>::-webkit-selection</p></section><section><section id="target-slide"><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>3.2+</span></div><div class="support-msie"> <span>?</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>:target</h2><pre><code>&lt;div id=”my_stuff”&gt;
+  &lt;p&gt;Ey, look at me!&lt;/p&gt;
+&lt;/div&gt;
+&lt;a href=&quot;#my_stuff&quot;&gt;Go there&lt;/a&gt;</code></pre><pre><code>div:target {
+  background-color: gray;
+}</code></pre><style>#target-slide:target {
+  background-color: gray;
+}</style></section><section><a href="#target-slide">Go there!</a></section></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>All</span></div><div class="support-safari"> <span>All</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>10.5+</span></div></div><h2>Border radius</h2><p>{radius} <br>
+{topleft, bottomright} {topright, bottomleft } <br>
+{topleft} {topright} {bottomright} {bottomleft}</p><pre><code>.container {
+  border: 10px solid orange;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}</code></pre><div id="ex-border-radius"><style>#ex-border-radius {
+  background-color: orange;
+  border: 20px solid orange;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  height: 100px;
+}</style></div></section><section><h2>border-radius circles</h2><p>Circles as <strong>very</strong> rounded rectangles</p><div style="width: 600px;     height: 600px;     position: fixed;     top: 80%;     left: 50%;     border-radius: 50%;     background-color: rgb(255,181,21);     z-index: -10;"></div><pre><code>.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+</code></pre></section><section data-state="lab"><h2>Lab: Badges</h2><p>Add badges to a button bar that display data</p></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>All</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>10.5+</span></div></div><h2>box-shadow</h2><p>{x offset} {y offset} {blur-radius} {color} <br>
+{x offset} {y offset} {blur} {spread} {color} <br>
+{shadow1}, {shadow2}, {shadow3}...</p><pre><code>.container {
+  -moz-box-shadow: 10px 30px 5px #000;
+  -webkit-box-shadow: 10px 30px 5px #000;
+  box-shadow: 10px 30px 5px #000;
+}</code></pre><div id="ex-box-shadow"><style>#ex-box-shadow {
+  -moz-box-shadow: 10px 30px 5px #000;
+  -webkit-box-shadow: 10px 30px 5px #000;
+  box-shadow: 10px 30px 5px #000;
+  height: 100px;
+}
+</style></div></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>All</span></div><div class="support-msie"> <span>10+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>text-shadow</h2><p>{x offset} {y offset} {blur-radius} {color} <br>
+{text-shadow1}, {text-shadow2}, ...</p><pre><code>.container {
+  text-shadow: 5px 5px 5px #000;
+}</code></pre><div id="ex-text-shadow"><style>#ex-text-shadow h3 {
+  text-shadow: 5px 5px 5px #000;
+}</style><h3>I have a shadow</h3></div></section><section><div class="browser-support"><div class="support-chrome"> <span>10+</span></div><div class="support-ff"> <span>3.6+</span></div><div class="support-safari"> <span>5.1+</span></div><div class="support-msie"> <span>10+</span></div><div class="support-opera"> <span>11.1+</span></div></div><h2>gradient</h2><p> <strong>Non standard: </strong>different behavior for Firefox, Webkit and IE</p><pre><code>background: #1E5799; /* old browsers */
+
+background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 55%, #7db9e8 100%); /* firefox */
+
+background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 55%, #7db9e8 100%); /* webkit*/
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* ie */</code></pre><div id="ex-linear-gradient"><style>#ex-linear-gradient {
+  height: 100px;
+  background: -moz-linear-gradient(top, #3F3F3F 10%, orange 90%);
+  background: -webkit-linear-gradient(top, #3F3F3F 10%, orange 90%);
+}
+</style></div></section><section><div class="browser-support"><div class="support-chrome"> <span>10+</span></div><div class="support-ff"> <span>3.6+</span></div><div class="support-safari"> <span>5.1+</span></div><div class="support-msie"> <span>10+</span></div><div class="support-opera"> <span>12+</span></div></div><h2>Radial gradients</h2><pre><code>background-color: #0017ab;
+
+background: -moz-radial-gradient(30% 50%, 40px 40px, #0017ab, #85c2ff 60%);
+/*...*/
+background: radial-gradient(30% 50%, 40px 40px, #0017ab, #85c2ff 60%)
+</code></pre><div id="ex-radial-gradient"><style>#ex-radial-gradient {
+  height: 100px;
+  background: -moz-radial-gradient(30% 50%, 40px 40px, #777, orange 60%);
+  background: -webkit-radial-gradient(30% 50%, 100px 100px, #777, orange 60%);
+}
+</style></div></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>All</span></div><div class="support-safari"> <span>All</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>rgba</h2><p>rgba<strong>(red, blue, green, alpha)</strong></p><pre><code>.using-opacity {
+  opacity: .5;
+}
+.using-rgba {
+  background-color: rgba(218, 37, 29, .5);
+}</code></pre><div id="ex-rgba"><div class="using-opacity">OPACITY</div><br><div class="using-rgba">RGBA</div></div><style>.using-opacity {
+  background-color: rgb(218, 37, 29);
+  opacity: .3;
+  color: black;
+}
+
+.using-rgba {
+  background-color: rgba(218, 37, 29, .3);
+  color: black;
+}
+</style></section><section><h2>Wherever a color fits in</h2><p><strong>background, color, border, shadow</strong></p><pre><code>.block {
+  background: rgb(218, 37, 29); /* fallback */
+  background: rgba(218, 37, 29, .5);
+  text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+</code></pre></section><section data-state="lab"><h2>Lab: CSS3 buttons</h2><p>Repeat the buttons from previous module using just CSS3</p></section><section><div class="browser-support"><div class="support-chrome"> <span>4+</span></div><div class="support-ff"> <span>2+</span></div><div class="support-safari"> <span>3.1+</span></div><div class="support-msie"> <span>8+</span></div><div class="support-opera"> <span>9.5+</span></div></div> <h2>box-sizing</h2><p>content-box | border-box | inherit</p><pre><code>* {
+  box-sizing: border-box;
+}
+</code></pre></section><section><h2>box-sizing</h2><p>content-box | border-box | inherit</p><pre><code>.box-model {
+  width: 200px;
+  height: 100px;
+  padding: 50px;
+  border-width: 20px;
+}</code></pre><div><style>.box-model {
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  margin: 20px;
+  padding: 50px;
+  border: 20px solid #333;
+  background-color: rgb(255,181,21);
+}</style><div style="box-sizing: content-box;" class="box-model"></div><div style="box-sizing: border-box;" class="box-model"></div></div></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.6+</span></div><div class="support-safari"> <span>All</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>10.5+</span></div></div><h2>Multiple background images</h2><p>background-image: {image1}, {image2}, ...</p><pre><code>background: url(image1.png) 10% 15% no-repeat,
+            url(image2.png) 80% 70% no-repeat;</code></pre><div id="ex-multiple-bg"><style>#ex-multiple-bg {
+  height: 200px;
+  background: url(assets/img/html5.svg) 10% 15% no-repeat,
+              url(assets/img/css3.svg) 80% 70% no-repeat;
+  background-size: auto 100px, auto 70px;
+}
+</style></div></section><section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.6+</span></div><div class="support-safari"> <span>4.1+</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>background-size</h2><p>{length} {percentage} {auto} {contain} {cover}</p><pre><code>.container {
+  background: url(image.png) 40% 40% no-repeat;
+  background-size: 100px;
+}</code></pre><div id="ex-bg-size"><style>#ex-bg-size {
+  height: 200px;
+  background: url(assets/img/css3.svg) no-repeat 40% 40%;
+  background-size: 100px;
+}</style></div></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.6+</span></div><div class="support-safari"> <span>4.1+</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>background-size</h2><p>{length} {percentage} {auto} {contain} {cover}</p><pre><code>.container {
+  background: url(image.png) 40% 40% no-repeat;
+  background-size: contain;
+}</code></pre><div id="ex-bg-size-2"><style>#ex-bg-size-2 {
+  height: 200px;
+  background: url(assets/img/css3.svg) no-repeat 40% 40%;
+  background-size: contain;
+}</style></div></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.6+</span></div><div class="support-safari"> <span>4.1+</span></div><div class="support-msie"> <span>9+</span></div><div class="support-opera"> <span>9.5+</span></div></div><h2>background-size</h2><p>{length} {percentage} {auto} {contain} {cover}</p><pre><code>.container {
+  background: url(image.png) 40% 40% no-repeat;
+  background-size: cover;
+}</code></pre><div id="ex-bg-size-3"><style>#ex-bg-size-3 {
+  height: 200px;
+  background: url(assets/img/css3.svg) no-repeat 40% 40%;
+  background-size: cover;
+}</style></div></section></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>All</span></div><div class="support-msie"> <span>10+</span></div><div class="support-opera"> <span>10.5+</span></div></div><h2>border-image</h2><p>{image-url} {top-width} {right-width} <br />
+ {bottom-width} {left-width} <br />
+ {horizontal-effect} {vertical-effect}</p><pre><code>.container {
+  border: 20px solid #b1563c; /* Fallback */
+  border-image: url(image1.png) 30;
+}</code></pre><div id="ex-border-image"><style>#ex-border-image  {
+  height: 100px;
+  border: 20px solid #b1563c; 
+  border-image: url(image1.png) 30;
+}</style></div></section><section><div class="browser-support"><div class="support-chrome"> <span>All</span></div><div class="support-ff"> <span>3.5+</span></div><div class="support-safari"> <span>3.2+</span></div><div class="support-msie"> <span>6+</span></div><div class="support-opera"> <span>10+</span></div></div><h2>@font-face</h2><pre><code>@font-face {
+  font-family: 'permanentmarker';
+  src: url('pm.eot'); /* IE */
+  src: local('permanentmarker'),
+         url('pm.ttf') format('truetype');
+}
+
+h1 {
+    font-family: permanentmarker;
+}</code></pre><div id="ex-font-face"><style>@font-face {
+    font-family: 'permanentmarker';
+    src: url('assets/font/PermanentMarker-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}  
+#ex-font-face h3 {
+  font-family: permanentmarker;
+  color: black;
+}</style><h3>Permanent Marker</h3></div></section><section><h2>Font formats</h2><p>The current de facto standard is <strong>Web Open Font Format (.woff)</strong></p><table class="big-table"><thead><tr><th></th> <th>eot</th> <th>ttf/otf</th> <th>woff</th> <th>svg</th></tr></thead><tbody><tr><td>Chrome</td>
+<td>no</td> <td>4+</td> <td>5+</td> <td>4+</td> </tr><tr><td>Safari</td>
+<td>no</td> <td>3.1+</td> <td>5.1+</td> <td>3.1+</td> </tr><tr><td>Firefox</td>
+<td>no</td> <td>3.5+</td> <td>3.6+</td> <td>no</td> </tr><tr><td>Internet Explorer</td>
+<td>5+</td> <td>9+</td> <td>9+</td> <td>no</td> </tr><tr><td>Android</td>
+<td>no</td> <td>2.2+</td> <td>no</td> <td>yes</td> </tr><tr><td>iPhone</td>
+<td>no</td> <td>no</td> <td>no</td> <td>yes</td> </tr></tbody></table></section></div><!-- The navigational controls UI --><aside class="controls"><a href="#" class="left">◄</a><a href="#" class="right">►</a><a href="#" class="up">▲</a><a href="#" class="down">▼</a></aside><!-- Presentation progress bar --><div class="progress"><span></span></div></div><script src="assets/js/head.min.js"></script><script src="assets/js/reveal.min.js"></script><script>// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+rollingLinks: false,
+transition: 'linear',
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: 'assets/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+{ src: 'assets/js/classList.js', condition: function() { return !document.body.classList; } },
+//{ src: 'assets/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+//{ src: 'assets/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+]
+});</script></body><script src="assets/js/html5shiv.js"></script></html>

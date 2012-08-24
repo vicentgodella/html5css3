@@ -1,0 +1,6 @@
+#!/bin/bash
+
+lessc style.less ../public/css/style.css
+lessc bootstrap/bootstrap.less ../public/css/bootstrap.css
+lessc bootstrap/responsive.less ../public/css/bootstrap-responsive.css
+
