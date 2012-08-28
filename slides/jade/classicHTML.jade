@@ -1,0 +1,1199 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title Classic HTLM and CSS
+
+append slides
+  section
+    h1 Classic HTLM and CSS
+
+  section
+    h2 HTML
+
+    p <strong>Hypertext Mark-up Language</strong>
+    p Developed by <strong>Tim Berners-Lee</strong> in 1989
+    p Maintained by the <strong>World Wide Web Consortium</strong> (W3C) since 1996
+
+  section
+    h2 History of HTML
+
+    p <strong>HTML 2.0</strong>: 1995
+    p <strong>HTML 3.2</strong>: January 1997
+    p <strong>HTML 4.0</strong>: December 1997
+    p <strong>HTML 5</strong>: Draft
+
+  section
+    h2 CPU transistor counts
+
+  section
+    h2 Average PC 98/99
+
+    ul
+      li 500 mHz PII / K6
+      li 64 MB RAM
+      li 10 GB HDD
+
+  section
+    h2 10 GB?
+
+    ul
+      li <strong>iPod nano</strong>: 8-16 GB
+      li <strong>iPod classic</strong>: 160 GB
+      li <strong>Micro SD Card</strong>: +32 GB
+
+  section
+    h2 500 MHz + 64MB RAM?
+
+    p <strong>iPhone 3</strong>: 600 MHz + 256 MB RAM
+    p <strong>iPhone 4</strong>: 1 GHz + 512 MB RAM
+
+  section
+    h2 HTML 4.0-4.1
+
+  section
+    h2 Tags
+
+    p With / without content
+    p Attributes enclosed by double quotes
+    p Semantic CSS
+    p Lower-case
+
+    pre
+      code.
+        &lt;div>
+          &lt;p class=“header”>
+            Texto contenido
+          &lt;/p>
+          &lt;hr/>
+          &lt;img src=”a.gif” title=”Foo”>
+        &lt;/div>
+
+  section
+    h2 Most frequent tags
+
+    ul
+      li Headers: h1, h2, h3
+      li Containers: div, p, span
+      li Image: img
+      li Links: a, link, script
+      li Lists: ul, li
+      li Tables: table, thead, tbody, tr, td, th
+      li Forms: form, fieldset, input, select, textarea, label
+
+  section
+    h2 doctype
+
+    p <strong>Quirks mode</strong>
+    p <strong>Standard mode</strong>
+    p <strong>XHTML</strong>
+
+  section
+    h2 Quirks mode
+
+    p Default mode in <strong>Internet Explorer 6 and 7</strong>
+
+    pre
+      code.
+        &lt;html>
+        ...
+        &lt;/html>
+
+  section
+    h2 Quirks vs Standard Mode
+
+    | QUIRKS MODE
+    pre
+      code.
+        /* traditional box model */
+        .boxmodel { 
+           width: 10px; /* total: 10px */
+           border: 1px solid #fff;
+           padding: 2px;
+        }
+
+        .boxmodel p {
+           margin: 0 auto;  /* ignored */
+           padding: 5; /* defaults to px */
+        }
+    
+    | STANDARD MODE
+    pre
+      code.
+        /* W3C box model */
+        .boxmodel { 
+           width: 10px; /* total: 16px */
+           border: 1px solid #fff;
+           padding: 2px;
+        }
+
+        .boxmodel p {
+           margin: 0 auto;  /* ok */
+           padding: 5; /* ignored */
+        } 
+
+  section
+    h2 Standards Mode
+
+    p The method employed by Google
+    pre
+      code.
+        &lt;!doctype html>
+        &lt;html>
+        ...
+        &lt;/html>
+
+  section
+    h2 XHTML is a bad idea
+
+    ul
+      li Internet Explorer doesn't support XHTML
+      li There is no error handling
+      li The javascript code must be inside a CDATA block
+      li The entities (&amp;) must be escaped
+      li In general, there is no advantage in XHTML
+
+  section
+    h2 XHTML vs HTML
+
+    ul
+      li <strong>Case sensitive</strong>
+      li <strong>Void entities:</strong> img, br, hr
+      li <strong>Unexpected end tags:</strong> &lt;/br> &lt;/p>
+      li <strong>Unescaped & and &lt;CDATA elements</strong>: script and style
+
+  section
+    h2 XHTML vs HTML (II)
+
+    | XHTML
+    pre
+      code.
+        &lt;p>Hello</p>
+        &lt;p>world</p>
+        &lt;img src=”hello?foo=1&amp;bar=2”/>
+        &lt;script type="text/javascript">
+        &lt;![CDATA[
+        ... unescaped script content ...
+        ]]>
+        &lt;/script>
+
+    | HTML
+    pre
+      code.
+        &lt;p>Hello
+        &lt;p>world
+        &lt;IMG src=”hello?foo=1&bar=2”>
+        &lt;script>
+        ... unescaped script content ...
+        &lt;/script>
+
+  section
+    h2 XHTML headers
+
+    p The browser considers HTML unless the server sends the header
+
+    p <strong>Content-Type: application/xhtml+xml</strong>
+
+    pre
+      code.
+        &lt;?xml version="1.0" encoding="UTF-8"?>
+        &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+        &lt;html xmlns="http://www.w3.org/1999/xhtml">
+        …
+        &lt;/html>
+
+  section
+    h2 HTTP headers
+
+  section
+    h2 Cascading Style Sheets
+
+    ul
+      li CSS1
+        ul
+          li Recommendation: 1996
+      li CSS2
+        ul
+          li First draft: 1997
+          li Recommendation: 2000
+      li CSS3
+        ul
+          li Started in 1998 as a list of CSS extensions, and still under development.
+
+  section
+    h2 CSS Zen Garden
+    p Separation between presentation and content
+
+  section
+    h2 CSS insertion
+
+    ul
+      li External CSS
+        pre
+          code.
+            &lt;head>
+              &lt;link rel="stylesheet" href="style.css"> 
+            &lt;/head>
+      li Internal CSS
+        pre
+          code.
+            &lt;head>
+              &lt;style type="text/css">
+                .tab {
+                  display: block !important;
+                }
+              &lt;/style>
+            &lt;/head>
+      li Inline CSS
+        pre
+          code.
+            &lt;body>
+              &lt;div style=”width: 20px; height: 10px”>
+                Hello world!
+              &lt;/div>
+            &lt;/body>
+
+  section
+    h2 Indenting
+
+    | Classic
+    pre
+      code.
+        a {
+          color: #ccc;
+        }
+
+        p, div, .foo .bar { 
+          width: 10px;
+          height: 5px;
+        }
+
+    | Compact
+    pre
+      code.
+        a { color: #ccc; }
+
+        p, 
+        div, 
+        .foo .bar {  width: 10px; height: 5px; }
+
+  section
+    h2 CSS Selector
+
+  section
+    h2 Common selectors
+
+    | CSS
+    pre
+      code.
+        div { 
+          width: 10px;
+        }
+        #foo {
+          color: fff;
+        }
+        .baz {
+          width: 15px;
+        }
+        .bar .baz {
+          width: 30px;
+        } 
+    | HTML
+    pre
+      code.
+        &lt;p id=“foo”>
+          White text
+        &lt;/p>
+
+        &lt;div class=”bar”>
+          &lt;div class=”baz”>
+            Hello world!
+          &lt;/div>
+        &lt;/div>
+
+  section
+    h2 Not so common selectors
+
+    p Supported by <strong>IE 7+</strong>
+
+    pre
+      code.
+        input[type=”text”] { 
+          background: #eee;
+        }
+
+        .bar.baz {
+          color: #000;
+        }
+
+        li:not(.wide) {
+          width: 300px;
+        } 
+
+        ul.data > li {
+          border: 1px solid #ccc;
+        }
+
+        h2 + p {
+          font-size: 18px;
+        }
+
+  section
+    h2 Child and sibling selector
+
+    pre
+      code.
+        ul.data > li {
+          border: 1px solid #ccc;
+        }
+
+        h2 + p {
+          font-size: 18px;
+        }
+
+        &lt;ul class=”data”>
+          &lt;li> <!-- match -->
+          My friends:
+          &lt;ul>
+            &lt;li>Bob</li> <!-- not match --> 
+            &lt;li>Kate</li> <!-- not match --> 
+          &lt;ul>
+          &lt;li>
+        &lt;/ul>
+
+        &lt;h2>Title</h2>
+        &lt;p> <!-- match --> 
+        Lorem ipsum goes here
+        &lt;/p>
+        &lt;p> <!-- not match --> 
+        Another Lorem ipsum
+        &lt;/p>
+
+  section
+    h2 Types
+
+    table.big-table
+      tbody
+        tr
+          td By Id
+          td #id { display: block; }
+        tr
+          td By class
+          td .vcard { font-weight: bold; }
+        tr
+          td By tag
+          td div { border: 1px solid #fff; }
+
+        tr
+          td Universal
+          td * { line-height: 1.5 em; }
+
+        tr
+          td Child
+          td #toc > li { border-top: 1px dotted #ccc; }
+
+        tr
+          td Descendant
+          td .datatable td { width: 100px; }
+
+        tr
+          td By attribute
+          td input[type=”text”] { background: #fff; }
+
+        tr
+          td Adjacent sibling
+          td h1 + p { margin-top: 50px; }
+
+  section
+    h2 Selector priority
+
+    table
+      tbody
+        tr
+          td inline
+          td &lt;div style="display: block;"></div>
+        tr
+          td ID
+          td #menu { display: block; }
+        tr
+          td class
+          td .myclass { display: block; }
+        tr
+          td element
+          td div { display: block; }
+
+  section
+    h2 Priorities
+
+    p #sidebar ul li a.myclass:hover { … }
+
+  section
+    h2 Priorities
+
+    p .item { ... }
+
+    p ul li li li li li li li li { … }
+
+  section
+    h2 Priorities
+
+    p .item { ... }
+
+    p ul li li li li li li li li { … }
+
+  section
+    h2 Box model
+
+    ul
+      li width, height
+      li padding
+      li border
+      li margin
+
+  section
+    h2 Min and max
+
+    p min-width, min-height
+    p max-width, max-height
+
+  section
+    h2 display
+
+    p display: <strong>block | inline | inline-block | none</strong>
+
+    pre
+      code.
+        p, div, h1 {
+          display: block;
+        }
+
+        a, span, strong, em {
+          display: inline;
+        }
+
+        .hide {
+          display: none;
+        }
+
+  section
+    h2 display: block
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div>B&lt;/div>
+        &lt;div>C&lt;/div>
+
+  section
+    h2 display: inline-block
+    pre
+      code.
+        div {
+          display: inline-block;
+        }
+
+  section
+    h2 Position
+    p position: <strong>static | relative | absolute | fixed</strong>
+
+  section
+    h2 position: static
+    p The default
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div>B&lt;/div>
+        &lt;div>C&lt;/div>
+
+  section
+    h2 position: relative
+    p Relative coords to its default position
+
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div style=”
+          position: relative; 
+          left: 15px; 
+          top: 10px
+          ”>
+          B
+        &lt;/div>
+        &lt;div>C&lt;/div>
+
+  section
+    h2 position: absolute
+    p Absolute position from the <strong>first parent element that has a position other than static</strong>
+
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div style=”
+          position: absolute; 
+          left: 15px; 
+          top: 10px
+          ”>
+          B
+        &lt;/div>
+        &lt;div>C&lt;/div>
+
+  section
+    h2 position: fixed
+    p Fixed position relative to window, unaware of scrolling canvas
+
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div style=”
+          position: fixed; 
+          right: 10px; 
+          top: 10px
+          ”>
+          B
+        &lt;/div>
+        &lt;div>C&lt;/div>
+
+  section
+    h2 float
+    p <strong>float: left | right</strong>
+    p <strong>clear: left | right | both</strong>
+    p Takes the element out of the box model
+
+  section
+    h2 float: left
+
+    | NO FLOAT
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div>B&lt;/div>
+        &lt;div>C&lt;/div>
+    | FLOAT LEFT
+    pre
+      code.
+        &lt;div style=”float: left”>A&lt;/div>
+        &lt;div>B&lt;/div>
+        &lt;div>C&lt;/div>
+    | FLOAT AND CLEAR
+    pre
+      code.
+        &lt;div style=”float: left”>A&lt;/div>
+        &lt;div>B&lt;/div>
+        &lt;div style=”clear: left”>C&lt;/div>
+
+  section
+    h2 Float and clear
+
+  section
+    h2 Overflow
+    p overflow: <strong>visible | hidden | auto</strong>
+
+  section
+    h2 Overflow with floats
+    p overflow: hidden
+
+  section
+    h2 Shorcuts: font
+    p font: <strong>{font-style} {font-variant} {font-weight} {font-size/line-height} {font-family}</strong>
+
+    pre
+      code.
+        p {
+          font: italic bold 0.9em/1.5em verdana, serif;
+        }
+
+  section
+    h2 Shortcuts: border
+    p border: <strong>{border-width} {border-style} {border-color}</strong>
+
+    pre
+      code.
+        p {
+          border: 1px solid #0f0f0f;
+        }
+
+  section
+    h2 Color notation examples
+    p #f02
+    p #ff0022
+    p rgb(128, 15, 26)
+
+  section
+    h2 Shortcuts: margin y padding
+    p margin and padding:
+    p <strong>{all}</strong>
+    p <strong>{top / bottom} {left / right}</strong>
+    p <strong>{top} {right} {bottom} {left}</strong>
+    pre
+      code.
+        .foo {
+          margin: 4px 2px;
+          padding: 5px 3px 0 0;
+        }
+
+        .bar {
+          margin: 0 auto;
+          padding: 5px;
+        }
+
+  section
+    h2 Centering
+    p Horizontal centering
+
+    | Block element
+    pre
+      code.
+        .centered_block {
+          width: (anything but auto)
+          margin: 0 auto;
+        }
+    | Inline element
+    pre
+      code.
+        .parent {
+          text-align: center;
+        }
+
+        .children {
+          display: (inline|inline-block)
+        }
+
+  section
+    h2 Centering
+    p Vertical centering
+
+    | Inline elments
+    pre
+      code.
+        .inline_element {
+          line-height: (parent's height)
+        }
+    | Block elements
+    pre
+      code.
+        .parent {
+          text-align: center;
+        }
+
+        .children {
+          display: (inline|inline-block)
+        }
+
+  section
+    h2 Centering
+    p Vertical positioning
+
+    pre
+      code.
+        .parent {
+          position: relative;
+        }
+
+        .child {
+          position: absolute;
+          top: 50%;
+          margin-top: -(element's height)/2;
+        }
+
+  section
+    h2 Shortcuts: background
+    p background: <strong>{background-color}</strong>
+    p {background-image}
+    p {background-repeat}
+    p {background-position}
+
+    pre
+      code.
+        .loading {
+           background: transparent url('loading.gif') no-repeat 50% 50%;
+        }
+
+  section
+    h2 Shortcuts: lists
+    p list-style: {list-style-type} {list-style-position} {list-style-image}
+
+    pre
+      code.
+        li {
+          list-style: disc outside;
+        }
+
+  section
+    h2 Display and Visibility
+
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div style=”display: none”>B&lt;/div>
+        &lt;div>C&lt;/div>
+
+    pre
+      code.
+        &lt;div>A&lt;/div>
+        &lt;div style=”visibility: hidden”>B&lt;/div>
+        &lt;div>C&lt;/div>
+
+  section
+    h2 Link pseudo-classes
+    p :link, :hover, :active, :visited, :focus
+
+    pre
+      code.
+        a {
+          text-decoration: none;
+        }
+
+        a, a:hover, a:active, a:visited, a:focus {
+           color: #f00;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+  section
+    h2 first-child, last-child
+    p <strong>:first-child</strong>   IE7+
+    p <strong>:last-child</strong>    IE8+
+
+    pre
+      code.
+        ul.data li {
+          border-top: 1 px dotted #ccc;
+        }
+
+        ul.data li:first-child {
+           border-top: none;
+        }
+
+  section
+    h2 nth-child
+    p nth-child<strong>(even | odd | {formula})</strong>
+
+    pre
+      code.
+        ul.data li {
+          background: #aaa;
+        }
+
+        ul.data li:nth-child(even) {
+           background: #ccc;
+        }
+
+  section
+    h2 nth-child formula
+
+    pre
+      code.
+        ul.data li {
+          float: left;
+          height: 100px;
+        }
+
+        ul.data li:nth-child(3n + 1) {
+           clear: left;
+        }
+
+  section
+    h2 Pseudo-elements
+    p <strong>:after, :before, :first-letter, :first-line</strong>
+
+    pre
+      code.
+        a:after {
+          content: “ (mydomain.com” attr(href) “)”; 
+        }
+
+        .clearfix:after {
+                content: ".";
+                display: block;
+                clear: both;
+                height: 0;
+                visibility: hidden;
+        }
+
+  section
+    h2 Font degradation
+    p Font list to be used when available, from most to less preferred
+
+    pre
+      code.
+        body {
+          font: 13px/1.5 'Helvetica Neue', Arial, FreeSans, sans-serif;
+        }
+
+  section
+    h2 Serif vs Sans Serif
+
+    p Best readable results are:
+    ul
+      li screen: sans serif
+      li print: serif
+      li code: monospace
+
+  section
+    h2 Web-safe fonts
+
+  section
+    h2 Browser zoom
+    p Ctrl +, Ctrl -, Ctrl 0
+
+  section
+    h2 Pixel vs Percentage
+    ul
+      li YUI fonts default:
+      ul
+        li font: 13px
+        li line-height:16px
+      li Not needed anymore.
+
+  section
+    h2 sFIR
+    | CSS
+    pre
+      code.
+        #pageheader h1 {
+          width: 200px;
+          height: 100px;
+          text-indent: -10000px;
+          background: transparent 
+            url('zengarden.gif') no-repeat 0 0;
+        }
+    | HTML
+    pre
+      code.
+        &lt;div id=”pageheader”>
+          &lt;h1>CSS Zen Garden&lt;/h1>
+        &lt;/div>
+
+  section
+    h2 Image replacement
+
+    | CSS
+    pre
+      code.
+        #pageheader h1 {
+          width: 0px;
+          height: 0px;
+          padding-right:200px;
+          padding-top:100px;
+          overflow:hidden;
+          background: transparent 
+            url('zengarden.gif') no-repeat 0 0;
+        }
+
+  section
+    h2 Image replacement
+
+    | CSS
+    pre
+      code.
+        #pageheader h1 {
+          width: 200px;
+          height: 100px;
+          text-indent:100%;
+          whitespace:nowrap;
+          overflow:hidden;
+          background: transparent 
+            url('zengarden.gif') no-repeat 0 0;
+        }
+
+  section
+    h2 CSS sprites
+
+    p <strong>All the background images</strong> are combined
+    p They can be arranged <strong>vertically or horizontally</strong>, as the content increases
+
+  section
+    h2 Rounded borders (before)
+
+    p Option 1: CSS Images
+    pre
+      code.
+        &lt;div class="dialog">
+          &lt;div class="contents">
+            &lt;div class="t">
+            &lt;/div>
+            &lt;!-- Your content goes here -->
+          &lt;/div>
+          &lt;div class="b">
+          &lt;div>
+        &lt;/div>
+
+  section
+    h2 Rounded borders (before)
+    p Option 2: Javascript 
+    pre
+      code.
+        &lt;script type="text/javascript" src="niftycube.js">&lt;/script>
+        &lt;script>
+          Nifty("div#box", "big");
+        &lt;/script>
+
+  section
+    h2 CSS triangles
+
+  section
+    h2 CSS triangles
+
+  section(data-state="lab")
+    h2 Chrome console
+
+  section(data-state="lab")
+    h2 Lab: Icon Bar and Button Bar
+    p Create two button bars in CSS2
+
+  section
+    h2 CSS Reset
+    p Keeps the inconsistencies between browsers to a minimum.
+    p <strong>960gs, YUI-reset, Eric Meyer.</strong>
+
+  section
+    h2 Eric Meyer's reset.css
+    pre
+      code.
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+           v2.0 | 20110126
+           License: none (public domain)
+        */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+                display: block;
+        }
+        body {
+                line-height: 1;
+        }
+        ol, ul {
+                list-style: none;
+        }
+        blockquote, q {
+                quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+                content: '';
+                content: none;
+        }
+        table {
+                border-collapse: collapse;
+                border-spacing: 0;
+        }
+
+  section
+    h2 normalize.css
+    pre
+      code.
+        h1 {
+          font-size: 2em;
+          margin: 0.67em 0;
+        }
+
+        h2 {
+          font-size: 1.5em;
+          margin: 0.83em 0;
+        }
+
+        …
+
+        /*
+         * Addresses styling not present in IE7/8/9, S5, Chrome
+         */
+
+        abbr[title] {
+          border-bottom: 1px dotted;
+        }
+
+  section
+    h2 CSS frameworks
+    ul
+      li 960gs
+      li YAML
+      li OO-CSS
+      li YUI-grid
+
+  section
+    h2 960 Grid System
+
+  section
+    h2 Twitter Bootstrap
+
+    p 12 column grid
+    p Fluid is optional
+    p Responsive
+
+  section
+    h2 Example
+
+    pre
+      code.
+        &lt;div class="row">
+          &lt;div class="span2">Fee&lt;/div>
+          &lt;div class="span2">Fi&lt;/div>
+          &lt;div class="span2">Fo&lt;/div>
+          &lt;div class="span3 offset3">Fum!!&lt;/div>
+        &lt;/div>
+        &lt;div class="row">
+            &lt;div class="span4">This is a column&lt;/div>
+            &lt;div class="span7">This is a larger column&lt;/div>
+        &lt;/div>
+
+  section
+    h2 Example
+
+    pre
+      code.
+        &lt;div class="row">
+          &lt;div class="span2">Fee&lt;/div>
+          &lt;div class="span2">Fi&lt;/div>
+          &lt;div class="span2">Fo&lt;/div>
+          &lt;div class="span3 offset3">Fum!!&lt;/div>
+        &lt;/div>
+        &lt;div class="row">
+          &lt;div class="span4">This is a column&lt;/div>
+          &lt;div class="span7">This is a larger column&lt;/div>
+        &lt;/div>
+
+  section
+    h2 Responsive twist
+
+    pre
+      code.
+        &lt;link href=”bootstrap-responsive.css”>
+        &lt;div class="row-fluid">
+            &lt;div class="span2">Fee&lt;/div>
+            &lt;div class="span2">Fi&lt;/div>
+            &lt;div class="span2">Fo&lt;/div>
+            &lt;div class="span3 offset3">Fum!!&lt;/div>
+        &lt;/div>
+        &lt;div class="row-fluid">
+            &lt;div class="span4">This is a column&lt;/div>
+            &lt;div class="span7">This is a larger column&lt;/div>
+        &lt;/div>
+
+  section
+    h2 Responsive twist
+
+    p Several media queries implemented
+
+    p 0 – 480px – 768px – 980px - 1200px
+    
+  section(data-state="lab")
+    h2 Lab: Bootstrap 1
+    p Build a layout with Bootstrap
+
+  section
+    h2 Bootstrap toolkit
+    p Base CSS
+
+  section
+    h2 Bootstrap toolkit
+    p Reusable components
+
+  section
+    h2 Bootstrap toolkit
+    p Navigation bar
+
+  section
+    h2 Bootstrap toolkit
+    p Navigation components
+
+  section
+    h2 Bootstrap JS plugins
+
+  section
+    h2 Customization
+    p LESS library
+
+  section(data-state="lab")
+    h2 Lab: Bootstrap 2
+    p Experiment with the Bootstrap components
+
+  section
+    h2 print CSS
+    p Media-specific stylesheet
+
+    pre
+      code.
+        &lt;link rel="stylesheet" href="print.css" media="print" />
+
+  section
+    h2 Whitewashed backgrounds
+    p All background colors and images are <strong>removed</strong>
+    p <strong>Not all browsers are configured with the defaults</strong>. You should set your backgrounds to white anyway.
+    p Borders, images and font colors still apply.
+
+  section
+    h2 Fonts for printing
+    p font-size: 12pt is usually fine for printing
+    p Choose serif / sans serif
+    p Underline links
+    p Modify font color for best contrast with white background
+
+  section
+    h2 A note about color-blind users
+    p 1 in 12 people have some sort of color deficiency
+    p Underlining links on screen is usually considered good practice 
+
+  section
+    h2 Print link target
+
+    pre
+      code.
+        p a:after {
+          content: " ("attr(href)") ";
+          font-size: 10pt;
+        }
+        Go visit &lt;a href=”http://tumblr.com”>external link&lt;/a>
+
+        p a[href^="/"]:after {
+          content: " (http://myhost.com" attr(href) ") ";
+        }
+
+        Go visit &lt;a href=”/home.html”>local link&lt;/a>
+
+  section
+    h2 QR code
+    p Matrix barcode readable by camera phones.
+
+  section
+    h2 page-break-before
+    p page-break-before
+
+    pre
+      code.
+        #comments {
+          page-break-before: always;
+        }
+
+  section
+    h2 How to test
+    ul
+      li Temporarily <strong>remove the “media” attribute</strong>
+      li Use <strong>print preview</strong>
+      li <strong>Print to PDF</strong>
+
+  section(data-state="lab")
+    h2 Lab: print CSS
+    p Create a print stylesheet

@@ -590,3 +590,1052 @@ append slides
         tr
           | <td>iPhone</td>
           | <td>no</td> <td>no</td> <td>no</td> <td>yes</td> 
+
+  section
+    h2 Font features
+
+    style 
+      h3 {
+        font-family: permanentmarker;
+        color: black;
+      }
+    
+    h3 Test LYAWA
+
+    table.big-table
+      thead
+      tbody
+        tr
+          td Kerning off
+          td
+            h3 Test LYAWA
+        tr
+          td Kerning off
+          td
+            h3 Test LYAWA
+        tr
+          td Glyphs off
+          td
+            h3 styling character
+        tr
+          td Glyphs on
+          td
+            h3 styling character
+  section
+    h2 Flash Of Unstyled Text
+
+    p <strong>Firefox and Opera</strong> show the next font until it is downloaded
+
+    p <strong>IE and Webkit</strong> do not show anything
+
+  section
+    h2 Font repositories
+
+    p <strong>Squirrel font</strong>
+    p <strong>Google Web Fonts</strong>
+
+    img(src="assets/img/webfonts.png")
+
+  section
+    h2 Font-face icons
+
+    p Place icons inside a custom font
+
+    img(src="assets/img/fontface-icon.png")
+
+  section
+    h2 sFIR icons
+
+    h3 HTML
+    pre
+      code.
+        &lt;span class="icon icon-mail"></span>
+        &lt;span class="icon icon-star"></span>
+
+    h3 CSS
+    pre
+      code.
+        @font-face {
+          font-family: 'iconic';
+          ...
+        }
+
+        .icon  {  font-family: iconic;  }
+
+        .icon-mail:before {
+          content: '✉';
+        }
+
+  section
+    h2 Iconic fonts
+
+    p Iconic
+    p Fico
+    p Font Awesome
+    p Glyphicons
+    p Fontello: font packer
+
+  section
+    h2 Beware
+
+    p <strong>Font files sizes:</strong> You don't need everything!
+    p <strong>Arbitrary key-bindings</strong>
+    p <strong>Non-semantic content</strong> (aria-hidden)
+
+
+  section(data-state="lab")
+    h2 Lab: Fonts
+
+    p Change the fonts in the previous lab
+
+  section
+    mixin browserSupport('All', '7+', 'All', '6+', '9+')
+    h2 text-overflow
+
+    p text-overflow: <strong>ellipsis | clip</strong>
+
+    pre
+      code.
+        p {
+          width: 100px;
+          height: 20px;
+          text-overflow: ellipsis;
+          whitespace: nowrap;
+        }
+
+  section
+    mixin browserSupport('All', 'All', 'All', 'No', 'No')
+    h2 user-select
+
+    p user-select: <strong>all | text | none</strong>
+
+    pre
+      code.
+        body {
+          <strong>user-select: none;</strong>
+        }
+
+        p {
+          <strong>user-select: text;</strong>
+        }
+
+  section
+    mixin browserSupport('All', '4+', 'All', 'No', 'No')
+    h2 resize
+
+    p resize: <strong>none | both | horizontal | vertical</strong>
+
+    pre
+      code.
+        div {
+          <strong>resize: both;
+          overflow: scroll;</strong>
+        }
+        textarea {
+          <strong>resize: none;</strong>
+        }
+
+  section
+    mixin browserSupport('All', '4+', 'All', 'No', 'No')
+    h2 Transitions
+
+    p CSS Transitions allow property changes in CSS values to occur smoothly over a specified duration.
+
+    pre
+      code.
+        a { 
+          color: #000; 
+        }
+          
+        a:hover, a:focus { 
+          color:#f00; 
+        }
+
+  section
+    h2 transition
+
+    p {property} {duration} {timing function} {delay} <br>
+      | {transition1}, {transition2}, ... <br>
+
+    pre
+      code.
+        a { 
+          -webkit-transition:   color 1s ease-in,
+                    background .3s ease;
+          -moz-transition:  color 1s ease-in,
+                    background .3s ease;  
+          transition:     color 1s ease-in,
+                    background .3s ease;    
+        }
+
+  section
+    h2 all
+
+    pre
+      code.
+        a { 
+          -webkit-transition: all .3s linear;
+          -moz-transition: all .3s linear;  
+          transition: all .3s linear;    
+        }
+
+        a:hover, a:focus {
+          color: #030;
+          background: #690;
+        }  
+
+  section
+    h2 transition-timing-function
+
+    p default | linear | ease | <strong>ease-in | ease-out | ease-in-out</strong> | cubic-bezier(x1, y1, x2, y2)
+
+    img(src="assets/img/transition-timing-function.png")
+
+  section
+    h2 transition-delay
+
+    p If two time lapses are given, the second one corresponds to the delay
+
+    pre
+      code.
+        a { 
+          -webkit-transition: color .2s ease-in .5s;    
+          -moz-transition: color .2s ease-in .5s;    
+          transition: color .2s ease-in .5s;    
+        } 
+
+  section
+    h2 Animatable properties
+
+    p background, border, position, color, font, size,
+    p margin, padding, opacity, <strong>transformation</strong>,
+    p z-index, zoom
+
+  section
+    h2 CSS transition or Javascript animation?
+
+    p CSS Transitions
+    ul
+      li Declared in the CSS
+      li Simpler syntax
+      li Transitions are faster
+      li The animation can be transparently interrupted
+    p jQuery animate()
+    ul
+      li Not limited to simple animations
+      li Support for all browsers
+
+  section
+    mixin browserSupport('All', '3.5+', 'All', '9+', '10.5+')
+    h2 transformation
+    p transform: <strong>rotate | scale | skew | translate</strong>
+
+  section
+    h2 rotate
+    p transform: <strong>rotate(degrees | radians)</strong>
+
+    pre
+      code.
+        .block {
+          -webkit-transform: rotate(20deg); 
+          -moz-transform: rotate(20deg);
+          transform: rotate(20deg);
+        } 
+
+    img(src="assets/img/transformation-rotate.png")
+
+  section
+    h2 transform-origin
+
+    p transform-origin: 
+    p <strong>[ {offset} | left | center | right ]</strong>
+    p <strong>[ {offset} | top | center | bottom ]</strong>
+
+    pre
+      code.
+        .center {
+          -webkit-transform: rotate(20deg); 
+          -webkit-transform-origin: 0 100%;
+          -moz-transform: rotate(20deg);
+          -moz-transform-origin: 0 100%;
+        } 
+
+    img(src="assets/img/transformation-origin.png")
+
+  section
+    h2 transform-origin (II)
+
+    p <strong>(0, 0)</strong> top left
+    p <strong>(100%, 100%)</strong> bottom right
+    p <strong>(50%, 50%)</strong> center center <strong>(default)</strong> negative values are allowed
+
+  section
+    h2 translate
+
+    p transform: <strong>translate(x,y) | translatex(x) | translatey(y)</strong>
+
+    pre
+      code.
+        .block {
+          -moz-transform: translate(20px, 50px);
+          -webkit-transform: translate(20px, 50px); 
+          transform: translate(20px, 50px); 
+        } 
+
+    img(src="assets/img/transformation-translate.png")
+
+  section
+    h2 Combinations
+
+    img(src="assets/img/transformation-combinations.png")
+
+  section
+    h2 IE < 9 rotation
+
+    p Valid values:<strong>0, 1, 2 or 3</strong> which will rotate the element 0, 90, 180 or 270 degrees respectively
+
+    pre
+      code.
+        .ierotate {
+          -webkit-transform: rotate(-90deg); 
+          -moz-transform: rotate(-90deg);
+          transform: rotate(-90deg);  
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+
+  section
+    h2 scale
+
+    p transform:<strong>scale(x, y) | scalex(x) | scaley(y)</strong>
+
+    ul
+      li <strong>&lt;1:</strong> zoom in
+      li <strong>&gt;1:</strong> zoom out
+      li <strong>negative value:</strong> flip
+
+    pre
+      code.
+        .block {
+          -webkit-transform: scale(2); 
+          -moz-transform: scale(2);
+          transform: scale(2);
+        }
+    img(src="assets/img/transformation-scale.png")
+
+  section
+    h2 skew
+
+    p transform:<strong>skew(x, y) | skewx(x) | skewy(y)</strong>
+
+    pre
+      code.
+        .skewblock {
+          -webkit-transform: skew(-20deg, 0); 
+          -moz-transform: skew(-20deg, 0);
+          transform: skew(-20deg, 0);
+        } 
+    img(src="assets/img/transformation-skew.png")
+
+  section
+    h2 3D transforms
+
+    p Supported only in Webkit under Mac, iPhone 2.0+ and Android 3
+
+    pre
+      code.
+        translate3d(x, y, z), translateZ(z)
+        scale3d(x, y, z), scaleZ(z)
+        rotate3d(x, y, z, angle)
+        perspective(p)
+        matrix3d(m)
+    img(src="assets/img/transformation-3d.png")
+
+  section
+    h2 Drawing with CSS
+
+    img(src="assets/img/twitter-css.png")
+    p 300 lines of CSS
+    img(src="assets/img/android-css.png")
+    p 70 lines of CSS
+
+  section(data-state="lab")
+    h2 Lab: Transitions
+
+    p Add CSS transitions to the proposed page
+
+  section
+    h2 Important notice
+
+    p These techniques should be use moderately
+
+  section
+    mixin browserSupport('All', '5+', '4+', '10+', '12+')
+    h2 animation
+
+    pre
+      code.
+        @-webkit-keyframes bounce {
+          from {
+            left: 0px;
+          }
+          to {
+            left: 200px;
+          }
+        }
+
+        div {
+          -webkit-animation-name: bounce;
+          -webkit-animation-duration: 4s;
+          -webkit-animation-iteration-count: 10;
+          -webkit-animation-direction: alternate;
+          -webkit-animation-timing-function: ease-in;
+        }
+    img(src="assets/img/animation.png")
+
+  section
+    h2 webkit-animation-direction
+
+    p -webkit-animation-direction: <strong>normal | alternate</strong>
+
+  section
+    h2 animation-frames
+
+    pre
+      code.
+        @-webkit-keyframes pulse {
+         0% {
+           background-color: red;
+           -webkit-transform: scale(1.0) rotate(0deg);
+         }
+         33% {
+           background-color: blue;
+           -webkit-transform: scale(1.1) rotate(-5deg);
+         }
+         67% {
+           background-color: green;
+           -webkit-transform: scale(1.1) rotate(5deg);
+         }
+         100% {
+           background-color: red;
+           -webkit-transform: scale(1.0) rotate(0deg);
+         }
+        }
+    img(src="assets/img/animation-frames.png")
+
+  section(data-state="lab")
+    h2 Lab: Animations
+
+    p Reproduce the Mac buttons with CSS3 animations
+
+  section
+    mixin browserSupport('All', 'All', 'All', '8+', 'All')
+    h2 display: table
+
+    pre
+      code.
+        #main { 
+          display: table; 
+          border-collapse: collapse; 
+        } 
+
+        #nav { 
+          display: table-cell; 
+          width: 180px; 
+        } 
+
+        #content { 
+          display: table-cell; 
+          width: 380px; 
+          padding-left: 10px; 
+        }
+
+    pre
+      code.
+        &lt;div id="main"> 
+          &lt;div id="nav"> 
+            navigation column content… 
+          &lt;/div>
+          &lt;div id="content">
+            main article content… 
+          &lt;/div>
+        &lt;/div>
+    img(src="assets/img/display-table.png")
+
+  section
+    h2 display table values
+
+    p <strong>table | table-row | table-cell |</strong>
+    p table-row-group (tbody) | table-header-group (thead) | table-footer-group (tfoot) | table-caption | table-column | table-column-group
+
+  section
+    h2 Vertical align works!
+
+    pre
+      code.
+        .center_me {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+  section
+    h2 Multiple column layout
+
+    pre
+      code.
+        #content {
+          -moz-column-count: 3;
+          -moz-column-gap: 20px;
+          -webkit-column-count: 3;
+          -webkit-column-gap: 20px;
+          column-count: 3;
+          column-gap: 20px;
+        }
+    img(src="assets/img/multiple-layout.png")
+
+  section
+    h2 Rules of thumb
+
+    p <strong>12 words</strong> per line
+    p Around <strong>50-60</strong> to at most <strong>75 characters</strong>
+    p Otherwise the length makes it difficult to get an idea of <strong>where the line starts and ends</strong>
+
+  section(data-state="lab")
+    h2 Lab: Multicolumn
+    p Displaying text in multiple columns
+
+  section
+    h2 Mobile devices
+    p &lt;link rel="stylesheet" media="handheld" />
+    img(src="assets/img/mobile-devices.png")
+
+  section
+    mixin browserSupport('All', '3.5+', 'All', '9+', '9.5+')
+    h2 New media queries
+
+    pre
+      code.
+        @media only screen and (max-width: 600px) {
+          .class {
+            background: #ccc;
+          }
+        }
+
+        &lt;link rel="stylesheet" href="small.css" 
+          media="only screen and (max-width: 600px)" />
+
+  section
+    h2 New mobile devices
+
+    pre
+      code.
+        &lt;!-- iPhone -->
+        @media only screen and (max-device-width: 480px) { … }
+
+        &lt;!-- Android -->
+        @media only screen and (max-device-width: 800px) { … }
+
+        &lt;!-- iPad in landscape orientation -->
+        @media only screen and (device-width: 768px) and (orientation: landscape) { … }
+
+        &lt;!-- iPhone 4 -->
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) { … }
+
+        &lt;!-- Styles for 800px and up --> 
+        @media only screen and (min-width: 800px) { … }
+
+  section
+    h2 Initial size
+
+    p Disable automatic resizing
+
+    pre
+      code.
+        &lt;meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        body {
+          -webkit-text-size-adjust: 100%;
+        }
+
+  section(data-state="lab")
+    h2 Lab: Media Queries
+    p Use media queries with CSS
+
+  section
+    h2 CSS preprocessors
+
+    pre
+      code.
+        @redBlood: #dde0514;
+        @size: 300px;
+
+        .class {
+          background-color: @redBlood;
+          width: @size;
+        }
+
+  section
+    h2 LESS
+    p How to (with node)
+
+    pre
+      code.
+        //Installing
+        npm install less
+
+        // Compile to CSS
+        lessc styles.less styles.css
+
+        // Client-side compiling
+
+        &lt;link rel="stylesheet/less" type="text/css" href="styles.less">
+
+        &lt;script src="less.js" type="text/javascript"></script>
+
+  section
+    h2 LESS
+    p Operations and default functions
+
+    pre
+      code.
+        @moreRed: @color + #A00;
+
+        @oneHalf : @size / 2;
+        @shorter : @length – 3em;
+
+        // Color functions
+        mix(@color1, @color2)
+        darken(@color, 20%)
+
+        // Math functions:
+        floor(@size / 2);
+
+  section
+    h2 LESS
+    p Mixins and parametric mixins
+
+    pre
+      code.
+        .stuff {
+          background-color: @redBlood;
+          width: @size;
+        }
+
+        .coolShadow(@blur) {
+          -moz-box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
+          -webkit-box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
+          box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
+        }
+
+        #footer {
+          .stuff;
+          .coolShadow(3px);
+        }
+
+  section
+    h2 LESS
+    p Nesting
+
+    pre
+      code.
+        .content {
+          font-size: 14px;
+          ul {
+            list-style: none;
+            & > li {
+              display: block;
+            }
+          }
+        }
+
+        .content {
+          font-size: 14px; 
+        }
+        .content ul {
+          list-style: none; 
+        }
+
+        .content ul > li {
+          display: block; 
+        }
+
+  section
+    h2 LESS
+    p Guarded mixins
+
+    pre
+      code.
+        .heading(@bgColor) when (lightness(@bgColor) < 50%) {
+          color: white;
+        }
+
+        .heading(@bgColor) when (lightness(@bgColor) >= 50%) {
+          color: black;
+        }
+
+  section
+    h2 3L ?
+    p SASS framework
+
+    pre
+      code.
+        @import “compass”;
+
+        // CSS3 mixins
+        .container {
+          @include background-image(linear-gradient(#FFF, #000));
+
+          @include transition-property(color);
+          @include transition-duration(.5s)
+          …
+        }
+
+        // Sprite generation
+        $icons: sprite-map("icons/*.png");
+        .links{
+          background: $icons;
+        }
+
+  section
+    h2 More syntatic sugar
+
+    | SASS:
+    pre
+      code.
+        @import “compass”;
+
+        $myBlue = #12F;
+
+        @mixin .my-background($color) {
+          background-color: $color + #100;
+        }
+
+        .class {
+          @include .my-background($myBlue)
+          div {
+            width: 100px; 
+          }
+        }
+    | STYLUS
+    pre
+      code.
+        @import “layout.styl”;
+
+        @import “layout.styl”;
+
+        myBlue = #12F
+
+        my-background(color) 
+          background-color: color + #100
+
+        .class 
+          my-background(myBlue)
+          div
+            width: 100px  
+
+  section(data-state="lab")
+    h2 Lab: LESS
+    p Refactor a CSS stylesheet
+
+    
+  section
+    h2 CSS preprocessors
+
+    pre
+      code.
+        $redBlood: #dde0514;
+        $size: 300px;
+
+        .class {
+          background-color: $redBlood;
+          width: $size;
+        }
+
+  section
+    h2 SASS
+    p How to (with Ruby)
+
+    pre
+      code.
+        // Compile to CSS
+        sass styles.scss styles.css
+
+        // Watch your SCSS
+        sass –watch styles.scss
+
+  section
+    h2 SASS
+    p Operations and default functions
+
+    pre
+      code.
+        $moreRed = $color + #A00;
+
+        $oneHalf : $size / 2;
+        $shorter : $length – 3em;
+
+        // Color functions
+        mix($color1, $color2)
+        darken($color, 20%)
+
+        // Math functions:
+        floor($size / 2);
+
+  section
+    h2 SASS
+    p Operations and default functions
+
+    pre
+      code.
+        @mixin stuff {
+          background-color: $redBlood;
+          width: $size;
+        }
+
+        @mixin coolShadow($blur) {
+          -moz-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+          -webkit-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+          box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+        }
+
+        #footer {
+          @include stuff;
+          @include coolShadow(3px);
+        }
+
+  section
+    h2 SASS
+    p Custom functions
+
+    pre
+      code.
+        @function moreGreen($color) {
+          @return $color + #030;
+        }
+
+
+        #footer {
+          background-color: moreGreen(#576);
+        }
+
+  section
+    h2 SASS
+    p Nesting
+
+    pre
+      code.
+        .content {
+          font-size: 14px;
+          ul {
+            list-style: none;
+            & > li {
+              display: block;
+            }
+          }
+        }
+
+        .content {
+          font-size: 14px; 
+        }
+        .content ul {
+          list-style: none; 
+        }
+
+        .content ul > li {
+          display: block; 
+        }
+
+  section
+    h2 SASS
+    p Namespaces
+
+    pre
+      code.
+        .content {
+          background: {
+            color: white;
+            image: url('nice-bg.png');
+            size: cover;
+          }
+        }
+
+        .content {
+          background-color: white;
+          background-image: url("nice-bg.png");
+          background-size: cover; 
+        }
+
+  section
+    h2 SASS
+    p Class extension
+
+    pre
+      code.
+        .button {
+          width: 20px;
+          border-radius: 2px;
+        }
+
+        .navbar .button {
+          color: white;
+          ...
+        }
+
+        .big-button {
+          @extend .button;
+          width: 30px;
+        }
+
+        .button, .big-button {
+          width: 20px;
+          border-radius: 2px; 
+        }
+
+        .navbar .button, .navbar .big-button {
+          color: white;
+        }
+
+        .big-button {
+          width: 30px; 
+        }
+
+  section
+    h2 SASS
+    p Idented syntax
+
+    pre
+      code.
+        @mixin table-base {
+          th {
+            text-align: center;
+            font-weight: bold;
+          }
+          td, th {padding: 2px}
+        }
+
+        @mixin left($dist) {
+          float: left;
+          margin-left: $dist;
+        }
+
+        #data {
+          @include left(10px);
+          @include table-base;
+        }
+
+        =table-base
+          th
+            text-align: center
+            font-weight: bold
+          td, th
+            padding: 2px
+
+        =left($dist)
+          float: left
+          margin-left: $dist
+
+        #data
+          +left(10px)
+          +table-base
+
+  section
+    h2 SASS
+    p Control directives
+
+    pre
+      code.
+        .class {
+          @if $type == ocean {
+            color: blue;
+          }
+        }
+
+        @for $i from 1 through $number {
+          .item-\#{$i} {
+            width: 500px/$i;
+          }
+        }
+
+  section
+    h2 SASS
+    p SASS framework
+
+    pre
+      code.
+        @import “compass”;
+
+        // CSS3 mixins
+        .container {
+          @include background-image(linear-gradient(#FFF, #000));
+
+          @include transition-property(color);
+          @include transition-duration(.5s)
+          …
+        }
+
+        // Sprite generation
+        $icons: sprite-map("icons/*.png");
+        .links{
+          background: $icons;
+        }
+
+
+  section
+    h2 SASS
+    p SASS framework
+
+    pre
+      code.
+        @import “compass”;
+
+        // Text replacement
+        li.hidden {
+          @import replace-text($image);
+        }
+
+        // Image dimension
+        div {
+          width: image-width($image) * 1.2;
+        }
+
+        // Sticky footer
+        @import sticky-footer(60px, “#my_footer”);
+
+  section
+    h2 More syntactic sugar
+    p SASS framework
+
+    | LESS:
+    pre
+      code.
+        @import “bootstrap.less”;
+
+        @myBlue = #12F;
+
+        .my-background(@color) {
+          background-color: @color + #100;
+        }
+
+        .class {
+          .my-background(@myBlue)
+          div {
+            width: 100px; 
+          }
+
+    | STYLUS:
+    pre
+      code.
+        @import “layout.styl”;
+
+        myBlue = #12F
+
+        my-background(color) 
+          background-color: color + #100
+
+        .class 
+          my-background(myBlue)
+          div
+            width: 100px  
+
+  section(data-state="lab")
+    h2 Lab: Sass
+      p Refactor a CSS stylesheet with Compass
