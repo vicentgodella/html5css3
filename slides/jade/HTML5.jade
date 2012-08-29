@@ -919,3 +919,158 @@ append slides
         &lt;footer>
           &lt;p>My fancy footer&lt;/p>
         &lt;/footer>
+
+
+  section
+    h2 Fat footer example
+
+    pre
+      code.
+        &lt;footer>
+          &lt;nav>
+            &lt;h1>Navigation&lt;h1>
+            &lt;ul>
+              &lt;li>&lt;a href="/">Home&lt;/a>&lt;/li> 
+              &lt;li>&lt;a href="/standards/">Standards&lt;/a>&lt;/li> 
+              &lt;li>&lt;a href="/participate/">Participate&lt;/a>&lt;/li> 
+              &lt;li>&lt;a href="/membership">Membership&lt;/a>&lt;/li> 
+              &lt;li>&lt;a href="/Consortium/">About W3C&lt;/a>&lt;/li> 
+            &lt;/ul>
+          &lt;/nav>
+          &lt;nav>
+            &lt;h1>Contact W3C&lt;/h1>
+            &lt;ul>
+              &lt;li>&lt;a href="/Consortium/contact">Contact&lt;/a>&lt;/li>
+              &lt;li>&lt;a href="/Help/">Help and FAQ&lt;/a>&lt;/li>
+              &lt;li>&lt;a href="/Consortium/sup">Donate&lt;/a>&lt;/li>
+              &lt;li>&lt;a href="/Consortium/siteindex">Site Map&lt;/a>&lt;/li> 
+            &lt;/ul>
+          &lt;/nav>
+        &lt;section>
+          &lt;h1>W3C Updates&lt;/h1>
+          &lt;ul>
+            &lt;li>&lt;a href="http://twitter.com/W3C">Twitter&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="http://identi.ca/w3c">Identi.ca&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/section>
+        &lt;p class="copyright">Copyright © 2009 W3C&lt;/p>
+        &lt;/footer> 
+
+  section
+    h2 Example
+    pre
+      code.
+        &lt;body>
+          &lt;header>
+            &lt;hgroup>
+              &lt;h1>Page title&lt;/h1>
+              &lt;h2>Page subtitle&lt;/h2>
+            &lt;/hgroup>
+          &lt;/header>
+
+          &lt;nav>
+           &lt;ul>
+             Navigation...
+           &lt;/ul>
+          &lt;/nav>
+
+        &lt;aside>
+           Top links...
+          &lt;/aside>
+
+        &lt;section>
+         &lt;article>
+           &lt;header>
+             &lt;h1>Title&lt;/h1>
+           &lt;/header>
+           &lt;p>
+             Content...
+           &lt;/p>
+         &lt;/article>
+         &lt;article>
+           ...
+         &lt;/article>
+        &lt;/section>
+
+        &lt;footer>
+         Copyright ©2010
+        &lt;/footer>
+      &lt;/body>
+
+  section(data-state="lab")
+    h2 Lab: Semantics
+    p Use semantic tags in the proposed page
+
+  section
+    h2 HTML5 Boilerplate
+    p HTML5 ready, including the new tags
+    p Many best practices out-of-the-box
+    p Progressive enhancement
+    p Mobile optimizations
+    p Modernizr already built-in etc, etc, etc...
+
+  section(date-state="lab")
+    h2 Lab: HTML5 Boilerplate
+    p Review HTML5 boilerplate
+
+  section
+    mixin browserSupport('All', '3.5+', '4+', '9+', '9.5+')
+    h2 audio
+    ul
+      li IE < 9: <bgsound>
+      li Safari: mp3 and mp4
+      li Firefox 3.5+: ogg and wav
+      li Chrome: virtually anything
+
+  section
+    h2 audio
+    pre
+      code.
+        &lt;audio id="audio" src="sound.mp3" controls>&lt;/audio>
+        document.getElementById("audio").muted = false;
+
+  section
+    mixin browserSupport('All', '3.5+', '4+', '9+', '10.5+')
+    h2 video
+    pre
+      code.
+        &lt;video id="video" src="movie.webm" autoplay controls>&lt;/video>
+        document.getElementById("video").play();
+
+  section
+    h2 video
+    p YouTube: H.264 and WebM
+    p Vimeo: H.264
+
+  section
+    h2 Browser support
+    p Over 50% total browser support
+
+  section
+    h2 video without Javascript
+    pre
+      code.
+        &lt;video controls="controls" poster="./poster.jpg" width="640" height="360">
+        &lt;source src="big_buck_bunny.mp4" type="video/mp4" />
+        &lt;source src="big_buck_bunny.webm" type="video/webm" />
+        &lt;source src="big_buck_bunny.ogv" type="video/ogg" />
+
+        &lt;object type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf" width="640" height="360">
+        &lt;param name="movie" value="flowplayer-3.2.1.swf" />
+        &lt;param name="allowFullScreen" value="true" />
+        &lt;param name="wmode" value="transparent" />
+        &lt;param name="flashVars" value="config={'playlist':['./poster.jpg',{'url':'big_buck_bunny.mp4','autoPlay':false}]}" />
+        &lt;img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />
+        &lt;/object>
+        &lt;/video>
+
+  section
+    h2 video frameworks
+    p Projekktor, FlareVideo, Video JS, JW Player, Kaltura / Adobe, html5media, jMediaelement, OIPlayer, Hvideo, jQuery Video, Video for Everybody, Open Video Player, HTML5 Video Player, mediaelement.js, SublimeVideo, Uppod.HTML5, LeanBack, Mooplay, jPlayer, OSM Player
+
+  section(data-state="lab")
+    h2 Lab: embed video
+    p Embed a video into a web page
+
+  section
+    h2 Keep sharp

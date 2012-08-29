@@ -1,0 +1,53 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title Performance
+
+append slides
+  section
+    h1 Performance
+
+  section
+    h2 Performance
+    p <strong>.1 to 1 sec:</strong> no feedback necessary
+    p <strong>1 to 10 sec:</strong> add some feedback (spinners)
+    p <strong>> 10 sec:</strong> the user is no longer here
+
+  section
+    h2 Impact on revenue
+    p Google: +500 ms <strong>-20% traffic</strong>
+    p Yahoo: +400 ms    <strong>-5-9% full-page traffic</strong>
+    p Amazon: +100 ms <strong>-1% sales</strong>
+    p Firefox: +2 seg   <strong>-15% downloads</strong>
+
+  section
+    h2 Impact on PageRank
+    p Starting 2010, 
+    p <strong>Google has added page performance</strong> to the PageRank algorithm 
+
+  section
+    h2 Best thing for performance
+    p Aim for simplicity
+
+  section
+    h2 image
+
+  section
+    h2 Improve performance
+    p by following 14 rules by Steve Souders
+
+  section
+    h2 Pre-process javascript and CSS
+    ul
+      li Rule 1 - Make Fewer HTTP Requests
+      li Rule 2 - Use a Content Delivery Network
+      li Rule 4 - Gzip Components
+      li Rule 10 - Minify JavaScript
+
+  section
+    h2 Content-delivery network
+    p Use a third-party CDN
+https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
+    p Create your own CDN

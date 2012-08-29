@@ -1,0 +1,283 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title JavaScript
+
+append slides
+  section
+    h1 JavaScript
+
+  section
+    h2 Client-Side Storage
+    ul
+      li <storng>IndexedDB API:</strong> Structured data storage
+      li <strong>LocalStorage:</strong> Key-value storage
+      li <strong>File API:</strong> Manipulate local files from the browser
+
+  section
+    mixin browserSupport('19+', '12+', 'No', '10+', 'No')
+    h2 IndexedDB
+    ul
+      li <strong>Unlimited storage</strong>
+      li <strong>Query capabilities</strong>
+      li <strong>Very limited</strong> browser support
+
+  section
+    mixin browserSupport('19+', '12+', 'No', '10+', 'No')
+    h2 IndexedDB
+    pre
+      code.
+        myDatabase.indexedDB.addTodo = function(friendText) {
+          var db = myDatabase.indexedDB.db;
+          var trans = db.transaction(["friend"], IDBTransaction.READ_WRITE, 0);
+          var store = trans.objectStore("friend");
+          var request = store.put({
+            "text": friendText,
+            "timeStamp" : new Date().getTime()
+          });
+
+          request.onsuccess = function(e) {
+            // Re-render all the friend's
+            myDatabase.indexedDB.getAllTodoItems();
+          };
+
+          request.onerror = function(e) {
+            console.log(e.value);
+          };
+        };
+
+  section
+    h2 IDBWrapper.js
+    pre
+      code.
+        var myDB = new IDBStore({
+          dbName: 'myDB',
+          storeName: 'friend'
+        });
+
+        //Add a new entry
+        var onsuccess = function (id) {
+          …
+        }
+
+        var onerror = function (id) {
+          ...
+        }
+
+        friends.put({ name: 'James' }, onsuccess, onerror)
+
+  section
+    h2 IDBWrapper.js
+    p Methods
+    pre
+      code.
+        // Add new entry
+        friends.put(friend, onsuccess, onerror)
+
+        // Query an entry
+        friends.get(friendId, onsuccess, onerror)
+
+        // Updating an entry
+        friends.update(updatedFriend, onsuccess, onerror)
+
+        // Get all entries
+        friends.getAll(onsuccess, onerror)
+
+        // Delete an entry
+        friends.remove(friendId, onsuccess, onerror)
+
+  section
+    mixin browserSupport('13+', '3.6+', '5.1*', '10?', '11.1+')
+    h2 File APIs
+    p Get file attributes
+
+    pre
+      code.
+        &lt;input type="file" id="yourFile" name="file"/>
+        &lt;output id="list">&lt;/output>
+
+        &lt;script>
+          function handleFileSelect(evt) {
+            var file = evt.target.files[0];
+
+            $('<p>' + file.name + ' - ' + file.size + ' bytes.' + '</p>').appendTo('#list');
+          }
+
+          $('#yourFile').on('change', handleFileSelect);
+        &lt;/script>
+
+  section
+    h2 FileReader
+    p Manipulate file contents
+
+    pre
+      code.
+          function handleFileSelect(evt) {
+            var file = evt.target.files[0],
+              reader = new FileReader();
+
+            reader.onload = function (e) {
+              $('<img>')
+            .attr('src', e.target.result)
+            .attr('title', file.name)
+            .appendTo('#list');
+            }
+
+            reader.readAsDataURL(file); // Read in the image file as a data URL.
+          }
+
+  section
+    mixin browserSupport('4+', '3.5+', '4+', '8+', '10.5+')
+    h2 Web Storage
+    ul
+      li <strong>Great</strong> browser support (plus fallbacks)
+      li <strong>localStorage</strong>: persists contents
+      li <strong>sessionStorage</strong>: contents are lost after browser session
+
+  section
+    h2 localStorage
+    p Global object used to store strings
+
+    pre
+      code.
+        // Set data
+        localStorage.setItem("key", "value");
+
+        // Get data 
+        localStorage.getItem("key"); // => “value”
+
+        // Remove data
+        localStorage.removeData(“key”);
+
+        // Number of entries
+        localStorage.length
+
+  section
+    h2 store.js
+    ul
+      li <strong>JSON datatypes</strong> (objects, arrays, boolean...)
+      li <strong>Default values</strong>
+      li <strong>Fallback</strong> to 
+      ul
+        li <strong>globalStorage</strong> for older Firefox (2+)
+        li <strong>userData</strong> for older IE (5+)
+
+
+  section
+    h2 store.js
+    pre
+      code.
+        var myStuff = new Store(“myStuff”);
+
+        // Set data
+        myStuff.set('key', value')
+
+        // Get data 
+        myStuff.get('key')
+
+        // Remove data
+        myStuff.remove('key');
+
+
+  section(data-state="lab")
+    h2 Lab: localstorage
+    p Use the store.js library
+
+  section
+    mixin browserSupport('4+', '3+', '4+', '10+', '10.6+')
+    h2 Appcache
+    p Offline web applications
+
+    pre
+      code.
+        &lt;!DOCTYPE HTML>
+        &lt;html manifest="/cache.manifest">
+
+        ...
+
+        &lt;/html>
+  section
+    h2 Cache.manifest
+    pre
+      code.
+        CACHE MANIFEST
+        # Remember to update the version number!
+        # version 2.3.1 
+
+        # Explicit cache section (no wildcard allowed)
+        CACHE:
+        /css/style.css
+        /img/funny_image.png
+
+        # These will never be cached (folders and wildcards are allowed)
+        NETWORK:
+        /js
+        /status.html
+
+        # If A is not online, serve B
+        FALLBACK:
+        /account /offline.HTML
+
+  section
+    h2 Process
+
+  section
+    h2 The AppCache object
+    ul
+      li applicationCache.status
+      ul
+        li Return the current status
+      li applicationCache.update()
+      ul
+        li Update the manifest, download the files but do not replace them yet
+      li applicationCache.swapCache()
+      ul
+        li Replace the cached files with new ones
+
+  section(data-state="lab")
+    h2 Lab: AppCache
+    p Configure a web app to work offline
+
+  section
+    mixin browserSupport('4+', '3.5+', '5+', '9+', '10.6+')
+    h2 Geolocation
+    p Where are we?
+
+    pre
+      code.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        } else {
+            alert('Get a fancier browser!');
+        }
+
+  section
+    mixin browserSupport('4+', '3.5+', '5+', '9+', '10.6+')
+    h2 getCurrentPosition
+    pre
+      code.
+        var getLocation = function(callback) {
+          var errorCallback = function(e) {
+            e && console.info(e.message);
+            // use a default location
+            callback({
+              coords: { latitude: 0.5, longitude: 0.5 }
+            });
+          };
+          if (navigator.geolocation) {  
+            navigator.geolocation.getCurrentPosition(callback, errorCallback);
+          } else {
+            errorCallback();
+          }
+        }
+
+  section
+    h2 Watch position
+
+    pre
+      code.
+        navigator.geolocation.watchPosition(success, error, options)
+
+        navigator.geolocation.clearWatch(watchId)

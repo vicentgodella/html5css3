@@ -1,0 +1,338 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title Browser and SEO
+
+append slides
+  section
+    h1 Browser and SEO
+
+  section
+    h2 Browser market share
+
+  section
+    h2 Chrome
+
+  section
+    h2 Internet Explorer
+
+  section
+    h2 Firefox
+
+  section
+    h2 Pay attention to your audience
+    p Stats for jquery.com (29/3/2009)
+
+  section
+    h2 IE6 on the way out
+    p Twitter, Digg, 37signals, YouTube, Google Apps, Apple, Facebook
+
+  section
+    h2 Internet Explorer 6
+
+  section
+    h2 Hacks for IE
+
+  section
+    h2 IE-specific stylesheets
+    pre
+      code.
+        &lt;!--[if IE 7]>
+        &lt;link type="text/css" href="/ie_hacks7.css"  rel="stylesheet">
+        &lt;![endif]-->
+
+        &lt;!--[if lte IE 6]>
+        &lt;link type="text/css" href="/ie_hacks6.css"  rel="stylesheet">
+        &lt;![endif]-->
+
+  section
+    h2 IE-specific selectors
+    p Property prefix hacks
+
+    pre
+      code.
+        _ - £ ¬ ¦                   /* IE 6       */
+        .mydiv { _color: blue; }      /* IE 6       */
+        ! $ & * ( ) = % + @ , . / ` [ ] # ~ ? : < > |   /* IE 6/7    */
+        .mydiv { #color: blue; }        /* IE 6/7    */
+    p @media hacks
+    pre
+      code.
+        @media screen\9 { }                /* IE 6/7   */
+        @media \0screen\,screen\9 {}               /* IE 6/7/8 */
+        @media \0screen { }                /* IE 8      */
+        @media screen\0 { }                  /* IE 8/9   */
+
+  section
+    h2 Conditional classnames
+
+    pre
+      code.
+        &lt;!--[if lt IE 7 ]> <html class="ie6"> &lt;![endif]-->
+        &lt;!--[if IE 7 ]> &lt;html class="ie7"> &lt;![endif]-->
+        &lt;!--[if (gt IE 9)|!(IE)]>&lt;!--> &lt;html class=""> &lt;!--&lt;![endif]-->
+
+        &lt;style>
+          .content {display: inline-block;}
+          .ie6 .content {display: inline; zoom:1;}
+          .ie7 .content {display: inline; zoom:1;}
+        &lt;/style>
+
+
+  section
+    h2 Conditional stylesheets vs class names
+    ul
+      li PROS: 
+        ul
+          li Valid HTML and CSS.
+          li No additional HTTP requests.
+      li CONS: 
+        ul
+          li Add conditional comments to every single HTML page.
+          li Increases the specificity of your selectors.
+
+  section
+    h2 IE7.js
+    p <strong>ie7.js, ie8.js, ie9.</strong>js by Dean Edwards
+    p Fixes simple CSS 2 and 3 selectors
+
+  section
+    h2 IE will render the page as:
+    p Quirks mode: render as IE5
+    p Standards mode (Intranet): IE7
+    p Standards mode (Extranet): IE8 or 9
+
+  section
+    h2 X-UA-Compatible
+    pre
+      code.
+        &lt;!-- render as ie9 -->
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=9" /> 
+
+        &lt;!-- render as ie7 (quirks/standard mode, according to doctype) -->
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+        &lt;!-- render as ie9 or ie7 (avoid ie8) -->
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=7, IE=9">
+
+  section
+    h2 X-UA-Compatible values
+    ul
+      li <strong>EmulateIE7, EmulateIE8, EmulateIE9:</strong> use standards or quirks mode, according to doctype
+      li <strong>IE7, IE8, IE9:</strong> Always use standards mode.
+      li <strong>IE5:</strong> Always use quirks mode
+      li <strong>edge:</strong> Use the best engine available
+      li You should <strong>avoid using X-UA-Compatible</strong> if possible (rely on standards instead)
+
+  section
+    h2 Chrome Frame
+    p If installed, <strong>render using Chrome Frame</strong>instead of IE.
+
+    | META:
+    pre
+      code.
+        &lt;!-- Use Chrome Frame -->
+        &lt;meta http-equiv="X-UA-Compatible" content="chrome=1">
+        &lt;!-- Use IE9 (if installed) or Chrome Frame -->
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+
+    | HTTP header:
+    pre
+      code.
+        X-UA-Compatible: chrome=1
+
+  section
+    h2 Multiple values
+    p Use IE 9 if available, Chrome Frame otherwise:
+    pre
+      code.
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+
+  section
+    h2 Install from the server side
+    p use the User-Agent header
+
+    | User-Agent:
+    pre
+      code.
+        Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; chromeframe/11.0.660.0)
+
+    | Server side:
+    pre
+      code.
+        if (userAgent.contains(“MSIE”) && !userAgent.contains(“chromeframe”)) {
+          return redirect(“/chromeFrameRequired.html”);
+        }
+
+  section
+    h2 Install using javascript
+    p Just invoke the CFInstall script
+
+    pre
+      code.
+        &lt;html>
+          &lt;body>
+            &lt;script type="text/javascript" 
+             src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">&lt;/script>
+            &lt;script>
+             CFInstall.check({ mode: "overlay", destination: "http://www.waikiki.com" });
+            &lt;/script>
+          &lt;/body>
+          &lt;/html>
+
+  section
+    h2 Multiple IE versions
+    p Adobe BrowserLab
+    p IE 8 compatibility view
+
+    p MS Expression Web SuperPreview
+    p IETester
+    p Browsium UniBrows
+
+  section
+    h2 IE virtual machines
+    p Virtual Machines
+    ul
+      li Windows 7 virtual XP mode
+      li VMWare etc
+
+  section(data-state="lab")
+    h2 Lab: IE compatibility
+    p Test pages using Internet Explorer 6, 7, 8 and 9
+
+  section
+    h2 CSS3 Pie
+    ul
+      li border-radius
+      li box-shadow
+      li border-image
+      li Multiple background images
+      li linear-gradient as background image
+
+  section
+    h2 Pie as HTC file
+    pre
+      code.
+        .content {
+            border-radius: 1em;  /* Shorthand version */
+            behavior: url(PIE.htc);
+        }
+
+    p HTC URL must be relative to the source HTML file
+
+  section
+    h2 Pie as JavaScript
+    pre
+      code.
+        &lt;!--[if lt IE 10]>
+        &lt;script type="text/javascript" src="PIE.js"></script>
+        &lt;![endif]-->
+        $(function() {
+            if (window.PIE) {
+                $('.rounded').each(function() {  PIE.attach(this);  });
+            }
+        });
+
+    p JavaScript file blocks the page while loading.
+    p It is not automatically attached to new elements added dinamically.
+
+  section
+    h2 JavaScript vs behavior
+
+    | PROS:
+    p You can load PIE.js from a different domain.
+    p It is easily integrated within JavaScript libraries.
+
+    | CONS: 
+    p JavaScript file blocks the page while loading.
+    p It is not automatically attached to new elements added dinamically.
+
+  section(data-state="lab")
+    h2 Lab: CSS3 Pie
+    p Use CSS3 Pie to make the proposed page work in Internet Explorer 6+
+
+  section
+    h2 Search engines
+    p Search websites according to:
+    ul
+      li Robots.txt
+      li Sitemap.xml
+
+  section
+    h2 Robots.txt
+    p First landing page for a web crawler
+    pre
+      code.
+        Sitemap: http://myhost.com/sitemap.xml
+        User-agent: *
+        Disallow: /secure/
+        Disallow: /tmp/
+
+  section
+    h2 Security considerations
+    p robots <strong>can ignore your /robots.txt</strong>, especially malware robots.
+    p <strong>Anyone can see</strong> what sections of your server are secured.
+
+  section
+    h2 Sitemap.xml
+    p Inform search engines <strong>about pages on their sites that are available for crawling</strong>
+    pre
+      code.
+        &lt;?xml version="1.0" encoding="UTF-8"?>
+        &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+           &lt;url>
+              &lt;loc>http://www.example.com/index.html&lt;/loc>
+              &lt;lastmod>2005-01-01&lt;/lastmod>
+              &lt;changefreq>daily&lt;/changefreq>
+              &lt;priority>0.8&lt;/priority>
+           &lt;/url>
+        &lt;/urlset> 
+
+  section
+    h2 Contents not in sitemap
+    p URLs that are not present in the sitemap <strong>can be indexed as well</strong>
+    p Sitemap allows to specify <strong>frequency of change</strong> and <strong>priorities</stron>
+    p It's also useful for contents that would otherwise be <strong>unreachable</strong>.
+
+  section
+    h2 Specialized sitemaps
+    p <strong>video, mobile, geo, news, code search, images</strong>
+
+  section
+    h2 Sitemap generation tools
+    p http://code.google.com/p/sitemap-generators/
+
+  section
+    h2 SEO Tools 
+    p Google Website Optimizer
+    p Google Analytics
+
+  section
+    h2 Bits included in PageRank
+    p <strong>Page URL</strong> and <strong>host name</strong>
+    p <strong>Title</strong> and <strong>description</strong> of the page
+    p Website <strong>performance</strong>
+    p <strong>Language</strong> deduced by the search engine
+    p <strong>Contents</strong> structure
+    p <strong>Referrals</strong>
+
+  section
+    h2 Bits NOT included in PageRank
+    p 6lt;meta <strong>name=keywords></strong>
+    p <strong>Language</strong> set in the page
+    p <strong>Invisible contents</strong>
+    p <a rel=”<strong>nofollow</strong>”>  
+
+  section
+    h2 Clean URLs
+    p /posts/why_seo_rocks  <strong>WRONG</strong>
+    p /posts/why-seo-rocks  <strong>CORRECT</strong>
+
+  section
+    h2 Meta index
+    p follow, nofollow
+    p index, noindex
+    p revisit
+    p nostore
