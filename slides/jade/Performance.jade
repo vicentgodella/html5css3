@@ -51,3 +51,242 @@ append slides
     p Use a third-party CDN
 https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
     p Create your own CDN
+
+  section
+    h2 Active open connections
+    p 6 connections
+    p These are shared for all active tabs
+
+  section
+    h2 Location
+    p Rule 5 - Put Stylesheets at the Top
+    p Rule 6 - Put Scripts at the Bottom
+    p Rule 8 - Make JavaScript and CSS External
+
+  section
+    h2 Measure, don't guess
+    p What's faster, Facebook or LinkedIn?
+
+  section
+    h2 Measure, don't guess
+
+  section(data-state="lab")
+    h2 Lab: performance 1
+    p Compare performance of multiple websites using online tools
+
+  section
+    h2 Performance tools
+    p Google PageSpeed
+    p YSlow! 
+    p Webpagetest.org
+    p Chrome resources tab
+
+  section
+    h2 Some stats
+    ul
+      li Extracted from http://httparchive.org/
+      li +17000 URLs analyzed:
+        ul
+          li Alexa 500, US 500, 10,000
+          li Fortune 500
+          li Global 500
+          li Quantcast10K
+
+  section
+    h2 Load times
+
+  section
+    h2 Resource size
+
+  section
+    h2 Resource size
+    ul
+      li Lossy JPG compression
+      li Lossless image compressors
+
+  section
+    h2 External resources
+
+  section
+    h2 PageSpeed score
+
+  section(data-state="lab")
+    h2 Lab: performance 2
+    p Track performance with PageSpeed
+
+  section
+    h2 Efficient CSS
+    p CSS rules are evaluated right to left
+    p First a.home, then upwards
+
+    pre
+      code.
+        ul > li a.home
+
+  section
+    h2 Selector performance
+    p Best to worst
+    pre
+      code.
+        #id           /* by id */
+        .className        /* by class name */
+        div           /* by tag */
+        *           /* universal */
+
+  section
+    h2 Improve performance
+    | BAD:
+    pre
+      code.
+        /* avoid generic selectors */
+        * { 
+          font-size: 12px; 
+        }     
+        /* do not tag-qualify an id */  div#main { 
+          width: 960px;
+        }
+        /* avoid descendants */
+        table.bill tbody tr td.cell { 
+          border: 1px solid #ccc;
+        }
+        /* avoid by tag */
+        .contact-data div { 
+          background: #fcc;
+        }
+    | GOOD:
+    pre
+      code.
+        body { 
+          font-size: 12px; 
+        }     
+
+        #main { 
+          width: 960px;
+        }
+
+        .cell, .td-cell { 
+          border: 1px solid #ccc;
+        }
+
+        .contact-data, .div-contact-data { 
+          background: #fcc;
+        }
+
+  section
+    h2 Improve more
+    | BAD:
+    pre
+      code.
+        ul.links li a {
+          color: #ccc;
+        }
+    | BETTER:
+    pre
+      code.
+        .links > li > a {
+          color: #ccc;
+        }
+    | BEST:
+    pre
+      code.
+        .a-link {
+          color: #ccc;
+        }
+
+  section
+    h2 Avoid sibling selectors
+    pre
+      code.
+        h1 + p {
+          border: 1px solid #fff;
+        }
+    p WebKit typically achieves a 75% memory reduction in style footprint on pages that don’t make use of sibling selectors – Dave Hyatt, (webkit architect) May 2008
+
+  section
+    h2 Avoid :hover on non-link
+    p :hover on non-link elements (div, p, etc) will fail or cause degraded performance on IE 
+
+  section
+    h2 Best performance possible
+    p ID and class selectors
+    p child selectors
+    p descendant selectors
+
+  section
+    h2 Not to be taken too seriously
+    ul
+      li Performance gains are not that good.
+      ul
+        li 30 ms for typical CSS
+        li 2000 ms for really bad CSS
+
+  section
+    h2 Use classes to override styles
+    p Specificity has collisions
+    ul
+      li h3 { … }
+      li #sidebar h3 { … }
+      li #sidebar .account h3 { … }
+
+  section
+    h2 !important
+    p Duplicates the problem
+
+  section
+    h2 CSS Lint
+    p CSS Lint analyzes your CSS and tries to help point out problems with your code.
+    ul
+      li Parsing errors
+      li Possible Errors
+      li Compatibility
+      li Performance
+      li Maintainability & Duplication
+
+  section(data-state="lab")
+    h2 Lab: CSS Lint
+    p Use CSS Lint to optimize css code
+
+  section
+    h2 Reflow performance
+    p Specify width and height on all your images
+    p Apply animations to elements that are position fixed or absolute
+
+  section
+    h2 Browser cache
+    p <strong>304</strong> (Not Modified) responses
+    p <strong>Expires</strong> headers
+    p <strong>Strong</strong> and <strong>weak</strong> cache indicators
+
+  section
+    h2 304
+    p Means “the browser already has the latest version of this file”
+    p Will happen with every click unless Expires is used
+
+
+  section
+    h2 304 with Last-Modified
+    p If the server includes Last-Modified the browser will include If-Modified-Since with each further request
+    p Example: any static file with apache / tomcat 
+
+  section
+    h2 304 with ETag
+    p If server includes ETag the browser will include If-None-Match with each further request
+    p Example: <inode>-<file-size>-<last-modified> with apache 
+
+  section
+    h2 Expires header
+    p Indicates for how long the file should not be retrieved again.
+
+  section
+    h2 Expires header
+    ul
+      li Cache-control (max-age) 
+        ul
+          li HTTP 1.1
+          li Seconds to expire
+          li Used by the browser
+      li Expires:
+        ul
+          li HTTP 1.0
+          li Date
+          li Used by proxies installed during the Roman Empire
