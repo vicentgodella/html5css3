@@ -1,0 +1,217 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title UI Patterns
+
+append slides
+  section
+    h1 UI Patterns
+
+  section
+    h2 Scanning order
+    ul
+      li Reading order: top-left to bottom-right
+      li Scanning order: F pattern
+
+  section
+    h2 Jakob Nielsen's F
+
+  section
+    h2 Form label positioning
+
+  section
+    h2 Matteo Penzo study
+
+  section
+    h2 Top align
+    ul
+      li <strong>Fastest completion times</strong>
+      li Easier to compose a <strong>flexible HTML model</strong>
+      li Easier to <strong>focus in/out using keyboard</strong>
+      li More <strong>flexible to long labels (i18n)</strong>
+      li <strong>Best for mobile interfaces</strong>
+
+  section
+    h2 Mobile interfaces
+
+  section
+    h2 Mobile interfaces (II)
+
+  section
+    h2 When space is a constraint
+    p Use either right-align or a placeholder
+
+  section
+    h2 Multiple selection
+    pre
+      code.
+        &lt;select name="toppings" multiple="multiple" size="5">
+          &lt;option value="mushrooms">mushrooms&lt;/option>
+          &lt;option value="greenpeppers">green peppers&lt;/option>
+          &lt;option value="onions">onions&lt;/option>
+          &lt;option value="tomatoes">tomatoes&lt;/option>
+          &lt;option value="olives">olives&lt;/option>
+        &lt;/select>
+
+  section
+    h2 Multiple checkboxes
+    pre
+      code.
+        &lt;label>&lt;input type="checkbox" name="mushrooms"> mushrooms&lt;/label>
+        &lt;label>&lt;input type="checkbox" name="greenpeppers"> green peppers&lt;/label>
+        &lt;label>&lt;input type="checkbox" name="onions"> onions&lt;/label>
+        &lt;label>&lt;input type="checkbox" name="tomatoes"> tomatoes&lt;/label>
+        &lt;label>&lt;input type="checkbox" name="olives"> olives&lt;/label>
+
+  section
+    h2 Two  selects
+
+  section
+    h2 Multiple Autocompleter
+
+  section
+    h2 Actions
+
+  section
+    h2 Confirmation messages
+
+    ul
+      li Confirmation messages are:
+        ul
+          li unfriendly
+          li distracting
+          li innefective
+
+  section
+    h2 Undo instead of confirm
+
+  section
+    h2 Classic help position
+    p <strong>Help</strong> link at the top right or bottom of the page
+    p Let's change this.
+
+  section
+    h2 Callout dialog
+    p Nice way to <strong>introduce new features</strong>
+
+  section
+    h2 “What's this?”
+    p <strong>Unobstrusive help</strong>, good for learning by doing
+
+  section
+    h2 Inline help
+    p Gives a hint about the <strong>expected input</strong>
+
+  section
+    h2 Inline help bad practices
+    p Same downsides of <strong>label positioning</strong>
+
+  section
+    h2 Placeholder
+    p Applicable if the help message is <strong>brief enough</strong>.
+
+  section
+    h2 Flexibility and simplicity
+    p An example of how to spit the user in the eye
+
+  section
+    h2 Classic
+
+  section
+    h2 Simple
+
+  section
+    h2 There is a cost
+
+  section
+    h2 Gradual engagement
+
+  section
+    h2 Responsive design
+
+  section
+    h2 Responsive design
+
+  section
+    h2 Fluid grids
+    p Keep everything relative
+
+  section
+    h2 Fluid grids
+    p Keep everything relative
+
+    ul
+      li Percentages for lengths (beware of the margin/padding different behaviors)
+
+      li Limit the flexibility with max/min-width or overflow
+
+  section
+    h2 Flexible images
+
+  section
+    h2 Flexible images
+    p Percentages for media sizes, max-width: 100%
+
+  section
+    h2 Flexible images
+    p Percentages for media sizes, max-width: 100%
+    p Beware of Windows©resizing issues
+
+  section
+    h2 Flexible images
+    p Center background
+
+    pre
+      code.
+        .illustration {
+          background: url(its-cold.png) no-repeat 50% 0;
+        }
+
+  section
+    h2 Responsive images
+    p Serve different images for different displays
+
+  section
+    h2 Responsive images
+    p Serve different images for different displays
+
+  section
+    h2 Responsive images
+    p Using cookies
+
+    pre
+      code.
+        &lt;img src=”picture.jpg” data-large=”picture-large.jpg”>
+
+        document.cookie ="device_dimensions="+screen.width+"x" + screen.height;
+
+  section
+    h2 Responsive images
+    p Using noscript
+
+    pre
+      code.
+        &lt;noscript 
+          data-img=”picture-default.jpg” 
+          data-imgsmall=”picture-small.jpg”>
+          &lt;img src=”picture-default.jpg”>
+        &lt;/noscript>
+
+        $('noscript[data-img]').replaceWith(getImage(this));
+
+  section
+    h2 Media queries
+    p When fluid is not enough
+
+  section
+    h2 Mobile first
+    p Aim for simplicity
+    p Do not hold back content
+
+  section(date-state="lab")
+    h2 Final Lab
+    p Contact page using <strong>microformats</strong>, <strong>HTML5</strong> and <strong>CSS3</strong>
+    h2 Final Lab
+    p content

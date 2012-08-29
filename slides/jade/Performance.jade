@@ -49,7 +49,9 @@ append slides
   section
     h2 Content-delivery network
     p Use a third-party CDN
-https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
+    pre
+      code.
+        https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
     p Create your own CDN
 
   section
@@ -290,3 +292,62 @@ https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
           li HTTP 1.0
           li Date
           li Used by proxies installed during the Roman Empire
+
+  section
+    h2 The Refresh button
+    ul
+      li Refresh (or F5): a new request will be sent for each file. 
+        ul
+          li Any If-Modified-Since or If-None-Match headers will be sent.
+          li The server may return a 304 response.
+      li Shift + Refresh (or Ctrl + F5): a new request will be sent for each file.
+        ul
+          li Any If-Modified-Since or If-None-Match headers will not be sent.
+          li The server cannot return a 304 response.
+
+  section
+    h2 And that's all
+    ul
+      li <strong>304 and Expires</strong>. That's all you have.
+      li Now, <strong>which data indicator</strong> do you plan to use for caching?
+        ul
+          li Last modified, MD5 checksum...
+
+  section
+    h2 Weak and strong indicators
+    ul
+      li <strong>Weak</strong>: The indicator may change even if the file did not.
+        ul
+          li Last-Modified, default ETag implementations.
+      li <strong>Strong</strong>: The indicator changes only with the resource contents.
+        ul
+          li MD5, version numbers.
+      li Strong indicators can be inserted in the URL or used as ETag.
+
+  section
+    h2 Strong indicators
+    ul
+      li Version numbers
+        ul
+          li http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js
+      li Revision numbers
+        ul
+          li http://localhost/myentity?id=5&revision=20
+      li MD5
+        ul
+          li http://localhost/images/photo.gif?checksum=9e0bee8ace86b2230140642adcf57c4c
+
+  section
+    h2 Expires & strong indicators
+    p Using strong indicators, you can set your Expires header to cache forever:
+
+    ul
+      li HTTP spec: 1 year
+      li Yahoo! recommendation: 10 years
+
+    p <strong>Use only with immutable resources</strong>
+
+  section(data-state="lab")
+    h2 Lab: Browser Cache
+    p Test the browser cache
+    
