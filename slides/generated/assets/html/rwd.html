@@ -1,0 +1,212 @@
+<html>
+
+<meta charset="utf-8">
+<style>
+
+html {
+  -webkit-text-size-adjust: none;
+  background-color: #ccc;
+}
+body {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+header {
+  margin-top: 10px;
+  padding: 0 10px 5px 10px;
+  font-size: 32px;
+  color: #fff;
+  background-color: #01477b;
+}
+header > h1 {
+  margin: 0;
+}
+nav {
+  background-color: #0d7cb4; 
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 3px 10px;
+  display: inline-block;
+}
+nav li:first-child {
+  margin-top: 0;
+}
+nav li:last-child {
+  margin-bottom: 0;
+}
+nav a {
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+#content {
+  float: left;
+  width: 70%;
+  padding: 0 10px;
+  background-color: #fafafa;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+article {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+article h1 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+article img {
+  float: left;
+  margin: 10px 20px 10px 0;
+}
+article a, aside a {
+  color: #000;
+  text-decoration: none;
+}
+article a:hover, aside a:hover {
+  text-decoration: underline;
+}
+aside {
+  float: right;
+  width: 28%;
+  padding: 10px;
+  background-color: #edf2f6;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+aside h1 {
+  margin: 0;
+}
+aside ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+aside li {
+  margin-top: 10px;
+}
+footer {
+  clear: both;
+  padding: 4px 10px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #000;
+}
+footer p {
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------------------  */
+
+@media only screen and (max-width: 940px), only screen and (max-device-width: 940px) {
+  body {
+    width: 100%;
+  }
+  header {
+    font-size: 1.5em;
+  }
+  article img {
+    width: 37%;
+  }
+  aside h1 {
+    font-size: 1.2em;
+  }
+}
+
+/* -------------------------------------------------------------------------------------  */
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  header {
+    margin-top: 0;
+    font-size: 1.2em;
+  }
+  header h1 {
+    text-align: center;
+  }
+  nav li {
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #fff;
+  }
+  nav li:last-child {
+    border-bottom: none;
+  }
+  #content, aside {
+    float: none;
+    width: auto;
+  }
+  article img {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    width: 96px;
+  }
+  article a {
+    display: inline-block;
+    padding: 0 5px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #0d7cb4;
+  }
+  aside h1 {
+    font-size: 2em;
+  }
+  aside li {
+    padding: 10px 0;
+    font-size: 1.2em;
+  }
+}
+
+</style>
+
+  <body>
+    <header>
+      <h1>Responsive Web Design</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">What do we do?</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="content">
+      <article>
+        <h1>Proin eu arcu</h1>
+        <img src="../img/html5.svg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat auctor pretium. Curabitur eget lectus vitae leo dignissim sodales. Vivamus sit amet dui nunc. Duis dapibus ante ac dolor sodales malesuada. Nam varius nibh non lorem bibendum ut fringilla elit tincidunt. Suspendisse quis pellentesque leo. Duis dapibus ante ac dolor sodales malesuada.</p>
+        <p><a href="#">Read more</a></p>
+      </article>
+      <article>
+        <h1>Ultricies ante</h1>
+        <img src="../img/css3.svg" alt="">
+        <p>Praesent pellentesque sem vel nulla lacinia in dignissim augue consequat. Suspendisse potenti. Sed non justo suscipit purus dapibus condimentum. Ut mi mauris, primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce auctor ante ut ante cursus mollis. Donec porttitor scelerisque tortor fringilla sodales. Pellentesque vel sem massa. Duis eget est vel leo sodales tristique nec at tortor.</p>
+        <p><a href="#">Read more</a></p>
+      </article>
+    </div>
+    <aside>
+      <h1>Related content</h1>
+      <ul>
+        <li><a href="#">Maecenas iaculis tempus</a></li>
+        <li><a href="#">Vestibulum quis justo eros</a></li>
+        <li><a href="#">Nullam ullamcorper vulputate</a></li>
+      </ul>
+    </aside>
+    <footer>
+      <p>© Sit amet consectetur nunc condimentum 2012</p>
+    </footer>
+  
+
+</body></html>

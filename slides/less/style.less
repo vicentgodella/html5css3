@@ -1,9 +1,18 @@
 
 @import "main";
 @import "theme";
+@import "bootstrap/bootstrap";
+
+.text-left {
+  text-align: left;
+}
 
 ul {
   list-style: square;
+}
+
+.small-text {
+  font-size: 70%;
 }
 
 //Lab slide
@@ -73,8 +82,7 @@ ul {
   }
 }
 
-//Browse support div
-
+//Browser support div
 .browser-support {
   position: absolute;
   top: -5%;
@@ -120,4 +128,12 @@ ul {
 
 .support-opera {
   background-position: -4*@browserBgWidth 0;
+}
+
+//Citing sources
+.source {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 50%;
 }

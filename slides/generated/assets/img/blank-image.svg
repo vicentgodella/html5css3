@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+  height="52" width="52">
+  <rect 
+    width="50" height="50"
+    x="1" y="1"
+    fill="#ccc" stroke="#333"></rect>
+
+  <path d="m1 1 l50 50" stroke="#333"></path>
+  <path d="m51 1 l-50 50" stroke="#333"></path>
+
+</svg>

@@ -57,7 +57,7 @@ append slides
   section
     h2 CSS3 browser support
     p Reasonable support in browsers
-    p 
+    p
       a(href="http://delicious.com/html5css3/support") http://delicious.com/html5css3/support
     p CSS and JS tricks to support legacy browsers
 
@@ -75,7 +75,7 @@ append slides
     p Later general sibling
     pre
       code.
-        h2 ~ p { 
+        h2 ~ p {
           color: orange;
         }
     #ex-general-sibling
@@ -90,21 +90,21 @@ append slides
   section
     h2 New selectors
     table
-      tr 
-        td [foo~="bar"] 
-        td &lt;div foo=”<span style="color: red">bar</span> whatever”&gt;
       tr
-        td [foo^="bar"] 
-        td &lt;div foo=”<span style="color: red">bar</span>tender”&gt;
+        td [foo~="bar"]
+        td &lt;div foo="<span style="color: red">bar</span> whatever"&gt;
       tr
-        td [foo$="bar"] 
-        td &lt;div foo=”tool<span style="color: red">bar</span>”&gt;
+        td [foo^="bar"]
+        td &lt;div foo="<span style="color: red">bar</span>tender"&gt;
       tr
-        td [foo*="bar"] 
-        td &lt;div foo=”sylla<span style="color: red">bar</span>y”&gt;
+        td [foo$="bar"]
+        td &lt;div foo="tool<span style="color: red">bar</span>"&gt;
       tr
-        td [foo|="bar"] 
-        td &lt;div foo=”<span style="color: red">bar</span>-tender”&gt;
+        td [foo*="bar"]
+        td &lt;div foo="sylla<span style="color: red">bar</span>y"&gt;
+      tr
+        td [foo|="bar"]
+        td &lt;div foo="<span style="color: red">bar</span>-tender"&gt;
 
   section
     section
@@ -149,7 +149,7 @@ append slides
             color: orange;
           }
       #ex-only-child
-        style 
+        style
           #ex-only-child li:only-child {
             color: orange;
           }
@@ -176,10 +176,10 @@ append slides
         code.
           :enabled {
             background-color: #cdc;
-          }        
+          }
           :disabled {
             background-color: #dcc;
-          }       
+          }
           :checked {
             width: 5em;
           }
@@ -190,10 +190,10 @@ append slides
           }
           #ex-ui-states input:enabled {
             background-color: #cdc;
-          }        
+          }
           #ex-ui-states input:disabled {
             background-color: #dcc;
-          }        
+          }
         input(disabled)
         input
         form
@@ -226,7 +226,7 @@ append slides
       h2 :target
       pre
         code.
-          #{'<div id=”my_stuff”>'}
+          #{'<div id="my_stuff">'}
           #{'  <p>Ey, look at me!</p>'}
           #{'</div>'}
           #{'<a href="#my_stuff">Go there</a>'}
@@ -330,18 +330,18 @@ append slides
   section
     mixin browserSupport('10+', '3.6+', '5.1+', '10+', '11.1+')
     h2 gradient
-    p 
-      strong Non standard: 
-      | different behavior for Firefox, Webkit and IE
     pre
       code.
-        background: #1E5799; /* old browsers */
-
-        background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 55%, #7db9e8 100%); /* firefox */
-
-        background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 55%, #7db9e8 100%); /* webkit*/
-
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* ie */
+        .block {
+          background: black; /* old browsers */
+          background: -moz-linear-gradient(top left, white, blue 5%, black);
+          background: -ms-linear-gradient(top left, white, blue 5%, black);
+          background: -o-linear-gradient(top left, white, blue 5%, black);
+          background: -webkit-gradient(linear, 0 0, 100% 100%, from(white), color-stop(0.05, blue), to(black));
+          background: -webkit-linear-gradient(top left, white, blue 5%, black);
+          background: linear-gradient(top left, white, blue 5%, black);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='white', endColorstr='black',GradientType=0 ); /* ie */
+        }
     #ex-linear-gradient
       style
         #ex-linear-gradient {
@@ -349,6 +349,8 @@ append slides
           background: -moz-linear-gradient(top, #3F3F3F 10%, orange 90%);
           background: -webkit-linear-gradient(top, #3F3F3F 10%, orange 90%);
         }
+
+
 
   section
     mixin browserSupport('10+', '3.6+', '5.1+', '10+', '12+')
@@ -407,13 +409,13 @@ append slides
           background: rgba(218, 37, 29, .5);
           text-shadow: 0 0 10px rgba(0, 0, 0, .5);
         }
-  
+
   section(data-state="lab")
     h2 Lab: CSS3 buttons
     p Repeat the buttons from previous module using just CSS3
 
   section
-    mixin browserSupport('4+', '2+', '3.1+','8+', '9.5+') 
+    mixin browserSupport('4+', '2+', '3.1+','8+', '9.5+')
     h2 box-sizing
     p content-box | border-box | inherit
     pre
@@ -485,7 +487,7 @@ append slides
     section
       mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
       h2 background-size
-      p {length} {percentage} {auto} {contain} {cover}
+      p <strong>contain</strong>
       pre
         code.
           .container {
@@ -502,7 +504,7 @@ append slides
     section
       mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
       h2 background-size
-      p {length} {percentage} {auto} {contain} {cover}
+      p <strong>cover</strong>
       pre
         code.
           .container {
@@ -532,8 +534,8 @@ append slides
       style
         #ex-border-image  {
           height: 100px;
-          border: 20px solid #b1563c; 
-          border-image: url(image1.png) 30;
+          border: 40px solid #b1563c;
+          border-image: url(assets/img/html5.svg) 30;
         }
   section
     mixin browserSupport('All', '3.5+', '3.2+', '6+', '10+')
@@ -551,13 +553,13 @@ append slides
             font-family: permanentmarker;
         }
     #ex-font-face
-      style 
+      style
         @font-face {
             font-family: 'permanentmarker';
             src: url('assets/font/PermanentMarker-webfont.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
-        }  
+        }
         #ex-font-face h3 {
           font-family: permanentmarker;
           color: black;
@@ -574,55 +576,75 @@ append slides
       tbody
         tr
           | <td>Chrome</td>
-          | <td>no</td> <td>4+</td> <td>5+</td> <td>4+</td> 
+          | <td>no</td> <td>4+</td> <td>5+</td> <td>4+</td>
         tr
           | <td>Safari</td>
-          | <td>no</td> <td>3.1+</td> <td>5.1+</td> <td>3.1+</td> 
+          | <td>no</td> <td>3.1+</td> <td>5.1+</td> <td>3.1+</td>
         tr
           | <td>Firefox</td>
-          | <td>no</td> <td>3.5+</td> <td>3.6+</td> <td>no</td> 
+          | <td>no</td> <td>3.5+</td> <td>3.6+</td> <td>no</td>
         tr
           | <td>Internet Explorer</td>
-          | <td>5+</td> <td>9+</td> <td>9+</td> <td>no</td> 
+          | <td>5+</td> <td>9+</td> <td>9+</td> <td>no</td>
         tr
           | <td>Android</td>
-          | <td>no</td> <td>2.2+</td> <td>no</td> <td>yes</td> 
+          | <td>no</td> <td>2.2+</td> <td>no</td> <td>yes</td>
         tr
           | <td>iPhone</td>
-          | <td>no</td> <td>no</td> <td>no</td> <td>yes</td> 
+          | <td>no</td> <td>no</td> <td>no</td> <td>yes</td>
 
   section
     h2 Font features
 
-    style 
-      h3 {
-        font-family: permanentmarker;
-        color: black;
+    style
+      @font-face {
+        font-family: 'Trocchi';
+        src: url('assets/font/Trocchi-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
       }
-    
-    h3 Test LYAWA
 
-    table.big-table
+      @font-face {
+          font-family: 'Linux';
+          src: url('assets/font/LinLibertine_RI.woff') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      #font-features .ligs-on {
+        -webkit-font-feature-settings: "liga", "dlig", "hlig";
+        -webkit-font-variant-ligatures: common-ligatures;
+      }
+
+      #font-features .trocchi {
+        font-family: 'Trocchi';
+      }
+
+      #font-features .libertine {
+        font-family: 'Linux';
+      }
+
+    table.big-table#font-features
       thead
       tbody
         tr
           td Kerning off
           td
-            h3 Test LYAWA
+            h3.trocchi YAWAVA
         tr
           td Kerning off
           td
-            h3 Test LYAWA
+            h3.trocchi(style="text-rendering: optimizeLegibility;") YAWAVA
         tr
           td Glyphs off
           td
-            h3 styling character
+            h3.libertine affidavit Quiet style detection
         tr
           td Glyphs on
           td
-            h3 styling character
+            h3.libertine.ligs-on affidavit Quiet style detection
   section
-    h2 Flash Of Unstyled Text
+    h2 Flash of unstyled text
 
     p <strong>Firefox and Opera</strong> show the next font until it is downloaded
 
@@ -631,28 +653,73 @@ append slides
   section
     h2 Font repositories
 
-    p <strong>Squirrel font</strong>
-    p <strong>Google Web Fonts</strong>
-
-    img(src="assets/img/webfonts.png")
+    p
+      a(href="http://fontsquirrel.com") <strong>Squirrel font</strong>
+    p
+      a(href="http://google.com/webfonts") <strong>Google Web Fonts</strong>
 
   section
     h2 Font-face icons
 
     p Place icons inside a custom font
 
-    img(src="assets/img/fontface-icon.png")
+    style
+      @font-face {
+        font-family: 'IconicFill';
+        src: url('assets/font/iconic_fill.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .iconic {
+        font-family: 'IconicFill';
+      }
+    p
+      span.iconic &#xe06a;
+      span.iconic &#xe033;
+      span.iconic &#x00b6;
+      span.iconic &#x2717;
+      span.iconic &#xe02e;
+      span.iconic &#xe01b;
+      span.iconic &#xe04d;
 
   section
     h2 sFIR icons
 
-    h3 HTML
+    p HTML
     pre
       code.
-        &lt;span class="icon icon-mail"></span>
-        &lt;span class="icon icon-star"></span>
+        #{'<span class="icon icon-mail"></span>'}
+        #{'<span class="icon icon-star"></span>'}
 
-    h3 CSS
+    p CSS
+    pre
+      code.
+        .icon {
+          background: url('icons-sprite.png') no-repeat;
+          width: 0px;
+          height: 12px;
+          display: inline-block;
+        }
+
+        .icon-mail {
+          background-position: -10px -40px;
+        }
+        ...
+    #ex-font-icons
+      span.iconic(style="font-size: 40px;") &#x2709;
+      span.iconic(style="font-size: 40px;") &#x2605;
+
+  section
+    h2 Font-face icons
+
+    p HTML
+    pre
+      code.
+        #{'<span class="icon icon-mail"></span>'}
+        #{'<span class="icon icon-star"></span>'}
+
+    p CSS
     pre
       code.
         @font-face {
@@ -665,22 +732,31 @@ append slides
         .icon-mail:before {
           content: '✉';
         }
+    #ex-font-icons
+      span.iconic(style="font-size: 40px;") &#x2709;
+      span.iconic(style="font-size: 40px;") &#x2605;
 
   section
     h2 Iconic fonts
 
-    p Iconic
-    p Fico
-    p Font Awesome
-    p Glyphicons
-    p Fontello: font packer
+    ul
+      li
+        a(href="http://somerandomdude.com/work/iconic/") Iconic
+      li
+        a(href="http://fico.lensco.be/") Fico
+      li
+        a(href="http://fortawesome.github.com/Font-Awesome/") Font Awesome
+      li
+        a(href="http://glyphicons.com/") Glyphicons
+      li
+        a(href="http://fontello.com/") Fontello (font packer)
 
   section
     h2 Beware
 
-    p <strong>Font files sizes:</strong> You don't need everything!
-    p <strong>Arbitrary key-bindings</strong>
-    p <strong>Non-semantic content</strong> (aria-hidden)
+    p.text-left <strong>Font files sizes:</strong> You don't need everything!
+    p.text-left <strong>Arbitrary key-bindings</strong>
+    p.text-left <strong>Non-semantic content</strong> (aria-hidden)
 
 
   section(data-state="lab")
@@ -700,8 +776,18 @@ append slides
           width: 100px;
           height: 20px;
           text-overflow: ellipsis;
-          whitespace: nowrap;
+          white-space: nowrap;
         }
+
+    #ex-text-overflow
+      style
+        #ex-text-overflow p {
+          width: 90%;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      p(style="text-overflow: ellipsis").
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
 
   section
     mixin browserSupport('All', 'All', 'All', 'No', 'No')
@@ -712,12 +798,20 @@ append slides
     pre
       code.
         body {
-          <strong>user-select: none;</strong>
+          user-select: none;
         }
 
         p {
-          <strong>user-select: text;</strong>
+          user-select: text;
         }
+
+    #ex-user-select
+      style
+        #ex-user-select .unselectable {
+          -webkit-user-select: none;
+        }
+
+      p.unselectable Lorem impum unselectablis
 
   section
     mixin browserSupport('All', '4+', 'All', 'No', 'No')
@@ -735,37 +829,94 @@ append slides
           <strong>resize: none;</strong>
         }
 
+    #ex-resizable
+      style
+        #ex-resizable textarea {
+          display: block;
+          width: 50%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      textarea(style="resize: none;") Unresizable
+      textarea(style="resize: horizontal;") Horizontal
+      textarea(style="resize: vertical;") Vertical
+
   section
     mixin browserSupport('All', '4+', 'All', 'No', 'No')
     h2 Transitions
 
-    p CSS Transitions allow property changes in CSS values to occur smoothly over a specified duration.
+    p CSS transitions allow property changes in CSS values to occur smoothly over a specified duration.
 
     pre
       code.
-        a { 
-          color: #000; 
+        a {
+          color: #000;
         }
-          
-        a:hover, a:focus { 
-          color:#f00; 
+
+        a:hover, a:focus {
+          color:#00f;
         }
+
+    //- #ex-transitions-none
+    //-   style
+    //-     #ex-transitions-none a {
+    //-       color: #000;
+    //-     }
+
+    //-     #ex-transitions-none a:hover {
+    //-       color: #00f;
+    //-     }
+    //-   strong
+    //-     a Hover
+
+  section
+    h2 An example
+    pre
+      code.
+        a {
+          color: #000;
+          -webkit-transition: color 1s ease-in;
+          -moz-transition: color 1s ease-in;
+          transition: color 1s ease-in;
+        }
+
+        a:hover, a:focus {
+          color: #00f;
+        }
+    #ex-transitions
+      style
+        #ex-transitions a {
+          color: #000;
+        }
+        #ex-transitions .smooth {
+          -webkit-transition: color 1s ease-in;
+          -moz-transition: color 1s ease-in;
+          transition: color 1s ease-in;
+        }
+
+        #ex-transitions a:hover {
+          color: #00f;
+        }
+      strong
+        a Hover
+      strong
+        a.smooth  Hover
 
   section
     h2 transition
 
     p {property} {duration} {timing function} {delay} <br>
-      | {transition1}, {transition2}, ... <br>
+      | {transition1}, {transition2}, ...
 
     pre
       code.
-        a { 
+        a {
           -webkit-transition:   color 1s ease-in,
                     background .3s ease;
           -moz-transition:  color 1s ease-in,
-                    background .3s ease;  
+                    background .3s ease;
           transition:     color 1s ease-in,
-                    background .3s ease;    
+                    background .3s ease;
         }
 
   section
@@ -773,23 +924,74 @@ append slides
 
     pre
       code.
-        a { 
+        a {
           -webkit-transition: all .3s linear;
-          -moz-transition: all .3s linear;  
-          transition: all .3s linear;    
+          -moz-transition: all .3s linear;
+          transition: all .3s linear;
         }
 
         a:hover, a:focus {
           color: #030;
           background: #690;
-        }  
+        }
 
   section
     h2 transition-timing-function
 
     p default | linear | ease | <strong>ease-in | ease-out | ease-in-out</strong> | cubic-bezier(x1, y1, x2, y2)
 
-    img(src="assets/img/transition-timing-function.png")
+    #ex-timing-functions
+      style
+
+        #ex-timing-functions .cont {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        #ex-timing-functions .cont .block {
+          background-color: #eee;
+          border-radius: 5px;
+          width: 20%;
+          font-size: 50%;
+          margin-bottom: 5px;
+
+          -webkit-transition: all 1s;
+        }
+
+        #ex-timing-functions .cont:hover .block {
+          width: 100%;
+          background-color: #edd;
+          border-radius: 10px;
+        }
+
+        #ex-timing-functions .cont .linear {
+          -webkit-transition-timing-function: linear;
+        }
+
+        #ex-timing-functions .cont .ease-in {
+          -webkit-transition-timing-function: ease-in;
+        }
+
+        #ex-timing-functions .cont .ease-out {
+          -webkit-transition-timing-function: ease-out;
+        }
+
+        #ex-timing-functions .cont .ease-io {
+          -webkit-transition-timing-function: ease-in-out;
+        }
+
+        #ex-timing-functions .cont .bezier {
+          -webkit-transition-timing-function: cubic-bezier(0,1,1,0);
+        }
+
+      .cont
+        .block Default
+        .block.linear Linear
+        .block.ease-in Ease-in
+        .block.ease-out Ease-out
+        .block.ease-io Ease-io
+        .block.bezier Bezier
 
   section
     h2 transition-delay
@@ -798,11 +1000,11 @@ append slides
 
     pre
       code.
-        a { 
-          -webkit-transition: color .2s ease-in .5s;    
-          -moz-transition: color .2s ease-in .5s;    
-          transition: color .2s ease-in .5s;    
-        } 
+        a {
+          -webkit-transition: color .2s ease-in .5s;
+          -moz-transition: color .2s ease-in .5s;
+          transition: color .2s ease-in .5s;
+        }
 
   section
     h2 Animatable properties
@@ -837,30 +1039,38 @@ append slides
     pre
       code.
         .block {
-          -webkit-transform: rotate(20deg); 
+          -webkit-transform: rotate(20deg);
           -moz-transform: rotate(20deg);
           transform: rotate(20deg);
-        } 
+        }
 
-    img(src="assets/img/transformation-rotate.png")
+    #ex-rotate(style="height: 150px;\
+      margin-top: 20px;")
+      div(style="height: 150px;\
+        background-color: orange;\
+        -webkit-transform: rotate(-10deg);")
 
   section
     h2 transform-origin
 
-    p transform-origin: 
+    p transform-origin:
     p <strong>[ {offset} | left | center | right ]</strong>
     p <strong>[ {offset} | top | center | bottom ]</strong>
 
     pre
       code.
         .center {
-          -webkit-transform: rotate(20deg); 
+          -webkit-transform: rotate(20deg);
           -webkit-transform-origin: 0 100%;
           -moz-transform: rotate(20deg);
           -moz-transform-origin: 0 100%;
-        } 
+        }
 
-    img(src="assets/img/transformation-origin.png")
+    #ex-rotate-origin(style="height: 150px;")
+      div(style="height: 150px;\
+        background-color: orange;\
+        -webkit-transform: rotate(15deg);\
+        -webkit-transform-origin: left bottom;")
 
   section
     h2 transform-origin (II)
@@ -878,16 +1088,30 @@ append slides
       code.
         .block {
           -moz-transform: translate(20px, 50px);
-          -webkit-transform: translate(20px, 50px); 
-          transform: translate(20px, 50px); 
-        } 
+          -webkit-transform: translate(20px, 50px);
+          transform: translate(20px, 50px);
+        }
 
-    img(src="assets/img/transformation-translate.png")
+    #ex-translate(style="height: 150px;")
+      div(style="height: 150px;\
+        background-color: orange;\
+        -webkit-transform: translate(30px, 50px);")
+
 
   section
     h2 Combinations
 
-    img(src="assets/img/transformation-combinations.png")
+    pre
+      code.
+        .block {
+          -webkit-transform: translate(-100px, 100px) rotate(15deg);
+          -moz-transform: translate(-100px, 100px) rotate(15deg);
+          -o-transform: translate(-100px, 100px) rotate(15deg);
+        }
+    #ex-combinations(style="height: 150px;")
+      div(style="height: 150px;\
+        background-color: orange;\
+        -webkit-transform: translate(-100px, 100px) rotate(15deg);")
 
   section
     h2 IE < 9 rotation
@@ -897,9 +1121,9 @@ append slides
     pre
       code.
         .ierotate {
-          -webkit-transform: rotate(-90deg); 
+          -webkit-transform: rotate(-90deg);
           -moz-transform: rotate(-90deg);
-          transform: rotate(-90deg);  
+          transform: rotate(-90deg);
           filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
         }
 
@@ -909,18 +1133,22 @@ append slides
     p transform:<strong>scale(x, y) | scalex(x) | scaley(y)</strong>
 
     ul
-      li <strong>&lt;1:</strong> zoom in
-      li <strong>&gt;1:</strong> zoom out
+      li <strong>&lt; 1:</strong> zoom in
+      li <strong>&gt; 1:</strong> zoom out
       li <strong>negative value:</strong> flip
 
     pre
       code.
         .block {
-          -webkit-transform: scale(2); 
-          -moz-transform: scale(2);
-          transform: scale(2);
+          -webkit-transform: scale(0.75);
+          -moz-transform: scale(0.75);
+          transform: scale(0.75);
         }
-    img(src="assets/img/transformation-scale.png")
+
+    #ex-scale(style="height: 150px;")
+      div(style="height: 150px;\
+        background-color: orange;\
+        -webkit-transform: scale(0.75);")
 
   section
     h2 skew
@@ -930,16 +1158,19 @@ append slides
     pre
       code.
         .skewblock {
-          -webkit-transform: skew(-20deg, 0); 
+          -webkit-transform: skew(-20deg, 0);
           -moz-transform: skew(-20deg, 0);
           transform: skew(-20deg, 0);
-        } 
-    img(src="assets/img/transformation-skew.png")
+        }
+
+    #ex-skew(style="height: 150px;")
+      div(style="height: 150px;\
+        background-color: orange;\
+        -webkit-transform: skew(-20deg, 0);")
 
   section
+    mixin browserSupport('12+', '10+', '4+', '10+', 'No')
     h2 3D transforms
-
-    p Supported only in Webkit under Mac, iPhone 2.0+ and Android 3
 
     pre
       code.
@@ -948,15 +1179,14 @@ append slides
         rotate3d(x, y, z, angle)
         perspective(p)
         matrix3d(m)
-    img(src="assets/img/transformation-3d.png")
 
   section
     h2 Drawing with CSS
-
-    img(src="assets/img/twitter-css.png")
-    p 300 lines of CSS
-    img(src="assets/img/android-css.png")
-    p 70 lines of CSS
+    p 200 lines of CSS + 30 lines of HTML
+    iframe(src="assets/html/pure-css.html",
+      style="width:500px; height: 500px;")
+    p.source
+      a(href="http://darcyclarke.me/dev/html5/") Source: Darcy Clarke
 
   section(data-state="lab")
     h2 Lab: Transitions
@@ -990,7 +1220,35 @@ append slides
           -webkit-animation-direction: alternate;
           -webkit-animation-timing-function: ease-in;
         }
-    img(src="assets/img/animation.png")
+
+    #ex-animation(style="height: 150px;")
+      style
+        @-webkit-keyframes bounce {
+          from {
+            left: 10%;
+          }
+          to {
+            left: 70%;
+          }
+        }
+        #ex-animation {
+          position: relative;
+        }
+        #ex-animation .animated {
+          height: 150px;
+          background-color: orange;
+          border-radius: 5px;
+          width: 150px;
+          position: absolute;
+
+          -webkit-animation-name: bounce;
+          -webkit-animation-duration: 4s;
+          -webkit-animation-iteration-count: 10;
+          -webkit-animation-direction: alternate;
+          -webkit-animation-timing-function: ease-in;
+        }
+      .animated
+
 
   section
     h2 webkit-animation-direction
@@ -998,7 +1256,7 @@ append slides
     p -webkit-animation-direction: <strong>normal | alternate</strong>
 
   section
-    h2 animation-frames
+    h2 animation frames
 
     pre
       code.
@@ -1020,46 +1278,96 @@ append slides
            -webkit-transform: scale(1.0) rotate(0deg);
          }
         }
-    img(src="assets/img/animation-frames.png")
+    #ex-animation-frames
+      style
+        @-webkit-keyframes pulse {
+         0% {
+           background-color: red;
+           -webkit-transform: scale(1.0) rotate(0deg);
+         }
+         33% {
+           background-color: blue;
+           -webkit-transform: scale(1.1) rotate(-5deg);
+         }
+         67% {
+           background-color: green;
+           -webkit-transform: scale(1.1) rotate(5deg);
+         }
+         100% {
+           background-color: red;
+           -webkit-transform: scale(1.0) rotate(0deg);
+         }
+        }
+        #ex-animation-frames .pulsing {
+          -webkit-animation-name: pulse;
+          -webkit-animation-duration: 4s;
+          -webkit-animation-iteration-count: 10;
+          color: black;
+        }
+      p.pulsing This paragraph should pulse. Pulsing is the new blink. You heard it here first.
 
   section(data-state="lab")
     h2 Lab: Animations
 
     p Reproduce the Mac buttons with CSS3 animations
-
   section
-    mixin browserSupport('All', 'All', 'All', '8+', 'All')
-    h2 display: table
+    section
+      mixin browserSupport('All', 'All', 'All', '8+', 'All')
+      h2 display: table
 
-    pre
-      code.
-        #main { 
-          display: table; 
-          border-collapse: collapse; 
-        } 
+      .row-fluid
+        pre.span6
+          code.
+            #main {
+              display: table;
+            }
 
-        #nav { 
-          display: table-cell; 
-          width: 180px; 
-        } 
+            #nav {
+              display: table-cell;
+            }
 
-        #content { 
-          display: table-cell; 
-          width: 380px; 
-          padding-left: 10px; 
-        }
+            #content {
+              display: table-cell;
+            }
+        pre.span6
+          code.
+            #{'<div id="main">'}
+              #{'<div id="nav"> '}
+                navigation column content...
+              #{'</div>'}
+              #{'<div id="content">'}
+                main article content…
+              #{'</div>'}
+            #{'</div>'}
 
-    pre
-      code.
-        &lt;div id="main"> 
-          &lt;div id="nav"> 
-            navigation column content… 
-          &lt;/div>
-          &lt;div id="content">
-            main article content… 
-          &lt;/div>
-        &lt;/div>
-    img(src="assets/img/display-table.png")
+      #ex-display-table
+        style
+         #ex-display-table .pcell {
+          display: table-cell;
+          padding: 6px 15px;
+         }
+        p.pcell navigation column content...
+        p.pcell article content...
+    section
+      h2 display:table
+      p Vertical alignment
+      pre
+        code.
+          #content {
+            display: table-cell;
+            vertical-align: middle;
+          }
+      #ex-table-vertical
+        style
+         #ex-table-vertical .pcell {
+          display: table-cell;
+          padding: 6px 15px;
+          vertical-align: middle;
+         }
+        p.pcell Now you can align
+          br
+          | me correctly...
+        p.pcell ...and everything looks fine.
 
   section
     h2 display table values
@@ -1068,16 +1376,7 @@ append slides
     p table-row-group (tbody) | table-header-group (thead) | table-footer-group (tfoot) | table-caption | table-column | table-column-group
 
   section
-    h2 Vertical align works!
-
-    pre
-      code.
-        .center_me {
-          display: table-cell;
-          vertical-align: middle;
-        }
-
-  section
+    mixin browserSupport('All', 'All', 'All', '10+', '11.1+')
     h2 Multiple column layout
 
     pre
@@ -1090,14 +1389,25 @@ append slides
           column-count: 3;
           column-gap: 20px;
         }
-    img(src="assets/img/multiple-layout.png")
+    #ex-multicolumn
+      style
+        #ex-multicolumn {
+          font-size: 50%;
+          -webkit-column-count: 3;
+          -webkit-column-gap: 20px;
+        }
+
+      p Bacon ipsum dolor sit amet ham hock tail shank, tenderloin jerky biltong pork beef ribs short loin bacon flank salami brisket chuck. Tail shoulder turducken, pork loin ground round strip steak short loin turkey. Meatball tail ground round, bresaola swine tri-tip pastrami turkey drumstick leberkas pork belly shank ball tip strip steak short ribs.
 
   section
     h2 Rules of thumb
 
-    p <strong>12 words</strong> per line
-    p Around <strong>50-60</strong> to at most <strong>75 characters</strong>
-    p Otherwise the length makes it difficult to get an idea of <strong>where the line starts and ends</strong>
+    p.text-left <strong>12 words</strong> per line
+    p.text-left Around <strong>50-60</strong> to at most <strong>75 characters</strong>
+    p.text-left Otherwise the length makes it difficult to get an idea of <strong>where the line starts and ends</strong>
+
+    p.source
+      a(href="http://ux.stackexchange.com/questions/3618/ideal-column-width-for-paragraphs-online") ux.stackexchange.com
 
   section(data-state="lab")
     h2 Lab: Multicolumn
@@ -1105,8 +1415,9 @@ append slides
 
   section
     h2 Mobile devices
-    p &lt;link rel="stylesheet" media="handheld" />
-    img(src="assets/img/mobile-devices.png")
+    pre
+      code.
+        #{'<link rel="stylesheet" media="handheld" />'}
 
   section
     mixin browserSupport('All', '3.5+', 'All', '9+', '9.5+')
@@ -1119,48 +1430,396 @@ append slides
             background: #ccc;
           }
         }
-
-        &lt;link rel="stylesheet" href="small.css" 
-          media="only screen and (max-width: 600px)" />
-
-  section
-    h2 New mobile devices
-
     pre
       code.
-        &lt;!-- iPhone -->
-        @media only screen and (max-device-width: 480px) { … }
+        #{'<link rel="stylesheet" href="small.css" media="only screen and (max-width: 600px)" />'}
 
-        &lt;!-- Android -->
-        @media only screen and (max-device-width: 800px) { … }
+  section
+    h2 What is a pixel?
+    p Two<span style="color:red">*</span> kinds of pixels
 
-        &lt;!-- iPad in landscape orientation -->
-        @media only screen and (device-width: 768px) and (orientation: landscape) { … }
+    p.text-left <strong>CSS pixels</strong> (abstract)
+    p.text-left <strong>Device pixels</strong> (or physical pixels)
 
-        &lt;!-- iPhone 4 -->
-        @media only screen and (-webkit-min-device-pixel-ratio: 2) { … }
+  section
+    h2 What is a pixel?
+    ul(style="float: left;")
+      li
+        p Usually<span style="color:red">*</span>:
+        p &emsp; 1 CSS px = 1 device pixel
+      li
+        p Zooming in (200%):
+        p &emsp; 0.5 CSS px = 1 device pixel
+      li
+        p Zooming out (50%):
+        p &emsp; 2 CSS px = 1 device pixel
+    img(style="float: right;", width="200", src="assets/img/pixels.svg")
 
-        &lt;!-- Styles for 800px and up --> 
-        @media only screen and (min-width: 800px) { … }
+  section
+    h2 Viewport
+    p Available space for the layout
+    p AKA browser window's width
+    img(src="assets/img/viewport.svg", width="500")
+
+  section
+    h2 Mobile viewports
+    p <del>Available space for the layout</del>
+    p <del>AKA browser window's width</del>
+    img(src="assets/img/viewport.svg", width="500")
+
+  section
+    h2 Mobile viewports
+    p <del>Available space for the layout</del>
+    p <del>AKA browser window's width</del>
+    img(src="assets/img/viewport-mobile.svg", width="500")
 
   section
     h2 Initial size
-
     p Disable automatic resizing
 
     pre
       code.
-        &lt;meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+        #{'<meta name="viewport" content="width=device-width,initial-scale=1.0">'}
+    pre
+      code.
         body {
           -webkit-text-size-adjust: 100%;
         }
+
+  section
+    h2 Pixels again
+    p (<span style="color:red">*</span>)  1 CSS pixel = 0.5-1.5 device pixels
+    p An additional layer between CSS px and device px
+    img(src="assets/img/viewport-mobile-resized.svg", width="200", style="display: inline-block;")
+    ul.fragment.small-text(style="display: inline-block;")
+      li
+        p "Low-cost" smartphone:
+        p Screen 240x320, reports 320x427
+      li
+        p High density display:
+        p Screen 640x960, reports 320x480
+
+  section
+    h2 High density displays
+    p Pixel density above 200 PPI
+    p.small-text iPhone4 (326), iPad3 (264),<br> Galaxy Nexus (316), Galaxy SIII (306)
+
+  section
+    h2 High density displays
+    p Prefixed media query <br> <strong>device-pixel-ratio</strong>
+    pre
+      code.
+        @media only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2) {
+
+           /* Custom CSS here */
+
+        }
+
+  section
+    h2 Other media queries
+    p Not very useful/consistent
+    p.small-text.text-left @media: <strong>device-width</strong>, <strong>orientation</strong>, <strong>aspect-ratio</strong> <br>
+    p.small-text.text-left #{'<meta name="viewport">'} : <strong>target-densitydpi</strong>
+
 
   section(data-state="lab")
     h2 Lab: Media Queries
     p Use media queries with CSS
 
   section
+    section
+      h2 Responsive design
+      #ex-rwd-large
+        iframe(src="assets/html/rwd.html", width="95%", height="400px")
+
+    section
+      h2 Responsive design
+      #ex-rwd
+        iframe(src="assets/html/rwd.html", width="65%", height="400px")
+
+    section
+      h2 Responsive design
+      #ex-rwd
+        iframe(src="assets/html/rwd.html", width="35%", height="400px")
+
+  section
+    h2 Fluid grids
+    p Keep everything relative
+    .row-fluid
+      .span5.row-fluid.offset1
+        .span8
+          div(style="background-color:#f5f0f0;\
+            height: 200px;")
+        .span4
+          div(style="background-color:#f0f5f0;\
+            height: 250px;")
+      .span2(style="background: url(assets/img/arrow.svg) no-repeat center center;\
+        background-size: 80%;\
+        height: 200px")
+
+      .span3.row-fluid
+        .span8
+          div(style="background-color:#f5f0f0;\
+            height: 200px;")
+        .span4
+          div(style="background-color:#f0f5f0;\
+            height: 250px;")
+
+  section
+    h2 Fluid grids
+    p Keep everything relative
+
+    ul
+      li <strong>Percentages for lengths</strong> (beware of the margin/padding different behaviors)
+
+      li Limit the flexibility with <strong>max/min-width or overflow</strong>
+
+    pre
+      code.
+        .container {
+          max-width: 940px;
+        }
+
+        .two-columns {
+          width: 46%;
+          margin-left: 2%;
+        }
+  section
+    h2 Flexible images
+    .row-fluid#fluid-example-2
+      style
+        #fluid-example-2 img {
+          min-width: 30px;
+          max-width: 100%;
+        }
+      .span5.row-fluid.offset1
+        .span8
+          div(style="background-color:#f5f0f0;")
+            img(src="assets/img/blank-image.svg", width="80%"
+              style="")
+        .span4
+          div(style="background-color:#f0f5f0;")
+            img(src="assets/img/blank-image.svg", width="70%",
+              style="")
+      .span2(style="background: url(assets/img/arrow.svg) no-repeat center center;\
+        background-size: 80%;\
+        height: 200px")
+      .span3.row-fluid
+        .span8
+          div(style="background-color:#f5f0f0;\
+            height: 200px;")
+            img(src="assets/img/blank-image.svg", width="80%"
+              style="")
+        .span4
+          div(style="background-color:#f0f5f0;\
+            height: 250px;")
+            img(src="assets/img/blank-image.svg", width="70%",
+              style="")
+
+  section
+    h2 Flexible images
+    p Percentages for media sizes, max-width: 100%
+    .row-fluid
+      .span3(style="position: relative;")
+        div(style="background: #f33;\
+          height: 300px;\
+          width: 80%;\
+          position: absolute;\
+          z-index: -1;")
+        img(src="assets/img/blank-image.svg",
+          width="100%",
+          style="display: block;")
+      .span3(style="position: relative;")
+        div(style="background: #f33;\
+          height: 300px;\
+          width: 100%;\
+          position: absolute;\
+          z-index: -1;")
+        img(src="assets/img/blank-image.svg",
+          width="100%",
+          style="display: block;")
+      .span3.offset1(style="position: relative;")
+        div(style="background: #3f3;\
+          height: 300px;\
+          width: 100%;\
+          position: absolute;\
+          z-index: -1;")
+        img(src="assets/img/blank-image.svg",
+          width="60%",
+          style="display: block;")
+      .span2(style="position: relative;")
+        div(style="background: #3f3;\
+          height: 300px;\
+          width: 100%;\
+          position: absolute;\
+          z-index: -1;")
+        img(src="assets/img/blank-image.svg",
+          width="100%",
+          style="display: block;")
+
+  section
+    section
+      h2 Flexible images
+      p Center background
+
+      pre
+        code.
+          .illustration {
+            background: url(its-cold.png) no-repeat 50% 0;
+          }
+
+    section
+      h2 Flexible images
+      p Center background
+
+      iframe(src="assets/html/cropped-bg.html", width="600", height="400")
+      a(href="http://commons.wikimedia.org/wiki/File:3months-old_crossbreed_cats.jpg").source Picture from Wikimedia Commons
+    section
+      h2 Flexible images
+      p Center background
+
+      iframe(src="assets/html/cropped-bg.html", width="400", height="400")
+    section
+      h2 Flexible images
+      p Center background
+
+      iframe(src="assets/html/cropped-bg.html", width="200", height="400")
+
+  section
+    h2 Responsive images
+    p Beware of scaling problems
+    p Serve different images for different displays
+
+  section
+    h2 Responsive images
+    p Using cookies
+
+    pre
+      code.
+        #{'<img src="picture.jpg" data-large="picture-large.jpg">'}
+
+        document.cookie ="device_dimensions="+screen.width+"x" + screen.height;
+
+  section
+    h2 Responsive images
+    p Using noscript
+
+    pre
+      code.
+        #{'<noscript '}
+          data-img="picture-default.jpg"
+          data-imgsmall="picture-small.jpg">
+          &lt;img src="picture-default.jpg">
+        #{'</noscript>'}
+
+        $('noscript[data-img]').replaceWith(getImage(this));
+
+  section
+    h2 Media queries
+    p When fluid is not enough
+    iframe(src="assets/html/rwd.html", width="70%", height="400px")
+    iframe(src="assets/html/rwd.html", width="30%", height="400px")
+
+
+  section
+    h2 Screen sizes
+    img(src="assets/img/screen-stats.png")
+
+  section
+    h2 Goldilocks approach
+    .row-fluid#goldilocks-example
+      style
+        #goldilocks-example p {
+          border: 1px #333 solid;
+          height: 200px;
+          line-height: 200px;
+          background-color: #ccc;
+        }
+
+      .span4(style="margin: 0;")
+        p(style="width:30%; margin:0 34%;") Small
+      .span4
+        p(style="width:50%; margin:0 24%;") Right
+      .span4
+        p(style="width:70%; margin:0 14%;") Big
+    p Keep it <strong>simple</strong>
+
+  section
+    h2 RWD with Bootstrap
+    pre
+      code.
+        #{'<'}div class="<strong>row-fluid</strong>">
+            #{'<div class="span2">Fee</div>'}
+            #{'<div class="span2">Fi</div>'}
+            #{'<div class="span2">Fo</div>'}
+            #{'<div class="span3 offset3">Fum!!</div>'}
+        #{'</div>'}
+    pre
+      code.
+        .row-fluid .span2 {
+          width: 14.52991452991453%;
+        }
+  section
+    section
+      h2 RWD with Bootstrap
+      p Several media queries implemented
+
+      p 0 – 480px – 768px – 980px – 1200px
+
+
+      pre
+        code.
+          #{'<'}link href="<strong>bootstrap-responsive.css</strong>" rel="stylesheet">
+
+      #ex-bootstrap-rwd
+        style
+          #ex-bootstrap-rwd [class^="span"] {
+            height: 50px;
+            border-radius: 4px;
+            background-color: #ccc;
+          }
+        .row-fluid
+          .span2 Fee
+          .span2 Fi
+          .span1.offset2 Fo
+          .span4 Fum!
+    section
+      h2 RWD with Bootstrap
+      p Several media queries implemented
+
+      p 0 – 480px – 768px – 980px – 1200px
+
+
+      pre
+        code.
+          #{'<'}link href="<strong>bootstrap-responsive.css</strong>" rel="stylesheet">
+
+      #ex-bootstrap-rwd-2
+        style
+          #ex-bootstrap-rwd-2 [class^="span"] {
+            height: 50px;
+            border-radius: 4px;
+            background-color: #ccc;
+            float: none;
+            width: 100%;
+            margin-bottom: 5px;
+            margin-left: 0;
+          }
+        .row-fluid
+          .span2 Fee
+          .span2 Fi
+          .span1.offset2 Fo
+          .span4 Fum!
+
+  section(data-state="lab")
+    h2 Lab: Responsive design
+    p Make a web page responsive
+
+
+  section#less
     h2 CSS preprocessors
 
     pre
@@ -1181,15 +1840,17 @@ append slides
       code.
         //Installing
         npm install less
-
-        // Compile to CSS
+    pre
+      code.
+        //Compile to CSS
         lessc styles.less styles.css
+    pre
+      code.
+        //Client-side compiling
 
-        // Client-side compiling
+        #{'<link rel="stylesheet/less" type="text/css" href="styles.less">'}
 
-        &lt;link rel="stylesheet/less" type="text/css" href="styles.less">
-
-        &lt;script src="less.js" type="text/javascript"></script>
+        #{'<script src="less.js" type="text/javascript"></script>'}
 
   section
     h2 LESS
@@ -1207,7 +1868,7 @@ append slides
         darken(@color, 20%)
 
         // Math functions:
-        floor(@size / 2);
+        floor(@size / 2)
 
   section
     h2 LESS
@@ -1230,33 +1891,43 @@ append slides
           .stuff;
           .coolShadow(3px);
         }
+    pre
+      code.
+        #footer {
+          background-color: #f00;
+          width: 100px;
+          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          ...
+        }
 
   section
     h2 LESS
     p Nesting
 
-    pre
-      code.
-        .content {
-          font-size: 14px;
-          ul {
-            list-style: none;
-            & > li {
-              display: block;
+    .row-fluid
+      pre.span6
+        code.
+          .content {
+            font-size: 14px;
+            ul {
+              list-style: none;
+              & > li {
+                display: block;
+              }
             }
           }
-        }
+      pre.span6
+        code.
+          .content {
+            font-size: 14px;
+          }
+          .content ul {
+            list-style: none;
+          }
 
-        .content {
-          font-size: 14px; 
-        }
-        .content ul {
-          list-style: none; 
-        }
-
-        .content ul > li {
-          display: block; 
-        }
+          .content ul > li {
+            display: block;
+          }
 
   section
     h2 LESS
@@ -1272,72 +1943,75 @@ append slides
           color: black;
         }
 
-  section
-    h2 3L ?
-    p SASS framework
+  //- section
+  //-   h2 3L ?
+  //-   p LESS framework
 
-    pre
-      code.
-        @import “compass”;
+  //-   pre
+  //-     code.
+  //-       @import “compass";
 
-        // CSS3 mixins
-        .container {
-          @include background-image(linear-gradient(#FFF, #000));
+  //-       // CSS3 mixins
+  //-       .container {
+  //-         @include background-image(linear-gradient(#FFF, #000));
 
-          @include transition-property(color);
-          @include transition-duration(.5s)
-          …
-        }
+  //-         @include transition-property(color);
+  //-         @include transition-duration(.5s)
+  //-         …
+  //-       }
 
-        // Sprite generation
-        $icons: sprite-map("icons/*.png");
-        .links{
-          background: $icons;
-        }
+  //-       // Sprite generation
+  //-       $icons: sprite-map("icons/*.png");
+  //-       .links{
+  //-         background: $icons;
+  //-       }
 
   section
     h2 More syntatic sugar
 
-    | SASS:
-    pre
-      code.
-        @import “compass”;
+    .row-fluid
+      .span6
+        p Sass
+        pre
+          code.
+            @import “compass";
 
-        $myBlue = #12F;
+            $myBlue = #12F;
 
-        @mixin .my-background($color) {
-          background-color: $color + #100;
-        }
+            @mixin .my-background($color) {
+              background-color: $color + #100;
+            }
 
-        .class {
-          @include .my-background($myBlue)
-          div {
-            width: 100px; 
-          }
-        }
-    | STYLUS
-    pre
-      code.
-        @import “layout.styl”;
+            .class {
+              @include .my-background($myBlue)
+              div {
+                width: 100px;
+              }
+            }
+      .span6
+        p Stylus
+        pre
+          code.
+            @import “layout.styl";
 
-        @import “layout.styl”;
+            @import “layout.styl";
 
-        myBlue = #12F
+            myBlue = #12F
 
-        my-background(color) 
-          background-color: color + #100
+            my-background(color)
+              background-color: color + #100
 
-        .class 
-          my-background(myBlue)
-          div
-            width: 100px  
+            .class
+              my-background(myBlue)
+              div
+                width: 100px
 
   section(data-state="lab")
     h2 Lab: LESS
     p Refactor a CSS stylesheet
 
-    
-  section
+
+  section#sass
     h2 CSS preprocessors
 
     pre
@@ -1351,7 +2025,7 @@ append slides
         }
 
   section
-    h2 SASS
+    h2 Sass
     p How to (with Ruby)
 
     pre
@@ -1363,7 +2037,7 @@ append slides
         sass –watch styles.scss
 
   section
-    h2 SASS
+    h2 Sass
     p Operations and default functions
 
     pre
@@ -1381,8 +2055,8 @@ append slides
         floor($size / 2);
 
   section
-    h2 SASS
-    p Operations and default functions
+    h2 Sass
+    p Mixins and paremetric mixins
 
     pre
       code.
@@ -1402,8 +2076,17 @@ append slides
           @include coolShadow(3px);
         }
 
+    pre
+      code.
+        #footer {
+          background-color: #f00;
+          width: 100px;
+          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          ...
+        }
+
   section
-    h2 SASS
+    h2 Sass
     p Custom functions
 
     pre
@@ -1417,128 +2100,148 @@ append slides
           background-color: moreGreen(#576);
         }
 
+    pre
+      code.
+        #footer {
+          background-color: #5a6;
+        }
+
+
   section
-    h2 SASS
+    h2 Sass
     p Nesting
 
-    pre
-      code.
-        .content {
-          font-size: 14px;
-          ul {
-            list-style: none;
-            & > li {
-              display: block;
+    .row-fluid
+      pre.span6
+        code.
+          .content {
+            font-size: 14px;
+            ul {
+              list-style: none;
+              & > li {
+                display: block;
+              }
             }
           }
-        }
 
-        .content {
-          font-size: 14px; 
-        }
-        .content ul {
-          list-style: none; 
-        }
+      pre.span6
+        code.
+          .content {
+            font-size: 14px;
+          }
 
-        .content ul > li {
-          display: block; 
-        }
+          .content ul {
+            list-style: none;
+          }
+
+          .content ul > li {
+            display: block;
+          }
 
   section
-    h2 SASS
+    h2 Sass
     p Namespaces
 
-    pre
-      code.
-        .content {
-          background: {
-            color: white;
-            image: url('nice-bg.png');
-            size: cover;
+    .row-fluid
+      pre.span6
+        code.
+          .content {
+            background: {
+              color: white;
+              image: url('nice-bg.png');
+              size: cover;
+            }
           }
-        }
 
-        .content {
-          background-color: white;
-          background-image: url("nice-bg.png");
-          background-size: cover; 
-        }
+      pre.span6
+        code.
+          .content {
+            background-color: white;
+            background-image: url("nice-bg.png");
+            background-size: cover;
+          }
+
 
   section
-    h2 SASS
+    h2 Sass
     p Class extension
 
-    pre
-      code.
-        .button {
-          width: 20px;
-          border-radius: 2px;
-        }
+    .row-fluid
+      pre.span6
+        code.
+          .button {
+            width: 20px;
+            border-radius: 2px;
+          }
 
-        .navbar .button {
-          color: white;
-          ...
-        }
+          .navbar .button {
+            color: white;
+          }
 
-        .big-button {
-          @extend .button;
-          width: 30px;
-        }
+          .big-button {
+            @extend .button;
+            width: 30px;
+          }
 
-        .button, .big-button {
-          width: 20px;
-          border-radius: 2px; 
-        }
+      pre.span6
+        code.
+          .button, .big-button {
+            width: 20px;
+            border-radius: 2px;
+          }
 
-        .navbar .button, .navbar .big-button {
-          color: white;
-        }
+          .navbar .button, .navbar .big-button {
+            color: white;
+          }
 
-        .big-button {
-          width: 30px; 
-        }
+          .big-button {
+            width: 30px;
+          }
 
   section
-    h2 SASS
+    h2 Sass
     p Idented syntax
 
-    pre
-      code.
-        @mixin table-base {
-          th {
-            text-align: center;
-            font-weight: bold;
+    .row-fluid
+      pre.span6
+        code.
+          @mixin table-base {
+            th {
+              text-align: center;
+              font-weight: bold;
+            }
+            td, th {padding: 2px}
           }
-          td, th {padding: 2px}
-        }
 
-        @mixin left($dist) {
-          float: left;
-          margin-left: $dist;
-        }
+          @mixin left($dist) {
+            float: left;
+            margin-left: $dist;
+          }
 
-        #data {
-          @include left(10px);
-          @include table-base;
-        }
+          #data {
+            @include left(10px);
+            @include table-base;
+          }
 
-        =table-base
-          th
-            text-align: center
-            font-weight: bold
-          td, th
-            padding: 2px
+      pre.span6
+        code.
+          =table-base
+            th
+              text-align: center
+              font-weight: bold
+            td, th
+              padding: 2px
 
-        =left($dist)
-          float: left
-          margin-left: $dist
+          =left($dist)
+            float: left
+            margin-left: $dist
 
-        #data
-          +left(10px)
-          +table-base
+          #data
+            +left(10px)
+            +table-base
 
   section
-    h2 SASS
+    h2 Sass
     p Control directives
 
     pre
@@ -1556,12 +2259,12 @@ append slides
         }
 
   section
-    h2 SASS
-    p SASS framework
+    h2 Compass
+    p Sass framework
 
     pre
       code.
-        @import “compass”;
+        @import “compass";
 
         // CSS3 mixins
         .container {
@@ -1580,12 +2283,12 @@ append slides
 
 
   section
-    h2 SASS
-    p SASS framework
+    h2 Compass
+    p Sass framework
 
     pre
       code.
-        @import “compass”;
+        @import “compass";
 
         // Text replacement
         li.hidden {
@@ -1598,44 +2301,63 @@ append slides
         }
 
         // Sticky footer
-        @import sticky-footer(60px, “#my_footer”);
+        @import sticky-footer(60px, "#my_footer");
 
   section
     h2 More syntactic sugar
-    p SASS framework
 
-    | LESS:
-    pre
-      code.
-        @import “bootstrap.less”;
+    .row-fluid
+    .span6
+      p LESS:
+      pre
+        code.
+          @import “bootstrap.less";
 
-        @myBlue = #12F;
+          @myBlue = #12F;
 
-        .my-background(@color) {
-          background-color: @color + #100;
-        }
-
-        .class {
-          .my-background(@myBlue)
-          div {
-            width: 100px; 
+          .my-background(@color) {
+            background-color: @color + #100;
           }
 
-    | STYLUS:
-    pre
-      code.
-        @import “layout.styl”;
+          .class {
+            .my-background(@myBlue)
+            div {
+              width: 100px;
+          }
+    .span6
+      p Stylus:
+      pre
+        code.
+          @import “layout.styl";
 
-        myBlue = #12F
+          myBlue = #12F
 
-        my-background(color) 
-          background-color: color + #100
+          my-background(color)
+            background-color: color + #100
 
-        .class 
-          my-background(myBlue)
-          div
-            width: 100px  
+          .class
+            my-background(myBlue)
+            div
+              width: 100px
 
   section(data-state="lab")
     h2 Lab: Sass
-      p Refactor a CSS stylesheet with Compass
+    p Refactor a CSS stylesheet with Compass
+
+  section
+    h2 Keep sharp
+    ul
+      li
+        a(href="http://html5please.com") HTML5 Please
+      li
+        a(href="http://caniuse.com") When can I use...
+      li
+        a(href="https://developer.mozilla.org/") Mozilla Developer Network
+      li
+        a(href="http://www.quirksmode.org/") QuirksMode.org
+      li
+        a(href="http://csslint.net/") CSS LINT
+      li
+        a(href="http://css3clickchart.com/") CSS3 Click Chart
+      li
+        a(href="http://www.browsersupport.net") browsersupport.net

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="850" width="200" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+
+ <rect height="50" width="50" y="550" x="50" fill="#43bd7c"/>
+ <rect height="50" width="50" y="550" x="0" fill="#7cbd43"/>
+ <rect height="50" width="50" y="550" x="100" fill="#43bdab"/>
+ <rect height="50" width="50" y="550" x="150" fill="#839bcc"/>
+ <rect height="50" width="50" y="600" x="0" fill="#aebd43"/>
+ <rect height="50" width="50" y="600" x="50" fill="#43bda4"/>
+ <rect height="50" width="50" y="600" x="150" fill="#4364bd"/>
+ <rect height="50" width="50" y="600" x="100" fill="#43a7bd"/>
+ <rect height="50" width="50" y="650" x="100" fill="#6143bd"/>
+ <rect height="50" width="50" y="650" x="150" fill="#7963ec"/>
+ <rect height="50" width="50" y="650" x="0" fill="#d3d62a"/>
+ <rect height="50" width="50" y="650" x="50" fill="#18e8be"/>
+ <rect height="50" width="50" y="700" x="150" fill="#a443bd"/>
+ <rect height="50" width="50" y="700" x="100" fill="#7c43bd"/>
+ <rect height="50" width="50" y="700" x="50" fill="#bd5e43"/>
+ <rect height="50" width="50" y="700" x="0" fill="#da6126"/>
+
+ <rect height="100" width="100" y="50" x="100" fill="#43bd7c"/>
+ <rect height="100" width="100" y="50" x="0" fill="#7cbd43"/>
+ <rect height="100" width="100" y="150" x="0" fill="#aebd43"/>
+ <rect height="100" width="100" y="150" x="100" fill="#43bda4"/>
+
+ <rect height="200" width="200" y="300" x="0" fill="#7cbd43"/>
+
+ <path d="m100 550v200" stroke="#000" stroke-width="2"/>
+ <path d="m0 650h200" stroke="#000" stroke-width="2"/>
+ 
+ <path d="m100 300v200" stroke="#000" stroke-width="2"/>
+ <path d="m0 400h200" stroke="#000" stroke-width="2"/>
+
+ <path d="m100 50v200" stroke="#000" stroke-width="2"/>
+ <path d="m0 150h200" stroke="#000" stroke-width="2"/>
+ 
+ <text x="35" y="27" style="font-size: 35px;font-family:Helvetica;"> 2 dev px. </text>
+
+</svg>
