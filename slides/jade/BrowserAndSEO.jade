@@ -3,11 +3,11 @@ extend modules/layout
 include modules/mixins
 
 append title
-  title Browser and SEO
+  title Browsers and SEO
 
 append slides
   section
-    h1 Browser and SEO
+    h1 Browsers and SEO
 
   section
     h2 Browser market share
@@ -39,13 +39,13 @@ append slides
     h2 IE-specific stylesheets
     pre
       code.
-        &lt;!--[if IE 7]>
-        &lt;link type="text/css" href="/ie_hacks7.css"  rel="stylesheet">
-        &lt;![endif]-->
+        #{'<!--[if IE 7]>'}
+        #{'<link type="text/css" href="/ie_hacks7.css"  rel="stylesheet">'}
+        #{'<![endif]-->'}
 
-        &lt;!--[if lte IE 6]>
-        &lt;link type="text/css" href="/ie_hacks6.css"  rel="stylesheet">
-        &lt;![endif]-->
+        #{'<!--[if lte IE 6]>'}
+        #{'<link type="text/css" href="/ie_hacks6.css"  rel="stylesheet">'}
+        #{'<![endif]-->'}
 
   section
     h2 IE-specific selectors
@@ -70,15 +70,15 @@ append slides
 
     pre
       code.
-        &lt;!--[if lt IE 7 ]> <html class="ie6"> &lt;![endif]-->
-        &lt;!--[if IE 7 ]> &lt;html class="ie7"> &lt;![endif]-->
-        &lt;!--[if (gt IE 9)|!(IE)]>&lt;!--> &lt;html class=""> &lt;!--&lt;![endif]-->
+        #{'<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->'}
+        #{'<!--[if IE 7 ]> <html class="ie7"> <![endif]-->'}
+        #{'<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->'}
 
-        &lt;style>
+        #{'<style>'}
           .content {display: inline-block;}
           .ie6 .content {display: inline; zoom:1;}
           .ie7 .content {display: inline; zoom:1;}
-        &lt;/style>
+        #{'</style>'}
 
 
   section
@@ -108,14 +108,14 @@ append slides
     h2 X-UA-Compatible
     pre
       code.
-        &lt;!-- render as ie9 -->
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=9" /> 
+        #{'<!-- render as ie9 -->'}
+        #{'<meta http-equiv="X-UA-Compatible" content="IE=9" />'} 
 
-        &lt;!-- render as ie7 (quirks/standard mode, according to doctype) -->
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        #{'<!-- render as ie7 (quirks/standard mode, according to doctype) -->'}
+        #{'<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />'}
 
-        &lt;!-- render as ie9 or ie7 (avoid ie8) -->
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=7, IE=9">
+        #{'<!-- render as ie9 or ie7 (avoid ie8) -->'}
+        #{'<meta http-equiv="X-UA-Compatible" content="IE=7, IE=9">'}
 
   section
     h2 X-UA-Compatible values
@@ -133,10 +133,10 @@ append slides
     | META:
     pre
       code.
-        &lt;!-- Use Chrome Frame -->
-        &lt;meta http-equiv="X-UA-Compatible" content="chrome=1">
-        &lt;!-- Use IE9 (if installed) or Chrome Frame -->
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+        #{'<!-- Use Chrome Frame -->'}
+        #{'<meta http-equiv="X-UA-Compatible" content="chrome=1">'}
+        #{'<!-- Use IE9 (if installed) or Chrome Frame -->'}
+        #{'<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">'}
 
     | HTTP header:
     pre
@@ -148,7 +148,7 @@ append slides
     p Use IE 9 if available, Chrome Frame otherwise:
     pre
       code.
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+        #{'<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">'}
 
   section
     h2 Install from the server side
@@ -162,8 +162,8 @@ append slides
     | Server side:
     pre
       code.
-        if (userAgent.contains(“MSIE”) && !userAgent.contains(“chromeframe”)) {
-          return redirect(“/chromeFrameRequired.html”);
+        if (userAgent.contains("MSIE") && !userAgent.contains("chromeframe")) {
+          return redirect("/chromeFrameRequired.html");
         }
 
   section
@@ -172,15 +172,15 @@ append slides
 
     pre
       code.
-        &lt;html>
-          &lt;body>
-            &lt;script type="text/javascript" 
-             src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">&lt;/script>
-            &lt;script>
+        #{'<html>'}
+          #{'<body>'}
+            #{'<script type="text/javascript" '}
+             #{'src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>'}
+            #{'<script>'}
              CFInstall.check({ mode: "overlay", destination: "http://www.waikiki.com" });
-            &lt;/script>
-          &lt;/body>
-          &lt;/html>
+            #{'</script>'}
+          #{'</body>'}
+          #{'</html>'}
 
   section
     h2 Multiple IE versions
@@ -226,9 +226,9 @@ append slides
     h2 Pie as JavaScript
     pre
       code.
-        &lt;!--[if lt IE 10]>
-        &lt;script type="text/javascript" src="PIE.js"></script>
-        &lt;![endif]-->
+        #{'<!--[if lt IE 10]>'}
+        #{'<script type="text/javascript" src="PIE.js"></script>'}
+        #{'<![endif]-->'}
         $(function() {
             if (window.PIE) {
                 $('.rounded').each(function() {  PIE.attach(this);  });
@@ -280,20 +280,20 @@ append slides
     p Inform search engines <strong>about pages on their sites that are available for crawling</strong>
     pre
       code.
-        &lt;?xml version="1.0" encoding="UTF-8"?>
-        &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-           &lt;url>
-              &lt;loc>http://www.example.com/index.html&lt;/loc>
-              &lt;lastmod>2005-01-01&lt;/lastmod>
-              &lt;changefreq>daily&lt;/changefreq>
-              &lt;priority>0.8&lt;/priority>
-           &lt;/url>
-        &lt;/urlset> 
+        #{'<?xml version="1.0" encoding="UTF-8"?>'}
+        #{'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'}
+           #{'<url>'}
+              #{'<loc>http://www.example.com/index.html</loc>'}
+              #{'<lastmod>2005-01-01</lastmod>'}
+              #{'<changefreq>daily</changefreq>'}
+              #{'<priority>0.8</priority>'}
+           #{'</url>'}
+        #{'</urlset>'} 
 
   section
     h2 Contents not in sitemap
     p URLs that are not present in the sitemap <strong>can be indexed as well</strong>
-    p Sitemap allows to specify <strong>frequency of change</strong> and <strong>priorities</stron>
+    p Sitemap allows to specify <strong>frequency of change</strong> and <strong>priorities</strong>
     p It's also useful for contents that would otherwise be <strong>unreachable</strong>.
 
   section
@@ -320,10 +320,10 @@ append slides
 
   section
     h2 Bits NOT included in PageRank
-    p 6lt;meta <strong>name=keywords></strong>
+    p #{'<meta '}<strong>name=keywords></strong>
     p <strong>Language</strong> set in the page
     p <strong>Invisible contents</strong>
-    p <a rel=”<strong>nofollow</strong>”>  
+    p #{'<a rel="'}<strong>nofollow</strong>">
 
   section
     h2 Clean URLs

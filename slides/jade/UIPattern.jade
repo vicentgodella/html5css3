@@ -47,23 +47,23 @@ append slides
     h2 Multiple selection
     pre
       code.
-        &lt;select name="toppings" multiple="multiple" size="5">
-          &lt;option value="mushrooms">mushrooms&lt;/option>
-          &lt;option value="greenpeppers">green peppers&lt;/option>
-          &lt;option value="onions">onions&lt;/option>
-          &lt;option value="tomatoes">tomatoes&lt;/option>
-          &lt;option value="olives">olives&lt;/option>
-        &lt;/select>
+        #{'<select name="toppings" multiple="multiple" size="5">'}
+          #{'<option value="mushrooms">mushrooms</option>'}
+          #{'<option value="greenpeppers">green peppers</option>'}
+          #{'<option value="onions">onions</option>'}
+          #{'<option value="tomatoes">tomatoes</option>'}
+          #{'<option value="olives">olives</option>'}
+        #{'</select>'}
 
   section
     h2 Multiple checkboxes
     pre
       code.
-        &lt;label>&lt;input type="checkbox" name="mushrooms"> mushrooms&lt;/label>
-        &lt;label>&lt;input type="checkbox" name="greenpeppers"> green peppers&lt;/label>
-        &lt;label>&lt;input type="checkbox" name="onions"> onions&lt;/label>
-        &lt;label>&lt;input type="checkbox" name="tomatoes"> tomatoes&lt;/label>
-        &lt;label>&lt;input type="checkbox" name="olives"> olives&lt;/label>
+        #{'<label><input type="checkbox" name="mushrooms"> mushrooms</label>'}
+        #{'<label><input type="checkbox" name="greenpeppers"> green peppers</label>'}
+        #{'<label><input type="checkbox" name="onions"> onions</label>'}
+        #{'<label><input type="checkbox" name="tomatoes"> tomatoes</label>'}
+        #{'<label><input type="checkbox" name="olives"> olives</label>'}
 
   section
     h2 Two  selects
@@ -97,7 +97,7 @@ append slides
     p Nice way to <strong>introduce new features</strong>
 
   section
-    h2 “What's this?”
+    h2 "What's this?"
     p <strong>Unobstrusive help</strong>, good for learning by doing
 
   section
@@ -128,8 +128,6 @@ append slides
   section
     h2 Gradual engagement
 
-  section(date-state="lab")
+  section(data-state="lab")
     h2 Final Lab
     p Contact page using <strong>microformats</strong>, <strong>HTML5</strong> and <strong>CSS3</strong>
-    h2 Final Lab
-    p content

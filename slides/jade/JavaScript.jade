@@ -95,10 +95,10 @@ append slides
 
     pre
       code.
-        &lt;input type="file" id="yourFile" name="file"/>
-        &lt;output id="list">&lt;/output>
+        #{'<input type="file" id="yourFile" name="file"/>'}
+        #{'<output id="list"></output>'}
 
-        &lt;script>
+        #{'<script>'}
           function handleFileSelect(evt) {
             var file = evt.target.files[0];
 
@@ -106,7 +106,7 @@ append slides
           }
 
           $('#yourFile').on('change', handleFileSelect);
-        &lt;/script>
+        #{'</script>'}
 
   section
     h2 FileReader
@@ -146,10 +146,10 @@ append slides
         localStorage.setItem("key", "value");
 
         // Get data 
-        localStorage.getItem("key"); // => “value”
+        localStorage.getItem("key"); // => "value"
 
         // Remove data
-        localStorage.removeData(“key”);
+        localStorage.removeData("key");
 
         // Number of entries
         localStorage.length
@@ -169,10 +169,10 @@ append slides
     h2 store.js
     pre
       code.
-        var myStuff = new Store(“myStuff”);
+        var myStuff = new Store("myStuff");
 
         // Set data
-        myStuff.set('key', value')
+        myStuff.set('key', 'value')
 
         // Get data 
         myStuff.get('key')
@@ -192,12 +192,12 @@ append slides
 
     pre
       code.
-        &lt;!DOCTYPE HTML>
-        &lt;html manifest="/cache.manifest">
+        #{'<!DOCTYPE HTML>'}
+        #{'<html manifest="/cache.manifest">'}
 
         ...
 
-        &lt;/html>
+        #{'</html>'}
   section
     h2 Cache.manifest
     pre

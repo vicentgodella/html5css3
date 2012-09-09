@@ -7,7 +7,7 @@ append title
 
 append slides
   section
-    h1 HTML 5
+    h1 HTML5
 
   section
     h2 HTML5 browser support
@@ -22,12 +22,12 @@ append slides
     | BEFORE:
     pre
       code.
-        &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        #{'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'}
 
     | AFTER:
     pre
       code.
-        &lt;!DOCTYPE html>
+        #{'<!DOCTYPE html>'}
 
   section
     h2 html
@@ -35,22 +35,22 @@ append slides
     | BEFORE:
     pre
       code.
-        &lt;html xmlns="http://www.w3.org/1999/xhtml">
+        #{'<html xmlns="http://www.w3.org/1999/xhtml">'}
     | AFTER:
     pre
       code.
-        &lt;html>
+        #{'<html>'}
 
   section
     h2 charset
     | BEFORE:
     pre
       code.
-        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        #{'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'}
     | AFTER:
     pre
       code.
-        &lt;meta charset="utf-8">
+        #{'<meta charset="utf-8">'}
 
   section
     h2 Charset defaults
@@ -65,7 +65,7 @@ append slides
     p HTTP header
     p <strong>Content-Type: text/html; charset=iso-8859-1</strong>
     p META tag
-    p <strong>&lt;meta charset="utf-8"></strong>
+    p <strong>#{'<meta charset="utf-8">'}</strong>
 
   section
     h2 link
@@ -73,18 +73,17 @@ append slides
     | BEFORE:
     pre
       code.
-        &lt;link href="styles.css" rel="stylesheet" type="text/css"/>
+        #{'<link href="styles.css" rel="stylesheet" type="text/css"/>'}
     | AFTER:
     pre
       code.
-        &lt;link href="styles.css" rel="stylesheet"/>
+        #{'<link href="styles.css" rel="stylesheet"/>'}
 
   section
-    h2 Typical <link> rel values
+    h2 Typical #{'<link>'} rel values
     pre
       code.
-        &lt;link rel="XXX" href=”file”/>
-
+        #{'<link rel="XXX" href="file"/>'}
     p stylesheet, favicon, rss, prefetching...
 
   section
@@ -94,8 +93,8 @@ append slides
 
     pre
       code.
-        &lt;link rel="shortcut icon" href="/favicon.ico">
-        &lt;link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        #{'<link rel="shortcut icon" href="/favicon.ico">'}
+        #{'<link rel="apple-touch-icon" href="/apple-touch-icon.png">'}
 
   section
     h2 Precomposed icons
@@ -104,20 +103,20 @@ append slides
 
     pre
       code.
-        &lt;link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+        #{'<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">'}
 
   section
     mixin browserSupport('13+', '3.6+', 'No', 'No', 'No')
-    h2 rel=”prefetch” rel=”prerender”
+    h2 rel="prefetch" rel="prerender"
 
     pre
       code.
-        &lt;link rel="prefetch" href="big.jpg">
-        &lt;link rel="prerender" href="next.html">
+        #{'<link rel="prefetch" href="big.jpg">'}
+        #{'<link rel="prerender" href="next.html">'}
 
     p <strong>Prefetch</strong> the target link
     p Based on the <strong>read-only</strong> nature of GET requests
-    p Also <strong>allowed for &lt;a> elements</strong>
+    p Also <strong>allowed for #{'<a>'} elements</strong>
 
   section
     h2 GET vs POST
@@ -131,56 +130,56 @@ append slides
       li Other: PUT, HEAD, DELETE
 
   section
-    h2 rel=”alternate”
+    h2 rel="alternate"
     p RSS autodiscovery
 
     pre
       code.
-        &lt;link rel="alternate" type="application/atom+xml" href="http://www.example.com/xml/index.atom">
+        #{'<link rel="alternate" type="application/atom+xml" href="http://www.example.com/xml/index.atom">'}
 
-        &lt;link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.example.com/xml/index.rdf">
+        #{'<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.example.com/xml/index.rdf">'}
 
   section
-    h2 rel=”canonical”
+    h2 rel="canonical"
     p Tell which one to use in case of multiple URLs
 
     pre
       code.
-        &lt;link rel="canonical" href="http://myhost.com/mypage.html">
+        #{'<link rel="canonical" href="http://myhost.com/mypage.html">'}
 
   section
     h2 Other 'rel' values
-    p Used in <strong>&lt;link></strong> tags
+    p Used in <strong>#{'<link>'}</strong> tags
 
     p home, contents, search, glossary, help, start, prev, previous, next, copyright, author – Navigate links
 
     pre
       code.
-        &lt;link rel="next" href="page2.html">
+        #{'<link rel="next" href="page2.html">'}
 
   section
-    h2 &lt;a> relationships
+    h2 #{'<a>'} relationships
 
   section
-    h2 rel=”license”
+    h2 rel="license"
     p Specify the license applied to the current page.
 
     pre
       code.
-        &lt;a href="http://creativecommons.org/licenses/by/2.0/" rel="license">
+        #{'<a href="http://creativecommons.org/licenses/by/2.0/" rel="license">'}
           cc by 2.0
-        &lt;/a>
+        #{'</a>'}
 
   section
-    h2 rel=”nofollow”
+    h2 rel="nofollow"
     p Do not affect the PageRank of the link target
 
     pre
       code.
         | Hi, nice post. BTW, you cannot miss our new 
-        &lt;a rel="nofollow" href="http://thespammer.com/recipes.html">
+        #{'<a rel="nofollow" href="http://thespammer.com/recipes.html">'}
           ViaGra d0nuTs recipes!
-        &lt;/a>
+        #{'</a>'}
         
   section
     h2 Human computation
@@ -196,15 +195,15 @@ append slides
 
   section
     h2 Other 'rel' values
-    p Used in &lt;a> tags
+    p Used in #{'<a>'} tags
     ul
       li tag – The link target is an author-designated tag
       li me, friend – XHTML Friends Network (XFN)
 
     pre
       code.
-        &lt;a href="http://technorati.com/tag/tech" rel="tag">tech&lt;/a>
-        &lt;a href="http://jeff.example.org" rel="friend”>Jeff&lt;/a>
+        #{'<a href="http://technorati.com/tag/tech" rel="tag">tech</a>'}
+        #{'<a href="http://jeff.example.org" rel="friend">Jeff</a>'}
 
   section
     h2 Removed HTML elements
@@ -229,12 +228,12 @@ append slides
   section
     h2 Importance tags
     ul
-      li Use &lt;b>
+      li Use #{'<b>'}
         ul
           li text without specific emphasis or importance typically represented as bold text
           li keywords, product names, etc.
-          li E.g.: Use &lt;b> to indicate bold text.
-      li Use &lt;strong>
+          li E.g.: Use #{'<b>'} to indicate bold text.
+      li Use #{'<strong>'}
         ul
           li Strong semantic importance
           li E.g.: It is important that you do not mix styles up!
@@ -242,12 +241,12 @@ append slides
   section
     h2 Emphasis tags
     ul
-      li Use &lt;i> 
+      li Use #{'<i>'} 
         ul
           li text without emphasis or importance, typically represented as italic text
           li technical term, phrase from another language, a ship name, etc.
           li E.g.: Intoxicated from eating too much wasabi at once.
-      li Use &lt;em>
+      li Use #{'<em>'}
         ul
           li Stress emphasis
           li Use different voice or mood
@@ -268,14 +267,14 @@ append slides
     h2 email
     pre
       code.
-        &lt;input name=”email” type=”email”>
+        #{'<input name="email" type="email">'}
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 url
     pre
       code.
-        &lt;input name=”homepage” type=”url”>
+        #{'<input name="homepage" type="url">'}
 
   section
     mixin browserSupport('6+', 'No', '5+', '10+', '11+')
@@ -283,21 +282,21 @@ append slides
 
     pre
       code.
-        &lt;input name=”amount” type=”number” min=”0” max=”100” step=”2” value=”0”>
+        #{'<input name="amount" type="number" min="0" max="100" step="2" value="0">'}
 
   section
     mixin browserSupport('6+', '3.6+', '5+', '9+', '10.6+')
     h2 search
     pre
       code.
-        &lt;input type="search" results="10" />
+        #{'<input type="search" results="10" />'}
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 tel
     pre
       code.
-        &lt;input type="tel" placeholder="(555) 555-5555">
+        #{'<input type="tel" placeholder="(555) 555-5555">'}
 
   section
     mixin browserSupport('6+', 'No', '5+', 'No', '10.6+')
@@ -306,39 +305,39 @@ append slides
 
     pre
       code.
-        &lt;input type="date" min="2011-05-16" max="2011-08-21" value="2011-05-20">
+        #{'<input type="date" min="2011-05-16" max="2011-08-21" value="2011-05-20">'}
 
   section
     mixin browserSupport('6+', '3.6+', '5+', '10+', '11+')
     h2 Multiple file upload
     pre
       code.
-        &lt;input type="file" multiple="multiple" />
+        #{'<input type="file" multiple="multiple" />'}
 
   section
     mixin browserSupport('20+', 'No', 'No', 'No', '11+')
     h2 color
     pre
       code.
-        &lt;input type="color" placeholder="e.g. #2a2a2a">
+        #{'<input type="color" placeholder="e.g. #2a2a2a">'}
 
   section
     mixin browserSupport('No', '4+', '5+', '10+', '10.6+')
     h2 datalist
     pre
       code.
-        &lt;input type="text" list="mydata">
-        &lt;datalist id="mydata">
-          &lt;option label="Mr" value="Mister">
-          &lt;option label="Mrs" value="Mistress">
-          &lt;option label="Ms" value="Miss">
-        &lt;/datalist>
+        #{'<input type="text" list="mydata">'}
+        #{'<datalist id="mydata">'}
+          #{'<option label="Mr" value="Mister">'}
+          #{'<option label="Mrs" value="Mistress">'}
+          #{'<option label="Ms" value="Miss">'}
+        #{'</datalist>'}
 
   section
     h2 progress
     pre
       code.
-        &lt;progress value="75" max="100">75 of 100&lt;/progress>
+        #{'<progress value="75" max="100">75 of 100</progress>'}
 
   section
     mixin browserSupport('6+', 'No', 'No', 'No', '10.6+')
@@ -346,7 +345,7 @@ append slides
     p Only supported in Chrome and Opera
     pre
       code.
-        &lt;meter min="0" max="100" value="91">91 of 100</meter>
+        #{'<meter min="0" max="100" value="91">91 of 100</meter>'}
 
   section
     h2 Browser support
@@ -371,14 +370,14 @@ append slides
     h2 placeholder
     pre
       code.
-        &lt;input name="q" placeholder="Search Bookmarks and History">
+        #{'<input name="q" placeholder="Search Bookmarks and History">'}
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '11+')
     h2 autofocus
     pre
       code.
-        &lt;input name="q" autofocus>
+        #{'<input name="q" autofocus>'}
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
@@ -392,7 +391,7 @@ append slides
     h2 min, max, step
     pre
       code.
-        &lt;input name=”amount” type=”number” value=”0” min=”0” max=”100” step=”2” >
+        #{'<input name="amount" type="number" value="0" min="0" max="100" step="2" >'}
 
   section
     h2 data-*
@@ -401,18 +400,18 @@ append slides
     | GOOD:
     pre
       code.
-        &lt;ul id=”friends”>
-          &lt;li data-username=”jdoe”>John Doe</li>
-          &lt;li data-username=”cnorris”>Chuck Norris</li>
-        &lt;/ul>
+        #{'<ul id="friends">'}
+          #{'<li data-username="jdoe">John Doe</li>'}
+          #{'<li data-username="cnorris">Chuck Norris</li>'}
+        #{'</ul>'}
 
     | BAD:
     pre
       code.
-        &lt;ul id=”friends”>
-          &lt;li class=”username-jdoe”>John Doe</li>
-          &lt;li class=”username-cnorris”>Chuck Norris</li>
-        &lt;/ul>
+        #{'<ul id="friends">'}
+          #{'<li class="username-jdoe">John Doe</li>'}
+          #{'<li class="username-cnorris">Chuck Norris</li>'}
+        #{'</ul>'}
 
   section
     mixin browserSupport('10+', '3.6+', 'No', 'No', 'No')
@@ -421,12 +420,12 @@ append slides
     p Supported in Chrome & FF3.6+
     pre
       code.
-        &lt;label>
+        #{'<label>'}
           Name:
-          &lt;input type=”text” form=”create” name=”name”>
-        &lt;/label>
+          #{'<input type="text" form="create" name="name">'}
+        #{'</label>'}
 
-        &lt;form id=”create”></form>
+        #{'<form id="create"></form>'}
 
   section
     mixin browserSupport('No', '4+', 'No', '9+', '11.5+')
@@ -434,23 +433,23 @@ append slides
     p Supported in IE9, Opera 11.5 & Firefox 4
     pre
       code.
-        &lt;form>
-          &lt;fieldset disabled>
-            &lt;input type=”text” name=”name”>
-            &lt;input type=”submit” value=”save”>
-          &lt;/fieldset>
-          &lt;fieldset>
-            &lt;input type=”submit” value=”delete”>
-          &lt;/fieldset>
-        &lt;/form>
+        #{'<form>'}
+          #{'<fieldset disabled>'}
+            #{'<input type="text" name="name">'}
+            #{'<input type="submit" value="save">'}
+          #{'</fieldset>'}
+          #{'<fieldset>'}
+            #{'<input type="submit" value="delete">'}
+          #{'</fieldset>'}
+        #{'</form>'}
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '11+')
     h2 New textarea attributes
-    p maxlength=”number” (Chrome and FF4) spellcheck=”true|false”
+    p maxlength="number" (Chrome and FF4) spellcheck="true|false"
     pre
       code.
-        &lt;textarea name=”comments” maxlength=”100” spellcheck=”true”>
+        #{'<textarea name="comments" maxlength="100" spellcheck="true">'}
 
   section
     h2 Client-side validation
@@ -477,14 +476,14 @@ append slides
     h2 novalidate
     pre
       code.
-        &lt;form novalidate>
-          &lt;input type=”text” name=”username” required>
-        &lt;/form>
+        #{'<form novalidate>'}
+          #{'<input type="text" name="username" required>'}
+        </form>
 
-        &lt;form>
-          &lt;input type=”text” name=”username” required>
-          &lt;input type=”submit” formnovalidate>
-        &lt;/form>
+        #{'<form>'}
+          #{'<input type="text" name="username" required>'}
+          #{'<input type="submit" formnovalidate>'}
+        </form>
 
   section
     mixin browserSupport('10+', '4+', 'No', '10+', '10.6+')
@@ -493,11 +492,11 @@ append slides
 
     pre
       code.
-        &lt;form action=”/publish” method=”post”>
-          &lt;input type=”submit” value=”publish” />
-          &lt;input type=”submit” value=”save_draft” formaction="/save" />
-          &lt;input type=”submit” value=”delete” formaction=”/delete” />
-        &lt;/form>
+        #{'<form action="/publish" method="post">'}
+          #{'<input type="submit" value="publish" />'}
+          #{'<input type="submit" value="save_draft" formaction="/save" />'}
+          #{'<input type="submit" value="delete" formaction="/delete" />'}
+        </form>
 
   section
     h2 Browser support
@@ -527,7 +526,7 @@ append slides
     p Feature detection of HTML5 features
     pre
       code.
-        &lt;html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+        #{'<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">'}
 
   section
     h2 Modernizr
@@ -626,57 +625,57 @@ append slides
     p Contact details
     pre
       code.
-        &lt;div itemscope itemtype="http://schema.org/Person">
-          &lt;span itemprop="name">Jane Doe</span>
-            &lt;a href="mailto:jane-doe@xyz.edu" itemprop="email">
+        #{'<div itemscope itemtype="http://schema.org/Person">'}
+          #{'<span itemprop="name">Jane Doe</span>'}
+            #{'<a href="mailto:jane-doe@xyz.edu" itemprop="email">'}
             jane-doe@xyz.edu</a>
-        &lt;/div>
+        #{'</div>'}
 
   section
     h2 Person
     p Not all elements are required
     pre
       code.
-        &lt;div itemscope itemtype="http://schema.org/Person">
-          &lt;span itemprop="name">Jane Doe</span>
-          &lt;img src="janedoe.jpg" itemprop="image" />
-          &lt;div itemprop="address" itemscope  itemtype="http://schema.org/PostalAddress">
-            &lt;span itemprop="streetAddress">20341 Whitworth Institute</span>
-            &lt;span itemprop="addressLocality">Seattle</span>,
-            &lt;span itemprop="addressRegion">WA</span>
-            &lt;span itemprop="postalCode">98052</span>
-          &lt;/div>
-          &lt;a itemprop="telephone" href=”tel:+14251234567”>(425) 123-4567</a>
-          &lt;a href="mailto:jane-doe@xyz.edu" itemprop="email">
+        #{'<div itemscope itemtype="http://schema.org/Person">'}
+          #{'<span itemprop="name">Jane Doe</span>'}
+          #{'<img src="janedoe.jpg" itemprop="image" />'}
+          #{'<div itemprop="address" itemscope  itemtype="http://schema.org/PostalAddress">'}
+            #{'<span itemprop="streetAddress">20341 Whitworth Institute</span>'}
+            #{'<span itemprop="addressLocality">Seattle</span>'},
+            #{'<span itemprop="addressRegion">WA</span>'}
+            #{'<span itemprop="postalCode">98052</span>'}
+          #{'</div>'}
+          #{'<a itemprop="telephone" href="tel:+14251234567">(425) 123-4567</a>'}
+          #{'<a href="mailto:jane-doe@xyz.edu" itemprop="email">'}
             jane-doe@xyz.edu</a>
-        &lt;/div>
+        #{'</div>'}
 
   section
     h2 Event
     p Event info
     pre
       code.
-        &lt;div itemscope itemtype="http://schema.org/Event">
-          &lt;a href="http://www.example.com/events/spinaltap" itemprop="url name">Spinal Tap</a>
-          &lt;img src="spinal_tap.jpg" itemprop="image" />
+        #{'<div itemscope itemtype="http://schema.org/Event">'}
+          #{'<a href="http://www.example.com/events/spinaltap" itemprop="url name">Spinal Tap</a>'}
+          #{'<img src="spinal_tap.jpg" itemprop="image" />'}
           When:
-          &lt;meta itemprop="startDate" content="2015-10-15T19:00">
+          #{'<meta itemprop="startDate" content="2015-10-15T19:00">'}
           Oct 15, 7:00PM
-        &lt;/div>
+        #{'</div>'}
 
   section
     h2 AggregateRating
     pre
       code.
-        &lt;div itemscope itemtype="http://schema.org/Restaurant">
-         &lt;span itemprop="name">L’Amourita Pizza</span>
-         <img src="pizza.jpg" itemprop="image" />
-         </span>
-         &lt;span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-            &lt;span itemprop="ratingValue">7</span> out of
-            &lt;span itemprop="ratingCount">24</span> ratings.
-         &lt;/span>
-      &lt;/div>
+        #{'<div itemscope itemtype="http://schema.org/Restaurant">'}
+         #{'<span itemprop="name">L’Amourita Pizza</span>'}
+         #{'<img src="pizza.jpg" itemprop="image" />'}
+         #{'</span>'}
+         #{'<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">'}
+            #{'<span itemprop="ratingValue">7</span>'} out of
+            #{'<span itemprop="ratingCount">24</span>'} ratings.
+         #{'</span>'}
+        #{'</div>'}
 
   section
     h2 schema.org types understood by Google and others
@@ -693,46 +692,47 @@ append slides
 
   section
     h2 Example
-    pre
-      code.
-        &lt;body>
-          &lt;header>
-            &lt;hgroup>
-              &lt;h1>Page title</h1>
-              &lt;h2>Page subtitle</h2>
-            &lt;/hgroup>
-          &lt;/header>
+    .row-fluid
+      pre.span6
+        code.
+          #{'<body>'}
+            #{'<header>'}
+              #{'<hgroup>'}
+                #{'<h1>Page title</h1>'}
+                #{'<h2>Page subtitle</h2>'}
+              #{'</hgroup>'}
+            #{'</header>'}
 
-          &lt;nav>
-           &lt;ul>
-              Navigation...
-           &lt;/ul>
-          &lt;/nav>
+            #{'<nav>'}
+              #{'<ul>'}
+                Navigation...
+              #{'</ul>'}
+            #{'</nav>'}
 
-        &lt;aside>
-           Top links...
-        &lt;/aside>
+          #{'<aside>'}
+            Top links...
+          #{'</aside>'}
 
-    pre
-      code.
-        &lt;section>
-          &lt;article>
-            &lt;header>
-              &lt;h1>Title</h1>
-            &lt;/header>
-            &lt;p>
-              Content...
-            &lt;/p>
-          &lt;/article>
-          &lt;article>
-            ...
-          &lt;/article>
-        &lt;/section>
+      pre.span6
+        code.
+          #{'<section>'}
+            #{'<article>'}
+              #{'<header>'}
+                #{'<h1>Title</h1>'}
+              #{'</header>'}
+              #{'<p>'}
+                Content...
+              #{'</p>'}
+            #{'</article>'}
+            #{'<article>'}
+              ...
+            #{'</article>'}
+          #{'</section>'}
 
-        &lt;footer>
-          Copyright ©2010
-        &lt;/footer>
-        &lt;/body>
+          #{'<footer>'}
+            Copyright ©2010
+          #{'</footer>'}
+          #{'</body>'}
 
 
   section
@@ -755,25 +755,25 @@ append slides
     p IE < 9 does not create DOM nodes for unrecognized semantic elements
     pre
       code.
-        &lt;!--[if lt IE 9]>
-        &lt;script>
+        #{'<!--[if lt IE 9]>'}
+        #{'<script>'}
           var e = ("abbr,article,aside,audio,canvas,datalist,details," +
           "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
           "progress,section,time,video").split(',');
           for (var i = 0; i < e.length; i++) {
             document.createElement(e[i]);
           }
-        &lt;/script>
-        &lt;![endif]-->
+        #{'</script>'}
+        #{'<![endif]-->'}
 
   section
     h2 Short version
     pre
       code.
-        &lt;!--[if lt IE 9]>
-        &lt;script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
-        &lt;/script>
-        &lt;![endif]-->
+        #{'<!--[if lt IE 9]>'}
+        #{'<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">'}
+        #{'</script>'}
+        #{'<![endif]-->'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -781,19 +781,19 @@ append slides
     | OPTION 1
     pre
       code.
-        &lt;header>
-          &lt;h1>My Weblog&lt;/h1>
-        &lt;/header>
+        #{'<header>'}
+          #{'<h1>My Weblog</h1>'}
+        #{'</header>'}
 
     | OPTION 2
     pre
       code.
-        &lt;header>
-          &lt;hgroup>
-            &lt;h1>Page title&lt;/h1>
-            &lt;h2>Page subtitle&lt;/h2>
-          &lt;/hgroup>
-        &lt;/header>
+        #{'<header>'}
+          #{'<hgroup>'}
+            #{'<h1>Page title</h1>'}
+            #{'<h2>Page subtitle</h2>'}
+          #{'</hgroup>'}
+        #{'</header>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -803,23 +803,23 @@ append slides
     | OLD
     pre
       code.
-        &lt;div class=”article”>
-          &lt;h2>Title&lt;/h2>
-          &lt;p>
+        #{'<div class="article">'}
+          #{'<h2>Title</h2>'}
+          #{'<p>'}
             Contents
-          &lt;/p>
-        &lt;/div>
+          #{'</p>'}
+        #{'</div>'}
     | NEW
     pre
       code.
-        &lt;article>
-          &lt;header>
-            &lt;h1>Title</h1>
-          &lt;/header>
-          &lt;p>
+        #{'<article>'}
+          #{'<header>'}
+            #{'<h1>Title</h1>'}
+          #{'</header>'}
+          #{'<p>'}
             Contents
-          &lt;/p>
-        &lt;/article>
+          #{'</p>'}
+        #{'</article>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -829,28 +829,28 @@ append slides
     | OLD
     pre
       code.
-        &lt;span class="date">Sept 01 2009&lt;/p>
+        #{'<span class="date">Sept 01 2009</p>'}
     | NEW
     pre
       code.
-        &lt;time datetime="2009-09-01" pubdate>Sept 01 2009&lt;/time>
+        #{'<time datetime="2009-09-01" pubdate>Sept 01 2009</time>'}
 
-        &lt;time datetime="2009-09-01">Last Thursday&lt;/time>
+        #{'<time datetime="2009-09-01">Last Thursday</time>'}
 
-        &lt;time datetime="2009-09-01T13:59:47-04:00">20 minutes ago&lt;/time>
+        #{'<time datetime="2009-09-01T13:59:47-04:00">20 minutes ago</time>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 nav
     pre
       code.
-        &lt;nav>
-          &lt;ul>
-            &lt;li>&lt;a href="/home">home&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#">blog</a>&lt;/li>
-            &lt;li>&lt;a href="#footer">about&lt;/a>&lt;/li>
-          &lt;/ul>
-        &lt;/nav>
+        #{'<nav>'}
+          #{'<ul>'}
+            #{'<li><a href="/home">home</a></li>'}
+            #{'<li><a href="#">blog</a></li>'}
+            #{'<li><a href="#footer">about</a></li>'}
+          #{'</ul>'}
+        #{'</nav>'}
 
 
   section
@@ -863,26 +863,26 @@ append slides
 
     pre
       code.
-        &lt;article>
-          &lt;!-- inside article -->
-          &lt;h1>Header&lt;/h1>
-          &lt;p>Contents.&lt;/p>
-          &lt;aside>
-            &lt;q>God heals, and the doctor takes the fees – Benjamin Franklin&lt;/q>
-          &lt;/aside>
-        &lt;/article>
+        #{'<article>'}
+          #{'<!-- inside article -->'}
+          #{'<h1>Header</h1>'}
+          #{'<p>Contents.</p>'}
+          #{'<aside>'}
+            #{'<q>God heals, and the doctor takes the fees – Benjamin Franklin</q>'}
+          #{'</aside>'}
+        #{'</article>'}
 
     pre
       code.
-        &lt;aside>
-          &lt;!-- outside of the article -->
-          &lt;h1>Blogroll&lt;/h1>
-          &lt;ul>
-            &lt;li>&lt;a href="bob">Bob&lt;/a></li>
-            &lt;li>&lt;a href="john">John&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sarah">Sarah&lt;/a>&lt;/li>
-          &lt;/ul>
-        &lt;/aside>
+        #{'<aside>'}
+          #{'<!-- outside of the article -->'}
+          #{'<h1>Blogroll</h1>'}
+          #{'<ul>'}
+            #{'<li><a href="bob">Bob</a></li>'}
+            #{'<li><a href="john">John</a></li>'}
+            #{'<li><a href="sarah">Sarah</a></li>'}
+          #{'</ul>'}
+        #{'</aside>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -894,10 +894,10 @@ append slides
 
     pre
       code.
-        &lt;section>
-          &lt;h1>Header&lt;/h1>
-          &lt;p>rest of the content
-        &lt;/section>
+        #{'<section>'}
+          #{'<h1>Header</h1>'}
+          #{'<p>'}rest of the content
+        #{'</section>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -906,19 +906,19 @@ append slides
 
     pre
       code.
-        &lt;figure>
-          &lt;img src="/gloves.jpg" alt="Coding gloves">
-          &lt;figcaption>Fig 1. Your coding tools&lt;/figcaption>
-        &lt;/figure>
+        #{'<figure>'}
+          #{'<img src="/gloves.jpg" alt="Coding gloves">'}
+          #{'<figcaption>Fig 1. Your coding tools</figcaption>'}
+        #{'</figure>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 footer
     pre
       code.
-        &lt;footer>
-          &lt;p>My fancy footer&lt;/p>
-        &lt;/footer>
+        #{'<footer>'}
+          #{'<p>My fancy footer</p>'}
+        #{'</footer>'}
 
 
   section
@@ -926,76 +926,76 @@ append slides
 
     pre
       code.
-        &lt;footer>
-          &lt;nav>
-            &lt;h1>Navigation&lt;h1>
-            &lt;ul>
-              &lt;li>&lt;a href="/">Home&lt;/a>&lt;/li> 
-              &lt;li>&lt;a href="/standards/">Standards&lt;/a>&lt;/li> 
-              &lt;li>&lt;a href="/participate/">Participate&lt;/a>&lt;/li> 
-              &lt;li>&lt;a href="/membership">Membership&lt;/a>&lt;/li> 
-              &lt;li>&lt;a href="/Consortium/">About W3C&lt;/a>&lt;/li> 
-            &lt;/ul>
-          &lt;/nav>
-          &lt;nav>
-            &lt;h1>Contact W3C&lt;/h1>
-            &lt;ul>
-              &lt;li>&lt;a href="/Consortium/contact">Contact&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="/Help/">Help and FAQ&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="/Consortium/sup">Donate&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="/Consortium/siteindex">Site Map&lt;/a>&lt;/li> 
-            &lt;/ul>
-          &lt;/nav>
-        &lt;section>
-          &lt;h1>W3C Updates&lt;/h1>
-          &lt;ul>
-            &lt;li>&lt;a href="http://twitter.com/W3C">Twitter&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="http://identi.ca/w3c">Identi.ca&lt;/a>&lt;/li>
-          &lt;/ul>
-        &lt;/section>
-        &lt;p class="copyright">Copyright © 2009 W3C&lt;/p>
-        &lt;/footer> 
+        #{'<footer>'}
+          #{'<nav>'}
+            #{'<h1>Navigation<h1>'}
+            #{'<ul>'}
+              #{'<li><a href="/">Home</a></li>'} 
+              #{'<li><a href="/standards/">Standards</a></li>'} 
+              #{'<li><a href="/participate/">Participate</a></li>'} 
+              #{'<li><a href="/membership">Membership</a></li>'} 
+              #{'<li><a href="/Consortium/">About W3C</a></li>'} 
+            #{'</ul>'}
+          #{'</nav>'}
+          #{'<nav>'}
+            #{'<h1>Contact W3C</h1>'}
+            #{'<ul>'}
+              #{'<li><a href="/Consortium/contact">Contact</a></li>'}
+              #{'<li><a href="/Help/">Help and FAQ</a></li>'}
+              #{'<li><a href="/Consortium/sup">Donate</a></li>'}
+              #{'<li><a href="/Consortium/siteindex">Site Map</a></li>'} 
+            #{'</ul>'}
+          #{'</nav>'}
+        #{'<section>'}
+          #{'<h1>W3C Updates</h1>'}
+          #{'<ul>'}
+            #{'<li><a href="http://twitter.com/W3C">Twitter</a></li>'}
+            #{'<li><a href="http://identi.ca/w3c">Identi.ca</a></li>'}
+          #{'</ul>'}
+        #{'</section>'}
+        #{'<p class="copyright">Copyright © 2009 W3C</p>'}
+        #{'</footer>'} 
 
   section
     h2 Example
     pre
       code.
-        &lt;body>
-          &lt;header>
-            &lt;hgroup>
-              &lt;h1>Page title&lt;/h1>
-              &lt;h2>Page subtitle&lt;/h2>
-            &lt;/hgroup>
-          &lt;/header>
+        #{'<body>'}
+          #{'<header>'}
+            #{'<hgroup>'}
+              #{'<h1>Page title</h1>'}
+              #{'<h2>Page subtitle</h2>'}
+            #{'</hgroup>'}
+          #{'</header>'}
 
-          &lt;nav>
-           &lt;ul>
+          #{'<nav>'}
+           #{'<ul>'}
              Navigation...
-           &lt;/ul>
-          &lt;/nav>
+           #{'</ul>'}
+          #{'</nav>'}
 
-        &lt;aside>
+        #{'<aside>'}
            Top links...
-          &lt;/aside>
+          #{'</aside>'}
 
-        &lt;section>
-         &lt;article>
-           &lt;header>
-             &lt;h1>Title&lt;/h1>
-           &lt;/header>
-           &lt;p>
+        #{'<section>'}
+         #{'<article>'}
+           #{'<header>'}
+             #{'<h1>Title</h1>'}
+           #{'</header>'}
+           #{'<p>'}
              Content...
-           &lt;/p>
-         &lt;/article>
-         &lt;article>
+           #{'</p>'}
+         #{'</article>'}
+         #{'<article>'}
            ...
-         &lt;/article>
-        &lt;/section>
+         #{'</article>'}
+        #{'</section>'}
 
-        &lt;footer>
+        #{'<footer>'}
          Copyright ©2010
-        &lt;/footer>
-      &lt;/body>
+        #{'</footer>'}
+      #{'</body>'}
 
   section(data-state="lab")
     h2 Lab: Semantics
@@ -1026,7 +1026,9 @@ append slides
     h2 audio
     pre
       code.
-        &lt;audio id="audio" src="sound.mp3" controls>&lt;/audio>
+        #{'<audio id="audio" src="sound.mp3" controls></audio>'}
+    pre
+      code.
         document.getElementById("audio").muted = false;
 
   section
@@ -1034,7 +1036,7 @@ append slides
     h2 video
     pre
       code.
-        &lt;video id="video" src="movie.webm" autoplay controls>&lt;/video>
+        #{'<video id="video" src="movie.webm" autoplay controls></video>'}
         document.getElementById("video").play();
 
   section
@@ -1050,19 +1052,19 @@ append slides
     h2 video without Javascript
     pre
       code.
-        &lt;video controls="controls" poster="./poster.jpg" width="640" height="360">
-        &lt;source src="big_buck_bunny.mp4" type="video/mp4" />
-        &lt;source src="big_buck_bunny.webm" type="video/webm" />
-        &lt;source src="big_buck_bunny.ogv" type="video/ogg" />
+        #{'<video controls="controls" poster="./poster.jpg" width="640" height="360">'}
+        #{'<source src="big_buck_bunny.mp4" type="video/mp4" />'}
+        #{'<source src="big_buck_bunny.webm" type="video/webm" />'}
+        #{'<source src="big_buck_bunny.ogv" type="video/ogg" />'}
 
-        &lt;object type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf" width="640" height="360">
-        &lt;param name="movie" value="flowplayer-3.2.1.swf" />
-        &lt;param name="allowFullScreen" value="true" />
-        &lt;param name="wmode" value="transparent" />
+        #{'<object type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf" width="640" height="360">'}
+        #{'<param name="movie" value="flowplayer-3.2.1.swf" />'}
+        #{'<param name="allowFullScreen" value="true" />'}
+        #{'<param name="wmode" value="transparent" />'}
         &lt;param name="flashVars" value="config={'playlist':['./poster.jpg',{'url':'big_buck_bunny.mp4','autoPlay':false}]}" />
-        &lt;img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />
-        &lt;/object>
-        &lt;/video>
+        #{'<img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />'}
+        </object>
+        </video>
 
   section
     h2 video frameworks
