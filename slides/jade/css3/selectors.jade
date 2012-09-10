@@ -1,0 +1,172 @@
+section
+  mixin browserSupport('All', '3.5+', '3.2+', '7+', '9.5+')
+  h2 New selectors
+  p Later general sibling
+  pre
+    code.
+      h2 ~ p {
+        color: orange;
+      }
+  #ex-general-sibling
+    style
+      #ex-general-sibling .header { font-weight: bold; }
+      #ex-general-sibling .header ~ p { color: blue;}
+    p.header A header
+    p This p is styled
+    div This is a div
+    p This p is also styled
+
+section
+  h2 New selectors
+  table
+    tr
+      td [foo~="bar"]
+      td &lt;div foo="<span style="color: red">bar</span> whatever"&gt;
+    tr
+      td [foo^="bar"]
+      td &lt;div foo="<span style="color: red">bar</span>tender"&gt;
+    tr
+      td [foo$="bar"]
+      td &lt;div foo="tool<span style="color: red">bar</span>"&gt;
+    tr
+      td [foo*="bar"]
+      td &lt;div foo="sylla<span style="color: red">bar</span>y"&gt;
+    tr
+      td [foo|="bar"]
+      td &lt;div foo="<span style="color: red">bar</span>-tender"&gt;
+
+section
+  section
+    mixin browserSupport('All', '3.5+', '3.2+', '9+', '9.5+')
+    h2 New pseudo-classes
+    table
+      tr
+        td :root
+        td Root element (<html>)
+      tr
+        td :only-child
+        td Applies if the element is the only child
+      tr
+        td :empty
+        td Applies to empty elements
+      tr
+        td :not
+        td Negates a simple element
+  section
+    h2 New pseudo-classes warning
+    p :not
+    pre
+      code.
+        .element:not(p) {
+          color: orange;
+        }
+    #ex-not
+      style
+        #ex-not .ex-not:not(p) {
+          color: orange;
+        }
+      span.ex-not I am a span
+      p.ex-not I'm a paragraph
+      ul.ex-not
+        li I'm in a list
+  section
+    h2 New pseudo-classes
+    p :only-child
+    pre
+      code.
+        li:only-child {
+          color: orange;
+        }
+    #ex-only-child
+      style
+        #ex-only-child li:only-child {
+          color: orange;
+        }
+      ul
+        li I have no siblings
+      br
+      br
+      ol
+        li I have a brother
+        li I have a sister
+
+section
+  section
+    h2 UI elements' states
+    p :enabled
+    p :disabled
+    p :checked
+  section
+    h2 UI elements' states
+    p :enabled
+    p :disabled
+    p :checked
+    pre
+      code.
+        :enabled {
+          background-color: #cdc;
+        }
+        :disabled {
+          background-color: #dcc;
+        }
+        :checked {
+          width: 5em;
+        }
+    #ex-ui-states
+      style
+        #ex-ui-states :checked {
+          width: 5em;
+        }
+        #ex-ui-states input:enabled {
+          background-color: #cdc;
+        }
+        #ex-ui-states input:disabled {
+          background-color: #dcc;
+        }
+      input(disabled)
+      input
+      form
+        input(type="radio", value=1, name="radio")
+        input(type="radio", value=1, name="radio")
+
+
+section
+  h2 Element-preserving
+  p :first-of-type
+  p :last-of-type
+  p :nth-of-type(n)
+  p :only-of-type
+
+section
+  h2 Reverse counting
+  p :nth-last-child(n)
+  p :nth-last-of-type
+
+section
+  h2 Style selected text
+  p New pseudo-elements
+  p ::selection
+  p ::-moz-selection
+  p ::-webkit-selection
+
+section
+  section#target-selector
+    mixin browserSupport('All', '3.5+', '3.2+', '?', '9.5+')
+    h2 :target
+    pre
+      code.
+        #{'<div id="my_stuff">'}
+        #{'  <p>Ey, look at me!</p>'}
+        #{'</div>'}
+        #{'<a href="#my_stuff">Go there</a>'}
+    pre
+      code.
+        div:target {
+          background-color: gray;
+        }
+    style
+      #target-selector:target {
+        background-color: gray;
+      }
+  section
+    a(href="#target-selector") Go there!

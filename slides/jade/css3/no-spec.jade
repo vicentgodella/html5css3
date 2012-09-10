@@ -1,0 +1,23 @@
+section
+  mixin browserSupport('All', 'All', 'All', 'No', 'No')
+  h2 user-select
+
+  p user-select: <strong>all | text | none</strong>
+
+  pre
+    code.
+      body {
+        user-select: none;
+      }
+
+      p {
+        user-select: text;
+      }
+
+  #ex-user-select
+    style
+      #ex-user-select .unselectable {
+        -webkit-user-select: none;
+      }
+
+    p.unselectable Lorem impum unselectablis

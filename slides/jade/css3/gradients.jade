@@ -1,0 +1,43 @@
+section
+  mixin browserSupport('10+', '3.6+', '5.1+', '10+', '11.1+')
+  h2 gradient
+  pre
+    code.
+      .block {
+        background: black; /* old browsers */
+        background: -moz-linear-gradient(top left, white, blue 5%, black);
+        background: -ms-linear-gradient(top left, white, blue 5%, black);
+        background: -o-linear-gradient(top left, white, blue 5%, black);
+        background: -webkit-gradient(linear, 0 0, 100% 100%, from(white), color-stop(0.05, blue), to(black));
+        background: -webkit-linear-gradient(top left, white, blue 5%, black);
+        background: linear-gradient(top left, white, blue 5%, black);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='white', endColorstr='black',GradientType=0 ); /* ie */
+      }
+  #ex-linear-gradient
+    style
+      #ex-linear-gradient {
+        height: 100px;
+        background: -moz-linear-gradient(top, #3F3F3F 10%, orange 90%);
+        background: -webkit-linear-gradient(top, #3F3F3F 10%, orange 90%);
+      }
+
+
+
+section
+  mixin browserSupport('10+', '3.6+', '5.1+', '10+', '12+')
+  h2 Radial gradients
+  pre
+    code.
+      background-color: #0017ab;
+
+      background: -moz-radial-gradient(30% 50%, 40px 40px, #0017ab, #85c2ff 60%);
+      /*...*/
+      background: radial-gradient(30% 50%, 40px 40px, #0017ab, #85c2ff 60%)
+
+  #ex-radial-gradient
+    style
+      #ex-radial-gradient {
+        height: 100px;
+        background: -moz-radial-gradient(30% 50%, 40px 40px, #777, orange 60%);
+        background: -webkit-radial-gradient(30% 50%, 100px 100px, #777, orange 60%);
+      }

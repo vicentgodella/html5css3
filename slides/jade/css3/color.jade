@@ -1,0 +1,38 @@
+section
+  mixin browserSupport('All', 'All', 'All', '9+', '9.5+')
+  h2 rgba
+  p rgba<strong>(red, blue, green, alpha)</strong>
+  pre
+    code.
+      .using-opacity {
+        opacity: .5;
+      }
+      .using-rgba {
+        background-color: rgba(218, 37, 29, .5);
+      }
+  #ex-rgba
+    .using-opacity OPACITY
+    <br>
+    .using-rgba RGBA
+  style
+    .using-opacity {
+      background-color: rgb(218, 37, 29);
+      opacity: .3;
+      color: black;
+    }
+
+    .using-rgba {
+      background-color: rgba(218, 37, 29, .3);
+      color: black;
+    }
+
+section
+  h2 Wherever a color fits in
+  p <strong>background, color, border, shadow</strong>
+  pre
+    code.
+      .block {
+        background: rgb(218, 37, 29); /* fallback */
+        background: rgba(218, 37, 29, .5);
+        text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+      }

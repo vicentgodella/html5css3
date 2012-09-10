@@ -1,0 +1,36 @@
+section
+  mixin browserSupport('All', 'All', 'All', '10+', '11.1+')
+  h2 Multiple column layout
+
+  pre
+    code.
+      #content {
+        -moz-column-count: 3;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 20px;
+        column-count: 3;
+        column-gap: 20px;
+      }
+  #ex-multicolumn
+    style
+      #ex-multicolumn {
+        font-size: 50%;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 20px;
+      }
+
+    p Bacon ipsum dolor sit amet ham hock tail shank, tenderloin jerky biltong pork beef ribs short loin bacon flank salami brisket chuck. Tail shoulder turducken, pork loin ground round strip steak short loin turkey. Meatball tail ground round, bresaola swine tri-tip pastrami turkey drumstick leberkas pork belly shank ball tip strip steak short ribs.
+section
+  h2 Rules of thumb
+
+  p.text-left <strong>12 words</strong> per line
+  p.text-left Around <strong>50-60</strong> to at most <strong>75 characters</strong>
+  p.text-left Otherwise the length makes it difficult to get an idea of <strong>where the line starts and ends</strong>
+
+  p.source
+    a(href="http://ux.stackexchange.com/questions/3618/ideal-column-width-for-paragraphs-online") ux.stackexchange.com
+
+section(data-state="lab")
+  h2 Lab: Multicolumn
+  p Displaying text in multiple columns

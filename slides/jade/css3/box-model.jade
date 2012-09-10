@@ -1,0 +1,64 @@
+section
+  section
+    mixin browserSupport('All', 'All', 'All', '8+', 'All')
+    h2 display: table
+
+    .row-fluid
+      pre.span6
+        code.
+          #main {
+            display: table;
+          }
+
+          #nav {
+            display: table-cell;
+          }
+
+          #content {
+            display: table-cell;
+          }
+      pre.span6
+        code.
+          #{'<div id="main">'}
+            #{'<div id="nav"> '}
+              navigation column content...
+            #{'</div>'}
+            #{'<div id="content">'}
+              main article content…
+            #{'</div>'}
+          #{'</div>'}
+
+    #ex-display-table
+      style
+       #ex-display-table .pcell {
+        display: table-cell;
+        padding: 6px 15px;
+       }
+      p.pcell navigation column content...
+      p.pcell article content...
+  section
+    h2 display:table
+    p Vertical alignment
+    pre
+      code.
+        #content {
+          display: table-cell;
+          vertical-align: middle;
+        }
+    #ex-table-vertical
+      style
+       #ex-table-vertical .pcell {
+        display: table-cell;
+        padding: 6px 15px;
+        vertical-align: middle;
+       }
+      p.pcell Now you can align
+        br
+        | me correctly...
+      p.pcell ...and everything looks fine.
+
+section
+  h2 display table values
+
+  p <strong>table | table-row | table-cell |</strong>
+  p table-row-group (tbody) | table-header-group (thead) | table-footer-group (tfoot) | table-caption | table-column | table-column-group

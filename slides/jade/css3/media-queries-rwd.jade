@@ -1,0 +1,404 @@
+section
+  h2 Mobile devices
+  pre
+    code.
+      #{'<link rel="stylesheet" media="handheld" />'}
+
+section
+  mixin browserSupport('All', '3.5+', 'All', '9+', '9.5+')
+  h2 New media queries
+
+  pre
+    code.
+      @media only screen and (max-width: 600px) {
+        .class {
+          background: #ccc;
+        }
+      }
+  pre
+    code.
+      #{'<link rel="stylesheet" href="small.css" media="only screen and (max-width: 600px)" />'}
+
+section
+  h2 What is a pixel?
+  p Two<span style="color:red">*</span> kinds of pixels
+
+  p.text-left <strong>CSS pixels</strong> (abstract)
+  p.text-left <strong>Device pixels</strong> (or physical pixels)
+
+section
+  h2 What is a pixel?
+  ul(style="float: left;")
+    li
+      p Usually<span style="color:red">*</span>:
+      p &emsp; 1 CSS px = 1 device pixel
+    li
+      p Zooming in (200%):
+      p &emsp; 0.5 CSS px = 1 device pixel
+    li
+      p Zooming out (50%):
+      p &emsp; 2 CSS px = 1 device pixel
+  img(style="float: right;", width="200", src="assets/img/pixels.svg")
+
+section
+  h2 Viewport
+  p Available space for the layout
+  p AKA browser window's width
+  img(src="assets/img/viewport.svg", width="500")
+
+section
+  h2 Mobile viewports
+  p <del>Available space for the layout</del>
+  p <del>AKA browser window's width</del>
+  img(src="assets/img/viewport.svg", width="500")
+
+section
+  h2 Mobile viewports
+  p <del>Available space for the layout</del>
+  p <del>AKA browser window's width</del>
+  img(src="assets/img/viewport-mobile.svg", width="500")
+
+section
+  h2 Initial size
+  p Disable automatic resizing
+
+  pre
+    code.
+      #{'<meta name="viewport" content="width=device-width,initial-scale=1.0">'}
+  pre
+    code.
+      body {
+        -webkit-text-size-adjust: 100%;
+      }
+
+section
+  h2 Pixels again
+  p (<span style="color:red">*</span>)  1 CSS pixel = 0.5-1.5 device pixels
+  p An additional layer between CSS px and device px
+  img(src="assets/img/viewport-mobile-resized.svg", width="200", style="display: inline-block;")
+  ul.fragment.small-text(style="display: inline-block;")
+    li
+      p "Low-cost" smartphone:
+      p Screen 240x320, reports 320x427
+    li
+      p High density display:
+      p Screen 640x960, reports 320x480
+
+section
+  h2 High density displays
+  p Pixel density above 200 PPI
+  p.small-text iPhone4 (326), iPad3 (264),<br> Galaxy Nexus (316), Galaxy SIII (306)
+
+section
+  h2 High density displays
+  p Prefixed media query <br> <strong>device-pixel-ratio</strong>
+  pre
+    code.
+      @media only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-device-pixel-ratio: 2) {
+
+         /* Custom CSS here */
+
+      }
+
+section
+  h2 Other media queries
+  p Not very useful/consistent
+  p.small-text.text-left @media: <strong>device-width</strong>, <strong>orientation</strong>, <strong>aspect-ratio</strong> <br>
+  p.small-text.text-left #{'<meta name="viewport">'} : <strong>target-densitydpi</strong>
+
+
+section(data-state="lab")
+  h2 Lab: Media Queries
+  p Use media queries with CSS
+
+section
+  section
+    h2 Responsive design
+    #ex-rwd-large
+      iframe(src="assets/html/rwd.html", width="95%", height="400px")
+
+  section
+    h2 Responsive design
+    #ex-rwd
+      iframe(src="assets/html/rwd.html", width="65%", height="400px")
+
+  section
+    h2 Responsive design
+    #ex-rwd
+      iframe(src="assets/html/rwd.html", width="35%", height="400px")
+
+section
+  h2 Fluid grids
+  p Keep everything relative
+  .row-fluid
+    .span5.row-fluid.offset1
+      .span8
+        div(style="background-color:#f5f0f0;\
+          height: 200px;")
+      .span4
+        div(style="background-color:#f0f5f0;\
+          height: 250px;")
+    .span2(style="background: url(assets/img/arrow.svg) no-repeat center center;\
+      background-size: 80%;\
+      height: 200px")
+
+    .span3.row-fluid
+      .span8
+        div(style="background-color:#f5f0f0;\
+          height: 200px;")
+      .span4
+        div(style="background-color:#f0f5f0;\
+          height: 250px;")
+
+section
+  h2 Fluid grids
+  p Keep everything relative
+
+  ul
+    li <strong>Percentages for lengths</strong> (beware of the margin/padding different behaviors)
+
+    li Limit the flexibility with <strong>max/min-width or overflow</strong>
+
+  pre
+    code.
+      .container {
+        max-width: 940px;
+      }
+
+      .two-columns {
+        width: 46%;
+        margin-left: 2%;
+      }
+section
+  h2 Flexible images
+  .row-fluid#fluid-example-2
+    style
+      #fluid-example-2 img {
+        min-width: 30px;
+        max-width: 100%;
+      }
+    .span5.row-fluid.offset1
+      .span8
+        div(style="background-color:#f5f0f0;")
+          img(src="assets/img/blank-image.svg", width="80%"
+            style="")
+      .span4
+        div(style="background-color:#f0f5f0;")
+          img(src="assets/img/blank-image.svg", width="70%",
+            style="")
+    .span2(style="background: url(assets/img/arrow.svg) no-repeat center center;\
+      background-size: 80%;\
+      height: 200px")
+    .span3.row-fluid
+      .span8
+        div(style="background-color:#f5f0f0;\
+          height: 200px;")
+          img(src="assets/img/blank-image.svg", width="80%"
+            style="")
+      .span4
+        div(style="background-color:#f0f5f0;\
+          height: 250px;")
+          img(src="assets/img/blank-image.svg", width="70%",
+            style="")
+
+section
+  h2 Flexible images
+  p Percentages for media sizes, max-width: 100%
+  .row-fluid
+    .span3(style="position: relative;")
+      div(style="background: #f33;\
+        height: 300px;\
+        width: 80%;\
+        position: absolute;\
+        z-index: -1;")
+      img(src="assets/img/blank-image.svg",
+        width="100%",
+        style="display: block;")
+    .span3(style="position: relative;")
+      div(style="background: #f33;\
+        height: 300px;\
+        width: 100%;\
+        position: absolute;\
+        z-index: -1;")
+      img(src="assets/img/blank-image.svg",
+        width="100%",
+        style="display: block;")
+    .span3.offset1(style="position: relative;")
+      div(style="background: #3f3;\
+        height: 300px;\
+        width: 100%;\
+        position: absolute;\
+        z-index: -1;")
+      img(src="assets/img/blank-image.svg",
+        width="60%",
+        style="display: block;")
+    .span2(style="position: relative;")
+      div(style="background: #3f3;\
+        height: 300px;\
+        width: 100%;\
+        position: absolute;\
+        z-index: -1;")
+      img(src="assets/img/blank-image.svg",
+        width="100%",
+        style="display: block;")
+
+section
+  section
+    h2 Flexible images
+    p Center background
+
+    pre
+      code.
+        .illustration {
+          background: url(its-cold.png) no-repeat 50% 0;
+        }
+
+  section
+    h2 Flexible images
+    p Center background
+
+    iframe(src="assets/html/cropped-bg.html", width="600", height="400")
+    a(href="http://commons.wikimedia.org/wiki/File:3months-old_crossbreed_cats.jpg").source Picture from Wikimedia Commons
+  section
+    h2 Flexible images
+    p Center background
+
+    iframe(src="assets/html/cropped-bg.html", width="400", height="400")
+  section
+    h2 Flexible images
+    p Center background
+
+    iframe(src="assets/html/cropped-bg.html", width="200", height="400")
+
+section
+  h2 Responsive images
+  p Beware of scaling problems
+  p Serve different images for different displays
+
+section
+  h2 Responsive images
+  p Using cookies
+
+  pre
+    code.
+      #{'<img src="picture.jpg" data-large="picture-large.jpg">'}
+
+      document.cookie ="device_dimensions="+screen.width+"x" + screen.height;
+
+section
+  h2 Responsive images
+  p Using noscript
+
+  pre
+    code.
+      #{'<noscript '}
+        data-img="picture-default.jpg"
+        data-imgsmall="picture-small.jpg">
+        #{'<img src="picture-default.jpg">'}
+      #{'</noscript>'}
+
+      $('noscript[data-img]').replaceWith(getImage(this));
+
+section
+  h2 Media queries
+  p When fluid is not enough
+  iframe(src="assets/html/rwd.html", width="70%", height="400px")
+  iframe(src="assets/html/rwd.html", width="30%", height="400px")
+
+
+section
+  h2 Screen sizes
+  img(src="assets/img/screen-stats.png")
+
+section
+  h2 Goldilocks approach
+  .row-fluid#goldilocks-example
+    style
+      #goldilocks-example p {
+        border: 1px #333 solid;
+        height: 200px;
+        line-height: 200px;
+        background-color: #ccc;
+      }
+
+    .span4(style="margin: 0;")
+      p(style="width:30%; margin:0 34%;") Small
+    .span4
+      p(style="width:50%; margin:0 24%;") Right
+    .span4
+      p(style="width:70%; margin:0 14%;") Big
+  p Keep it <strong>simple</strong>
+
+section
+  h2 RWD with Bootstrap
+  pre
+    code.
+      #{'<'}div class="<strong>row-fluid</strong>">
+          #{'<div class="span2">Fee</div>'}
+          #{'<div class="span2">Fi</div>'}
+          #{'<div class="span2">Fo</div>'}
+          #{'<div class="span3 offset3">Fum!!</div>'}
+      #{'</div>'}
+  pre
+    code.
+      .row-fluid .span2 {
+        width: 14.52991452991453%;
+      }
+section
+  section
+    h2 RWD with Bootstrap
+    p Several media queries implemented
+
+    p 0 – 480px – 768px – 980px – 1200px
+
+
+    pre
+      code.
+        #{'<'}link href="<strong>bootstrap-responsive.css</strong>" rel="stylesheet">
+
+    #ex-bootstrap-rwd
+      style
+        #ex-bootstrap-rwd [class^="span"] {
+          height: 50px;
+          border-radius: 4px;
+          background-color: #ccc;
+        }
+      .row-fluid
+        .span2 Fee
+        .span2 Fi
+        .span1.offset2 Fo
+        .span4 Fum!
+  section
+    h2 RWD with Bootstrap
+    p Several media queries implemented
+
+    p 0 – 480px – 768px – 980px – 1200px
+
+
+    pre
+      code.
+        #{'<'}link href="<strong>bootstrap-responsive.css</strong>" rel="stylesheet">
+
+    #ex-bootstrap-rwd-2
+      style
+        #ex-bootstrap-rwd-2 [class^="span"] {
+          height: 50px;
+          border-radius: 4px;
+          background-color: #ccc;
+          float: none;
+          width: 100%;
+          margin-bottom: 5px;
+          margin-left: 0;
+        }
+      .row-fluid
+        .span2 Fee
+        .span2 Fi
+        .span1.offset2 Fo
+        .span4 Fum!
+
+section(data-state="lab")
+  h2 Lab: Responsive design
+  p Make a web page responsive

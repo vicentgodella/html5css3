@@ -1,0 +1,112 @@
+section
+  mixin browserSupport('All', '5+', '4+', '10+', '12+')
+  h2 animation
+
+  pre
+    code.
+      @-webkit-keyframes bounce {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 200px;
+        }
+      }
+
+      div {
+        -webkit-animation-name: bounce;
+        -webkit-animation-duration: 4s;
+        -webkit-animation-iteration-count: 10;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-in;
+      }
+
+  #ex-animation(style="height: 150px;")
+    style
+      @-webkit-keyframes bounce {
+        from {
+          left: 10%;
+        }
+        to {
+          left: 70%;
+        }
+      }
+      #ex-animation {
+        position: relative;
+      }
+      #ex-animation .animated {
+        height: 150px;
+        background-color: orange;
+        border-radius: 5px;
+        width: 150px;
+        position: absolute;
+
+        -webkit-animation-name: bounce;
+        -webkit-animation-duration: 4s;
+        -webkit-animation-iteration-count: 10;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-in;
+      }
+    .animated
+
+
+section
+  h2 webkit-animation-direction
+
+  p -webkit-animation-direction: <strong>normal | alternate</strong>
+
+section
+  h2 animation frames
+
+  pre
+    code.
+      @-webkit-keyframes pulse {
+       0% {
+         background-color: red;
+         -webkit-transform: scale(1.0) rotate(0deg);
+       }
+       33% {
+         background-color: blue;
+         -webkit-transform: scale(1.1) rotate(-5deg);
+       }
+       67% {
+         background-color: green;
+         -webkit-transform: scale(1.1) rotate(5deg);
+       }
+       100% {
+         background-color: red;
+         -webkit-transform: scale(1.0) rotate(0deg);
+       }
+      }
+  #ex-animation-frames
+    style
+      @-webkit-keyframes pulse {
+       0% {
+         background-color: red;
+         -webkit-transform: scale(1.0) rotate(0deg);
+       }
+       33% {
+         background-color: blue;
+         -webkit-transform: scale(1.1) rotate(-5deg);
+       }
+       67% {
+         background-color: green;
+         -webkit-transform: scale(1.1) rotate(5deg);
+       }
+       100% {
+         background-color: red;
+         -webkit-transform: scale(1.0) rotate(0deg);
+       }
+      }
+      #ex-animation-frames .pulsing {
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 4s;
+        -webkit-animation-iteration-count: 10;
+        color: black;
+      }
+    p.pulsing This paragraph should pulse. Pulsing is the new blink. You heard it here first.
+
+section(data-state="lab")
+  h2 Lab: Animations
+
+  p Reproduce the Mac buttons with CSS3 animations

@@ -1,0 +1,185 @@
+section
+  mixin browserSupport('All', '4+', 'All', 'No', 'No')
+  h2 Transitions
+
+  p CSS transitions allow property changes in CSS values to occur smoothly over a specified duration.
+
+  pre
+    code.
+      a {
+        color: #000;
+      }
+
+      a:hover, a:focus {
+        color:#00f;
+      }
+
+  //- #ex-transitions-none
+  //-   style
+  //-     #ex-transitions-none a {
+  //-       color: #000;
+  //-     }
+
+  //-     #ex-transitions-none a:hover {
+  //-       color: #00f;
+  //-     }
+  //-   strong
+  //-     a Hover
+
+section
+  h2 An example
+  pre
+    code.
+      a {
+        color: #000;
+        -webkit-transition: color 1s ease-in;
+        -moz-transition: color 1s ease-in;
+        transition: color 1s ease-in;
+      }
+
+      a:hover, a:focus {
+        color: #00f;
+      }
+  #ex-transitions
+    style
+      #ex-transitions a {
+        color: #000;
+      }
+      #ex-transitions .smooth {
+        -webkit-transition: color 1s ease-in;
+        -moz-transition: color 1s ease-in;
+        transition: color 1s ease-in;
+      }
+
+      #ex-transitions a:hover {
+        color: #00f;
+      }
+    strong
+      a Hover
+    strong
+      a.smooth  Hover
+
+section
+  h2 transition
+
+  p {property} {duration} {timing function} {delay} <br>
+    | {transition1}, {transition2}, ...
+
+  pre
+    code.
+      a {
+        -webkit-transition:   color 1s ease-in,
+                  background .3s ease;
+        -moz-transition:  color 1s ease-in,
+                  background .3s ease;
+        transition:     color 1s ease-in,
+                  background .3s ease;
+      }
+
+section
+  h2 all
+
+  pre
+    code.
+      a {
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        transition: all .3s linear;
+      }
+
+      a:hover, a:focus {
+        color: #030;
+        background: #690;
+      }
+
+section
+  h2 transition-timing-function
+
+  p default | linear | ease | <strong>ease-in | ease-out | ease-in-out</strong> | cubic-bezier(x1, y1, x2, y2)
+
+  #ex-timing-functions
+    style
+
+      #ex-timing-functions .cont {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #ex-timing-functions .cont .block {
+        background-color: #eee;
+        border-radius: 5px;
+        width: 20%;
+        font-size: 50%;
+        margin-bottom: 5px;
+
+        -webkit-transition: all 1s;
+      }
+
+      #ex-timing-functions .cont:hover .block {
+        width: 100%;
+        background-color: #edd;
+        border-radius: 10px;
+      }
+
+      #ex-timing-functions .cont .linear {
+        -webkit-transition-timing-function: linear;
+      }
+
+      #ex-timing-functions .cont .ease-in {
+        -webkit-transition-timing-function: ease-in;
+      }
+
+      #ex-timing-functions .cont .ease-out {
+        -webkit-transition-timing-function: ease-out;
+      }
+
+      #ex-timing-functions .cont .ease-io {
+        -webkit-transition-timing-function: ease-in-out;
+      }
+
+      #ex-timing-functions .cont .bezier {
+        -webkit-transition-timing-function: cubic-bezier(0,1,1,0);
+      }
+
+    .cont
+      .block Default
+      .block.linear Linear
+      .block.ease-in Ease-in
+      .block.ease-out Ease-out
+      .block.ease-io Ease-io
+      .block.bezier Bezier
+
+section
+  h2 transition-delay
+
+  p If two time lapses are given, the second one corresponds to the delay
+
+  pre
+    code.
+      a {
+        -webkit-transition: color .2s ease-in .5s;
+        -moz-transition: color .2s ease-in .5s;
+        transition: color .2s ease-in .5s;
+      }
+
+section
+  h2 Animatable properties
+
+  p background, border, position, color, font, size,
+  p margin, padding, opacity, <strong>transformation</strong>,
+  p z-index, zoom
+
+section
+  h2 CSS transition or Javascript animation?
+
+  p CSS Transitions
+  ul
+    li Declared in the CSS
+    li Simpler syntax
+    li Transitions are faster
+    li The animation can be transparently interrupted
+  p jQuery animate()
+  ul
+    li Not limited to simple animations
+    li Support for all browsers

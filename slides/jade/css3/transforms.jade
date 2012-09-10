@@ -1,0 +1,160 @@
+section
+  mixin browserSupport('All', '3.5+', 'All', '9+', '10.5+')
+  h2 transformation
+  p transform: <strong>rotate | scale | skew | translate</strong>
+
+section
+  h2 rotate
+  p transform: <strong>rotate(degrees | radians)</strong>
+
+  pre
+    code.
+      .block {
+        -webkit-transform: rotate(20deg);
+        -moz-transform: rotate(20deg);
+        transform: rotate(20deg);
+      }
+
+  #ex-rotate(style="height: 150px;\
+    margin-top: 20px;")
+    div(style="height: 150px;\
+      background-color: orange;\
+      -webkit-transform: rotate(-10deg);")
+
+section
+  h2 transform-origin
+
+  p transform-origin:
+  p <strong>[ {offset} | left | center | right ]</strong>
+  p <strong>[ {offset} | top | center | bottom ]</strong>
+
+  pre
+    code.
+      .center {
+        -webkit-transform: rotate(20deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform: rotate(20deg);
+        -moz-transform-origin: 0 100%;
+      }
+
+  #ex-rotate-origin(style="height: 150px;")
+    div(style="height: 150px;\
+      background-color: orange;\
+      -webkit-transform: rotate(15deg);\
+      -webkit-transform-origin: left bottom;")
+
+section
+  h2 transform-origin (II)
+
+  p <strong>(0, 0)</strong> top left
+  p <strong>(100%, 100%)</strong> bottom right
+  p <strong>(50%, 50%)</strong> center center <strong>(default)</strong> negative values are allowed
+
+section
+  h2 translate
+
+  p transform: <strong>translate(x,y) | translatex(x) | translatey(y)</strong>
+
+  pre
+    code.
+      .block {
+        -moz-transform: translate(20px, 50px);
+        -webkit-transform: translate(20px, 50px);
+        transform: translate(20px, 50px);
+      }
+
+  #ex-translate(style="height: 150px;")
+    div(style="height: 150px;\
+      background-color: orange;\
+      -webkit-transform: translate(30px, 50px);")
+
+
+section
+  h2 Combinations
+
+  pre
+    code.
+      .block {
+        -webkit-transform: translate(-100px, 100px) rotate(15deg);
+        -moz-transform: translate(-100px, 100px) rotate(15deg);
+        -o-transform: translate(-100px, 100px) rotate(15deg);
+      }
+  #ex-combinations(style="height: 150px;")
+    div(style="height: 150px;\
+      background-color: orange;\
+      -webkit-transform: translate(-100px, 100px) rotate(15deg);")
+
+section
+  h2 IE < 9 rotation
+
+  p Valid values:<strong>0, 1, 2 or 3</strong> which will rotate the element 0, 90, 180 or 270 degrees respectively
+
+  pre
+    code.
+      .ierotate {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+      }
+
+section
+  h2 scale
+
+  p transform:<strong>scale(x, y) | scalex(x) | scaley(y)</strong>
+
+  ul
+    li <strong>&lt; 1:</strong> zoom in
+    li <strong>&gt; 1:</strong> zoom out
+    li <strong>negative value:</strong> flip
+
+  pre
+    code.
+      .block {
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+      }
+
+  #ex-scale(style="height: 150px;")
+    div(style="height: 150px;\
+      background-color: orange;\
+      -webkit-transform: scale(0.75);")
+
+section
+  h2 skew
+
+  p transform:<strong>skew(x, y) | skewx(x) | skewy(y)</strong>
+
+  pre
+    code.
+      .skewblock {
+        -webkit-transform: skew(-20deg, 0);
+        -moz-transform: skew(-20deg, 0);
+        transform: skew(-20deg, 0);
+      }
+
+  #ex-skew(style="height: 150px;")
+    div(style="height: 150px;\
+      background-color: orange;\
+      -webkit-transform: skew(-20deg, 0);")
+
+section
+  mixin browserSupport('12+', '10+', '4+', '10+', 'No')
+  h2 3D transforms
+
+  pre
+    code.
+      translate3d(x, y, z), translateZ(z)
+      scale3d(x, y, z), scaleZ(z)
+      rotate3d(x, y, z, angle)
+      perspective(p)
+      matrix3d(m)
+
+section
+  h2 Drawing with CSS
+  p 200 lines of CSS + 30 lines of HTML
+  iframe(src="assets/html/pure-css.html",
+    style="width:500px; height: 500px;")
+  p.source
+    a(href="http://darcyclarke.me/dev/html5/") Source: Darcy Clarke

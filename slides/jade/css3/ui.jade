@@ -1,0 +1,87 @@
+section
+  mixin browserSupport('4+', '2+', '3.1+','8+', '9.5+')
+  h2 box-sizing
+  p content-box | border-box | inherit
+  pre
+    code.
+      * {
+        box-sizing: border-box;
+      }
+
+section
+  h2 box-sizing
+  p content-box | border-box | inherit
+  pre
+    code.
+      .box-model {
+        width: 200px;
+        height: 100px;
+        padding: 50px;
+        border-width: 20px;
+      }
+  div
+    style
+      .box-model {
+        width: 200px;
+        height: 100px;
+        display: inline-block;
+        margin: 20px;
+        padding: 50px;
+        border: 20px solid #333;
+        background-color: rgb(255,181,21);
+      }
+    .box-model(style="box-sizing: content-box;")
+    .box-model(style="box-sizing: border-box;")
+
+section
+  mixin browserSupport('All', '7+', 'All', '6+', '9+')
+  h2 text-overflow
+
+  p text-overflow: <strong>ellipsis | clip</strong>
+
+  pre
+    code.
+      p {
+        width: 100px;
+        height: 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+  #ex-text-overflow
+    style
+      #ex-text-overflow p {
+        width: 90%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    p(style="text-overflow: ellipsis").
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+
+section
+  mixin browserSupport('All', '4+', 'All', 'No', 'No')
+  h2 resize
+
+  p resize: <strong>none | both | horizontal | vertical</strong>
+
+  pre
+    code.
+      div {
+        <strong>resize: both;
+        overflow: scroll;</strong>
+      }
+      textarea {
+        <strong>resize: none;</strong>
+      }
+
+  #ex-resizable
+    style
+      #ex-resizable textarea {
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    textarea(style="resize: none;") Unresizable
+    textarea(style="resize: horizontal;") Horizontal
+    textarea(style="resize: vertical;") Vertical

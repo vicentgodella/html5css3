@@ -1,0 +1,156 @@
+section
+  mixin browserSupport('All', 'All', 'All', '9+', '10.5+')
+  h2 Border radius
+  p {radius} <br>
+    | {topleft, bottomright} {topright, bottomleft } <br>
+    | {topleft} {topright} {bottomright} {bottomleft}
+  pre
+    code.
+      .container {
+        border: 10px solid orange;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+      }
+  #ex-border-radius
+    style
+      #ex-border-radius {
+        background-color: orange;
+        border: 20px solid orange;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        height: 100px;
+      }
+section
+  h2 border-radius circles
+  p Circles as <strong>very</strong> rounded rectangles
+  div(style="width: 600px;\
+   height: 600px;\
+   position: fixed;\
+   top: 80%;\
+   left: 50%;\
+   border-radius: 50%;\
+   background-color: rgb(255,181,21);\
+   z-index: -10;")
+  pre
+    code.
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+
+section(data-state="lab")
+  h2 Lab: Badges
+  p Add badges to a button bar that display data
+
+section
+  mixin browserSupport('All', '3.5+', 'All', '9+', '10.5+')
+  h2 box-shadow
+  p {x offset} {y offset} {blur-radius} {color} <br>
+    | {x offset} {y offset} {blur} {spread} {color} <br>
+    | {shadow1}, {shadow2}, {shadow3}...
+  pre
+    code.
+      .container {
+        -moz-box-shadow: 10px 30px 5px #000;
+        -webkit-box-shadow: 10px 30px 5px #000;
+        box-shadow: 10px 30px 5px #000;
+      }
+  #ex-box-shadow
+    style
+      #ex-box-shadow {
+        -moz-box-shadow: 10px 30px 5px #000;
+        -webkit-box-shadow: 10px 30px 5px #000;
+        box-shadow: 10px 30px 5px #000;
+        height: 100px;
+      }
+
+section
+  mixin browserSupport('All', '3.6+', 'All', '9+', '10.5+')
+  h2 Multiple background images
+  p background-image: {image1}, {image2}, ...
+  pre
+    code.
+      background: url(image1.png) 10% 15% no-repeat,
+                  url(image2.png) 80% 70% no-repeat;
+  #ex-multiple-bg
+    style
+      #ex-multiple-bg {
+        height: 200px;
+        background: url(assets/img/html5.svg) 10% 15% no-repeat,
+                    url(assets/img/css3.svg) 80% 70% no-repeat;
+        background-size: auto 100px, auto 70px;
+      }
+
+section
+  section
+    mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
+    h2 background-size
+    p {length} {percentage} {auto} {contain} {cover}
+    pre
+      code.
+        .container {
+          background: url(image.png) 40% 40% no-repeat;
+          background-size: 100px;
+        }
+    #ex-bg-size
+      style
+        #ex-bg-size {
+          height: 200px;
+          background: url(assets/img/css3.svg) no-repeat 40% 40%;
+          background-size: 100px;
+        }
+  section
+    mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
+    h2 background-size
+    p <strong>contain</strong>
+    pre
+      code.
+        .container {
+          background: url(image.png) 40% 40% no-repeat;
+          background-size: contain;
+        }
+    #ex-bg-size-2
+      style
+        #ex-bg-size-2 {
+          height: 200px;
+          background: url(assets/img/css3.svg) no-repeat 40% 40%;
+          background-size: contain;
+        }
+  section
+    mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
+    h2 background-size
+    p <strong>cover</strong>
+    pre
+      code.
+        .container {
+          background: url(image.png) 40% 40% no-repeat;
+          background-size: cover;
+        }
+    #ex-bg-size-3
+      style
+        #ex-bg-size-3 {
+          height: 200px;
+          background: url(assets/img/css3.svg) no-repeat 40% 40%;
+          background-size: cover;
+        }
+section
+  mixin browserSupport('All', '3.5+', 'All', '10+', '10.5+')
+  h2 border-image
+  p {image-url} {top-width} {right-width} <br />
+    |  {bottom-width} {left-width} <br />
+    |  {horizontal-effect} {vertical-effect}
+  pre
+    code.
+      .container {
+        border: 20px solid #b1563c; /* Fallback */
+        border-image: url(image1.png) 30;
+      }
+  #ex-border-image
+    style
+      #ex-border-image  {
+        height: 100px;
+        border: 40px solid #b1563c;
+        border-image: url(assets/img/html5.svg) 30;
+      }
