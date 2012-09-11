@@ -3,12 +3,23 @@
 @import "theme";
 @import "bootstrap/bootstrap";
 
-.text-left {
-  text-align: left;
+.reveal ul {
+  list-style: square;
 }
 
-ul {
-  list-style: square;
+.read-block {
+  text-align: left;
+  // width: 70%;
+  .center();
+}
+
+ul.read-block {
+  list-style: none;
+  margin-left: 0;
+}
+
+.read-block li {
+  margin-bottom: 10px;
 }
 
 .small-text {
@@ -136,4 +147,29 @@ ul {
   bottom: 0px;
   right: 0px;
   font-size: 50%;
+}
+
+//Priorities mixin
+
+.priorities {
+  display: table;
+    border-collapse: separate;
+    border-spacing: 40px 20px;
+    .center();
+
+  & > .labels, & > .levels {
+    display: table-row;
+  }
+}
+
+.labels > small {
+  display: table-cell;
+  width: 100px;
+}
+
+.levels > .priority-level {
+  display: table-cell;
+  padding: 10px 0;
+  border: 1px solid black;
+  height: 50px;
 }

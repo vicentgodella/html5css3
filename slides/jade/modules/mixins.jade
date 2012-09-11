@@ -1,12 +1,29 @@
 mixin browserSupport(chrome, ff, safari, msie, opera)
   .browser-support
-    .support-chrome 
+    .support-chrome
       span !{chrome}
-    .support-ff 
+    .support-ff
       span !{ff}
-    .support-safari 
+    .support-safari
       span !{safari}
-    .support-msie 
+    .support-msie
       span !{msie}
-    .support-opera 
+    .support-opera
       span !{opera}
+
+mixin priorities(inline, ids, classes, elements)
+  .priorities
+    .labels
+      small inline
+      small IDs
+      small classes
+      small elements
+    .levels
+      .priority-level
+        !{inline}
+      .priority-level
+        !{ids}
+      .priority-level
+        !{classes}
+      .priority-level
+        !{elements}

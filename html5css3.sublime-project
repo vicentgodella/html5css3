@@ -3,7 +3,7 @@
     {
       "name": "parse_slides",
       "working_dir": "$project_path/slides",
-      "cmd": ["node_modules/jade/bin/jade", "$file", "--out", "generated"],
+      "cmd": ["bin/jade-build", "$file"],
       "selector": "source.jade"
     },
     {

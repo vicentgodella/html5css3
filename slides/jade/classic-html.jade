@@ -1,0 +1,1802 @@
+extend modules/layout
+
+include modules/mixins
+
+append title
+  title Classic HTML and CSS
+
+append slides
+  section
+    h1 Classic HTML and CSS
+
+  section
+    h2 HTML
+
+    p.read-block <strong>Hypertext Mark-up Language</strong>
+    p.read-block Developed by <strong>Tim Berners-Lee</strong> in 1989
+    p.read-block Maintained by the <strong>World Wide Web Consortium</strong> (W3C) since 1996
+
+  section
+    h2 History of HTML
+
+    ul.read-block
+      li <strong>HTML 2.0</strong>: 1995
+      li <strong>HTML 3.2</strong>: January 1997
+      li <strong>HTML 4.0</strong>: December 1997
+      li <strong>HTML 5</strong>: Draft
+
+  section
+    h2 CPU transistor counts
+    img(src="assets/img/moore-law.png")
+
+  section
+    h2 Average PC 98/99
+
+    ul
+      li <strong>500 mHz</strong> PII / K6
+      li <strong>64 MB</strong> RAM
+      li <strong>10 GB</strong> HDD
+
+  section
+    h2 10 GB?
+
+    ul.read-block
+      li <strong>iPod nano</strong>: 8-16 GB
+      li <strong>iPod classic</strong>: 160 GB
+      li <strong>Micro SD Card</strong>: +32 GB
+
+  section
+    h2 500 MHz + 64MB RAM?
+
+    ul.read-block
+      li <strong>iPhone 3</strong>: 600 MHz + 256 MB RAM
+      li <strong>iPhone 4</strong>: 1 GHz + 512 MB RAM
+
+  //- section
+  //-   h2 HTML 4.0-4.1
+
+  section
+    h2 Tags
+    ul.read-block
+      li With / without content
+      li Attributes enclosed by double quotes
+      li Semantic CSS
+      li Lower-case
+    pre
+      code.
+        #{'<div>'}
+          #{'<p class="header">'}
+            Text content
+          #{'</p>'}
+          #{'<hr/>'}
+          #{'<img src="a.gif" title="Foo">'}
+        #{'</div>'}
+
+  section
+    h2 Most frequent tags
+
+    ul
+      li <strong>Headers</strong>: h1, h2, h3
+      li <strong>Containers</strong>: div, p, span
+      li <strong>Image</strong>: img
+      li <strong>Links</strong>: a, link, script
+      li <strong>Lists</strong>: ul, li
+      li <strong>Tables</strong>: table, thead, tbody, tr, td, th
+      li <strong>Forms</strong>: form, fieldset, input, select, textarea, label
+
+  section
+    h2 doctype
+    ul.read-block
+      li <strong>Quirks mode</strong>
+      li <strong>Standard mode</strong>
+      li <strong>XHTML</strong>
+
+  section
+    h2 Quirks mode
+
+    p Default mode in <strong>Internet Explorer 6 and 7</strong>
+
+    pre
+      code.
+        #{'<html>'}
+        ...
+        #{'</html>'}
+
+  section
+    h2 Quirks vs Standard Mode
+
+    .row-fluid
+      .span6
+        p QUIRKS MODE
+        pre
+          code.
+            /* traditional box model */
+            .boxmodel {
+               width: 10px; <strong>/* total: 10px */</strong>
+               border: 1px solid #fff;
+               padding: 2px;
+            }
+
+            .boxmodel p {
+               margin: 0 auto;  <strong>/* ignored */</strong>
+               padding: 5; <strong>/* defaults to px */</strong>
+            }
+      .span6
+        p STANDARD MODE
+        pre
+          code.
+            /* W3C box model */
+            .boxmodel {
+               width: 10px; <strong>/* total: 16px */</strong>
+               border: 1px solid #fff;
+               padding: 2px;
+            }
+
+            .boxmodel p {
+               margin: 0 auto;  <strong>/* ok */</strong>
+               padding: 5; <strong>/* ignored */</strong>
+            }
+
+  section
+    h2 Standards Mode
+
+    p The method employed by Google
+    pre
+      code.
+        <strong>#{'<!doctype html>'}</strong>
+        #{'<html>'}
+        ...
+        #{'</html>'}
+
+  section
+    h2 XHTML is a bad idea
+
+    ul
+      li <strong>Internet Explorer</strong> doesn't support XHTML
+      li There is no <strong>error handling</strong>
+      li The <strong>javascript code</strong> must be inside a CDATA block
+      li The <strong>entities</strong> (&amp;amp;) must be escaped
+      li In general, there is <strong>no advantage in XHTML</strong>
+
+  section
+    h2 XHTML vs HTML
+
+    ul.read-block
+      li <strong>Case sensitive</strong>
+      li <strong>Void entities:</strong> img, br, hr
+      li <strong>Unexpected end tags:</strong> #{'</br> </p>'}
+      li <strong>Unescaped & and &lt;</strong>
+      li <strong>CDATA elements</strong>: script and style
+
+  section
+    h2 XHTML vs HTML (II)
+    .row-fluid
+      .span6
+        p XHTML
+        pre
+          code.
+            #{'<p>Hello</p>'}
+            #{'<p>world</p>'}
+            #{'<img src="hello?foo=1&amp;amp;bar=2"/>'}
+            #{'<script type="text/javascript">'}
+            #{'<![CDATA['}
+            ... unescaped script content ...
+            ]]>
+            #{'</script>'}
+      .span6
+        p HTML
+        pre
+          code.
+            #{'<p>'}Hello
+            #{'<p>'}world
+            #{'<IMG src="hello?foo=1&bar=2">'}
+            #{'<script>'}
+            ... unescaped script content ...
+            #{'</script>'}
+
+  section
+    h2 XHTML headers
+
+    p The browser considers HTML unless the server sends the header
+
+    p <strong>Content-Type: application/xhtml+xml</strong>
+
+    pre
+      code.
+        #{'<?xml version="1.0" encoding="UTF-8"?>'}
+        #{'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'}
+        #{'<html xmlns="http://www.w3.org/1999/xhtml">'}
+        ...
+        #{'</html>'}
+
+  section
+    h2 HTTP headers
+    pre
+      code GET /index.html HTTP/1.0
+    //- Images from Wikimedia Commons:
+    //- http://commons.wikimedia.org/wiki/File:Computer.svg
+    //- http://commons.wikimedia.org/wiki/File:Network-server.svg
+    img(src="assets/img/http-headers.svg", width="600")
+    pre
+      code.
+        HTTP/1.0 200 OK
+        Date: Mon, 10 Sep 2012 09:11:36 GMT
+        Content-Type: text/html; charset=utf-8
+        Content-Length: 1354
+
+        #{'<html>'}
+        #{'<body>'}
+        ...
+        #{'</body>'}
+        #{'</html>'}
+
+
+  section
+    h2 Cascading Style Sheets
+
+    ul
+      li <strong>CSS1</strong>
+        ul
+          li Recommendation: 1996
+      li <strong>CSS2</strong>
+        ul
+          li First draft: 1997
+          li Recommendation: 2000
+      li <strong>CSS3</strong>
+        ul
+          li Started in 1998 as a list of CSS extensions, and still under development.
+
+  //- section
+  //-   h2 CSS Zen Garden
+  //-   p Separation between presentation and content
+
+  section#css-insertion
+    h2 CSS insertion
+
+    .row-fluid
+      .span4
+        p(style="line-height: 300%;") External CSS
+      pre.span8
+        code.
+          #{'<head>'}
+            <strong>#{'<link rel="stylesheet" href="style.css">'}</strong>
+          #{'</head>'}
+    .row-fluid
+      .span4
+        p(style="line-height: 700%;") Internal CSS
+      pre.span8
+        code.
+          #{'<head>'}
+            <strong>
+            #{'<style type="text/css">'}
+              .tab {
+                display: block !important;
+              }
+            #{'</style>'}
+            </strong>
+          #{'</head>'}
+    .row-fluid
+      .span4
+        p(style="line-height: 400%;") Inline CSS
+      pre.span8
+        code.
+          #{'<body>'}
+            &lt;div <strong>style="width: 20px; height: 10px"</strong>>
+              Hello world!
+            #{'</div>'}
+          #{'</body>'}
+
+  section
+    h2 Indenting
+    .row-fluid
+      .span6
+        p Classic
+        pre
+          code.
+            a {
+              color: #ccc;
+            }
+
+            p, div, .foo .bar {
+              width: 10px;
+              height: 5px;
+            }
+      .span6
+        p Compact
+        pre
+          code.
+            a { color: #ccc; }
+
+            p,
+            div,
+            .foo .bar {  width: 10px; height: 5px; }
+
+  section
+    h2 CSS Selector
+    img(src="assets/img/css-selector.svg", width="600")
+
+  section
+    h2 Common selectors
+    .row-fluid
+      .span6
+        p CSS
+        pre
+          code.
+            div {
+              width: 10px;
+            }
+            #foo {
+              color: fff;
+            }
+            .baz {
+              width: 15px;
+            }
+            .bar .baz {
+              width: 30px;
+            }
+      .span6
+        p HTML
+        pre
+          code.no-highlight.
+            &lt;p <strong style="color: #CC9393;">id="foo"</strong>>
+              White text
+            #{'</p>'}
+
+            &lt;div <strong style="color: #CC9393;">class="bar"</strong>>
+              &lt;div <strong style="color: #CC9393;">class="baz"</strong>>
+                Hello world!
+              #{'</div>'}
+            #{'</div>'}
+
+  section
+    h2 Not so common selectors
+
+    p Supported by <strong>IE 7+</strong>
+
+    pre
+      code.
+        input[type="text"] {
+          background: #eee;
+        }
+
+        .bar.baz {
+          color: #000;
+        }
+
+        li:not(.wide) {
+          width: 300px;
+        }
+
+        ul.data > li {
+          border: 1px solid #ccc;
+        }
+
+        h2 + p {
+          font-size: 18px;
+        }
+
+  section
+    h2 Child and sibling selector
+
+    .row-fluid
+      .span6 CSS
+        pre
+          code.
+            ul.data > li {
+              border: 1px solid #ccc;
+            }
+
+            h2 + p {
+              font-size: 18px;
+            }
+      .span6 HTML
+        pre
+          code.
+            #{'<ul class="data">'}
+              #{'<li> <!-- match -->'}
+              My friends:
+              #{'<ul>'}
+                #{'<li>Bob</li> <!-- not match -->'}
+                #{'<li>Kate</li> <!-- not match -->'}
+              #{'<ul>'}
+              #{'<li>'}
+            #{'</ul>'}
+
+            #{'<h2>Title</h2>'}
+            #{'<p> <!-- match -->'}
+              Lorem ipsum goes here
+            #{'</p>'}
+            #{'<p> <!-- not match -->'}
+              Another Lorem ipsum
+            #{'</p>'}
+
+  section
+    h2 Types
+
+    table.big-table(style="font-size: 60%; line-height: 150%;")
+      tbody
+        tr
+          td(style="border-top: 0") By Id
+          td(style="border-top: 0") <strong>#id</strong> { display: block; }
+        tr
+          td By class
+          td <strong>.vcard</strong> { font-weight: bold; }
+        tr
+          td By tag
+          td <strong>div</strong> { border: 1px solid #fff; }
+
+        tr
+          td Universal
+          td <strong>*</strong> { line-height: 1.5 em; }
+
+        tr
+          td Child
+          td #toc <strong>&gt;</strong> li { border-top: 1px dotted #ccc; }
+
+        tr
+          td Descendant
+          td <strong>.datatable td</strong> { width: 100px; }
+
+        tr
+          td By attribute
+          td input<strong>[type="text"]</strong> { background: #fff; }
+
+        tr
+          td Adjacent sibling
+          td h1 <strong>+</strong> p { margin-top: 50px; }
+
+  section
+    h2 Selector priority
+
+    div(style="position:relative;")
+      table
+        tbody
+          tr
+            td inline
+            td &lt;div <strong>style="display: block;"</strong>>#{'</div>'}
+          tr
+            td ID
+            td <strong>#menu</strong> { display: block; }
+          tr
+            td class
+            td <strong>.myclass</strong> { display: block; }
+          tr
+            td element
+            td <strong>div</strong> { display: block; }
+    img(src="assets/img/priority.svg",
+      style="position: absolute;\
+            top: 110px;\
+            left: 0px;")
+
+  section
+    h2 Priorities
+
+    p #sidebar ul li a.myclass:hover { ... }
+
+    mixin priorities(0, 1, 2, 3)
+
+  section
+    section
+      h2 Priorities
+
+      p .item { ... }
+      mixin priorities('', '', '', '')
+      p ul li li li li li li li li { ... }
+      mixin priorities('', '', '', '')
+
+    section
+      h2 Priorities
+
+      p .item { ... }
+      mixin priorities(0, 0, 1, 0)
+      p ul li li li li li li li li { ... }
+      mixin priorities(0, 0, 0, 9)
+
+  section
+    h2 Box model
+    .row-fluid
+      ul.span4
+        li width, height
+        li padding
+        li border
+        li margin
+      .span8
+        img(src="assets/img/box-model.svg", width="600")
+
+  section
+    h2 Min and max
+
+    p min-width, min-height
+    p max-width, max-height
+
+  section
+    h2 display
+
+    p display: <strong>block | inline | inline-block | none</strong>
+
+    .row-fluid
+      pre.span5
+        code.
+          p, div, h1 {
+            <strong>display: block;</strong>
+          }
+
+          a, span, strong, em {
+            <strong>display: inline;</strong>
+          }
+
+          .hide {
+            <strong>display: none;</strong>
+          }
+      .span7#display-example
+        style
+          #display-example a {
+            text-decoration: underline !important;
+          }
+          #display-example p, #display-example div {
+            margin: 20px;
+            padding: 10px;
+            border: 2px black dashed;
+          }
+        p.small-text.read-block.
+          Cupcake ipsum dolor sit <strong>amet</strong> dessert jelly-o. Dragée icing croissant <a>jelly</a> powder. <em>Muffin</em> croissant macaroon pie marzipan lemon drops.
+        div.small-text.
+          Sugar plum jelly-o gingerbread <strong>tiramisu</strong> chocolate bar gummi <i>bears</i>. Jelly beans soufflé <a>cotton</a> candy chocolate cake danish icing.
+
+
+  section
+    h2 display: block
+    .row-fluid
+      pre.span4
+        code.
+          #{'<div>A</div>'}
+          #{'<div>B</div>'}
+          #{'<div>C</div>'}
+      .span4.offset2#display-block-example
+        style
+          #display-block-example div {
+            margin: 20px 0;
+            border: 2px black dashed;
+            font-size: 200%;
+            line-height: 150%;
+            width: 100%;
+          }
+        p.small-text 100% width
+        div A
+        div B
+        div C
+
+
+  section
+    h2 display: inline-block
+    pre
+      code.
+        div {
+          <strong>display: inline-block;</strong>
+        }
+    #display-inline-block-example
+      style
+        #display-inline-block-example div {
+          margin: 1%;
+          border: 2px black dashed;
+          font-size: 200%;
+          line-height: 150%;
+          width: 25%;
+          display: inline-block;
+        }
+      div A
+      div B
+      div C
+
+  section
+    h2 Position
+    p position: <strong>static | relative | absolute | fixed</strong>
+
+  section
+    h2 position: static
+    p The default
+    .row-fluid
+      pre.span4
+        code.
+          #{'<div>A</div>'}
+          #{'<div>B</div>'}
+          #{'<div>C</div>'}
+      .span4.offset2#position-static-example
+        style
+          #position-static-example div {
+            margin: 20px;
+            border: 2px black dashed;
+            font-size: 200%;
+            line-height: 150%;
+            width: 100%;
+          }
+        div A
+        div B
+        div C
+
+  section
+    h2 position: relative
+    p Relative coords to its default position
+
+    .row-fluid
+      pre.span4
+        code.
+          #{'<div>A</div>'}
+          #{'<div style="'}
+            <strong>
+            position: relative;
+            left: 15px;
+            top: 10px
+            </strong>
+            ">
+            B
+          #{'</div>'}
+          #{'<div>C</div>'}
+      .span4.offset2#position-relative-example
+        style
+          #position-relative-example div {
+            margin: 20px;
+            border: 2px black dashed;
+            font-size: 200%;
+            line-height: 150%;
+            width: 100%;
+          }
+          #position-relative-example .displaced {
+            position: relative;
+            top: 15px;
+            left: 40px;
+          }
+        div A
+        div.displaced B
+        div C
+
+  section
+    h2 position: absolute
+    p Absolute position from the <strong>first parent element that has a position other than static</strong>
+
+    .row-fluid
+      pre.span4
+        code.
+          #{'<div>A</div>'}
+          #{'<div style="'}
+            <strong>
+            position: absolute;
+            left: 15px;
+            top: 10px
+            </strong>
+            ">
+            B
+          #{'</div>'}
+          #{'<div>C</div>'}
+      .span4.offset2#position-absolute-example
+        style
+          #position-absolute-example {
+            position: relative;
+          }
+          #position-absolute-example div {
+            margin: 20px;
+            border: 2px black dashed;
+            font-size: 200%;
+            line-height: 150%;
+            width: 100%;
+          }
+          #position-absolute-example .displaced {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            background-color: rgba(200,200,200,0.5);
+          }
+        div A
+        div.displaced B
+        div C
+
+  section
+    h2 position: fixed
+    p Fixed position relative to window, unaware of scrolling canvas
+
+    .row-fluid
+      pre.span4
+        code.
+          #{'<div>A</div>'}
+          #{'<div style="'}
+            <strong>
+            position: fixed;
+            right: 10px;
+            top: 10px
+            </strong>
+            ">
+            B
+          #{'</div>'}
+          #{'<div>C</div>'}
+      .span4.offset2#position-fixed-example
+        style
+          #position-fixed-example div {
+            margin: 20px;
+            border: 2px black dashed;
+            font-size: 200%;
+            line-height: 150%;
+            width: 100%;
+          }
+          #position-fixed-example .displaced {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+            background-color: rgba(200,200,200,0.5);
+            width: 320px;
+          }
+        div A
+        div.displaced B
+        div C
+
+  section
+    h2 float
+    p <strong>float: left | right</strong>
+    p <strong>clear: left | right | both</strong>
+    p Takes the element out of the box model
+
+  section
+    section
+      h2 float: left
+      p No float
+      pre
+        code.
+          #{'<div>A</div>'}
+          #{'<div>B</div>'}
+          #{'<div>C</div>'}
+      #float-left-example-1
+        style
+          #float-left-example-1 div {
+            margin: 20px auto;
+            border: 2px black dashed;
+            font-size: 150%;
+            line-height: 130%;
+            width: 50%;
+          }
+        div A
+        div B
+        div C
+    section
+      h2 float: left
+      p Float left
+      pre
+        code.
+          #{'<div style="float: left">A</div>'}
+          #{'<div>B</div>'}
+          #{'<div>C</div>'}
+      style
+        #float-left-example-2 > .span6 > div {
+          margin-top: 20px;
+          border: 2px black dashed;
+          font-size: 150%;
+          line-height: 130%;
+        }
+        #float-left-example-2 .floated {
+          float: left;
+          width: 100px;
+          margin: 10px;
+          background-color: rgba(200,200,200,0.5);
+        }
+        #float-left-example-2 .floated-big {
+          height: 200px;
+        }
+      #float-left-example-2.row-fluid
+        .span6
+          div.floated A
+          div B
+          div C
+        .span6
+          div.floated.floated-big A
+          div B
+          div C
+    section
+      h2 float: left
+      p Float and clear
+      pre
+        code.
+          #{'<div style="float: left">A</div>'}
+          #{'<div>B</div>'}
+          #{'<div style="clear: left">C</div>'}
+      style
+        #float-left-example-3 > .span6 > div {
+          margin-top: 20px;
+          border: 2px black dashed;
+          font-size: 150%;
+          line-height: 130%;
+        }
+        #float-left-example-3 .floated {
+          float: left;
+          width: 100px;
+          margin: 10px;
+          background-color: rgba(200,200,200,0.5);
+        }
+        #float-left-example-3 .floated-big {
+          height: 200px;
+        }
+      #float-left-example-3.row-fluid
+        .span6
+          div.floated A
+          div B
+          div(style="clear:left") C
+        .span6
+          div.floated.floated-big A
+          div B
+          div(style="clear:left") C
+
+  section
+    h2 Float and clear
+    #float-clear-example
+      style
+        #float-clear-example div {
+          font-size: 70%;
+          border: 4px solid black;
+          width: 150px;
+          height: 150px;
+          margin: 5px;
+        }
+        #float-clear-example .fl, #float-clear-example .fl-cl {
+          background-color: rgba(50, 150, 50, 0.7);
+          border-color: rgb(50, 150, 50);
+          float: left;
+        }
+        #float-clear-example .fl-cl {
+          clear: left;
+        }
+        #float-clear-example .no-float {
+          border: 4px solid black;
+          margin: 10px;
+          padding: 20px;
+        }
+        #float-clear-example .fr {
+          background-color: rgba(150, 70, 50, 0.7);
+          border-color: rgb(150, 70, 50);
+          float: right;
+        }
+        #float-clear-example .clear {
+          border: 2px solid black;
+          clear: both;
+          width: 100%;
+        }
+      .fl float: left
+      .fl-cl float: left <br> clear: left
+      p.small-text.text-left.no-float.
+        Stingfish, tapetail New Zealand sand diver pelican eel electric ray roanoke bass. Redhorse sucker; angler catfish kanyu, tiger barb butterfly ray. Silver driftfish snoek flagtail tenuis sweeper flashlight fish South American darter pelican eel dwarf gourami, zebrafish, "flat loach European minnow."
+      .fr float: right
+      .clear clear: both
+  section
+    h2 Overflow
+    p overflow: <strong>visible | hidden | auto</strong>
+    style
+      #ex-overflow .span4 {
+        font-size: 50%;
+        line-height: 120%;
+        height: 150px;
+      }
+    #ex-overflow.row-fluid
+      .span4. overflow: visible
+        | anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+      .span4(style="overflow: hidden;"). overflow: hidden
+        | anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+      .span4(style="overflow: auto;"). overflow:auto
+        | anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+
+  section
+    h2 Overflow with floats
+    p overflow: hidden
+
+    #overflow-float-example
+      style
+        #overflow-float-example .column {
+          width: 44%;
+          padding: 20px;
+          border: 2px dashed black;
+          box-sizing: border-box;
+        }
+      .column(style="float: right;")
+        div(style="background: #d20;\
+                    width: 28%;\
+                    height: 300px;\
+                    float: left;")
+        div(style="background: #28d;\
+                    height: 200px;\
+                    width: 68%;\
+                    float: right;")
+      .column
+        div(style="background: #d20;\
+                    width: 28%;\
+                    height: 300px;\
+                    float: left;")
+        div(style="background: #28d;\
+                    height: 200px;\
+                    width: 68%;\
+                    float: right;")
+
+  section
+    h2 Shorcuts: font
+    p font: <strong>{font-style} {font-variant} {font-weight} {font-size/line-height} {font-family}</strong>
+
+    pre
+      code.
+        p {
+          font: italic bold 0.9em/1.5em verdana, serif;
+        }
+
+  section
+    h2 Shortcuts: border
+    p border: <strong>{border-width} {border-style} {border-color}</strong>
+
+    pre
+      code.
+        p {
+          border: 1px solid #0f0f0f;
+        }
+
+  section
+    h2 Color notation examples
+    p.read-block #f02
+    p.read-block #ff0022
+    p.read-block rgb(128, 15, 26)
+
+  section
+    h2 Shortcuts: margin y padding
+    p margin and padding:
+    p <strong>{all}</strong>
+    p <strong>{top / bottom} {left / right}</strong>
+    p <strong>{top} {right} {bottom} {left}</strong>
+    pre
+      code.
+        .foo {
+          margin: 4px 2px;
+          padding: 5px 3px 0 0;
+        }
+
+        .bar {
+          margin: 0 auto;
+          padding: 5px;
+        }
+
+  section
+    h2 Centering
+    p Horizontal centering
+    .row-fluid
+      .span6
+        p <strong>Block element</strong>
+        pre
+          code.
+            .centered_block {
+              width: <strong>(anything but auto)</strong>
+              margin: 0 auto;
+            }
+      .span6
+        p <strong>Inline element</strong>
+        pre
+          code.
+            .parent {
+              text-align: center;
+            }
+
+            .children {
+              display: <strong>(inline|inline-block)</strong>
+            }
+
+  section
+    h2 Centering
+    p Vertical centering
+    .row-fluid
+      .span6
+        p <strong>Inline elements</strong>
+        pre
+          code.
+            .inline_element {
+              line-height: <strong>(parent's height)</strong>
+            }
+      .span6
+        p <strong>Inline elements inside inline elements</strong>
+        pre
+          code.
+            .inline_inside_inline {
+              vertical-align: <strong>middle</strong>;
+            }
+
+  section
+    h2 Centering
+    p Vertical positioning
+
+    pre
+      code.
+        .parent {
+          position: relative;
+        }
+
+        .child {
+          position: absolute;
+          top: 50%;
+          margin-top: <strong>-(element's height)/2</strong>;
+        }
+
+  section
+    h2 Shortcuts: background
+    p background: <strong>{background-color}</strong>
+    p <strong>{background-image}</strong>
+    p <strong>{background-repeat}</strong>
+    p <strong>{background-position}</strong>
+
+    pre
+      code.
+        .loading {
+           background: transparent url('loading.gif') no-repeat 50% 50%;
+        }
+
+  section
+    h2 Shortcuts: lists
+    p list-style: {list-style-type} {list-style-position} {list-style-image}
+
+    pre
+      code.
+        li {
+          list-style: disc outside;
+        }
+
+  section
+    h2 Display and Visibility
+    .row-fluid
+      pre.span6
+        code.
+          #{'<div>A</div>'}
+          #{'<div style="display: none">B</div>'}
+          #{'<div>C</div>'}
+      pre.span6
+        code.
+          #{'<div>A</div>'}
+          #{'<div style="visibility: hidden">B</div>'}
+          #{'<div>C</div>'}
+    .row-fluid#display-visibility-example
+      .span6
+        .block A
+        .block(style="display: none;") B
+        .block C
+
+      .span6
+        .block A
+        .block(style="visibility: hidden;") B
+        .block C
+      style
+        #display-visibility-example .block {
+          margin: 20px;
+          border: 2px black dashed;
+          font-size: 200%;
+          line-height: 150%;
+        }
+
+  section
+    h2 Link pseudo-classes
+    p <strong>:link</strong>, <strong>:hover</strong>, <strong>:active</strong>, <strong>:visited</strong>, <strong>:focus</strong>
+
+    pre
+      code.
+        a {
+          text-decoration: none;
+        }
+
+        a, a<strong>:hover</strong>, a<strong>:active</strong>, a<strong>:visited</strong>, a<strong>:focus</strong> {
+           color: #f00;
+        }
+
+        a<strong>:hover</strong> {
+          text-decoration: underline;
+        }
+
+  section
+    h2 first-child, last-child
+    p <strong>:first-child</strong>   IE7+
+    p <strong>:last-child</strong>    IE8+
+
+    pre
+      code.
+        ul.data li {
+          border-top: 1px dotted #ccc;
+        }
+
+        ul.data li<strong>:first-child</strong> {
+           border-top: none;
+        }
+    #ex-first-child
+      style
+        #ex-first-child li {
+          border-top: 2px dotted #06336F;
+        }
+        #ex-first-child li:first-child {
+          border-top: none;
+        }
+      ul.read-block
+        li item 1
+        li item 2
+        li item 3
+
+  section
+    h2 nth-child
+    p nth-child<strong>(even | odd | {formula})</strong>
+
+    pre
+      code.
+        ul.data li {
+          background: #aaa;
+        }
+
+        ul.data li<strong>:nth-child(even)</strong> {
+           background: #ccc;
+        }
+    #ex-nth-child
+      style
+        #ex-nth-child li:nth-child(even) {
+          background-color: #ccc;
+        }
+      ul.read-block
+        li item 1
+        li item 2
+        li item 3
+
+  section
+    h2 nth-child formula
+
+    pre
+      code.
+        ul.data li {
+          float: left;
+          height: 100px;
+        }
+
+        ul.data li:nth-child(3n + 1) {
+           clear: left;
+        }
+    #ex-nth-child-formula
+      style
+        #ex-nth-child-formula ul {
+          list-style: none;
+        }
+        #ex-nth-child-formula li {
+          float: left;
+          padding: 10px;
+          margin: 8px;
+          border-radius: 5px;
+          border: 2px solid black;
+        }
+        #ex-nth-child-formula li:nth-child(3n+1) {
+          clear: left;
+          border-color: red;
+        }
+      ul
+        li item 1
+        li item 2
+        li item 3
+        li item 4
+        li item 5
+        li item 6
+  section
+    h2 Pseudo-elements
+    p <strong>:after, :before, :first-letter, :first-line</strong>
+
+    pre
+      code.
+        a<strong>:after</strong> {
+          content: " (mydomain.com" attr(href) ")";
+        }
+
+        .clearfix<strong>:after</strong> {
+                content: ".";
+                display: block;
+                clear: both;
+                height: 0;
+                visibility: hidden;
+        }
+
+  section
+    h2 Font degradation
+    p Font list to be used when available, from most to less preferred
+
+    pre
+      code.
+        body {
+          font: 13px/1.5 'Helvetica Neue', Arial, FreeSans, sans-serif;
+        }
+
+  section
+    h2 Serif vs Sans Serif
+
+    p Best readable results
+    table.big-table
+      thead
+        tr
+          th screen
+          th print
+          th code
+      tbody
+        tr
+          td sans serif
+          td serif
+          td monospace
+        tr(style="font-size: 130%;")
+          td Lorem ipsum
+          td(style="font-family: serif") Lorem ipsum
+          td(style="font-family: monospace") Lorem ipsum
+
+  section
+    h2 Web-safe fonts
+
+  section
+    h2 Browser zoom
+    p Ctrl +, Ctrl -, Ctrl 0
+
+  section
+    h2 Pixel vs Percentage
+    ul
+      li YUI fonts default:
+      ul
+        li font: 13px
+        li line-height:16px
+      li Not needed anymore.
+
+  section#sfir
+    h2 sFIR
+    .row-fluid
+      .span4
+        #text-replacement-1
+          style
+            #text-replacement-1 a {
+              display: block;
+              width: 400px;
+              height: 200px;
+              text-indent: -10000px;
+              background: url(assets/img/html5.svg) no-repeat 0 0;
+            }
+          a(href="#sfir") HTML5
+      .span8
+        p CSS
+        pre
+          code.
+            #pageheader h1 {
+              width: 400px;
+              height: 200px;
+              text-indent: -10000px;
+              background: transparent
+                url('html5.svg') no-repeat 0 0;
+            }
+        p HTML
+        pre
+          code.
+            #{'<div id="pageheader">'}
+              #{'<a>HTML5</a>'}
+            #{'</div>'}
+
+  section#img-replacement-1
+    h2 Image replacement
+
+    .row-fluid
+      .span4
+        #text-replacement-2
+          style
+            #text-replacement-2 a {
+              display: block;
+              width: 0px;
+              height: 0px;
+              padding-right: 400px;
+              padding-top: 200px;
+              overflow: hidden;
+              background: url(assets/img/html5.svg) no-repeat 0 0;
+            }
+          a(href="#img-replacement-1") HTML5
+      .span8
+        p CSS
+        pre
+          code.
+            #pageheader h1 {
+              width: 0px;
+              height: 0px;
+              padding-right: 400px;
+              padding-top: 200px;
+              overflow: hidden;
+              background: transparent
+                url('html5.svg') no-repeat 0 0;
+            }
+
+  section#img-replacement-2
+    h2 Image replacement
+
+    .row-fluid
+      .span4
+        #text-replacement-3
+          style
+            #text-replacement-3 a {
+              display: block;
+              height: 200px;
+              text-indent: 120%;
+              whitespace: nowrap;
+              overflow: hidden;
+              background: url(assets/img/html5.svg) no-repeat 0 0;
+            }
+          a(href="#img-replacement-2") HTML5
+      .span8
+        p CSS
+        pre
+          code.
+            #pageheader h1 {
+              height: 200px;
+              text-indent: 100%;
+              whitespace: nowrap;
+              overflow: hidden;
+              background: transparent
+                url('html5.svg') no-repeat 0 0;
+            }
+
+  section
+    h2 CSS sprites
+
+    p <strong>All the background images</strong> are combined
+    p They can be arranged <strong>vertically or horizontally</strong>, as the content increases
+    #ex-sprites
+      style
+        #ex-sprites .mask {
+          height: 50px;
+          background: -webkit-linear-gradient(bottom, rgba(102,102,102,0.5) 0%, rgba(102,102,102,0.5) 6%) no-repeat 0 0,
+                      -webkit-linear-gradient(bottom, rgba(102,102,102,0.5) 0%, rgba(102,102,102,0.5) 6%) no-repeat 250px 0;
+          background-size: 200px 50px, auto 50px;
+          position: relative;
+        }
+        #ex-sprites .window {
+          position: absolute;
+          left: 200px;
+          height: 50px;
+          width: 50px;
+          box-sizing: border-box;
+          border: 2px solid black;
+        }
+        #ex-sprites .sprites {
+          position: absolute;
+          left: 0px;
+          width: 100%;
+          height: 50px;
+          background: url(assets/img/browsers.png) no-repeat 100px 0;
+          z-index: -10;
+        }
+
+      .mask
+        .sprites
+        .window
+
+  section
+    h2 Rounded borders (before)
+
+    p Option 1: CSS Images
+    pre
+      code.
+        #{'<div class="dialog">'}
+          #{'<div class="contents">'}
+            #{'<div class="t">'}
+            #{'</div>'}
+            #{'<!-- Your content goes here -->'}
+          #{'</div>'}
+          #{'<div class="b">'}
+          #{'<div>'}
+        #{'</div>'}
+
+  section
+    h2 Rounded borders (before)
+    p Option 2: Javascript
+    pre
+      code.
+        #{'<script type="text/javascript" src="niftycube.js"></script>'}
+        #{'<script>'}
+          Nifty("div#box", "big");
+        #{'</script>'}
+
+  section
+    h2 CSS triangles
+
+    .row-fluid
+      .span4
+        iframe(src="assets/html/css-arrow.html", height="300")
+      pre.span8(style="font-size: 40%;")
+        code.
+          .arrow_box {
+            position: relative;
+            background: #88b7d5;
+            border: 4px solid #c2e1f5;
+          }
+          .arrow_box:after, .arrow_box:before {
+            bottom: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+          }
+
+          .arrow_box:after {
+            border-color: rgba(136, 183, 213, 0);
+            border-bottom-color: #88b7d5;
+            border-width: 30px;
+            left: 50%;
+            margin-left: -30px;
+          }
+          .arrow_box:before {
+            border-color: rgba(194, 225, 245, 0);
+            border-bottom-color: #c2e1f5;
+            border-width: 36px;
+            left: 50%;
+            margin-left: -36px;
+          }
+
+  section
+    h2 CSS triangles
+    #css-triangles-explanation
+      style
+        #css-triangles-explanation .blocks {
+          margin-top: 50px;
+        }
+        #css-triangles-explanation .blocks .span2 {
+          position: relative;
+          height: 120px;
+        }
+        #css-triangles-explanation .block {
+          position: absolute;
+          bottom: 0;
+          margin: 0 auto;
+          width: 100px;
+          height: 100px;
+
+          border: 20px solid #f31;
+          border-bottom-color: #1d3;
+        }
+        #css-triangles-explanation .labels {
+          margin-top: 40px;
+        }
+        #css-triangles-explanation .labels .span2 {
+          font-size: 50%;
+          line-height: 150%;
+        }
+        #css-triangles-explanation .block-2 {
+          border-top-width: 0;
+        }
+        #css-triangles-explanation .block-3 {
+          border-top-width: 0;
+          width: 0;
+          left: 50px;
+        }
+        #css-triangles-explanation .block-4 {
+          border-top-width: 0;
+          width: 0;
+          left: 50px;
+          height: 0;
+        }
+        #css-triangles-explanation .block-5 {
+          border-top-width: 0;
+          width: 0;
+          left: 50px;
+          height: 0;
+          border-right-color: transparent;
+          border-left-color: transparent;
+          background-color: transparent;
+        }
+      .row-fluid.blocks
+        .span2.offset1
+          .block
+        .span2
+          .block.block-2
+        .span2
+          .block.block-3
+        .span2
+          .block.block-4
+        .span2
+          .block.block-5
+      .row-fluid.labels
+        .span2.offset1
+        .span2 border-top-color: transparent
+        .span2 width 0
+        .span2 height 0
+        .span2 transparent left/right borders
+
+  //- section(data-state="lab")
+  //-   h2 Chrome console
+
+  section(data-state="lab")
+    h2 Lab: Icon Bar and Button Bar
+    p Create two button bars in CSS2
+
+  section
+    h2 CSS Reset
+    p Keeps the inconsistencies between browsers to a minimum.
+    p <strong>960gs, YUI-reset, Eric Meyer.</strong>
+
+  section
+    h2 Eric Meyer's reset.css
+    .row-fluid
+      pre.span6
+        code(style="font-size: 70%;\
+                    line-height: 120%;").
+          /* http://meyerweb.com/eric/tools/css/reset/
+             v2.0 | 20110126
+             License: none (public domain)
+          */
+          html, body, div, span, applet, object, iframe,
+          h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+          a, abbr, acronym, address, big, cite, code,
+          del, dfn, em, img, ins, kbd, q, s, samp,
+          small, strike, strong, sub, sup, tt, var,
+          b, u, i, center,
+          dl, dt, dd, ol, ul, li,
+          fieldset, form, label, legend,
+          table, caption, tbody, tfoot, thead, tr, th, td,
+          article, aside, canvas, details, embed,
+          figure, figcaption, footer, header, hgroup,
+          menu, nav, output, ruby, section, summary,
+          time, mark, audio, video {
+                  margin: 0;
+                  padding: 0;
+                  border: 0;
+                  font-size: 100%;
+                  font: inherit;
+                  vertical-align: baseline;
+          }
+      pre.span6
+        code(style="font-size: 70%;\
+                    line-height: 120%;").
+          /* HTML5 display-role reset for older browsers */
+          article, aside, details, figcaption, figure,
+          footer, header, hgroup, menu, nav, section {
+                  display: block;
+          }
+          body {
+                  line-height: 1;
+          }
+          ol, ul {
+                  list-style: none;
+          }
+          blockquote, q {
+                  quotes: none;
+          }
+          blockquote:before, blockquote:after,
+          q:before, q:after {
+                  content: '';
+                  content: none;
+          }
+          table {
+                  border-collapse: collapse;
+                  border-spacing: 0;
+          }
+
+  section
+    h2 normalize.css
+    pre
+      code.
+        h1 {
+          font-size: 2em;
+          margin: 0.67em 0;
+        }
+
+        h2 {
+          font-size: 1.5em;
+          margin: 0.83em 0;
+        }
+
+        ...
+
+        /*
+         * Addresses styling not present in IE7/8/9, S5, Chrome
+         */
+
+        abbr[title] {
+          border-bottom: 1px dotted;
+        }
+
+  section
+    h2 CSS frameworks
+    ul
+      li 960gs
+      li YAML
+      li OO-CSS
+      li YUI-grid
+
+  section
+    h2 960 Grid System
+
+  section
+    h2 Twitter Bootstrap
+
+    p 12 column grid
+    p Fluid is optional
+    p Responsive
+    style
+      #ex-bootstrap [class^="span"] {
+          border-radius: 4px;
+          background-color: #ccc;
+          margin-bottom: 10px;
+          font-size: 70%;
+      }
+    #ex-bootstrap
+      .row-fluid.
+        <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div>
+        <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div>
+        <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div>
+      .row-fluid
+        .span4 4
+        .span4 4
+        .span4 4
+      .row-fluid
+        .span4 4
+        .span8 8
+      .row-fluid
+        .span6 6
+        .span6 6
+      .row-fluid
+        .span12 12
+
+  section
+    h2 Example
+
+    pre
+      code.
+        #{'<div class="row">'}
+          #{'<div class="span2">Fee</div>'}
+          #{'<div class="span2">Fi</div>'}
+          #{'<div class="span2">Fo</div>'}
+          #{'<div class="span3 offset3">Fum!!</div>'}
+        #{'</div>'}
+        #{'<div class="row">'}
+            #{'<div class="span4">This is a column</div>'}
+            #{'<div class="span7">This is a larger column</div>'}
+        #{'</div>'}
+    style
+      #ex-bootstrap-grid [class^="span"] {
+            border-radius: 4px;
+            background-color: #ccc;
+            margin-bottom: 10px;
+            font-size: 70%;
+        }
+    #ex-bootstrap-grid
+      .row-fluid
+        .span2 Fee
+        .span2 Fi
+        .span2 Fo
+        .span3.offset3 Fum!!
+      .row-fluid
+        .span4 This is a column
+        .span7 This is a larger column
+
+  section(data-state="lab")
+    h2 Lab: Bootstrap 1
+    p Build a layout with Bootstrap
+
+  section
+    h2 Bootstrap toolkit
+    p Base CSS
+    iframe(src="assets/html/bootstrap-base-css.html", width="1000", height="600", style="margin-top: 20px;")
+
+  section
+    h2 Bootstrap toolkit
+    p Reusable components
+    iframe(src="assets/html/bootstrap-reusable-components.html", width="1000", height="600", style="margin-top: 20px;")
+
+  section
+    section
+      h2 Bootstrap toolkit
+      p Navigation bar
+      iframe(src="assets/html/bootstrap-navigation-bar.html", width="1000", height="300", style="margin-top: 20px;")
+    section
+      h2 Bootstrap toolkit
+      p Navigation bar
+      iframe(src="assets/html/bootstrap-navigation-bar-collapsed.html", width="500", height="600", style="margin-top: 20px;")
+
+  section
+    h2 Bootstrap toolkit
+    p Navigation components
+    iframe(src="assets/html/bootstrap-navigation-components.html", width="1000", height="600", style="margin-top: 20px;")
+
+  section
+    h2 Bootstrap JS plugins
+
+  section
+    h2 Customization
+    .row-fluid
+      .span5
+        p Themes
+        ul
+          li
+            a(href="http://bootswatch.com") Bootswatch
+          li
+            a(href="http://wrapbootstrap.com") WrapBootstrap
+      .span7
+        p LESS library
+        pre
+          code.
+            @baseFontSize: 13px;
+
+            @tableBorder: #ddd;
+
+            @inputBorderRadius: 3px;
+
+            @gridColumns: 12;
+
+              ...
+
+
+  section(data-state="lab")
+    h2 Lab: Bootstrap 2
+    p Experiment with the Bootstrap components
+
+  section
+    h2 print CSS
+    p Media-specific stylesheet
+
+    pre
+      code.
+        #{'<link rel="stylesheet" href="print.css" media="print" />'}
+
+  section
+    h2 Whitewashed backgrounds
+    p.read-block All background colors and images are <strong>removed</strong>
+    p.read-block <strong>Not all browsers are configured with the defaults</strong>. You should set your backgrounds to white anyway.
+    p.read-block Borders, images and font colors still apply.
+
+  section
+    h2 Fonts for printing
+    p.read-block <strong>font-size: 12pt</strong> is usually fine for printing
+    p.read-block <strong>Choose serif / sans serif</strong>
+    p.read-block <strong>Underline links</strong>
+    p.read-block <strong>Modify font color</strong> for best contrast with white background
+
+  section
+    h2 A note about color-blind users
+    p.read-block <strong>1 in 12</strong> people have some sort of color deficiency
+    p.read-block <strong>Underlining links</strong> on screen is usually considered good practice
+
+  section
+    h2 Print link target
+
+    pre
+      code.
+        p a:after {
+          content: " ("attr(href)") ";
+          font-size: 10pt;
+        }
+
+        p a[href^="/"]:after {
+          content: " (http://myhost.com" attr(href) ") ";
+        }
+
+    #ex-print-link
+      style
+        #ex-print-link .print {
+          text-decoration: underline;
+        }
+        #ex-print-link .print:after {
+          content: " ("attr(href)") ";
+          font-size: 10pt;
+        }
+      .row-fluid.small-text
+        .span4.offset1 Go visit <a href="http://instructormatters.com">external link</a>
+        .span4.offset2 Go visit <a href="http://instructormatters.com" class="print" >external link</a>
+
+  section
+    h2 QR code
+    p Matrix barcode readable by camera phones.
+    img(src="assets/img/qr.svg", width="400")
+
+  section
+    h2 page-break-before
+    p page-break-before
+
+    pre
+      code.
+        #comments {
+          page-break-before: always;
+        }
+
+  section
+    h2 How to test
+    p.read-block Temporarily <strong>remove the "media" attribute</strong>
+    p.read-block Use <strong>print preview</strong>
+    p.read-block <strong>Print to PDF</strong>
+
+  section(data-state="lab")
+    h2 Lab: print CSS
+    p Create a print stylesheet

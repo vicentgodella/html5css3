@@ -24,8 +24,8 @@ append slides
 
   section
     h2 Impact on PageRank
-    p Starting 2010, 
-    p <strong>Google has added page performance</strong> to the PageRank algorithm 
+    p Starting 2010,
+    p <strong>Google has added page performance</strong> to the PageRank algorithm
 
   section
     h2 Best thing for performance
@@ -79,7 +79,7 @@ append slides
   section
     h2 Performance tools
     p Google PageSpeed
-    p YSlow! 
+    p YSlow!
     p Webpagetest.org
     p Chrome resources tab
 
@@ -141,36 +141,36 @@ append slides
     pre
       code.
         /* avoid generic selectors */
-        * { 
-          font-size: 12px; 
-        }     
-        /* do not tag-qualify an id */  div#main { 
+        * {
+          font-size: 12px;
+        }
+        /* do not tag-qualify an id */  div#main {
           width: 960px;
         }
         /* avoid descendants */
-        table.bill tbody tr td.cell { 
+        table.bill tbody tr td.cell {
           border: 1px solid #ccc;
         }
         /* avoid by tag */
-        .contact-data div { 
+        .contact-data div {
           background: #fcc;
         }
     | GOOD:
     pre
       code.
-        body { 
-          font-size: 12px; 
-        }     
+        body {
+          font-size: 12px;
+        }
 
-        #main { 
+        #main {
           width: 960px;
         }
 
-        .cell, .td-cell { 
+        .cell, .td-cell {
           border: 1px solid #ccc;
         }
 
-        .contact-data, .div-contact-data { 
+        .contact-data, .div-contact-data {
           background: #fcc;
         }
 
@@ -206,7 +206,7 @@ append slides
 
   section
     h2 Avoid :hover on non-link
-    p :hover on non-link elements (div, p, etc) will fail or cause degraded performance on IE 
+    p :hover on non-link elements (div, p, etc) will fail or cause degraded performance on IE
 
   section
     h2 Best performance possible
@@ -226,9 +226,9 @@ append slides
     h2 Use classes to override styles
     p Specificity has collisions
     ul
-      li h3 { … }
-      li #sidebar h3 { … }
-      li #sidebar .account h3 { … }
+      li h3 { ... }
+      li #sidebar h3 { ... }
+      li #sidebar .account h3 { ... }
 
   section
     h2 !important
@@ -268,12 +268,12 @@ append slides
   section
     h2 304 with Last-Modified
     p If the server includes Last-Modified the browser will include If-Modified-Since with each further request
-    p Example: any static file with apache / tomcat 
+    p Example: any static file with apache / tomcat
 
   section
     h2 304 with ETag
     p If server includes ETag the browser will include If-None-Match with each further request
-    p Example: <inode>-<file-size>-<last-modified> with apache 
+    p Example: <inode>-<file-size>-<last-modified> with apache
 
   section
     h2 Expires header
@@ -282,7 +282,7 @@ append slides
   section
     h2 Expires header
     ul
-      li Cache-control (max-age) 
+      li Cache-control (max-age)
         ul
           li HTTP 1.1
           li Seconds to expire
@@ -296,7 +296,7 @@ append slides
   section
     h2 The Refresh button
     ul
-      li Refresh (or F5): a new request will be sent for each file. 
+      li Refresh (or F5): a new request will be sent for each file.
         ul
           li Any If-Modified-Since or If-None-Match headers will be sent.
           li The server may return a 304 response.

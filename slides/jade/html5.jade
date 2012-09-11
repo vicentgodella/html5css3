@@ -99,7 +99,7 @@ append slides
   section
     h2 Precomposed icons
     p The only kind supported by Android 2.1
-    p Not supported by extremely old devices 
+    p Not supported by extremely old devices
 
     pre
       code.
@@ -176,11 +176,11 @@ append slides
 
     pre
       code.
-        | Hi, nice post. BTW, you cannot miss our new 
+        | Hi, nice post. BTW, you cannot miss our new
         #{'<a rel="nofollow" href="http://thespammer.com/recipes.html">'}
           ViaGra d0nuTs recipes!
         #{'</a>'}
-        
+
   section
     h2 Human computation
     p How modern spammers work
@@ -241,7 +241,7 @@ append slides
   section
     h2 Emphasis tags
     ul
-      li Use #{'<i>'} 
+      li Use #{'<i>'}
         ul
           li text without emphasis or importance, typically represented as italic text
           li technical term, phrase from another language, a ship name, etc.
@@ -457,7 +457,7 @@ append slides
     p Other
     pre
       code.
-        :invalid { 
+        :invalid {
           border-color: #e88;
           -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
           -moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
@@ -510,15 +510,15 @@ append slides
     | USER AGENT SNIFFING
     pre
       code.
-        var dateSupport = 
-          browser != 'IE' && 
+        var dateSupport =
+          browser != 'IE' &&
           !(browser === 'Mozilla' && version < 4) &&
           !(browser === 'Webkit' && version < 1.5)
-        ;  
+        ;
     | FEATURE DETECTION
     pre
       code.
-        var dateSupport = 
+        var dateSupport =
           (new Element('input', { type: 'date' }).type === 'date');
 
   section
@@ -553,15 +553,15 @@ append slides
     pre
       code.
         if (Modernizr.input.placeholder) {
-          …
+          ...
         }
-        if (Modernizr.video.ogg){ 
-          … 
-        } 
+        if (Modernizr.video.ogg){
+          ...
+        }
 
   section
     h2 Graceful downgrade
-    p Design for javascript 
+    p Design for javascript
     p Downgrade for javascript-less
 
   section
@@ -588,13 +588,13 @@ append slides
     p <strong>Simulate a feature</strong> if it's not natively supported by the browser
     pre
       code.
-        yepnope({  
-          test: Modernizr.input.placeholder,  
+        yepnope({
+          test: Modernizr.input.placeholder,
           nope: 'html5placeholder.jquery.js',
-          callback: function() { 
+          callback: function() {
             $('input[placeholder]').placeholder();
           }
-        }); 
+        });
 
   section
     h2 Modernizr conclusions
@@ -746,7 +746,7 @@ append slides
 
     pre
       code.
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
           display:block;
         }
 
@@ -930,11 +930,11 @@ append slides
           #{'<nav>'}
             #{'<h1>Navigation<h1>'}
             #{'<ul>'}
-              #{'<li><a href="/">Home</a></li>'} 
-              #{'<li><a href="/standards/">Standards</a></li>'} 
-              #{'<li><a href="/participate/">Participate</a></li>'} 
-              #{'<li><a href="/membership">Membership</a></li>'} 
-              #{'<li><a href="/Consortium/">About W3C</a></li>'} 
+              #{'<li><a href="/">Home</a></li>'}
+              #{'<li><a href="/standards/">Standards</a></li>'}
+              #{'<li><a href="/participate/">Participate</a></li>'}
+              #{'<li><a href="/membership">Membership</a></li>'}
+              #{'<li><a href="/Consortium/">About W3C</a></li>'}
             #{'</ul>'}
           #{'</nav>'}
           #{'<nav>'}
@@ -943,7 +943,7 @@ append slides
               #{'<li><a href="/Consortium/contact">Contact</a></li>'}
               #{'<li><a href="/Help/">Help and FAQ</a></li>'}
               #{'<li><a href="/Consortium/sup">Donate</a></li>'}
-              #{'<li><a href="/Consortium/siteindex">Site Map</a></li>'} 
+              #{'<li><a href="/Consortium/siteindex">Site Map</a></li>'}
             #{'</ul>'}
           #{'</nav>'}
         #{'<section>'}
@@ -954,7 +954,7 @@ append slides
           #{'</ul>'}
         #{'</section>'}
         #{'<p class="copyright">Copyright © 2009 W3C</p>'}
-        #{'</footer>'} 
+        #{'</footer>'}
 
   section
     h2 Example

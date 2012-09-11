@@ -59,7 +59,7 @@ append slides
 
         //Add a new entry
         var onsuccess = function (id) {
-          …
+          ...
         }
 
         var onerror = function (id) {
@@ -145,7 +145,7 @@ append slides
         // Set data
         localStorage.setItem("key", "value");
 
-        // Get data 
+        // Get data
         localStorage.getItem("key"); // => "value"
 
         // Remove data
@@ -159,7 +159,7 @@ append slides
     ul
       li <strong>JSON datatypes</strong> (objects, arrays, boolean...)
       li <strong>Default values</strong>
-      li <strong>Fallback</strong> to 
+      li <strong>Fallback</strong> to
       ul
         li <strong>globalStorage</strong> for older Firefox (2+)
         li <strong>userData</strong> for older IE (5+)
@@ -174,7 +174,7 @@ append slides
         // Set data
         myStuff.set('key', 'value')
 
-        // Get data 
+        // Get data
         myStuff.get('key')
 
         // Remove data
@@ -204,7 +204,7 @@ append slides
       code.
         CACHE MANIFEST
         # Remember to update the version number!
-        # version 2.3.1 
+        # version 2.3.1
 
         # Explicit cache section (no wildcard allowed)
         CACHE:
@@ -266,7 +266,7 @@ append slides
               coords: { latitude: 0.5, longitude: 0.5 }
             });
           };
-          if (navigator.geolocation) {  
+          if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(callback, errorCallback);
           } else {
             errorCallback();

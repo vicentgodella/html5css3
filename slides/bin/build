@@ -2,6 +2,8 @@
 
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+cd ..
+
 echo 'Parsing slides...'
 for f in jade/*.jade; do
   node_modules/jade/bin/jade $f -O generated
@@ -11,3 +13,4 @@ echo 'Parsing CSS...'
 node_modules/less/bin/lessc less/style.less > generated/assets/css/style.css
 
 echo 'Done!'
+exit 0

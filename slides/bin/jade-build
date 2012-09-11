@@ -1,0 +1,19 @@
+#!/bin/bash
+
+WORKING_DIR=`pwd`
+
+DIRNAME=`dirname "$1"`;
+
+cd "${DIRNAME}"
+
+#Find out wheter is the main file of a module
+#or just a "chapter"
+if [[ `basename ${PWD}` == "jade" ]]; then
+  FILE="$1";
+else
+  FILE=`dirname "$1"`".jade";
+fi
+
+cd "${WORKING_DIR}"
+
+node_modules/jade/bin/jade "${FILE}" -O generated
