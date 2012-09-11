@@ -75,14 +75,17 @@ section
   h2 Pixels again
   p (<span style="color:red">*</span>)  1 CSS pixel = 0.5-1.5 device pixels
   p An additional layer between CSS px and device px
-  img(src="assets/img/viewport-mobile-resized.svg", width="200", style="display: inline-block;")
-  ul.fragment.small-text(style="display: inline-block;")
-    li
-      p "Low-cost" smartphone:
-      p Screen 240x320, reports 320x427
-    li
-      p High density display:
-      p Screen 640x960, reports 320x480
+  .row-fluid(style="margin-top: 40px;")
+    .span3.offset2
+      img(src="assets/img/viewport-mobile-resized.svg", width="200", style="margin: 0;")
+    .span7
+      ul.fragment.small-text
+        li
+          p "Low-cost" smartphone:
+          p Screen 240×320, reports 320×427
+        li
+          p High density display:
+          p Screen 640×960, reports 320×480
 
 section
   h2 High density displays
@@ -275,8 +278,8 @@ section
 
 section
   h2 Responsive images
-  p Beware of scaling problems
-  p Serve different images for different displays
+  p.read-block Beware of scaling problems
+  p.read-block Serve different images for different displays
 
 section
   h2 Responsive images
@@ -317,6 +320,9 @@ section
   h2 Goldilocks approach
   .row-fluid#goldilocks-example
     style
+      #goldilocks-example {
+        margin-top: 40px;
+      }
       #goldilocks-example p {
         border: 1px #333 solid;
         height: 200px;
@@ -330,7 +336,7 @@ section
       p(style="width:50%; margin:0 24%;") Right
     .span4
       p(style="width:70%; margin:0 14%;") Big
-  p Keep it <strong>simple</strong>
+  p(style="margin-top: 40px;") Keep it <strong>simple</strong>
 
 section
   h2 RWD with Bootstrap

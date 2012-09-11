@@ -53,31 +53,37 @@ section
   h2 LESS
   p Mixins and parametric mixins
 
-  pre
-    code.
-      .stuff {
-        background-color: @redBlood;
-        width: @size;
-      }
+  .row-fluid
+    pre.span6
+      code.
+        .stuff {
+          background-color: @redBlood;
+          width: @size;
+        }
 
-      .coolShadow(@blur) {
-        -moz-box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
-        -webkit-box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
-        box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
-      }
+        .coolShadow(@blur) {
+          -moz-box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
+          -webkit-box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
+          box-shadow: 0 0 @blur rgba(0, 0, 0, .7);
+        }
 
-      #footer {
-        .stuff;
-        .coolShadow(3px);
-      }
-  pre
-    code.
-      #footer {
-        background-color: #f00;
-        width: 100px;
-        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
-        ...
-      }
+        #footer {
+          .stuff;
+          .coolShadow(3px);
+        }
+    pre.span6
+      code.
+        .stuff {
+          background-color: #f00;
+          width: 100px;
+        }
+
+        #footer {
+          background-color: #f00;
+          width: 100px;
+          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          ...
+        }
 
 section
   h2 LESS
@@ -237,32 +243,33 @@ section
   h2 Sass
   p Mixins and paremetric mixins
 
-  pre
-    code.
-      @mixin stuff {
-        background-color: $redBlood;
-        width: $size;
-      }
+  .row-fluid
+    pre.span6
+      code.
+        @mixin stuff {
+          background-color: $redBlood;
+          width: $size;
+        }
 
-      @mixin coolShadow($blur) {
-        -moz-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
-        -webkit-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
-        box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
-      }
+        @mixin coolShadow($blur) {
+          -moz-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+          -webkit-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+          box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+        }
 
-      #footer {
-        @include stuff;
-        @include coolShadow(3px);
-      }
+        #footer {
+          @include stuff;
+          @include coolShadow(3px);
+        }
 
-  pre
-    code.
-      #footer {
-        background-color: #f00;
-        width: 100px;
-        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
-        ...
-      }
+    pre.span6
+      code.
+        #footer {
+          background-color: #f00;
+          width: 100px;
+          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          ...
+        }
 
 section
   h2 Sass
