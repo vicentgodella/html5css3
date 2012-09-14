@@ -433,9 +433,9 @@ append slides
   section
     h2 Browser support
     style
-      .reveal .wufoo-support-table {
-        font-size: 40%;
-        line-height: 120%;
+      .reveal .wufoo-support-table td, .reveal .wufoo-support-table th {
+        font-size: 45%;
+        padding: 8px 4px;
       }
 
       .reveal .wufoo-support-table .browser {
@@ -445,25 +445,16 @@ append slides
         margin: 0 auto;
       }
 
-      .reveal table.wufoo-support-table thead th, .reveal table.wufoo-support-table td {
-        text-align: center;
-      }
-
-      .reveal table.wufoo-support-table td, .reveal table.wufoo-support-table th {
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-
-      .reveal .wufoo-support-table .yup {
+      .wufoo-support-table .yup {
         color: green;
       }
-      .reveal .wufoo-support-table .nope {
+      .wufoo-support-table .nope {
         color: red;
       }
-      .reveal .wufoo-support-table .kinda {
+      .wufoo-support-table .kinda {
         color: orange;
       }
-    table(style="font-size: 50%; line-height: 120%;").wufoo-support-table
+    table.table.wufoo-support-table
       caption
           | Browser Support for New 
           strong HTML5 
@@ -886,187 +877,188 @@ append slides
 
   section
     h2 Browser support
-    caption.
-        Browser Support for New <b>HTML5</b> Input <b>Attributes</b>
-    table.wufoo-support-table
-      thead
-        tr
-          td
-          th
-            .browser(style="background-position: -50px;")
-            div Firefox
-          th
-            .browser(style="background-position: -100px;")
-            div Safari
-          th
-            .browser(style="background-position: -300px;")
-            div Safari
-          th
-            .browser
-            div Chrome
-          th
-            .browser(style="background-position: -200px;")
-            div Opera
-          th
-            .browser(style="background-position: -150px;")
-            div IE
-          th
-            .browser(style="background-position: -250px;")
-            div Android
-      tbody
-        tr
-          th Placeholder
-          td.yup 4+
-          td
-            span.kinda 4
-            | /
-            span.yup 5+
-          td.yup 4+
-          td.yup 10+
-          td
-            span.kinda 11.10
-            | /
-            span.yup 11.50
-          td.yup 10+
-          td.yup 2.3+
-        tr
-          th Autofocus
-          td.yup 4+
-          td.yup 5+
-          td.nope 5-
-          td.yup 6+
-          td.yup 11+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Maxlength
-          td
-            span.kinda 3.6
-            | /
-            span.yup 4+
-          td.yup 5+
-          td.yup 4+
-          td.yup 6+
-          td.yup 11+
-          td
-            span.kinda 9
-            | /
-            span.yup 10
-          td.yup 2.3+
-        tr
-          th List (Datalist)
-          td.yup 4+
-          td.nope 5-
-          td.nope 5-
-          td.yup 20+
-          td.yup 10.6+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Autocomplete
-          td.yup 4+
-          td.yup 5.2+
-          td N/A
-          td.yup 17+
-          td.yup 10.6+
-          td.nope 10-
-          td.nope 2.3-
-        tr
-          th Required
-          td.yup 6+
-          td.nope 5-
-          td.nope 5-
-          td.yup 6+
-          td.yup 10.6+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Pattern
-          td.yup 4+
-          td.nope 5-
-          td.nope 5-
-          td
-            span.kinda 6
-            | /
-            span.yup 10+
-          td.yup-nope-kinda
-            span.kinda 10.6
-            | /
-            span.yup 11+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Spellcheck
-          td.yup 3.6+
-          td.yup 4+
-          td.nope 5-
-          td.yup 10+
-          td.yup 11+
-          td.yup 10+
-          td N/A
-        tr
-          th Novalidate
-          td.yup 4+
-          td.nope 5-
-          td.nope 5-
-          td.yup 6+
-          td.yup 10.6+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Formnovalidate
-          td.yup 4+
-          td.nope 5.2-
-          td.nope 5-
-          td.yup 6+
-          td.yup 10.6+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Formaction/method/target
-          td.yup 4+
-          td.yup 5.2+
-          td.yup 5+
-          td.yup 10+
-          td.yup 10.6+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Formenctype
-          td.yup-nope-kinda ?
-          td.yup-nope-kinda ?
-          td.yup-nope-kinda ?
-          td.yup-nope-kinda ?
-          td.yup-nope-kinda ?
-          td.yup-nope-kinda ?
-          td.yup-nope-kinda ?
-        //- tr
-        //-   th Accept
-        //-   td.yup 11+
-        //-   td.yup 5.2+
-        //-   td N/A
-        //-   td.yup 10+
-        //-   td.kinda 10.6+
-        //-   td.yup 10+
-        //-   td.nope 2.3-
-        tr
-          th Multiple
-          td.yup 3.6+
-          td.yup 5+
-          td N/A
-          td.yup 6+
-          td.yup 11+
-          td.yup 10+
-          td.nope 2.3-
-        tr
-          th Min / Max / Step
-          td.nope 11-
-          td.yup 5+
-          td.nope 5-
-          td.yup 6+
-          td.yup 10.6+
-          td.yup 10+
-          td.nope 2.3-
+    div(style="height: 500px; overflow-x: visible; overflow-y: scroll;")
+      table.wufoo-support-table.table
+        caption.
+            Browser Support for New <b>HTML5</b> Input <b>Attributes</b>
+        thead
+          tr
+            td
+            th
+              .browser(style="background-position: -50px;")
+              div Firefox
+            th
+              .browser(style="background-position: -100px;")
+              div Safari
+            th
+              .browser(style="background-position: -300px;")
+              div Safari
+            th
+              .browser
+              div Chrome
+            th
+              .browser(style="background-position: -200px;")
+              div Opera
+            th
+              .browser(style="background-position: -150px;")
+              div IE
+            th
+              .browser(style="background-position: -250px;")
+              div Android
+        tbody
+          tr
+            th Placeholder
+            td.yup 4+
+            td
+              span.kinda 4
+              | /
+              span.yup 5+
+            td.yup 4+
+            td.yup 10+
+            td
+              span.kinda 11.10
+              | /
+              span.yup 11.50
+            td.yup 10+
+            td.yup 2.3+
+          tr
+            th Autofocus
+            td.yup 4+
+            td.yup 5+
+            td.nope 5-
+            td.yup 6+
+            td.yup 11+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Maxlength
+            td
+              span.kinda 3.6
+              | /
+              span.yup 4+
+            td.yup 5+
+            td.yup 4+
+            td.yup 6+
+            td.yup 11+
+            td
+              span.kinda 9
+              | /
+              span.yup 10
+            td.yup 2.3+
+          tr
+            th List (Datalist)
+            td.yup 4+
+            td.nope 5-
+            td.nope 5-
+            td.yup 20+
+            td.yup 10.6+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Autocomplete
+            td.yup 4+
+            td.yup 5.2+
+            td N/A
+            td.yup 17+
+            td.yup 10.6+
+            td.nope 10-
+            td.nope 2.3-
+          tr
+            th Required
+            td.yup 6+
+            td.nope 5-
+            td.nope 5-
+            td.yup 6+
+            td.yup 10.6+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Pattern
+            td.yup 4+
+            td.nope 5-
+            td.nope 5-
+            td
+              span.kinda 6
+              | /
+              span.yup 10+
+            td.yup-nope-kinda
+              span.kinda 10.6
+              | /
+              span.yup 11+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Spellcheck
+            td.yup 3.6+
+            td.yup 4+
+            td.nope 5-
+            td.yup 10+
+            td.yup 11+
+            td.yup 10+
+            td N/A
+          tr
+            th Novalidate
+            td.yup 4+
+            td.nope 5-
+            td.nope 5-
+            td.yup 6+
+            td.yup 10.6+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Formnovalidate
+            td.yup 4+
+            td.nope 5.2-
+            td.nope 5-
+            td.yup 6+
+            td.yup 10.6+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Formaction/method/target
+            td.yup 4+
+            td.yup 5.2+
+            td.yup 5+
+            td.yup 10+
+            td.yup 10.6+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Formenctype
+            td.yup-nope-kinda ?
+            td.yup-nope-kinda ?
+            td.yup-nope-kinda ?
+            td.yup-nope-kinda ?
+            td.yup-nope-kinda ?
+            td.yup-nope-kinda ?
+            td.yup-nope-kinda ?
+          //- tr
+          //-   th Accept
+          //-   td.yup 11+
+          //-   td.yup 5.2+
+          //-   td N/A
+          //-   td.yup 10+
+          //-   td.kinda 10.6+
+          //-   td.yup 10+
+          //-   td.nope 2.3-
+          tr
+            th Multiple
+            td.yup 3.6+
+            td.yup 5+
+            td N/A
+            td.yup 6+
+            td.yup 11+
+            td.yup 10+
+            td.nope 2.3-
+          tr
+            th Min / Max / Step
+            td.nope 11-
+            td.yup 5+
+            td.nope 5-
+            td.yup 6+
+            td.yup 10.6+
+            td.yup 10+
+            td.nope 2.3-
     a(href="http://wufoo.com/html5/").source wufoo.com
 
 
@@ -1362,8 +1354,8 @@ append slides
 
   section
     h2 Short version
-    pre.language-html
-      code.language-html.html.
+    pre
+      code.
         #{'<!--[if lt IE 9]>'}
         &lt;script src="<b>http://html5shiv.googlecode.com/svn/trunk/html5.js</b>">
         #{'</script>'}
@@ -1615,14 +1607,14 @@ append slides
         font-size: 50%;
         line-height: 110%;
       }
-      #video-wikipedia th, #video-wikipedia td {
-        padding: 5px 5px;
-        text-align: center;
-      }
-      #video-wikipedia tbody th {
-        text-align: left;
-      }
-    table#video-wikipedia.big-table
+      //- #video-wikipedia th, #video-wikipedia td {
+      //-   padding: 5px 5px;
+      //-   text-align: center;
+      //- }
+      //- #video-wikipedia tbody th {
+      //-   text-align: left;
+      //- }
+    table#video-wikipedia.table.table-bordered
       thead
         tr
           th(rowspan='2') Browser
@@ -1636,9 +1628,7 @@ append slides
             | H.264
           th
             | VP8
-            | (
-            a WebM
-            | )
+            | (WebM)
       tbody
         tr
           th
@@ -1698,7 +1688,7 @@ append slides
         //-     | 4.4
         tr
           th(rowspan='3')
-            a Mozilla Firefox
+            | Mozilla Firefox
           td Windows
           td
             | 3.5
@@ -1754,7 +1744,7 @@ append slides
   section
     h2 Browser support
     p Over 50% total browser support
-    table
+    table.table
       thead
         tr
           th Ogg/Theora

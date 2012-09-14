@@ -135,6 +135,7 @@ append slides
       li <b>Great</b> browser support (plus fallbacks)
       li <b>localStorage</b>: persists contents
       li <b>sessionStorage</b>: contents are lost after browser session
+    img(src="assets/img/web-storage.svg", width="200")
 
   section
     h2 localStorage
@@ -143,16 +144,16 @@ append slides
     pre
       code.
         // Set data
-        localStorage.setItem("key", "value");
+        localStorage<b>.setItem</b>("key", "value");
 
         // Get data
-        localStorage.getItem("key"); // => "value"
+        localStorage<b>.getItem</b>("key"); // => "value"
 
         // Remove data
-        localStorage.removeData("key");
+        localStorage<b>.removeData</b>("key");
 
         // Number of entries
-        localStorage.length
+        localStorage<b>.length</b>
 
   section
     h2 store.js

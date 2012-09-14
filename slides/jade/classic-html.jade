@@ -230,7 +230,6 @@ append slides
         #{'</body>'}
         #{'</html>'}
 
-
   section
     h2 Cascading Style Sheets
 
@@ -354,7 +353,7 @@ append slides
     p Supported by <b>IE 7+</b>
 
     pre
-      code.
+      code(style="-webkit-column-count: 2;").
         input[type="text"] {
           background: #eee;
         }
@@ -412,8 +411,11 @@ append slides
 
   section
     h2 Types
-
-    table.big-table(style="font-size: 60%; line-height: 150%;")
+    style
+      #selector-types td {
+        text-align: left;
+      }
+    table.table#selector-types
       tbody
         tr
           td(style="border-top: 0") By Id
@@ -447,9 +449,16 @@ append slides
 
   section
     h2 Selector priority
-
+    style
+      #selector-priority {
+        width: 70%;
+      }
+      #selector-priority td {
+        border: none;
+        text-align: left;
+      }
     div(style="position:relative;")
-      table
+      table.table#selector-priority
         tbody
           tr
             td inline
@@ -463,15 +472,16 @@ append slides
           tr
             td element
             td <b>div</b> { display: block; }
-    img(src="assets/img/priority.svg",
-      style="position: absolute;\
-            top: 110px;\
-            left: 0px;")
+      img(src="assets/img/priority.svg",
+        style="margin: 0;\
+              position: absolute;\
+              top: 0px;\
+              left: 0px;")
 
   section
     h2 Priorities
 
-    p #sidebar ul li a.myclass:hover { ... }
+    code #sidebar ul li a.myclass:hover { ... }
 
     mixin priorities(0, 1, 2, 3)
 
@@ -479,17 +489,17 @@ append slides
     section
       h2 Priorities
 
-      p .item { ... }
+      code .item { ... }
       mixin priorities('', '', '', '')
-      p ul li li li li li li li li { ... }
+      code ul li li li li li li li li { ... }
       mixin priorities('', '', '', '')
 
     section
       h2 Priorities
 
-      p .item { ... }
+      code .item { ... }
       mixin priorities(0, 0, 1, 0)
-      p ul li li li li li li li li { ... }
+      code ul li li li li li li li li { ... }
       mixin priorities(0, 0, 0, 9)
 
   section
@@ -866,18 +876,24 @@ append slides
     h2 Overflow
     p overflow: <b>visible | hidden | auto</b>
     style
-      #ex-overflow .span4 {
+      #ex-overflow .row-fluid:nth-child(2) .span4 {
         font-size: 50%;
         line-height: 120%;
         height: 150px;
       }
-    #ex-overflow.row-fluid
-      .span4. overflow: visible
-        | anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
-      .span4(style="overflow: hidden;"). overflow: hidden
-        | anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
-      .span4(style="overflow: auto;"). overflow:auto
-        | anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+
+    #ex-overflow
+      .row-fluid.small-text
+        .span4 <b>overflow: visible</b>
+        .span4 <b>overflow: hidden</b>
+        .span4 <b>overflow: auto</b>
+      .row-fluid
+        .span4.
+          anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+        .span4(style="overflow: hidden;").
+            anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+        .span4(style="overflow: auto;").
+          anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
 
   section
     h2 Overflow with floats
@@ -1203,7 +1219,7 @@ append slides
     h2 Serif vs Sans Serif
 
     p Best readable results
-    table.big-table
+    table.table
       thead
         tr
           th screen

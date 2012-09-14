@@ -18,28 +18,39 @@ section
 
 section
   h2 New selectors
-  table
-    tr
-      td [foo~="bar"]
-      td &lt;div foo="<span style="color: red">bar</span> whatever"&gt;
-    tr
-      td [foo^="bar"]
-      td &lt;div foo="<span style="color: red">bar</span>tender"&gt;
-    tr
-      td [foo$="bar"]
-      td &lt;div foo="tool<span style="color: red">bar</span>"&gt;
-    tr
-      td [foo*="bar"]
-      td &lt;div foo="sylla<span style="color: red">bar</span>y"&gt;
-    tr
-      td [foo|="bar"]
-      td &lt;div foo="<span style="color: red">bar</span>-tender"&gt;
+  style
+    #new-selectors tr:first-child td {
+      border-top: none;
+    }
+
+  table.table#new-selectors
+    tbody
+      tr
+        td [foo~="bar"]
+        td &lt;div foo="<span style="color: red">bar</span> whatever"&gt;
+      tr
+        td [foo^="bar"]
+        td &lt;div foo="<span style="color: red">bar</span>tender"&gt;
+      tr
+        td [foo$="bar"]
+        td &lt;div foo="tool<span style="color: red">bar</span>"&gt;
+      tr
+        td [foo*="bar"]
+        td &lt;div foo="sylla<span style="color: red">bar</span>y"&gt;
+      tr
+        td [foo|="bar"]
+        td &lt;div foo="<span style="color: red">bar</span>-tender"&gt;
 
 section
   section
     mixin browserSupport('All', '3.5+', '3.2+', '9+', '9.5+')
     h2 New pseudo-classes
-    table
+    
+    style
+      #new-pseudo-classes tr:first-child td {
+        border-top: none;
+      }
+    table.table#new-pseudo-classes
       tr
         td :root
         td Root element (<html>)

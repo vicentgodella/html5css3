@@ -306,6 +306,59 @@ section
       $('noscript[data-img]').replaceWith(getImage(this));
 
 section
+  h2 SVG
+  p XML based vector graphics
+  pre
+    code.
+      #{'<defs>'}
+        #{'<linearGradient y2="100%" id="our-gradient">'}
+          #{'<stop offset="30%" stop-color="#fff"></stop>'}
+          #{'<stop offset="70%" stop-color="#a34"></stop>'}
+        #{'</linearGradient>'}
+      #{'</defs>'}
+
+      #{'<circle cx="100" cy="100" r="80" fill="url(#our-gradient)" stroke="#a34" stroke-width="5"></circle>'}
+  svg(version="1.1", height="200", width="200")
+    defs
+      linearGradient(y2="100%")#our-gradient
+        stop(offset="30%", stop-color="#fff")
+        stop(offset="70%", stop-color="#a34")
+    circle(cx="100", cy="100", r="80", fill="url(#our-gradient)", stroke="#a34", stroke-width="5")
+
+section
+  mixin browserSupport('4+', '4+', '5+', '9+', '9.5+')
+  h2 SVG
+  p.read-block Suitable for <b>simple images</b>
+  p.read-block Performance in mobile is <b>limited</b>
+  .row-fluid
+    .offset1.span1(style="background: url(assets/img/html5.svg) no-repeat; background-size: contain; height: 300px;")
+    .offset1.span2(style="background: url(assets/img/html5.svg) no-repeat; background-size: contain; height: 300px;")
+    .offset1.span4(style="background: url(assets/img/html5.svg) no-repeat; background-size: contain; height: 300px;")
+
+section
+  h2 SVG inclusion
+  p HTML IMAGE ELEMENT:
+  pre
+    code.
+      #{'<img src=”diagram.svg”>'}
+
+  p CSS BACKGROUND:
+  pre
+    code.
+      .diagram {
+        background-image: url('diagram.svg');
+      }
+
+  p INLINE SVG ELEMENT: 
+  pre
+    code.
+      #{'<svg height=86 width=90 viewBox="5 9 90 86" style="float: right;"">'}
+        #{'<path stroke=#F53F0C ... />'}
+        #{'<line stroke-width=10 ... />'}
+      #{'</svg>'}
+
+
+section
   h2 Media queries
   p When fluid is not enough
   iframe(src="assets/html/rwd.html", width="70%", height="400px")
