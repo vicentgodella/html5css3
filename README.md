@@ -10,7 +10,7 @@ To generate the static HTML files from the jade sources, execute:
 
 	$ cd slides
 	$ npm install
-	$ bin/slides/build
+	$ slides/bin/build
 
 The HTML files will be written into the `generated` folder.
 

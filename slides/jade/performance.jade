@@ -11,21 +11,21 @@ append slides
 
   section
     h2 Performance
-    p <strong>.1 to 1 sec:</strong> no feedback necessary
-    p <strong>1 to 10 sec:</strong> add some feedback (spinners)
-    p <strong>> 10 sec:</strong> the user is no longer here
+    p <b>.1 to 1 sec:</b> no feedback necessary
+    p <b>1 to 10 sec:</b> add some feedback (spinners)
+    p <b>> 10 sec:</b> the user is no longer here
 
   section
     h2 Impact on revenue
-    p Google: +500 ms <strong>-20% traffic</strong>
-    p Yahoo: +400 ms    <strong>-5-9% full-page traffic</strong>
-    p Amazon: +100 ms <strong>-1% sales</strong>
-    p Firefox: +2 seg   <strong>-15% downloads</strong>
+    p Google: +500 ms <b>-20% traffic</b>
+    p Yahoo: +400 ms    <b>-5-9% full-page traffic</b>
+    p Amazon: +100 ms <b>-1% sales</b>
+    p Firefox: +2 seg   <b>-15% downloads</b>
 
   section
     h2 Impact on PageRank
     p Starting 2010,
-    p <strong>Google has added page performance</strong> to the PageRank algorithm
+    p <b>Google has added page performance</b> to the PageRank algorithm
 
   section
     h2 Best thing for performance
@@ -39,7 +39,7 @@ append slides
     p by following 14 rules by Steve Souders
 
   section
-    h2 Pre-process javascript and CSS
+    h2 Pre-process JavaScript and CSS
     ul
       li Rule 1 - Make Fewer HTTP Requests
       li Rule 2 - Use a Content Delivery Network
@@ -255,9 +255,9 @@ append slides
 
   section
     h2 Browser cache
-    p <strong>304</strong> (Not Modified) responses
-    p <strong>Expires</strong> headers
-    p <strong>Strong</strong> and <strong>weak</strong> cache indicators
+    p <b>304</b> (Not Modified) responses
+    p <b>Expires</b> headers
+    p <b>Strong</b> and <b>weak</b> cache indicators
 
   section
     h2 304
@@ -308,18 +308,18 @@ append slides
   section
     h2 And that's all
     ul
-      li <strong>304 and Expires</strong>. That's all you have.
-      li Now, <strong>which data indicator</strong> do you plan to use for caching?
+      li <b>304 and Expires</b>. That's all you have.
+      li Now, <b>which data indicator</b> do you plan to use for caching?
         ul
           li Last modified, MD5 checksum...
 
   section
     h2 Weak and strong indicators
     ul
-      li <strong>Weak</strong>: The indicator may change even if the file did not.
+      li <b>Weak</b>: The indicator may change even if the file did not.
         ul
           li Last-Modified, default ETag implementations.
-      li <strong>Strong</strong>: The indicator changes only with the resource contents.
+      li <b>Strong</b>: The indicator changes only with the resource contents.
         ul
           li MD5, version numbers.
       li Strong indicators can be inserted in the URL or used as ETag.
@@ -345,7 +345,7 @@ append slides
       li HTTP spec: 1 year
       li Yahoo! recommendation: 10 years
 
-    p <strong>Use only with immutable resources</strong>
+    p <b>Use only with immutable resources</b>
 
   section(data-state="lab")
     h2 Lab: Browser Cache

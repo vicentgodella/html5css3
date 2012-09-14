@@ -3,14 +3,6 @@
  * theme of reveal.js, with (C) by Hakim El Hattab, http://hakim.se
  */
 
-//Mixins
-.center() {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@fontColor: #06336f;
-
 // FONT-FACE DEFINITIONS
 @font-face {
     font-family: 'CartoGothic';
@@ -23,7 +15,7 @@
 
 body {
   font-family: 'Helvetica', Times, 'Times New Roman', serif;
-  font-size: 36px;
+  font-size: @fontSize;
   // font-weight: 200;
   // letter-spacing: -0.02em;
   color: @fontColor;

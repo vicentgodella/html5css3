@@ -12,18 +12,18 @@ append slides
   section
     h2 HTML
 
-    p.read-block <strong>Hypertext Mark-up Language</strong>
-    p.read-block Developed by <strong>Tim Berners-Lee</strong> in 1989
-    p.read-block Maintained by the <strong>World Wide Web Consortium</strong> (W3C) since 1996
+    p.read-block <b>Hypertext Mark-up Language</b>
+    p.read-block Developed by <b>Tim Berners-Lee</b> in 1989
+    p.read-block Maintained by the <b>World Wide Web Consortium</b> (W3C) since 1996
 
   section
     h2 History of HTML
 
     ul.read-block
-      li <strong>HTML 2.0</strong>: 1995
-      li <strong>HTML 3.2</strong>: January 1997
-      li <strong>HTML 4.0</strong>: December 1997
-      li <strong>HTML 5</strong>: Draft
+      li <b>HTML 2.0</b>: 1995
+      li <b>HTML 3.2</b>: January 1997
+      li <b>HTML 4.0</b>: December 1997
+      li <b>HTML 5</b>: Draft
 
   section
     h2 CPU transistor counts
@@ -33,24 +33,24 @@ append slides
     h2 Average PC 98/99
 
     ul
-      li <strong>500 mHz</strong> PII / K6
-      li <strong>64 MB</strong> RAM
-      li <strong>10 GB</strong> HDD
+      li <b>500 mHz</b> PII / K6
+      li <b>64 MB</b> RAM
+      li <b>10 GB</b> HDD
 
   section
     h2 10 GB?
 
     ul.read-block
-      li <strong>iPod nano</strong>: 8-16 GB
-      li <strong>iPod classic</strong>: 160 GB
-      li <strong>Micro SD Card</strong>: +32 GB
+      li <b>iPod nano</b>: 8-16 GB
+      li <b>iPod classic</b>: 160 GB
+      li <b>Micro SD Card</b>: +32 GB
 
   section
     h2 500 MHz + 64MB RAM?
 
     ul.read-block
-      li <strong>iPhone 3</strong>: 600 MHz + 256 MB RAM
-      li <strong>iPhone 4</strong>: 1 GHz + 512 MB RAM
+      li <b>iPhone 3</b>: 600 MHz + 256 MB RAM
+      li <b>iPhone 4</b>: 1 GHz + 512 MB RAM
 
   //- section
   //-   h2 HTML 4.0-4.1
@@ -76,25 +76,25 @@ append slides
     h2 Most frequent tags
 
     ul
-      li <strong>Headers</strong>: h1, h2, h3
-      li <strong>Containers</strong>: div, p, span
-      li <strong>Image</strong>: img
-      li <strong>Links</strong>: a, link, script
-      li <strong>Lists</strong>: ul, li
-      li <strong>Tables</strong>: table, thead, tbody, tr, td, th
-      li <strong>Forms</strong>: form, fieldset, input, select, textarea, label
+      li <b>Headers</b>: h1, h2, h3
+      li <b>Containers</b>: div, p, span
+      li <b>Image</b>: img
+      li <b>Links</b>: a, link, script
+      li <b>Lists</b>: ul, li
+      li <b>Tables</b>: table, thead, tbody, tr, td, th
+      li <b>Forms</b>: form, fieldset, input, select, textarea, label
 
   section
     h2 doctype
     ul.read-block
-      li <strong>Quirks mode</strong>
-      li <strong>Standard mode</strong>
-      li <strong>XHTML</strong>
+      li <b>Quirks mode</b>
+      li <b>Standard mode</b>
+      li <b>XHTML</b>
 
   section
     h2 Quirks mode
 
-    p Default mode in <strong>Internet Explorer 6 and 7</strong>
+    p Default mode in <b>Internet Explorer 6 and 7</b>
 
     pre
       code.
@@ -112,14 +112,14 @@ append slides
           code.
             /* traditional box model */
             .boxmodel {
-               width: 10px; <strong>/* total: 10px */</strong>
+               width: 10px; <b>/* total: 10px */</b>
                border: 1px solid #fff;
                padding: 2px;
             }
 
             .boxmodel p {
-               margin: 0 auto;  <strong>/* ignored */</strong>
-               padding: 5; <strong>/* defaults to px */</strong>
+               margin: 0 auto;  <b>/* ignored */</b>
+               padding: 5; <b>/* defaults to px */</b>
             }
       .span6
         p STANDARD MODE
@@ -127,14 +127,14 @@ append slides
           code.
             /* W3C box model */
             .boxmodel {
-               width: 10px; <strong>/* total: 16px */</strong>
+               width: 10px; <b>/* total: 16px */</b>
                border: 1px solid #fff;
                padding: 2px;
             }
 
             .boxmodel p {
-               margin: 0 auto;  <strong>/* ok */</strong>
-               padding: 5; <strong>/* ignored */</strong>
+               margin: 0 auto;  <b>/* ok */</b>
+               padding: 5; <b>/* ignored */</b>
             }
 
   section
@@ -143,7 +143,7 @@ append slides
     p The method employed by Google
     pre
       code.
-        <strong>#{'<!doctype html>'}</strong>
+        <b>#{'<!doctype html>'}</b>
         #{'<html>'}
         ...
         #{'</html>'}
@@ -152,21 +152,21 @@ append slides
     h2 XHTML is a bad idea
 
     ul
-      li <strong>Internet Explorer</strong> doesn't support XHTML
-      li There is no <strong>error handling</strong>
-      li The <strong>javascript code</strong> must be inside a CDATA block
-      li The <strong>entities</strong> (&amp;amp;) must be escaped
-      li In general, there is <strong>no advantage in XHTML</strong>
+      li <b>Internet Explorer</b> doesn't support XHTML
+      li There is no <b>error handling</b>
+      li The <b>JavaScript code</b> must be inside a CDATA block
+      li The <b>entities</b> (&amp;amp;) must be escaped
+      li In general, there is <b>no advantage in XHTML</b>
 
   section
     h2 XHTML vs HTML
 
     ul.read-block
-      li <strong>Case sensitive</strong>
-      li <strong>Void entities:</strong> img, br, hr
-      li <strong>Unexpected end tags:</strong> #{'</br> </p>'}
-      li <strong>Unescaped & and &lt;</strong>
-      li <strong>CDATA elements</strong>: script and style
+      li <b>Case sensitive</b>
+      li <b>Void entities:</b> img, br, hr
+      li <b>Unexpected end tags:</b> #{'</br> </p>'}
+      li <b>Unescaped & and &lt;</b>
+      li <b>CDATA elements</b>: script and style
 
   section
     h2 XHTML vs HTML (II)
@@ -199,7 +199,7 @@ append slides
 
     p The browser considers HTML unless the server sends the header
 
-    p <strong>Content-Type: application/xhtml+xml</strong>
+    p <b>Content-Type: application/xhtml+xml</b>
 
     pre
       code.
@@ -235,14 +235,14 @@ append slides
     h2 Cascading Style Sheets
 
     ul
-      li <strong>CSS1</strong>
+      li <b>CSS1</b>
         ul
           li Recommendation: 1996
-      li <strong>CSS2</strong>
+      li <b>CSS2</b>
         ul
           li First draft: 1997
           li Recommendation: 2000
-      li <strong>CSS3</strong>
+      li <b>CSS3</b>
         ul
           li Started in 1998 as a list of CSS extensions, and still under development.
 
@@ -259,7 +259,7 @@ append slides
       pre.span8
         code.
           #{'<head>'}
-            <strong>#{'<link rel="stylesheet" href="style.css">'}</strong>
+            <b>#{'<link rel="stylesheet" href="style.css">'}</b>
           #{'</head>'}
     .row-fluid
       .span4
@@ -267,13 +267,13 @@ append slides
       pre.span8
         code.
           #{'<head>'}
-            <strong>
+            <b>
             #{'<style type="text/css">'}
               .tab {
                 display: block !important;
               }
             #{'</style>'}
-            </strong>
+            </b>
           #{'</head>'}
     .row-fluid
       .span4
@@ -281,7 +281,7 @@ append slides
       pre.span8
         code.
           #{'<body>'}
-            &lt;div <strong>style="width: 20px; height: 10px"</strong>>
+            &lt;div <b>style="width: 20px; height: 10px"</b>>
               Hello world!
             #{'</div>'}
           #{'</body>'}
@@ -338,12 +338,12 @@ append slides
         p HTML
         pre
           code.no-highlight.
-            &lt;p <strong style="color: #CC9393;">id="foo"</strong>>
+            &lt;p <b style="color: #CC9393;">id="foo"</b>>
               White text
             #{'</p>'}
 
-            &lt;div <strong style="color: #CC9393;">class="bar"</strong>>
-              &lt;div <strong style="color: #CC9393;">class="baz"</strong>>
+            &lt;div <b style="color: #CC9393;">class="bar"</b>>
+              &lt;div <b style="color: #CC9393;">class="baz"</b>>
                 Hello world!
               #{'</div>'}
             #{'</div>'}
@@ -351,7 +351,7 @@ append slides
   section
     h2 Not so common selectors
 
-    p Supported by <strong>IE 7+</strong>
+    p Supported by <b>IE 7+</b>
 
     pre
       code.
@@ -417,33 +417,33 @@ append slides
       tbody
         tr
           td(style="border-top: 0") By Id
-          td(style="border-top: 0") <strong>#id</strong> { display: block; }
+          td(style="border-top: 0") <b>#id</b> { display: block; }
         tr
           td By class
-          td <strong>.vcard</strong> { font-weight: bold; }
+          td <b>.vcard</b> { font-weight: bold; }
         tr
           td By tag
-          td <strong>div</strong> { border: 1px solid #fff; }
+          td <b>div</b> { border: 1px solid #fff; }
 
         tr
           td Universal
-          td <strong>*</strong> { line-height: 1.5 em; }
+          td <b>*</b> { line-height: 1.5 em; }
 
         tr
           td Child
-          td #toc <strong>&gt;</strong> li { border-top: 1px dotted #ccc; }
+          td #toc <b>&gt;</b> li { border-top: 1px dotted #ccc; }
 
         tr
           td Descendant
-          td <strong>.datatable td</strong> { width: 100px; }
+          td <b>.datatable td</b> { width: 100px; }
 
         tr
           td By attribute
-          td input<strong>[type="text"]</strong> { background: #fff; }
+          td input<b>[type="text"]</b> { background: #fff; }
 
         tr
           td Adjacent sibling
-          td h1 <strong>+</strong> p { margin-top: 50px; }
+          td h1 <b>+</b> p { margin-top: 50px; }
 
   section
     h2 Selector priority
@@ -453,16 +453,16 @@ append slides
         tbody
           tr
             td inline
-            td &lt;div <strong>style="display: block;"</strong>>#{'</div>'}
+            td &lt;div <b>style="display: block;"</b>>#{'</div>'}
           tr
             td ID
-            td <strong>#menu</strong> { display: block; }
+            td <b>#menu</b> { display: block; }
           tr
             td class
-            td <strong>.myclass</strong> { display: block; }
+            td <b>.myclass</b> { display: block; }
           tr
             td element
-            td <strong>div</strong> { display: block; }
+            td <b>div</b> { display: block; }
     img(src="assets/img/priority.svg",
       style="position: absolute;\
             top: 110px;\
@@ -512,21 +512,21 @@ append slides
   section
     h2 display
 
-    p display: <strong>block | inline | inline-block | none</strong>
+    p display: <b>block | inline | inline-block | none</b>
 
     .row-fluid
       pre.span5
         code.
           p, div, h1 {
-            <strong>display: block;</strong>
+            <b>display: block;</b>
           }
 
           a, span, strong, em {
-            <strong>display: inline;</strong>
+            <b>display: inline;</b>
           }
 
           .hide {
-            <strong>display: none;</strong>
+            <b>display: none;</b>
           }
       .span7#display-example
         style
@@ -539,9 +539,9 @@ append slides
             border: 2px black dashed;
           }
         p.small-text.read-block.
-          Cupcake ipsum dolor sit <strong>amet</strong> dessert jelly-o. Dragée icing croissant <a>jelly</a> powder. <em>Muffin</em> croissant macaroon pie marzipan lemon drops.
+          Cupcake ipsum dolor sit <b>amet</b> dessert jelly-o. Dragée icing croissant <a>jelly</a> powder. <em>Muffin</em> croissant macaroon pie marzipan lemon drops.
         div.small-text.
-          Sugar plum jelly-o gingerbread <strong>tiramisu</strong> chocolate bar gummi <i>bears</i>. Jelly beans soufflé <a>cotton</a> candy chocolate cake danish icing.
+          Sugar plum jelly-o gingerbread <b>tiramisu</b> chocolate bar gummi <i>bears</i>. Jelly beans soufflé <a>cotton</a> candy chocolate cake danish icing.
 
 
   section
@@ -572,7 +572,7 @@ append slides
     pre
       code.
         div {
-          <strong>display: inline-block;</strong>
+          <b>display: inline-block;</b>
         }
     #display-inline-block-example
       style
@@ -590,7 +590,7 @@ append slides
 
   section
     h2 Position
-    p position: <strong>static | relative | absolute | fixed</strong>
+    p position: <b>static | relative | absolute | fixed</b>
 
   section
     h2 position: static
@@ -623,11 +623,11 @@ append slides
         code.
           #{'<div>A</div>'}
           #{'<div style="'}
-            <strong>
+            <b>
             position: relative;
             left: 15px;
             top: 10px
-            </strong>
+            </b>
             ">
             B
           #{'</div>'}
@@ -652,18 +652,18 @@ append slides
 
   section
     h2 position: absolute
-    p Absolute position from the <strong>first parent element that has a position other than static</strong>
+    p Absolute position from the <b>first parent element that has a position other than static</b>
 
     .row-fluid
       pre.span4
         code.
           #{'<div>A</div>'}
           #{'<div style="'}
-            <strong>
+            <b>
             position: absolute;
             left: 15px;
             top: 10px
-            </strong>
+            </b>
             ">
             B
           #{'</div>'}
@@ -699,11 +699,11 @@ append slides
         code.
           #{'<div>A</div>'}
           #{'<div style="'}
-            <strong>
+            <b>
             position: fixed;
             right: 10px;
             top: 10px
-            </strong>
+            </b>
             ">
             B
           #{'</div>'}
@@ -730,8 +730,8 @@ append slides
 
   section
     h2 float
-    p <strong>float: left | right</strong>
-    p <strong>clear: left | right | both</strong>
+    p <b>float: left | right</b>
+    p <b>clear: left | right | both</b>
     p Takes the element out of the box model
 
   section
@@ -864,7 +864,7 @@ append slides
       .clear clear: both
   section
     h2 Overflow
-    p overflow: <strong>visible | hidden | auto</strong>
+    p overflow: <b>visible | hidden | auto</b>
     style
       #ex-overflow .span4 {
         font-size: 50%;
@@ -912,7 +912,7 @@ append slides
 
   section
     h2 Shorcuts: font
-    p font: <strong>{font-style} {font-variant} {font-weight} {font-size/line-height} {font-family}</strong>
+    p font: <b>{font-style} {font-variant} {font-weight} {font-size/line-height} {font-family}</b>
 
     pre
       code.
@@ -922,7 +922,7 @@ append slides
 
   section
     h2 Shortcuts: border
-    p border: <strong>{border-width} {border-style} {border-color}</strong>
+    p border: <b>{border-width} {border-style} {border-color}</b>
 
     pre
       code.
@@ -939,9 +939,9 @@ append slides
   section
     h2 Shortcuts: margin y padding
     p margin and padding:
-    p <strong>{all}</strong>
-    p <strong>{top / bottom} {left / right}</strong>
-    p <strong>{top} {right} {bottom} {left}</strong>
+    p <b>{all}</b>
+    p <b>{top / bottom} {left / right}</b>
+    p <b>{top} {right} {bottom} {left}</b>
     pre
       code.
         .foo {
@@ -959,15 +959,15 @@ append slides
     p Horizontal centering
     .row-fluid
       .span6
-        p <strong>Block element</strong>
+        p <b>Block element</b>
         pre
           code.
             .centered_block {
-              width: <strong>(anything but auto)</strong>
+              width: <b>(anything but auto)</b>
               margin: 0 auto;
             }
       .span6
-        p <strong>Inline element</strong>
+        p <b>Inline element</b>
         pre
           code.
             .parent {
@@ -975,7 +975,7 @@ append slides
             }
 
             .children {
-              display: <strong>(inline|inline-block)</strong>
+              display: <b>(inline|inline-block)</b>
             }
 
   section
@@ -983,18 +983,18 @@ append slides
     p Vertical centering
     .row-fluid
       .span6
-        p <strong>Inline elements</strong>
+        p <b>Inline elements</b>
         pre
           code.
             .inline_element {
-              line-height: <strong>(parent's height)</strong>
+              line-height: <b>(parent's height)</b>
             }
       .span6
-        p <strong>Inline elements inside inline elements</strong>
+        p <b>Inline elements inside inline elements</b>
         pre
           code.
             .inline_inside_inline {
-              vertical-align: <strong>middle</strong>;
+              vertical-align: <b>middle</b>;
             }
 
   section
@@ -1010,15 +1010,15 @@ append slides
         .child {
           position: absolute;
           top: 50%;
-          margin-top: <strong>-(element's height)/2</strong>;
+          margin-top: <b>-(element's height)/2</b>;
         }
 
   section
     h2 Shortcuts: background
-    p background: <strong>{background-color}</strong>
-    p <strong>{background-image}</strong>
-    p <strong>{background-repeat}</strong>
-    p <strong>{background-position}</strong>
+    p background: <b>{background-color}</b>
+    p <b>{background-image}</b>
+    p <b>{background-repeat}</b>
+    p <b>{background-position}</b>
 
     pre
       code.
@@ -1069,7 +1069,7 @@ append slides
 
   section
     h2 Link pseudo-classes
-    p <strong>:link</strong>, <strong>:hover</strong>, <strong>:active</strong>, <strong>:visited</strong>, <strong>:focus</strong>
+    p <b>:link</b>, <b>:hover</b>, <b>:active</b>, <b>:visited</b>, <b>:focus</b>
 
     pre
       code.
@@ -1077,18 +1077,18 @@ append slides
           text-decoration: none;
         }
 
-        a, a<strong>:hover</strong>, a<strong>:active</strong>, a<strong>:visited</strong>, a<strong>:focus</strong> {
+        a, a<b>:hover</b>, a<b>:active</b>, a<b>:visited</b>, a<b>:focus</b> {
            color: #f00;
         }
 
-        a<strong>:hover</strong> {
+        a<b>:hover</b> {
           text-decoration: underline;
         }
 
   section
     h2 first-child, last-child
-    p <strong>:first-child</strong>   IE7+
-    p <strong>:last-child</strong>    IE8+
+    p <b>:first-child</b>   IE7+
+    p <b>:last-child</b>    IE8+
 
     pre
       code.
@@ -1096,7 +1096,7 @@ append slides
           border-top: 1px dotted #ccc;
         }
 
-        ul.data li<strong>:first-child</strong> {
+        ul.data li<b>:first-child</b> {
            border-top: none;
         }
     #ex-first-child
@@ -1114,7 +1114,7 @@ append slides
 
   section
     h2 nth-child
-    p nth-child<strong>(even | odd | {formula})</strong>
+    p nth-child<b>(even | odd | {formula})</b>
 
     pre
       code.
@@ -1122,7 +1122,7 @@ append slides
           background: #aaa;
         }
 
-        ul.data li<strong>:nth-child(even)</strong> {
+        ul.data li<b>:nth-child(even)</b> {
            background: #ccc;
         }
     #ex-nth-child
@@ -1173,15 +1173,15 @@ append slides
         li item 6
   section
     h2 Pseudo-elements
-    p <strong>:after, :before, :first-letter, :first-line</strong>
+    p <b>:after, :before, :first-letter, :first-line</b>
 
     pre
       code.
-        a<strong>:after</strong> {
+        a<b>:after</b> {
           content: " (mydomain.com" attr(href) ")";
         }
 
-        .clearfix<strong>:after</strong> {
+        .clearfix<b>:after</b> {
                 content: ".";
                 display: block;
                 clear: both;
@@ -1330,8 +1330,8 @@ append slides
   section
     h2 CSS sprites
 
-    p <strong>All the background images</strong> are combined
-    p They can be arranged <strong>vertically or horizontally</strong>, as the content increases
+    p <b>All the background images</b> are combined
+    p They can be arranged <b>vertically or horizontally</b>, as the content increases
     #ex-sprites
       style
         #ex-sprites .mask {
@@ -1505,7 +1505,7 @@ append slides
   section
     h2 CSS Reset
     p Keeps the inconsistencies between browsers to a minimum.
-    p <strong>960gs, YUI-reset, Eric Meyer.</strong>
+    p <b>960gs, YUI-reset, Eric Meyer.</b>
 
   section
     h2 Eric Meyer's reset.css
@@ -1733,21 +1733,21 @@ append slides
 
   section
     h2 Whitewashed backgrounds
-    p.read-block All background colors and images are <strong>removed</strong>
-    p.read-block <strong>Not all browsers are configured with the defaults</strong>. You should set your backgrounds to white anyway.
+    p.read-block All background colors and images are <b>removed</b>
+    p.read-block <b>Not all browsers are configured with the defaults</b>. You should set your backgrounds to white anyway.
     p.read-block Borders, images and font colors still apply.
 
   section
     h2 Fonts for printing
-    p.read-block <strong>font-size: 12pt</strong> is usually fine for printing
-    p.read-block <strong>Choose serif / sans serif</strong>
-    p.read-block <strong>Underline links</strong>
-    p.read-block <strong>Modify font color</strong> for best contrast with white background
+    p.read-block <b>font-size: 12pt</b> is usually fine for printing
+    p.read-block <b>Choose serif / sans serif</b>
+    p.read-block <b>Underline links</b>
+    p.read-block <b>Modify font color</b> for best contrast with white background
 
   section
     h2 A note about color-blind users
-    p.read-block <strong>1 in 12</strong> people have some sort of color deficiency
-    p.read-block <strong>Underlining links</strong> on screen is usually considered good practice
+    p.read-block <b>1 in 12</b> people have some sort of color deficiency
+    p.read-block <b>Underlining links</b> on screen is usually considered good practice
 
   section
     h2 Print link target
@@ -1793,9 +1793,9 @@ append slides
 
   section
     h2 How to test
-    p.read-block Temporarily <strong>remove the "media" attribute</strong>
-    p.read-block Use <strong>print preview</strong>
-    p.read-block <strong>Print to PDF</strong>
+    p.read-block Temporarily <b>remove the "media" attribute</b>
+    p.read-block Use <b>print preview</b>
+    p.read-block <b>Print to PDF</b>
 
   section(data-state="lab")
     h2 Lab: print CSS

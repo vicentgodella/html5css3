@@ -1,4 +1,14 @@
 
+//Mixins
+.center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@fontSize: 36px;
+
+@fontColor: #06336f;
+
 @import "main";
 @import "theme";
 @import "bootstrap/bootstrap";
@@ -49,6 +59,19 @@ ul.read-block {
   
   h1,h2,h3,h5,h5,h6 {
     padding-top: 20px;
+  }
+
+  // label {
+  //   display: block;
+  //   font-size: 50%;
+  //   line-height: 120%;
+  // }
+
+  form {
+    .center();
+    width: 70%;
+    text-align: left;
+    line-height: 70%;
   }
 }
 

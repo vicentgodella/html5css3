@@ -12,9 +12,9 @@ append slides
   section
     h2 HTML5 browser support
 
-    p Smartphones
-    p http://delicious.com/html5css3/support
-    p Polyfills
+    p.read-block Smartphones
+    p.read-block http://delicious.com/html5css3/support
+    p.read-block Polyfills
 
   section
     h2 doctype
@@ -54,18 +54,23 @@ append slides
 
   section
     h2 Charset defaults
-    ul
+    ul.read-block
       li http default: ISO8859-1
       li multipart/form data default: US ASCII
-      li <strong>W3C official recommendation: UTF-8</strong>
+      li <b>W3C official recommendation: UTF-8</b>
 
   section
     h2 Charset best practices
 
-    p HTTP header
-    p <strong>Content-Type: text/html; charset=iso-8859-1</strong>
-    p META tag
-    p <strong>#{'<meta charset="utf-8">'}</strong>
+    ul.read-block
+      li
+        p HTTP header
+        ul
+          li <b>Content-Type: text/html; charset=iso-8859-1</b>
+      li
+        p META tag
+        ul
+          li <b>#{'<meta charset="utf-8">'}</b>
 
   section
     h2 link
@@ -88,13 +93,13 @@ append slides
 
   section
     h2 favicon and touch icon
-    p New <strong>touch icon</strong> for mobile devices
-    p iPhone adds <strong>rounded corners, drop shadow and gleam</strong> - Android <strong>does not</strong>.
+    p.read-block New <b>touch icon</b> for mobile devices
+    p.read-block iPhone adds <b>rounded corners, drop shadow and gleam</b> - Android <b>does not</b>.
 
     pre
       code.
-        #{'<link rel="shortcut icon" href="/favicon.ico">'}
-        #{'<link rel="apple-touch-icon" href="/apple-touch-icon.png">'}
+        &lt;link rel="<b>shortcut icon</b>" href="/favicon.ico">
+        &lt;link rel="<b>apple-touch-icon</b>" href="/apple-touch-icon.png">
 
   section
     h2 Precomposed icons
@@ -107,27 +112,27 @@ append slides
 
   section
     mixin browserSupport('13+', '3.6+', 'No', 'No', 'No')
-    h2 rel="prefetch" rel="prerender"
+    h2 prefetch, prerender
 
     pre
       code.
-        #{'<link rel="prefetch" href="big.jpg">'}
-        #{'<link rel="prerender" href="next.html">'}
+        &lt;link rel="<b>prefetch</b>" href="big.jpg">
+        &lt;link rel="<b>prerender</b>" href="next.html">
 
-    p <strong>Prefetch</strong> the target link
-    p Based on the <strong>read-only</strong> nature of GET requests
-    p Also <strong>allowed for #{'<a>'} elements</strong>
+    p.read-block <b>Prefetch</b> the target link
+    p.read-block Based on the <b>read-only</b> nature of GET requests
+    p.read-block Also <b>allowed for #{'<a>'} elements</b>
 
   section
     h2 GET vs POST
     ul
-      li GET: idempotent request
+      li <b>GET</b>: idempotent request
         ul
           li read-only operations, like retrieving data
-      li POST: non-idempotent request
+      li <b>POST</b>: non-idempotent request
         ul
           li writeable operations, like storing or deleting data
-      li Other: PUT, HEAD, DELETE
+      li <b>Other</b>: PUT, HEAD, DELETE
 
   section
     h2 rel="alternate"
@@ -135,9 +140,9 @@ append slides
 
     pre
       code.
-        #{'<link rel="alternate" type="application/atom+xml" href="http://www.example.com/xml/index.atom">'}
+        &lt;link <b>rel="alternate" type="application/atom+xml"</b> href="http://www.example.com/xml/index.atom">
 
-        #{'<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.example.com/xml/index.rdf">'}
+        &lt;link <b>rel="alternate" type="application/rss+xml"</b> title="RSS" href="http://www.example.com/xml/index.rdf">
 
   section
     h2 rel="canonical"
@@ -149,9 +154,9 @@ append slides
 
   section
     h2 Other 'rel' values
-    p Used in <strong>#{'<link>'}</strong> tags
+    p Used in <b>#{'<link>'}</b> tags
 
-    p home, contents, search, glossary, help, start, prev, previous, next, copyright, author – Navigate links
+    p <b>home, contents, search, glossary, help, start, prev, previous, next, copyright, author</b> – Navigate links
 
     pre
       code.
@@ -195,10 +200,10 @@ append slides
 
   section
     h2 Other 'rel' values
-    p Used in #{'<a>'} tags
+    p Used in <b>#{'<a>'}</b> tags
     ul
-      li tag – The link target is an author-designated tag
-      li me, friend – XHTML Friends Network (XFN)
+      li <b>tag</b> – The link target is an author-designated tag
+      li <b>me, friend</b> – XHTML Friends Network (XFN)
 
     pre
       code.
@@ -208,95 +213,141 @@ append slides
   section
     h2 Removed HTML elements
     p Use CSS instead:
-    p <strong>big, center, font, strike</strong>
+    p <b>big, center, font, strike</b>
 
   section
     h2 Removed elements
     p Use iframe instead:
-    p <strong>frame, frameset, noframes</strong>
+    p <b>frame, frameset, noframes</b>
 
   section
     h2 Removed elements
-    p <strong>applet</strong>: replaced by object
+    p <b>applet</b>: replaced by object
 
   section
     h2 Removed attributes
-    p <strong>align, background, bgcolor, border, cellspacing, cellpadding, height, marginheight, marginwidth, nowrap, scrolling, size, vspace, width...</strong>
+    p.read-block <b>align, background, bgcolor, border, cellspacing, cellpadding, height, marginheight, marginwidth, nowrap, scrolling, size, vspace, width...</b>
 
-    | http://www.w3.org/TR/html5-diff/#absent-attributes
+    a(href="http://www.w3.org/TR/html5-diff/#obsolete-attributes").source HTML5 obsolete attributes (W3C)
 
   section
     h2 Importance tags
     ul
-      li Use #{'<b>'}
+      li <b>Use #{'<b>'}</b>
         ul
           li text without specific emphasis or importance typically represented as bold text
           li keywords, product names, etc.
-          li E.g.: Use #{'<b>'} to indicate bold text.
-      li Use #{'<strong>'}
+          li E.g.: Use #{'<b>'} to indicate <b>bold text</b>.
+      li <b>Use #{'<strong>'}</b>
         ul
           li Strong semantic importance
-          li E.g.: It is important that you do not mix styles up!
+          li E.g.: It is <strong>important</strong> that you do not mix styles up!
 
   section
     h2 Emphasis tags
     ul
-      li Use #{'<i>'}
+      li <b>Use #{'<i>'}</b>
         ul
           li text without emphasis or importance, typically represented as italic text
           li technical term, phrase from another language, a ship name, etc.
-          li E.g.: Intoxicated from eating too much wasabi at once.
-      li Use #{'<em>'}
+          li E.g.: Intoxicated from eating too much <i>wasabi</i> at once.
+      li <b>Use #{'<em>'}</b>
         ul
           li Stress emphasis
           li Use different voice or mood
-          li E.g.: This is not a place for cool people anymore.
+          li E.g.: This is not a place for <em>cool</em> people anymore.
 
 
   section
     h2 Form controls
-    p <strong>12 new</strong> form controls
+    p <b>12 new</b> form controls
 
   section
     h2 Traditional form controls
 
-    p <strong>text, checkbox, radio, textarea, password, select, file, button</strong>
+    p <b>text, checkbox, radio, textarea, password, select, file, button</b>
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 email
     pre
       code.
-        #{'<input name="email" type="email">'}
+        &lt;input name="email" <b>type="email"</b>>
+    #ex-email-input
+      form
+        fieldset
+          label E-mail
+          input(type="email", contenteditable)
+        button(type="submit") Submit
+    iframe(src="assets/html/email-keypad.html", width="500", height="300")
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 url
     pre
       code.
-        #{'<input name="homepage" type="url">'}
+        &lt;input name="homepage" <b>type="url"</b>>
+    #ex-email-input
+      form
+        fieldset
+          label Url
+          input(type="url", contenteditable)
+        button(type="submit") Submit
+    iframe(src="assets/html/url-keypad.html", width="500", height="300")
 
   section
     mixin browserSupport('6+', 'No', '5+', '10+', '11+')
     h2 number
-
     pre
       code.
-        #{'<input name="amount" type="number" min="0" max="100" step="2" value="0">'}
+        &lt;input name="amount" <b>type="number"</b> min="0" max="100" step="2" value="0">
+    #ex-number-input
+      form
+        fieldset
+          label Number
+          input(type="number", contenteditable)
+        button(type="submit") Submit
+    iframe(src="assets/html/number-keypad.html", width="500", height="300")
+
+  section
+    mixin browserSupport('10+', 'No', '5+', '10+', '11+')
+    h2 range
+    pre
+      code.
+        &lt;input name="amount" <b>type="range" min="0" max="50"</b> value="10">
+    #ex-range-input
+      form
+        fieldset
+          label Range
+          input(type="range", min="0", max="50", value="10", contenteditable)
+        button(type="submit") Submit
 
   section
     mixin browserSupport('6+', '3.6+', '5+', '9+', '10.6+')
     h2 search
     pre
       code.
-        #{'<input type="search" results="10" />'}
+        &lt;input <b>type="search"</b> results="10" />
+    #ex-search-input
+      form
+        fieldset
+          label Search
+          input(type="search", contenteditable).search-query
+        button(type="submit") Submit
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 tel
     pre
       code.
-        #{'<input type="tel" placeholder="(555) 555-5555">'}
+        &lt;input <b>type="tel"</b> placeholder="(555) 555-5555">
+    #ex-tel-input
+      form
+        fieldset
+          label Telephone
+          input(type="tel", contenteditable)
+        button(type="submit") Submit
+    iframe(src="assets/html/number-keypad.html", width="500", height="300")
 
   section
     mixin browserSupport('6+', 'No', '5+', 'No', '10.6+')
@@ -305,39 +356,69 @@ append slides
 
     pre
       code.
-        #{'<input type="date" min="2011-05-16" max="2011-08-21" value="2011-05-20">'}
+        &lt;input <b>type="date" min="2012-09-05" max="2012-09-21"</b> value="2011-05-20">
+    #ex-date-input
+      form
+        fieldset
+          label Date
+          input(type="date", min="2012-09-05", max="2012-09-21", contenteditable)
+        button(type="submit") Submit
 
   section
     mixin browserSupport('6+', '3.6+', '5+', '10+', '11+')
     h2 Multiple file upload
     pre
       code.
-        #{'<input type="file" multiple="multiple" />'}
+        &lt;input type="file" <b>multiple="multiple"</b> />
+    #ex-multiple-file-input
+      form
+        fieldset
+          label Select files
+          input(type="file", contenteditable, multiple="multiple")
+        button(type="submit") Submit
 
   section
     mixin browserSupport('20+', 'No', 'No', 'No', '11+')
     h2 color
     pre
       code.
-        #{'<input type="color" placeholder="e.g. #2a2a2a">'}
+        &lt;input <b>type="color"</b> placeholder="e.g. #2a2a2a">
+    #ex-color-input
+      form
+        fieldset
+          label Color
+          input(type="color", contenteditable)
+        button(type="submit") Submit
 
   section
     mixin browserSupport('No', '4+', '5+', '10+', '10.6+')
     h2 datalist
     pre
       code.
-        #{'<input type="text" list="mydata">'}
+        &lt;input type="text" <b>list="mydata"</b>>
         #{'<datalist id="mydata">'}
           #{'<option label="Mr" value="Mister">'}
           #{'<option label="Mrs" value="Mistress">'}
           #{'<option label="Ms" value="Miss">'}
         #{'</datalist>'}
+    #ex-datalist-input
+      form
+        fieldset
+          label Click for the options
+          input(type="text", contenteditable, list="mydata")
+        datalist#mydata
+          option(label="Mr", value="Mister")
+          option(label="Mrs", value="Mistress")
+          option(label="Ms", value="Miss")
+        button(type="submit") Submit
 
   section
     h2 progress
     pre
       code.
         #{'<progress value="75" max="100">75 of 100</progress>'}
+    #ex-progress
+      progress(value="75", max="100") 75 of 100
 
   section
     mixin browserSupport('6+', 'No', 'No', 'No', '10.6+')
@@ -346,9 +427,178 @@ append slides
     pre
       code.
         #{'<meter min="0" max="100" value="91">91 of 100</meter>'}
+    #ex-meter
+      meter(value="91", max="100", min="0") 75 of 100
 
   section
     h2 Browser support
+    style
+      .reveal .wufoo-support-table {
+        font-size: 40%;
+        line-height: 120%;
+      }
+
+      .reveal .wufoo-support-table .browser {
+        width: 50px;
+        height: 50px;
+        background: url(assets/img/browsers.png) no-repeat 0 0;
+        margin: 0 auto;
+      }
+
+      .reveal table.wufoo-support-table thead th, .reveal table.wufoo-support-table td {
+        text-align: center;
+      }
+
+      .reveal table.wufoo-support-table td, .reveal table.wufoo-support-table th {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      .reveal .wufoo-support-table .yup {
+        color: green;
+      }
+      .reveal .wufoo-support-table .nope {
+        color: red;
+      }
+      .reveal .wufoo-support-table .kinda {
+        color: orange;
+      }
+    table(style="font-size: 50%; line-height: 120%;").wufoo-support-table
+      caption
+          | Browser Support for New 
+          strong HTML5 
+          | Input 
+          strong Types
+      thead
+        tr
+          td
+          th
+            .browser(style="background-position: -50px;")
+            div Firefox
+          th
+            .browser(style="background-position: -100px;")
+            div Safari
+          th
+            .browser(style="background-position: -300px;")
+            div Safari
+          th
+            .browser
+            div Chrome
+          th
+            .browser(style="background-position: -200px;")
+            div Opera
+          th
+            .browser(style="background-position: -150px;")
+            div IE
+          th
+            .browser(style="background-position: -250px;")
+            div Android
+      tbody
+        tr
+          th.
+            Email
+          td.yup 4+
+          td.kinda 5+
+          td.kinda 3.1+
+          td
+            span.kinda 6+
+            | /
+            span.yup 10+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th.
+            Tel
+          td.yup 4+
+          td.yup 5+
+          td.yup 3.1+
+          td.yup 6+
+          td.yup 10.6+
+          td.yup 10+
+          td.yup 2.3+
+        tr
+          th.
+            Url
+          td.yup 4+
+          td.kinda 5+
+          td.yup 3.1+
+          td
+            span.kinda 6+
+            | /
+            span.yup 10+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th.
+            Search
+          td
+            span.kinda 3.6
+            | /
+            span.yup 4+
+          td.yup 5+
+          td.yup 4+
+          td.yup 6+
+          td.yup 10.6+
+          td
+            span.kinda 9
+            | /
+            span.yup 10+
+          td.nope 2.3-
+        tr
+          th.
+            Color
+          td.nope 11-
+          td.nope 5.2-
+          td.nope 5-
+          td.yup 20+
+          td.yup 11+
+          td.nope 10-
+          td.nope 2.3-
+        tr
+          th.
+            Number
+          td.nope 11-
+          td
+            span.kinda 4
+            | /
+            span.yup 5.2+
+          td.yup 4+
+          td
+            span.kinda 9-
+            | /
+            span.yup 10+
+          td.kinda 11+
+          td.nope 10-
+          td.yup 2.3+
+        tr
+          th.
+            Range
+          td.nope 11-
+          td.yup 4+
+          td.yup 5+
+          td.yup 6+
+          td.yup 9+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th.
+            Date
+          td.nope 11-
+          td.kinda 5+
+          td.nope 5-
+          td
+            span.kinda 10
+            | /
+            span.nope 17
+            | /
+            span.yup 20+
+          td.yup 10.6+
+          td.nope 10-
+          td.nope 2.3-
+    a(href="http://wufoo.com/html5/").source wufoo.com
+
 
   section(data-state="lab")
     h2 Lab: Forms 1
@@ -356,14 +606,20 @@ append slides
 
   section
     h2 New attributes
-    p 15+ new tag attributes
+    p <b>15+ new</b> tag attributes
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 required
     pre
       code.
-        &ltinput name="q" required>
+        &lt;input name="q" <b>required</b>>
+    #ex-required-input
+      form
+        fieldset
+          label Required field
+          input(type="text", required, contenteditable)
+        button(type="submit") Submit
 
   section
     mixin browserSupport('10+', '4+', '5+', '10+', '11.5+')
@@ -371,58 +627,89 @@ append slides
     pre
       code.
         #{'<input name="q" placeholder="Search Bookmarks and History">'}
+    #ex-input-placeholder
+      form
+        fieldset
+          label Search
+          input(type="search", contenteditable
+          placeholder="Search Bookmarks and History", style="width: 60%;")
+        button(type="submit") Submit
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '11+')
     h2 autofocus
     pre
       code.
-        #{'<input name="q" autofocus>'}
+        &lt;input name="q" <b>autofocus</b>>
+    #ex-input-autofocus
+      //- If 'autofocus' is enabled for an input inside the slideshow,
+      //- it gets the focus rendering the slides unusable
+      form
+        fieldset
+          label This input does <b>not</b> get the focus
+          input(type="search", contenteditable)
+        button(type="submit") Submit
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
     h2 pattern
     pre
       code.
-        &lt;input type="text" pattern="[a-z]{3}[0-9]{3}">
+        &lt;input type="text" <b>pattern="[a-z]{3}[0-9]{3}"</b>>
+    #ex-input-pattern
+      form
+        fieldset
+          label 3 letter and 3 numbers
+          input(type="text", contenteditable, 
+          pattern="[a-z]{3}[0-9]{3}", placeholder="E.g. cye850")
+        button(type="submit") Submit
+
 
   section
     mixin browserSupport('6+', 'No', '5+', '10+', '10.6+')
     h2 min, max, step
     pre
       code.
-        #{'<input name="amount" type="number" value="0" min="0" max="100" step="2" >'}
+        &lt;input name="amount" type="number" value="0" <b>min="0" max="100" step="2"</b> >
+    #ex-input-max-min
+      form
+        fieldset
+          label Select an even number
+          input(required, type="number", value="0", min="0", max="100", step="2", contenteditable)
+        button(type="submit") Submit
 
   section
     h2 data-*
-    p Method approved by the W3C to extend the DOM
+    p Method approved by the W3C to <b>extend the DOM</b>
 
-    | GOOD:
+    //- .row-fluid
+    //-   .span6
+    | <b>GOOD:</b>
     pre
       code.
         #{'<ul id="friends">'}
-          #{'<li data-username="jdoe">John Doe</li>'}
-          #{'<li data-username="cnorris">Chuck Norris</li>'}
+          &lt;li <b>data-username="jdoe"</b>>John Doe</li>
+          &lt;li <b>data-username="cnorris"</b>>Chuck Norris</li>
         #{'</ul>'}
-
-    | BAD:
+      //- .span6
+    | <b>BAD:</b>
     pre
       code.
         #{'<ul id="friends">'}
-          #{'<li class="username-jdoe">John Doe</li>'}
-          #{'<li class="username-cnorris">Chuck Norris</li>'}
+          &lt;li <b>class="username-jdoe"</b>>John Doe</li>
+          &lt;li <b>class="username-cnorris"</b>>Chuck Norris</li>
         #{'</ul>'}
 
   section
     mixin browserSupport('10+', '3.6+', 'No', 'No', 'No')
     h2 form
-    p <strong>input, select, textarea, button, fieldset</strong>
+    p <b>input, select, textarea, button, fieldset</b>
     p Supported in Chrome & FF3.6+
     pre
       code.
         #{'<label>'}
           Name:
-          #{'<input type="text" form="create" name="name">'}
+          &lt;input type="text" <b>form="create"</b> name="name">
         #{'</label>'}
 
         #{'<form id="create"></form>'}
@@ -433,15 +720,27 @@ append slides
     p Supported in IE9, Opera 11.5 & Firefox 4
     pre
       code.
-        #{'<form>'}
-          #{'<fieldset disabled>'}
-            #{'<input type="text" name="name">'}
-            #{'<input type="submit" value="save">'}
-          #{'</fieldset>'}
-          #{'<fieldset>'}
-            #{'<input type="submit" value="delete">'}
-          #{'</fieldset>'}
-        #{'</form>'}
+        #{'<fieldset>'}
+          #{'<input type="text" name="address">'}
+          #{'<input type="checkbox" value="different-billing">'}
+        #{'</fieldset>'}
+
+        &lt;fieldset <b>disabled</b>>
+          #{'<input type="text" name="billing-address">'}
+          #{'<input type="text" name="address">'}
+        #{'</fieldset>'}
+    #ex-disabled-fieldset
+      form
+        fieldset.control-group
+          label Address
+          input(type="text")
+          label.checkbox Different billing address?
+            input(type="checkbox")
+
+        fieldset(disabled).control-group
+          label Billing address
+          input(type="text")
+
 
   section
     mixin browserSupport('6+', '4+', '5+', '10+', '11+')
@@ -450,40 +749,127 @@ append slides
     pre
       code.
         #{'<textarea name="comments" maxlength="100" spellcheck="true">'}
+    #ex-textarea-attributes
+      textarea(maxlength=100, spellcheck="true", contenteditable)
+
+  //- section
+  //-   h2 Client-side validation
+  //-   p Opera
+  //-   p Other
+  //-   pre
+  //-     code.
+  //-       :invalid {
+  //-         border-color: #e88;
+  //-         -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+  //-         -moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+  //-         box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+  //-       }
 
   section
-    h2 Client-side validation
-    p Opera
-    p Other
-    pre
-      code.
-        :invalid {
-          border-color: #e88;
-          -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-          -moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-          box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-        }
+    
+    section
+      mixin browserSupport('All', '4+', '5+', '10+', '9.6+')
+      h2 Validation CSS selectors
+      p <b>:required</b> and <b>:optional</b>
+      pre
+        code.
+          <b>:optional</b> {
+            width: 20%;         
+          }
 
-  section
-    mixin browserSupport('All', '4+', '5+', '10+', '9.6+')
-    h2 Validation CSS selectors
-    p :required and :optional
-    p :valid and :invalid
-    p :in-range and :out-of-range
+          <b>:required</b>,  :focus {
+            width: 50%;          
+          }
+      #ex-validation-selectors-1
+        style
+          #ex-validation-selectors-1 :optional {
+            width: 20%;
+            -webkit-transition: width .2s linear;
+            -moz-transition: width .2s linear;
+            transition: width .2s linear;
+          }
+          #ex-validation-selectors-1 :required, #ex-validation-selectors-1 :focus {
+            width: 50%;          
+          }
+        form
+          fieldset
+            label Required field
+            input(type="text", required, contenteditable)
+            label Non-required field
+            input(type="text", contenteditable)
+          button(type="submit") Submit
+    
+    section
+      h2 Validation CSS selectors
+      p <b>:valid</b> and <b>:invalid</b>
+      pre
+        code.
+          <b>:invalid</b> {
+            border-color: #E9322D;
+            box-shadow: 0 0 6px #F8B9B7;
+          }
+          <b>:valid</b> {
+            border-color: #32E92D;
+            box-shadow: 0 0 6px #B9F8B7;
+          }
+      #ex-validation-selectors-2
+        style
+          #ex-validation-selectors-2 [type="email"]:valid {
+            border-color: #32E92D;
+            color: #12A90D;
+            box-shadow: 0 0 6px #B9F8B7;
+          }
+          #ex-validation-selectors-2 :invalid {
+            border-color: #E9322D;
+            box-shadow: 0 0 6px #F8B9B7;
+          }
+        form
+          fieldset
+            label Email
+            input(type="email", contenteditable)
+          button(type="submit") Submit
+    
+    section
+      h2 Validation CSS selectors
+      p <b>:in-range</b> and <b>:out-of-range</b>
+
+      #ex-validation-selectors-3
+        style
+          #ex-validation-selectors-3 :in-range {
+            border-color: #32E92D;
+            box-shadow: 0 0 6px #B9F8B7;
+          }
+          #ex-validation-selectors-3 :out-of-range {
+            border-color: #E9322D;
+            box-shadow: 0 0 6px #F8B9B7;
+          }
+        form
+          fieldset
+            label Tickets (max. 10)
+            input(type="number", min="1", max="10", contenteditable)
+          button(type="submit") Submit
 
   section
     mixin browserSupport('6+', '4+', 'No', '10+', '10.6+')
     h2 novalidate
     pre
       code.
-        #{'<form novalidate>'}
+        &lt;form <b>novalidate</b>>
           #{'<input type="text" name="username" required>'}
-        </form>
+        #{'</form>'}
 
         #{'<form>'}
           #{'<input type="text" name="username" required>'}
-          #{'<input type="submit" formnovalidate>'}
-        </form>
+          #{'<button type="submit">Submit</button>'}
+          &lt;button type="submit" <b>formnovalidate</b> action="/save">Save</button>
+        #{'</form>'}
+    #ex-novalidate
+      form
+        fieldset
+          label Email
+          input(type="email", required, contenteditable)
+        button(type="submit") Submit
+        button(type="submit", formnovalidate) Save
 
   section
     mixin browserSupport('10+', '4+', 'No', '10+', '10.6+')
@@ -492,22 +878,205 @@ append slides
 
     pre
       code.
-        #{'<form action="/publish" method="post">'}
+        &lt;form action="<b>/publish</b>" method="post">
           #{'<input type="submit" value="publish" />'}
-          #{'<input type="submit" value="save_draft" formaction="/save" />'}
-          #{'<input type="submit" value="delete" formaction="/delete" />'}
-        </form>
+          &lt;input type="submit" value="save_draft" <b>formaction="/save"</b> />
+          &lt;input type="submit" value="delete" <b>formaction="/delete"</b> />
+        #{'</form>'}
 
   section
     h2 Browser support
+    caption.
+        Browser Support for New <b>HTML5</b> Input <b>Attributes</b>
+    table.wufoo-support-table
+      thead
+        tr
+          td
+          th
+            .browser(style="background-position: -50px;")
+            div Firefox
+          th
+            .browser(style="background-position: -100px;")
+            div Safari
+          th
+            .browser(style="background-position: -300px;")
+            div Safari
+          th
+            .browser
+            div Chrome
+          th
+            .browser(style="background-position: -200px;")
+            div Opera
+          th
+            .browser(style="background-position: -150px;")
+            div IE
+          th
+            .browser(style="background-position: -250px;")
+            div Android
+      tbody
+        tr
+          th Placeholder
+          td.yup 4+
+          td
+            span.kinda 4
+            | /
+            span.yup 5+
+          td.yup 4+
+          td.yup 10+
+          td
+            span.kinda 11.10
+            | /
+            span.yup 11.50
+          td.yup 10+
+          td.yup 2.3+
+        tr
+          th Autofocus
+          td.yup 4+
+          td.yup 5+
+          td.nope 5-
+          td.yup 6+
+          td.yup 11+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Maxlength
+          td
+            span.kinda 3.6
+            | /
+            span.yup 4+
+          td.yup 5+
+          td.yup 4+
+          td.yup 6+
+          td.yup 11+
+          td
+            span.kinda 9
+            | /
+            span.yup 10
+          td.yup 2.3+
+        tr
+          th List (Datalist)
+          td.yup 4+
+          td.nope 5-
+          td.nope 5-
+          td.yup 20+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Autocomplete
+          td.yup 4+
+          td.yup 5.2+
+          td N/A
+          td.yup 17+
+          td.yup 10.6+
+          td.nope 10-
+          td.nope 2.3-
+        tr
+          th Required
+          td.yup 6+
+          td.nope 5-
+          td.nope 5-
+          td.yup 6+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Pattern
+          td.yup 4+
+          td.nope 5-
+          td.nope 5-
+          td
+            span.kinda 6
+            | /
+            span.yup 10+
+          td.yup-nope-kinda
+            span.kinda 10.6
+            | /
+            span.yup 11+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Spellcheck
+          td.yup 3.6+
+          td.yup 4+
+          td.nope 5-
+          td.yup 10+
+          td.yup 11+
+          td.yup 10+
+          td N/A
+        tr
+          th Novalidate
+          td.yup 4+
+          td.nope 5-
+          td.nope 5-
+          td.yup 6+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Formnovalidate
+          td.yup 4+
+          td.nope 5.2-
+          td.nope 5-
+          td.yup 6+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Formaction/method/target
+          td.yup 4+
+          td.yup 5.2+
+          td.yup 5+
+          td.yup 10+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Formenctype
+          td.yup-nope-kinda ?
+          td.yup-nope-kinda ?
+          td.yup-nope-kinda ?
+          td.yup-nope-kinda ?
+          td.yup-nope-kinda ?
+          td.yup-nope-kinda ?
+          td.yup-nope-kinda ?
+        //- tr
+        //-   th Accept
+        //-   td.yup 11+
+        //-   td.yup 5.2+
+        //-   td N/A
+        //-   td.yup 10+
+        //-   td.kinda 10.6+
+        //-   td.yup 10+
+        //-   td.nope 2.3-
+        tr
+          th Multiple
+          td.yup 3.6+
+          td.yup 5+
+          td N/A
+          td.yup 6+
+          td.yup 11+
+          td.yup 10+
+          td.nope 2.3-
+        tr
+          th Min / Max / Step
+          td.nope 11-
+          td.yup 5+
+          td.nope 5-
+          td.yup 6+
+          td.yup 10.6+
+          td.yup 10+
+          td.nope 2.3-
+    a(href="http://wufoo.com/html5/").source wufoo.com
+
 
   section(data-state="lab")
-    h2 Lab: Forms2
+    h2 Lab: Forms 2
     p Modify a form using HTML, CSS and client-side validation
 
   section
     h2 Feature detection vs browser sniffing
-    | USER AGENT SNIFFING
+    p <b>USER AGENT SNIFFING</b>
     pre
       code.
         var dateSupport =
@@ -515,7 +1084,7 @@ append slides
           !(browser === 'Mozilla' && version < 4) &&
           !(browser === 'Webkit' && version < 1.5)
         ;
-    | FEATURE DETECTION
+    p <b>FEATURE DETECTION</b>
     pre
       code.
         var dateSupport =
@@ -523,14 +1092,14 @@ append slides
 
   section
     h2 Modernizr
-    p Feature detection of HTML5 features
+    p <b>Feature detection</b> of HTML5 features
     pre
       code.
-        #{'<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">'}
+        &lt;html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity <b>cssanimations</b> csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 
   section
     h2 Modernizr
-    p CSS styles depending on supported features
+    p CSS styles depending on <b>supported features</b>
 
     pre
       code.
@@ -540,7 +1109,7 @@ append slides
           color: blue;
         }
 
-        .cssanimations .fancy_button:hover {
+        <b>.cssanimations</b> .fancy_button:hover {
           -webkit-animation-name: fancy-animation;
           -webkit-animation-duration:1s;
             ...
@@ -548,7 +1117,7 @@ append slides
 
   section
     h2 Modernizr
-    p Also includes a javascript API
+    p Also includes a <b>JavaScript API</b>
 
     pre
       code.
@@ -561,31 +1130,55 @@ append slides
 
   section
     h2 Graceful downgrade
-    p Design for javascript
-    p Downgrade for javascript-less
+    p.read-block <b>Design</b> for JavaScript
+    p.read-block <b>Downgrade</b> for JavaScript-less
 
   section
     h2 Example: Date picker
+    .row-fluid
+      .span6
+        form
+          label Start date
+          input(type="date")
+        p.small-text.read-block If JavaScript is disabled, the button will not work
+      .span6
+        img(src="assets/img/date-picker.svg")
 
   section
     h2 Progressive enhancement
-    p Design for javascript-less
-    p Enhance if javascript is enabled
+    p.read-block <b>Design</b> for JavaScript-less
+    p.read-block <b>Enhance</b> if JavaScript is enabled
 
   section
     h2 Date picker (again)
+    .row-fluid
+      .span6
+        form
+          label Start date
+          input(type="date")
+        p.small-text.read-block If JavaScript is disabled, there will be no button
+      .span6
+        img(src="assets/img/date-picker-2.svg")
 
   section
     h2 Regressive enhancement
-    p Design for modern browsers
-    p Polyfill if feature is not supported
+    p.read-block <b>Design</b> for modern browsers
+    p.read-block <b>Polyfill</b> if feature is not supported
 
   section
     h2 Date picker (and III)
+    .row-fluid
+      .span6
+        form
+          label Start date
+          input(type="date")
+        p.small-text.read-block If date field is supported, we are good
+      .span6
+        img(src="assets/img/date-picker-3.svg")
 
   section
     h2 polyfills
-    p <strong>Simulate a feature</strong> if it's not natively supported by the browser
+    p <b>Simulate a feature</b> if it's not natively supported by the browser
     pre
       code.
         yepnope({
@@ -598,10 +1191,10 @@ append slides
 
   section
     h2 Modernizr conclusions
-    p Prepare a <strong>customized modernizr file</strong>
-    p Detect <strong>supported features</strong>
-    p Apply <strong>fallback and enhanced styles</strong>
-    p Apply <strong>polyfills</strong>
+    p.read-block Prepare a <b>customized modernizr file</b>
+    p.read-block Detect <b>supported features</b>
+    p.read-block Apply <b>fallback and enhanced styles</b>
+    p.read-block Apply <b>polyfills</b>
 
   section(data-state="lab")
     h2 Lab: Modernizr
@@ -609,25 +1202,25 @@ append slides
 
   section
     h2 Microformats
-    p <strong>microformats.org</strong>
-    p <strong>Widespread adoption by the SEO crowd</strong>
-    p <strong>Billions of pages</strong>
-    p <strong>Different formats:</strong> Microformat, Microdata, RDFa
+    p.read-block <b>microformats.org</b>
+    p.read-block <b>Widespread adoption by the SEO crowd</b>
+    p.read-block <b>Billions of pages</b>
+    p.read-block <b>Different formats:</b> Microformat, Microdata, RDFa
 
   section
     h2 schema.org
-    p <strong>Widespread adoption</strong> by the Search engines including Bing, Google and Yahoo!
+    p.read-block <b>Widespread adoption</b> by the Search engines including Bing, Google and Yahoo!
 
-    p Uses <strong>microdata</strong> with <strong>itemscope</strong>, <strong>itemtype</strong> and <strong>itemprop</strong>
+    p.read-block Uses <b>microdata</b> with <b>itemscope</b>, <b>itemtype</b> and <b>itemprop</b>
 
   section
     h2 Person
     p Contact details
     pre
       code.
-        #{'<div itemscope itemtype="http://schema.org/Person">'}
-          #{'<span itemprop="name">Jane Doe</span>'}
-            #{'<a href="mailto:jane-doe@xyz.edu" itemprop="email">'}
+        &lt;div <b>itemscope itemtype="http://schema.org/Person</b>">
+          &lt;span <b>itemprop="name</b>">Jane Doe</span>
+            &lt;a href="mailto:jane-doe@xyz.edu" <b>itemprop="email"</b>>
             jane-doe@xyz.edu</a>
         #{'</div>'}
 
@@ -636,30 +1229,30 @@ append slides
     p Not all elements are required
     pre
       code.
-        #{'<div itemscope itemtype="http://schema.org/Person">'}
-          #{'<span itemprop="name">Jane Doe</span>'}
-          #{'<img src="janedoe.jpg" itemprop="image" />'}
-          #{'<div itemprop="address" itemscope  itemtype="http://schema.org/PostalAddress">'}
-            #{'<span itemprop="streetAddress">20341 Whitworth Institute</span>'}
-            #{'<span itemprop="addressLocality">Seattle</span>'},
-            #{'<span itemprop="addressRegion">WA</span>'}
-            #{'<span itemprop="postalCode">98052</span>'}
-          #{'</div>'}
-          #{'<a itemprop="telephone" href="tel:+14251234567">(425) 123-4567</a>'}
-          #{'<a href="mailto:jane-doe@xyz.edu" itemprop="email">'}
+        &lt;div itemscope itemtype="<b>http://schema.org/Person</b>">
+          &lt;span itemprop="<b>name</b>">Jane Doe</span>
+          &lt;img src="janedoe.jpg" itemprop="<b>image</b>" />
+          &lt;div itemprop="<b>address</b>" itemscope  itemtype="<b>http://schema.org/PostalAddress</b>">
+            &lt;span itemprop="<b>streetAddress</b>">20341 Whitworth Institute</span>
+            &lt;span itemprop="<b>addressLocality</b>">Seattle</span>'
+            &lt;span itemprop="<b>addressRegion</b>">WA</span>
+            &lt;span itemprop="<b>postalCode</b>">98052</span>
+          &lt;/div>
+          &lt;a itemprop="<b>telephone</b>" href="tel:+14251234567">(425) 123-4567</a>
+          &lt;a href="mailto:jane-doe@xyz.edu" itemprop="<b>email</b>">
             jane-doe@xyz.edu</a>
-        #{'</div>'}
+        &lt;/div>
 
   section
     h2 Event
     p Event info
     pre
       code.
-        #{'<div itemscope itemtype="http://schema.org/Event">'}
-          #{'<a href="http://www.example.com/events/spinaltap" itemprop="url name">Spinal Tap</a>'}
-          #{'<img src="spinal_tap.jpg" itemprop="image" />'}
+        &lt;div itemscope itemtype="<b>http://schema.org/Event</b>">
+          &lt;a href="http://www.example.com/events/spinaltap" itemprop="<b>url name</b>">Spinal Tap</a>
+          &lt;img src="spinal_tap.jpg" itemprop="<b>image</b>" />
           When:
-          #{'<meta itemprop="startDate" content="2015-10-15T19:00">'}
+          &lt;meta itemprop="<b>startDate</b>" content="<b>2015-10-15T19:00</b>">
           Oct 15, 7:00PM
         #{'</div>'}
 
@@ -667,13 +1260,13 @@ append slides
     h2 AggregateRating
     pre
       code.
-        #{'<div itemscope itemtype="http://schema.org/Restaurant">'}
-         #{'<span itemprop="name">L’Amourita Pizza</span>'}
-         #{'<img src="pizza.jpg" itemprop="image" />'}
+        &lt;div itemscope itemtype="<b>http://schema.org/Restaurant</b>">
+         &lt;span itemprop="<b>name</b>">L’Amourita Pizza</span>
+         &lt;img src="pizza.jpg" itemprop="<b>image</b>" />
          #{'</span>'}
-         #{'<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">'}
-            #{'<span itemprop="ratingValue">7</span>'} out of
-            #{'<span itemprop="ratingCount">24</span>'} ratings.
+         &lt;span itemprop="aggregateRating" itemscope itemtype="<b>http://schema.org/AggregateRating</b>">
+            &lt;span itemprop="<b>ratingValue</b>">7</span> out of
+            &lt;span itemprop="<b>ratingCount</b>">24</span> ratings.
          #{'</span>'}
         #{'</div>'}
 
@@ -688,7 +1281,8 @@ append slides
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 Semantic elements
-    p New structural elements: <strong>section, nav, aside, header, footer</strong>
+    p New structural elements:
+    p <b>section, nav, aside, header, footer</b>
 
   section
     h2 Example
@@ -696,28 +1290,28 @@ append slides
       pre.span6
         code.
           #{'<body>'}
-            #{'<header>'}
-              #{'<hgroup>'}
+            <b>&lt;header></b>
+              <b>&lt;hgroup></b>
                 #{'<h1>Page title</h1>'}
                 #{'<h2>Page subtitle</h2>'}
               #{'</hgroup>'}
             #{'</header>'}
 
-            #{'<nav>'}
+            <b>&lt;nav></b>
               #{'<ul>'}
                 Navigation...
               #{'</ul>'}
             #{'</nav>'}
 
-          #{'<aside>'}
+          <b>&lt;aside></b>
             Top links...
           #{'</aside>'}
 
       pre.span6
         code.
-          #{'<section>'}
-            #{'<article>'}
-              #{'<header>'}
+          <b>&lt;section></b>
+            <b>&lt;article></b>
+              <b>&lt;header></b>
                 #{'<h1>Title</h1>'}
               #{'</header>'}
               #{'<p>'}
@@ -729,7 +1323,7 @@ append slides
             #{'</article>'}
           #{'</section>'}
 
-          #{'<footer>'}
+          <b>&lt;footer></b>
             Copyright ©2010
           #{'</footer>'}
           #{'</body>'}
@@ -737,8 +1331,8 @@ append slides
 
   section
     h2 Unknown elements
-    p CSS style to apply
-    p How to handle unknown elements
+    p.read-block CSS style to apply
+    p.read-block How to handle unknown elements
 
   section
     h2 CSS style of unknown elements
@@ -747,7 +1341,7 @@ append slides
     pre
       code.
         article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-          display:block;
+          <b>display: block;</b>
         }
 
   section
@@ -768,28 +1362,28 @@ append slides
 
   section
     h2 Short version
-    pre
-      code.
+    pre.language-html
+      code.language-html.html.
         #{'<!--[if lt IE 9]>'}
-        #{'<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">'}
+        &lt;script src="<b>http://html5shiv.googlecode.com/svn/trunk/html5.js</b>">
         #{'</script>'}
         #{'<![endif]-->'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 header
-    | OPTION 1
+    | <b>OPTION 1</b>
     pre
       code.
-        #{'<header>'}
+        <b>&lt;header></b>
           #{'<h1>My Weblog</h1>'}
         #{'</header>'}
 
-    | OPTION 2
+    | <b>OPTION 2</b>
     pre
       code.
-        #{'<header>'}
-          #{'<hgroup>'}
+        <b>&lt;header></b>
+          <b>&lt;hgroup></b>
             #{'<h1>Page title</h1>'}
             #{'<h2>Page subtitle</h2>'}
           #{'</hgroup>'}
@@ -800,51 +1394,52 @@ append slides
     h2 article
     p Intended for content syndication
 
-    | OLD
-    pre
-      code.
-        #{'<div class="article">'}
-          #{'<h2>Title</h2>'}
-          #{'<p>'}
-            Contents
-          #{'</p>'}
-        #{'</div>'}
-    | NEW
-    pre
-      code.
-        #{'<article>'}
-          #{'<header>'}
-            #{'<h1>Title</h1>'}
-          #{'</header>'}
-          #{'<p>'}
-            Contents
-          #{'</p>'}
-        #{'</article>'}
+    .row-fluid
+      .span6 <b>OLD</b>
+        pre
+          code.
+            &lt;div class="<b>article</b>">
+              &lt;<b>h2</b>>Title</h2>
+              #{'<p>'}
+                Contents
+              #{'</p>'}
+            #{'</div>'}
+      .span6 <b>NEW</b>
+        pre
+          code.
+            &lt;<b>article</b>>
+              &lt;<b>header</b>>
+                &lt;<b>h1</b>>Title</h1>
+              #{'</header>'}
+              #{'<p>'}
+                Contents
+              #{'</p>'}
+            #{'</article>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 time
     p Represent a date/time in both machine (ISO8601) and human-readable format
 
-    | OLD
+    | <b>OLD</b>
     pre
       code.
         #{'<span class="date">Sept 01 2009</p>'}
-    | NEW
+    | <b>NEW</b>
     pre
       code.
-        #{'<time datetime="2009-09-01" pubdate>Sept 01 2009</time>'}
+        &lt;<b>time datetime="2009-09-01" pubdate</b>>Sept 01 2009#{'</time>'}
 
-        #{'<time datetime="2009-09-01">Last Thursday</time>'}
+        &lt;time datetime="2009-09-01"><b>Last Thursday</b>#{'</time>'}
 
-        #{'<time datetime="2009-09-01T13:59:47-04:00">20 minutes ago</time>'}
+        &lt;time datetime="<b>2009-09-01T13:59:47-04:00</b>"><b>20 minutes ago</b>#{'</time>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 nav
     pre
       code.
-        #{'<nav>'}
+        &lt;<b>nav</b>>
           #{'<ul>'}
             #{'<li><a href="/home">home</a></li>'}
             #{'<li><a href="#">blog</a></li>'}
@@ -856,45 +1451,44 @@ append slides
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 aside
-    p Content tangentially related
+    p.read-block Content tangentially related
     ul
-      li <strong>within article:</strong> related to the article
-      li <strong>not within article:</strong> related to the website or page
-
-    pre
-      code.
-        #{'<article>'}
-          #{'<!-- inside article -->'}
-          #{'<h1>Header</h1>'}
-          #{'<p>Contents.</p>'}
-          #{'<aside>'}
-            #{'<q>God heals, and the doctor takes the fees – Benjamin Franklin</q>'}
+      li <b>within article:</b> related to the article
+      li <b>not within article:</b> related to the website or page
+    .row-fluid
+      pre.span6
+        code.
+          &lt;<b>article</b>>
+            #{'<!-- inside article -->'}
+            #{'<h1>Header</h1>'}
+            #{'<p>Contents.</p>'}
+            &lt;<b>aside</b>>
+              #{'<q>God heals, and the doctor takes the fees – Benjamin Franklin</q>'}
+            #{'</aside>'}
+          #{'</article>'}
+      pre.span6
+        code.
+          &lt;<b>aside</b>>
+            #{'<!-- outside of the article -->'}
+            #{'<h1>Blogroll</h1>'}
+            #{'<ul>'}
+              #{'<li><a href="bob">Bob</a></li>'}
+              #{'<li><a href="john">John</a></li>'}
+              #{'<li><a href="sarah">Sarah</a></li>'}
+            #{'</ul>'}
           #{'</aside>'}
-        #{'</article>'}
-
-    pre
-      code.
-        #{'<aside>'}
-          #{'<!-- outside of the article -->'}
-          #{'<h1>Blogroll</h1>'}
-          #{'<ul>'}
-            #{'<li><a href="bob">Bob</a></li>'}
-            #{'<li><a href="john">John</a></li>'}
-            #{'<li><a href="sarah">Sarah</a></li>'}
-          #{'</ul>'}
-        #{'</aside>'}
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 section
-    p Generic document or application section
-    p Usually associated to a header
-    p Not intended for styling or scripting (use div instead).
-    p Don’t use if article, aside or nav is more appropriate
+    p.read-block Generic <b>document or application section</b>
+    p.read-block Usually <b>associated to a header</b>
+    p.read-block Not intended for <b>styling or scripting</b> (use div instead).
+    p.read-block Don’t use if <b>article</b>, <b>aside</b> or <b>nav</b> is more appropriate
 
     pre
       code.
-        #{'<section>'}
+        &lt;<b>section</b>>
           #{'<h1>Header</h1>'}
           #{'<p>'}rest of the content
         #{'</section>'}
@@ -902,14 +1496,17 @@ append slides
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
     h2 figure
-    p diagrams, illustrations, photos, and code examples
+    p <b>diagrams, illustrations, photos, and code examples</b>
 
     pre
       code.
         #{'<figure>'}
-          #{'<img src="/gloves.jpg" alt="Coding gloves">'}
-          #{'<figcaption>Fig 1. Your coding tools</figcaption>'}
+          #{'<img src="css3.svg" alt="CSS3 logo">'}
+          #{'<figcaption>Fig 1. CSS3 logo</figcaption>'}
         #{'</figure>'}
+    figure
+      img(src="assets/img/css3.svg", width="200")
+      figcaption Fig 1. CSS3 logo
 
   section
     mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -925,7 +1522,9 @@ append slides
     h2 Fat footer example
 
     pre
-      code.
+      code(style="font-size: 70%;\
+                  line-height: 120%;\
+                  -webkit-column-count: 2;").
         #{'<footer>'}
           #{'<nav>'}
             #{'<h1>Navigation<h1>'}
@@ -955,47 +1554,7 @@ append slides
         #{'</section>'}
         #{'<p class="copyright">Copyright © 2009 W3C</p>'}
         #{'</footer>'}
-
-  section
-    h2 Example
-    pre
-      code.
-        #{'<body>'}
-          #{'<header>'}
-            #{'<hgroup>'}
-              #{'<h1>Page title</h1>'}
-              #{'<h2>Page subtitle</h2>'}
-            #{'</hgroup>'}
-          #{'</header>'}
-
-          #{'<nav>'}
-           #{'<ul>'}
-             Navigation...
-           #{'</ul>'}
-          #{'</nav>'}
-
-        #{'<aside>'}
-           Top links...
-          #{'</aside>'}
-
-        #{'<section>'}
-         #{'<article>'}
-           #{'<header>'}
-             #{'<h1>Title</h1>'}
-           #{'</header>'}
-           #{'<p>'}
-             Content...
-           #{'</p>'}
-         #{'</article>'}
-         #{'<article>'}
-           ...
-         #{'</article>'}
-        #{'</section>'}
-
-        #{'<footer>'}
-         Copyright ©2010
-        #{'</footer>'}
-      #{'</body>'}
+    iframe(src="assets/html/fat-footer.html", width="900", height="200")
 
   section(data-state="lab")
     h2 Lab: Semantics
@@ -1003,13 +1562,13 @@ append slides
 
   section
     h2 HTML5 Boilerplate
-    p HTML5 ready, including the new tags
-    p Many best practices out-of-the-box
-    p Progressive enhancement
-    p Mobile optimizations
-    p Modernizr already built-in etc, etc, etc...
+    p.read-block <b>HTML5 ready</b>, including the new tags
+    p.read-block Many <b>best practices</b> out-of-the-box
+    p.read-block <b>Progressive enhancement</b>
+    p.read-block <b>Mobile optimizations</b>
+    p.read-block <b>Modernizr</b> already built-in etc, etc, etc...
 
-  section(date-state="lab")
+  section(data-state="lab")
     h2 Lab: HTML5 Boilerplate
     p Review HTML5 boilerplate
 
@@ -1017,19 +1576,21 @@ append slides
     mixin browserSupport('All', '3.5+', '4+', '9+', '9.5+')
     h2 audio
     ul
-      li IE < 9: <bgsound>
-      li Safari: mp3 and mp4
-      li Firefox 3.5+: ogg and wav
-      li Chrome: virtually anything
+      li <b>IE</b> < 9: #{'<bgsound>'}
+      li <b>Safari</b>: mp3 and mp4
+      li <b>Firefox</b> 3.5+: ogg and wav
+      li <b>Chrome</b>: virtually anything
 
   section
     h2 audio
     pre
       code.
-        #{'<audio id="audio" src="sound.mp3" controls></audio>'}
+        #{'<audio id="audio" src="crane.mp3" controls></audio>'}
     pre
       code.
         document.getElementById("audio").muted = false;
+    audio(src="http://upload.wikimedia.org/wikipedia/commons/0/06/Grus_grus.ogg", controls)
+    .source Source: Wikimedia Commons
 
   section
     mixin browserSupport('All', '3.5+', '4+', '9+', '10.5+')
@@ -1037,34 +1598,194 @@ append slides
     pre
       code.
         #{'<video id="video" src="movie.webm" autoplay controls></video>'}
+    pre
+      code.javascript.
         document.getElementById("video").play();
+    video(src="http://upload.wikimedia.org/wikipedia/commons/a/a0/Crane.ogv", controls)
+    .source Source: Wikimedia Commons
+
 
   section
     h2 video
-    p YouTube: H.264 and WebM
-    p Vimeo: H.264
+    ul.read-block
+      li <b>YouTube</b>: H.264 and WebM
+      li <b>Vimeo</b>: H.264
+    style
+      #video-wikipedia {
+        font-size: 50%;
+        line-height: 110%;
+      }
+      #video-wikipedia th, #video-wikipedia td {
+        padding: 5px 5px;
+        text-align: center;
+      }
+      #video-wikipedia tbody th {
+        text-align: left;
+      }
+    table#video-wikipedia.big-table
+      thead
+        tr
+          th(rowspan='2') Browser
+          th(rowspan='2') Operating system
+          th(colspan='3') Formats supported by different web browsers
+        tr
+          th
+            | Ogg
+            | Theora
+          th
+            | H.264
+          th
+            | VP8
+            | (
+            a WebM
+            | )
+      tbody
+        tr
+          th
+            | Android
+            | browser
+          td Android
+          td
+            | 2.3
+          td
+            | 3.0
+          td
+            | 2.3
+        //- tr
+        //-   th
+        //-     | Chromium
+        //-   td All supported
+        //-   td
+        //-     | r18297
+        //-   td
+        //-     | Manual install
+        //-   td
+        //-     | r47759
+        tr
+          th
+            | Google Chrome
+          td All supported
+          td
+            | 3.0
+          td
+            | 3.0
+          td
+            | 6.0
+        tr
+          th(rowspan='2')
+            | Internet Explorer
+          td Windows
+          td
+            | Manual install
+          td
+            | 9.0
+          td
+            | Manual install
+        tr
+          td Windows Phone
+          td 9.0
+          td
+            | No
+          td
+            | 9.0
+          td
+            | No
+        //- tr
+        //-   th
+        //-     | Konqueror
+        //-   td All supported
+        //-   td
+        //-     | 4.4
+        tr
+          th(rowspan='3')
+            a Mozilla Firefox
+          td Windows
+          td
+            | 3.5
+          td
+            | Manual install
+          td
+            | 4.0
+        tr
+          td
+            | Unix-like
+          td
+            | No
+        tr
+          td Other supported
+          td No
+        tr
+          th
+            | Opera
+          td All supported
+          td
+            | 10.50
+          td No
+          td
+            | 10.60
+        tr
+          th(rowspan='3')
+            | Safari
+          td
+            | iOS
+          td No
+          td
+            | 3.1
+          td No
+        tr
+          td MacOS X
+          td
+            | Manual install
+          td
+            | Manual install
+        tr
+          td Windows
+          td
+            | Manual install
+        //- tr
+        //-   th
+        //-     | Web (Epiphany)
+        //-   td All supported
+        //-   td
+        //-     | 2.28
+      tfoot
+    a(href="http://en.wikipedia.org/wiki/HTML5_video").source Source: Wikipedia
 
   section
     h2 Browser support
     p Over 50% total browser support
+    table
+      thead
+        tr
+          th Ogg/Theora
+          th H.264
+          th WebM/VP8
+      tbody
+        tr
+          td 51%
+          td 54.5%
+          td 52%
+    a(href="http://caniuse.com/#search=video").source Source: caniuse.com (09-2012)
+
 
   section
     h2 video without Javascript
     pre
       code.
         #{'<video controls="controls" poster="./poster.jpg" width="640" height="360">'}
-        #{'<source src="big_buck_bunny.mp4" type="video/mp4" />'}
-        #{'<source src="big_buck_bunny.webm" type="video/webm" />'}
-        #{'<source src="big_buck_bunny.ogv" type="video/ogg" />'}
 
-        #{'<object type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf" width="640" height="360">'}
-        #{'<param name="movie" value="flowplayer-3.2.1.swf" />'}
-        #{'<param name="allowFullScreen" value="true" />'}
-        #{'<param name="wmode" value="transparent" />'}
-        &lt;param name="flashVars" value="config={'playlist':['./poster.jpg',{'url':'big_buck_bunny.mp4','autoPlay':false}]}" />
-        #{'<img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />'}
-        </object>
-        </video>
+          &lt;source <b>src="big_buck_bunny.mp4"</b> type="video/mp4" />
+          &lt;source <b>src="big_buck_bunny.webm"</b> type="video/webm" />
+          &lt;source <b>src="big_buck_bunny.ogv"</b> type="video/ogg" />
+
+          #{'<object type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf" width="640" height="360">'}
+            #{'<param name="movie" value="flowplayer-3.2.1.swf" />'}
+            #{'<param name="allowFullScreen" value="true" />'}
+            #{'<param name="wmode" value="transparent" />'}
+            &lt;param name="flashVars" value="config={'playlist':['./poster.jpg',{'url':'big_buck_bunny.mp4','autoPlay':false}]}" />
+            #{'<img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />'}
+          #{'</object>'}'
+        #{'</video>'}'
 
   section
     h2 video frameworks
@@ -1076,3 +1797,12 @@ append slides
 
   section
     h2 Keep sharp
+    ul
+      li
+        a(href="http://html5please.com") HTML5 Please
+      li
+        a(href="http://caniuse.com") When can I use...
+      li
+        a(href="https://developer.mozilla.org/") Mozilla Developer Network
+      li
+        a(href="http://html5doctor.com/") HTML5 Doctor
