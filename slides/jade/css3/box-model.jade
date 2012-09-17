@@ -4,29 +4,33 @@ section
     h2 display: table
 
     .row-fluid
-      pre.span6
-        code.
-          #main {
-            display: table;
-          }
+      .span6
+        p CSS
+        pre
+          code.
+            #main {
+              display: table;
+            }
 
-          #nav {
-            display: table-cell;
-          }
+            #nav {
+              display: table-cell;
+            }
 
-          #content {
-            display: table-cell;
-          }
-      pre.span6
-        code.
-          #{'<div id="main">'}
-            #{'<div id="nav"> '}
-              navigation column content...
+            #content {
+              display: table-cell;
+            }
+      .span6
+        p HTML
+        pre
+          code.
+            #{'<div id="main">'}
+              #{'<div id="nav"> '}
+                navigation column content...
+              #{'</div>'}
+              #{'<div id="content">'}
+                main article content...
+              #{'</div>'}
             #{'</div>'}
-            #{'<div id="content">'}
-              main article content...
-            #{'</div>'}
-          #{'</div>'}
 
     #ex-display-table
       style

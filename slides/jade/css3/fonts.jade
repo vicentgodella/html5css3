@@ -79,31 +79,39 @@ section
 
     #font-features .trocchi {
       font-family: 'Trocchi';
+      font-size: 40px;
+      line-height: 40px;
     }
 
     #font-features .libertine {
       font-family: 'Linux';
+      font-size: 40px;
+      line-height: 40px;
     }
 
-  table.big-table#font-features
+  style
+    #font-features tr:first-child td {
+      border-top: none;
+    }
+  table.table#font-features
     thead
     tbody
       tr
         td Kerning off
         td
-          h3.trocchi YAWAVA
+          p.trocchi YAWAVA
       tr
         td Kerning on
         td
-          h3.trocchi(style="text-rendering: optimizeLegibility;") YAWAVA
+          p.trocchi(style="text-rendering: optimizeLegibility;") YAWAVA
       tr
         td Glyphs off
         td
-          h3.libertine affidavit Quiet style detection
+          p.libertine affidavit Quiet style detection
       tr
         td Glyphs on
         td
-          h3.libertine.ligs-on affidavit Quiet style detection
+          p.libertine.ligs-on affidavit Quiet style detection
 section
   h2 Flash of unstyled text
 
@@ -146,53 +154,66 @@ section
 
 section
   h2 sFIR icons
+  .row-fluid
+    .span6
+      p HTML
+      pre
+        code.
+          #{'<span class="icon icon-mail"></span>'}
+          #{'<span class="icon icon-star"></span>'}
+    .span6
+      p CSS
+      pre
+        code.
+          .icon {
+            background: url('icons-sprite.png') no-repeat;
+            width: 0px;
+            height: 12px;
+            display: inline-block;
+          }
 
-  p HTML
-  pre
-    code.
-      #{'<span class="icon icon-mail"></span>'}
-      #{'<span class="icon icon-star"></span>'}
-
-  p CSS
-  pre
-    code.
-      .icon {
-        background: url('icons-sprite.png') no-repeat;
-        width: 0px;
-        height: 12px;
+          .icon-mail {
+            background-position: -10px -40px;
+          }
+          ...
+    style
+      #ex-sfir-icons span {
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         display: inline-block;
       }
+  #ex-sfir-icons
+    div(style="text-align: center;")
+      span(style="background-image: url(assets/img/icon-mail.svg);") 
+      span(style="background-image: url(assets/img/icon-star.svg);")
 
-      .icon-mail {
-        background-position: -10px -40px;
-      }
-      ...
-  #ex-font-icons
-    span.iconic(style="font-size: 40px;") &#x2709;
-    span.iconic(style="font-size: 40px;") &#x2605;
 
 section
   h2 Font-face icons
+  .row-fluid
+    .span6
+      p HTML
+      pre
+        code.
+          #{'<span class="icon icon-mail"></span>'}
+          #{'<span class="icon icon-star"></span>'}
+    .span6
+      p CSS
+      pre
+        code.
+          @font-face {
+            font-family: 'iconic';
+            ...
+          }
 
-  p HTML
-  pre
-    code.
-      #{'<span class="icon icon-mail"></span>'}
-      #{'<span class="icon icon-star"></span>'}
+          .icon  {  font-family: iconic;  }
 
-  p CSS
-  pre
-    code.
-      @font-face {
-        font-family: 'iconic';
-        ...
-      }
-
-      .icon  {  font-family: iconic;  }
-
-      .icon-mail:before {
-        content: '✉';
-      }
+          .icon-mail:before {
+            content: '✉';
+          }
   #ex-font-icons
     span.iconic(style="font-size: 40px;") &#x2709;
     span.iconic(style="font-size: 40px;") &#x2605;

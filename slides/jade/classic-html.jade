@@ -868,7 +868,7 @@ append slides
         }
       .fl float: left
       .fl-cl float: left <br> clear: left
-      p.small-text.text-left.no-float.
+      p.small-text.read-block.no-float.
         Stingfish, tapetail New Zealand sand diver pelican eel electric ray roanoke bass. Redhorse sucker; angler catfish kanyu, tiger barb butterfly ray. Silver driftfish snoek flagtail tenuis sweeper flashlight fish South American darter pelican eel dwarf gourami, zebrafish, "flat loach European minnow."
       .fr float: right
       .clear clear: both
@@ -1259,7 +1259,7 @@ append slides
           style
             #text-replacement-1 a {
               display: block;
-              width: 400px;
+              width: 200px;
               height: 200px;
               text-indent: -10000px;
               background: url(assets/img/html5.svg) no-repeat 0 0;
@@ -1270,7 +1270,7 @@ append slides
         pre
           code.
             #pageheader h1 {
-              width: 400px;
+              width: 200px;
               height: 200px;
               text-indent: -10000px;
               background: transparent
@@ -1294,7 +1294,7 @@ append slides
               display: block;
               width: 0px;
               height: 0px;
-              padding-right: 400px;
+              padding-right: 200px;
               padding-top: 200px;
               overflow: hidden;
               background: url(assets/img/html5.svg) no-repeat 0 0;
@@ -1307,7 +1307,7 @@ append slides
             #pageheader h1 {
               width: 0px;
               height: 0px;
-              padding-right: 400px;
+              padding-right: 200px;
               padding-top: 200px;
               overflow: hidden;
               background: transparent
@@ -1324,6 +1324,7 @@ append slides
             #text-replacement-3 a {
               display: block;
               height: 200px;
+              width: 200px;
               text-indent: 120%;
               whitespace: nowrap;
               overflow: hidden;
@@ -1336,6 +1337,7 @@ append slides
           code.
             #pageheader h1 {
               height: 200px;
+              width: 200px;
               text-indent: 100%;
               whitespace: nowrap;
               overflow: hidden;
@@ -1382,17 +1384,25 @@ append slides
     h2 Rounded borders (before)
 
     p Option 1: CSS Images
-    pre
-      code.
-        #{'<div class="dialog">'}
-          #{'<div class="contents">'}
-            #{'<div class="t">'}
+    .row-fluid
+      pre.span7
+        code.
+          #{'<div class="dialog">'}
+            #{'<div class="contents">'}
+              #{'<div class="t">'}
+              #{'</div>'}
+              #{'<!-- Your content goes here -->'}
             #{'</div>'}
-            #{'<!-- Your content goes here -->'}
+            #{'<div class="b">'}
+            #{'<div>'}
           #{'</div>'}
-          #{'<div class="b">'}
-          #{'<div>'}
-        #{'</div>'}
+      #ex-rounded-borders.span5
+        div(style="background: url(assets/img/top-border.svg); height: 20px; width: 300px;\
+                    margin: 0 auto;")
+        div(style="width: 300px; height: 100px; background: #d20;\
+                    margin: 0 auto;")
+        div(style="background: url(assets/img/bottom-border.svg); height: 20px; width: 300px;\
+                    margin: 0 auto;")
 
   section
     h2 Rounded borders (before)
@@ -1621,30 +1631,21 @@ append slides
     p 12 column grid
     p Fluid is optional
     p Responsive
-    style
-      #ex-bootstrap [class^="span"] {
-          border-radius: 4px;
-          background-color: #ccc;
-          margin-bottom: 10px;
-          font-size: 70%;
-      }
     #ex-bootstrap
       .row-fluid.
-        <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div>
-        <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div>
-        <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div> <div class="span1">1</div>
+        <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div>
       .row-fluid
-        .span4 4
-        .span4 4
-        .span4 4
+        .span4.grid-block 4
+        .span4.grid-block 4
+        .span4.grid-block 4
       .row-fluid
-        .span4 4
-        .span8 8
+        .span4.grid-block 4
+        .span8.grid-block 8
       .row-fluid
-        .span6 6
-        .span6 6
+        .span6.grid-block 6
+        .span6.grid-block 6
       .row-fluid
-        .span12 12
+        .span12.grid-block 12
 
   section
     h2 Example
@@ -1661,22 +1662,15 @@ append slides
             #{'<div class="span4">This is a column</div>'}
             #{'<div class="span7">This is a larger column</div>'}
         #{'</div>'}
-    style
-      #ex-bootstrap-grid [class^="span"] {
-            border-radius: 4px;
-            background-color: #ccc;
-            margin-bottom: 10px;
-            font-size: 70%;
-        }
     #ex-bootstrap-grid
       .row-fluid
-        .span2 Fee
-        .span2 Fi
-        .span2 Fo
-        .span3.offset3 Fum!!
+        .span2.grid-block Fee
+        .span2.grid-block Fi
+        .span2.grid-block Fo
+        .span3.offset3.grid-block Fum!!
       .row-fluid
-        .span4 This is a column
-        .span7 This is a larger column
+        .span4.grid-block This is a column
+        .span7.grid-block This is a larger column
 
   section(data-state="lab")
     h2 Lab: Bootstrap 1
@@ -1709,6 +1703,8 @@ append slides
 
   section
     h2 Bootstrap JS plugins
+    p Markup API
+    iframe(src="assets/html/bootstrap-js-plugins.html", width="1000", height="600", style="margin-top: 20px;")
 
   section
     h2 Customization
@@ -1733,7 +1729,6 @@ append slides
             @gridColumns: 12;
 
               ...
-
 
   section(data-state="lab")
     h2 Lab: Bootstrap 2

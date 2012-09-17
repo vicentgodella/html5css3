@@ -1604,141 +1604,87 @@ append slides
       li <b>Vimeo</b>: H.264
     style
       #video-wikipedia {
-        font-size: 50%;
+        font-size: 60%;
         line-height: 110%;
       }
-      //- #video-wikipedia th, #video-wikipedia td {
-      //-   padding: 5px 5px;
-      //-   text-align: center;
-      //- }
-      //- #video-wikipedia tbody th {
-      //-   text-align: left;
-      //- }
     table#video-wikipedia.table.table-bordered
       thead
         tr
-          th(rowspan='2') Browser
-          th(rowspan='2') Operating system
-          th(colspan='3') Formats supported by different web browsers
+          th.headerSort(rowspan='2', title='Sort ascending') Browser
+          th.headerSort(rowspan='2', title='Sort ascending') Operating system
+          th.headerSort(colspan='3', title='Sort ascending') Formats supported by different web browsers
         tr
-          th
-            | Ogg
-            | Theora
-          th
-            | H.264
-          th
-            | VP8
-            | (WebM)
+          th(style='width: 15%;') Ogg Theora
+          th(style='width: 15%;') H.264
+          th(style='width: 15%;') VP8 (WebM)
       tbody
         tr
-          th
-            | Android
-            | browser
+          th Android browser
           td Android
-          td
-            | 2.3
-          td
-            | 3.0
-          td
-            | 2.3
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 2.3
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.0
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 2.3
         //- tr
-        //-   th
-        //-     | Chromium
+        //-   th Chromium
         //-   td All supported
-        //-   td
-        //-     | r18297
-        //-   td
-        //-     | Manual install
-        //-   td
-        //-     | r47759
+        //-   td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') r18297
+        //-   td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+        //-   td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') r47759
         tr
-          th
-            | Google Chrome
+          th Google Chrome
           td All supported
-          td
-            | 3.0
-          td
-            | 3.0
-          td
-            | 6.0
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.0
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.0
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 6.0
         tr
-          th(rowspan='2')
-            | Internet Explorer
+          th(rowspan='2') Internet Explorer
           td Windows
-          td
-            | Manual install
-          td
-            | 9.0
-          td
-            | Manual install
+          td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 9.0
+          td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
         tr
           td Windows Phone
-          td 9.0
-          td
-            | No
-          td
-            | 9.0
-          td
-            | No
+          td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 9.0
+          td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
         //- tr
-        //-   th
-        //-     | Konqueror
+        //-   th Konqueror
         //-   td All supported
-        //-   td
-        //-     | 4.4
+        //-   td.table-yes(colspan='3', style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 4.4
         tr
-          th(rowspan='3')
-            | Mozilla Firefox
-          td Windows
-          td
-            | 3.5
-          td
-            | Manual install
-          td
-            | 4.0
-        tr
-          td
-            | Unix-like
-          td
-            | No
-        tr
-          td Other supported
-          td No
-        tr
-          th
-            | Opera
+          th Mozilla Firefox
           td All supported
-          td
-            | 10.50
-          td No
-          td
-            | 10.60
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.5
+          td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 4.0
         tr
-          th(rowspan='3')
-            | Safari
-          td
-            | iOS
-          td No
-          td
-            | 3.1
-          td No
+          th Opera
+          td All supported
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 10.50
+          td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+          td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 10.60
+        tr
+          th(rowspan='3') Safari
+          td iOS
+          td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+          td.table-yes(rowspan='2', style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.1
+          td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
         tr
           td MacOS X
-          td
-            | Manual install
-          td
-            | Manual install
+          td.depends.table-depends(rowspan='2', style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+          td.depends.table-depends(rowspan='2', style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
         tr
           td Windows
-          td
-            | Manual install
+          td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
         //- tr
         //-   th
-        //-     | Web (Epiphany)
+        //-     | Web
+        //-     span(style='font-weight: normal;')
+        //-       | (previously
+        //-       b Epiphany
+        //-       | )
         //-   td All supported
-        //-   td
-        //-     | 2.28
-      tfoot
+        //-   td.table-yes(colspan='3', style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 2.28
     a(href="http://en.wikipedia.org/wiki/HTML5_video").source Source: Wikipedia
 
   section

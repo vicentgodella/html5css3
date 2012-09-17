@@ -1,13 +1,13 @@
-section
-  h2 Mobile devices
-  pre
-    code.
-      #{'<link rel="stylesheet" media="handheld" />'}
+//- section
+//-   h2 Mobile devices
+//-   pre
+//-     code.
+//-       #{'<link rel="stylesheet" media="handheld" />'}
 
 section
   mixin browserSupport('All', '3.5+', 'All', '9+', '9.5+')
   h2 New media queries
-
+  p CSS
   pre
     code.
       @media only screen and (max-width: 600px) {
@@ -15,6 +15,7 @@ section
           background: #ccc;
         }
       }
+  p HTML
   pre
     code.
       #{'<link rel="stylesheet" href="small.css" media="only screen and (max-width: 600px)" />'}
@@ -22,9 +23,9 @@ section
 section
   h2 What is a pixel?
   p Two<span style="color:red">*</span> kinds of pixels
-
-  p.text-left <b>CSS pixels</b> (abstract)
-  p.text-left <b>Device pixels</b> (or physical pixels)
+  ul.read-block
+    li <b>CSS pixels</b> (abstract)
+    li <b>Device pixels</b> (or physical pixels)
 
 section
   h2 What is a pixel?
@@ -109,8 +110,9 @@ section
 section
   h2 Other media queries
   p Not very useful/consistent
-  p.small-text.text-left @media: <b>device-width</b>, <b>orientation</b>, <b>aspect-ratio</b> <br>
-  p.small-text.text-left #{'<meta name="viewport">'} : <b>target-densitydpi</b>
+  ul.read-block
+    li @media: <b>device-width</b>, <b>orientation</b>, <b>aspect-ratio</b> <br>
+    li #{'<meta name="viewport">'} : <b>target-densitydpi</b>
 
 
 section(data-state="lab")
@@ -419,17 +421,11 @@ section
         #{'<'}link href="<b>bootstrap-responsive.css</b>" rel="stylesheet">
 
     #ex-bootstrap-rwd
-      style
-        #ex-bootstrap-rwd [class^="span"] {
-          height: 50px;
-          border-radius: 4px;
-          background-color: #ccc;
-        }
       .row-fluid
-        .span2 Fee
-        .span2 Fi
-        .span1.offset2 Fo
-        .span4 Fum!
+        .span2.grid-block Fee
+        .span2.grid-block Fi
+        .span1.grid-block.offset2 Fo
+        .span4.grid-block Fum!
   section
     h2 RWD with Bootstrap
     p Several media queries implemented
@@ -444,19 +440,16 @@ section
     #ex-bootstrap-rwd-2
       style
         #ex-bootstrap-rwd-2 [class^="span"] {
-          height: 50px;
-          border-radius: 4px;
-          background-color: #ccc;
           float: none;
           width: 100%;
           margin-bottom: 5px;
           margin-left: 0;
         }
       .row-fluid
-        .span2 Fee
-        .span2 Fi
-        .span1.offset2 Fo
-        .span4 Fum!
+        .span2.grid-block Fee
+        .span2.grid-block Fi
+        .span1.grid-block.offset2 Fo
+        .span4.grid-block Fum!
 
 section(data-state="lab")
   h2 Lab: Responsive design

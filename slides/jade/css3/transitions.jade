@@ -14,31 +14,19 @@ section
         color:#00f;
       }
 
-  //- #ex-transitions-none
-  //-   style
-  //-     #ex-transitions-none a {
-  //-       color: #000;
-  //-     }
-
-  //-     #ex-transitions-none a:hover {
-  //-       color: #00f;
-  //-     }
-  //-   strong
-  //-     a Hover
-
 section
   h2 An example
   pre
     code.
       a {
         color: #000;
-        -webkit-transition: color 1s ease-in;
-        -moz-transition: color 1s ease-in;
-        transition: color 1s ease-in;
+        -webkit-transition: font-size 1s ease-in;
+        -moz-transition: font-size 1s ease-in;
+        transition: font-size 1s ease-in;
       }
 
       a:hover, a:focus {
-        color: #00f;
+        font-size: 120%;
       }
   #ex-transitions
     style
@@ -46,13 +34,13 @@ section
         color: #000;
       }
       #ex-transitions .smooth {
-        -webkit-transition: color 1s ease-in;
-        -moz-transition: color 1s ease-in;
-        transition: color 1s ease-in;
+        -webkit-transition: font-size 1s ease-in;
+        -moz-transition: font-size 1s ease-in;
+        transition: font-size 1s ease-in;
       }
 
       #ex-transitions a:hover {
-        color: #00f;
+        font-size: 200%;
       }
     strong
       a Hover
@@ -149,6 +137,7 @@ section
       .block.ease-out Ease-out
       .block.ease-io Ease-io
       .block.bezier Bezier
+  a(href="http://www.the-art-of-web.com/css/timing-function/").source Source: The Art of the Web
 
 section
   h2 transition-delay

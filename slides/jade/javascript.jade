@@ -12,7 +12,7 @@ append slides
   section
     h2 Client-Side Storage
     ul
-      li <storng>IndexedDB API:</b> Structured data storage
+      li <b>IndexedDB API:</b> Structured data storage
       li <b>LocalStorage:</b> Key-value storage
       li <b>File API:</b> Manipulate local files from the browser
 
@@ -223,6 +223,7 @@ append slides
 
   section
     h2 Process
+    img(src="assets/img/appcache-flow.svg", width="80%")
 
   section
     h2 The AppCache object
@@ -245,7 +246,6 @@ append slides
     mixin browserSupport('4+', '3.5+', '5+', '9+', '10.6+')
     h2 Geolocation
     p Where are we?
-
     pre
       code.
         if (navigator.geolocation) {
@@ -253,6 +253,7 @@ append slides
         } else {
             alert('Get a fancier browser!');
         }
+    iframe(src="assets/html/geolocation.html", width="100%", height="300")
 
   section
     mixin browserSupport('4+', '3.5+', '5+', '9+', '10.6+')
