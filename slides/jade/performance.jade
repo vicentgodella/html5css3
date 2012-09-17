@@ -11,21 +11,23 @@ append slides
 
   section
     h2 Performance
-    p <b>.1 to 1 sec:</b> no feedback necessary
-    p <b>1 to 10 sec:</b> add some feedback (spinners)
-    p <b>> 10 sec:</b> the user is no longer here
+    ul.read-block
+      li <b>.1 to 1 sec:</b> no feedback necessary
+      li <b>1 to 10 sec:</b> add some feedback (spinners)
+      li <b>> 10 sec:</b> the user is no longer here
 
   section
     h2 Impact on revenue
-    p Google: +500 ms <b>-20% traffic</b>
-    p Yahoo: +400 ms    <b>-5-9% full-page traffic</b>
-    p Amazon: +100 ms <b>-1% sales</b>
-    p Firefox: +2 seg   <b>-15% downloads</b>
+    ul.read-block
+      li Google: +500 ms <b>-20% traffic</b>
+      li Yahoo: +400 ms    <b>-5-9% full-page traffic</b>
+      li Amazon: +100 ms <b>-1% sales</b>
+      li Firefox: +2 seg   <b>-15% downloads</b>
 
   section
     h2 Impact on PageRank
-    p Starting 2010,
-    p <b>Google has added page performance</b> to the PageRank algorithm
+    p Starting 2010, <b>Google has added page performance</b> to the PageRank algorithm
+    a(href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html").source Using site speed in web search ranking
 
   section
     h2 Best thing for performance
@@ -36,34 +38,35 @@ append slides
 
   section
     h2 Improve performance
-    p by following 14 rules by Steve Souders
+    p by following <b>14 rules</b> by Steve Souders
 
   section
     h2 Pre-process JavaScript and CSS
     ul
-      li Rule 1 - Make Fewer HTTP Requests
-      li Rule 2 - Use a Content Delivery Network
-      li Rule 4 - Gzip Components
-      li Rule 10 - Minify JavaScript
+      li Rule 1 - Make <b>Fewer HTTP Requests</b>
+      li Rule 2 - Use a <b>Content Delivery Network</b>
+      li Rule 4 - <b>Gzip Components</b>
+      li Rule 10 - <b>Minify JavaScript</b>
 
   section
     h2 Content-delivery network
-    p Use a third-party CDN
+    p.read-block Use a third-party CDN
     pre
       code.
         https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
-    p Create your own CDN
+    p.read-block Create your own CDN
 
   section
     h2 Active open connections
-    p 6 connections
-    p These are shared for all active tabs
+    p <b>6 connections</b>
+    p These are <b>shared for all active tabs</b>
 
   section
     h2 Location
-    p Rule 5 - Put Stylesheets at the Top
-    p Rule 6 - Put Scripts at the Bottom
-    p Rule 8 - Make JavaScript and CSS External
+    ul
+      li Rule 5 - Put <b>Stylesheets at the Top</b>
+      li Rule 6 - Put <b>Scripts at the Bottom</b>
+      li Rule 8 - Make <b>JavaScript and CSS External</b>
 
   section
     h2 Measure, don't guess
@@ -78,10 +81,11 @@ append slides
 
   section
     h2 Performance tools
-    p Google PageSpeed
-    p YSlow!
-    p Webpagetest.org
-    p Chrome resources tab
+    ul
+      li Google PageSpeed
+      li YSlow!
+      li Webpagetest.org
+      li Chrome resources tab
 
   section
     h2 Some stats
@@ -118,82 +122,90 @@ append slides
 
   section
     h2 Efficient CSS
-    p CSS rules are evaluated right to left
-    p First a.home, then upwards
+    p.read-block CSS rules are evaluated <b>right to left</b>
 
+    p(style="margin-top: 60px;") First a.home, then upwards
     pre
       code.
-        ul > li a.home
+        ul > li a.home {
+          ...
+        }
 
   section
     h2 Selector performance
     p Best to worst
-    pre
-      code.
-        #id           /* by id */
-        .className        /* by class name */
-        div           /* by tag */
-        *           /* universal */
+    ul.read-block
+      li #id
+      li .class
+      li div
+      li *
 
   section
     h2 Improve performance
-    | BAD:
-    pre
-      code.
-        /* avoid generic selectors */
-        * {
-          font-size: 12px;
-        }
-        /* do not tag-qualify an id */  div#main {
-          width: 960px;
-        }
-        /* avoid descendants */
-        table.bill tbody tr td.cell {
-          border: 1px solid #ccc;
-        }
-        /* avoid by tag */
-        .contact-data div {
-          background: #fcc;
-        }
-    | GOOD:
-    pre
-      code.
-        body {
-          font-size: 12px;
-        }
+    .row-fluid
+      .span6
+        p BAD:
+        pre
+          code.
+            /* avoid generic selectors */
+            * {
+              font-size: 12px;
+            }
+            /* do not tag-qualify an id */  div#main {
+              width: 960px;
+            }
+            /* avoid descendants */
+            table.bill tbody tr td.cell {
+              border: 1px solid #ccc;
+            }
+            /* avoid by tag */
+            .contact-data div {
+              background: #fcc;
+            }
+      .span6
+        p GOOD:
+        pre
+          code.
+            body {
+              font-size: 12px;
+            }
 
-        #main {
-          width: 960px;
-        }
+            #main {
+              width: 960px;
+            }
 
-        .cell, .td-cell {
-          border: 1px solid #ccc;
-        }
+            .cell, .td-cell {
+              border: 1px solid #ccc;
+            }
 
-        .contact-data, .div-contact-data {
-          background: #fcc;
-        }
+            .contact-data, .div-contact-data {
+              background: #fcc;
+            }
 
   section
     h2 Improve more
-    | BAD:
-    pre
-      code.
-        ul.links li a {
-          color: #ccc;
-        }
-    | BETTER:
-    pre
-      code.
-        .links > li > a {
-          color: #ccc;
-        }
-    | BEST:
-    pre
-      code.
-        .a-link {
-          color: #ccc;
-        }
+    .row-fluid
+      .span4
+        p BAD:
+        pre
+          code.
+            ul.links li a {
+              color: #ccc;
+            }
+      .span4
+        p BETTER:
+        pre
+          code.
+            .links > li > a {
+              color: #ccc;
+            }
+      .span4
+        p BEST:
+        pre
+          code.
+            .a-link {
+              color: #ccc;
+            }
 
   section
     h2 Avoid sibling selectors
@@ -202,38 +214,66 @@ append slides
         h1 + p {
           border: 1px solid #fff;
         }
-    p WebKit typically achieves a 75% memory reduction in style footprint on pages that don’t make use of sibling selectors – Dave Hyatt, (webkit architect) May 2008
+    p.small-text.read-block WebKit typically achieves a 75% memory reduction in style footprint on pages that <b>don’t make use of sibling selectors</b> – Dave Hyatt, (webkit architect) May 2008
 
   section
     h2 Avoid :hover on non-link
-    p :hover on non-link elements (div, p, etc) will fail or cause degraded performance on IE
+    p.read-block :hover on non-link elements (div, p, etc) <b>will fail or cause degraded performance</b> on IE
 
   section
     h2 Best performance possible
-    p ID and class selectors
-    p child selectors
-    p descendant selectors
+    ul
+      li <b>ID and class selectors</b>
+      li <b>child selectors</b>
+      li <b>descendant selectors</b>
 
   section
     h2 Not to be taken too seriously
+    p Performance gains are not that good.
     ul
-      li Performance gains are not that good.
-      ul
-        li 30 ms for typical CSS
-        li 2000 ms for really bad CSS
+      li 30 ms for typical CSS
+      li 2000 ms for really bad CSS
 
   section
     h2 Use classes to override styles
     p Specificity has collisions
-    ul
-      li h3 { ... }
-      li #sidebar h3 { ... }
-      li #sidebar .account h3 { ... }
-
+    #priority-collisions
+      style
+        #priority-collisions {
+          -webkit-transform: scale(0.7, 0.7);
+        }
+        #priority-collisions p {
+          margin-top: 70px;
+        }
+      .row-fluid
+        .span5
+          p h3
+        .span7
+          mixin priorities(0, 0, 0, 1)
+      .row-fluid
+        .span5
+          p #sidebar h3 { ... }
+        .span7
+          mixin priorities(0, 1, 0, 1)
+      .row-fluid
+        .span5
+          p(style="font-size: 90%;") #sidebar .account h3 { ... }
+        .span7
+          mixin priorities(0, 1, 1, 1)
+  a(href="http://www.slideshare.net/stubbornella/our-best-practices-are-killing-us").source Source: Nicole Sullivan
   section
     h2 !important
     p Duplicates the problem
-
+    .row-fluid
+      .span5
+          p(style="margin-top: 70px") Normal styles
+      .span7
+          mixin priorities(' ', ' ', ' ', ' ')
+    .row-fluid
+      .span5
+          p(style="margin-top: 70px") Important styles
+      .span7
+          mixin priorities('×', ' ', ' ', ' ')
   section
     h2 CSS Lint
     p CSS Lint analyzes your CSS and tries to help point out problems with your code.
@@ -250,34 +290,34 @@ append slides
 
   section
     h2 Reflow performance
-    p Specify width and height on all your images
-    p Apply animations to elements that are position fixed or absolute
+    p.read-block Specify <b>width</b> and <b>height</b> on all your images
+    p.read-block Apply animations to elements that are <b>position fixed</b> or <b>absolute</b>
 
   section
     h2 Browser cache
-    p <b>304</b> (Not Modified) responses
-    p <b>Expires</b> headers
-    p <b>Strong</b> and <b>weak</b> cache indicators
+    p.read-block <b>304</b> (Not Modified) responses
+    p.read-block <b>Expires</b> headers
+    p.read-block <b>Strong</b> and <b>weak</b> cache indicators
 
   section
     h2 304
-    p Means "the browser already has the latest version of this file"
-    p Will happen with every click unless Expires is used
+    p.read-block Means "the browser already has the latest version of this file"
+    p.read-block Will happen with every click <b>unless Expires is used</b>
 
 
   section
     h2 304 with Last-Modified
-    p If the server includes Last-Modified the browser will include If-Modified-Since with each further request
+    p.read-block If the server includes <b>Last-Modified</b> the browser will include <b>If-Modified-Since</b> with each further request
     p Example: any static file with apache / tomcat
 
   section
     h2 304 with ETag
-    p If server includes ETag the browser will include If-None-Match with each further request
+    p.read-block If server includes <b>ETag</b> the browser will include <b>If-None-Match</b> with each further request
     p Example: <inode>-<file-size>-<last-modified> with apache
 
   section
     h2 Expires header
-    p Indicates for how long the file should not be retrieved again.
+    p Indicates for <b>how long the file should not be retrieved again</b>.
 
   section
     h2 Expires header
@@ -296,13 +336,13 @@ append slides
   section
     h2 The Refresh button
     ul
-      li Refresh (or F5): a new request will be sent for each file.
+      li <b>Refresh (or F5)</b>: a new request will be sent for each file.
         ul
-          li Any If-Modified-Since or If-None-Match headers will be sent.
+          li Any <b>If-Modified-Since</b> or <b>If-None-Match</b> headers will be sent.
           li The server may return a 304 response.
-      li Shift + Refresh (or Ctrl + F5): a new request will be sent for each file.
+      li <b>Shift + Refresh (or Ctrl + F5)</b>: a new request will be sent for each file.
         ul
-          li Any If-Modified-Since or If-None-Match headers will not be sent.
+          li Any <b>If-Modified-Since</b> or <b>If-None-Match</b> headers will not be sent.
           li The server cannot return a 304 response.
 
   section
@@ -327,13 +367,13 @@ append slides
   section
     h2 Strong indicators
     ul
-      li Version numbers
+      li <b>Version numbers</b>
         ul
           li http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js
-      li Revision numbers
+      li <b>Revision numbers</b>
         ul
           li http://localhost/myentity?id=5&revision=20
-      li MD5
+      li <b>MD5</b>
         ul
           li http://localhost/images/photo.gif?checksum=9e0bee8ace86b2230140642adcf57c4c
 
@@ -345,7 +385,7 @@ append slides
       li HTTP spec: 1 year
       li Yahoo! recommendation: 10 years
 
-    p <b>Use only with immutable resources</b>
+    p.read-block <b>Use only with immutable resources</b>
 
   section(data-state="lab")
     h2 Lab: Browser Cache

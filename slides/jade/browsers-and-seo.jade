@@ -95,14 +95,14 @@ append slides
 
   section
     h2 IE7.js
-    p <b>ie7.js, ie8.js, ie9.</b>js by Dean Edwards
+    p <b>ie7.js, ie8.js, ie9.js</b> by Dean Edwards
     p Fixes simple CSS 2 and 3 selectors
 
   section
     h2 IE will render the page as:
-    p Quirks mode: render as IE5
-    p Standards mode (Intranet): IE7
-    p Standards mode (Extranet): IE8 or 9
+    p.read-block Quirks mode: render as IE5
+    p.read-block Standards mode (Intranet): IE7
+    p.read-block Standards mode (Extranet): IE8 or 9
 
   section
     h2 X-UA-Compatible
@@ -184,12 +184,12 @@ append slides
 
   section
     h2 Multiple IE versions
-    p Adobe BrowserLab
-    p IE 8 compatibility view
-
-    p MS Expression Web SuperPreview
-    p IETester
-    p Browsium UniBrows
+    ul
+      li <b>Adobe BrowserLab</b>
+      li <b>IE 8 compatibility view</b>
+      li.small-text MS Expression Web SuperPreview
+      li.small-text IETester
+      li.small-text Browsium UniBrows
 
   section
     h2 IE virtual machines
@@ -241,13 +241,15 @@ append slides
   section
     h2 JavaScript vs behavior
 
-    | PROS:
-    p You can load PIE.js from a different domain.
-    p It is easily integrated within JavaScript libraries.
-
-    | CONS:
-    p JavaScript file blocks the page while loading.
-    p It is not automatically attached to new elements added dinamically.
+    ul.read-block
+      li <b>PROS:</b>
+      ul
+        li You can load PIE.js from a different domain.
+        li It is easily integrated within JavaScript libraries.
+      li <b>CONS:</b>
+      ul
+        li JavaScript file blocks the page while loading.
+        li It is not automatically attached to new elements added dinamically.
 
   section(data-state="lab")
     h2 Lab: CSS3 Pie
@@ -272,8 +274,8 @@ append slides
 
   section
     h2 Security considerations
-    p robots <b>can ignore your /robots.txt</b>, especially malware robots.
-    p <b>Anyone can see</b> what sections of your server are secured.
+    p.read-block robots <b>can ignore your /robots.txt</b>, especially malware robots.
+    p.read-block <b>Anyone can see</b> what sections of your server are secured.
 
   section
     h2 Sitemap.xml
@@ -292,38 +294,40 @@ append slides
 
   section
     h2 Contents not in sitemap
-    p URLs that are not present in the sitemap <b>can be indexed as well</b>
-    p Sitemap allows to specify <b>frequency of change</b> and <b>priorities</b>
-    p It's also useful for contents that would otherwise be <b>unreachable</b>.
+    p.read-block URLs that are not present in the sitemap <b>can be indexed as well</b>
+    p.read-block Sitemap allows to specify <b>frequency of change</b> and <b>priorities</b>
+    p.read-block It's also useful for contents that would otherwise be <b>unreachable</b>.
 
   section
     h2 Specialized sitemaps
     p <b>video, mobile, geo, news, code search, images</b>
-
+    a(href="http://www.google.com/support/webmasters/bin/topic.py?hl=en&topic=20986").source Google Webmaster Tools
   section
     h2 Sitemap generation tools
     p http://code.google.com/p/sitemap-generators/
 
   section
     h2 SEO Tools
-    p Google Website Optimizer
-    p Google Analytics
+    p <b>Google Website Optimizer</b>
+    p <b>Google Analytics</b>
 
   section
     h2 Bits included in PageRank
-    p <b>Page URL</b> and <b>host name</b>
-    p <b>Title</b> and <b>description</b> of the page
-    p Website <b>performance</b>
-    p <b>Language</b> deduced by the search engine
-    p <b>Contents</b> structure
-    p <b>Referrals</b>
+    ul.read-block
+      li <b>Page URL</b> and <b>host name</b>
+      li <b>Title</b> and <b>description</b> of the page
+      li Website <b>performance</b>
+      li <b>Language</b> deduced by the search engine
+      li <b>Contents</b> structure
+      li <b>Referrals</b>
 
   section
     h2 Bits NOT included in PageRank
-    p #{'<meta '}<b>name=keywords></b>
-    p <b>Language</b> set in the page
-    p <b>Invisible contents</b>
-    p #{'<a rel="'}<b>nofollow</b>">
+    ul.read-block
+      li #{'<meta '}<b>name=keywords></b>
+      li <b>Language</b> set in the page
+      li <b>Invisible contents</b>
+      li #{'<a rel="'}<b>nofollow</b>">
 
   section
     h2 Clean URLs
