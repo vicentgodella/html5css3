@@ -1,0 +1,281 @@
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 Semantic elements
+  p New structural elements:
+  p <b>section, nav, aside, header, footer</b>
+
+section
+  h2 Example
+  .row-fluid
+    pre.span6
+      code.
+        #{'<body>'}
+          <b>&lt;header></b>
+            <b>&lt;hgroup></b>
+              #{'<h1>Page title</h1>'}
+              #{'<h2>Page subtitle</h2>'}
+            #{'</hgroup>'}
+          #{'</header>'}
+
+          <b>&lt;nav></b>
+            #{'<ul>'}
+              Navigation...
+            #{'</ul>'}
+          #{'</nav>'}
+
+        <b>&lt;aside></b>
+          Top links...
+        #{'</aside>'}
+
+    pre.span6
+      code.
+        <b>&lt;section></b>
+          <b>&lt;article></b>
+            <b>&lt;header></b>
+              #{'<h1>Title</h1>'}
+            #{'</header>'}
+            #{'<p>'}
+              Content...
+            #{'</p>'}
+          #{'</article>'}
+          #{'<article>'}
+            ...
+          #{'</article>'}
+        #{'</section>'}
+
+        <b>&lt;footer></b>
+          Copyright ©2010
+        #{'</footer>'}
+        #{'</body>'}
+
+
+section
+  h2 Unknown elements
+  p.read-block CSS style to apply
+  p.read-block How to handle unknown elements
+
+section
+  h2 CSS style of unknown elements
+  p Add CSS style in case the semantic elements are not supported by the browser
+
+  pre
+    code.
+      article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        <b>display: block;</b>
+      }
+
+section
+  h2 Create semantic elements in IE
+  p IE < 9 does not create DOM nodes for unrecognized semantic elements
+  pre
+    code.
+      #{'<!--[if lt IE 9]>'}
+      #{'<script>'}
+        var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+        "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+        "progress,section,time,video").split(',');
+        for (var i = 0; i < e.length; i++) {
+          document.createElement(e[i]);
+        }
+      #{'</script>'}
+      #{'<![endif]-->'}
+
+section
+  h2 Short version
+  pre
+    code.
+      #{'<!--[if lt IE 9]>'}
+      &lt;script src="<b>http://html5shiv.googlecode.com/svn/trunk/html5.js</b>">
+      #{'</script>'}
+      #{'<![endif]-->'}
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 header
+  | <b>OPTION 1</b>
+  pre
+    code.
+      <b>&lt;header></b>
+        #{'<h1>My Weblog</h1>'}
+      #{'</header>'}
+
+  | <b>OPTION 2</b>
+  pre
+    code.
+      <b>&lt;header></b>
+        <b>&lt;hgroup></b>
+          #{'<h1>Page title</h1>'}
+          #{'<h2>Page subtitle</h2>'}
+        #{'</hgroup>'}
+      #{'</header>'}
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 article
+  p Intended for content syndication
+
+  .row-fluid
+    .span6 <b>OLD</b>
+      pre
+        code.
+          &lt;div class="<b>article</b>">
+            &lt;<b>h2</b>>Title</h2>
+            #{'<p>'}
+              Contents
+            #{'</p>'}
+          #{'</div>'}
+    .span6 <b>NEW</b>
+      pre
+        code.
+          &lt;<b>article</b>>
+            &lt;<b>header</b>>
+              &lt;<b>h1</b>>Title</h1>
+            #{'</header>'}
+            #{'<p>'}
+              Contents
+            #{'</p>'}
+          #{'</article>'}
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 time
+  p Represent a date/time in both machine (ISO8601) and human-readable format
+
+  | <b>OLD</b>
+  pre
+    code.
+      #{'<span class="date">Sept 01 2009</p>'}
+  | <b>NEW</b>
+  pre
+    code.
+      &lt;<b>time datetime="2009-09-01" pubdate</b>>Sept 01 2009#{'</time>'}
+
+      &lt;time datetime="2009-09-01"><b>Last Thursday</b>#{'</time>'}
+
+      &lt;time datetime="<b>2009-09-01T13:59:47-04:00</b>"><b>20 minutes ago</b>#{'</time>'}
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 nav
+  pre
+    code.
+      &lt;<b>nav</b>>
+        #{'<ul>'}
+          #{'<li><a href="/home">home</a></li>'}
+          #{'<li><a href="#">blog</a></li>'}
+          #{'<li><a href="#footer">about</a></li>'}
+        #{'</ul>'}
+      #{'</nav>'}
+
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 aside
+  p.read-block Content tangentially related
+  ul
+    li <b>within article:</b> related to the article
+    li <b>not within article:</b> related to the website or page
+  .row-fluid
+    pre.span6
+      code.
+        &lt;<b>article</b>>
+          #{'<!-- inside article -->'}
+          #{'<h1>Header</h1>'}
+          #{'<p>Contents.</p>'}
+          &lt;<b>aside</b>>
+            #{'<q>God heals, and the doctor takes the fees – Benjamin Franklin</q>'}
+          #{'</aside>'}
+        #{'</article>'}
+    pre.span6
+      code.
+        &lt;<b>aside</b>>
+          #{'<!-- outside of the article -->'}
+          #{'<h1>Blogroll</h1>'}
+          #{'<ul>'}
+            #{'<li><a href="bob">Bob</a></li>'}
+            #{'<li><a href="john">John</a></li>'}
+            #{'<li><a href="sarah">Sarah</a></li>'}
+          #{'</ul>'}
+        #{'</aside>'}
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 section
+  p.read-block Generic <b>document or application section</b>
+  p.read-block Usually <b>associated to a header</b>
+  p.read-block Not intended for <b>styling or scripting</b> (use div instead).
+  p.read-block Don’t use if <b>article</b>, <b>aside</b> or <b>nav</b> is more appropriate
+
+  pre
+    code.
+      &lt;<b>section</b>>
+        #{'<h1>Header</h1>'}
+        #{'<p>'}rest of the content
+      #{'</section>'}
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 figure
+  p <b>diagrams, illustrations, photos, and code examples</b>
+
+  pre
+    code.
+      #{'<figure>'}
+        #{'<img src="css3.svg" alt="CSS3 logo">'}
+        #{'<figcaption>Fig 1. CSS3 logo</figcaption>'}
+      #{'</figure>'}
+  figure
+    img(src="assets/img/css3.svg", width="200")
+    figcaption Fig 1. CSS3 logo
+
+section
+  mixin browserSupport('All', '3+', 'All', '9+', '9+')
+  h2 footer
+  pre
+    code.
+      #{'<footer>'}
+        #{'<p>My fancy footer</p>'}
+      #{'</footer>'}
+
+
+section
+  h2 Fat footer example
+
+  pre
+    code(style="font-size: 70%;\
+                line-height: 120%;\
+                -webkit-column-count: 2;").
+      #{'<footer>'}
+        #{'<nav>'}
+          #{'<h1>Navigation<h1>'}
+          #{'<ul>'}
+            #{'<li><a href="/">Home</a></li>'}
+            #{'<li><a href="/standards/">Standards</a></li>'}
+            #{'<li><a href="/participate/">Participate</a></li>'}
+            #{'<li><a href="/membership">Membership</a></li>'}
+            #{'<li><a href="/Consortium/">About W3C</a></li>'}
+          #{'</ul>'}
+        #{'</nav>'}
+        #{'<nav>'}
+          #{'<h1>Contact W3C</h1>'}
+          #{'<ul>'}
+            #{'<li><a href="/Consortium/contact">Contact</a></li>'}
+            #{'<li><a href="/Help/">Help and FAQ</a></li>'}
+            #{'<li><a href="/Consortium/sup">Donate</a></li>'}
+            #{'<li><a href="/Consortium/siteindex">Site Map</a></li>'}
+          #{'</ul>'}
+        #{'</nav>'}
+      #{'<section>'}
+        #{'<h1>W3C Updates</h1>'}
+        #{'<ul>'}
+          #{'<li><a href="http://twitter.com/W3C">Twitter</a></li>'}
+          #{'<li><a href="http://identi.ca/w3c">Identi.ca</a></li>'}
+        #{'</ul>'}
+      #{'</section>'}
+      #{'<p class="copyright">Copyright © 2009 W3C</p>'}
+      #{'</footer>'}
+  iframe(src="assets/html/fat-footer.html", width="900", height="200")
+
+section(data-state="lab")
+  h2 Lab: Semantics
+  p Use semantic tags in the proposed page

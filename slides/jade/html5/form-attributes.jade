@@ -1,0 +1,285 @@
+section
+  h2 New attributes
+  p <b>15+ new</b> tag attributes
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 required
+  pre
+    code.
+      &lt;input name="q" <b>required</b>>
+  #ex-required-input
+    form
+      fieldset
+        label Required field
+        input(type="text", required, contenteditable)
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('10+', '4+', '5+', '10+', '11.5+')
+  h2 placeholder
+  pre
+    code.
+      #{'<input name="q" placeholder="Search Bookmarks and History">'}
+  #ex-input-placeholder
+    form
+      fieldset
+        label Search
+        input(type="search", contenteditable
+        placeholder="Search Bookmarks and History", style="width: 60%;")
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '11+')
+  h2 autofocus
+  pre
+    code.
+      &lt;input name="q" <b>autofocus</b>>
+  #ex-input-autofocus
+    //- If 'autofocus' is enabled for an input inside the slideshow,
+    //- it gets the focus rendering the slides unusable
+    form
+      fieldset
+        label This input does <b>not</b> get the focus
+        input(type="search", contenteditable)
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 pattern
+  pre
+    code.
+      &lt;input type="text" <b>pattern="[a-z]{3}[0-9]{3}"</b>>
+  #ex-input-pattern
+    form
+      fieldset
+        label 3 letter and 3 numbers
+        input(type="text", contenteditable, 
+        pattern="[a-z]{3}[0-9]{3}", placeholder="E.g. cye850")
+      button(type="submit") Submit
+
+
+section
+  mixin browserSupport('6+', 'No', '5+', '10+', '10.6+')
+  h2 min, max, step
+  pre
+    code.
+      &lt;input name="amount" type="number" value="0" <b>min="0" max="100" step="2"</b> >
+  #ex-input-max-min
+    form
+      fieldset
+        label Select an even number
+        input(required, type="number", value="0", min="0", max="100", step="2", contenteditable)
+      button(type="submit") Submit
+
+section
+  h2 data-*
+  p Method approved by the W3C to <b>extend the DOM</b>
+
+  //- .row-fluid
+  //-   .span6
+  | <b>GOOD:</b>
+  pre
+    code.
+      #{'<ul id="friends">'}
+        &lt;li <b>data-username="jdoe"</b>>John Doe</li>
+        &lt;li <b>data-username="cnorris"</b>>Chuck Norris</li>
+      #{'</ul>'}
+    //- .span6
+  | <b>BAD:</b>
+  pre
+    code.
+      #{'<ul id="friends">'}
+        &lt;li <b>class="username-jdoe"</b>>John Doe</li>
+        &lt;li <b>class="username-cnorris"</b>>Chuck Norris</li>
+      #{'</ul>'}
+
+section
+  mixin browserSupport('10+', '3.6+', 'No', 'No', 'No')
+  h2 form
+  p <b>input, select, textarea, button, fieldset</b>
+  p Supported in Chrome & FF3.6+
+  pre
+    code.
+      #{'<label>'}
+        Name:
+        &lt;input type="text" <b>form="create"</b> name="name">
+      #{'</label>'}
+
+      #{'<form id="create"></form>'}
+
+section
+  mixin browserSupport('No', '4+', 'No', '9+', '11.5+')
+  h2 fieldset.disabled
+  p Supported in IE9, Opera 11.5 & Firefox 4
+  pre
+    code.
+      #{'<fieldset>'}
+        #{'<input type="text" name="address">'}
+        #{'<input type="checkbox" value="different-billing">'}
+      #{'</fieldset>'}
+
+      &lt;fieldset <b>disabled</b>>
+        #{'<input type="text" name="billing-address">'}
+        #{'<input type="text" name="address">'}
+      #{'</fieldset>'}
+  #ex-disabled-fieldset
+    form
+      fieldset.control-group
+        label Address
+        input(type="text")
+        label.checkbox Different billing address?
+          input(type="checkbox")
+
+      fieldset(disabled).control-group
+        label Billing address
+        input(type="text")
+
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '11+')
+  h2 New textarea attributes
+  p maxlength="number" (Chrome and FF4) spellcheck="true|false"
+  pre
+    code.
+      #{'<textarea name="comments" maxlength="100" spellcheck="true">'}
+  #ex-textarea-attributes
+    textarea(maxlength=100, spellcheck="true", contenteditable)
+
+//- section
+//-   h2 Client-side validation
+//-   p Opera
+//-   p Other
+//-   pre
+//-     code.
+//-       :invalid {
+//-         border-color: #e88;
+//-         -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+//-         -moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+//-         box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+//-       }
+
+section
+  
+  section
+    mixin browserSupport('All', '4+', '5+', '10+', '9.6+')
+    h2 Validation CSS selectors
+    p <b>:required</b> and <b>:optional</b>
+    pre
+      code.
+        <b>:optional</b> {
+          width: 20%;         
+        }
+
+        <b>:required</b>,  :focus {
+          width: 50%;          
+        }
+    #ex-validation-selectors-1
+      style
+        #ex-validation-selectors-1 :optional {
+          width: 20%;
+          -webkit-transition: width .2s linear;
+          -moz-transition: width .2s linear;
+          transition: width .2s linear;
+        }
+        #ex-validation-selectors-1 :required, #ex-validation-selectors-1 :focus {
+          width: 50%;          
+        }
+      form
+        fieldset
+          label Required field
+          input(type="text", required, contenteditable)
+          label Non-required field
+          input(type="text", contenteditable)
+        button(type="submit") Submit
+  
+  section
+    h2 Validation CSS selectors
+    p <b>:valid</b> and <b>:invalid</b>
+    pre
+      code.
+        <b>:invalid</b> {
+          border-color: #E9322D;
+          box-shadow: 0 0 6px #F8B9B7;
+        }
+        <b>:valid</b> {
+          border-color: #32E92D;
+          box-shadow: 0 0 6px #B9F8B7;
+        }
+    #ex-validation-selectors-2
+      style
+        #ex-validation-selectors-2 [type="email"]:valid {
+          border-color: #32E92D;
+          color: #12A90D;
+          box-shadow: 0 0 6px #B9F8B7;
+        }
+        #ex-validation-selectors-2 :invalid {
+          border-color: #E9322D;
+          box-shadow: 0 0 6px #F8B9B7;
+        }
+      form
+        fieldset
+          label Email
+          input(type="email", contenteditable)
+        button(type="submit") Submit
+  
+  section
+    h2 Validation CSS selectors
+    p <b>:in-range</b> and <b>:out-of-range</b>
+
+    #ex-validation-selectors-3
+      style
+        #ex-validation-selectors-3 :in-range {
+          border-color: #32E92D;
+          box-shadow: 0 0 6px #B9F8B7;
+        }
+        #ex-validation-selectors-3 :out-of-range {
+          border-color: #E9322D;
+          box-shadow: 0 0 6px #F8B9B7;
+        }
+      form
+        fieldset
+          label Tickets (max. 10)
+          input(type="number", min="1", max="10", contenteditable)
+        button(type="submit") Submit
+
+section
+  mixin browserSupport('6+', '4+', 'No', '10+', '10.6+')
+  h2 novalidate
+  pre
+    code.
+      &lt;form <b>novalidate</b>>
+        #{'<input type="text" name="username" required>'}
+      #{'</form>'}
+
+      #{'<form>'}
+        #{'<input type="text" name="username" required>'}
+        #{'<button type="submit">Submit</button>'}
+        &lt;button type="submit" <b>formnovalidate</b> action="/save">Save</button>
+      #{'</form>'}
+  #ex-novalidate
+    form
+      fieldset
+        label Email
+        input(type="email", required, contenteditable)
+      button(type="submit") Submit
+      button(type="submit", formnovalidate) Save
+
+section
+  mixin browserSupport('10+', '4+', 'No', '10+', '10.6+')
+  h2 New submit button attrs
+  p formaction, formenctype, formmethod, formnovalidate and formtarget
+
+  pre
+    code.
+      &lt;form action="<b>/publish</b>" method="post">
+        #{'<input type="submit" value="publish" />'}
+        &lt;input type="submit" value="save_draft" <b>formaction="/save"</b> />
+        &lt;input type="submit" value="delete" <b>formaction="/delete"</b> />
+      #{'</form>'}
+
+include attributes-support
+
+section(data-state="lab")
+  h2 Lab: Forms 2
+  p Modify a form using HTML, CSS and client-side validation

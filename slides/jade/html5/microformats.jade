@@ -1,0 +1,77 @@
+section
+  h2 Microformats
+  p.read-block <b>microformats.org</b>
+  p.read-block <b>Widespread adoption by the SEO crowd</b>
+  p.read-block <b>Billions of pages</b>
+  p.read-block <b>Different formats:</b> Microformat, Microdata, RDFa
+
+section
+  h2 schema.org
+  p.read-block <b>Widespread adoption</b> by the Search engines including Bing, Google and Yahoo!
+
+  p.read-block Uses <b>microdata</b> with <b>itemscope</b>, <b>itemtype</b> and <b>itemprop</b>
+
+section
+  h2 Person
+  p Contact details
+  pre
+    code.
+      &lt;div <b>itemscope itemtype="http://schema.org/Person</b>">
+        &lt;span <b>itemprop="name</b>">Jane Doe</span>
+          &lt;a href="mailto:jane-doe@xyz.edu" <b>itemprop="email"</b>>
+          jane-doe@xyz.edu</a>
+      #{'</div>'}
+
+section
+  h2 Person
+  p Not all elements are required
+  pre
+    code.
+      &lt;div itemscope itemtype="<b>http://schema.org/Person</b>">
+        &lt;span itemprop="<b>name</b>">Jane Doe</span>
+        &lt;img src="janedoe.jpg" itemprop="<b>image</b>" />
+        &lt;div itemprop="<b>address</b>" itemscope  itemtype="<b>http://schema.org/PostalAddress</b>">
+          &lt;span itemprop="<b>streetAddress</b>">20341 Whitworth Institute</span>
+          &lt;span itemprop="<b>addressLocality</b>">Seattle</span>'
+          &lt;span itemprop="<b>addressRegion</b>">WA</span>
+          &lt;span itemprop="<b>postalCode</b>">98052</span>
+        &lt;/div>
+        &lt;a itemprop="<b>telephone</b>" href="tel:+14251234567">(425) 123-4567</a>
+        &lt;a href="mailto:jane-doe@xyz.edu" itemprop="<b>email</b>">
+          jane-doe@xyz.edu</a>
+      &lt;/div>
+
+section
+  h2 Event
+  p Event info
+  pre
+    code.
+      &lt;div itemscope itemtype="<b>http://schema.org/Event</b>">
+        &lt;a href="http://www.example.com/events/spinaltap" itemprop="<b>url name</b>">Spinal Tap</a>
+        &lt;img src="spinal_tap.jpg" itemprop="<b>image</b>" />
+        When:
+        &lt;meta itemprop="<b>startDate</b>" content="<b>2015-10-15T19:00</b>">
+        Oct 15, 7:00PM
+      #{'</div>'}
+
+section
+  h2 AggregateRating
+  pre
+    code.
+      &lt;div itemscope itemtype="<b>http://schema.org/Restaurant</b>">
+       &lt;span itemprop="<b>name</b>">L’Amourita Pizza</span>
+       &lt;img src="pizza.jpg" itemprop="<b>image</b>" />
+       #{'</span>'}
+       &lt;span itemprop="aggregateRating" itemscope itemtype="<b>http://schema.org/AggregateRating</b>">
+          &lt;span itemprop="<b>ratingValue</b>">7</span> out of
+          &lt;span itemprop="<b>ratingCount</b>">24</span> ratings.
+       #{'</span>'}
+      #{'</div>'}
+
+section
+  h2 schema.org types understood by Google and others
+  p Person, Event, Product, Place, Review, AggregateRating, VideoObject, Movie, etc.
+
+section(data-state="lab")
+  h2 Lab: Schema.org
+  p Modify the proposed page to introduce types and properties from schema.org

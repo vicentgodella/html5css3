@@ -1,0 +1,125 @@
+section
+  h2 Feature detection vs browser sniffing
+  p <b>USER AGENT SNIFFING</b>
+  pre
+    code.
+      var dateSupport =
+        browser != 'IE' &&
+        !(browser === 'Mozilla' && version < 4) &&
+        !(browser === 'Webkit' && version < 1.5)
+      ;
+  p <b>FEATURE DETECTION</b>
+  pre
+    code.
+      var dateSupport =
+        (new Element('input', { type: 'date' }).type === 'date');
+
+section
+  h2 Modernizr
+  p <b>Feature detection</b> of HTML5 features
+  pre
+    code.
+      &lt;html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity <b>cssanimations</b> csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+
+section
+  h2 Modernizr
+  p CSS styles depending on <b>supported features</b>
+
+  pre
+    code.
+      /* fallback */
+      .fancy_button:hover {
+        background-color: yellow;
+        color: blue;
+      }
+
+      <b>.cssanimations</b> .fancy_button:hover {
+        -webkit-animation-name: fancy-animation;
+        -webkit-animation-duration:1s;
+          ...
+      }
+
+section
+  h2 Modernizr
+  p Also includes a <b>JavaScript API</b>
+
+  pre
+    code.
+      if (Modernizr.input.placeholder) {
+        ...
+      }
+      if (Modernizr.video.ogg){
+        ...
+      }
+
+section
+  h2 Graceful downgrade
+  p.read-block <b>Design</b> for JavaScript
+  p.read-block <b>Downgrade</b> for JavaScript-less
+
+section
+  h2 Example: Date picker
+  .row-fluid
+    .span6
+      form
+        label Start date
+        input(type="date")
+      p.small-text.read-block If JavaScript is disabled, the button will not work
+    .span6
+      img(src="assets/img/date-picker.svg")
+
+section
+  h2 Progressive enhancement
+  p.read-block <b>Design</b> for JavaScript-less
+  p.read-block <b>Enhance</b> if JavaScript is enabled
+
+section
+  h2 Date picker (again)
+  .row-fluid
+    .span6
+      form
+        label Start date
+        input(type="date")
+      p.small-text.read-block If JavaScript is disabled, there will be no button
+    .span6
+      img(src="assets/img/date-picker-2.svg")
+
+section
+  h2 Regressive enhancement
+  p.read-block <b>Design</b> for modern browsers
+  p.read-block <b>Polyfill</b> if feature is not supported
+
+section
+  h2 Date picker (and III)
+  .row-fluid
+    .span6
+      form
+        label Start date
+        input(type="date")
+      p.small-text.read-block If date field is supported, we are good
+    .span6
+      img(src="assets/img/date-picker-3.svg")
+
+section
+  h2 polyfills
+  p <b>Simulate a feature</b> if it's not natively supported by the browser
+  pre
+    code.
+      yepnope({
+        test: Modernizr.input.placeholder,
+        nope: 'html5placeholder.jquery.js',
+        callback: function() {
+          $('input[placeholder]').placeholder();
+        }
+      });
+
+section
+  h2 Modernizr conclusions
+  p.read-block Prepare a <b>customized modernizr file</b>
+  p.read-block Detect <b>supported features</b>
+  p.read-block Apply <b>fallback and enhanced styles</b>
+  p.read-block Apply <b>polyfills</b>
+
+section(data-state="lab")
+  h2 Lab: Modernizr
+  p Review the last lab to give support to as many browsers as possible

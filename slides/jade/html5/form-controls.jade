@@ -1,0 +1,177 @@
+section
+  h2 Form controls
+  p <b>12 new</b> form controls
+
+section
+  h2 Traditional form controls
+
+  p <b>text, checkbox, radio, textarea, password, select, file, button</b>
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 email
+  pre
+    code.
+      &lt;input name="email" <b>type="email"</b>>
+  #ex-email-input
+    form
+      fieldset
+        label E-mail
+        input(type="email", contenteditable)
+      button(type="submit") Submit
+  iframe(src="assets/html/email-keypad.html", width="500", height="300")
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 url
+  pre
+    code.
+      &lt;input name="homepage" <b>type="url"</b>>
+  #ex-email-input
+    form
+      fieldset
+        label Url
+        input(type="url", contenteditable)
+      button(type="submit") Submit
+  iframe(src="assets/html/url-keypad.html", width="500", height="300")
+
+section
+  mixin browserSupport('6+', 'No', '5+', '10+', '11+')
+  h2 number
+  pre
+    code.
+      &lt;input name="amount" <b>type="number"</b> min="0" max="100" step="2" value="0">
+  #ex-number-input
+    form
+      fieldset
+        label Number
+        input(type="number", contenteditable)
+      button(type="submit") Submit
+  iframe(src="assets/html/number-keypad.html", width="500", height="300")
+
+section
+  mixin browserSupport('10+', 'No', '5+', '10+', '11+')
+  h2 range
+  pre
+    code.
+      &lt;input name="amount" <b>type="range" min="0" max="50"</b> value="10">
+  #ex-range-input
+    form
+      fieldset
+        label Range
+        input(type="range", min="0", max="50", value="10", contenteditable)
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('6+', '3.6+', '5+', '9+', '10.6+')
+  h2 search
+  pre
+    code.
+      &lt;input <b>type="search"</b> results="10" />
+  #ex-search-input
+    form
+      fieldset
+        label Search
+        input(type="search", contenteditable).search-query
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 tel
+  pre
+    code.
+      &lt;input <b>type="tel"</b> placeholder="(555) 555-5555">
+  #ex-tel-input
+    form
+      fieldset
+        label Telephone
+        input(type="tel", contenteditable)
+      button(type="submit") Submit
+  iframe(src="assets/html/number-keypad.html", width="500", height="300")
+
+section
+  mixin browserSupport('6+', 'No', '5+', 'No', '10.6+')
+  h2 date
+  p date, time, month, week, datetime, datetime-local
+
+  pre
+    code.
+      &lt;input <b>type="date" min="2012-09-05" max="2012-09-21"</b> value="2011-05-20">
+  #ex-date-input
+    form
+      fieldset
+        label Date
+        input(type="date", min="2012-09-05", max="2012-09-21", contenteditable)
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('6+', '3.6+', '5+', '10+', '11+')
+  h2 Multiple file upload
+  pre
+    code.
+      &lt;input type="file" <b>multiple="multiple"</b> />
+  #ex-multiple-file-input
+    form
+      fieldset
+        label Select files
+        input(type="file", contenteditable, multiple="multiple")
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('20+', 'No', 'No', 'No', '11+')
+  h2 color
+  pre
+    code.
+      &lt;input <b>type="color"</b> placeholder="e.g. #2a2a2a">
+  #ex-color-input
+    form
+      fieldset
+        label Color
+        input(type="color", contenteditable)
+      button(type="submit") Submit
+
+section
+  mixin browserSupport('No', '4+', '5+', '10+', '10.6+')
+  h2 datalist
+  pre
+    code.
+      &lt;input type="text" <b>list="mydata"</b>>
+      #{'<datalist id="mydata">'}
+        #{'<option label="Mr" value="Mister">'}
+        #{'<option label="Mrs" value="Mistress">'}
+        #{'<option label="Ms" value="Miss">'}
+      #{'</datalist>'}
+  #ex-datalist-input
+    form
+      fieldset
+        label Click for the options
+        input(type="text", contenteditable, list="mydata")
+      datalist#mydata
+        option(label="Mr", value="Mister")
+        option(label="Mrs", value="Mistress")
+        option(label="Ms", value="Miss")
+      button(type="submit") Submit
+
+section
+  h2 progress
+  pre
+    code.
+      #{'<progress value="75" max="100">75 of 100</progress>'}
+  #ex-progress
+    progress(value="75", max="100") 75 of 100
+
+section
+  mixin browserSupport('6+', 'No', 'No', 'No', '10.6+')
+  h2 meter
+  p Only supported in Chrome and Opera
+  pre
+    code.
+      #{'<meter min="0" max="100" value="91">91 of 100</meter>'}
+  #ex-meter
+    meter(value="91", max="100", min="0") 75 of 100
+
+include forms-support
+
+section(data-state="lab")
+  h2 Lab: Forms 1
+  p Create a HTML form using new controls

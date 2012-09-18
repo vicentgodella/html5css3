@@ -1,0 +1,77 @@
+section
+  mixin browserSupport('All', '3.5+', '4+', '9+', '9.5+')
+  h2 audio
+  ul
+    li <b>IE</b> < 9: #{'<bgsound>'}
+    li <b>Safari</b>: mp3 and mp4
+    li <b>Firefox</b> 3.5+: ogg and wav
+    li <b>Chrome</b>: virtually anything
+
+section
+  h2 audio
+  pre
+    code.
+      #{'<audio id="audio" src="crane.mp3" controls></audio>'}
+  pre
+    code.
+      document.getElementById("audio").muted = false;
+  audio(src="http://upload.wikimedia.org/wikipedia/commons/0/06/Grus_grus.ogg", controls)
+  .source Source: Wikimedia Commons
+
+section
+  mixin browserSupport('All', '3.5+', '4+', '9+', '10.5+')
+  h2 video
+  pre
+    code.
+      #{'<video id="video" src="movie.webm" autoplay controls></video>'}
+  pre
+    code.javascript.
+      document.getElementById("video").play();
+  video(src="http://upload.wikimedia.org/wikipedia/commons/a/a0/Crane.ogv", controls)
+  .source Source: Wikimedia Commons
+
+include video-support
+
+section
+  h2 Browser support
+  p Over 50% total browser support
+  table.table
+    thead
+      tr
+        th Ogg/Theora
+        th H.264
+        th WebM/VP8
+    tbody
+      tr
+        td 51%
+        td 54.5%
+        td 52%
+  a(href="http://caniuse.com/#search=video").source Source: caniuse.com (09-2012)
+
+
+section
+  h2 video without JavaScript
+  pre
+    code.
+      #{'<video controls="controls" poster="./poster.jpg" width="640" height="360">'}
+
+        &lt;source <b>src="big_buck_bunny.mp4"</b> type="video/mp4" />
+        &lt;source <b>src="big_buck_bunny.webm"</b> type="video/webm" />
+        &lt;source <b>src="big_buck_bunny.ogv"</b> type="video/ogg" />
+
+        #{'<object type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf" width="640" height="360">'}
+          #{'<param name="movie" value="flowplayer-3.2.1.swf" />'}
+          #{'<param name="allowFullScreen" value="true" />'}
+          #{'<param name="wmode" value="transparent" />'}
+          &lt;param name="flashVars" value="config={'playlist':['./poster.jpg',{'url':'big_buck_bunny.mp4','autoPlay':false}]}" />
+          #{'<img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />'}
+        #{'</object>'}'
+      #{'</video>'}'
+
+section
+  h2 video frameworks
+  p Projekktor, FlareVideo, Video JS, JW Player, Kaltura / Adobe, html5media, jMediaelement, OIPlayer, Hvideo, jQuery Video, Video for Everybody, Open Video Player, HTML5 Video Player, mediaelement.js, SublimeVideo, Uppod.HTML5, LeanBack, Mooplay, jPlayer, OSM Player
+
+section(data-state="lab")
+  h2 Lab: embed video
+  p Embed a video into a web page

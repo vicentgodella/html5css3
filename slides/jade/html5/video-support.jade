@@ -1,0 +1,89 @@
+section
+  h2 video
+  ul.read-block
+    li <b>YouTube</b>: H.264 and WebM
+    li <b>Vimeo</b>: H.264
+  style
+    #video-wikipedia {
+      font-size: 60%;
+      line-height: 110%;
+    }
+  table#video-wikipedia.table.table-bordered
+    thead
+      tr
+        th.headerSort(rowspan='2', title='Sort ascending') Browser
+        th.headerSort(rowspan='2', title='Sort ascending') Operating system
+        th.headerSort(colspan='3', title='Sort ascending') Formats supported by different web browsers
+      tr
+        th(style='width: 15%;') Ogg Theora
+        th(style='width: 15%;') H.264
+        th(style='width: 15%;') VP8 (WebM)
+    tbody
+      tr
+        th Android browser
+        td Android
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 2.3
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.0
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 2.3
+      //- tr
+      //-   th Chromium
+      //-   td All supported
+      //-   td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') r18297
+      //-   td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+      //-   td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') r47759
+      tr
+        th Google Chrome
+        td All supported
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.0
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.0
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 6.0
+      tr
+        th(rowspan='2') Internet Explorer
+        td Windows
+        td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 9.0
+        td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+      tr
+        td Windows Phone
+        td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 9.0
+        td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+      //- tr
+      //-   th Konqueror
+      //-   td All supported
+      //-   td.table-yes(colspan='3', style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 4.4
+      tr
+        th Mozilla Firefox
+        td All supported
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.5
+        td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 4.0
+      tr
+        th Opera
+        td All supported
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 10.50
+        td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+        td.table-yes(style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 10.60
+      tr
+        th(rowspan='3') Safari
+        td iOS
+        td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+        td.table-yes(rowspan='2', style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 3.1
+        td.table-no(style='background: #ff9090; color: black; vertical-align: middle; text-align: center;') No
+      tr
+        td MacOS X
+        td.depends.table-depends(rowspan='2', style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+        td.depends.table-depends(rowspan='2', style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+      tr
+        td Windows
+        td.depends.table-depends(style='background: #FED; color: black; vertical-align: middle; text-align: center;') Manual install
+      //- tr
+      //-   th
+      //-     | Web
+      //-     span(style='font-weight: normal;')
+      //-       | (previously
+      //-       b Epiphany
+      //-       | )
+      //-   td All supported
+      //-   td.table-yes(colspan='3', style='background: #90ff90; color: black; vertical-align: middle; text-align: center;') 2.28
+  a(href="http://en.wikipedia.org/wiki/HTML5_video").source Source: Wikipedia
