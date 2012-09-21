@@ -57,20 +57,23 @@ append slides
 
   section
     h2 Tags
-    ul.read-block
-      li With / without content
-      li Attributes enclosed by double quotes
-      li Semantic CSS
-      li Lower-case
-    pre
-      code.
-        #{'<div>'}
-          #{'<p class="header">'}
-            Text content
-          #{'</p>'}
-          #{'<hr/>'}
-          #{'<img src="a.gif" title="Foo">'}
-        #{'</div>'}
+    .row-fluid
+      .span6
+        ul.read-block
+          li With / without content
+          li Attributes enclosed by double quotes
+          li Semantic CSS
+          li Lower-case
+      .span6
+        pre
+          code.
+            #{'<div>'}
+              #{'<p class="header">'}
+                Text content
+              #{'</p>'}
+              #{'<hr>'}
+              #{'<img src="a.gif" title="Foo">'}
+            #{'</div>'}
 
   section
     h2 Most frequent tags
@@ -172,7 +175,7 @@ append slides
     h2 XHTML vs HTML (II)
     .row-fluid
       .span6
-        p XHTML
+        p <b>XHTML</b>
         pre
           code.
             #{'<p>Hello</p>'}
@@ -184,7 +187,7 @@ append slides
             ]]>
             #{'</script>'}
       .span6
-        p HTML
+        p <b>HTML</b>
         pre
           code.
             #{'<p>'}Hello
@@ -252,44 +255,48 @@ append slides
   section#css-insertion
     h2 CSS insertion
 
-    .row-fluid
-      .span4
-        p(style="line-height: 300%;") External CSS
-      pre.span8
-        code.
-          #{'<head>'}
-            <b>#{'<link rel="stylesheet" href="style.css">'}</b>
-          #{'</head>'}
-    .row-fluid
-      .span4
-        p(style="line-height: 700%;") Internal CSS
-      pre.span8
-        code.
-          #{'<head>'}
-            <b>
-            #{'<style type="text/css">'}
-              .tab {
-                display: block !important;
-              }
-            #{'</style>'}
-            </b>
-          #{'</head>'}
-    .row-fluid
-      .span4
-        p(style="line-height: 400%;") Inline CSS
-      pre.span8
-        code.
-          #{'<body>'}
-            &lt;div <b>style="width: 20px; height: 10px"</b>>
-              Hello world!
-            #{'</div>'}
-          #{'</body>'}
+    .valign-table
+      .valign-row
+        .valign
+          p External CSS
+        .valign
+          pre
+            code.
+              #{'<head>'}
+                <b>#{'<link rel="stylesheet" href="style.css">'}</b>
+              #{'</head>'}
+      .valign-row
+        .valign
+          p Internal CSS
+        .valign
+          pre
+            code.
+              #{'<head>'}
+                <b>
+                #{'<style type="text/css">'}
+                  .tab {
+                    display: block !important;
+                  }
+                #{'</style>'}
+                </b>
+              #{'</head>'}
+      .valign-row
+        .valign
+          p Inline CSS
+        .valign
+          pre
+            code.
+              #{'<body>'}
+                &lt;div <b>style="width: 20px; height: 10px"</b>>
+                  Hello world!
+                #{'</div>'}
+              #{'</body>'}
 
   section
     h2 Indenting
     .row-fluid
       .span6
-        p Classic
+        p <b>Classic</b>
         pre
           code.
             a {
@@ -301,7 +308,7 @@ append slides
               height: 5px;
             }
       .span6
-        p Compact
+        p <b>Compact</b>
         pre
           code.
             a { color: #ccc; }
@@ -352,27 +359,31 @@ append slides
 
     p Supported by <b>IE 7+</b>
 
-    pre
-      code(style="-webkit-column-count: 2;").
-        input[type="text"] {
-          background: #eee;
-        }
+    .row-fluid
+      .span6
+        pre
+          code.
+            input[type="text"] {
+              background: #eee;
+            }
 
-        .bar.baz {
-          color: #000;
-        }
+            .bar.baz {
+              color: #000;
+            }
 
-        li:not(.wide) {
-          width: 300px;
-        }
+            li:not(.wide) {
+              width: 300px;
+            }
+      .span6
+        pre
+          code.
+            ul.data > li {
+              border: 1px solid #ccc;
+            }
 
-        ul.data > li {
-          border: 1px solid #ccc;
-        }
-
-        h2 + p {
-          font-size: 18px;
-        }
+            h2 + p {
+              font-size: 18px;
+            }
 
   section
     h2 Child and sibling selector
@@ -481,7 +492,8 @@ append slides
   section
     h2 Priorities
 
-    code #sidebar ul li a.myclass:hover { ... }
+    pre
+      code #sidebar ul li a.myclass:hover { ... }
 
     mixin priorities(0, 1, 2, 3)
 
@@ -549,10 +561,11 @@ append slides
             border: 2px black dashed;
           }
         p.small-text.read-block.
-          Cupcake ipsum dolor sit <b>amet</b> dessert jelly-o. Dragée icing croissant <a>jelly</a> powder. <em>Muffin</em> croissant macaroon pie marzipan lemon drops.
-        div.small-text.
-          Sugar plum jelly-o gingerbread <b>tiramisu</b> chocolate bar gummi <i>bears</i>. Jelly beans soufflé <a>cotton</a> candy chocolate cake danish icing.
-
+          Cupcake ipsum dolor sit <b title="This is inline">amet</b> dessert jelly-o. Dragée icing croissant <a title="This is inline">jelly</a> powder. <em title="This is inline">Muffin</em> croissant macaroon pie marzipan lemon drops.
+        p.small-text.read-block.
+          Sugar plum jelly-o gingerbread <b title="This is inline">tiramisu</b> chocolate bar gummi <i title="This is inline">bears</i>. Jelly beans soufflé <a title="This is inline">cotton</a> candy chocolate cake danish icing.
+        p.hide.
+          You should not be seeing this.
 
   section
     h2 display: block
@@ -740,13 +753,13 @@ append slides
 
   section
     h2 float
-    p <b>float: left | right</b>
+    p <b>float: left | right | none</b>
     p <b>clear: left | right | both</b>
     p Takes the element out of the box model
 
   section
     section
-      h2 float: left
+      h2 float: none
       p No float
       pre
         code.
@@ -854,7 +867,7 @@ append slides
         #float-clear-example .no-float {
           border: 4px solid black;
           margin: 10px;
-          padding: 20px;
+          padding: 20px 20px 20px 180px;
         }
         #float-clear-example .fr {
           background-color: rgba(150, 70, 50, 0.7);
@@ -1003,7 +1016,7 @@ append slides
         pre
           code.
             .inline_element {
-              line-height: <b>(parent's height)</b>
+              line-height: <b>(parent height)</b>
             }
       .span6
         p <b>Inline elements inside inline elements</b>
@@ -1026,7 +1039,7 @@ append slides
         .child {
           position: absolute;
           top: 50%;
-          margin-top: <b>-(element's height)/2</b>;
+          margin-top: <b>-(element height)/2</b>;
         }
 
   section

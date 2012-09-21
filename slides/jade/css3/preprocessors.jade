@@ -493,38 +493,38 @@ section
   h2 More syntactic sugar
 
   .row-fluid
-  .span6
-    p LESS:
-    pre
-      code.
-        @import "bootstrap.less";
+    .span6
+      p LESS:
+      pre
+        code.
+          @import "bootstrap.less";
 
-        @myBlue = #12F;
+          @myBlue = #12F;
 
-        .my-background(@color) {
-          background-color: @color + #100;
-        }
+          .my-background(@color) {
+            background-color: @color + #100;
+          }
 
-        .class {
-          .my-background(@myBlue)
-          div {
-            width: 100px;
-        }
-  .span6
-    p Stylus:
-    pre
-      code.
-        @import "layout.styl";
+          .class {
+            .my-background(@myBlue)
+            div {
+              width: 100px;
+          }
+    .span6
+      p Stylus:
+      pre
+        code.
+          @import "layout.styl";
 
-        myBlue = #12F
+          myBlue = #12F
 
-        my-background(color)
-          background-color: color + #100
+          my-background(color)
+            background-color: color + #100
 
-        .class
-          my-background(myBlue)
-          div
-            width: 100px
+          .class
+            my-background(myBlue)
+            div
+              width: 100px
 
 section(data-state="lab")
   h2 Lab: Sass

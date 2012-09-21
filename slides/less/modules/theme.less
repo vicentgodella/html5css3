@@ -11,10 +11,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'PTSans';
+    src: url('../font/PTS55F-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('../font/PTS75F-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 // GLOBAL STYLES
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "PTSans", Helvetica, Arial, sans-serif;
   font-size: @fontSize;
   // font-weight: 200;
   // letter-spacing: -0.02em;
@@ -132,4 +146,15 @@ body {
             transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
   }
 
+}
+
+.reveal .slides section {
+  line-height: 1.5em;
+}
+.reveal .slides h2 {
+  margin-bottom: 40px;
+}
+.reveal pre {
+  margin: 30px 0 0 0;
+  width: auto;
 }

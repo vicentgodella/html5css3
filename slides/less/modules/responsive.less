@@ -1,0 +1,34 @@
+
+.resize(@multiplier) {
+
+  .reveal h1 {
+    font-size: @h1size * @multiplier;
+  }
+  .reveal h2 {
+    font-size: @h2size * @multiplier;
+  }
+  body {
+    font-size: @fontSize * @multiplier;
+  }
+
+}
+
+.resize(1);
+
+@media (max-width: 979px) {
+  
+  .resize(.7);
+
+}
+
+@media (max-width: 767px) {
+
+  .resize(.6);
+
+}
+
+@media (max-width: 479px) {
+
+  .resize(.5);
+  
+}
