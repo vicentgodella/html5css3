@@ -1,7 +1,7 @@
 section
   mixin browserSupport('All', '5+', '4+', '10+', '12+')
   h2 animation
-
+  !{ourBlue.hex}
   pre
     code(style="-webkit-column-count: 2;").small-text.
       @-webkit-keyframes bounce {
@@ -36,9 +36,8 @@ section
       }
       #ex-animation .animated {
         height: 150px;
-        background-color: orange;
         border-radius: 5px;
-        width: 150px;
+        width: 20%;
         position: absolute;
 
         -webkit-animation-name: bounce;
@@ -47,7 +46,7 @@ section
         -webkit-animation-direction: alternate;
         -webkit-animation-timing-function: ease-in;
       }
-    .animated
+    .animated.yellow-bg
 
 
 section
@@ -62,19 +61,19 @@ section
     code(style="-webkit-column-count: 2;").small-text.
       @-webkit-keyframes pulse {
        0% {
-         background-color: red;
+         background-color: !{ourRed.hex};
          -webkit-transform: scale(1.0) rotate(0deg);
        }
        33% {
-         background-color: blue;
+         background-color: !{ourBlue.hex};
          -webkit-transform: scale(1.1) rotate(-5deg);
        }
        67% {
-         background-color: green;
+         background-color: !{ourBrown.hex};
          -webkit-transform: scale(1.1) rotate(5deg);
        }
        100% {
-         background-color: red;
+         background-color: !{ourRed.hex};
          -webkit-transform: scale(1.0) rotate(0deg);
        }
       }
@@ -82,19 +81,19 @@ section
     style
       @-webkit-keyframes pulse {
        0% {
-         background-color: red;
+         background-color: !{ourRed.hex};
          -webkit-transform: scale(1.0) rotate(0deg);
        }
        33% {
-         background-color: blue;
+         background-color: !{ourBlue.hex};
          -webkit-transform: scale(1.1) rotate(-5deg);
        }
        67% {
-         background-color: green;
+         background-color: !{ourBrown.hex};
          -webkit-transform: scale(1.1) rotate(5deg);
        }
        100% {
-         background-color: red;
+         background-color: !{ourRed.hex};
          -webkit-transform: scale(1.0) rotate(0deg);
        }
       }

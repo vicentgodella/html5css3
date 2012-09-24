@@ -31,7 +31,7 @@ body {
   font-family: "PTSans", Helvetica, Arial, sans-serif;
   font-size: @fontSize;
   // font-weight: 200;
-  // letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
   color: @fontColor;
 
   background: white url(../img/background.png) no-repeat;
@@ -41,11 +41,11 @@ body {
 
 // HEADERS
   h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 20px 0;
+    margin: @headersMargins;
     color: #953735;
     font-family: 'CartoGothic', Impact, sans-serif;
     font-weight: bold;
-    line-height: 0.9em;
+    line-height: 1.1em;
     letter-spacing: 0.02em;
     
     // text-transform: uppercase;
@@ -146,15 +146,15 @@ body {
             transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
   }
 
-}
+  .slides section {
+    line-height: 1.35em;
+  }
+  .slides h2 {
+    margin-bottom: 40px;
+  }
+  pre {
+    margin: 30px 0 0 0;
+    width: auto;
+  }
 
-.reveal .slides section {
-  line-height: 1.5em;
-}
-.reveal .slides h2 {
-  margin-bottom: 40px;
-}
-.reveal pre {
-  margin: 30px 0 0 0;
-  width: auto;
 }

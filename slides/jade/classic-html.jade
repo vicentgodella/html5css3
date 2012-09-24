@@ -1,6 +1,4 @@
-extend modules/layout
-
-include modules/mixins
+extend includes/layout
 
 append title
   title Classic HTML and CSS
@@ -556,15 +554,14 @@ append slides
             text-decoration: underline !important;
           }
           #display-example p, #display-example div {
-            margin: 20px;
-            padding: 10px;
-            border: 2px black dashed;
+            font-size: 70%;
+            padding: 20px;          
           }
-        p.small-text.read-block.
+        p.read-block.display-example.
           Cupcake ipsum dolor sit <b title="This is inline">amet</b> dessert jelly-o. Dragée icing croissant <a title="This is inline">jelly</a> powder. <em title="This is inline">Muffin</em> croissant macaroon pie marzipan lemon drops.
-        p.small-text.read-block.
+        p.read-block.display-example.
           Sugar plum jelly-o gingerbread <b title="This is inline">tiramisu</b> chocolate bar gummi <i title="This is inline">bears</i>. Jelly beans soufflé <a title="This is inline">cotton</a> candy chocolate cake danish icing.
-        p.hide.
+        p.hide.display-example.
           You should not be seeing this.
 
   section
@@ -575,19 +572,11 @@ append slides
           #{'<div>A</div>'}
           #{'<div>B</div>'}
           #{'<div>C</div>'}
-      .span4.offset2#display-block-example
-        style
-          #display-block-example div {
-            margin: 20px 0;
-            border: 2px black dashed;
-            font-size: 200%;
-            line-height: 150%;
-            width: 100%;
-          }
+      .span4.offset2
         p.small-text 100% width
-        div A
-        div B
-        div C
+        .display-example A
+        .display-example B
+        .display-example C
 
 
   section
@@ -624,18 +613,10 @@ append slides
           #{'<div>A</div>'}
           #{'<div>B</div>'}
           #{'<div>C</div>'}
-      .span4.offset2#position-static-example
-        style
-          #position-static-example div {
-            margin: 20px;
-            border: 2px black dashed;
-            font-size: 200%;
-            line-height: 150%;
-            width: 100%;
-          }
-        div A
-        div B
-        div C
+      .span4.offset2
+        .display-example A
+        .display-example B
+        .display-example C
 
   section
     h2 position: relative
@@ -657,21 +638,14 @@ append slides
           #{'<div>C</div>'}
       .span4.offset2#position-relative-example
         style
-          #position-relative-example div {
-            margin: 20px;
-            border: 2px black dashed;
-            font-size: 200%;
-            line-height: 150%;
-            width: 100%;
-          }
           #position-relative-example .displaced {
             position: relative;
             top: 15px;
             left: 40px;
           }
-        div A
-        div.displaced B
-        div C
+        .display-example A
+        .display-example.displaced B
+        .display-example C
 
   section
     h2 position: absolute
@@ -696,22 +670,15 @@ append slides
           #position-absolute-example {
             position: relative;
           }
-          #position-absolute-example div {
-            margin: 20px;
-            border: 2px black dashed;
-            font-size: 200%;
-            line-height: 150%;
-            width: 100%;
-          }
           #position-absolute-example .displaced {
             position: absolute;
             top: 20px;
             left: 30px;
             background-color: rgba(200,200,200,0.5);
           }
-        div A
-        div.displaced B
-        div C
+        .display-example A
+        .display-example.displaced B
+        .display-example C
 
   section
     h2 position: fixed
@@ -733,13 +700,6 @@ append slides
           #{'<div>C</div>'}
       .span4.offset2#position-fixed-example
         style
-          #position-fixed-example div {
-            margin: 20px;
-            border: 2px black dashed;
-            font-size: 200%;
-            line-height: 150%;
-            width: 100%;
-          }
           #position-fixed-example .displaced {
             position: fixed;
             top: -100px;
@@ -747,9 +707,9 @@ append slides
             background-color: rgba(200,200,200,0.5);
             width: 320px;
           }
-        div A
-        div.displaced B
-        div C
+        .display-example A
+        .display-example.displaced B
+        .display-example C
 
   section
     h2 float
@@ -767,17 +727,15 @@ append slides
           #{'<div>B</div>'}
           #{'<div>C</div>'}
       #float-left-example-1
-        style
-          #float-left-example-1 div {
-            margin: 20px auto;
-            border: 2px black dashed;
-            font-size: 150%;
-            line-height: 130%;
-            width: 50%;
-          }
-        div A
-        div B
-        div C
+        .row-fluid
+          .span4.offset4
+            .display-example A
+        .row-fluid
+          .span4.offset4
+            .display-example B
+        .row-fluid
+          .span4.offset4
+            .display-example C
     section
       h2 float: left
       p Float left
@@ -787,30 +745,20 @@ append slides
           #{'<div>B</div>'}
           #{'<div>C</div>'}
       style
-        #float-left-example-2 > .span6 > div {
-          margin-top: 20px;
-          border: 2px black dashed;
-          font-size: 150%;
-          line-height: 130%;
-        }
         #float-left-example-2 .floated {
           float: left;
           width: 100px;
-          margin: 10px;
           background-color: rgba(200,200,200,0.5);
-        }
-        #float-left-example-2 .floated-big {
-          height: 200px;
         }
       #float-left-example-2.row-fluid
         .span6
-          div.floated A
-          div B
-          div C
+          .display-example.floated A
+          .display-example B
+          .display-example C
         .span6
-          div.floated.floated-big A
-          div B
-          div C
+          .display-example.floated(style="height: 200px;") A
+          .display-example B
+          .display-example C
     section
       h2 float: left
       p Float and clear
@@ -820,30 +768,20 @@ append slides
           #{'<div>B</div>'}
           #{'<div style="clear: left">C</div>'}
       style
-        #float-left-example-3 > .span6 > div {
-          margin-top: 20px;
-          border: 2px black dashed;
-          font-size: 150%;
-          line-height: 130%;
-        }
         #float-left-example-3 .floated {
           float: left;
           width: 100px;
-          margin: 10px;
           background-color: rgba(200,200,200,0.5);
-        }
-        #float-left-example-3 .floated-big {
-          height: 200px;
         }
       #float-left-example-3.row-fluid
         .span6
-          div.floated A
-          div B
-          div(style="clear:left") C
+          .display-example.floated A
+          .display-example B
+          .display-example(style="clear:left") C
         .span6
-          div.floated.floated-big A
-          div B
-          div(style="clear:left") C
+          .display-example.floated(style="height: 200px;") A
+          .display-example B
+          .display-example(style="clear:left") C
 
   section
     h2 Float and clear
@@ -851,14 +789,13 @@ append slides
       style
         #float-clear-example div {
           font-size: 70%;
-          border: 4px solid black;
+          border-width: 4px;
+          border-style: solid;
           width: 150px;
           height: 150px;
           margin: 5px;
         }
         #float-clear-example .fl, #float-clear-example .fl-cl {
-          background-color: rgba(50, 150, 50, 0.7);
-          border-color: rgb(50, 150, 50);
           float: left;
         }
         #float-clear-example .fl-cl {
@@ -870,20 +807,18 @@ append slides
           padding: 20px 20px 20px 180px;
         }
         #float-clear-example .fr {
-          background-color: rgba(150, 70, 50, 0.7);
-          border-color: rgb(150, 70, 50);
           float: right;
         }
         #float-clear-example .clear {
-          border: 2px solid black;
+          border: 4px solid black;
           clear: both;
           width: 100%;
         }
-      .fl float: left
-      .fl-cl float: left <br> clear: left
+      .fl.red-bg.red-border float: left
+      .fl-cl.red-bg.red-border float: left <br> clear: left
       p.small-text.read-block.no-float.
         Stingfish, tapetail New Zealand sand diver pelican eel electric ray roanoke bass. Redhorse sucker; angler catfish kanyu, tiger barb butterfly ray. Silver driftfish snoek flagtail tenuis sweeper flashlight fish South American darter pelican eel dwarf gourami, zebrafish, "flat loach European minnow."
-      .fr float: right
+      .fr.blue-bg.blue-border float: right
       .clear clear: both
   section
     h2 Overflow
@@ -921,23 +856,19 @@ append slides
           box-sizing: border-box;
         }
       .column(style="float: right;")
-        div(style="background: #d20;\
-                    width: 28%;\
+        div(style="width: 28%;\
                     height: 300px;\
-                    float: left;")
-        div(style="background: #28d;\
-                    height: 200px;\
+                    float: left;").red-bg
+        div(style="height: 200px;\
                     width: 68%;\
-                    float: right;")
+                    float: right;").blue-bg
       .column
-        div(style="background: #d20;\
-                    width: 28%;\
+        div(style="width: 28%;\
                     height: 300px;\
-                    float: left;")
-        div(style="background: #28d;\
-                    height: 200px;\
+                    float: left;").red-bg
+        div(style="height: 200px;\
                     width: 68%;\
-                    float: right;")
+                    float: right;").blue-bg
 
   section
     h2 Shorcuts: font
@@ -1365,6 +1296,9 @@ append slides
     p They can be arranged <b>vertically or horizontally</b>, as the content increases
     #ex-sprites
       style
+        #ex-sprites {
+          background: none;
+        }
         #ex-sprites .mask {
           height: 50px;
           background: -webkit-linear-gradient(bottom, rgba(102,102,102,0.5) 0%, rgba(102,102,102,0.5) 6%) no-repeat 0 0,
@@ -1412,8 +1346,8 @@ append slides
       #ex-rounded-borders.span5
         div(style="background: url(assets/img/top-border.svg); height: 20px; width: 300px;\
                     margin: 0 auto;")
-        div(style="width: 300px; height: 100px; background: #d20;\
-                    margin: 0 auto;")
+        div(style="width: 300px; height: 100px;\
+                    margin: 0 auto;").orange-bg
         div(style="background: url(assets/img/bottom-border.svg); height: 20px; width: 300px;\
                     margin: 0 auto;")
 
@@ -1483,8 +1417,8 @@ append slides
           width: 100px;
           height: 100px;
 
-          border: 20px solid #f31;
-          border-bottom-color: #1d3;
+          border: 20px solid #EB6941;
+          border-bottom-color: #0096AF;
         }
         #css-triangles-explanation .labels {
           margin-top: 40px;

@@ -13,25 +13,24 @@ section
         border-radius: 10px;
       }
   #ex-border-radius
+    .block.yellow-bg.yellow-border
     style
-      #ex-border-radius {
-        background-color: orange;
-        border: 20px solid orange;
+      #ex-border-radius .block {
         -moz-border-radius: 20px;
         -webkit-border-radius: 20px;
-        height: 100px;
+        height: 150px;
       }
-section
+section(position)
   h2 border-radius circles
   p Circles as <b>very</b> rounded rectangles
-  div(style="width: 600px;\
-   height: 600px;\
-   position: absolute;\
-   top: 60%;\
-   left: 50%;\
-   border-radius: 50%;\
-   background-color: rgb(255,181,21);\
-   z-index: -10;")
+  div(style="position: relative;")
+    div(style="width: 600px;\
+     height: 600px;\
+     position: absolute;\
+     top: 300px;\
+     left: 600px;\
+     border-radius: 50%;\
+     z-index: -10;").yellow-bg
   pre
     code.
       .circle {

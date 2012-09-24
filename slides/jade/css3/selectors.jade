@@ -115,7 +115,7 @@ section
     pre
       code.
         :enabled {
-          background-color: #cdc;
+          background-color: #csdc;
         }
         :disabled {
           background-color: #dcc;
@@ -134,11 +134,16 @@ section
         #ex-ui-states input:disabled {
           background-color: #dcc;
         }
-      input(disabled)
-      input
-      form
-        input(type="radio", value=1, name="radio")
-        input(type="radio", value=1, name="radio")
+      form.form-horizontal
+        .control-group
+          label Disabled input
+          input(type="text", disabled)
+        .control-group
+          label Enabled input
+          input(type="text")
+        .control-group
+          input(type="radio", value=1, name="radio")
+          input(type="radio", value=1, name="radio")
 
 
 section

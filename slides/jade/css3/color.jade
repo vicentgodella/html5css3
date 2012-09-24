@@ -8,7 +8,7 @@ section
         opacity: .5;
       }
       .using-rgba {
-        background-color: rgba(218, 37, 29, .5);
+        background-color: rgba(!{ourRed.R}, !{ourRed.G}, !{ourRed.B}, .5);
       }
   #ex-rgba
     .using-opacity OPACITY
@@ -16,13 +16,13 @@ section
     .using-rgba RGBA
   style
     .using-opacity {
-      background-color: rgb(218, 37, 29);
+      background-color: !{ourRed.rgb};
       opacity: .3;
       color: black;
     }
 
     .using-rgba {
-      background-color: rgba(218, 37, 29, .3);
+      background-color: rgba(!{ourRed.R}, !{ourRed.G}, !{ourRed.B}, .5);
       color: black;
     }
 

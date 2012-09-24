@@ -1,4 +1,5 @@
 
+//Text
 .read-block {
   text-align: left;
   //.center();
@@ -19,6 +20,56 @@ ul.read-block {
 
 .small-text {
   font-size: 70%;
+}
+
+//Colors
+
+.blue-text {
+  color: @ourBlue;
+}
+.brown-text {
+  color: @ourBrown;
+}
+.red-text {
+  color: @ourRed;
+}
+.orange-text {
+  color: @ourOrange;
+}
+.yellow-text {
+  color: @ourYellow;
+}
+
+.blue-bg {
+  background-color: @ourBlue;
+}
+.brown-bg {
+  background-color: @ourBrown;
+}
+.red-bg {
+  background-color: @ourRed;
+}
+.orange-bg {
+  background-color: @ourOrange;
+}
+.yellow-bg {
+  background-color: @ourYellow;
+}
+
+.blue-border {
+  border-color: darken(@ourBlue, 20%);
+}
+.brown-border {
+  border-color: darken(@ourBrown, 20%);
+}
+.red-border {
+  border-color: darken(@ourRed, 20%);
+}
+.orange-border {
+  border-color: darken(@ourOrange, 20%);
+}
+.yellow-border {
+  border-color: darken(@ourYellow, 20%);
 }
 
 //Lab slide
@@ -43,16 +94,6 @@ ul.read-block {
   box-shadow: 0 0 5px #000;
   background: #fff;
   
-  h1,h2,h3,h5,h5,h6 {
-    padding-top: 20px;
-  }
-
-  // label {
-  //   display: block;
-  //   font-size: 50%;
-  //   line-height: 120%;
-  // }
-
   form {
     .center();
     width: 70%;
@@ -61,6 +102,7 @@ ul.read-block {
   }
 }
 
+//Tables
 .reveal {
   table {
     .center();
@@ -81,7 +123,7 @@ ul.read-block {
 .browser-support {
   position: absolute;
   top: -5%;
-  right: -60px;
+  right: -80px;
 }
 
 @browserBgWidth: 50px;
@@ -208,4 +250,13 @@ ul.read-block {
 
 .hide {
   display: none;
+}
+
+//Display example block
+.display-example {
+  margin: 20px 0;
+  border: 2px black dashed;
+  font-size: 200%;
+  line-height: 150%;
+  width: 100%;
 }
