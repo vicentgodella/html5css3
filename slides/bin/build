@@ -4,6 +4,13 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ..
 
+echo 'Copying static files...'
+if [[ ! ( -d generated ) ]]; then
+  mkdir generated
+fi
+
+cp -r statics/* generated
+
 echo 'Parsing slides...'
 for f in jade/*.jade; do
   node_modules/jade/bin/jade $f -O generated
