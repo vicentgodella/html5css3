@@ -1,0 +1,97 @@
+html[thumbnails="on"] {
+  overflow: visible;
+  height: auto;
+}
+
+body.thumbs-show {
+  overflow: visible;
+  height: auto;
+}
+
+.thumbs-show .reveal {
+  width: 100%;
+  overflow: hidden;
+
+  .slides {
+    position: static;
+
+    margin: 0;
+
+    max-width: none;
+
+    width: 5440px;
+    height: auto;
+
+    overflow: hidden;
+
+    -webkit-transform-origin: 0 0;
+       -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+         -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+
+    & > section.stack,
+    & > section.thumbs-slide,
+    & > section > section.thumbs-slide {
+      display: block;
+      position: static;
+      opacity: 1;
+      
+      margin: 0;
+
+      -webkit-transform: none;
+         -moz-transform: none;
+          -ms-transform: none;
+           -o-transform: none;
+              transform: none;
+    }
+    & > section.stack {
+      margin: 0;
+      display: inline;
+      overflow: visible;
+    }
+
+    & > section.thumbs-slide,
+    & > section > section.thumbs-slide {
+      float: left;
+      position: relative;
+
+      width: 900px;
+      height: 600px;
+
+      min-width: 900px;
+      min-height: 600px;
+
+      margin: 150px;
+      padding: 50px;
+
+      overflow: hidden;
+
+      border: 30px solid rgba(50, 50, 50, 0.2);
+      background-color: rgba(150, 150, 150, 0.2);
+    }
+
+    .thumbs-slide:hover {
+      border-color: rgba(100, 100, 100, 0.7);
+    }
+
+    section[data-state="lab"] {
+      background-color: black;
+      color: white;
+      h1, h2, h3 {
+        color: white;
+      }
+    }
+
+    .thumbs-slide:after {
+      content: attr(data-thumbs-index);
+      
+      font-size: 80px;
+      color: black;
+
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
