@@ -1,0 +1,275 @@
+section#sfir
+  h2 sFIR
+  .row-fluid
+    .span4
+      #text-replacement-1
+        style
+          #text-replacement-1 a {
+            display: block;
+            width: 200px;
+            height: 200px;
+            text-indent: -10000px;
+            background: url(assets/svg/html5.svg) no-repeat 0 0;
+          }
+        a(href="#sfir") HTML5
+    .span8
+      p CSS
+      pre
+        code.
+          #pageheader h1 {
+            width: 200px;
+            height: 200px;
+            text-indent: -10000px;
+            background: transparent
+              url('html5.svg') no-repeat 0 0;
+          }
+      p HTML
+      pre
+        code.
+          #{'<div id="pageheader">'}
+            #{'<a>HTML5</a>'}
+          #{'</div>'}
+
+section#img-replacement-1
+  h2 Image replacement
+
+  .row-fluid
+    .span4
+      #text-replacement-2
+        style
+          #text-replacement-2 a {
+            display: block;
+            width: 0px;
+            height: 0px;
+            padding-right: 200px;
+            padding-top: 200px;
+            overflow: hidden;
+            background: url(assets/svg/html5.svg) no-repeat 0 0;
+          }
+        a(href="#img-replacement-1") HTML5
+    .span8
+      p CSS
+      pre
+        code.
+          #pageheader h1 {
+            width: 0px;
+            height: 0px;
+            padding-right: 200px;
+            padding-top: 200px;
+            overflow: hidden;
+            background: transparent
+              url('html5.svg') no-repeat 0 0;
+          }
+
+section#img-replacement-2
+  h2 Image replacement
+
+  .row-fluid
+    .span4
+      #text-replacement-3
+        style
+          #text-replacement-3 a {
+            display: block;
+            height: 200px;
+            width: 200px;
+            text-indent: 120%;
+            whitespace: nowrap;
+            overflow: hidden;
+            background: url(assets/svg/html5.svg) no-repeat 0 0;
+          }
+        a(href="#img-replacement-2") HTML5
+    .span8
+      p CSS
+      pre
+        code.
+          #pageheader h1 {
+            height: 200px;
+            width: 200px;
+            text-indent: 100%;
+            whitespace: nowrap;
+            overflow: hidden;
+            background: transparent
+              url('html5.svg') no-repeat 0 0;
+          }
+
+section
+  h2 CSS sprites
+
+  p <b>All the background images</b> are combined
+  p They can be arranged <b>vertically or horizontally</b>, as the content increases
+  #ex-sprites
+    style
+      #ex-sprites {
+        background: none;
+      }
+      #ex-sprites .mask {
+        height: 50px;
+        background: -webkit-linear-gradient(bottom, rgba(102,102,102,0.5) 0%, rgba(102,102,102,0.5) 6%) no-repeat 0 0,
+                    -webkit-linear-gradient(bottom, rgba(102,102,102,0.5) 0%, rgba(102,102,102,0.5) 6%) no-repeat 250px 0;
+        background-size: 200px 50px, auto 50px;
+        position: relative;
+      }
+      #ex-sprites .window {
+        position: absolute;
+        left: 200px;
+        height: 50px;
+        width: 50px;
+        box-sizing: border-box;
+        border: 2px solid black;
+      }
+      #ex-sprites .sprites {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 50px;
+        background: url(assets/raster/browsers.png) no-repeat 100px 0;
+        z-index: -10;
+      }
+
+    .mask
+      .sprites
+      .window
+
+section
+  h2 Rounded borders (before)
+
+  p Option 1: CSS Images
+  .row-fluid
+    pre.span7
+      code.
+        #{'<div class="dialog">'}
+          #{'<div class="contents">'}
+            #{'<div class="t">'}
+            #{'</div>'}
+            #{'<!-- Your content goes here -->'}
+          #{'</div>'}
+          #{'<div class="b">'}
+          #{'<div>'}
+        #{'</div>'}
+    #ex-rounded-borders.span5
+      div(style="background: url(assets/svg/top-border.svg); height: 20px; width: 300px;\
+                  margin: 0 auto;")
+      div(style="width: 300px; height: 100px;\
+                  margin: 0 auto;").orange-bg
+      div(style="background: url(assets/svg/bottom-border.svg); height: 20px; width: 300px;\
+                  margin: 0 auto;")
+
+section
+  h2 Rounded borders (before)
+  p Option 2: JavaScript
+  pre
+    code.
+      #{'<script type="text/javascript" src="niftycube.js"></script>'}
+      #{'<script>'}
+        Nifty("div#box", "big");
+      #{'</script>'}
+
+section
+  h2 CSS triangles
+
+  .row-fluid
+    .span4
+      iframe(src="assets/html/css-arrow.html", height="300")
+    pre.span8(style="font-size: 40%;")
+      code.
+        .arrow_box {
+          position: relative;
+          background: #88b7d5;
+          border: 4px solid #c2e1f5;
+        }
+        .arrow_box:after, .arrow_box:before {
+          bottom: 100%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+
+        .arrow_box:after {
+          border-color: rgba(136, 183, 213, 0);
+          border-bottom-color: #88b7d5;
+          border-width: 30px;
+          left: 50%;
+          margin-left: -30px;
+        }
+        .arrow_box:before {
+          border-color: rgba(194, 225, 245, 0);
+          border-bottom-color: #c2e1f5;
+          border-width: 36px;
+          left: 50%;
+          margin-left: -36px;
+        }
+
+section
+  h2 CSS triangles
+  #css-triangles-explanation
+    style
+      #css-triangles-explanation .blocks {
+        margin-top: 50px;
+      }
+      #css-triangles-explanation .blocks .span2 {
+        position: relative;
+        height: 120px;
+      }
+      #css-triangles-explanation .block {
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+
+        border: 20px solid #EB6941;
+        border-bottom-color: #0096AF;
+      }
+      #css-triangles-explanation .labels {
+        margin-top: 40px;
+      }
+      #css-triangles-explanation .labels .span2 {
+        font-size: 50%;
+        line-height: 150%;
+      }
+      #css-triangles-explanation .block-2 {
+        border-top-width: 0;
+      }
+      #css-triangles-explanation .block-3 {
+        border-top-width: 0;
+        width: 0;
+        left: 50px;
+      }
+      #css-triangles-explanation .block-4 {
+        border-top-width: 0;
+        width: 0;
+        left: 50px;
+        height: 0;
+      }
+      #css-triangles-explanation .block-5 {
+        border-top-width: 0;
+        width: 0;
+        left: 50px;
+        height: 0;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        background-color: transparent;
+      }
+    .row-fluid.blocks
+      .span2.offset1
+        .block
+      .span2
+        .block.block-2
+      .span2
+        .block.block-3
+      .span2
+        .block.block-4
+      .span2
+        .block.block-5
+    .row-fluid.labels
+      .span2.offset1
+      .span2 border-top-color: transparent
+      .span2 width 0
+      .span2 height 0
+      .span2 transparent left/right borders
+
+//- section(data-state="lab")
+//-   h2 Chrome console

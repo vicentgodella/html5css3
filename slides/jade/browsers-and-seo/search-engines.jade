@@ -1,0 +1,85 @@
+section
+  h2 Search engines
+  p Search websites according to:
+  ul
+    li Robots.txt
+    li Sitemap.xml
+
+section
+  h2 Robots.txt
+  p First landing page for a web crawler
+  pre
+    code.
+      Sitemap: http://myhost.com/sitemap.xml
+      User-agent: *
+      Disallow: /secure/
+      Disallow: /tmp/
+
+section
+  h2 Security considerations
+  p.read-block robots <b>can ignore your /robots.txt</b>, especially malware robots.
+  p.read-block <b>Anyone can see</b> what sections of your server are secured.
+
+section
+  h2 Sitemap.xml
+  p Inform search engines <b>about pages on their sites that are available for crawling</b>
+  pre
+    code.
+      #{'<?xml version="1.0" encoding="UTF-8"?>'}
+      #{'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'}
+         #{'<url>'}
+            #{'<loc>http://www.example.com/index.html</loc>'}
+            #{'<lastmod>2005-01-01</lastmod>'}
+            #{'<changefreq>daily</changefreq>'}
+            #{'<priority>0.8</priority>'}
+         #{'</url>'}
+      #{'</urlset>'}
+
+section
+  h2 Contents not in sitemap
+  p.read-block URLs that are not present in the sitemap <b>can be indexed as well</b>
+  p.read-block Sitemap allows to specify <b>frequency of change</b> and <b>priorities</b>
+  p.read-block It's also useful for contents that would otherwise be <b>unreachable</b>.
+
+section
+  h2 Specialized sitemaps
+  p <b>video, mobile, geo, news, code search, images</b>
+  a(href="http://www.google.com/support/webmasters/bin/topic.py?hl=en&topic=20986").source Google Webmaster Tools
+section
+  h2 Sitemap generation tools
+  p http://code.google.com/p/sitemap-generators/
+
+section
+  h2 SEO Tools
+  p <b>Google Website Optimizer</b>
+  p <b>Google Analytics</b>
+
+section
+  h2 Bits included in PageRank
+  ul.read-block
+    li <b>Page URL</b> and <b>host name</b>
+    li <b>Title</b> and <b>description</b> of the page
+    li Website <b>performance</b>
+    li <b>Language</b> deduced by the search engine
+    li <b>Contents</b> structure
+    li <b>Referrals</b>
+
+section
+  h2 Bits NOT included in PageRank
+  ul.read-block
+    li #{'<meta '}<b>name=keywords></b>
+    li <b>Language</b> set in the page
+    li <b>Invisible contents</b>
+    li #{'<a rel="'}<b>nofollow</b>">
+
+section
+  h2 Clean URLs
+  p /posts/why_seo_rocks  <b>WRONG</b>
+  p /posts/why-seo-rocks  <b>CORRECT</b>
+
+section
+  h2 Meta index
+  p follow, nofollow
+  p index, noindex
+  p revisit
+  p nostore

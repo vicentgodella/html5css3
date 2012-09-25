@@ -1,0 +1,55 @@
+section
+  mixin browserSupport('4+', '3+', '4+', '10+', '10.6+')
+  h2 Appcache
+  p Offline web applications
+
+  pre
+    code.
+      #{'<!DOCTYPE HTML>'}
+      #{'<html manifest="/cache.manifest">'}
+
+      ...
+
+      #{'</html>'}
+section
+  h2 Cache.manifest
+  pre
+    code.
+      CACHE MANIFEST
+      # Remember to update the version number!
+      # version 2.3.1
+
+      # Explicit cache section (no wildcard allowed)
+      CACHE:
+      /css/style.css
+      /img/funny_image.png
+
+      # These will never be cached (folders and wildcards are allowed)
+      NETWORK:
+      /js
+      /status.html
+
+      # If A is not online, serve B
+      FALLBACK:
+      /account /offline.HTML
+
+section
+  h2 Process
+  img(src="assets/svg/appcache-flow.svg", width="80%")
+
+section
+  h2 The AppCache object
+  ul
+    li applicationCache.status
+    ul
+      li Return the current status
+    li applicationCache.update()
+    ul
+      li Update the manifest, download the files but do not replace them yet
+    li applicationCache.swapCache()
+    ul
+      li Replace the cached files with new ones
+
+section(data-state="lab")
+  h2 Lab: AppCache
+  p Configure a web app to work offline

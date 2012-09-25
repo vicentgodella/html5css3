@@ -1,0 +1,177 @@
+section
+  h2 Tags
+  .row-fluid
+    .span6
+      ul.read-block
+        li With / without content
+        li Attributes enclosed by double quotes
+        li Semantic CSS
+        li Lower-case
+    .span6
+      pre
+        code.
+          #{'<div>'}
+            #{'<p class="header">'}
+              Text content
+            #{'</p>'}
+            #{'<hr>'}
+            #{'<img src="a.gif" title="Foo">'}
+          #{'</div>'}
+
+section
+  h2 Most frequent tags
+
+  ul
+    li <b>Headers</b>: h1, h2, h3
+    li <b>Containers</b>: div, p, span
+    li <b>Image</b>: img
+    li <b>Links</b>: a, link, script
+    li <b>Lists</b>: ul, li
+    li <b>Tables</b>: table, thead, tbody, tr, td, th
+    li <b>Forms</b>: form, fieldset, input, select, textarea, label
+
+section
+  h2 doctype
+  ul.read-block
+    li <b>Quirks mode</b>
+    li <b>Standard mode</b>
+    li <b>XHTML</b>
+
+section
+  h2 Quirks mode
+
+  p Default mode in <b>Internet Explorer 6 and 7</b>
+
+  pre
+    code.
+      #{'<html>'}
+      ...
+      #{'</html>'}
+
+section
+  h2 Quirks vs Standard Mode
+
+  .row-fluid
+    .span6
+      p QUIRKS MODE
+      pre
+        code.
+          /* traditional box model */
+          .boxmodel {
+             width: 10px; <b>/* total: 10px */</b>
+             border: 1px solid #fff;
+             padding: 2px;
+          }
+
+          .boxmodel p {
+             margin: 0 auto;  <b>/* ignored */</b>
+             padding: 5; <b>/* defaults to px */</b>
+          }
+    .span6
+      p STANDARD MODE
+      pre
+        code.
+          /* W3C box model */
+          .boxmodel {
+             width: 10px; <b>/* total: 16px */</b>
+             border: 1px solid #fff;
+             padding: 2px;
+          }
+
+          .boxmodel p {
+             margin: 0 auto;  <b>/* ok */</b>
+             padding: 5; <b>/* ignored */</b>
+          }
+
+section
+  h2 Standards Mode
+
+  p The method employed by Google
+  pre
+    code.
+      <b>#{'<!doctype html>'}</b>
+      #{'<html>'}
+      ...
+      #{'</html>'}
+
+section
+  h2 XHTML is a bad idea
+
+  ul
+    li <b>Internet Explorer</b> doesn't support XHTML
+    li There is no <b>error handling</b>
+    li The <b>JavaScript code</b> must be inside a CDATA block
+    li The <b>entities</b> (&amp;amp;) must be escaped
+    li In general, there is <b>no advantage in XHTML</b>
+
+section
+  h2 XHTML vs HTML
+
+  ul.read-block
+    li <b>Case sensitive</b>
+    li <b>Void entities:</b> img, br, hr
+    li <b>Unexpected end tags:</b> #{'</br> </p>'}
+    li <b>Unescaped & and &lt;</b>
+    li <b>CDATA elements</b>: script and style
+
+section
+  h2 XHTML vs HTML (II)
+  .row-fluid
+    .span6
+      p <b>XHTML</b>
+      pre
+        code.
+          #{'<p>Hello</p>'}
+          #{'<p>world</p>'}
+          #{'<img src="hello?foo=1&amp;amp;bar=2"/>'}
+          #{'<script type="text/javascript">'}
+          #{'<![CDATA['}
+          ... unescaped script content ...
+          ]]>
+          #{'</script>'}
+    .span6
+      p <b>HTML</b>
+      pre
+        code.
+          #{'<p>'}Hello
+          #{'<p>'}world
+          #{'<IMG src="hello?foo=1&bar=2">'}
+          #{'<script>'}
+          ... unescaped script content ...
+          #{'</script>'}
+
+section
+  h2 XHTML headers
+
+  p The browser considers HTML unless the server sends the header
+
+  p <b>Content-Type: application/xhtml+xml</b>
+
+  pre
+    code.
+      #{'<?xml version="1.0" encoding="UTF-8"?>'}
+      #{'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'}
+      #{'<html xmlns="http://www.w3.org/1999/xhtml">'}
+      ...
+      #{'</html>'}
+
+section
+  h2 HTTP headers
+  pre
+    code GET /index.html HTTP/1.0
+  //- Images from Wikimedia Commons:
+  //- http://commons.wikimedia.org/wiki/File:Computer.svg
+  //- http://commons.wikimedia.org/wiki/File:Network-server.svg
+  img(src="assets/svg/http-headers.svg", width="600")
+  pre
+    code.
+      HTTP/1.0 200 OK
+      Date: Mon, 10 Sep 2012 09:11:36 GMT
+      Content-Type: text/html; charset=utf-8
+      Content-Length: 1354
+
+      #{'<html>'}
+      #{'<body>'}
+      ...
+      #{'</body>'}
+      #{'</html>'}

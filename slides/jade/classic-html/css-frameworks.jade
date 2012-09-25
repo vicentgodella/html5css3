@@ -1,0 +1,119 @@
+section
+  h2 CSS frameworks
+  ul
+    li 960gs
+    li YAML
+    li OO-CSS
+    li YUI-grid
+
+section
+  h2 960 Grid System
+
+section
+  h2 Twitter Bootstrap
+
+  p 12 column grid
+  p Fluid is optional
+  p Responsive
+  #ex-bootstrap
+    .row-fluid.
+      <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div>
+    .row-fluid
+      .span4.grid-block 4
+      .span4.grid-block 4
+      .span4.grid-block 4
+    .row-fluid
+      .span4.grid-block 4
+      .span8.grid-block 8
+    .row-fluid
+      .span6.grid-block 6
+      .span6.grid-block 6
+    .row-fluid
+      .span12.grid-block 12
+
+section
+  h2 Example
+
+  pre
+    code.
+      #{'<div class="row">'}
+        #{'<div class="span2">Fee</div>'}
+        #{'<div class="span2">Fi</div>'}
+        #{'<div class="span2">Fo</div>'}
+        #{'<div class="span3 offset3">Fum!!</div>'}
+      #{'</div>'}
+      #{'<div class="row">'}
+          #{'<div class="span4">This is a column</div>'}
+          #{'<div class="span7">This is a larger column</div>'}
+      #{'</div>'}
+  #ex-bootstrap-grid
+    .row-fluid
+      .span2.grid-block Fee
+      .span2.grid-block Fi
+      .span2.grid-block Fo
+      .span3.offset3.grid-block Fum!!
+    .row-fluid
+      .span4.grid-block This is a column
+      .span7.grid-block This is a larger column
+
+section(data-state="lab")
+  h2 Lab: Bootstrap 1
+  p Build a layout with Bootstrap
+
+section
+  h2 Bootstrap toolkit
+  p Base CSS
+  iframe(src="assets/html/bootstrap-base-css.html", width="1000", height="600", style="margin-top: 20px;")
+
+section
+  h2 Bootstrap toolkit
+  p Reusable components
+  iframe(src="assets/html/bootstrap-reusable-components.html", width="1000", height="600", style="margin-top: 20px;")
+
+section
+  section
+    h2 Bootstrap toolkit
+    p Navigation bar
+    iframe(src="assets/html/bootstrap-navigation-bar.html", width="1000", height="300", style="margin-top: 20px;")
+  section
+    h2 Bootstrap toolkit
+    p Navigation bar
+    iframe(src="assets/html/bootstrap-navigation-bar-collapsed.html", width="500", height="600", style="margin-top: 20px;")
+
+section
+  h2 Bootstrap toolkit
+  p Navigation components
+  iframe(src="assets/html/bootstrap-navigation-components.html", width="1000", height="600", style="margin-top: 20px;")
+
+section
+  h2 Bootstrap JS plugins
+  p Markup API
+  iframe(src="assets/html/bootstrap-js-plugins.html", width="1000", height="600", style="margin-top: 20px;")
+
+section
+  h2 Customization
+  .row-fluid
+    .span5
+      p Themes
+      ul
+        li
+          a(href="http://bootswatch.com") Bootswatch
+        li
+          a(href="http://wrapbootstrap.com") WrapBootstrap
+    .span7
+      p LESS library
+      pre
+        code.
+          @baseFontSize: 13px;
+
+          @tableBorder: #ddd;
+
+          @inputBorderRadius: 3px;
+
+          @gridColumns: 12;
+
+            ...
+
+section(data-state="lab")
+  h2 Lab: Bootstrap 2
+  p Experiment with the Bootstrap components

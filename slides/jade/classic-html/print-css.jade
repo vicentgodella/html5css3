@@ -1,0 +1,77 @@
+section
+  h2 print CSS
+  p Media-specific stylesheet
+
+  pre
+    code.
+      #{'<link rel="stylesheet" href="print.css" media="print" />'}
+
+section
+  h2 Whitewashed backgrounds
+  p.read-block All background colors and images are <b>removed</b>
+  p.read-block <b>Not all browsers are configured with the defaults</b>. You should set your backgrounds to white anyway.
+  p.read-block Borders, images and font colors still apply.
+
+section
+  h2 Fonts for printing
+  p.read-block <b>font-size: 12pt</b> is usually fine for printing
+  p.read-block <b>Choose serif / sans serif</b>
+  p.read-block <b>Underline links</b>
+  p.read-block <b>Modify font color</b> for best contrast with white background
+
+section
+  h2 A note about color-blind users
+  p.read-block <b>1 in 12</b> people have some sort of color deficiency
+  p.read-block <b>Underlining links</b> on screen is usually considered good practice
+
+section
+  h2 Print link target
+
+  pre
+    code.
+      p a:after {
+        content: " ("attr(href)") ";
+        font-size: 10pt;
+      }
+
+      p a[href^="/"]:after {
+        content: " (http://myhost.com" attr(href) ") ";
+      }
+
+  #ex-print-link
+    style
+      #ex-print-link .print {
+        text-decoration: underline;
+      }
+      #ex-print-link .print:after {
+        content: " ("attr(href)") ";
+        font-size: 10pt;
+      }
+    .row-fluid.small-text
+      .span4.offset1 Go visit <a href="http://instructormatters.com">external link</a>
+      .span4.offset2 Go visit <a href="http://instructormatters.com" class="print" >external link</a>
+
+section
+  h2 QR code
+  p Matrix barcode readable by camera phones.
+  img(src="assets/svg/qr.svg", width="400")
+
+section
+  h2 page-break-before
+  p page-break-before
+
+  pre
+    code.
+      #comments {
+        page-break-before: always;
+      }
+
+section
+  h2 How to test
+  p.read-block Temporarily <b>remove the "media" attribute</b>
+  p.read-block Use <b>print preview</b>
+  p.read-block <b>Print to PDF</b>
+
+section(data-state="lab")
+  h2 Lab: print CSS
+  p Create a print stylesheet

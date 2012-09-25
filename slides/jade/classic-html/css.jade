@@ -1,0 +1,963 @@
+section
+  h2 Cascading Style Sheets
+
+  ul
+    li <b>CSS1</b>
+      ul
+        li Recommendation: 1996
+    li <b>CSS2</b>
+      ul
+        li First draft: 1997
+        li Recommendation: 2000
+    li <b>CSS3</b>
+      ul
+        li Started in 1998 as a list of CSS extensions, and still under development.
+
+//- section
+//-   h2 CSS Zen Garden
+//-   p Separation between presentation and content
+
+section#css-insertion
+  h2 CSS insertion
+
+  .valign-table
+    .valign-row
+      .valign
+        p External CSS
+      .valign
+        pre
+          code.
+            #{'<head>'}
+              <b>#{'<link rel="stylesheet" href="style.css">'}</b>
+            #{'</head>'}
+    .valign-row
+      .valign
+        p Internal CSS
+      .valign
+        pre
+          code.
+            #{'<head>'}
+              <b>
+              #{'<style type="text/css">'}
+                .tab {
+                  display: block !important;
+                }
+              #{'</style>'}
+              </b>
+            #{'</head>'}
+    .valign-row
+      .valign
+        p Inline CSS
+      .valign
+        pre
+          code.
+            #{'<body>'}
+              &lt;div <b>style="width: 20px; height: 10px"</b>>
+                Hello world!
+              #{'</div>'}
+            #{'</body>'}
+
+section
+  h2 Indenting
+  .row-fluid
+    .span6
+      p <b>Classic</b>
+      pre
+        code.
+          a {
+            color: #ccc;
+          }
+
+          p, div, .foo .bar {
+            width: 10px;
+            height: 5px;
+          }
+    .span6
+      p <b>Compact</b>
+      pre
+        code.
+          a { color: #ccc; }
+
+          p,
+          div,
+          .foo .bar {  width: 10px; height: 5px; }
+
+section
+  h2 CSS Selector
+  img(src="assets/svg/css-selector.svg", width="600")
+
+section
+  h2 Common selectors
+  .row-fluid
+    .span6
+      p CSS
+      pre
+        code.
+          div {
+            width: 10px;
+          }
+          #foo {
+            color: fff;
+          }
+          .baz {
+            width: 15px;
+          }
+          .bar .baz {
+            width: 30px;
+          }
+    .span6
+      p HTML
+      pre
+        code.no-highlight.
+          &lt;p <b style="color: #CC9393;">id="foo"</b>>
+            White text
+          #{'</p>'}
+
+          &lt;div <b style="color: #CC9393;">class="bar"</b>>
+            &lt;div <b style="color: #CC9393;">class="baz"</b>>
+              Hello world!
+            #{'</div>'}
+          #{'</div>'}
+
+section
+  h2 Not so common selectors
+
+  p Supported by <b>IE 7+</b>
+
+  .row-fluid
+    .span6
+      pre
+        code.
+          input[type="text"] {
+            background: #eee;
+          }
+
+          .bar.baz {
+            color: #000;
+          }
+
+          li:not(.wide) {
+            width: 300px;
+          }
+    .span6
+      pre
+        code.
+          ul.data > li {
+            border: 1px solid #ccc;
+          }
+
+          h2 + p {
+            font-size: 18px;
+          }
+
+section
+  h2 Child and sibling selector
+
+  .row-fluid
+    .span6 CSS
+      pre
+        code.
+          ul.data > li {
+            border: 1px solid #ccc;
+          }
+
+          h2 + p {
+            font-size: 18px;
+          }
+    .span6 HTML
+      pre
+        code.
+          #{'<ul class="data">'}
+            #{'<li> <!-- match -->'}
+            My friends:
+            #{'<ul>'}
+              #{'<li>Bob</li> <!-- not match -->'}
+              #{'<li>Kate</li> <!-- not match -->'}
+            #{'<ul>'}
+            #{'<li>'}
+          #{'</ul>'}
+
+          #{'<h2>Title</h2>'}
+          #{'<p> <!-- match -->'}
+            Lorem ipsum goes here
+          #{'</p>'}
+          #{'<p> <!-- not match -->'}
+            Another Lorem ipsum
+          #{'</p>'}
+
+section
+  h2 Types
+  style
+    #selector-types td {
+      text-align: left;
+    }
+  table.table#selector-types
+    tbody
+      tr
+        td(style="border-top: 0") By Id
+        td(style="border-top: 0") <b>#id</b> { display: block; }
+      tr
+        td By class
+        td <b>.vcard</b> { font-weight: bold; }
+      tr
+        td By tag
+        td <b>div</b> { border: 1px solid #fff; }
+
+      tr
+        td Universal
+        td <b>*</b> { line-height: 1.5 em; }
+
+      tr
+        td Child
+        td #toc <b>&gt;</b> li { border-top: 1px dotted #ccc; }
+
+      tr
+        td Descendant
+        td <b>.datatable td</b> { width: 100px; }
+
+      tr
+        td By attribute
+        td input<b>[type="text"]</b> { background: #fff; }
+
+      tr
+        td Adjacent sibling
+        td h1 <b>+</b> p { margin-top: 50px; }
+
+section
+  h2 Selector priority
+  style
+    #selector-priority {
+      width: 70%;
+    }
+    #selector-priority td {
+      border: none;
+      text-align: left;
+    }
+  div(style="position:relative;")
+    table.table#selector-priority
+      tbody
+        tr
+          td inline
+          td &lt;div <b>style="display: block;"</b>>#{'</div>'}
+        tr
+          td ID
+          td <b>#menu</b> { display: block; }
+        tr
+          td class
+          td <b>.myclass</b> { display: block; }
+        tr
+          td element
+          td <b>div</b> { display: block; }
+    img(src="assets/svg/priority.svg",
+      style="margin: 0;\
+            position: absolute;\
+            top: 0px;\
+            left: 0px;")
+
+section
+  h2 Priorities
+
+  pre
+    code #sidebar ul li a.myclass:hover { ... }
+
+  mixin priorities(0, 1, 2, 3)
+
+section
+  section
+    h2 Priorities
+
+    code .item { ... }
+    mixin priorities('', '', '', '')
+    code ul li li li li li li li li { ... }
+    mixin priorities('', '', '', '')
+
+  section
+    h2 Priorities
+
+    code .item { ... }
+    mixin priorities(0, 0, 1, 0)
+    code ul li li li li li li li li { ... }
+    mixin priorities(0, 0, 0, 9)
+
+section
+  h2 Box model
+  .row-fluid
+    ul.span4
+      li width, height
+      li padding
+      li border
+      li margin
+    .span8
+      img(src="assets/svg/box-model.svg", width="600")
+
+section
+  h2 Min and max
+
+  p min-width, min-height
+  p max-width, max-height
+
+section
+  h2 display
+
+  p display: <b>block | inline | inline-block | none</b>
+
+  .row-fluid
+    pre.span5
+      code.
+        p, div, h1 {
+          <b>display: block;</b>
+        }
+
+        a, span, strong, em {
+          <b>display: inline;</b>
+        }
+
+        .hide {
+          <b>display: none;</b>
+        }
+    .span7#display-example
+      style
+        #display-example a {
+          text-decoration: underline !important;
+        }
+        #display-example p, #display-example div {
+          font-size: 70%;
+          padding: 20px;          
+        }
+      p.read-block.display-example.
+        Cupcake ipsum dolor sit <b title="This is inline">amet</b> dessert jelly-o. Dragée icing croissant <a title="This is inline">jelly</a> powder. <em title="This is inline">Muffin</em> croissant macaroon pie marzipan lemon drops.
+      p.read-block.display-example.
+        Sugar plum jelly-o gingerbread <b title="This is inline">tiramisu</b> chocolate bar gummi <i title="This is inline">bears</i>. Jelly beans soufflé <a title="This is inline">cotton</a> candy chocolate cake danish icing.
+      p.hide.display-example.
+        You should not be seeing this.
+
+section
+  h2 display: block
+  .row-fluid
+    pre.span4
+      code.
+        #{'<div>A</div>'}
+        #{'<div>B</div>'}
+        #{'<div>C</div>'}
+    .span4.offset2
+      p.small-text 100% width
+      .display-example A
+      .display-example B
+      .display-example C
+
+
+section
+  h2 display: inline-block
+  pre
+    code.
+      div {
+        <b>display: inline-block;</b>
+      }
+  #display-inline-block-example
+    style
+      #display-inline-block-example div {
+        margin: 1%;
+        border: 2px black dashed;
+        font-size: 200%;
+        line-height: 150%;
+        width: 25%;
+        display: inline-block;
+      }
+    div A
+    div B
+    div C
+
+section
+  h2 Position
+  p position: <b>static | relative | absolute | fixed</b>
+
+section
+  h2 position: static
+  p The default
+  .row-fluid
+    pre.span4
+      code.
+        #{'<div>A</div>'}
+        #{'<div>B</div>'}
+        #{'<div>C</div>'}
+    .span4.offset2
+      .display-example A
+      .display-example B
+      .display-example C
+
+section
+  h2 position: relative
+  p Relative coords to its default position
+
+  .row-fluid
+    pre.span4
+      code.
+        #{'<div>A</div>'}
+        #{'<div style="'}
+          <b>
+          position: relative;
+          left: 15px;
+          top: 10px
+          </b>
+          ">
+          B
+        #{'</div>'}
+        #{'<div>C</div>'}
+    .span4.offset2#position-relative-example
+      style
+        #position-relative-example .displaced {
+          position: relative;
+          top: 15px;
+          left: 40px;
+        }
+      .display-example A
+      .display-example.displaced B
+      .display-example C
+
+section
+  h2 position: absolute
+  p Absolute position from the <b>first parent element that has a position other than static</b>
+
+  .row-fluid
+    pre.span4
+      code.
+        #{'<div>A</div>'}
+        #{'<div style="'}
+          <b>
+          position: absolute;
+          left: 15px;
+          top: 10px
+          </b>
+          ">
+          B
+        #{'</div>'}
+        #{'<div>C</div>'}
+    .span4.offset2#position-absolute-example
+      style
+        #position-absolute-example {
+          position: relative;
+        }
+        #position-absolute-example .displaced {
+          position: absolute;
+          top: 20px;
+          left: 30px;
+          background-color: rgba(200,200,200,0.5);
+        }
+      .display-example A
+      .display-example.displaced B
+      .display-example C
+
+section
+  h2 position: fixed
+  p Fixed position relative to window, unaware of scrolling canvas
+
+  .row-fluid
+    pre.span4
+      code.
+        #{'<div>A</div>'}
+        #{'<div style="'}
+          <b>
+          position: fixed;
+          right: 10px;
+          top: 10px
+          </b>
+          ">
+          B
+        #{'</div>'}
+        #{'<div>C</div>'}
+    .span4.offset2#position-fixed-example
+      style
+        #position-fixed-example .displaced {
+          position: fixed;
+          top: -100px;
+          left: -100px;
+          background-color: rgba(200,200,200,0.5);
+          width: 320px;
+        }
+      .display-example A
+      .display-example.displaced B
+      .display-example C
+
+section
+  h2 float
+  p <b>float: left | right | none</b>
+  p <b>clear: left | right | both</b>
+  p Takes the element out of the box model
+
+section
+  section
+    h2 float: none
+    p No float
+    pre
+      code.
+        #{'<div>A</div>'}
+        #{'<div>B</div>'}
+        #{'<div>C</div>'}
+    #float-left-example-1
+      .row-fluid
+        .span4.offset4
+          .display-example A
+      .row-fluid
+        .span4.offset4
+          .display-example B
+      .row-fluid
+        .span4.offset4
+          .display-example C
+  section
+    h2 float: left
+    p Float left
+    pre
+      code.
+        #{'<div style="float: left">A</div>'}
+        #{'<div>B</div>'}
+        #{'<div>C</div>'}
+    style
+      #float-left-example-2 .floated {
+        float: left;
+        width: 100px;
+        background-color: rgba(200,200,200,0.5);
+      }
+    #float-left-example-2.row-fluid
+      .span6
+        .display-example.floated A
+        .display-example B
+        .display-example C
+      .span6
+        .display-example.floated(style="height: 200px;") A
+        .display-example B
+        .display-example C
+  section
+    h2 float: left
+    p Float and clear
+    pre
+      code.
+        #{'<div style="float: left">A</div>'}
+        #{'<div>B</div>'}
+        #{'<div style="clear: left">C</div>'}
+    style
+      #float-left-example-3 .floated {
+        float: left;
+        width: 100px;
+        background-color: rgba(200,200,200,0.5);
+      }
+    #float-left-example-3.row-fluid
+      .span6
+        .display-example.floated A
+        .display-example B
+        .display-example(style="clear:left") C
+      .span6
+        .display-example.floated(style="height: 200px;") A
+        .display-example B
+        .display-example(style="clear:left") C
+
+section
+  h2 Float and clear
+  #float-clear-example
+    style
+      #float-clear-example div {
+        font-size: 70%;
+        border-width: 4px;
+        border-style: solid;
+        width: 150px;
+        height: 150px;
+        margin: 5px;
+      }
+      #float-clear-example .fl, #float-clear-example .fl-cl {
+        float: left;
+      }
+      #float-clear-example .fl-cl {
+        clear: left;
+      }
+      #float-clear-example .no-float {
+        border: 4px solid black;
+        margin: 10px;
+        padding: 20px 20px 20px 180px;
+      }
+      #float-clear-example .fr {
+        float: right;
+      }
+      #float-clear-example .clear {
+        border: 4px solid black;
+        clear: both;
+        width: 100%;
+      }
+    .fl.red-bg.red-border float: left
+    .fl-cl.red-bg.red-border float: left <br> clear: left
+    p.small-text.read-block.no-float.
+      Stingfish, tapetail New Zealand sand diver pelican eel electric ray roanoke bass. Redhorse sucker; angler catfish kanyu, tiger barb butterfly ray. Silver driftfish snoek flagtail tenuis sweeper flashlight fish South American darter pelican eel dwarf gourami, zebrafish, "flat loach European minnow."
+    .fr.blue-bg.blue-border float: right
+    .clear clear: both
+section
+  h2 Overflow
+  p overflow: <b>visible | hidden | auto</b>
+  style
+    #ex-overflow .row-fluid:nth-child(2) .span4 {
+      font-size: 50%;
+      line-height: 120%;
+      height: 150px;
+    }
+
+  #ex-overflow
+    .row-fluid.small-text
+      .span4 <b>overflow: visible</b>
+      .span4 <b>overflow: hidden</b>
+      .span4 <b>overflow: auto</b>
+    .row-fluid
+      .span4.
+        anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+      .span4(style="overflow: hidden;").
+          anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+      .span4(style="overflow: auto;").
+        anaerobic top-fermenting yeast rims! conditioning bright beer sparge terminal gravity ale noble hops pitching aroma hops anaerobic. yeast malt extract scotch ale hop back krug final gravity; sour/acidic saccharification. trappist krausen, hoppy adjunct: primary fermentation cold filter reinheitsgebot noble hops alpha acid. dry stout, " dunkle, ipa copper mouthfeel pitch hydrometer malt.
+
+section
+  h2 Overflow with floats
+  p overflow: hidden
+
+  #overflow-float-example
+    style
+      #overflow-float-example .column {
+        width: 44%;
+        padding: 20px;
+        border: 2px dashed black;
+        box-sizing: border-box;
+      }
+    .column(style="float: right;")
+      div(style="width: 28%;\
+                  height: 300px;\
+                  float: left;").red-bg
+      div(style="height: 200px;\
+                  width: 68%;\
+                  float: right;").blue-bg
+    .column
+      div(style="width: 28%;\
+                  height: 300px;\
+                  float: left;").red-bg
+      div(style="height: 200px;\
+                  width: 68%;\
+                  float: right;").blue-bg
+
+section
+  h2 Shorcuts: font
+  p font: <b>{font-style} {font-variant} {font-weight} {font-size/line-height} {font-family}</b>
+
+  pre
+    code.
+      p {
+        font: italic bold 0.9em/1.5em verdana, serif;
+      }
+
+section
+  h2 Shortcuts: border
+  p border: <b>{border-width} {border-style} {border-color}</b>
+
+  pre
+    code.
+      p {
+        border: 1px solid #0f0f0f;
+      }
+
+section
+  h2 Color notation examples
+  p.read-block #f02
+  p.read-block #ff0022
+  p.read-block rgb(128, 15, 26)
+
+section
+  h2 Shortcuts: margin y padding
+  p margin and padding:
+  p <b>{all}</b>
+  p <b>{top / bottom} {left / right}</b>
+  p <b>{top} {right} {bottom} {left}</b>
+  pre
+    code.
+      .foo {
+        margin: 4px 2px;
+        padding: 5px 3px 0 0;
+      }
+
+      .bar {
+        margin: 0 auto;
+        padding: 5px;
+      }
+
+section
+  h2 Centering
+  p Horizontal centering
+  .row-fluid
+    .span6
+      p <b>Block element</b>
+      pre
+        code.
+          .centered_block {
+            width: <b>(anything but auto)</b>
+            margin: 0 auto;
+          }
+    .span6
+      p <b>Inline element</b>
+      pre
+        code.
+          .parent {
+            text-align: center;
+          }
+
+          .children {
+            display: <b>(inline|inline-block)</b>
+          }
+
+section
+  h2 Centering
+  p Vertical centering
+  .row-fluid
+    .span6
+      p <b>Inline elements</b>
+      pre
+        code.
+          .inline_element {
+            line-height: <b>(parent height)</b>
+          }
+    .span6
+      p <b>Inline elements inside inline elements</b>
+      pre
+        code.
+          .inline_inside_inline {
+            vertical-align: <b>middle</b>;
+          }
+
+section
+  h2 Centering
+  p Vertical positioning
+
+  pre
+    code.
+      .parent {
+        position: relative;
+      }
+
+      .child {
+        position: absolute;
+        top: 50%;
+        margin-top: <b>-(element height)/2</b>;
+      }
+
+section
+  h2 Shortcuts: background
+  p background: <b>{background-color}</b>
+  p <b>{background-image}</b>
+  p <b>{background-repeat}</b>
+  p <b>{background-position}</b>
+
+  pre
+    code.
+      .loading {
+         background: transparent url('loading.gif') no-repeat 50% 50%;
+      }
+
+section
+  h2 Shortcuts: lists
+  p list-style: {list-style-type} {list-style-position} {list-style-image}
+
+  pre
+    code.
+      li {
+        list-style: disc outside;
+      }
+
+section
+  h2 Display and Visibility
+  .row-fluid
+    pre.span6
+      code.
+        #{'<div>A</div>'}
+        #{'<div style="display: none">B</div>'}
+        #{'<div>C</div>'}
+    pre.span6
+      code.
+        #{'<div>A</div>'}
+        #{'<div style="visibility: hidden">B</div>'}
+        #{'<div>C</div>'}
+  .row-fluid#display-visibility-example
+    .span6
+      .block A
+      .block(style="display: none;") B
+      .block C
+
+    .span6
+      .block A
+      .block(style="visibility: hidden;") B
+      .block C
+    style
+      #display-visibility-example .block {
+        margin: 20px;
+        border: 2px black dashed;
+        font-size: 200%;
+        line-height: 150%;
+      }
+
+section
+  h2 Link pseudo-classes
+  p <b>:link</b>, <b>:hover</b>, <b>:active</b>, <b>:visited</b>, <b>:focus</b>
+
+  pre
+    code.
+      a {
+        text-decoration: none;
+      }
+
+      a, a<b>:hover</b>, a<b>:active</b>, a<b>:visited</b>, a<b>:focus</b> {
+         color: #f00;
+      }
+
+      a<b>:hover</b> {
+        text-decoration: underline;
+      }
+
+section
+  h2 first-child, last-child
+  p <b>:first-child</b>   IE7+
+  p <b>:last-child</b>    IE8+
+
+  pre
+    code.
+      ul.data li {
+        border-top: 1px dotted #ccc;
+      }
+
+      ul.data li<b>:first-child</b> {
+         border-top: none;
+      }
+  #ex-first-child
+    style
+      #ex-first-child li {
+        border-top: 2px dotted #06336F;
+      }
+      #ex-first-child li:first-child {
+        border-top: none;
+      }
+    ul.read-block
+      li item 1
+      li item 2
+      li item 3
+
+section
+  h2 nth-child
+  p nth-child<b>(even | odd | {formula})</b>
+
+  pre
+    code.
+      ul.data li {
+        background: #aaa;
+      }
+
+      ul.data li<b>:nth-child(even)</b> {
+         background: #ccc;
+      }
+  #ex-nth-child
+    style
+      #ex-nth-child li:nth-child(even) {
+        background-color: #ccc;
+      }
+    ul.read-block
+      li item 1
+      li item 2
+      li item 3
+
+section
+  h2 nth-child formula
+
+  pre
+    code.
+      ul.data li {
+        float: left;
+        height: 100px;
+      }
+
+      ul.data li:nth-child(3n + 1) {
+         clear: left;
+      }
+  #ex-nth-child-formula
+    style
+      #ex-nth-child-formula ul {
+        list-style: none;
+      }
+      #ex-nth-child-formula li {
+        float: left;
+        padding: 10px;
+        margin: 8px;
+        border-radius: 5px;
+        border: 2px solid black;
+      }
+      #ex-nth-child-formula li:nth-child(3n+1) {
+        clear: left;
+        border-color: red;
+      }
+    ul
+      li item 1
+      li item 2
+      li item 3
+      li item 4
+      li item 5
+      li item 6
+section
+  h2 Pseudo-elements
+  p <b>:after, :before, :first-letter, :first-line</b>
+
+  pre
+    code.
+      a<b>:after</b> {
+        content: " (mydomain.com" attr(href) ")";
+      }
+
+      .clearfix<b>:after</b> {
+              content: ".";
+              display: block;
+              clear: both;
+              height: 0;
+              visibility: hidden;
+      }
+
+section
+  h2 Font degradation
+  p Font list to be used when available, from most to less preferred
+
+  pre
+    code.
+      body {
+        font: 13px/1.5 'Helvetica Neue', Arial, FreeSans, sans-serif;
+      }
+
+section
+  h2 Serif vs Sans Serif
+
+  p Best readable results
+  table.table
+    thead
+      tr
+        th screen
+        th print
+        th code
+    tbody
+      tr
+        td sans serif
+        td serif
+        td monospace
+      tr(style="font-size: 130%;")
+        td Lorem ipsum
+        td(style="font-family: serif") Lorem ipsum
+        td(style="font-family: monospace") Lorem ipsum
+
+section
+  h2 Web-safe fonts
+
+section
+  h2 Browser zoom
+  p Ctrl +, Ctrl -, Ctrl 0
+
+section
+  h2 Pixel vs Percentage
+  ul
+    li YUI fonts default:
+    ul
+      li font: 13px
+      li line-height:16px
+    li Not needed anymore.
