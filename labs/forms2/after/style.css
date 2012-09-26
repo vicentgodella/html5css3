@@ -33,3 +33,8 @@ form#data input[type=submit] {
 	-moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
 	box-shadow: 0 0 5px rgba(255, 0, 0, .8);
 }
+::-webkit-validation-bubble-message {
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
