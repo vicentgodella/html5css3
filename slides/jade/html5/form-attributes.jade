@@ -12,7 +12,7 @@ section
     form
       fieldset
         label Required field
-        input(type="text", required, contenteditable)
+        input(type="text", required)
       button(type="submit") Submit
 
 section
@@ -25,7 +25,7 @@ section
     form
       fieldset
         label Search
-        input(type="search", contenteditable
+        input(type="search",
         placeholder="Search Bookmarks and History", style="width: 60%;")
       button(type="submit") Submit
 
@@ -41,7 +41,7 @@ section
     form
       fieldset
         label This input does <b>not</b> get the focus
-        input(type="search", contenteditable)
+        input(type="search")
       button(type="submit") Submit
 
 section
@@ -54,7 +54,7 @@ section
     form
       fieldset
         label 3 letter and 3 numbers
-        input(type="text", contenteditable, 
+        input(type="text", 
         pattern="[a-z]{3}[0-9]{3}", placeholder="E.g. cye850")
       button(type="submit") Submit
 
@@ -69,7 +69,7 @@ section
     form
       fieldset
         label Select an even number
-        input(required, type="number", value="0", min="0", max="100", step="2", contenteditable)
+        input(required, type="number", value="0", min="0", max="100", step="2")
       button(type="submit") Submit
 
 section
@@ -144,7 +144,7 @@ section
     code.
       #{'<textarea name="comments" maxlength="100" spellcheck="true">'}
   #ex-textarea-attributes
-    textarea(maxlength=100, spellcheck="true", contenteditable)
+    textarea(maxlength=100, spellcheck="true")
 
 //- section
 //-   h2 Client-side validation
@@ -188,9 +188,9 @@ section
       form
         fieldset
           label Required field
-          input(type="text", required, contenteditable)
+          input(type="text", required)
           label Non-required field
-          input(type="text", contenteditable)
+          input(type="text")
         button(type="submit") Submit
   
   section
@@ -220,7 +220,7 @@ section
       form
         fieldset
           label Email
-          input(type="email", contenteditable)
+          input(type="email")
         button(type="submit") Submit
   
   section
@@ -240,7 +240,7 @@ section
       form
         fieldset
           label Tickets (max. 10)
-          input(type="number", min="1", max="10", contenteditable)
+          input(type="number", min="1", max="10")
         button(type="submit") Submit
 
 section
@@ -261,7 +261,7 @@ section
     form
       fieldset
         label Email
-        input(type="email", required, contenteditable)
+        input(type="email", required)
       button(type="submit") Submit
       button(type="submit", formnovalidate) Save
 

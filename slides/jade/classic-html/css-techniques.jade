@@ -150,7 +150,7 @@ section
       div(style="background: url(assets/svg/top-border.svg); height: 20px; width: 300px;\
                   margin: 0 auto;")
       div(style="width: 300px; height: 100px;\
-                  margin: 0 auto;").orange-bg
+                  margin: 0 auto;").yellow-bg
       div(style="background: url(assets/svg/bottom-border.svg); height: 20px; width: 300px;\
                   margin: 0 auto;")
 
@@ -206,70 +206,50 @@ section
   h2 CSS triangles
   #css-triangles-explanation
     style
-      #css-triangles-explanation .blocks {
-        margin-top: 50px;
-      }
-      #css-triangles-explanation .blocks .span2 {
-        position: relative;
-        height: 120px;
-      }
       #css-triangles-explanation .block {
-        position: absolute;
-        bottom: 0;
         margin: 0 auto;
         width: 100px;
         height: 100px;
 
-        border: 20px solid #EB6941;
-        border-bottom-color: #0096AF;
+        border: 20px solid !{ourRed.hex};
+        border-bottom-color: !{ourBlue.hex};
       }
-      #css-triangles-explanation .labels {
-        margin-top: 40px;
-      }
-      #css-triangles-explanation .labels .span2 {
+      #css-triangles-explanation .blocks small {
         font-size: 50%;
         line-height: 150%;
+        margin-top: 15px;
+        display: block;
       }
       #css-triangles-explanation .block-2 {
         border-top-width: 0;
+        margin-top: 20px;
       }
       #css-triangles-explanation .block-3 {
         border-top-width: 0;
         width: 0;
-        left: 50px;
       }
       #css-triangles-explanation .block-4 {
-        border-top-width: 0;
-        width: 0;
-        left: 50px;
         height: 0;
+        margin-top: 100px;
       }
       #css-triangles-explanation .block-5 {
-        border-top-width: 0;
-        width: 0;
-        left: 50px;
-        height: 0;
         border-right-color: transparent;
         border-left-color: transparent;
         background-color: transparent;
       }
     .row-fluid.blocks
-      .span2.offset1
+      .span3.offset3
         .block
-      .span2
+      .span3
         .block.block-2
-      .span2
+        small border-top-color: transparent
+    .row-fluid.blocks
+      .span4
         .block.block-3
-      .span2
-        .block.block-4
-      .span2
-        .block.block-5
-    .row-fluid.labels
-      .span2.offset1
-      .span2 border-top-color: transparent
-      .span2 width 0
-      .span2 height 0
-      .span2 transparent left/right borders
-
-//- section(data-state="lab")
-//-   h2 Chrome console
+        small width 0
+      .span4
+        .block.block-3.block-4
+        small height 0
+      .span4
+        .block.block-3.block-4.block-5
+        small transparent left/right borders

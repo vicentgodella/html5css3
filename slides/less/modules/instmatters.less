@@ -24,53 +24,33 @@ ul.read-block {
 
 //Colors
 
-.blue-text {
-  color: @ourBlue;
-}
-.brown-text {
-  color: @ourBrown;
-}
-.red-text {
-  color: @ourRed;
-}
-.orange-text {
-  color: @ourOrange;
-}
-.yellow-text {
-  color: @ourYellow;
-}
+.blue-text { color: @blue; }
+.bluedark-text { color: @blueDark; }
+.red-text { color: @red; }
+.orange-text { color: @orange; }
+.yellow-text { color: @yellow; }
+.green-text { color: @green; }
+.pink-text { color: @pink; }
+.purple-text { color: @purple; }
 
-.blue-bg {
-  background-color: @ourBlue;
-}
-.brown-bg {
-  background-color: @ourBrown;
-}
-.red-bg {
-  background-color: @ourRed;
-}
-.orange-bg {
-  background-color: @ourOrange;
-}
-.yellow-bg {
-  background-color: @ourYellow;
-}
+.blue-bg { background-color: @blue; }
+.bluedark-bg { background-color: @blueDark; }
+.red-bg { background-color: @red; }
+.orange-bg { background-color: @orange; }
+.yellow-bg { background-color: @yellow; }
+.green-bg { background-color: @green; }
+.pink-bg { background-color: @pink; }
+.purple-bg { background-color: @purple; }
 
-.blue-border {
-  border-color: darken(@ourBlue, 20%);
-}
-.brown-border {
-  border-color: darken(@ourBrown, 20%);
-}
-.red-border {
-  border-color: darken(@ourRed, 20%);
-}
-.orange-border {
-  border-color: darken(@ourOrange, 20%);
-}
-.yellow-border {
-  border-color: darken(@ourYellow, 20%);
-}
+.blue-border { border-color: darken(@blue, 20%); }
+.bluedark-border { border-color: darken(@blueDark, 20%); }
+.red-border { border-color: darken(@red, 20%); }
+.orange-border { border-color: darken(@orange, 20%); }
+.yellow-border { border-color: darken(@yellow, 20%); }
+.green-border { border-color: darken(@green, 20%); }
+.pink-border { border-color: darken(@pink, 20%); }
+.purple-border { border-color: darken(@purple, 20%); }
+
 
 //Lab slide
 .lab {
@@ -175,7 +155,7 @@ ul.read-block {
   font-size: 50%;
 }
 
-//Priorities mixin
+//priorities mixin
 
 .priorities {
   display: table;
@@ -210,6 +190,46 @@ ul.read-block {
   font-size: 60%;
 }
 
+//Viewport examples
+.viewport-example, .viewport-mobile-example {
+  padding: 20px;
+  background: @grayLight;
+  border: 5px solid @grayDark;
+  width: 60%;
+  .center();
+  position: relative;
+
+  .ipsum {
+    color: black;
+  }
+  p.ipsum {
+    font-size: 50%;
+  }
+  .picture {
+    height: 100px;
+  }
+  .visible-viewport {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    height: 90%;
+    width: 30%;
+    border: 6px solid black;
+  }
+}
+
+.viewport-mobile-example {
+  width: 100%;
+
+  .ipsum {
+    font-size: 60%;
+  }
+
+  p.ipsum {
+    font-size: 40%;
+  }
+}
+
 //Wufoo.com browser support table
 .reveal .wufoo-support-table {
   td, th {
@@ -219,7 +239,7 @@ ul.read-block {
   .browser {
     width: 50px;
     height: 50px;
-    background: url(assets/raster/browsers.png) no-repeat 0 0;
+    background: url(../raster/browsers.png) no-repeat 0 0;
     margin: 0 auto;
   }
   .yup {

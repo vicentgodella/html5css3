@@ -17,7 +17,7 @@ section
     form
       fieldset
         label E-mail
-        input(type="email", contenteditable)
+        input(type="email")
       button(type="submit") Submit
   iframe(src="assets/html/email-keypad.html", width="500", height="300")
 
@@ -31,7 +31,7 @@ section
     form
       fieldset
         label Url
-        input(type="url", contenteditable)
+        input(type="url")
       button(type="submit") Submit
   iframe(src="assets/html/url-keypad.html", width="500", height="300")
 
@@ -45,7 +45,7 @@ section
     form
       fieldset
         label Number
-        input(type="number", contenteditable)
+        input(type="number")
       button(type="submit") Submit
   iframe(src="assets/html/number-keypad.html", width="500", height="300")
 
@@ -59,7 +59,7 @@ section
     form
       fieldset
         label Range
-        input(type="range", min="0", max="50", value="10", contenteditable)
+        input(type="range", min="0", max="50", value="10")
       button(type="submit") Submit
 
 section
@@ -72,7 +72,7 @@ section
     form
       fieldset
         label Search
-        input(type="search", contenteditable).search-query
+        input(type="search").search-query
       button(type="submit") Submit
 
 section
@@ -85,7 +85,7 @@ section
     form
       fieldset
         label Telephone
-        input(type="tel", contenteditable)
+        input(type="tel")
       button(type="submit") Submit
   iframe(src="assets/html/number-keypad.html", width="500", height="300")
 
@@ -101,7 +101,7 @@ section
     form
       fieldset
         label Date
-        input(type="date", min="2012-09-05", max="2012-09-21", contenteditable)
+        input(type="date", min="2012-09-05", max="2012-09-21")
       button(type="submit") Submit
 
 section
@@ -114,7 +114,7 @@ section
     form
       fieldset
         label Select files
-        input(type="file", contenteditable, multiple="multiple")
+        input(type="file", multiple="multiple")
       button(type="submit") Submit
 
 section
@@ -127,7 +127,7 @@ section
     form
       fieldset
         label Color
-        input(type="color", contenteditable)
+        input(type="color")
       button(type="submit") Submit
 
 section
@@ -145,7 +145,7 @@ section
     form
       fieldset
         label Click for the options
-        input(type="text", contenteditable, list="mydata")
+        input(type="text", list="mydata")
       datalist#mydata
         option(label="Mr", value="Mister")
         option(label="Mrs", value="Mistress")

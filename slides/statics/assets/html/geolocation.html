@@ -24,6 +24,7 @@
           map.setCenter(position, zoom );
         }, function () {
           var position       = new OpenLayers.LonLat(-3.701362,40.415272).transform( fromProjection, toProjection);
+          console.log('No geolocation! Taking you to Plaza del Sol, Madrid')
 
           map.setCenter(position, zoom );
         }, {timeout: 10000});
