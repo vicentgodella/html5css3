@@ -232,27 +232,44 @@ section
     #selector-priority td {
       border: none;
       text-align: left;
+      vertical-align: middle;
     }
-  div(style="position:relative;")
+    #selector-priority .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+      line-height: 58px;
+      font-size: 40px;
+    }
+    #selector-priority .arrow {
+      height: 0;
+      width: 0;
+      border: 15px solid transparent;
+      margin: auto 10px;
+      border-top: 20px solid black;
+      border-bottom: none;
+    }
+  div
     table.table#selector-priority
       tbody
         tr
+          td <div class="circle green-bg">+</div>
           td inline
           td &lt;div <b>style="display: block;"</b>>#{'</div>'}
         tr
+          td <div class="arrow"></div>
           td ID
           td <b>#menu</b> { display: block; }
         tr
+          td <div class="arrow"></div>
           td class
           td <b>.myclass</b> { display: block; }
         tr
+          td <div class="circle red-bg">&minus;</div>
           td element
           td <b>div</b> { display: block; }
-    img(src="assets/svg/priority.svg",
-      style="margin: 0;\
-            position: absolute;\
-            top: 0px;\
-            left: 0px;")
 
 section
   h2 Priorities
@@ -281,14 +298,31 @@ section
 
 section
   h2 Box model
-  .row-fluid
-    ul.span4
-      li width, height
-      li padding
-      li border
-      li margin
-    .span8
-      img(src="assets/svg/box-model.svg", width="600")
+  ul(style="float: left;")
+    li width, height
+    li padding
+    li border
+    li margin
+  #box-model-example
+    style
+      #box-model-example {
+        width: 60%;
+        height: 300px;
+        max-height: 40%;
+        float: right;
+      }
+      #box-model-example .box {
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+      }
+      #box-model-example .margin {
+        border: 2px dashed black;
+      }
+    .box.margin
+      .box.blue-bg
+        .box.bluedark-bg
+          .box.purple-bg
 
 section
   h2 Min and max
@@ -447,7 +481,7 @@ section
       .display-example.displaced B
       .display-example C
 
-section
+section#position-fixed
   h2 position: fixed
   p Fixed position relative to window, unaware of scrolling canvas
 
