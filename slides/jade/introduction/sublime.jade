@@ -1,0 +1,88 @@
+section
+  h2 Configurable keyboard shortcuts
+  p Get comfortable:
+  p Eclipse, Bean, TextMate 2, Vim...
+
+section
+  h2 Sublime keyboard shortcuts
+  ul
+    li Shift + Alt + W: Surround with tags
+  div
+    img(src="assets/raster/surround-with-tags.png")
+
+section
+  h2 Need more space?
+  p <b>Shift + Alt + [123458]</b>: Open side by side
+  p <b>Ctrl + K, Ctrl + B</b>: Toggle side bar
+  img(src="assets/raster/two-columns.png")
+
+section
+  h2 Block select
+  p Shift + Right-button drag
+  .row-fluid
+    .span6
+      img(src="assets/raster/block-select.png")
+    .span6
+      img(src="assets/raster/block-select-after.png")
+
+section
+  h2 Multiple cursors
+  p Ctrl + click
+  p Ctrl + double click
+  p Ctrl + click, then shift + click
+  p Select block, then Shift + Ctrl + L
+
+section
+  h2 Project files
+  pre
+    code.
+      { 
+        "folders":
+        [
+          {
+            "path": ".",
+            "folder_exclude_patterns": ["node_modules"]
+          }
+        ],
+        "settings":
+        {
+          "tab_size": 2,
+          "translate_tabs_to_spaces": true,
+          "word_wrap": "true"
+        }
+      }
+
+section
+  h2 Build system
+  pre
+    code.
+      "build_systems" : [
+        {
+          "name": "parse_slides",
+          "working_dir": "$project_path",
+          "cmd": ["bin/jade-build", "$file"],
+          "selector": "source.jade"
+        },
+        {
+          "name": "compile_LESS",
+          "working_dir": "$project_path",
+          "cmd": [
+            "node_modules/less/bin/lessc", "less/style.less", "generated/assets/css/style.css"
+          ],
+          "selector": "source.css.less"
+        }
+      ]
+
+section
+  h2 Snippets
+  pre
+    code.
+      <snippet>
+        &lt;content>&lt;![CDATA[
+        Hello, ${1:this} is a ${2:snippet}.
+        ]]>&lt;/content>
+          &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+          &lt;!-- &lt;tabTrigger>hello&lt;/tabTrigger> -->
+          &lt;!-- Optional: Set a scope to limit where the snippet will trigger -->
+          &lt;!-- &lt;scope>source.python&lt;/scope> -->
+        &lt;/snippet>

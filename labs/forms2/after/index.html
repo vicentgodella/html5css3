@@ -9,23 +9,35 @@
 <body>
 	<h1>Lab Forms 2</h1>
 	<p>Form using the new attributes</p>
-	<form id="searcher">
-		<input type="text" name="q" placeholder="Search text" id="searchbox" pattern="[\S]+" autofocus/>
-		<input type="submit" value="Search" />
-	</form>
 
-	<form id="data">
+	<form id="form1">
 		<p>Fields marked with <span class="required">*</span> are required:</p>
-		<label for="recipient">Recipient <sup>*</sup></label> <input type="text" name="recipient" required list="common-recipients" x-moz-errormessage="Introduce a valid recipient">
+		<label for="recipient">Recipient <sup>*</sup></label> 
+		<input type="text" name="recipient" list="common-recipients" 
+			x-moz-errormessage="Introduce a valid recipient" 
+			placeholder="Try with John or Jane Doe"
+			pattern="[^0-9]+" 
+			autofocus>
 		<datalist id="common-recipients">
 			<option value="John Doe">
 			<option value="Jane Doe">
 		</datalist>
-		<label for="amount">Amount <sup>*</sup></label> <input type="number" name="amount" min="0" max="1000000" step="0.01" required />
-		<label for="email">Confirmation e-mail</label> <input type="email" name="email" x-moz-errormessage="Introduce a valid e-mail address" />
-		<label for="phone">Phone (SMS confirmation)</label> <input type="tel" name="phone" />
-		<label for="periodicity">Periodicity (weeks)</label> <input type="range" name="periodicity" min="1" max="4" value="1" />
-		<label for="initdate">Init date <sup>*</sup></label> <input type="date" id="initdate" name="initdate" required x-moz-errormessage="Introduce init date" />
+
+		<label for="amount">Amount <sup>*</sup></label> 
+		<input type="number" name="amount" min="0" max="1000000" step="0.01" required />
+		
+		<label for="email">Confirmation e-mail</label> 
+		<input type="email" name="email" x-moz-errormessage="Introduce a valid e-mail address" />
+		
+		<label for="phone">Phone (SMS confirmation)</label> 
+		<input type="tel" name="phone" />
+		
+		<label for="periodicity">Periodicity (weeks)</label> 
+		<input type="range" name="periodicity" min="1" max="4" value="1" />
+		
+		<label for="initdate">Init date <sup>*</sup></label> 
+		<input type="date" name="initdate" required x-moz-errormessage="Introduce init date" /
+		>
 		<input type="submit" value="Send" />
 	</form>
 </body>
