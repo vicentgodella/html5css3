@@ -1,0 +1,295 @@
+section#less
+  h2 CSS preprocessors
+  p <b>LESS</b> syntax is a superset of CSS
+  .row-fluid
+    .span6.fragment
+      pre
+        code.no-highlight.
+          @redBlood: #dde0514;
+          @size: 300px;
+
+          .class {
+            background-color: @redBlood;
+            width: @size;
+          }
+    .span6.fragment
+      pre
+        code.
+          .class {
+            background-color: #dde0514;
+            width: 300px;
+          }
+
+section
+  h2 LESS
+  p How to (with node)
+
+  pre
+    code.
+      //Installing
+      npm install less
+  pre
+    code.
+      //Compile to CSS
+      lessc styles.less styles.css
+  //- pre
+  //-   code.
+  //-     //Client-side compiling
+
+  //-     #{'<link rel="stylesheet/less" type="text/css" href="styles.less">'}
+
+  //-     #{'<script src="less.js" type="text/javascript"></script>'}
+
+section
+  h2 Operations
+  .row-fluid
+    .span6
+      pre
+        code.no-highlight.
+          @color: #12B;
+          @moreRed: @color + #A00;
+
+          @length: 25em;
+          @shorter : @length / 2;
+
+          .component {
+            color: @moreRed;
+            width: @shorter;
+          }
+    .span6
+      pre
+        code.
+          .component {
+            color: #B2B;
+            width: 12.5em;
+          }
+section
+  h2 Functions
+  .row-fluid
+    .span6
+      pre
+        code.no-highlight.
+          @color1: #F00;
+          @color2: #0F0;
+
+          .block {
+            background: <b>mix(@color1, @color2)</b>;
+          }
+    .span6
+      pre
+        code.
+          .block {
+            background: #03fc00;
+          }
+  p.fragment mix, darken, lighten, fadein, fadeout,...
+
+section
+  h2 Mixins
+  .row-fluid
+    pre.span6
+      code.no-highlight.
+        .stuff {
+          background-color: #d41;
+          width: 520px;
+        }
+
+        #footer {
+          <b>.stuff</b>;
+          font-size: 50%;
+        }
+    pre.span6
+      code.
+        .stuff {
+          background-color: #d41;
+          width: 520px;
+        }
+
+        #footer {
+          background-color: #d41;
+          width: 520px;
+          font-size: 50%;
+        }
+
+section
+  section
+    h2 Parametric mixins
+    pre
+      code.no-highlight.
+        .coolShadow(<b>@blur</b>) {
+          -moz-box-shadow: 0 0 <b>@blur</b> rgba(0, 0, 0, .7);
+          -webkit-box-shadow: 0 0 <b>@blur</b> rgba(0, 0, 0, .7);
+          box-shadow: 0 0 <b>@blur</b> rgba(0, 0, 0, .7);
+        }
+
+        #my-block {
+          line-height: 1.5em;
+          <b>.coolShadow(3px)</b>;
+        }
+    pre
+      code.
+        #my-block {
+          line-height: 1.5em;
+          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          ...
+        }
+  section
+    h2 Empty mixins
+    p Suitable for libraries
+    .row-fluid
+      pre.span6
+        code.no-highlight.
+          .stuff() {
+            background-color: #d41;
+            width: 520px;
+          }
+
+          #footer {
+            <b>.stuff()</b>;
+            font-size: 50%;
+          }
+      pre.span6
+        code.
+          #footer {
+            background-color: #d41;
+            width: 520px;
+            font-size: 50%;
+          }
+
+section
+  h2 LESS
+  p Nesting
+
+  .row-fluid
+    pre.span6
+      code.
+        .content {
+          font-size: 14px;
+          <b>ul</b> {
+            list-style: none;
+            <b>& > li</b> {
+              display: block;
+            }
+          }
+        }
+    pre.span6
+      code.
+        .content {
+          font-size: 14px;
+        }
+        .content ul {
+          list-style: none;
+        }
+
+        .content ul > li {
+          display: block;
+        }
+
+section
+  h2 @import
+  p Modularization
+  .row-fluid
+    .span6
+      p.small-text variables.less
+      pre
+        code.no-highlight.
+          //My variables
+          @myGreen: #1C7;
+          ...
+
+          //My mixins
+          .center() {
+            margin-left: 0;
+            margin-right: 0;
+          }
+          ...
+    .span6
+      p.small-text style.less
+      pre
+        code.no-highlight.
+          <b>@import "variables";</b>
+
+          .component {
+            color: myGreen;
+            .center();
+          }
+
+//- section
+//-   h2 LESS
+//-   p Guarded mixins
+
+//-   pre
+//-     code.
+//-       .heading(@bgColor) when (lightness(@bgColor) < 50%) {
+//-         color: white;
+//-       }
+
+//-       .heading(@bgColor) when (lightness(@bgColor) >= 50%) {
+//-         color: black;
+//-       }
+
+//- section
+//-   h2 3L ?
+//-   p LESS framework
+
+//-   pre
+//-     code.
+//-       @import "compass";
+
+//-       // CSS3 mixins
+//-       .container {
+//-         @include background-image(linear-gradient(#FFF, #000));
+
+//-         @include transition-property(color);
+//-         @include transition-duration(.5s)
+//-         ...
+//-       }
+
+//-       // Sprite generation
+//-       $icons: sprite-map("icons/*.png");
+//-       .links{
+//-         background: $icons;
+//-       }
+
+section
+  h2 More syntatic sugar
+
+  .row-fluid
+    .span6
+      p Sass
+      pre
+        code.
+          @import "compass";
+
+          $myBlue = #12F;
+
+          @mixin .my-background($color) {
+            background-color: $color + #100;
+          }
+
+          .class {
+            @include .my-background($myBlue)
+            div {
+              width: 100px;
+            }
+          }
+    .span6
+      p Stylus
+      pre
+        code.
+          @import "layout.styl";
+
+          @import "layout.styl";
+
+          myBlue = #12F
+
+          my-background(color)
+            background-color: color + #100
+
+          .class
+            my-background(myBlue)
+            div
+              width: 100px
+
+section(data-state="lab")
+  h2 Lab: LESS
+  p Refactor a CSS stylesheet

@@ -10,7 +10,7 @@ section
   p CSS
   pre
     code.
-      @media only screen and (max-width: 600px) {
+      @media only screen and (width: 600px) {
         .class {
           background: #ccc;
         }
@@ -18,7 +18,7 @@ section
   p HTML
   pre
     code.
-      #{'<link rel="stylesheet" href="small.css" media="only screen and (max-width: 600px)" />'}
+      #{'<link rel="stylesheet" href="small.css" media="only screen and (height: 300px)" />'}
 
 section
   h2 max-width
@@ -50,6 +50,34 @@ section
         }
 
 section
+  h2 Viewport
+  p Available space for the layout
+  p AKA browser window's width
+  .viewport-example
+    h6.ipsum Lorem ipsum and stuff...
+    .row-fluid
+      .span8
+        p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane. 
+        p.ipsum.read-block Avocado lotus root carrot gumbo yarrow azuki bean lentil beet greens scallion celery fennel pea.
+      .span3.offset1
+        .picture.red-bg
+
+section
+  h2 Mobile viewports
+  ul 
+    li Visible viewport
+    li Layout viewport
+  .viewport-example
+    .visible-viewport
+    h6.ipsum Lorem ipsum and stuff...
+    .row-fluid
+      .span8
+        p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane. 
+        p.ipsum.read-block Avocado lotus root carrot gumbo yarrow azuki bean lentil beet greens scallion celery fennel pea.
+      .span3.offset1
+        .picture.red-bg
+
+section
   h2 Initial size
   p Disable automatic resizing
 
@@ -64,44 +92,37 @@ section
 
 
 section
-  h2 Mobile phones lie
-  .row-fluid(style="margin-top: 40px;")
-    .span3.offset2
-      .viewport-mobile-example
-        h6.ipsum Lorem ipsum and stuff...
-        .row-fluid
-          .span9
-            p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane.
-          .span3
-            .picture.red-bg
-        p.ipsum.read-block Avocado lotus root carrot gumbo yarrow azuki bean lentil beet greens scallion celery fennel pea.
-    .span7
-      ul.small-text
-        li
-          p "Low-cost" smartphone:
-          p Screen 240×320, reports 320×427
-        li
-          p High density display:
-          p Screen 640×960, reports 320×480
-
-section
-  h2 High density displays
-  p Pixel density above 200 PPI
-  p.small-text iPhone4 (326), iPad3 (264),<br> Galaxy Nexus (316), Galaxy SIII (306)
-
-section
-  h2 High density displays
-  p Prefixed media query <br> <b>device-pixel-ratio</b>
-  pre
-    code.
-      @media only screen and (min--moz-device-pixel-ratio: 2),
-      only screen and (-o-min-device-pixel-ratio: 2/1),
-      only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (min-device-pixel-ratio: 2) {
-
-         /* Custom CSS here */
-
-      }
+  section
+    .row-fluid(style="margin-top: 40px;")
+          .span2.offset5
+            .viewport-mobile-example
+              h6.ipsum Lorem ipsum and stuff...
+              .row-fluid
+                .span9
+                  p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane.
+                .span3
+                  .picture.red-bg
+              p.ipsum.read-block 
+  section
+    h2 Mobile phones lie
+    .row-fluid(style="margin-top: 40px;")
+      .span2.offset2
+        .viewport-mobile-example
+          h6.ipsum Lorem ipsum and stuff...
+          .row-fluid
+            .span9
+              p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane.
+            .span3
+              .picture.red-bg
+      .span7
+        ul.small-text
+          li
+            p "Low-cost" smartphone:
+            p Screen <b>240×320</b>, reports <b>320×427</b>
+          li
+            p High density display:
+            p Screen <b>640×960</b>, reports <b>320×480</b>
+    p.fragment Don't try to fix this lie!
 
 section
   h2 Other media queries
@@ -109,7 +130,7 @@ section
   ul.read-block
     li @media: <b>device-width</b>, <b>orientation</b>, <b>aspect-ratio</b> <br>
     li #{'<meta name="viewport">'} : <b>target-densitydpi</b>
-
+  p.fragment Stick with <b>max/min-width</b> and <b>content="width=device-width"</b>
 
 section(data-state="lab")
   h2 Lab: Media Queries
@@ -161,10 +182,6 @@ section
 
   pre
     code.
-      .container {
-        max-width: 940px;
-      }
-
       .two-columns {
         width: 46%;
         margin-left: 2%;
@@ -232,11 +249,29 @@ section
 
 section
   h2 Responsive images
-  p.read-block Beware of scaling problems
-  p.read-block Serve different images for different displays
+  p Serving different images for different displays
 
 section
-  h2 Responsive images
+  h2 High density displays
+  p Pixel density above 200 PPI
+  p.small-text iPhone4 (326), iPad3 (264),<br> Galaxy Nexus (316), Galaxy SIII (306)
+
+section
+  h2 High density displays
+  p Prefixed media query <br> <b>device-pixel-ratio</b>
+  pre
+    code.
+      @media only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-device-pixel-ratio: 2) {
+
+         /* Custom CSS here */
+
+      }
+
+section
+  h2 Duplicate downloads
   p Using cookies
 
   pre
@@ -244,9 +279,6 @@ section
       #{'<img src="picture.jpg" data-large="picture-large.jpg">'}
 
       document.cookie ="device_dimensions="+screen.width+"x" + screen.height;
-
-section
-  h2 Responsive images
   p Using noscript
 
   pre
@@ -317,35 +349,6 @@ section
   p When fluid is not enough
   iframe(src="assets/html/rwd.html", width="70%", height="400px")
   iframe(src="assets/html/rwd.html", width="30%", height="400px")
-
-section
-  h2 Viewport
-  p Available space for the layout
-  p AKA browser window's width
-  .viewport-example
-    h6.ipsum Lorem ipsum and stuff...
-    .row-fluid
-      .span8
-        p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane. 
-        p.ipsum.read-block Avocado lotus root carrot gumbo yarrow azuki bean lentil beet greens scallion celery fennel pea.
-      .span3.offset1
-        .picture.red-bg
-
-section
-  h2 Mobile viewports
-  ul 
-    li Visible viewport
-    li Layout viewport
-  .viewport-example
-    .visible-viewport
-    h6.ipsum Lorem ipsum and stuff...
-    .row-fluid
-      .span8
-        p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane. 
-        p.ipsum.read-block Avocado lotus root carrot gumbo yarrow azuki bean lentil beet greens scallion celery fennel pea.
-      .span3.offset1
-        .picture.red-bg
-  p.fragment #{'<meta name="viewport">'}!!
 
 section
   h2 Screen sizes
