@@ -1,5 +1,5 @@
 section#sfir
-  h2 sFIR
+  h2 sFIR using text-indent
   .row-fluid
     .span4
       #text-replacement-1
@@ -9,21 +9,18 @@ section#sfir
             width: 200px;
             height: 200px;
             text-indent: -10000px;
-            background: url(assets/svg/html5.svg) no-repeat 0 0;
+            background-image: url(assets/svg/html5.svg);
           }
         a(href="#sfir") HTML5
     .span8
-      p CSS
       pre
         code.
           #pageheader h1 {
             width: 200px;
             height: 200px;
             text-indent: -10000px;
-            background: transparent
-              url('html5.svg') no-repeat 0 0;
+            background-image: url('html5.svg');
           }
-      p HTML
       pre
         code.
           #{'<div id="pageheader">'}
@@ -31,7 +28,7 @@ section#sfir
           #{'</div>'}
 
 section#img-replacement-1
-  h2 Image replacement
+  h2 sFIR using padding
 
   .row-fluid
     .span4
@@ -44,11 +41,10 @@ section#img-replacement-1
             padding-right: 200px;
             padding-top: 200px;
             overflow: hidden;
-            background: url(assets/svg/html5.svg) no-repeat 0 0;
+            background-image: url(assets/svg/html5.svg);
           }
         a(href="#img-replacement-1") HTML5
     .span8
-      p CSS
       pre
         code.
           #pageheader h1 {
@@ -57,12 +53,11 @@ section#img-replacement-1
             padding-right: 200px;
             padding-top: 200px;
             overflow: hidden;
-            background: transparent
-              url('html5.svg') no-repeat 0 0;
+            background-image: url('html5.svg');
           }
 
 section#img-replacement-2
-  h2 Image replacement
+  h2 sFIR using text-indent
 
   .row-fluid
     .span4
@@ -75,11 +70,10 @@ section#img-replacement-2
             text-indent: 120%;
             whitespace: nowrap;
             overflow: hidden;
-            background: url(assets/svg/html5.svg) no-repeat 0 0;
+            background-image: url(assets/svg/html5.svg);
           }
         a(href="#img-replacement-2") HTML5
     .span8
-      p CSS
       pre
         code.
           #pageheader h1 {
@@ -88,15 +82,14 @@ section#img-replacement-2
             text-indent: 100%;
             whitespace: nowrap;
             overflow: hidden;
-            background: transparent
-              url('html5.svg') no-repeat 0 0;
+            background-image: url('html5.svg');
           }
 
 section
   h2 CSS sprites
 
-  p <b>All the background images</b> are combined
-  p They can be arranged <b>vertically or horizontally</b>, as the content increases
+  p Combine <b>all background images</b>
+  p Arrange images <b>vertically or horizontally</b>, allocating space for the content to grow
   #ex-sprites
     style
       #ex-sprites {
@@ -134,25 +127,24 @@ section
   h2 Rounded borders (before)
 
   p Option 1: CSS Images
-  .row-fluid
-    pre.span7
-      code.
-        #{'<div class="dialog">'}
-          #{'<div class="contents">'}
-            #{'<div class="t">'}
-            #{'</div>'}
-            #{'<!-- Your content goes here -->'}
+  pre
+    code.
+      #{'<div class="dialog">'}
+        #{'<div class="contents">'}
+          #{'<div class="t">'}
           #{'</div>'}
-          #{'<div class="b">'}
-          #{'<div>'}
+          #{'<!-- Your content goes here -->'}
         #{'</div>'}
-    #ex-rounded-borders.span5
-      div(style="background: url(assets/svg/top-border.svg); height: 20px; width: 300px;\
-                  margin: 0 auto;")
-      div(style="width: 300px; height: 100px;\
-                  margin: 0 auto;").yellow-bg
-      div(style="background: url(assets/svg/bottom-border.svg); height: 20px; width: 300px;\
-                  margin: 0 auto;")
+        #{'<div class="b">'}
+        #{'<div>'}
+      #{'</div>'}
+  #ex-rounded-borders
+    div(style="background: url(assets/svg/top-border.svg); height: 20px; width: 300px;\
+                margin: 0 auto;")
+    div(style="width: 300px; height: 100px;\
+                margin: 0 auto;").yellow-bg
+    div(style="background: url(assets/svg/bottom-border.svg); height: 20px; width: 300px;\
+                margin: 0 auto;")
 
 section
   h2 Rounded borders (before)
@@ -164,43 +156,49 @@ section
         Nifty("div#box", "big");
       #{'</script>'}
 
+mixin arrowCSS(tagName)
+  #{tagName}.
+    .arrow_box {
+      position: relative;
+      background: #88b7d5;
+      border: 4px solid #c2e1f5;
+      padding: 10px 5px;
+    }
+    .arrow_box:after, .arrow_box:before {
+      bottom: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .arrow_box:after {
+      border-color: rgba(136, 183, 213, 0);
+      border-bottom-color: #88b7d5;
+      border-width: 20px;
+      left: 50%;
+      margin-left: -20px;
+    }
+    .arrow_box:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-bottom-color: #c2e1f5;
+      border-width: 26px;
+      left: 50%;
+      margin-left: -26px;
+    }
 section
   h2 CSS triangles
 
   .row-fluid
-    .span4
-      iframe(src="assets/html/css-arrow.html", height="300")
-    pre.span8(style="font-size: 40%;")
-      code.
-        .arrow_box {
-          position: relative;
-          background: #88b7d5;
-          border: 4px solid #c2e1f5;
-        }
-        .arrow_box:after, .arrow_box:before {
-          bottom: 100%;
-          border: solid transparent;
-          content: " ";
-          height: 0;
-          width: 0;
-          position: absolute;
-          pointer-events: none;
-        }
-
-        .arrow_box:after {
-          border-color: rgba(136, 183, 213, 0);
-          border-bottom-color: #88b7d5;
-          border-width: 30px;
-          left: 50%;
-          margin-left: -30px;
-        }
-        .arrow_box:before {
-          border-color: rgba(194, 225, 245, 0);
-          border-bottom-color: #c2e1f5;
-          border-width: 36px;
-          left: 50%;
-          margin-left: -36px;
-        }
+    .span6
+      mixin arrowCSS('style')
+      .arrow_box
+        a(href="http://cssarrowplease.com") cssarrowplease.com
+    .span6
+      pre
+        mixin arrowCSS('code')
 
 section
   h2 CSS triangles
@@ -220,36 +218,38 @@ section
         margin-top: 15px;
         display: block;
       }
-      #css-triangles-explanation .block-2 {
-        border-top-width: 0;
-        margin-top: 20px;
+      #css-triangles-explanation .block-2,
+      #css-triangles-explanation .block-3,
+      #css-triangles-explanation .block-4,
+      #css-triangles-explanation .block-5 {
+        border-top-color: transparent;
       }
-      #css-triangles-explanation .block-3 {
-        border-top-width: 0;
+      #css-triangles-explanation .block-3,
+      #css-triangles-explanation .block-4,
+      #css-triangles-explanation .block-5 {
         width: 0;
       }
-      #css-triangles-explanation .block-4 {
+      #css-triangles-explanation .block-4,
+      #css-triangles-explanation .block-5 {
         height: 0;
         margin-top: 100px;
       }
       #css-triangles-explanation .block-5 {
         border-right-color: transparent;
         border-left-color: transparent;
-        background-color: transparent;
       }
-    .row-fluid.blocks
-      .span3.offset3
+    .row.blocks
+      .span3
         .block
       .span3
         .block.block-2
         small border-top-color: transparent
-    .row-fluid.blocks
-      .span4
+      .span2
         .block.block-3
         small width 0
-      .span4
+      .span2
         .block.block-3.block-4
         small height 0
-      .span4
+      .span2
         .block.block-3.block-4.block-5
         small transparent left/right borders

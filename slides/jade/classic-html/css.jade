@@ -87,7 +87,7 @@ section
   img(src="assets/svg/css-selector.svg", width="600")
 
 section
-  h2 Common selectors
+  h2 Most common selectors
   .row-fluid
     .span6
       p CSS
@@ -186,42 +186,51 @@ section
           #{'</p>'}
 
 section
-  h2 Types
+  h2 Selectors
   style
     #selector-types td {
       text-align: left;
     }
+  //- Order took from http://www.w3.org/TR/CSS2/selector.html
   table.table#selector-types
     tbody
+      tr 
+        td(style="border-top: 0") Universal
+        td(style="border-top: 0") <b>*</b> { line-height: 1.5 em; }
+
       tr
-        td(style="border-top: 0") By Id
-        td(style="border-top: 0") <b>#id</b> { display: block; }
+        td By Id
+        td <b>#id</b> { display: block; }
       tr
         td By class
-        td <b>.vcard</b> { font-weight: bold; }
+        td <b>.myclass</b> { font-weight: bold; }
       tr
         td By tag
         td <b>div</b> { border: 1px solid #fff; }
-
-      tr
-        td Universal
-        td <b>*</b> { line-height: 1.5 em; }
-
-      tr
-        td Child
-        td #toc <b>&gt;</b> li { border-top: 1px dotted #ccc; }
 
       tr
         td Descendant
         td <b>.datatable td</b> { width: 100px; }
 
       tr
-        td By attribute
-        td input<b>[type="text"]</b> { background: #fff; }
+        td Child
+        td #toc <b>&gt;</b> li { border-top: 1px dotted #ccc; }
 
       tr
         td Adjacent sibling
         td h1 <b>+</b> p { margin-top: 50px; }
+
+      tr
+        td By attribute
+        td input<b>[type="text"]</b> { background: #fff; }
+
+      tr 
+        td Pseudo-classes
+        td table<b>:not(.datatable)</b> { border: 0; }
+
+      tr 
+        td Pseudo-elements
+        td .clearfix<b>:after</b> { clear: both; }
 
 section
   h2 Selector priority
@@ -284,9 +293,9 @@ section
     h2 Priorities
 
     code .item { ... }
-    mixin priorities('', '', '', '')
+    mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
     code ul li li li li li li li li { ... }
-    mixin priorities('', '', '', '')
+    mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
 
   section
     h2 Priorities
@@ -306,29 +315,31 @@ section
   #box-model-example
     style
       #box-model-example {
-        width: 60%;
-        height: 300px;
-        max-height: 40%;
         float: right;
       }
       #box-model-example .box {
-        margin: 0 auto;
-        width: 80%;
-        height: 80%;
+        margin: 0;
+        padding: 0 20px 20px 20px;
+        line-height: 20px;
+        font-size: 14px;
+        text-align: left;
       }
       #box-model-example .margin {
-        border: 2px dashed black;
+        border: 1px dashed black;
       }
-    .box.margin
-      .box.blue-bg
-        .box.bluedark-bg
-          .box.purple-bg
+      #box-model-example .inner {
+        padding-top: 20px;
+      }
+    .box.margin margin
+      .box.blue-bg border
+        .box.bluedark-bg padding
+          .box.purple-bg.inner width * height
 
 section
   h2 Min and max
 
-  p min-width, min-height
-  p max-width, max-height
+  p min-width <= width <= max-width
+  p min-height <= height <= max-height
 
 section
   h2 display
@@ -351,20 +362,26 @@ section
         }
     .span7#display-example
       style
-        #display-example a {
+        .display-example.small a {
           text-decoration: underline !important;
         }
-        #display-example p, #display-example div {
+        .display-example.small {
           font-size: 70%;
           padding: 20px;          
         }
-      p.read-block.display-example.
+      p.read-block.display-example.small.
         Cupcake ipsum dolor sit <b title="This is inline">amet</b> dessert jelly-o. Dragée icing croissant <a title="This is inline">jelly</a> powder. <em title="This is inline">Muffin</em> croissant macaroon pie marzipan lemon drops.
-      p.read-block.display-example.
+      p.read-block.display-example.small.
         Sugar plum jelly-o gingerbread <b title="This is inline">tiramisu</b> chocolate bar gummi <i title="This is inline">bears</i>. Jelly beans soufflé <a title="This is inline">cotton</a> candy chocolate cake danish icing.
-      p.hide.display-example.
+      p.hide.display-example.small.
         You should not be seeing this.
-
+section
+  h2 display: inline
+  p.read-block Text is displayed inline
+  p.read-block Horizontal padding works, vertical does not.
+  p.read-block Margin is ignored.
+  p.read-block.display-example.small.
+    Cupcake ipsum dolor sit <b title="This is inline">amet</b> dessert jelly-o. Dragée icing croissant <a title="This is inline">jelly</a> powder. <em title="This is inline">Muffin</em> croissant macaroon pie marzipan lemon drops.
 section
   h2 display: block
   .row-fluid
@@ -426,17 +443,11 @@ section
   .row-fluid
     pre.span4
       code.
-        #{'<div>A</div>'}
-        #{'<div style="'}
-          <b>
+        .B {
           position: relative;
           left: 15px;
           top: 10px
-          </b>
-          ">
-          B
-        #{'</div>'}
-        #{'<div>C</div>'}
+        }
     .span4.offset2#position-relative-example
       style
         #position-relative-example .displaced {
@@ -455,17 +466,14 @@ section
   .row-fluid
     pre.span4
       code.
-        #{'<div>A</div>'}
-        #{'<div style="'}
-          <b>
+        .container {
+          position: relative;
+        }
+        .B {
           position: absolute;
           left: 15px;
           top: 10px
-          </b>
-          ">
-          B
-        #{'</div>'}
-        #{'<div>C</div>'}
+        }
     .span4.offset2#position-absolute-example
       style
         #position-absolute-example {
@@ -488,25 +496,19 @@ section#position-fixed
   .row-fluid
     pre.span4
       code.
-        #{'<div>A</div>'}
-        #{'<div style="'}
-          <b>
+        .B {
           position: fixed;
-          right: 10px;
-          top: 10px
-          </b>
-          ">
-          B
-        #{'</div>'}
-        #{'<div>C</div>'}
+          bottom: 100px;
+          left: 0
+        }
     .span4.offset2#position-fixed-example
       style
         #position-fixed-example .displaced {
           position: fixed;
-          top: -100px;
-          left: -100px;
+          bottom: 100px;
+          left: 0;
           background-color: rgba(200,200,200,0.5);
-          width: 320px;
+          width: 100px;
         }
       .display-example A
       .display-example.displaced B
@@ -593,8 +595,8 @@ section
         border-width: 4px;
         border-style: solid;
         width: 150px;
-        height: 150px;
-        margin: 5px;
+        height: 100px;
+        margin: 7px 0;
       }
       #float-clear-example .fl, #float-clear-example .fl-cl {
         float: left;
@@ -604,7 +606,7 @@ section
       }
       #float-clear-example .no-float {
         border: 4px solid black;
-        margin: 10px;
+        margin: 0 0 0 15px;
         padding: 20px 20px 20px 180px;
       }
       #float-clear-example .fr {
@@ -613,7 +615,7 @@ section
       #float-clear-example .clear {
         border: 4px solid black;
         clear: both;
-        width: 100%;
+        width: auto;
       }
     .fl.red-bg.red-border float: left
     .fl-cl.red-bg.red-border float: left <br> clear: left
@@ -628,7 +630,7 @@ section
     #ex-overflow .row-fluid:nth-child(2) .span4 {
       font-size: 50%;
       line-height: 120%;
-      height: 150px;
+      height: 120px;
     }
 
   #ex-overflow
@@ -646,30 +648,31 @@ section
 
 section
   h2 Overflow with floats
-  p overflow: hidden
 
-  #overflow-float-example
+  #overflow-float-example.row-fluid
     style
       #overflow-float-example .column {
-        width: 44%;
         padding: 20px;
         border: 2px dashed black;
-        box-sizing: border-box;
       }
-    .column(style="float: right;")
-      div(style="width: 28%;\
-                  height: 300px;\
-                  float: left;").red-bg
-      div(style="height: 200px;\
-                  width: 68%;\
-                  float: right;").blue-bg
-    .column
-      div(style="width: 28%;\
-                  height: 300px;\
-                  float: left;").red-bg
-      div(style="height: 200px;\
-                  width: 68%;\
-                  float: right;").blue-bg
+    .span5
+      p overflow: visible
+      .column
+        div(style="width: 28%;\
+                    height: 300px;\
+                    float: left;").red-bg
+        div(style="height: 200px;\
+                    width: 68%;\
+                    float: right;").blue-bg
+    .span5
+      p overflow: hidden
+      .column(style="overflow:hidden")
+        div(style="width: 28%;\
+                    height: 300px;\
+                    float: left;").red-bg
+        div(style="height: 200px;\
+                    width: 68%;\
+                    float: right;").blue-bg
 
 section
   h2 Shorcuts: font
@@ -693,13 +696,13 @@ section
 
 section
   h2 Color notation examples
-  p.read-block #f02
-  p.read-block #ff0022
-  p.read-block rgb(128, 15, 26)
+  ul.read-block 
+    li #f02
+    li #ff0022
+    li rgb(255, 0, 34)
 
 section
-  h2 Shortcuts: margin y padding
-  p margin and padding:
+  h2 Shortcuts: margin and padding
   p <b>{all}</b>
   p <b>{top / bottom} {left / right}</b>
   p <b>{top} {right} {bottom} {left}</b>
@@ -716,8 +719,7 @@ section
       }
 
 section
-  h2 Centering
-  p Horizontal centering
+  h2 Center Horizontally
   .row-fluid
     .span6
       p <b>Block element</b>
@@ -740,8 +742,7 @@ section
           }
 
 section
-  h2 Centering
-  p Vertical centering
+  h2 Center Vertically
   .row-fluid
     .span6
       p <b>Inline elements</b>
@@ -759,8 +760,7 @@ section
           }
 
 section
-  h2 Centering
-  p Vertical positioning
+  h2 Dead center
 
   pre
     code.
@@ -800,33 +800,29 @@ section
 section
   h2 Display and Visibility
   .row-fluid
-    pre.span6
-      code.
-        #{'<div>A</div>'}
-        #{'<div style="display: none">B</div>'}
-        #{'<div>C</div>'}
-    pre.span6
-      code.
-        #{'<div>A</div>'}
-        #{'<div style="visibility: hidden">B</div>'}
-        #{'<div>C</div>'}
+    .span6
+      pre
+        code.
+          .B {
+            display: none;
+          }
+    .span6
+      pre
+        code.
+          .B {
+            visiblity: hidden;
+          }
   .row-fluid#display-visibility-example
     .span6
-      .block A
-      .block(style="display: none;") B
-      .block C
+      .display-example A
+      .display-example(style="display: none;") B
+      .display-example C
 
     .span6
-      .block A
-      .block(style="visibility: hidden;") B
-      .block C
-    style
-      #display-visibility-example .block {
-        margin: 20px;
-        border: 2px black dashed;
-        font-size: 200%;
-        line-height: 150%;
-      }
+      .display-example A
+      .display-example(style="visibility: hidden;") B
+      .display-example C
+    
 
 section
   h2 Link pseudo-classes
@@ -952,7 +948,7 @@ section
 
 section
   h2 Font degradation
-  p Font list to be used when available, from most to less preferred
+  p List of fonts to be used if available, from best to worst 
 
   pre
     code.
@@ -981,17 +977,23 @@ section
         td(style="font-family: monospace") Lorem ipsum
 
 section
-  h2 Web-safe fonts
+  h2 Typical web-safe fonts
+  ul.read-block
+    li <b>Serif</b>: Georgia, Times New Roman
+    li <b>Sans serif</b>: Helvetica, Arial, Tahoma, Verdana
+    li <b>Monospace</b>: Monaco, Menlo, Consolas, Courier
+    li Availability depends on the OS
 
 section
   h2 Browser zoom
   p Ctrl +, Ctrl -, Ctrl 0
+  p Not everyone has 20/20 vision
 
 section
   h2 Pixel vs Percentage
   ul
     li YUI fonts default:
     ul
-      li font: 13px
-      li line-height:16px
+      li Base size: 13px/16px
+      li Everything else: percentages
     li Not needed anymore.

@@ -3,7 +3,7 @@ section
   ul
     li 960gs
     li YAML
-    li OO-CSS
+    li OOCSS
     li YUI-grid
 
 section
@@ -13,9 +13,14 @@ section
 section
   h2 Twitter Bootstrap
 
-  p 12 column grid
+  p 12-column grid
   p Fluid is optional
   p Responsive
+  style.
+    #ex-bootstrap .row-fluid [class*="span"],
+    #ex-bootstrap-grid .row-fluid [class*="span"] {
+      min-height: 0;
+    }
   #ex-bootstrap
     .row-fluid.
       <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div> <div class="span1 grid-block">1</div>
@@ -62,58 +67,53 @@ section(data-state="lab")
   p Build a layout with Bootstrap
 
 section
-  h2 Bootstrap toolkit
-  p Base CSS
+  h2 Bootstrap base CSS
   iframe(src="assets/html/bootstrap-base-css.html", width="1000", height="600", style="margin-top: 20px;")
 
 section
-  h2 Bootstrap toolkit
-  p Reusable components
+  h2 Bootstrap components
   iframe(src="assets/html/bootstrap-reusable-components.html", width="1000", height="600", style="margin-top: 20px;")
 
 section
   section
-    h2 Bootstrap toolkit
+    h2 Bootstrap components
     p Navigation bar
     iframe(src="assets/html/bootstrap-navigation-bar.html", width="1000", height="300", style="margin-top: 20px;")
   section
-    h2 Bootstrap toolkit
-    p Navigation bar
+    h2 Bootstrap components
+    p Responsive navigation bar
     iframe(src="assets/html/bootstrap-navigation-bar-collapsed.html", width="500", height="600", style="margin-top: 20px;")
 
 section
-  h2 Bootstrap toolkit
+  h2 Bootstrap components
   p Navigation components
   iframe(src="assets/html/bootstrap-navigation-components.html", width="1000", height="600", style="margin-top: 20px;")
 
 section
   h2 Bootstrap JS plugins
-  p Markup API
   iframe(src="assets/html/bootstrap-js-plugins.html", width="1000", height="600", style="margin-top: 20px;")
 
 section
   h2 Customization
-  .row-fluid
-    .span5
-      p Themes
+  ul
+    li Themes:
       ul
-        li
-          a(href="http://bootswatch.com") Bootswatch
-        li
-          a(href="http://wrapbootstrap.com") WrapBootstrap
-    .span7
-      p LESS library
-      pre
-        code.
-          @baseFontSize: 13px;
-
-          @tableBorder: #ddd;
-
-          @inputBorderRadius: 3px;
-
-          @gridColumns: 12;
-
-            ...
+        li <a href="http://bootswatch.com">Bootswatch </a>
+        li <a href="http://wrapbootstrap.com">WrapBootstrap</a>
+    li Snippets:
+      ul
+        li <a href="http://bootsnipp.com/">Bootsnipp</a>
+    li Customize
+      ul
+        li <a href="http://twitter.github.com/bootstrap/customize.html">Customize Bootstrap</a>
+        li LESS source files
+          pre
+            code.
+              @baseFontSize: 13px;
+              @tableBorder: #ddd;
+              @inputBorderRadius: 3px;
+              @gridColumns: 12;
+                ...
 
 section(data-state="lab")
   h2 Lab: Bootstrap 2
