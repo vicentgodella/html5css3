@@ -6,7 +6,7 @@ section
         li With / without content
         li Attributes enclosed by double quotes
         li Semantic CSS
-        li Lower-case
+        li Lowercase
     .span6
       pre
         code.
@@ -28,13 +28,13 @@ section
     li <b>Links</b>: a, link, script
     li <b>Lists</b>: ul, li
     li <b>Tables</b>: table, thead, tbody, tr, td, th
-    li <b>Forms</b>: form, fieldset, input, select, textarea, label
+    li <b>Forms</b>: form, input, select, textarea, label
 
 section
   h2 doctype
   ul.read-block
     li <b>Quirks mode</b>
-    li <b>Standard mode</b>
+    li <b>Standards mode</b>
     li <b>XHTML</b>
 
 section
@@ -49,7 +49,7 @@ section
       #{'</html>'}
 
 section
-  h2 Quirks vs Standard Mode
+  h2 Some differences
 
   .row-fluid
     .span6
@@ -63,12 +63,12 @@ section
              padding: 2px;
           }
 
-          .boxmodel p {
-             margin: 0 auto;  <b>/* ignored */</b>
+          /* missing units */
+          .padded {
              padding: 5; <b>/* defaults to px */</b>
           }
     .span6
-      p STANDARD MODE
+      p STANDARDS MODE
       pre
         code.
           /* W3C box model */
@@ -78,31 +78,21 @@ section
              padding: 2px;
           }
 
-          .boxmodel p {
-             margin: 0 auto;  <b>/* ok */</b>
+          /* missing units */
+          .padded {
              padding: 5; <b>/* ignored */</b>
           }
 
 section
-  h2 Standards Mode
+  h2 Trigger Standards Mode
 
-  p The method employed by Google
+  p What Google does
   pre
     code.
       <b>#{'<!doctype html>'}</b>
       #{'<html>'}
       ...
       #{'</html>'}
-
-section
-  h2 XHTML is a bad idea
-
-  ul
-    li <b>Internet Explorer</b> doesn't support XHTML
-    li There is no <b>error handling</b>
-    li The <b>JavaScript code</b> must be inside a CDATA block
-    li The <b>entities</b> (&amp;amp;) must be escaped
-    li In general, there is <b>no advantage in XHTML</b>
 
 section
   h2 XHTML vs HTML
@@ -115,7 +105,7 @@ section
     li <b>CDATA elements</b>: script and style
 
 section
-  h2 XHTML vs HTML (II)
+  h2 Some differences
   .row-fluid
     .span6
       p <b>XHTML</b>
@@ -141,9 +131,19 @@ section
           #{'</script>'}
 
 section
+  h2 XHTML is a bad idea
+
+  ul
+    li <b>Internet Explorer</b> doesn't support XHTML
+    li No <b>parsing error recovery</b>
+    li Any <b>JavaScript code</b> must be inside a CDATA block
+    li Any <b>entities</b> (&amp;amp;) must be escaped
+    li In general, there is <b>nothing to gain by using XHTML</b>
+
+section
   h2 XHTML headers
 
-  p The browser considers HTML unless the server sends the header
+  p The browser will parse HTML unless it finds the HTTP header
 
   p <b>Content-Type: application/xhtml+xml</b>
 

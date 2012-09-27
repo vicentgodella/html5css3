@@ -17,30 +17,21 @@ append slides
   section
     h2 Twitter
     ul.read-block
-      li #html5
-      li #css3
-      li @_rvidal
-      li @nachocoloma
-      li @extremasistemas
+      li #html5 #css3
+      li @_rvidal @nachocoloma @extremasistemas
 
   section
     h2 Content
-    ul
-      li  Introduction to HTML and CSS
-      li  CSS3
-      li  HTML5
-      li  Browsers and SEO
-      li  Performance
-      li  UI patterns
+    include introduction/contents
 
   section
-    h2 Warning
-    p.read-block This course is <b>introductory</b>.
-    p.read-block The materials are not exhaustive. Emphasis is given to present <b>filtered and useful</b> information instead of <b>complete</b>.
+    h2 This is an introductory course
+    p.read-block Emphasis is given to present <b>filtered and useful</b> information instead of being complete. 
 
   section
-    h2 Warning
-    p This course includes coverage of some of the new JavaScript APIs in HTML5
+    h2 Opinionated contents
+    p.read-block We strive to include the <b>most useful tools</b> for the task at hand.
+    p.read-block The contents of this course are largely based on opinions from the authors.
 
   section
     h2 A-grade browsers
@@ -69,17 +60,28 @@ append slides
           td Android 2.3.*
           td(colspan='2') Android 4.*
  
+  section
+    h2 Google Apps support
+    ul.read-block
+      li Latest Chrome
+      li Last two releases of
+        ul 
+          li Firefox
+          li IE
+          li Safari
+      li This means no support for IE 8!
 
   section
-    h2 Internet Explorer
-    img(src="assets/raster/internet-explorer.png")
+    h2 Wikipedia support
+    p Any browser with >1% market share
+    p This (barely) includes IE6
 
   section
     h2 Wireframes
     img(src="assets/raster/wireframes.png")
 
   section
-    h2 Wireframes as a communication tool
+    h2 The wireframe as a communication tool
     img(src="assets/raster/wireframes-communication.png")
 
   section
@@ -87,6 +89,7 @@ append slides
     img(src="assets/raster/wireframes-ideation.png")
 
   section
+    h2 Everybody makes it different
     img(src="assets/raster/jason-robb.png")
 
   section
@@ -112,19 +115,26 @@ append slides
         img(src="assets/raster/wireframe-prototype-4.png")
 
   section
+    h2 Storyboards
+    img(src="assets/raster/storyboards.png")
+
+  section
     h2 Wireframe tools
     ul.read-block
       li <b>Pencil</b> and <b>marker</b>
       li <b>Paper prototype</b>
       li <b>Digital prototype</b>
 
-  section
-    h2 Storyboards
-    img(src="assets/raster/storyboards.png")
-
   section(data-state="lab")
     h2 Lab Wireframe
     p Develop a wireframe using <b>moqups.com</b>
+
+  section
+    h1 Introduction to the tools
+    ul.read-block
+      li Chrome
+      li Sublime Text Editor 2
+
 
   include introduction/chrome
   include introduction/sublime
