@@ -10,11 +10,18 @@
   <div class="span6">
       <form class="form-horizontal">
         <fieldset>
-          <legend>Controls Bootstrap supports</legend>
+          <legend>.form-horizontal</legend>
+          <div class="control-group">
+            <h4>.control-group</h4>
+            <label class="control-label"><b>.control-label</b></label>
+            <div class="controls">
+              <input type="text" class="input-xlarge" style="box-sizing: content-box;" placeholder=".controls">
+            </div>
+          </div>
           <div class="control-group">
             <label class="control-label" for="input01">Text input</label>
             <div class="controls">
-              <input type="text" class="input-xlarge" id="input01">
+              <input type="text" class="input-xlarge" style="box-sizing: content-box;" id="input01">
             </div>
           </div>
           <div class="control-group">
@@ -50,18 +57,13 @@
               </select>
             </div>
           </div>
-          <div class="control-group">
-            <label class="control-label" for="fileInput">File input</label>
-            <div class="controls">
-              <input class="input-file" id="fileInput" type="file">
-            </div>
-          </div>
         </fieldset>
       </form>
   </div>
 
 
 <div class="span6">
+      <h4>.table.table-bordered</h4>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -104,6 +106,7 @@
               <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
             </div>
           </div>
+          <h4>.form-actions</h4>
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">Save changes</button>
             <button type="reset" class="btn">Cancel</button>
