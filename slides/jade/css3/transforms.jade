@@ -5,60 +5,57 @@ section
 
 section
   h2 rotate
-  p transform: <b>rotate(degrees | radians)</b>
+  p <b>rotate(degrees | radians)</b>
 
   pre
     code.
       .block {
-        -webkit-transform: rotate(20deg);
-        -moz-transform: rotate(20deg);
-        transform: rotate(20deg);
+        -webkit-transform: rotate(-10deg);
+        -moz-transform:    rotate(-10deg);
+        transform:         rotate(-10deg);
       }
 
-  #ex-rotate(style="height: 150px;\
-    margin-top: 20px;")
-    div(style="height: 150px;\
-      -webkit-transform: rotate(-10deg);").yellow-bg
+  #ex-rotate
+    div(style="height: 150px;-webkit-transform: rotate(-10deg);").yellow-bg
+
+section
+  h2 Prefixed
+  p Transformations should be prefixed with <br><b>-webkit, -o, -moz and -ms</b>
+  p We will omit these for the sake of clarity
 
 section
   h2 transform-origin
 
-  p transform-origin:
-  p <b>[ {offset} | left | center | right ]</b>
-  p <b>[ {offset} | top | center | bottom ]</b>
+  table.table.table-bordered
+    tbody
+      tr <td>0, 0<td>top left
+      tr <td>100%, 100%<td>bottom right
+      tr <td>50%, 50% <td>center center (default)
+      tr <td>-100px, -100px <td>also allowed
 
   pre
     code.
       .center {
-        -webkit-transform: rotate(20deg);
-        -webkit-transform-origin: 0 100%;
-        -moz-transform: rotate(20deg);
-        -moz-transform-origin: 0 100%;
+        transform: rotate(-10deg);
+        transform-origin: 0 100%;
       }
-
+  style.
+    #ex-rotate-origin > .rotate-origin {
+      height: 150px;
+      -webkit-transform: rotate(-10deg);
+      -webkit-transform-origin: left bottom;
+    }
   #ex-rotate-origin(style="height: 150px;")
-    div(style="height: 150px;\
-      -webkit-transform: rotate(15deg);\
-      -webkit-transform-origin: left bottom;").yellow-bg
-
-section
-  h2 transform-origin (II)
-  ul.read-block
-    li <b>(0, 0)</b> top left
-    li <b>(100%, 100%)</b> bottom right
-    li <b>(50%, 50%)</b> center center 
-    li <b>(default)</b> negative values are allowed
+    div.rotate-origin.yellow-bg
 
 section
   h2 translate
 
-  p transform: <b>translate(x,y) | translatex(x) | translatey(y)</b>
+  p <b>translate(x,y) | translatex(x) | translatey(y)</b>
 
   pre
     code.
       .block {
-        -moz-transform: translate(20px, 50px);
-        -webkit-transform: translate(20px, 50px);
         transform: translate(20px, 50px);
       }
 
@@ -73,43 +70,25 @@ section
   pre
     code.
       .block {
-        -webkit-transform: translate(-100px, 100px) rotate(15deg);
-        -moz-transform: translate(-100px, 100px) rotate(15deg);
-        -o-transform: translate(-100px, 100px) rotate(15deg);
+        transform: translate(-100px, 100px) rotate(15deg);
       }
   #ex-combinations(style="height: 150px;")
     div(style="height: 150px;\
       -webkit-transform: translate(-100px, 100px) rotate(15deg);").yellow-bg
 
 section
-  h2 IE < 9 rotation
-
-  p Valid values:<b>0, 1, 2 or 3</b> which will rotate the element 0, 90, 180 or 270 degrees respectively
-
-  pre
-    code.
-      .ierotate {
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-      }
-
-section
   h2 scale
 
-  p transform:<b>scale(x, y) | scalex(x) | scaley(y)</b>
-
-  ul
-    li <b>&lt; 1:</b> zoom in
-    li <b>&gt; 1:</b> zoom out
-    li <b>negative value:</b> flip
+  p <b>scale(x, y) | scalex(x) | scaley(y)</b>
+  table.table.table-bordered
+    tbody
+      tr <td>&lt; 1 <td>zoom in
+      tr <td>&gt; 1 <td>zoom out
+      tr <td>&lt; 0 <td>flip
 
   pre
     code.
       .block {
-        -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
         transform: scale(0.75);
       }
 
@@ -120,13 +99,11 @@ section
 section
   h2 skew
 
-  p transform:<b>skew(x, y) | skewx(x) | skewy(y)</b>
+  p <b>skew(x, y) | skewx(x) | skewy(y)</b>
 
   pre
     code.
       .skewblock {
-        -webkit-transform: skew(-20deg, 0);
-        -moz-transform: skew(-20deg, 0);
         transform: skew(-20deg, 0);
       }
 
@@ -134,10 +111,11 @@ section
     div(style="height: 150px;\
       -webkit-transform: skew(-20deg, 0);").yellow-bg
 
-section
+section.browser-support-container
   mixin browserSupport('12+', '10+', '4+', '10+', 'No')
   h2 3D transforms
-
+  p Still not commonplace
+  p Support is heavily tied to the OS
   pre
     code.
       translate3d(x, y, z), translateZ(z)
@@ -152,3 +130,9 @@ section
   iframe(src="assets/html/pure-css.html", width="500", height="450")
   p.source
     a(href="http://darcyclarke.me/dev/html5/") Source: Darcy Clarke
+
+
+section(data-state="lab")
+  h2 Lab: Transitions
+
+  p Add CSS transitions to the proposed page

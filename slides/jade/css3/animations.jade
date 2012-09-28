@@ -1,51 +1,57 @@
 section
+  h2 Important
+  p These techniques (animations, transitions, transformations) should be use moderately
+
+section.browser-support-container
   mixin browserSupport('All', '5+', '4+', '10+', '12+')
   h2 animation
-  !{ourBlue.hex}
-  pre
-    code(style="-webkit-column-count: 2;").small-text.
-      @-webkit-keyframes bounce {
-        from {
-          left: 0px;
+  .row-fluid
+    pre
+      code.small-text.span6.
+        @-webkit-keyframes bounce {
+          from {
+            left: 0px;
+          }
+          to {
+            left: 200px;
+          }
         }
-        to {
-          left: 200px;
-        }
-      }
 
-      div {
-        -webkit-animation-name: bounce;
-        -webkit-animation-duration: 4s;
-        -webkit-animation-iteration-count: 10;
-        -webkit-animation-direction: alternate;
-        -webkit-animation-timing-function: ease-in;
-      }
-
-  #ex-animation(style="height: 150px;")
-    style
-      @-webkit-keyframes bounce {
-        from {
-          left: 10%;
+      code.small-text.span6.
+        div {
+          -webkit-animation-name: bounce;
+          -webkit-animation-duration: 4s;
+          -webkit-animation-iteration-count: 10;
+          -webkit-animation-direction: alternate;
+          -webkit-animation-timing-function: ease-in;
         }
-        to {
-          left: 70%;
-        }
-      }
-      #ex-animation {
-        position: relative;
-      }
-      #ex-animation .animated {
-        height: 150px;
-        border-radius: 5px;
-        width: 20%;
-        position: absolute;
 
-        -webkit-animation-name: bounce;
-        -webkit-animation-duration: 4s;
-        -webkit-animation-iteration-count: 10;
-        -webkit-animation-direction: alternate;
-        -webkit-animation-timing-function: ease-in;
+  style
+    @-webkit-keyframes bounce {
+      from {
+        left: 10%;
       }
+      to {
+        left: 70%;
+      }
+    }
+    #ex-animation {
+      position: relative;
+      height: 100px;
+    }
+    #ex-animation .animated {
+      height: 100px;
+      border-radius: 5px;
+      width: 20%;
+      position: absolute;
+
+      -webkit-animation-name: bounce;
+      -webkit-animation-duration: 4s;
+      -webkit-animation-iteration-count: 10;
+      -webkit-animation-direction: alternate;
+      -webkit-animation-timing-function: ease-in;
+    }
+  #ex-animation
     .animated.yellow-bg
 
 
@@ -77,6 +83,12 @@ section
          -webkit-transform: scale(1.0) rotate(0deg);
        }
       }
+      .pulsing {
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 4s;
+        -webkit-animation-iteration-count: 10;
+        color: black;
+      }
   #ex-animation-frames
     style
       @-webkit-keyframes pulse {
@@ -103,9 +115,9 @@ section
         -webkit-animation-iteration-count: 10;
         color: black;
       }
-    p.pulsing This paragraph should pulse. Pulsing is the new blink. You heard it here first.
+    p.pulsing This paragraph should pulse. Pulsing is the new blink. <br>You heard it here first.
 
 section(data-state="lab")
   h2 Lab: Animations
 
-  p Reproduce the Mac buttons with CSS3 animations
+  p Imitate the Mac button behavior using CSS3 animations

@@ -87,6 +87,9 @@ ul.read-block {
   table {
     .center();
 
+    // tables in slides with browser support info
+    width: auto;
+
     th, td {
       text-align: center;
       font-size: 70%;
@@ -99,52 +102,42 @@ ul.read-block {
   }
 }
 
-//Browser support div
-.browser-support {
-  position: absolute;
-  top: -5%;
-  right: -80px;
-}
+// browser support mixin
 
 @browserBgWidth: 50px;
+// a slide that contains a .browser-support container
+.browser-support-container {
+  box-sizing: border-box;
+  padding-right: 100px;
 
-[class^="support-"] {
-
-  width: @browserBgWidth;
-  padding-top: @browserBgWidth;
-  margin-top: 10px;
-
-  background: url(../raster/browsers.png) no-repeat 0 0;
-
-  span {
-    display: block;
-    .center();
-
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 20px;
-    
-    width: 40px;
-    margin-top: 5px;
-    border: 1px solid black;
-    color: gray;
+  > .browser-support {
+    width: 90px;
+    margin-right: -100px;
   }
 }
-
-.support-ff {
-  background-position: -@browserBgWidth 0;
+.browser-support {
+  padding: 0 0 0 10px;
+  overflow: hidden;
+  float: right;
 }
+.support {
 
-.support-safari {
-  background-position: -2*@browserBgWidth 0;
+  width: @browserBgWidth;
+  height: @browserBgWidth;
+  float: left;
+  clear: left;
+  background: url(../raster/browsers.png) no-repeat 0 0;
+
+  &.ff { background-position: -@browserBgWidth 0; }
+  &.safari { background-position: -2*@browserBgWidth 0; }
+  &.msie { background-position: -3*@browserBgWidth 0; }
+  &.opera { background-position: -4*@browserBgWidth 0; }
+
 }
-
-.support-msie {
-  background-position: -3*@browserBgWidth 0;
-}
-
-.support-opera {
-  background-position: -4*@browserBgWidth 0;
+.support-version {
+  float: left;
+  margin-top: 14px;
+  font-size: 16px;
 }
 
 //Citing sources

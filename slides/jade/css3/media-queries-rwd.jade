@@ -1,13 +1,12 @@
-//- section
-//-   h2 Mobile devices
-//-   pre
-//-     code.
-//-       #{'<link rel="stylesheet" media="handheld" />'}
-
 section
+  h2 Legacy mobile 
+  pre
+    code.
+      &lt;link rel="stylesheet" media="handheld">
+
+section.browser-support-container
   mixin browserSupport('All', '3.5+', 'All', '9+', '9.5+')
   h2 New media queries
-  p CSS
   pre
     code.
       @media only screen and (width: 600px) {
@@ -15,10 +14,10 @@ section
           background: #ccc;
         }
       }
-  p HTML
   pre
     code.
-      #{'<link rel="stylesheet" href="small.css" media="only screen and (height: 300px)" />'}
+      &lt;link rel="stylesheet" href="small.css" 
+          media="only screen and (height: 300px)">
 
 section
   h2 max-width

@@ -1,4 +1,4 @@
-section
+section.browser-support-container
   mixin browserSupport('All', '3.5+', '3.2+', '6+', '10+')
   h2 @font-face
   pre
@@ -7,7 +7,7 @@ section
         font-family: 'permanentmarker';
         src: url('pm.eot'); /* IE */
         src: local('permanentmarker'),
-               url('pm.ttf') format('truetype');
+               url('pm.ttf') format('truetype'); /* Firefox */
       }
 
       h1 {
@@ -24,6 +24,7 @@ section
       #ex-font-face h3 {
         font-family: permanentmarker;
         color: black;
+        margin-top: 20px;
       }
     h3 Permanent Marker
 
@@ -117,13 +118,13 @@ section
 
   p.read-block <b>Firefox and Opera</b> show the next font until it is downloaded
 
-  p.read-block <b>IE and Webkit</b> do not show anything
+  p.read-block <b>IE and Webkit (also: Android, iPhone)</b> do not show anything
 
 section
   h2 Font repositories
   ul.read-block
     li
-      a(href="http://fontsquirrel.com") <b>Squirrel font</b>
+      a(href="http://fontsquirrel.com") <b>Font Squirrel</b>
     li
       a(href="http://google.com/webfonts") <b>Google Web Fonts</b>
 
@@ -131,6 +132,7 @@ section
   h2 Font-face icons
 
   p Place icons inside a custom font
+  p Vector icons, multiple colors
 
   style
     @font-face {
@@ -143,83 +145,66 @@ section
     .iconic {
       font-family: 'IconicFill';
     }
-  p
-    span.iconic &#xe06a;
-    span.iconic &#xe033;
-    span.iconic &#x00b6;
-    span.iconic &#x2717;
-    span.iconic &#xe02e;
-    span.iconic &#xe01b;
-    span.iconic &#xe04d;
+  p.iconic &#xe06a; &#xe033; &#x00b6; &#x2717; &#xe02e; &#xe01b; &#xe04d;
 
 section
   h2 sFIR icons
-  .row-fluid
-    .span6
-      p HTML
-      pre
-        code.
-          #{'<span class="icon icon-mail"></span>'}
-          #{'<span class="icon icon-star"></span>'}
-    .span6
-      p CSS
-      pre
-        code.
-          .icon {
-            background: url('icons-sprite.png') no-repeat;
-            width: 0px;
-            height: 12px;
-            display: inline-block;
-          }
-
-          .icon-mail {
-            background-position: -10px -40px;
-          }
-          ...
-    style
-      #ex-sfir-icons span {
-        width: 30px;
-        height: 30px;
-        background-size: 30px;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
+  pre
+    code.
+      .icon {
+        background: url('icons-sprite.png') no-repeat;
+        width: 0px;
+        height: 12px;
         display: inline-block;
       }
+
+      .icon-mail {
+        background-position: -10px -40px;
+      }
+      ...
+  pre
+    code.
+      #{'<span class="icon icon-mail"></span>'}
+      #{'<span class="icon icon-star"></span>'}
+  style
+    #ex-sfir-icons span {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      display: inline-block;
+    }
   #ex-sfir-icons
     div(style="text-align: center;")
       span(style="background-image: url(assets/svg/icon-mail.svg);") 
-      span(style="background-image: url(assets/svg/icon-star.svg);")
+      span(style="background-image: url(assets/svg/icon-star.svg);") 
 
 
 section
   h2 Font-face icons
-  .row-fluid
-    .span6
-      p HTML
-      pre
-        code.
-          #{'<span class="icon icon-mail"></span>'}
-          #{'<span class="icon icon-star"></span>'}
-    .span6
-      p CSS
-      pre
-        code.
-          @font-face {
-            font-family: 'iconic';
-            ...
-          }
+  pre
+    code.
+      @font-face {
+        font-family: 'iconic';
+        ...
+      }
 
-          .icon  {  font-family: iconic;  }
+      .icon  {  font-family: iconic;  }
 
-          .icon-mail:before {
-            content: '✉';
-          }
+      .icon-mail:before {
+        content: '✉';
+      }
+  pre
+    code.
+      #{'<span class="icon icon-mail"></span>'}
+      #{'<span class="icon icon-star"></span>'}
   #ex-font-icons
-    span.iconic(style="font-size: 40px;") &#x2709;
-    span.iconic(style="font-size: 40px;") &#x2605;
+    p.iconic(style="font-size: 40px;") &#x2709; &#x2605;
 
 section
-  h2 Iconic fonts
+  h2 Fonts available
 
   ul
     li
@@ -236,12 +221,11 @@ section
 section
   h2 Beware
 
-  p.read-block <b>Font files sizes:</b> You don't need everything!
-  p.read-block <b>Arbitrary key-bindings</b>
-  p.read-block <b>Non-semantic content</b> (aria-hidden)
+  p.read-block <b>Font files sizes:</b> You don't need everything! Subset your fonts.
+  p.read-block <b>Arbitrary character bindings</b>
+  p.read-block <b>Non-semantic content</b> (Use aria-hidden)
 
 
 section(data-state="lab")
   h2 Lab: Fonts
-
   p Change the fonts in the previous lab

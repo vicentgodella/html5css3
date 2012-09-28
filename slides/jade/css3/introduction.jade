@@ -1,13 +1,9 @@
 section
-  h2 W3C's recommendation
-  p Don't use it (yet)
-
-section
   h2 Current status
   ul
-    li <b>Explorer (9+):</b> -ms-*
-    li <b>Firefox:</b> -moz-*
     li <b>Chrome, Safari:</b> -webkit-*
+    li <b>Firefox:</b> -moz-*
+    li <b>Explorer (9+):</b> -ms-*
     li <b>Opera (10+):</b> -o-*
 
 
@@ -45,14 +41,23 @@ section
 
 section
   h2 CSS3 browser support
-  p.read-block Reasonable support in browsers
-  p.read-block
-    a(href="http://delicious.com/html5css3/support") http://delicious.com/html5css3/support
-  p.read-block CSS and JS tricks to support legacy browsers
+  p.read-block Modern browsers support most of it
+  p.read-block CSS and JS tricks for legacy browsers
 
 section
   h2 Pixel perfect isn't necessary!
   p Shadows, gradients, transitions, rounded corners...
+  style.
+    #ex-pixelperfect .pixelperfect {
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-size: 80%;
+    }
+  #ex-pixelperfect.row-fluid
+    .span6
+      .pixelperfect(style="border-radius: 10px; box-shadow: 0 0 5px rgba(128, 128, 128, .5)") Hello Chrome!
+    .span6
+      .pixelperfect Hello Explorer!
 
 section(data-state="lab")
   h2 Lab: CSS3 maker

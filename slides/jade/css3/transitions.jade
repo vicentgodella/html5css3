@@ -1,50 +1,40 @@
-section
+section.browser-support-container
   mixin browserSupport('All', '4+', 'All', 'No', 'No')
   h2 Transitions
 
-  p CSS transitions allow property changes in CSS values to occur smoothly over a specified duration.
+  p CSS transitions make properties change smoothly over the specified time.
 
   pre
     code.
       a {
-        color: #000;
+        -webkit-transition:   font-size 1s ease-in;
+        -moz-transition:      font-size 1s ease-in;
+        transition:           font-size 1s ease-in;
       }
 
       a:hover, a:focus {
-        color:#00f;
-      }
-
-section
-  h2 An example
-  pre
-    code.
-      a {
-        color: #000;
-        -webkit-transition: font-size 1s ease-in;
-        -moz-transition: font-size 1s ease-in;
-        transition: font-size 1s ease-in;
-      }
-
-      a:hover, a:focus {
-        font-size: 120%;
-      }
-  #ex-transitions
-    style
-      #ex-transitions a {
-        color: #000;
-      }
-      #ex-transitions .smooth {
-        -webkit-transition: font-size 1s ease-in;
-        -moz-transition: font-size 1s ease-in;
-        transition: font-size 1s ease-in;
-      }
-
-      #ex-transitions a:hover {
         font-size: 200%;
       }
-    strong
+  style
+    #ex-transitions {
+      height: 100px;
+    }
+    #ex-transitions a {
+      line-height: 100px;
+    }
+    #ex-transitions .smooth {
+      -webkit-transition: font-size 1s ease-in;
+      -moz-transition: font-size 1s ease-in;
+      transition: font-size 1s ease-in;
+    }
+
+    #ex-transitions a:hover {
+      font-size: 200%;
+    }
+  #ex-transitions.row-fluid
+    .span6
       a Hover
-    strong
+    .span6
       a.smooth  Hover
 
 section
@@ -57,11 +47,11 @@ section
     code.
       a {
         -webkit-transition:   color 1s ease-in,
-                  background .3s ease;
-        -moz-transition:  color 1s ease-in,
-                  background .3s ease;
-        transition:     color 1s ease-in,
-                  background .3s ease;
+                              background .3s ease;
+        -moz-transition:      color 1s ease-in,
+                              background .3s ease;
+        transition:           color 1s ease-in,
+                              background .3s ease;
       }
 
 section
@@ -70,8 +60,6 @@ section
   pre
     code.
       a {
-        -webkit-transition: all .3s linear;
-        -moz-transition: all .3s linear;
         transition: all .3s linear;
       }
 
@@ -147,29 +135,43 @@ section
   pre
     code.
       a {
-        -webkit-transition: color .2s ease-in .5s;
-        -moz-transition: color .2s ease-in .5s;
-        transition: color .2s ease-in .5s;
+        transition: color .5s ease-in 1s;
       }
+  style.
+    #ex-transition-delay a:hover {
+      font-size: 200%;
+    }
+    #ex-transition-delay > .not-delayed > a {
+      -webkit-transition: font-size .5s ease-in;
+    }
+    #ex-transition-delay > .delayed > a {
+      -webkit-transition: font-size .5s 1s ease-in;
+    }
+
+  #ex-transition-delay
+    p.not-delayed Without delay: <a>Link1</a> <a>Link2</a> <a>Link3</a> <a>Link4</a> <a>Link5</a>
+    p.delayed With delay: <a>Link1</a> <a>Link2</a> <a>Link3</a> <a>Link4</a> <a>Link5</a>
 
 section
   h2 Animatable properties
 
   p background, border, position, color, font, size,
-  p margin, padding, opacity, <b>transformation</b>,
+  p margin, padding, opacity, transformation,
   p z-index, zoom
 
 section
   h2 CSS transition or JavaScript animation?
 
-  ul.read-block 
-    li CSS Transitions
-    ul
-      li Declared in the CSS
-      li Simpler syntax
-      li Transitions are faster
-      li The animation can be transparently interrupted
-    li jQuery animate()
-    ul.read-block
-      li Not limited to simple animations
-      li Support for all browsers
+  .row-fluid
+    .span6
+      p.read-block <b>CSS Transitions</b>
+      ul
+        li Declared in the CSS
+        li Simpler syntax
+        li Accelerated by hardware
+        li The animation is transparently interrupted (hover out)
+    .span6
+      p.read-block <b>jQuery animate()</b>
+      ul.read-block
+        li Not limited to simple animations
+        li Supports all browsers

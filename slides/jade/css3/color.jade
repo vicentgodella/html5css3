@@ -1,4 +1,4 @@
-section
+section.browser-support-container
   mixin browserSupport('All', 'All', 'All', '9+', '9.5+')
   h2 rgba
   p rgba<b>(red, blue, green, alpha)</b>
@@ -10,21 +10,21 @@ section
       .using-rgba {
         background-color: rgba(!{ourRed.R}, !{ourRed.G}, !{ourRed.B}, .5);
       }
-  #ex-rgba
-    .using-opacity OPACITY
-    <br>
-    .using-rgba RGBA
   style
     .using-opacity {
       background-color: !{ourRed.rgb};
-      opacity: .3;
-      color: black;
+      opacity: .5;
     }
-
     .using-rgba {
       background-color: rgba(!{ourRed.R}, !{ourRed.G}, !{ourRed.B}, .5);
-      color: black;
     }
+    .using-opacity, .using-rgba {
+      color: black;
+      line-height: 50px;    
+    }
+  #ex-rgba.row-fluid
+    .using-opacity.span6 OPACITY
+    .using-rgba.span6 RGBA
 
 section
   h2 Wherever a color fits in
@@ -36,3 +36,8 @@ section
         background: rgba(218, 37, 29, .5);
         text-shadow: 0 0 10px rgba(0, 0, 0, .5);
       }
+
+
+section(data-state="lab")
+  h2 Lab: CSS3 buttons
+  p Repeat the buttons from the previous module using just CSS3

@@ -1,48 +1,35 @@
 section
-  section
+  section.browser-support-container
     mixin browserSupport('All', 'All', 'All', '8+', 'All')
     h2 display: table
 
-    .row-fluid
-      .span6
-        p CSS
-        pre
-          code.
-            #main {
-              display: table;
-            }
-
-            #nav {
-              display: table-cell;
-            }
-
-            #content {
-              display: table-cell;
-            }
-      .span6
-        p HTML
-        pre
-          code.
-            #{'<div id="main">'}
-              #{'<div id="nav"> '}
-                navigation column content...
-              #{'</div>'}
-              #{'<div id="content">'}
-                main article content...
-              #{'</div>'}
-            #{'</div>'}
+    pre
+      code.
+        #main {
+          display: table;
+        }
+        #nav, #content {
+          display: table-cell;
+          border: 1px solid #ccc;
+        }
+    pre
+      code.
+        &lt;div id="main">
+          &lt;div id="nav"> Navigation menu &lt;/div>
+          &lt;div id="content"> Main article &lt;/div>
+        &lt;/div>
 
     #ex-display-table
       style
        #ex-display-table .pcell {
         display: table-cell;
         padding: 6px 15px;
+        border: 1px dashed #ccc;
        }
-      p.pcell navigation column content...
-      p.pcell article content...
+      p.pcell Navigation menu
+      p.pcell Main article
   section
-    h2 display:table
-    p Vertical alignment
+    h2 Vertical alignment
     pre
       code.
         #content {
@@ -55,10 +42,11 @@ section
         display: table-cell;
         padding: 6px 15px;
         vertical-align: middle;
+        border: 1px dashed #ccc;
        }
-      p.pcell Now you can align
+      p.pcell Now you can write
         br
-        | me correctly...
+        | multiline text...
       p.pcell ...and everything looks fine.
 
 section

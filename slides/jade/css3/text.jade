@@ -1,4 +1,4 @@
-section
+section.browser-support-container
   mixin browserSupport('All', '3.5+', 'All', '10+', '9.5+')
   h2 text-shadow
   p {x offset} {y offset} {blur-radius} {color} <br>
@@ -6,11 +6,12 @@ section
   pre
     code.
       .container {
-        text-shadow: 5px 5px 5px #000;
+        text-shadow: 2px 2px 3px #000;
       }
   #ex-text-shadow
     style
       #ex-text-shadow h3 {
-        text-shadow: 5px 5px 5px #000;
+        margin-top: 20px;
+        text-shadow: 2px 2px 3px #000;
       }
     h3 I have a shadow

@@ -1,20 +1,20 @@
-section
+section.browser-support-container
   mixin browserSupport('All', '3.5+', '3.2+', '7+', '9.5+')
   h2 New selectors
   p Later general sibling
   pre
     code.
       h2 ~ p {
-        color: orange;
+        color: orangered;
       }
   #ex-general-sibling
     style
-      #ex-general-sibling .header { font-weight: bold; }
-      #ex-general-sibling .header ~ p { color: blue;}
-    p.header A header
-    p This p is styled
-    div This is a div
-    p This p is also styled
+      #ex-general-sibling .header { font-weight: bold; margin-bottom: 0; }
+      #ex-general-sibling .header ~ p { color: orangered; margin-bottom: 0; }
+    p.read-block.header This is a header
+    p.read-block This is a p
+    div.read-block This is a div
+    p.read-block This is a p
 
 section
   h2 New selectors
@@ -53,7 +53,7 @@ section
     table.table#new-pseudo-classes
       tr
         td :root
-        td Root element (<html>)
+        td Root &lt;html> element
       tr
         td :only-child
         td Applies if the element is the only child
@@ -76,10 +76,10 @@ section
         #ex-not .ex-not:not(p) {
           color: orange;
         }
-      span.ex-not I am a span
-      p.ex-not I'm a paragraph
+      span.ex-not I am a &lt;span>
+      p.ex-not I'm a &lt;p>
       ul.ex-not
-        li I'm in a list
+        li I'm a &lt;li>
   section
     h2 New pseudo-classes
     p :only-child
@@ -102,48 +102,47 @@ section
         li I have a sister
 
 section
-  section
-    h2 UI elements' states
-    p :enabled
-    p :disabled
-    p :checked
-  section
-    h2 UI elements' states
-    p :enabled
-    p :disabled
-    p :checked
-    pre
-      code.
-        :enabled {
-          background-color: #csdc;
-        }
-        :disabled {
-          background-color: #dcc;
-        }
-        :checked {
-          width: 5em;
-        }
-    #ex-ui-states
-      style
-        #ex-ui-states :checked {
-          width: 5em;
-        }
-        #ex-ui-states input:enabled {
-          background-color: #cdc;
-        }
-        #ex-ui-states input:disabled {
-          background-color: #dcc;
-        }
-      form.form-horizontal
-        .control-group
-          label Disabled input
-          input(type="text", disabled)
-        .control-group
-          label Enabled input
-          input(type="text")
-        .control-group
-          input(type="radio", value=1, name="radio")
-          input(type="radio", value=1, name="radio")
+  h2 UI elements' states
+  pre
+    code.
+      :enabled {
+        background-color: #csdc;
+      }
+      :disabled {
+        background-color: #dcc;
+      }
+      :checked + label {
+        font-weight: bold;
+      }
+  #ex-ui-states
+    style
+      #ex-ui-states :checked + label {
+        font-weight: bold;
+      }
+      #ex-ui-states input:enabled {
+        background-color: #cdc;
+      }
+      #ex-ui-states input:disabled {
+        background-color: #dcc;
+      }
+      #ex-ui-states input[type=radio],
+      #ex-ui-states input[type=radio] + label {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    form.form-horizontal
+      .control-group
+        label Disabled input
+        input(type="text", disabled)
+      .control-group
+        label Enabled input
+        input(type="text")
+      .control-group
+        input(type="radio", value=1, name="radio")
+        label do it today
+        br
+        input(type="radio", value=2, name="radio")
+        label do it tomorrow
 
 
 section
@@ -160,14 +159,25 @@ section
 
 section
   h2 Style selected text
-  p New pseudo-elements
-  p.read-block ::selection
-  p.read-block ::-moz-selection
-  p.read-block ::-webkit-selection
+  pre
+    code.
+      p::selection,
+      p::-moz-selection,
+      p::-webkit-selection {
+        background-color: pink;
+      }
+  style.
+    #ex-selected-text > p::selection,
+    #ex-selected-text > p::-moz-selection,
+    #ex-selected-text > p::-webkit-selection {
+      background-color: pink;
+    }
+  #ex-selected-text
+    p Select this entire slide with your mouse and compare the selected text colors.
 
 section
-  section#target-selector
-    mixin browserSupport('All', '3.5+', '3.2+', '?', '9.5+')
+  section#target-selector.browser-support-container
+    mixin browserSupport('All', '3.5+', '3.2+', '9+', '9.5+')
     h2 :target
     pre
       code.

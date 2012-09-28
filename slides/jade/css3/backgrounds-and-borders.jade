@@ -1,4 +1,4 @@
-section
+section.browser-support-container
   mixin browserSupport('All', 'All', 'All', '9+', '10.5+')
   h2 Border radius
   p {radius} <br>
@@ -23,14 +23,6 @@ section
 section(position)
   h2 border-radius circles
   p Circles as <b>very</b> rounded rectangles
-  div(style="position: relative;")
-    div(style="width: 600px;\
-     height: 600px;\
-     position: absolute;\
-     top: 300px;\
-     left: 600px;\
-     border-radius: 50%;\
-     z-index: -10;").yellow-bg
   pre
     code.
       .circle {
@@ -38,12 +30,22 @@ section(position)
         height: 100px;
         border-radius: 50%;
       }
+  style.
+    #ex-circle > .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto;
+      line-height: 100px;
+    }
+  #ex-circle
+    .circle.yellow-bg &lt;div>
 
 section(data-state="lab")
   h2 Lab: Badges
   p Add badges to a button bar that display data
 
-section
+section.browser-support-container
   mixin browserSupport('All', '3.5+', 'All', '9+', '10.5+')
   h2 box-shadow
   p {x offset} {y offset} {blur-radius} {color} <br>
@@ -52,38 +54,39 @@ section
   pre
     code.
       .container {
-        -moz-box-shadow: 10px 30px 5px #000;
-        -webkit-box-shadow: 10px 30px 5px #000;
-        box-shadow: 10px 30px 5px #000;
+        -moz-box-shadow: 10px 10px 5px #000;
+        -webkit-box-shadow: 10px 10px 5px #000;
+        box-shadow: 10px 10px 5px #000;
       }
   #ex-box-shadow
     style
       #ex-box-shadow {
-        -moz-box-shadow: 10px 30px 5px #000;
-        -webkit-box-shadow: 10px 30px 5px #000;
-        box-shadow: 10px 30px 5px #000;
+        -moz-box-shadow: 10px 10px 5px #000;
+        -webkit-box-shadow: 10px 10px 5px #000;
+        box-shadow: 10px 10px 5px #000;
         height: 100px;
+        border: 1px solid #ccc;
       }
 
-section
+section.browser-support-container
   mixin browserSupport('All', '3.6+', 'All', '9+', '10.5+')
   h2 Multiple background images
   p background-image: {image1}, {image2}, ...
   pre
     code.
-      background: url(image1.png) 10% 15% no-repeat,
-                  url(image2.png) 80% 70% no-repeat;
+      background: url(image1.png) 5% 15% no-repeat,
+                  url(image2.png) 95% 85% no-repeat;
   #ex-multiple-bg
     style
       #ex-multiple-bg {
         height: 200px;
-        background: url(assets/svg/html5.svg) 10% 15% no-repeat,
-                    url(assets/svg/css3.svg) 80% 70% no-repeat;
+        background: url(assets/svg/html5.svg) 5% 15% no-repeat,
+                    url(assets/svg/css3.svg) 95% 85% no-repeat;
         background-size: auto 100px, auto 70px;
       }
 
 section
-  section
+  section.browser-support-container
     mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
     h2 background-size
     p {length} {percentage} {auto} {contain} {cover}
@@ -100,7 +103,7 @@ section
           background: url(assets/svg/css3.svg) no-repeat 40% 40%;
           background-size: 100px;
         }
-  section
+  section.browser-support-container
     mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
     h2 background-size
     p <b>contain</b>
@@ -117,7 +120,7 @@ section
           background: url(assets/svg/css3.svg) no-repeat 40% 40%;
           background-size: contain;
         }
-  section
+  section.browser-support-container
     mixin browserSupport('All', '3.6+', '4.1+', '9+', '9.5+')
     h2 background-size
     p <b>cover</b>
@@ -134,7 +137,7 @@ section
           background: url(assets/svg/css3.svg) no-repeat 40% 40%;
           background-size: cover;
         }
-section
+section.browser-support-container
   mixin browserSupport('All', '3.5+', 'All', '10+', '10.5+')
   h2 border-image
   p {image-url} {top-width} {right-width} <br />
