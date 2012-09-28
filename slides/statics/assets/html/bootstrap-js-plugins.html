@@ -17,7 +17,7 @@
       <ul class="dropdown-menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
+        <li><a href="#"><b>.btn > ul.dropdown-menu</b></a></li>
         <li class="divider"></li>
         <li><a href="#">Separated link</a></li>
       </ul>
@@ -29,13 +29,17 @@
         <ul id="myTab" class="nav nav-tabs">
           <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
           <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
+          <li class=""><a href="#gallery" data-toggle="tab">Gallery</a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
           <div class="tab-pane fade active in" id="home">
-            <p>It has been said that astronomy is a humbling and character-building experience. </p>
+            <p>The size and age of the Cosmos are beyond ordinary human understanding. Lost somewhere between immensity and eternity is our tiny planetary home.</p>
           </div>
           <div class="tab-pane fade" id="profile">
-            <p>The size and age of the Cosmos are beyond ordinary human understanding. Lost somewhere between immensity and eternity is our tiny planetary home.</p>
+            <p><b>a[data-toggle="#profile"]</b></p>
+          </div>
+          <div class="tab-pane fade" id="gallery">
+            <p><b>.tab-content > .tab-pane#Gallery</b></p>
           </div>
         </div>
       </div>
@@ -43,8 +47,7 @@
 
     <div style="margin-top: 40px;">
       <h4>Popovers and tooltips</h4>
-      <p>
-        Pitchfork eiusmod mollit <a href="#" rel="tooltip" data-title="Default tooltip">occupy</a>. Helvetica jean shorts selvage PBR, consectetur swag put a bird on it. <a href="#" rel="popover" data-content="This is a popover" data-title="Popover">Tofu</a> vinyl marfa, organic williamsburg cillum mcsweeney's master cleanse exercitation consequat cardigan delectus 3 wolf moon.
+      <p>Pitchfork eiusmod mollit <a href="#" rel="tooltip" data-title="a[rel=&quot;tooltip&quot;]">exercitation</a>. Helvetica jean. Shorts selvage, consectetur swag. <a href="#" rel="popover" data-content="a[rel=&quot;popover&quot;]" data-title="Popover">Tofu</a> vinyl marfa, organic williamsburg cillum mcsweeney's master cleanse consequat cardigan delectus 3 wolf moon.
       </p>
     </div>
 
@@ -89,7 +92,7 @@
           </div>
           <div id="collapseTwo" class="accordion-body collapse">
             <div class="accordion-inner">
-              Anim pariatur cliche...
+              <b>.accordion > .accordion-group > a.accordion-toggle + .accordion-inner</b>
             </div>
           </div>
         </div>
@@ -98,7 +101,9 @@
 
    <div style="margin-top: 40px;">
     <h4>Typeahead</h4>
-    <input type="text" style="height: 30px;" data-provide="typeahead" data-items="4" data-source="[&quot;Red&quot;,&quot;Orange&quot;,&quot;Yellow&quot;,&quot;Green&quot;,&quot;Blue&quot;,&quot;Indigo&quot;,&quot;Purple&quot;]">
+      <fieldset>
+        <input type="text" style="height: 30px;" data-provide="typeahead" data-items="4" data-source="[&quot;Red&quot;,&quot;Orange&quot;,&quot;Yellow&quot;,&quot;Green&quot;,&quot;Blue&quot;,&quot;Indigo&quot;,&quot;Purple&quot;]">
+      </fieldset>
   </div>
 
   </div>
