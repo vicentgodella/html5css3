@@ -2,7 +2,7 @@ section
   h2 New attributes
   p <b>15+ new</b> tag attributes
 
-section
+section.browser-support-container
   mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
   h2 required
   pre
@@ -15,7 +15,7 @@ section
         input(type="text", required)
       button(type="submit") Submit
 
-section
+section.browser-support-container
   mixin browserSupport('10+', '4+', '5+', '10+', '11.5+')
   h2 placeholder
   pre
@@ -29,7 +29,7 @@ section
         placeholder="Search Bookmarks and History", style="width: 60%;")
       button(type="submit") Submit
 
-section
+section.browser-support-container
   mixin browserSupport('6+', '4+', '5+', '10+', '11+')
   h2 autofocus
   pre
@@ -44,7 +44,7 @@ section
         input(type="search")
       button(type="submit") Submit
 
-section
+section.browser-support-container
   mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
   h2 pattern
   pre
@@ -59,7 +59,7 @@ section
       button(type="submit") Submit
 
 
-section
+section.browser-support-container
   mixin browserSupport('6+', 'No', '5+', '10+', '10.6+')
   h2 min, max, step
   pre
@@ -94,7 +94,7 @@ section
         &lt;li <b>class="username-cnorris"</b>>Chuck Norris</li>
       #{'</ul>'}
 
-section
+section.browser-support-container
   mixin browserSupport('10+', '3.6+', 'No', 'No', 'No')
   h2 form attribute
   p <b>input, select, textarea, button, fieldset</b>
@@ -108,7 +108,7 @@ section
 
       #{'<form id="create"></form>'}
 
-section
+section.browser-support-container
   mixin browserSupport('No', '4+', 'No', '9+', '11.5+')
   h2 fieldset.disabled
   p Supported in IE9, Opera 11.5 & Firefox 4
@@ -136,7 +136,7 @@ section
         input(type="text")
 
 
-section
+section.browser-support-container
   mixin browserSupport('6+', '4+', '5+', '10+', '11+')
   h2 New textarea attributes
   p maxlength="number" (Chrome and FF4) spellcheck="true|false"
@@ -161,7 +161,7 @@ section
 
 section
   
-  section
+  section.browser-support-container
     mixin browserSupport('All', '4+', '5+', '10+', '9.6+')
     h2 Validation CSS selectors
     p <b>:required</b> and <b>:optional</b>
@@ -243,7 +243,7 @@ section
           input(type="number", min="1", max="10")
         button(type="submit") Submit
 
-section
+section.browser-support-container
   mixin browserSupport('6+', '4+', 'No', '10+', '10.6+')
   h2 novalidate
   pre
@@ -265,7 +265,7 @@ section
       button(type="submit") Submit
       button(type="submit", formnovalidate) Save
 
-section
+section.browser-support-container
   mixin browserSupport('10+', '4+', 'No', '10+', '10.6+')
   h2 New submit button attrs
   p formaction, formenctype, formmethod, formnovalidate and formtarget
