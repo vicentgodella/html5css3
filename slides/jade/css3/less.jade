@@ -1,6 +1,6 @@
 section#less
   h2 CSS preprocessors
-  p <b>LESS</b> syntax is a superset of CSS
+  p <b>LESS</b> extends CSS
   .row-fluid
     .span6.fragment
       pre
@@ -21,25 +21,16 @@ section#less
           }
 
 section
-  h2 LESS
-  p How to (with node)
-
+  h2 Using LESS
   pre
     code.
-      //Installing
+      // Installing
       npm install less
   pre
     code.
-      //Compile to CSS
+      // Compile to CSS
       lessc styles.less styles.css
-  //- pre
-  //-   code.
-  //-     //Client-side compiling
-
-  //-     #{'<link rel="stylesheet/less" type="text/css" href="styles.less">'}
-
-  //-     #{'<script src="less.js" type="text/javascript"></script>'}
-
+  
 section
   h2 Operations
   .row-fluid
@@ -192,11 +183,11 @@ section
       p.small-text variables.less
       pre
         code.no-highlight.
-          //My variables
+          // My variables
           @myGreen: #1C7;
           ...
 
-          //My mixins
+          // My mixins
           .center() {
             margin-left: 0;
             margin-right: 0;

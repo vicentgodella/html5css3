@@ -102,35 +102,52 @@ section
         li
           p High density display:
           p Screen <b>640×960</b>, reports <b>320×480</b>
-        li.fragment Don't try to fix this!
+        li.fragment Don't try pixel perfect!
 
 section
-  h2 Other media queries
-  p Not very useful/consistent
-  ul.read-block
-    li @media: <b>device-width</b>, <b>orientation</b>, <b>aspect-ratio</b> <br>
-    li #{'<meta name="viewport">'} : <b>target-densitydpi</b>
-  p.fragment Stick with <b>max/min-width</b> and <b>content="width=device-width"</b>
+  h2 Use just min-width and max-width
+  p Inconsistent or just not useful:
+  p <b>device-width, orientation, aspect-ratio</b>
 
 section(data-state="lab")
   h2 Lab: Media Queries
   p Use media queries with CSS
 
 section
-  section
-    h2 Responsive design
-    #ex-rwd-large
-      iframe(src="assets/html/rwd.html", width="95%", height="400px")
+  h2 Screen sizes
+  img(src="assets/raster/screen-stats.png")
 
-  section
-    h2 Responsive design
-    #ex-rwd
-      iframe(src="assets/html/rwd.html", width="75%", height="400px")
+section
+  h2 Goldilocks approach
+  p Keep it <b>simple</b>: Big, Right, Small
+  
+  style
+    #goldilocks-example > div {
+      background-image: url(assets/raster/responsive-sprite.jpg);
+      font-size: 50px;
+      text-transform: uppercase;
+      color: #ccc;
+      overflow: hidden;
+      height: 400px;
+      margin-right: 20px;
+      display: inline-block;
+    }
+    .goldilocks-big {
+      width: 385px;
+    }
+    .goldilocks-right {
+      width: 235px;
+      background-position: -400px 0;
+    }
+    .goldilocks-small {
+      width: 105px;
+      background-position: -635px 0;
+    }
 
-  section
-    h2 Responsive design
-    #ex-rwd
-      iframe(src="assets/html/rwd.html", width="35%", height="400px")
+  .row-fluid#goldilocks-example
+    .goldilocks-big 
+    .goldilocks-right 
+    .goldilocks-small 
 
 section
   h2 Fluid grids
@@ -156,173 +173,16 @@ section
   p Keep everything relative
 
   ul
-    li <b>Percentages for lengths</b> (beware of the margin/padding different behaviors)
-
-    li Limit the flexibility with <b>max/min-width or overflow</b>
+    li <b>Percentages for lengths</b> (keep in mind the margin/padding)
+    li Limit the flexibility using <b>max-width/min-width or overflow</b>
 
   pre
     code.
       .two-columns {
         width: 46%;
         margin-left: 2%;
+        min-width: 100px;
       }
-
-section
-  h2 Flexible images
-  p Percentages for media sizes, max-width: 100%
-  #flexible-images-example
-    style
-      #flexible-images-example .parent {
-        height: 300px;
-        width: 80%;
-        margin: auto auto;
-        padding-top: 50px;
-        box-sizing: border-box;
-      }
-      #flexible-images-example img {
-        display: block;
-        max-width: none;
-        margin: 0 0 0 10px;
-      }
-
-    .row-fluid
-      .span4
-        .parent(style="background: #bbb;")
-          img(src="assets/svg/blank-image.svg", width="130px")
-      .span2.fragment
-        .parent.red-bg
-          img(src="assets/svg/blank-image.svg", width="130px")
-      .span2.fragment
-        .parent.red-bg
-          img(src="assets/svg/blank-image.svg", width="50%")
-      .span2.offset1.fragment
-        .parent.green-bg
-          img(src="assets/svg/blank-image.svg", width="100%", style="margin: 0;")
-
-section
-  section
-    h2 Flexible images
-    p Center background
-
-    pre
-      code.
-        .illustration {
-          background: url(its-cold.png) no-repeat 50% 0;
-        }
-
-  section
-    h2 Flexible images
-    p Center background
-
-    iframe(src="assets/html/cropped-bg.html", width="600", height="400")
-    a(href="http://commons.wikimedia.org/wiki/File:3months-old_crossbreed_cats.jpg").source Picture from Wikimedia Commons
-  section
-    h2 Flexible images
-    p Center background
-
-    iframe(src="assets/html/cropped-bg.html", width="400", height="400")
-  section
-    h2 Flexible images
-    p Center background
-
-    iframe(src="assets/html/cropped-bg.html", width="200", height="400")
-
-section
-  h2 Responsive images
-  p Serving different images for different displays
-
-section
-  h2 High density displays
-  p Pixel density above 200 PPI
-  p.small-text iPhone4 (326), iPad3 (264),<br> Galaxy Nexus (316), Galaxy SIII (306)
-
-section
-  h2 High density displays
-  p Prefixed media query <br> <b>device-pixel-ratio</b>
-  pre
-    code.
-      @media only screen and (min--moz-device-pixel-ratio: 2),
-      only screen and (-o-min-device-pixel-ratio: 2/1),
-      only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (min-device-pixel-ratio: 2) {
-
-         /* Custom CSS here */
-
-      }
-
-section
-  h2 Duplicate downloads
-  p Using cookies
-
-  pre
-    code.
-      #{'<img src="picture.jpg" data-large="picture-large.jpg">'}
-
-      document.cookie ="device_dimensions="+screen.width+"x" + screen.height;
-  p Using noscript
-
-  pre
-    code.
-      #{'<noscript '}
-        data-img="picture-default.jpg"
-        data-imgsmall="picture-small.jpg">
-        #{'<img src="picture-default.jpg">'}
-      #{'</noscript>'}
-
-      $('noscript[data-img]').replaceWith(getImage(this));
-
-section
-  h2 SVG
-  p XML based vector graphics
-  pre
-    code.
-      #{'<defs>'}
-        #{'<linearGradient y2="100%" id="our-gradient">'}
-          #{'<stop offset="30%" stop-color="#fff"></stop>'}
-          #{'<stop offset="70%" stop-color="#a34"></stop>'}
-        #{'</linearGradient>'}
-      #{'</defs>'}
-
-      #{'<circle cx="100" cy="100" r="80" fill="url(#our-gradient)" stroke="#a34" stroke-width="5"></circle>'}
-  svg(version="1.1", height="200", width="200")
-    defs
-      linearGradient(y2="100%")#our-gradient
-        stop(offset="30%", stop-color="#fff")
-        stop(offset="70%", stop-color="#a34")
-    circle(cx="100", cy="100", r="80", fill="url(#our-gradient)", stroke="#a34", stroke-width="5")
-
-section
-  mixin browserSupport('4+', '4+', '5+', '9+', '9.5+')
-  h2 SVG
-  p.read-block Suitable for <b>simple images</b>
-  p.read-block Support in mobile is <b>limited</b>
-  .row-fluid
-    .offset1.span1(style="background: url(assets/svg/html5.svg) no-repeat; background-size: contain; height: 300px;")
-    .offset1.span2(style="background: url(assets/svg/html5.svg) no-repeat; background-size: contain; height: 300px;")
-    .offset1.span4(style="background: url(assets/svg/html5.svg) no-repeat; background-size: contain; height: 300px;")
-
-section
-  h2 SVG inclusion
-  p HTML IMAGE ELEMENT:
-  pre
-    code.
-      #{'<img src=”diagram.svg”>'}
-
-  p CSS BACKGROUND:
-  pre
-    code.
-      .diagram {
-        background-image: url('diagram.svg');
-      }
-
-  p INLINE SVG ELEMENT: 
-  pre
-    code.
-      #{'<svg height=86 width=90 viewBox="5 9 90 86" style="float: right;"">'}
-        #{'<path stroke=#F53F0C ... />'}
-        #{'<line stroke-width=10 ... />'}
-      #{'</svg>'}
-
 
 section
   h2 Media queries
@@ -331,33 +191,176 @@ section
   iframe(src="assets/html/rwd.html", width="30%", height="400px")
 
 section
-  h2 Screen sizes
-  img(src="assets/raster/screen-stats.png")
+  section
+    h2 Flexible images
+    p Use max-width: 100%
+    style.
+      #flexible-images-example .parent {
+        height: 300px;
+        width: 80%;
+        margin: auto auto;
+        padding: 20px 10px;
+        box-sizing: border-box;
+      }
+      #flexible-images-example img {
+        display: block;
+        max-width: none;
+      }
+      #flexible-images-example p {
+        font-size: 14px;
+        color: white;
+        text-align: left;
+      }
+    #flexible-images-example
+
+      .row-fluid
+        .span4
+          .parent(style="background: darkgray;")
+            p Original size (width=100px)
+            img(src="assets/svg/blank-image.svg", width="130px")
+        .span2.fragment
+          .parent.red-bg
+            p width=100px
+            img(src="assets/svg/blank-image.svg", width="130px")
+        .span2.fragment
+          .parent.red-bg
+            p width=50%
+            img(src="assets/svg/blank-image.svg", width="50%")
+        .span2.fragment
+          .parent.green-bg
+            p max-width=100%
+            img(src="assets/svg/blank-image.svg", width="100%", style="margin: 0;")
+
+  section
+    h2 Center background
+    pre
+      code.
+        .illustration {
+          background: url(someimage.png) no-repeat 50% 0;
+        }
+    style.
+      #responsive-image-centered > .responsive-image {
+        background: url(assets/raster/lens.jpg) no-repeat 50% 0;
+        height: 400px;
+        margin-right: 20px;
+        display: inline-block;
+      }
+    #responsive-image-centered
+      .responsive-image(style="width: 385px")
+      .responsive-image(style="width: 235px")
+      .responsive-image(style="width: 105px")
+    a(href="http://commons.wikimedia.org/wiki/File:Lens_Nikkor_50mm.jpg").source Picture from Wikimedia Commons
+    
+  section
+    h2 Responsive images
+    p Serving different images for different displays
+
+  section
+    h2 High density displays
+    p Pixel density above 200 PPI
+    ul.small-text 
+      li iPhone4 (326)
+      li iPad3 (264)
+      li Galaxy Nexus (316)
+      li Galaxy SIII (306)
+
+  section
+    h2 device-pixel-ratio
+    pre
+      code.
+        @media only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2) {
+
+           .mybg {
+            background-image: url(imgx2.jpg);
+           }
+
+        }
+
+  section
+    h2 Avoid duplicate downloads
+    p Using cookies
+
+    pre
+      code.
+        &lt;img src="picture.jpg" data-large="picture-large.jpg">
+        &lt;script>
+          document.cookie ="dimensions=" + screen.width + "x" + screen.height;
+        &lt;/script>
+    p Using noscript
+
+    pre
+      code.
+        &lt;noscript data-img="picture-default.jpg" data-imgsmall="picture-small.jpg">
+          #{'<img src="picture-default.jpg">'}
+        #{'</noscript>'}
+
+        &lt;script>
+          $('noscript[data-img]').replaceWith(getImage(this));
+        &lt;/script>
+  section
+    h2 SVG
+    p XML based vector graphics
+    pre
+      code.
+        #{'<defs>'}
+          #{'<linearGradient y2="100%" id="our-gradient">'}
+            #{'<stop offset="30%" stop-color="#fff"></stop>'}
+            #{'<stop offset="70%" stop-color="#a34"></stop>'}
+          #{'</linearGradient>'}
+        #{'</defs>'}
+
+        #{'<circle cx="100" cy="100" r="80" fill="url(#our-gradient)" stroke="#a34" stroke-width="5"></circle>'}
+    svg(version="1.1", height="200", width="200")
+      defs
+        linearGradient(y2="100%")#our-gradient
+          stop(offset="30%", stop-color="#fff")
+          stop(offset="70%", stop-color="#a34")
+      circle(cx="100", cy="100", r="80", fill="url(#our-gradient)", stroke="#a34", stroke-width="5")
+
+  section
+    mixin browserSupport('4+', '4+', '5+', '9+', '9.5+')
+    h2 SVG
+    p.read-block Suitable for <b>simple images</b>
+    p.read-block Support in mobile is <b>limited</b>
+    style.
+      .html5bg {
+        background: url(assets/svg/html5.svg) no-repeat; 
+        background-size: contain; 
+        height: 300px;
+        margin-top: 10px;
+      }
+    .row-fluid
+      .offset1.span1.html5bg
+      .span2.html5bg
+      .span4.html5bg
+
+  section
+    h2 How to use SVG
+    p as &lt;img>:
+    pre
+      code.
+        #{'<img src=”diagram.svg”>'}
+
+    p as CSS background:
+    pre
+      code.
+        .diagram {
+          background-image: url(diagram.svg);
+        }
+
+    p inline:
+    pre
+      code.
+        &lt;svg height=86 width=90 viewBox="5 9 90 86" style="float: right;">
+          #{'<path stroke=#F53F0C ... />'}
+          #{'<line stroke-width=10 ... />'}
+        #{'</svg>'}
 
 section
-  h2 Goldilocks approach
-  .row-fluid#goldilocks-example
-    style
-      #goldilocks-example {
-        margin-top: 40px;
-      }
-      #goldilocks-example p {
-        border: 1px #333 solid;
-        height: 200px;
-        line-height: 200px;
-        background-color: #ccc;
-      }
-
-    .span4(style="margin: 0;")
-      p(style="width:30%; margin:0 34%;") Small
-    .span4
-      p(style="width:50%; margin:0 24%;") Right
-    .span4
-      p(style="width:70%; margin:0 14%;") Big
-  p(style="margin-top: 40px;") Keep it <b>simple</b>
-
-section
-  h2 RWD with Bootstrap
+  h2 Responsive Bootstrap
   pre
     code.
       #{'<'}div class="<b>row-fluid</b>">
@@ -373,41 +376,22 @@ section
       }
 section
   section
-    h2 RWD with Bootstrap
+    h2 Responsive Bootstrap
     p Several media queries implemented
-
     p 0 – 480px – 768px – 980px – 1200px
-
-
+    p Try resizing this window
     pre
       code.
         #{'<'}link href="<b>bootstrap-responsive.css</b>" rel="stylesheet">
-
-    #ex-bootstrap-rwd
-      .row-fluid
-        .span2.grid-block Fee
-        .span2.grid-block Fi
-        .span1.grid-block.offset2 Fo
-        .span4.grid-block Fum!
-  section
-    h2 RWD with Bootstrap
-    p Several media queries implemented
-
-    p 0 – 480px – 768px – 980px – 1200px
-
-
-    pre
-      code.
-        #{'<'}link href="<b>bootstrap-responsive.css</b>" rel="stylesheet">
-
-    #ex-bootstrap-rwd-2
-      style
-        #ex-bootstrap-rwd-2 [class^="span"] {
+    style
+      @media (max-width: 600px) {
+        #ex-bootstrap-rwd .grid-block {
           float: none;
           width: 100%;
-          margin-bottom: 5px;
           margin-left: 0;
         }
+      } 
+    #ex-bootstrap-rwd
       .row-fluid
         .span2.grid-block Fee
         .span2.grid-block Fi
