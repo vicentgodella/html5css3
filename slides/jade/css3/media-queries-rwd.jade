@@ -22,19 +22,20 @@ section.browser-support-container
 section
   h2 max-width
   .row-fluid
-  .span7
+  .span6
     pre
       code.
         /* Default CSS */
 
         @media (max-width: 900px) {
           /* Small */
+          ...
         }
         @media (max-width: 480px) {
           /* Very small */
           ...
         }
-  .span5.fragment
+  .span6.fragment
     pre
       code.
         /* Mobile first */
@@ -50,8 +51,8 @@ section
 
 section
   h2 Viewport
-  p Available space for the layout
-  p AKA browser window's width
+  p Space available for the layout
+  p AKA browser window width
   .viewport-example
     h6.ipsum Lorem ipsum and stuff...
     .row-fluid
@@ -63,9 +64,7 @@ section
 
 section
   h2 Mobile viewports
-  ul 
-    li Visible viewport
-    li Layout viewport
+  p <b>Visible viewport</b> vs <b>Layout viewport</b>
   .viewport-example
     .visible-viewport
     h6.ipsum Lorem ipsum and stuff...
@@ -78,50 +77,32 @@ section
 
 section
   h2 Initial size
-  p Disable automatic resizing
+  p Disable default layout viewport (between 800 and 1000px)
 
   pre
     code.
       #{'<meta name="viewport" content="width=device-width">'}
-  //- pre
-  //-   code.
-  //-     body {
-  //-       -webkit-text-size-adjust: 100%;
-  //-     }
-
 
 section
-  section
-    .row-fluid(style="margin-top: 40px;")
-          .span2.offset5
-            .viewport-mobile-example
-              h6.ipsum Lorem ipsum and stuff...
-              .row-fluid
-                .span9
-                  p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane.
-                .span3
-                  .picture.red-bg
-              p.ipsum.read-block 
-  section
-    h2 Mobile phones lie
-    .row-fluid(style="margin-top: 40px;")
-      .span2.offset2
-        .viewport-mobile-example
-          h6.ipsum Lorem ipsum and stuff...
-          .row-fluid
-            .span9
-              p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane.
-            .span3
-              .picture.red-bg
-      .span7
-        ul.small-text
-          li
-            p "Low-cost" smartphone:
-            p Screen <b>240×320</b>, reports <b>320×427</b>
-          li
-            p High density display:
-            p Screen <b>640×960</b>, reports <b>320×480</b>
-    p.fragment Don't try to fix this lie!
+  h2 Mobile phones lie
+  .row-fluid(style="margin-top: 40px;")
+    .span2.offset2
+      .viewport-mobile-example
+        h6.ipsum Lorem ipsum and stuff...
+        .row-fluid
+          .span9
+            p.ipsum.read-block Cabbage groundnut caulie celery wakame kombu broccoli pea sprouts mustard artichoke asparagus scallion dulse summer purslane.
+          .span3
+            .picture.red-bg
+    .span7
+      ul.small-text
+        li
+          p Low-cost smartphone:
+          p Screen <b>240×320</b>, reports <b>320×427</b>
+        li
+          p High density display:
+          p Screen <b>640×960</b>, reports <b>320×480</b>
+        li.fragment Don't try to fix this!
 
 section
   h2 Other media queries
