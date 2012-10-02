@@ -1,6 +1,5 @@
 section
-  h2 Form controls
-  p <b>12 new</b> form controls
+  h2 New form controls
 
 section
   h2 Traditional form controls
@@ -14,11 +13,13 @@ section.browser-support-container
     code.
       &lt;input name="email" <b>type="email"</b>>
   #ex-email-input
-    form
-      fieldset
-        label E-mail
+    form.form-inline
+      fieldset 
+        label.checkbox E-mail
+        | 
         input(type="email")
-      button(type="submit") Submit
+        | 
+        input.btn(type="submit", value="Submit")
   iframe(src="assets/html/email-keypad.html", width="500", height="300")
 
 section.browser-support-container
@@ -28,11 +29,13 @@ section.browser-support-container
     code.
       &lt;input name="homepage" <b>type="url"</b>>
   #ex-email-input
-    form
-      fieldset
-        label Url
-        input(type="url")
-      button(type="submit") Submit
+    form.form-inline
+      fieldset 
+        label.checkbox Url
+        | 
+        input(type="url") 
+        | 
+        button.btn(type="submit") Submit
   iframe(src="assets/html/url-keypad.html", width="500", height="300")
 
 section.browser-support-container
@@ -42,11 +45,13 @@ section.browser-support-container
     code.
       &lt;input name="amount" <b>type="number"</b> value="0">
   #ex-number-input
-    form
-      fieldset
-        label Number
+    form.form-inline
+      fieldset 
+        label.checkbox Number
+        | 
         input(type="number", value="0")
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
   iframe(src="assets/html/number-keypad.html", width="500", height="300")
 
 section.browser-support-container
@@ -56,11 +61,13 @@ section.browser-support-container
     code.
       &lt;input name="amount" <b>type="range" min="0" max="50"</b> value="10">
   #ex-range-input
-    form
-      fieldset
-        label Range
+    form.form-inline
+      fieldset 
+        label.checkbox Range
+        | 
         input(type="range", min="0", max="50", value="10")
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
 
 section.browser-support-container
   mixin browserSupport('6+', '3.6+', '5+', '9+', '10.6+')
@@ -69,11 +76,13 @@ section.browser-support-container
     code.
       &lt;input <b>type="search"</b> results="10" />
   #ex-search-input
-    form
-      fieldset
-        label Search
+    form.form-inline
+      fieldset 
+        label.checkbox Search
+        | 
         input(type="search").search-query
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
 
 section.browser-support-container
   mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
@@ -82,27 +91,31 @@ section.browser-support-container
     code.
       &lt;input <b>type="tel"</b> placeholder="(555) 555-5555">
   #ex-tel-input
-    form
-      fieldset
-        label Telephone
+    form.form-inline
+      fieldset 
+        label.checkbox Telephone
+        | 
         input(type="tel")
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
   iframe(src="assets/html/number-keypad.html", width="500", height="300")
 
 section.browser-support-container
   mixin browserSupport('6+', 'No', '5+', 'No', '10.6+')
   h2 date
-  p date, time, month, week, datetime, datetime-local
+  p date, time, month, week, datetime
 
   pre
     code.
       &lt;input <b>type="date" min="2012-09-05" max="2012-09-21"</b> value="2011-05-20">
   #ex-date-input
-    form
-      fieldset
-        label Date
+    form.form-inline
+      fieldset 
+        label.checkbox Date
+        | 
         input(type="date", min="2012-09-05", max="2012-09-21")
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
 
 section.browser-support-container
   mixin browserSupport('6+', '3.6+', '5+', '10+', '11+')
@@ -111,11 +124,13 @@ section.browser-support-container
     code.
       &lt;input type="file" <b>multiple="multiple"</b> />
   #ex-multiple-file-input
-    form
-      fieldset
-        label Select files
+    form.form-inline
+      fieldset 
+        label.checkbox Select files
+        | 
         input(type="file", multiple="multiple")
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
 
 section.browser-support-container
   mixin browserSupport('20+', 'No', 'No', 'No', '11+')
@@ -124,14 +139,16 @@ section.browser-support-container
     code.
       &lt;input <b>type="color"</b> placeholder="e.g. #2a2a2a">
   #ex-color-input
-    form
-      fieldset
-        label Color
+    form.form-inline
+      fieldset 
+        label.checkbox Color
+        | 
         input(type="color")
-      button(type="submit") Submit
+        | 
+        button.btn(type="submit") Submit
 
 section.browser-support-container
-  mixin browserSupport('No', '4+', '5+', '10+', '10.6+')
+  mixin browserSupport('20+', '4+', '5+', '10+', '10.6+')
   h2 datalist
   pre
     code.
@@ -142,17 +159,20 @@ section.browser-support-container
         #{'<option label="Ms" value="Miss">'}
       #{'</datalist>'}
   #ex-datalist-input
-    form
-      fieldset
-        label Click for the options
-        input(type="text", list="mydata")
+    form.form-inline
       datalist#mydata
         option(label="Mr", value="Mister")
         option(label="Mrs", value="Mistress")
         option(label="Ms", value="Miss")
-      button(type="submit") Submit
+      fieldset
+        label.checkbox Click twice to see options
+        | 
+        input(type="text", list="mydata")
+        | 
+        button.btn(type="submit") Submit
 
-section
+section.browser-support-container
+  mixin browserSupport('8+', '6+', '6+', '10+', '11+')
   h2 progress
   pre
     code.
@@ -161,9 +181,9 @@ section
     progress(value="75", max="100") 75 of 100
 
 section.browser-support-container
-  mixin browserSupport('6+', 'No', 'No', 'No', '10.6+')
+  mixin browserSupport('8+', '16+', '6+', 'No', '10.6+')
   h2 meter
-  p Only supported in Chrome and Opera
+  p Less supported than progress
   pre
     code.
       #{'<meter min="0" max="100" value="91">91 of 100</meter>'}

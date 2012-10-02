@@ -1,11 +1,11 @@
 section
   h2 Client-Side Storage
   ul
-    li <b>IndexedDB API:</b> Structured data storage
+    li <b>IndexedDB:</b> Structured data storage
+    li <b>File:</b> Manipulate local files from the browser
     li <b>LocalStorage:</b> Key-value storage
-    li <b>File API:</b> Manipulate local files from the browser
 
-section
+section.browser-support-container
   mixin browserSupport('19+', '12+', 'No', '10+', 'No')
   h2 IndexedDB
   ul
@@ -13,23 +13,22 @@ section
     li <b>Query capabilities</b>
     li <b>Very limited</b> browser support
 
-section
+section.browser-support-container
   mixin browserSupport('19+', '12+', 'No', '10+', 'No')
   h2 IndexedDB
   pre
     code.
       myDatabase.indexedDB.addTodo = function(friendText) {
-        var db = myDatabase.indexedDB.db;
-        var trans = db.transaction(["friend"], IDBTransaction.READ_WRITE, 0);
-        var store = trans.objectStore("friend");
-        var request = store.put({
+        var db = myDatabase.indexedDB.db
+        , trans = db.transaction(["friend"], IDBTransaction.READ_WRITE, 0)
+        , store = trans.objectStore("friend")
+        , request = store.put({
           "text": friendText,
           "timeStamp" : new Date().getTime()
         });
 
         request.onsuccess = function(e) {
-          // Re-render all the friend's
-          myDatabase.indexedDB.getAllTodoItems();
+          // Render new data
         };
 
         request.onerror = function(e) {
@@ -46,16 +45,16 @@ section
         storeName: 'friend'
       });
 
-      //Add a new entry
-      var onsuccess = function (id) {
-        ...
-      }
-
-      var onerror = function (id) {
-        ...
-      }
-
-      friends.put({ name: 'James' }, onsuccess, onerror)
+      friends.put({ 
+          name: 'James' 
+        }, 
+        function(id) {
+          // success
+        }, 
+        function(e) {
+          // error
+        }
+      );
 
 section
   h2 IDBWrapper.js
@@ -77,7 +76,7 @@ section
       // Delete an entry
       friends.remove(friendId, onsuccess, onerror)
 
-section
+section.browser-support-container
   mixin browserSupport('13+', '3.6+', '5.1*', '10?', '11.1+')
   h2 File APIs
   p Get file attributes
@@ -85,22 +84,19 @@ section
   pre
     code.
       #{'<input type="file" id="yourFile" name="file"/>'}
-      #{'<output id="list"></output>'}
+      #{'<ul id="list"></ul>'}
 
-      #{'<script>'}
-        function handleFileSelect(evt) {
-          var file = evt.target.files[0];
-
-          $('<p>' + file.name + ' - ' + file.size + ' bytes.' + '</p>').appendTo('#list');
-        }
-
-        $('#yourFile').on('change', handleFileSelect);
-      #{'</script>'}
+  pre
+    code.
+      function handleFileSelect(evt) {
+        var file = evt.target.files[0];
+        $('#list').append('&lt;li>' + file.name + ' - ' + file.size + ' bytes.');
+      }
+      $('#yourFile').on('change', handleFileSelect);
 
 section
   h2 FileReader
-  p Manipulate file contents
-
+  p Read file contents
   pre
     code.
         function handleFileSelect(evt) {
@@ -108,16 +104,17 @@ section
             reader = new FileReader();
 
           reader.onload = function (e) {
-            $('<img>')
-          .attr('src', e.target.result)
-          .attr('title', file.name)
-          .appendTo('#list');
+            var $img = $('&lt;img>').attr({
+              src: e.target.result,
+              title: file.name
+            });
+            $('#list').append($img);
           }
 
           reader.readAsDataURL(file); // Read in the image file as a data URL.
         }
 
-section
+section.browser-support-container
   mixin browserSupport('4+', '3.5+', '4+', '8+', '10.5+')
   h2 Web Storage
   ul
@@ -128,7 +125,7 @@ section
 
 section
   h2 localStorage
-  p Global object used to store strings
+  p Global object used to store <b>only strings</b>
 
   pre
     code.
@@ -144,11 +141,12 @@ section
       // Number of entries
       localStorage<b>.length</b>
 
-section
+section.browser-support-container
+  mixin browserSupport('4+', '2+', '4+', '5+', '10.5+')
   h2 store.js
   ul
     li <b>JSON datatypes</b> (objects, arrays, boolean...)
-    li <b>Default values</b>
+    li Supports <b>default values</b>
     li <b>Fallback</b> to
     ul
       li <b>globalStorage</b> for older Firefox (2+)

@@ -1,4 +1,4 @@
-section
+section.browser-support-container
   mixin browserSupport('4+', '3.5+', '5+', '9+', '10.6+')
   h2 Geolocation
   p Where are we?
@@ -11,9 +11,10 @@ section
       }
   iframe(src="assets/html/geolocation.html", width="100%", height="300")
 
-section
+section.browser-support-container
   mixin browserSupport('4+', '3.5+', '5+', '9+', '10.6+')
   h2 getCurrentPosition
+  p Return the current location <b>if the user accepts the request</b>
   pre
     code.
       var getLocation = function(callback) {
@@ -33,7 +34,6 @@ section
 
 section
   h2 Watch position
-
   pre
     code.
       navigator.geolocation.watchPosition(success, error, options)

@@ -1,38 +1,40 @@
 section
   h2 doctype
 
-  | BEFORE:
-  pre
-    code.
-      #{'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'}
+  .row-fluid 
+    .span6 BEFORE:
+      pre
+        code.
+          #{'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'}
 
-  | AFTER:
-  pre
-    code.
-      #{'<!DOCTYPE html>'}
+    .span6 AFTER:
+      pre
+        code.
+          #{'<!DOCTYPE html>'}
 
 section
   h2 html
-
-  | BEFORE:
-  pre
-    code.
-      #{'<html xmlns="http://www.w3.org/1999/xhtml">'}
-  | AFTER:
-  pre
-    code.
-      #{'<html>'}
+  .row-fluid 
+    .span6 BEFORE:
+      pre
+        code.
+          #{'<html xmlns="http://www.w3.org/1999/xhtml">'}
+    .span6 AFTER:
+      pre
+        code.
+          #{'<html>'}
 
 section
   h2 charset
-  | BEFORE:
-  pre
-    code.
-      #{'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'}
-  | AFTER:
-  pre
-    code.
-      #{'<meta charset="utf-8">'}
+  .row-fluid 
+    .span6 BEFORE:
+      pre
+        code.
+          #{'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'}
+    .span6 AFTER:
+      pre
+        code.
+          #{'<meta charset="utf-8">'}
 
 section
   h2 Charset defaults
@@ -42,7 +44,7 @@ section
     li <b>W3C official recommendation: UTF-8</b>
 
 section
-  h2 Charset best practices
+  h2 How to set the Charset
 
   ul.read-block
     li
@@ -68,42 +70,43 @@ section
 
 section
   h2 Typical #{'<link>'} rel values
+  p stylesheet, favicon, rss, prefetching...
   pre
     code.
       #{'<link rel="XXX" href="file"/>'}
-  p stylesheet, favicon, rss, prefetching...
 
 section
-  h2 favicon and touch icon
-  p.read-block New <b>touch icon</b> for mobile devices
-  p.read-block iPhone adds <b>rounded corners, drop shadow and gleam</b> - Android <b>does not</b>.
+  section
+    h2 favicon and touch icon
+    ul.read-block 
+      li New <b>touch icon</b> for mobile devices
+      li iPhone adds <b>rounded corners, drop shadow and gleam</b>
+      li Android <b>does not</b>.
 
-  pre
-    code.
-      &lt;link rel="<b>shortcut icon</b>" href="/favicon.ico">
-      &lt;link rel="<b>apple-touch-icon</b>" href="/apple-touch-icon.png">
+    pre
+      code.
+        &lt;link rel="<b>shortcut icon</b>" href="/favicon.ico">
+        &lt;link rel="<b>apple-touch-icon</b>" href="/apple-touch-icon.png">
 
-section
-  h2 Precomposed icons
-  p The only kind supported by Android 2.1
-  p Not supported by extremely old devices
+  section
+    h2 Precomposed icons
+    p The only kind supported by Android 2.1
+    p Not supported by extremely old devices
 
-  pre
-    code.
-      #{'<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">'}
+    pre
+      code.
+        #{'<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">'}
 
 section.browser-support-container
   mixin browserSupport('13+', '3.6+', 'No', 'No', 'No')
   h2 prefetch, prerender
-
+  p.read-block <b>Prefetch</b> the target link
+  p.read-block Based on the <b>read-only</b> nature of GET requests
+  p.read-block Also <b>allowed for #{'<a>'} elements</b>
   pre
     code.
       &lt;link rel="<b>prefetch</b>" href="big.jpg">
       &lt;link rel="<b>prerender</b>" href="next.html">
-
-  p.read-block <b>Prefetch</b> the target link
-  p.read-block Based on the <b>read-only</b> nature of GET requests
-  p.read-block Also <b>allowed for #{'<a>'} elements</b>
 
 section
   h2 GET vs POST
@@ -122,13 +125,15 @@ section
 
   pre
     code.
-      &lt;link <b>rel="alternate" type="application/atom+xml"</b> href="http://www.example.com/xml/index.atom">
+      &lt;link <b>rel="alternate" type="application/atom+xml"</b> 
+            href="http://www.example.com/xml/index.atom">
 
-      &lt;link <b>rel="alternate" type="application/rss+xml"</b> title="RSS" href="http://www.example.com/xml/index.rdf">
+      &lt;link <b>rel="alternate" type="application/rss+xml"</b> title="RSS" 
+            href="http://www.example.com/xml/index.rdf">
 
 section
   h2 rel="canonical"
-  p Tell which one to use in case of multiple URLs
+  p In case of multiple URLs, tell Google which one to index
 
   pre
     code.
@@ -138,7 +143,7 @@ section
   h2 Other 'rel' values
   p Used in <b>#{'<link>'}</b> tags
 
-  p <b>home, contents, search, glossary, help, start, prev, previous, next, copyright, author</b> – Navigate links
+  p <b>search, help, prev, next, author</b> – Navigate links
 
   pre
     code.
@@ -154,44 +159,33 @@ section
   pre
     code.
       #{'<a href="http://creativecommons.org/licenses/by/2.0/" rel="license">'}
-        cc by 2.0
+        Creative Commons by Attribution 2.0
       #{'</a>'}
 
 section
-  h2 rel="nofollow"
-  p Do not affect the PageRank of the link target
+  section
+    h2 rel="nofollow"
+    p Do not affect the PageRank of the link target
 
-  pre
-    code.
-      | Hi, nice post. BTW, you cannot miss our new
-      #{'<a rel="nofollow" href="http://thespammer.com/recipes.html">'}
-        ViaGra d0nuTs recipes!
-      #{'</a>'}
-  img(src="assets/raster/rel-nofollow.png")
+    pre
+      code.
+        Hi, nice post. BTW, you cannot miss our new
+        #{'<a rel="nofollow" href="http://thespammer.com/recipes.html">'}
+          ViaGra d0nuTs recipes!
+        #{'</a>'}
+    img(src="assets/raster/rel-nofollow.png")
 
-section
-  h2 Human computation
-  p How modern spammers work
-  img(src="assets/raster/human-computation.png")
+  section
+    h2 Human computation
+    p How modern spammers work
+    img(src="assets/raster/human-computation.png")
 
-section
-  h2 Human computation (II)
-  p Introducing porn guy
-  img(src="assets/raster/human-computation-2.png")
+  section
+    h2 Human computation (II)
+    p Introducing <i>Porn Guy</i>
+    img(src="assets/raster/human-computation-2.png")
 
-section
-  h2 Human computation (III)
-  p Problem solved!
-  img(src="assets/raster/human-computation-3.png")
-
-section
-  h2 Other 'rel' values
-  p Used in <b>#{'<a>'}</b> tags
-  ul
-    li <b>tag</b> – The link target is an author-designated tag
-    li <b>me, friend</b> – XHTML Friends Network (XFN)
-
-  pre
-    code.
-      #{'<a href="http://technorati.com/tag/tech" rel="tag">tech</a>'}
-      #{'<a href="http://jeff.example.org" rel="friend">Jeff</a>'}
+  section
+    h2 Human computation (III)
+    p Problem solved!
+    img(src="assets/raster/human-computation-3.png")

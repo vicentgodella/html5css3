@@ -4,15 +4,8 @@ append title
   title HTML 5
 
 append slides
-  section
-    h1 HTML5
 
-  section
-    h2 HTML5 browser support
-
-    p.read-block Smartphones
-    p.read-block http://delicious.com/html5css3/support
-    p.read-block Polyfills
+  include html5/introduction.jade
 
   include html5/meta-tags
 
@@ -20,7 +13,7 @@ append slides
 
   include html5/form-controls
 
-  include html5/form-attributes
+  include html5/attributes
 
   include html5/polyfills
 
@@ -28,19 +21,9 @@ append slides
 
   include html5/semantic-elements
 
-  section
-    h2 HTML5 Boilerplate
-    p.read-block <b>HTML5 ready</b>, including the new tags
-    p.read-block Many <b>best practices</b> out-of-the-box
-    p.read-block <b>Progressive enhancement</b>
-    p.read-block <b>Mobile optimizations</b>
-    p.read-block <b>Modernizr</b> already built-in etc, etc, etc...
-
-  section(data-state="lab")
-    h2 Lab: HTML5 Boilerplate
-    p Review HTML5 boilerplate
-
   include html5/audio-video
+
+  include html5/boilerplate
 
   section
     h2 Keep sharp

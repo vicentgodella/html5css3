@@ -1,0 +1,295 @@
+section
+  h2 New attributes
+
+section.browser-support-container
+  mixin browserSupport('4+', '3+', '5+', '5.5+', '9.0+')
+  h2 contenteditable
+  pre
+    code.
+      &lt;p contenteditable>Click to edit
+  #ex-contenteditable
+    h3(contenteditable) This is a &lt;h3>. Click to edit
+    | 
+    p(contenteditable) Paste something into this &lt;p> 
+
+section.browser-support-container
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 required
+  pre
+    code.
+      &lt;input name="q" <b>required</b>>
+  #ex-required-input
+    form.form-inline
+      fieldset
+        label.checkbox Required field
+        | 
+        input(type="text", required)
+        | 
+        button.btn(type="submit") Submit
+
+section.browser-support-container
+  mixin browserSupport('10+', '4+', '5+', '10+', '11.5+')
+  h2 placeholder
+  pre
+    code.
+      #{'<input name="q" placeholder="Search Bookmarks and History">'}
+  #ex-input-placeholder
+    form.form-inline
+      fieldset
+        label.checkbox Search
+        | 
+        input(type="search", placeholder="Search Bookmarks and History", style="width: 60%;")
+        | 
+        button.btn(type="submit") Submit
+
+section.browser-support-container
+  mixin browserSupport('6+', '4+', '5+', '10+', '11+')
+  h2 autofocus
+  pre
+    code.
+      &lt;input name="q" <b>autofocus</b>>
+  #ex-input-autofocus
+    label Cannot use autofocus in this presentation, sorry
+
+section.browser-support-container
+  mixin browserSupport('6+', '4+', '5+', '10+', '10.6+')
+  h2 pattern
+  pre
+    code.
+      &lt;input type="text" <b>pattern="[a-z]{3}[0-9]{3}"</b>>
+  #ex-input-pattern
+    form.form-inline
+      fieldset
+        label.checkbox 3 alpha chars followed by 3 digits
+        | 
+        input(type="text", 
+        pattern="[a-z]{3}[0-9]{3}", placeholder="E.g. cye850")
+        | 
+        button.btn(type="submit") Submit
+
+
+section.browser-support-container
+  mixin browserSupport('6+', 'No', '5+', '10+', '10.6+')
+  h2 min, max, step
+  pre
+    code.
+      &lt;input name="amount" type="number" value="0" <b>min="0" max="100" step="2"</b> >
+  #ex-input-max-min
+    form.form-inline
+      fieldset
+        label.checkbox Select an even number
+        | 
+        input(required, type="number", value="0", min="0", max="100", step="2")
+        | 
+        button.btn(type="submit") Submit
+
+section
+  h2 data-*
+  p Method approved by the W3C to <b>extend the DOM</b>
+
+  .row-fluid
+    .span6
+      | <b>APPROVED:</b>
+      pre
+        code.
+          #{'<ul id="friends">'}
+            &lt;li <b>data-user="jdoe"</b>>John Doe</li>
+            &lt;li <b>data-user="cnorris"</b>>Chuck Norris</li>
+          #{'</ul>'}
+    .span6
+      | <b>DEPRECATED:</b>
+      pre
+        code.
+          #{'<ul id="friends">'}
+            &lt;li <b>class="user-jdoe"</b>>John Doe</li>
+            &lt;li <b>class="user-cnorris"</b>>Chuck Norris</li>
+          #{'</ul>'}
+
+section.browser-support-container
+  mixin browserSupport('10+', '3.6+', 'No', 'No', 'No')
+  h2 form
+  p New attribute for <b>input, select, textarea, button, fieldset</b>
+  p Supported in Chrome & FF3.6+
+  pre
+    code.
+      #{'<label>'}
+        Name:
+        &lt;input type="text" <b>form="create"</b> name="name">
+      #{'</label>'}
+
+      #{'<form id="create"></form>'}
+
+section.browser-support-container
+  mixin browserSupport('No', '4+', 'No', '9+', '11.5+')
+  h2 fieldset.disabled
+  p Supported in IE9, Opera 11.5 & Firefox 4
+  pre
+    code.
+      &lt;fieldset <b>disabled</b>>
+        #{'<input type="checkbox" value="different-billing">'}
+        #{'<input type="text" name="billing-address">'}
+      #{'</fieldset>'}
+  #ex-disabled-fieldset
+    form.form-inline
+      fieldset(disabled)
+        label.checkbox Different billing address?
+          input(type="checkbox")
+        p
+        label.checkbox Billing address
+        | 
+        input(type="text")
+
+
+section.browser-support-container
+  mixin browserSupport('6+', '4+', '5+', '10+', '11+')
+  h2 New textarea attributes
+  ul.read-block
+    li maxlength (Chrome and FF4) 
+    li spellcheck="true | false"
+  pre
+    code.
+      #{'<textarea name="comments" maxlength="140" spellcheck="true">'}
+  #ex-textarea-attributes
+    form.form
+      label Comments (max = 140 chars):
+      textarea(maxlength=140, spellcheck="true", style="width: 80%; min-height: 100px")
+
+section
+  
+  section.browser-support-container
+    mixin browserSupport('All', '4+', '5+', '10+', '9.6+')
+    h2 Validation CSS
+    p <b>:required</b> and <b>:optional</b>
+    pre
+      code.
+        <b>:optional</b> {
+          border-color: lightGray;         
+        }
+
+        <b>:required</b> {
+          border: 2px solid black;         
+        }
+    style
+      .ex-validation-required:optional {
+        border-color: lightGray;
+      }
+      .ex-validation-required:required {
+        border: 2px solid black;
+      }
+    #ex-validation-selectors-1
+      form.form-inline
+        fieldset
+          p
+            label.checkbox Required field
+            | 
+            input.ex-validation-required(type="text", required)
+          p
+            label Optional field
+            | 
+            input.ex-validation-required(type="text")
+          p
+            button.btn(type="submit") Submit
+  
+  section.browser-support-container
+    mixin browserSupport('All', '4+', '5+', '10+', '9.6+')
+    h2 Validation CSS
+    p <b>:valid</b> and <b>:invalid</b>
+    pre
+      code.
+        <b>:invalid</b> {
+          border-color: #E9322D;
+          box-shadow: 0 0 6px #F8B9B7;
+        }
+        <b>:valid</b> {
+          border-color: #46A546;
+          box-shadow: 0 0 6px #B9F8B7;
+        }
+    #ex-validation-selectors-2
+      style
+        #ex-validation-selectors-2 [type="email"]:valid {
+          border-color: #46A546;
+          color: #12A90D;
+          box-shadow: 0 0 6px #B9F8B7;
+        }
+        #ex-validation-selectors-2 :invalid {
+          border-color: #E9322D;
+          box-shadow: 0 0 6px #F8B9B7;
+        }
+      form.form-inline
+        fieldset
+          label.checkbox Email
+          | 
+          input(type="email")
+          | 
+          button.btn(type="submit") Submit
+  
+  section
+    h2 Validation CSS selectors
+    p <b>:in-range</b> and <b>:out-of-range</b>
+    pre
+      code.
+        :in-range {
+          border-color: #46A546;
+        }
+        :out-of-range {
+          border-color: #E9322D;
+        }
+    #ex-validation-selectors-3
+      style
+        #ex-validation-selectors-3 :in-range {
+          border-color: #46A546;
+        }
+        #ex-validation-selectors-3 :out-of-range {
+          border-color: #E9322D;
+        }
+      form.form-inline
+        fieldset
+          label.checkbox Tickets (max. 10)
+          | 
+          input(type="number", min="1", max="10")
+          | 
+          button.btn(type="submit") Submit
+
+section.browser-support-container
+  mixin browserSupport('6+', '4+', 'No', '10+', '10.6+')
+  h2 novalidate
+  pre
+    code.
+      &lt;form <b>novalidate</b>>
+        #{'<input type="text" name="username" required>'}
+      #{'</form>'}
+
+      #{'<form>'}
+        #{'<input type="text" name="username" required>'}
+        #{'<button type="submit">Publish</button>'}
+        &lt;button type="submit" <b>formnovalidate</b> action="/save">Save as draft</button>
+      #{'</form>'}
+  #ex-novalidate
+    form.form-inline
+      fieldset
+        label.checkbox Email
+        | 
+        input(type="email", required)
+        | 
+        button.btn(type="submit") Publish
+        | 
+        button.btn(type="submit", formnovalidate) Save as draft
+
+section.browser-support-container
+  mixin browserSupport('10+', '4+', 'No', '10+', '10.6+')
+  h2 New submit button attrs
+  p formaction, formenctype, formmethod, formnovalidate and formtarget
+
+  pre
+    code.
+      &lt;form action="<b>/publish</b>" method="post">
+        #{'<input type="submit" value="publish" />'}
+        &lt;input type="submit" value="save_draft" <b>formaction="/save"</b> />
+        &lt;input type="submit" value="delete" <b>formaction="/delete"</b> />
+      #{'</form>'}
+
+include attributes-support
+
+section(data-state="lab")
+  h2 Lab: Forms 2
+  p Modify a form using HTML, CSS <br>and client-side validation

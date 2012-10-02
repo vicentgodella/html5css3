@@ -5,58 +5,8 @@ section.browser-support-container
   p <b>section, nav, aside, header, footer</b>
 
 section
-  h2 Example
-  .row-fluid
-    pre.span6
-      code.
-        #{'<body>'}
-          <b>&lt;header></b>
-            <b>&lt;hgroup></b>
-              #{'<h1>Page title</h1>'}
-              #{'<h2>Page subtitle</h2>'}
-            #{'</hgroup>'}
-          #{'</header>'}
-
-          <b>&lt;nav></b>
-            #{'<ul>'}
-              Navigation...
-            #{'</ul>'}
-          #{'</nav>'}
-
-        <b>&lt;aside></b>
-          Top links...
-        #{'</aside>'}
-
-    pre.span6
-      code.
-        <b>&lt;section></b>
-          <b>&lt;article></b>
-            <b>&lt;header></b>
-              #{'<h1>Title</h1>'}
-            #{'</header>'}
-            #{'<p>'}
-              Content...
-            #{'</p>'}
-          #{'</article>'}
-          #{'<article>'}
-            ...
-          #{'</article>'}
-        #{'</section>'}
-
-        <b>&lt;footer></b>
-          Copyright ©2010
-        #{'</footer>'}
-        #{'</body>'}
-
-
-section
-  h2 Unknown elements
-  p.read-block CSS style to apply
-  p.read-block How to handle unknown elements
-
-section
-  h2 CSS style of unknown elements
-  p Add CSS style in case the semantic elements are not supported by the browser
+  h2 Unsupported?
+  p The browser just needs the CSS styles to apply to unrecognized containers
 
   pre
     code.
@@ -65,7 +15,7 @@ section
       }
 
 section
-  h2 Create semantic elements in IE
+  h2 Unrecognized for IE
   p IE < 9 does not create DOM nodes for unrecognized semantic elements
   pre
     code.
@@ -92,22 +42,23 @@ section
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
   h2 header
-  | <b>OPTION 1</b>
-  pre
-    code.
-      <b>&lt;header></b>
-        #{'<h1>My Weblog</h1>'}
-      #{'</header>'}
+  .row-fluid
+    .span6 <b>OPTION 1</b>
+      pre
+        code.
+          <b>&lt;header></b>
+            #{'<h1>My Weblog</h1>'}
+          #{'</header>'}
 
-  | <b>OPTION 2</b>
-  pre
-    code.
-      <b>&lt;header></b>
-        <b>&lt;hgroup></b>
-          #{'<h1>Page title</h1>'}
-          #{'<h2>Page subtitle</h2>'}
-        #{'</hgroup>'}
-      #{'</header>'}
+    .span6 <b>OPTION 2</b>
+      pre
+        code.
+          <b>&lt;header></b>
+            <b>&lt;hgroup></b>
+              #{'<h1>Page title</h1>'}
+              #{'<h2>Page subtitle</h2>'}
+            #{'</hgroup>'}
+          #{'</header>'}
 
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -157,6 +108,7 @@ section.browser-support-container
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
   h2 nav
+  p Navigation links
   pre
     code.
       &lt;<b>nav</b>>
@@ -171,10 +123,11 @@ section.browser-support-container
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
   h2 aside
-  p.read-block Content tangentially related
+  p.read-block Content aside from the main document
   ul
     li <b>within article:</b> related to the article
-    li <b>not within article:</b> related to the website or page
+    li <b>outside article:</b> related to the website or page
+  p
   .row-fluid
     pre.span6
       code.
@@ -201,16 +154,17 @@ section.browser-support-container
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
   h2 section
-  p.read-block Generic <b>document or application section</b>
-  p.read-block Usually <b>associated to a header</b>
-  p.read-block Not intended for <b>styling or scripting</b> (use div instead).
-  p.read-block Don’t use if <b>article</b>, <b>aside</b> or <b>nav</b> is more appropriate
+  ul.read-block
+    li Generic <b>document or application section</b>
+    li Usually <b>associated to a header</b>
+    li Not intended for <b>styling or scripting</b> (use div instead).
+    li Don’t use if <b>article</b>, <b>aside</b> or <b>nav</b> is more appropriate
 
   pre
     code.
       &lt;<b>section</b>>
         #{'<h1>Header</h1>'}
-        #{'<p>'}rest of the content
+        #{'<p>'}Section contents
       #{'</section>'}
 
 section.browser-support-container
@@ -226,7 +180,7 @@ section.browser-support-container
       #{'</figure>'}
   figure
     img(src="assets/svg/css3.svg", width="200")
-    figcaption Fig 1. CSS3 logo
+    figcaption.small-text Fig 1. CSS3 logo
 
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
@@ -275,6 +229,50 @@ section
       #{'<p class="copyright">Copyright © 2009 W3C</p>'}
       #{'</footer>'}
   iframe(src="assets/html/fat-footer.html", width="900", height="200")
+
+section
+  h2 Full Example
+  .row-fluid
+    pre.span6
+      code.
+        #{'<body>'}
+          <b>&lt;header></b>
+            <b>&lt;hgroup></b>
+              #{'<h1>Page title</h1>'}
+              #{'<h2>Page subtitle</h2>'}
+            #{'</hgroup>'}
+          #{'</header>'}
+
+          <b>&lt;nav></b>
+            #{'<ul>'}
+              Navigation...
+            #{'</ul>'}
+          #{'</nav>'}
+
+        <b>&lt;aside></b>
+          Top links...
+        #{'</aside>'}
+
+    pre.span6
+      code.
+        <b>&lt;section></b>
+          <b>&lt;article></b>
+            <b>&lt;header></b>
+              #{'<h1>Title</h1>'}
+            #{'</header>'}
+            #{'<p>'}
+              Content...
+            #{'</p>'}
+          #{'</article>'}
+          #{'<article>'}
+            ...
+          #{'</article>'}
+        #{'</section>'}
+
+        <b>&lt;footer></b>
+          Copyright ©2010
+        #{'</footer>'}
+        #{'</body>'}
 
 section(data-state="lab")
   h2 Lab: Semantics

@@ -1,4 +1,4 @@
-section
+section.browser-support-container
   mixin browserSupport('4+', '3+', '4+', '10+', '10.6+')
   h2 Appcache
   p Offline web applications
@@ -12,6 +12,16 @@ section
 
       #{'</html>'}
 section
+  h2 Process
+  img(src="assets/svg/appcache-flow.svg", width="80%")
+
+section
+  h2 The AppCache contents
+  p.read-block Contents that <b>can be cached</b>
+  p.read-block Contents that <b>will never be cached</b>
+  p.read-block <b>Fallback contents</b> to use when offline
+
+section
   h2 Cache.manifest
   pre
     code.
@@ -19,12 +29,12 @@ section
       # Remember to update the version number!
       # version 2.3.1
 
-      # Explicit cache section (no wildcard allowed)
+      # Explicit cache: (no wildcard allowed)
       CACHE:
       /css/style.css
       /img/funny_image.png
 
-      # These will never be cached (folders and wildcards are allowed)
+      # Do not cache: (folders and wildcards are allowed)
       NETWORK:
       /js
       /status.html
@@ -34,11 +44,7 @@ section
       /account /offline.HTML
 
 section
-  h2 Process
-  img(src="assets/svg/appcache-flow.svg", width="80%")
-
-section
-  h2 The AppCache object
+  h2 AppCache JavaScript API
   ul
     li applicationCache.status
     ul
@@ -48,7 +54,7 @@ section
       li Update the manifest, download the files but do not replace them yet
     li applicationCache.swapCache()
     ul
-      li Replace the cached files with new ones
+      li Refresh the cached contents
 
 section(data-state="lab")
   h2 Lab: AppCache

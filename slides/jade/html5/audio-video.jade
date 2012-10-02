@@ -2,21 +2,21 @@ section.browser-support-container
   mixin browserSupport('All', '3.5+', '4+', '9+', '9.5+')
   h2 audio
   ul
-    li <b>IE</b> < 9: #{'<bgsound>'}
-    li <b>Safari</b>: mp3 and mp4
-    li <b>Firefox</b> 3.5+: ogg and wav
     li <b>Chrome</b>: virtually anything
+    li <b>Firefox</b> 3.5+: ogg and wav
+    li <b>IE</b>: mp3 
+    li <b>Safari</b>: mp3 and mp4
 
 section
   h2 audio
   pre
     code.
-      #{'<audio id="audio" src="crane.mp3" controls></audio>'}
+      #{'<audio id="audio" src="Drum_Track.mp3" controls></audio>'}
   pre
     code.
       document.getElementById("audio").muted = false;
-  audio(src="http://upload.wikimedia.org/wikipedia/commons/0/06/Grus_grus.ogg", controls)
-  .source Source: Wikimedia Commons
+  audio(src="assets/audio/Drum_Track.mp3", controls)
+  a.source(href="http://ccmixter.org/files/BillRayDrums/30968") Source: Bill Ray Drums
 
 section.browser-support-container
   mixin browserSupport('All', '3.5+', '4+', '9+', '10.5+')
@@ -27,8 +27,8 @@ section.browser-support-container
   pre
     code.javascript.
       document.getElementById("video").play();
-  video(src="http://upload.wikimedia.org/wikipedia/commons/a/a0/Crane.ogv", controls)
-  .source Source: Wikimedia Commons
+  video(style="width: 450px", src="http://upload.wikimedia.org/wikipedia/commons/b/b0/Simulation_of_gas_cloud_approaching_the_black_hole_at_the_centre_of_the_Milky_Way.ogv", controls)
+  a.source(href="http://commons.wikimedia.org/wiki/File:Simulation_of_gas_cloud_approaching_the_black_hole_at_the_centre_of_the_Milky_Way.ogv") Source: Wikimedia Commons
 
 include video-support
 
@@ -48,6 +48,9 @@ section
         td 52%
   a(href="http://caniuse.com/#search=video").source Source: caniuse.com (09-2012)
 
+section
+  h2 video frameworks
+  p Projekktor, FlareVideo, Video JS, JW Player, Kaltura / Adobe, html5media, jMediaelement, OIPlayer, Hvideo, jQuery Video, Video for Everybody, Open Video Player, HTML5 Video Player, mediaelement.js, SublimeVideo, Uppod.HTML5, LeanBack, Mooplay, jPlayer, OSM Player
 
 section
   h2 video without JavaScript
@@ -67,10 +70,6 @@ section
           #{'<img alt="Big Buck Bunny" src="./poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />'}
         #{'</object>'}'
       #{'</video>'}'
-
-section
-  h2 video frameworks
-  p Projekktor, FlareVideo, Video JS, JW Player, Kaltura / Adobe, html5media, jMediaelement, OIPlayer, Hvideo, jQuery Video, Video for Everybody, Open Video Player, HTML5 Video Player, mediaelement.js, SublimeVideo, Uppod.HTML5, LeanBack, Mooplay, jPlayer, OSM Player
 
 section(data-state="lab")
   h2 Lab: embed video

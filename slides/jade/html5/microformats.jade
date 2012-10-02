@@ -1,18 +1,17 @@
 section
   h2 Microformats
   p.read-block <b>microformats.org</b>
-  p.read-block <b>Widespread adoption by the SEO crowd</b>
+  p.read-block First initiative to <b>embed metadata with the HTML</b>
   p.read-block <b>Billions of pages</b>
   p.read-block <b>Different formats:</b> Microformat, Microdata, RDFa
 
 section
   h2 schema.org
-  p.read-block <b>Widespread adoption</b> by the Search engines including Bing, Google and Yahoo!
-
+  p.read-block <b>Widespread adoption</b> by search engines including Google, Bing and Yahoo!
   p.read-block Uses <b>microdata</b> with <b>itemscope</b>, <b>itemtype</b> and <b>itemprop</b>
 
 section
-  h2 Person
+  h2 Example: Person
   p Contact details
   pre
     code.
@@ -32,7 +31,7 @@ section
         &lt;img src="janedoe.jpg" itemprop="<b>image</b>" />
         &lt;div itemprop="<b>address</b>" itemscope  itemtype="<b>http://schema.org/PostalAddress</b>">
           &lt;span itemprop="<b>streetAddress</b>">20341 Whitworth Institute</span>
-          &lt;span itemprop="<b>addressLocality</b>">Seattle</span>'
+          &lt;span itemprop="<b>addressLocality</b>">Seattle</span>
           &lt;span itemprop="<b>addressRegion</b>">WA</span>
           &lt;span itemprop="<b>postalCode</b>">98052</span>
         &lt;/div>
@@ -42,7 +41,7 @@ section
       &lt;/div>
 
 section
-  h2 Event
+  h2 Example: Event
   p Event info
   pre
     code.
@@ -55,7 +54,7 @@ section
       #{'</div>'}
 
 section
-  h2 AggregateRating
+  h2 Example: Nested Schemas
   pre
     code.
       &lt;div itemscope itemtype="<b>http://schema.org/Restaurant</b>">
@@ -69,9 +68,9 @@ section
       #{'</div>'}
 
 section
-  h2 schema.org types understood by Google and others
+  h2 Schemas recognized by Google
   p Person, Event, Product, Place, Review, AggregateRating, VideoObject, Movie, etc.
 
 section(data-state="lab")
   h2 Lab: Schema.org
-  p Modify the proposed page to introduce types and properties from schema.org
+  p Introduce schemas into the proposed page

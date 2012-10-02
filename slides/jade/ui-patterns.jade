@@ -8,24 +8,26 @@ append slides
     h1 UI Patterns
 
   section
-    h2 Scanning order
+    h2 Read vs Scan
     ul
       li <b>Reading order</b>: top-left to bottom-right
-      li <b>Scanning orde</b>r: F pattern
+      li <b>Scanning</b>: F-pattern
 
   section
-    h2 Jakob Nielsen's F
+    h2 F-shaped pattern
     img(src="assets/raster/jakobs-F.png")
+    a.source(href="www.useit.com/alertbox/reading_pattern.html") Source: Jakob Nielsen
 
   section
     h2 Form label positioning
     img(src="assets/raster/form-label-positioning.png")
 
   section
-    h2 Matteo Penzo study
+    h2 Eye tracking with forms
     img(src="assets/raster/penzo-1.png")
     img(src="assets/raster/penzo-2.png")
     img(src="assets/raster/penzo-3.png")
+    a.source(href="http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php") Source: Matteo Penzo
 
   section
     h2 Top align
@@ -66,11 +68,11 @@ append slides
     h2 Multiple checkboxes
     pre
       code.
-        #{'<label><input type="checkbox" name="mushrooms"> mushrooms</label>'}
-        #{'<label><input type="checkbox" name="greenpeppers"> green peppers</label>'}
-        #{'<label><input type="checkbox" name="onions"> onions</label>'}
-        #{'<label><input type="checkbox" name="tomatoes"> tomatoes</label>'}
-        #{'<label><input type="checkbox" name="olives"> olives</label>'}
+        #{'<label><input type="checkbox" name="mushrooms">mushrooms</label>'}
+        #{'<label><input type="checkbox" name="greenpeppers">green peppers</label>'}
+        #{'<label><input type="checkbox" name="onions">onions</label>'}
+        #{'<label><input type="checkbox" name="tomatoes">tomatoes</label>'}
+        #{'<label><input type="checkbox" name="olives">olives</label>'}
     img(src="assets/raster/multiple-selection-2.png")
 
   section
@@ -87,14 +89,13 @@ append slides
 
   section
     h2 Confirmation messages
-    img(src="assets/raster/confirmation-messages.png")
-
     ul
       li Confirmation messages are:
         ul
           li unfriendly
           li distracting
           li innefective
+    img(src="assets/raster/confirmation-messages.png")
 
   section
     h2 Undo instead of confirm
@@ -118,7 +119,7 @@ append slides
 
   section
     h2 Inline help
-    p Gives a hint about the <b>expected input</b>
+    p Give a hint about the <b>expected input</b>
     img(src="assets/raster/inline-help.png")
 
   section
@@ -153,7 +154,3 @@ append slides
     h2 Gradual engagement
     p <b>Postpone the details</b> for later
     img(src="assets/raster/gradual-engagement.png")
-
-  section(data-state="lab")
-    h2 Final Lab
-    p Contact page using <b>microformats</b>, <b>HTML5</b> and <b>CSS3</b>

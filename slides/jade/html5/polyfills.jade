@@ -19,11 +19,11 @@ section
   p <b>Feature detection</b> of HTML5 features
   pre
     code.
-      &lt;html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity <b>cssanimations</b> csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+      &lt;html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 
 section
-  h2 Modernizr
-  p CSS styles depending on <b>supported features</b>
+  h2 Modernizr with CSS
+  p Styles depending on <b>supported features</b>
 
   pre
     code.
@@ -40,8 +40,8 @@ section
       }
 
 section
-  h2 Modernizr
-  p Also includes a <b>JavaScript API</b>
+  h2 Modernizr with JavaScript
+  p JavaScript code depending on <b>supported features</b>
 
   pre
     code.
@@ -59,14 +59,8 @@ section
 
 section
   h2 Example: Date picker
-  .row-fluid
-    .span6
-      form
-        label Start date
-        input(type="date")
-      p.small-text.read-block If JavaScript is disabled, the button will not work
-    .span6
-      img(src="assets/svg/date-picker.svg")
+  p If JavaScript is disabled, the button will not work
+  img(style="max-height: 70%", src="assets/svg/date-picker.svg")
 
 section
   h2 Progressive enhancement
@@ -75,14 +69,8 @@ section
 
 section
   h2 Date picker (again)
-  .row-fluid
-    .span6
-      form
-        label Start date
-        input(type="date")
-      p.small-text.read-block If JavaScript is disabled, there will be no button
-    .span6
-      img(src="assets/svg/date-picker-2.svg")
+  p If JavaScript is disabled, there will be no button
+  img(style="max-height: 70%", src="assets/svg/date-picker-2.svg")
 
 section
   h2 Regressive enhancement
@@ -91,18 +79,12 @@ section
 
 section
   h2 Date picker (and III)
-  .row-fluid
-    .span6
-      form
-        label Start date
-        input(type="date")
-      p.small-text.read-block If date field is supported, we are good
-    .span6
-      img(src="assets/svg/date-picker-3.svg")
+  p If type=date is supported, we are good
+  img(style="max-height: 70%", src="assets/svg/date-picker-3.svg")
 
 section
   h2 polyfills
-  p <b>Simulate a feature</b> if it's not natively supported by the browser
+  p <b>Simulate a feature</b> that is not natively supported by the browser
   pre
     code.
       yepnope({
