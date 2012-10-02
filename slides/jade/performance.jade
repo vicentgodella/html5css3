@@ -13,19 +13,21 @@ append slides
       li <b>.1 to 1 sec:</b> no feedback necessary
       li <b>1 to 10 sec:</b> add some feedback (spinners)
       li <b>> 10 sec:</b> the user is no longer here
+    a.source(href="http://www.useit.com/papers/responsetime.html") Source: Jakob Nielsen
 
   section
     h2 Impact on revenue
     ul.read-block
-      li Google: +500 ms <b>-20% traffic</b>
+      li Google: +400 ms <b>-0.6% drop in searches/user</b>
       li Yahoo: +400 ms    <b>-5-9% full-page traffic</b>
       li Amazon: +100 ms <b>-1% sales</b>
       li Firefox: +2 seg   <b>-15% downloads</b>
+    a.source(href="http://www.stevesouders.com/blog/2010/05/07/wpo-web-performance-optimization/") Source: Steve Souders
 
   section
     h2 Impact on PageRank
     p Starting 2010, <b>Google has added page performance</b> to the PageRank algorithm
-    a(href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html").source Using site speed in web search ranking
+    a.source(href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html") Source: Google
 
   section
     h2 Best thing for performance
@@ -43,9 +45,9 @@ append slides
     h2 Pre-process JavaScript and CSS
     ul
       li Rule 1 - Make <b>Fewer HTTP Requests</b>
-      li Rule 2 - Use a <b>Content Delivery Network</b>
       li Rule 4 - <b>Gzip Components</b>
       li Rule 10 - <b>Minify JavaScript</b>
+      li Rule 2 - Use a <b>Content Delivery Network</b>
 
   section
     h2 Content-delivery network
@@ -57,22 +59,24 @@ append slides
 
   section
     h2 Active open connections
-    p <b>6 connections</b>
+    p <b>6 connections</b> (used to be 2)
     p These are <b>shared for all active tabs</b>
+    a.source(href="http://www.browserscope.org/?category=network") Source: BrowserScope
 
   section
     h2 Location
     ul
-      li Rule 5 - Put <b>Stylesheets at the Top</b>
-      li Rule 6 - Put <b>Scripts at the Bottom</b>
-      li Rule 8 - Make <b>JavaScript and CSS External</b>
+      li Rule 5 - Put <b>stylesheets at the &lt;head></b>
+      li Rule 6 - Put <b>scripts at the bottom</b> (&lt;body>)
+      li Rule 8 - Make <b>JavaScript and CSS external</b>
 
   section
     h2 Measure, don't guess
     p What's faster, Facebook or LinkedIn?
 
   section
-    h2 Measure, don't guess
+    h2 It used to be like this
+    img(src="assets/raster/facebook-vs-linkedin.png")
 
   section(data-state="lab")
     h2 Lab: performance 1
@@ -82,7 +86,6 @@ append slides
     h2 Performance tools
     ul
       li Google PageSpeed
-      li YSlow!
       li Webpagetest.org
       li Chrome resources tab
 
@@ -158,14 +161,15 @@ append slides
             * {
               font-size: 12px;
             }
-            /* do not tag-qualify an id */  div#main {
+            /* do not tag-qualify an id */  
+            div#main {
               width: 960px;
             }
             /* avoid descendants */
             table.bill tbody tr td.cell {
               border: 1px solid #ccc;
             }
-            /* avoid by tag */
+            /* avoid tag selectors */
             .contact-data div {
               background: #fcc;
             }
@@ -228,22 +232,53 @@ append slides
     p.read-block :hover on non-link elements (div, p, etc) <b>will fail or cause degraded performance</b> on IE
 
   section
-    h2 Best performance possible
-    ul
-      li <b>ID and class selectors</b>
-      li <b>child selectors</b>
-      li <b>descendant selectors</b>
-
-  section
     h2 Not to be taken too seriously
-    p Performance gains are not that good.
-    ul
-      li 30 ms for typical CSS
-      li 2000 ms for really bad CSS
+    p Performance gains are typically below <b>50ms</b>, but many of these rules (like descendant selectors) also apply to reflows
+    a.source(href="http://www.stevesouders.com/blog/2009/03/10/performance-impact-of-css-selectors/") Source: Steve Souders
 
   section
-    h2 Use classes to override styles
-    p Specificity has collisions
+    h2 Avoid reflows
+    p A reflow is triggered in this video at minute 0:15
+    iframe(width="420", height="315", src="http://www.youtube.com/embed/ZTnIxIA5KGw", frameborder="0", allowfullscreen)
+
+  section
+    h2 Reflow triggered by images
+    p.read-block Specify <b>width</b> and <b>height</b> on all your images
+
+  section
+    h2 Reflows triggered by animations
+    p Get your animations out of the rendering tree by using <b>position=absolute or fixed</b>
+
+  section
+    h2 Reflows triggered by :hover
+    p Avoid changing the size of your elements using :hover (font-size, border-width, etc)
+
+  section
+    h2 Reflows triggered by JavaScript
+    p Avoid Javascript manipulations of the DOM in a loop
+    .row-fluid
+      .span6
+        p <b>BAD</b>
+        pre
+          code.
+            var $ul = $('#myList');
+            myCollection.each(function(e) {
+              $ul.append('&lt;li>' + e.name);
+            })
+      .span6
+        p <b>GOOD</b>
+        pre
+          code.
+            var items = '';
+            myCollection.each(function(e) {
+              items += '&lt;li>' + e.name;
+            })
+            $('#myList').append(items);
+    a.source(href="http://www.stevesouders.com/blog/2009/03/10/performance-impact-of-css-selectors/") Source: Steve Souders
+
+  section
+    h2 Specificity has collisions
+    p Use classes to override styles
     #priority-collisions
       style
         #priority-collisions {
@@ -275,15 +310,17 @@ append slides
       .span5
           p(style="margin-top: 70px") Normal styles
       .span7
-          mixin priorities(' ', ' ', ' ', ' ')
+          mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
     .row-fluid
       .span5
           p(style="margin-top: 70px") Important styles
       .span7
           mixin priorities('×', ' ', ' ', ' ')
+    .row-fluid
+      p <b>×</b> → Point of no return
   section
     h2 CSS Lint
-    p CSS Lint analyzes your CSS and tries to help point out problems with your code.
+    p CSS Lint analyzes your CSS and points out problems with your code.
     ul
       li Parsing errors
       li Possible Errors
@@ -294,11 +331,6 @@ append slides
   section(data-state="lab")
     h2 Lab: CSS Lint
     p Use CSS Lint to optimize css code
-
-  section
-    h2 Reflow performance
-    p.read-block Specify <b>width</b> and <b>height</b> on all your images
-    p.read-block Apply animations to elements that are <b>position fixed</b> or <b>absolute</b>
 
   section
     h2 Browser cache
@@ -397,4 +429,9 @@ append slides
   section(data-state="lab")
     h2 Lab: Browser Cache
     p Test the browser cache
+
+  section
+    h2 Keep sharp
+    p
+      a(href="https://developers.google.com/speed/docs/best-practices/rules_intro") Google performance best practices
     
