@@ -346,17 +346,20 @@ append slides
 
   section
     h2 304 with Last-Modified
-    p.read-block If the server includes <b>Last-Modified</b> the browser will include <b>If-Modified-Since</b> with each further request
-    p Example: any static file with apache / tomcat
+    p If the server includes <b>Last-Modified</b> the browser will include <b>If-Modified-Since</b> with each subsequent request
+    p Example: static files with apache / tomcat
+    img(src="assets/raster/304-last-modified.png")
 
   section
     h2 304 with ETag
-    p.read-block If server includes <b>ETag</b> the browser will include <b>If-None-Match</b> with each further request
-    p Example: <inode>-<file-size>-<last-modified> with apache
+    p If server includes <b>ETag</b> the browser will include <b>If-None-Match</b> with each further request
+    p Example: &lt;inode>-&lt;file-size>-&lt;last-modified> with apache
+    img(src="assets/raster/304-etag.png")
 
   section
     h2 Expires header
     p Indicates for <b>how long the file should not be retrieved again</b>.
+    img(src="assets/raster/expires.png")
 
   section
     h2 Expires header
@@ -418,13 +421,8 @@ append slides
 
   section
     h2 Expires & strong indicators
-    p Using strong indicators, you can set your Expires header to cache forever:
-
-    ul
-      li HTTP spec: 1 year
-      li Yahoo! recommendation: 10 years
-
-    p.read-block <b>Use only with immutable resources</b>
+    p Using strong indicators, you can set your Expires header to cache forever (1-10 years)
+    p <b>Use only with immutable resources</b>
 
   section(data-state="lab")
     h2 Lab: Browser Cache

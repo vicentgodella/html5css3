@@ -19,17 +19,17 @@ section
 
   pre
     code.
-      _ - £ ¬ ¦                   /* IE 6       */
-      .mydiv { _color: blue; }      /* IE 6       */
-      ! $ & * ( ) = % + @ , . / ` [ ] # ~ ? : < > |   /* IE 6/7    */
-      .mydiv { #color: blue; }        /* IE 6/7    */
+      /* IE 6: _ - £ ¬ ¦ */
+      .mydiv { _color: blue; }        
+      /* IE 6/7: ! $ & * ( ) = % + @ , . / ` [ ] # ~ ? : < > |  */
+      .mydiv { #color: blue; }
   p @media hacks
   pre
     code.
-      @media screen\9 { }                /* IE 6/7   */
-      @media \0screen\,screen\9 {}               /* IE 6/7/8 */
-      @media \0screen { }                /* IE 8      */
-      @media screen\0 { }                  /* IE 8/9   */
+      @media screen\9 { }             /* IE 6/7   */
+      @media \0screen\,screen\9 {}    /* IE 6/7/8 */
+      @media \0screen { }             /* IE 8     */
+      @media screen\0 { }             /* IE 8/9   */
 
 section
   h2 Conditional classnames
@@ -38,13 +38,14 @@ section
     code.
       #{'<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->'}
       #{'<!--[if IE 7 ]> <html class="ie7"> <![endif]-->'}
-      #{'<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->'}
+      #{'<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->'}
 
       #{'<style>'}
-        .content {display: inline-block;}
-        .ie6 .content {display: inline; zoom:1;}
-        .ie7 .content {display: inline; zoom:1;}
+        .content { display: inline-block; }
+        .ie6 .content { display: inline; zoom:1; }
+        .ie7 .content { display: inline; zoom:1; }
       #{'</style>'}
+  a.source(href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/") Source: Paul Irish
 
 
 section
@@ -57,18 +58,19 @@ section
     li CONS:
       ul
         li Add conditional comments to every single HTML page.
-        li Increases the specificity of your selectors.
+        li Increases the length of your selector chain.
 
 section
-  h2 IE7.js
-  p <b>ie7.js, ie8.js, ie9.js</b> by Dean Edwards
-  p Fixes simple CSS 2 and 3 selectors
+  h2 IE7.js, IE8.js, IE9.js
+  p Add <b>CSS 2 and 3 selectors</b> to IE < 9
+  p adjacent + sibling, [attr~="value"], :not(), :first-of-type()...
+  a.source(href="http://code.google.com/p/ie7-js/") Source: ie7.js
 
 section
-  h2 IE will render the page as:
-  p.read-block Quirks mode: render as IE5
-  p.read-block Standards mode (Intranet): IE7
-  p.read-block Standards mode (Extranet): IE8 or 9
+  h2 IE render modes
+  p.read-block <b>Quirks mode</b>: render as IE5
+  p.read-block <b>Standards mode</b> (Intranet): IE7
+  p.read-block <b>Standards mode</b> (Extranet): IE8 or 9
 
 section
   h2 X-UA-Compatible
@@ -94,13 +96,14 @@ section
 
 section
   h2 Chrome Frame
-  p If installed, <b>render using Chrome Frame</b>instead of IE.
+  p If installed, <b>render using Chrome Frame</b> instead of IE.
 
   | META:
   pre
     code.
       #{'<!-- Use Chrome Frame -->'}
       #{'<meta http-equiv="X-UA-Compatible" content="chrome=1">'}
+
       #{'<!-- Use IE9 (if installed) or Chrome Frame -->'}
       #{'<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">'}
 
@@ -118,14 +121,12 @@ section
 
 section
   h2 Install from the server side
-  p use the User-Agent header
-
-  | User-Agent:
+  p Detect if the user has Chrome Frame installed by inspecting the <b>User-Agent</b>:
   pre
     code.
-      Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; chromeframe/11.0.660.0)
+      Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; <b>chromeframe</b>/11.0.660.0)
 
-  | Server side:
+  div Server side:
   pre
     code.
       if (userAgent.contains("MSIE") && !userAgent.contains("chromeframe")) {
@@ -134,8 +135,6 @@ section
 
 section
   h2 Install using JavaScript
-  p Just invoke the CFInstall script
-
   pre
     code.
       #{'<html>'}
@@ -151,22 +150,69 @@ section
 section
   h2 Multiple IE versions
   ul
-    li <b>Adobe BrowserLab</b>
-    li <b>IE 8 compatibility view</b>
-    li.small-text MS Expression Web SuperPreview
-    li.small-text IETester
-    li.small-text Browsium UniBrows
-  img(src="assets/raster/ie-versions-1.png")
-  img(src="assets/raster/ie-versions-2.png")
+    li IE compatibility view
+    li <a href="https://browserlab.adobe.com">Adobe BrowserLab</a>
+    li <a href="http://www.browserstack.com/">BrowserStack</a>
 
 section
-  h2 IE virtual machines
-  p Virtual Machines
-  ul
-    li Windows 7 virtual XP mode
-    li VMWare etc
-  img(src="assets/raster/ie-vm.png")
+  h2 Virtual machines
+  p Microsoft provides with <a href="http://www.microsoft.com/en-us/download/details.aspx?id=11575">Virtual HDs</a> to test IE that can be used with <b>Windows 7 virtual XP mode</b> and <b>VirtualBox</b>
 
 section(data-state="lab")
   h2 Lab: IE compatibility
   p Test pages using Internet Explorer 6, 7, 8 and 9
+
+section
+  h2 CSS3 Pie
+  ul
+    li border-radius
+    li box-shadow
+    li border-image
+    li Multiple background images
+    li linear-gradient as background image
+  a.source(href="http://css3pie.com/") Source: css3pie.com
+
+section
+  h2 Pie as HTC file
+  p (Location must be relative to the <b>source HTML file</b>)
+  pre
+    code.
+      .content {
+          border-radius: 5px;
+          behavior: url(PIE.htc);
+      }
+
+
+section
+  h2 Pie as JavaScript
+  ul.read-block
+    li Blocks the page while loading.
+    li Not automatically attached to new elements added dinamically.
+  pre
+    code.
+      #{'<!--[if lt IE 10]>'}
+        #{'<script type="text/javascript" src="PIE.js"></script>'}
+      #{'<![endif]-->'}
+      &lt;script>
+        if (window.PIE) {
+            $('.rounded').each(function() {  PIE.attach(this);  });
+        }
+      &lt;/script>
+
+
+section
+  h2 JavaScript vs behavior
+
+  ul.read-block
+    li <b>PROS:</b>
+    ul
+      li You can load PIE.js from a different domain.
+      li It is easily integrated within JavaScript libraries.
+    li <b>CONS:</b>
+    ul
+      li JavaScript file blocks the page while loading.
+      li It is not automatically attached to new elements added dinamically.
+
+section(data-state="lab")
+  h2 Lab: CSS3 Pie
+  p Use CSS3 Pie to make the proposed page work in Internet Explorer 6+
