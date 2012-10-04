@@ -27,19 +27,19 @@ section
     tbody
       tr
         td [foo~="bar"]
-        td &lt;div foo="<span style="color: red">bar</span> whatever"&gt;
+        td.read-block &lt;div foo="<span style="color: red">bar</span> whatever"&gt;
       tr
         td [foo^="bar"]
-        td &lt;div foo="<span style="color: red">bar</span>tender"&gt;
+        td.read-block &lt;div foo="<span style="color: red">bar</span>tender"&gt;
       tr
         td [foo$="bar"]
-        td &lt;div foo="tool<span style="color: red">bar</span>"&gt;
+        td.read-block &lt;div foo="tool<span style="color: red">bar</span>"&gt;
       tr
         td [foo*="bar"]
-        td &lt;div foo="sylla<span style="color: red">bar</span>y"&gt;
+        td.read-block &lt;div foo="sylla<span style="color: red">bar</span>y"&gt;
       tr
         td [foo|="bar"]
-        td &lt;div foo="<span style="color: red">bar</span>-tender"&gt;
+        td.read-block &lt;div foo="<span style="color: red">bar</span>-tender"&gt;
 
 section
   section
@@ -195,4 +195,5 @@ section
         background-color: gray;
       }
   section
-    a(href="#target-selector") Go there!
+    a(href="#target-selector") Go back!
+    p (and pay attention to the browser hash)

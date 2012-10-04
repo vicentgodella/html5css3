@@ -41,21 +41,23 @@ section
 
 section
   h2 So why use sitemaps?
+  ul.read-block
     li Specify <b>frequency of change</b> and <b>priorities</b>
     li Point to <b>otherwise unreachable contents</b>.
 
 section
   h2 Specialized sitemaps
   p <b>video, mobile, geo, news, code search, images</b>
-  a(href="http://www.google.com/support/webmasters/bin/topic.py?hl=en&topic=20986").source Google Webmaster Tools
-section
-  h2 Sitemap generation tools
-  p http://code.google.com/p/sitemap-generators/
+  a.source (href="http://www.google.com/support/webmasters/bin/topic.py?hl=en&topic=20986") Source: Google Webmaster Tools
 
 section
   h2 SEO Tools
-  p <b>Google Website Optimizer</b>
-  p <b>Google Analytics</b>
+  p <a href="http://www.google.com/webmasters/tools">Google Webmaster Tools</a>
+  p <a href="http://analytics.google.com">Google Analytics</a>
+
+section
+  h2 PageRank
+  p Algorithm by Larry Page (Google) used to measure the weight of a page in the Internet
 
 section
   h2 Bits included in PageRank
@@ -77,12 +79,21 @@ section
 
 section
   h2 Clean URLs
+  p Use hyphens to separate words, not underscores
   p /posts/why_seo_rocks  <b>WRONG</b>
   p /posts/why-seo-rocks  <b>CORRECT</b>
 
 section
-  h2 Meta index
-  p follow, nofollow
-  p index, noindex
-  p revisit
-  p nostore
+  h2 Meta robots
+  ul.read-block
+    li <b>nofollow</b>: do not follow any link on this page.
+    li <b>noindex</b>: do not store this page in the search engine index. 
+    li <b>noarchive</b>: do not store a cached version of the page.
+    li There is also <b>follow, index</b>, but they are the default behavior.
+  a.source(href="https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag") Source: Google for Webmasters
+
+section
+  h2 Keep sharp
+  ul.read-block
+    li 
+      a(href="https://developers.google.com/webmasters/googleforwebmasters/") Google for webmasters
