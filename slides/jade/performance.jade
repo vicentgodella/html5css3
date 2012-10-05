@@ -177,6 +177,7 @@ append slides
         p GOOD:
         pre
           code.
+            &nbsp;
             body {
               font-size: 12px;
             }
@@ -185,11 +186,11 @@ append slides
               width: 960px;
             }
 
-            .cell, .td-cell {
+            .cell {
               border: 1px solid #ccc;
             }
 
-            .contact-data, .div-contact-data {
+            .div-contact-data {
               background: #fcc;
             }
 
@@ -252,6 +253,16 @@ append slides
   section
     h2 Reflows triggered by :hover
     p Avoid changing the size of your elements using :hover (font-size, border-width, etc)
+    #ex-reflow-hover
+      p.hover-p <b>Hover!</b>
+      style
+        #ex-reflow-hover > .hover-p {
+          -webkit-transition: all 0.5s linear;
+          margin-bottom: 0;
+        }
+        #ex-reflow-hover > .hover-p:hover {
+          font-size: 200%;
+        }
 
   section
     h2 Reflows triggered by JavaScript

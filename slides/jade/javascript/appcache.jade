@@ -11,15 +11,6 @@ section.browser-support-container
       ...
 
       #{'</html>'}
-section
-  h2 Process
-  img(src="assets/svg/appcache-flow.svg", width="80%")
-
-section
-  h2 The AppCache contents
-  p.read-block Contents that <b>can be cached</b>
-  p.read-block Contents that <b>will never be cached</b>
-  p.read-block <b>Fallback contents</b> to use when offline
 
 section
   h2 Cache.manifest
@@ -28,33 +19,38 @@ section
       CACHE MANIFEST
       # Remember to update the version number!
       # version 2.3.1
-
+      <span class="fragment">
       # Explicit cache: (no wildcard allowed)
       CACHE:
       /css/style.css
       /img/funny_image.png
-
+      </span><span class="fragment">
       # Do not cache: (folders and wildcards are allowed)
       NETWORK:
       /js
       /status.html
-
+      </span><span class="fragment">
       # If A is not online, serve B
       FALLBACK:
       /account /offline.HTML
+      </span>
 
 section
-  h2 AppCache JavaScript API
-  ul
-    li applicationCache.status
-    ul
-      li Return the current status
-    li applicationCache.update()
-    ul
-      li Update the manifest, download the files but do not replace them yet
-    li applicationCache.swapCache()
-    ul
-      li Refresh the cached contents
+  h2 Process
+  img(src="assets/svg/appcache-flow.svg", width="80%")
+
+//- section
+//-   h2 AppCache JavaScript API
+//-   ul
+//-     li applicationCache.status
+//-     ul
+//-       li Return the current status
+//-     li applicationCache.update()
+//-     ul
+//-       li Update the manifest, download the files but do not replace them yet
+//-     li applicationCache.swapCache()
+//-     ul
+//-       li Refresh the cached contents
 
 section(data-state="lab")
   h2 Lab: AppCache

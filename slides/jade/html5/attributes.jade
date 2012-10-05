@@ -112,40 +112,70 @@ section.browser-support-container
   p Supported in Chrome & FF3.6+
   pre
     code.
-      #{'<label>'}
-        Name:
-        &lt;input type="text" <b>form="create"</b> name="name">
-      #{'</label>'}
+      &lt;form <b>id="customer-details"</b>>
+        #{'<label>'}
+          Name
+          #{'<input type="text" name="name">'}
+        #{'</label>'}
+        #{'<!-- More fields -->'}
+      #{'</form>'}
 
-      #{'<form id="create"></form>'}
+      &lt;input type="submit" <b>form="customer-details"</b>>
 
 section.browser-support-container
   mixin browserSupport('No', '4+', 'No', '9+', '11.5+')
-  h2 fieldset.disabled
+  h2 fieldset[disabled]
   p Supported in IE9, Opera 11.5 & Firefox 4
   pre
     code.
+      #{'<fieldset>'}
+        #{'<!-- Address -->'}
+        #{'<input type="text" name="address">'}
+      #{'</fieldset>'}
+
       &lt;fieldset <b>disabled</b>>
-        #{'<input type="checkbox" value="different-billing">'}
-        #{'<input type="text" name="billing-address">'}
+        #{'<!-- Alternate address -->'}
+        #{'<input type="text" name="billing-adress">'}
       #{'</fieldset>'}
   #ex-disabled-fieldset
-    form.form-inline
-      fieldset(disabled)
-        label.checkbox Different billing address?
-          input(type="checkbox")
-        p
-        label.checkbox Billing address
-        | 
-        input(type="text")
-
+    form.form-horizontal
+      fieldset
+        .control-group
+          label.control-label Address
+          .controls-bs
+            input(type="text")
+        .control-group
+          .controls-bs
+            label.checkbox Different billing address? (<b>JS</b>)
+              input(type="checkbox", id="billing-address-checkbox",
+                onchange="ExDisabledFieldset.check(this)")
+      fieldset(disabled, id="billing-address-fieldset")
+        .control-group
+          label.control-label Billing address
+          .controls-bs
+            input(type="text").billing-address
+    style
+      #ex-disabled-fieldset [disabled] .billing-address {
+        background: #ddd;
+      }
+    script
+      var ExDisabledFieldset = {
+        check: function(cb) {
+          var fieldset = document.querySelector('#billing-address-fieldset');
+          if(cb.checked) {
+            fieldset.removeAttribute('disabled');
+          } else {
+            fieldset.setAttribute('disabled', 'disabled');
+          }
+        }
+      };
 
 section.browser-support-container
   mixin browserSupport('6+', '4+', '5+', '10+', '11+')
   h2 New textarea attributes
   ul.read-block
     li maxlength (Chrome and FF4) 
-    li spellcheck="true | false"
+    li spellcheck="<b>true</b> | false"
   pre
     code.
       #{'<textarea name="comments" maxlength="140" spellcheck="true">'}
@@ -208,7 +238,6 @@ section
       style
         #ex-validation-selectors-2 [type="email"]:valid {
           border-color: #46A546;
-          color: #12A90D;
           box-shadow: 0 0 6px #B9F8B7;
         }
         #ex-validation-selectors-2 :invalid {

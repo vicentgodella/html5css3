@@ -4,41 +4,6 @@ section.browser-support-container
   p New structural elements:
   p <b>section, nav, aside, header, footer</b>
 
-section
-  h2 Unsupported?
-  p The browser just needs the CSS styles to apply to unrecognized containers
-
-  pre
-    code.
-      article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-        <b>display: block;</b>
-      }
-
-section
-  h2 Unrecognized for IE
-  p IE < 9 does not create DOM nodes for unrecognized semantic elements
-  pre
-    code.
-      #{'<!--[if lt IE 9]>'}
-      #{'<script>'}
-        var e = ("abbr,article,aside,audio,canvas,datalist,details," +
-        "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
-        "progress,section,time,video").split(',');
-        for (var i = 0; i < e.length; i++) {
-          document.createElement(e[i]);
-        }
-      #{'</script>'}
-      #{'<![endif]-->'}
-
-section
-  h2 Short version
-  pre
-    code.
-      #{'<!--[if lt IE 9]>'}
-      &lt;script src="<b>http://html5shiv.googlecode.com/svn/trunk/html5.js</b>">
-      #{'</script>'}
-      #{'<![endif]-->'}
-
 section.browser-support-container
   mixin browserSupport('All', '3+', 'All', '9+', '9+')
   h2 header
@@ -273,6 +238,41 @@ section
           Copyright ©2010
         #{'</footer>'}
         #{'</body>'}
+
+section
+  h2 Unsupported?
+  p The browser just needs the CSS styles to apply to unrecognized containers
+
+  pre
+    code.
+      article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        <b>display: block;</b>
+      }
+
+section
+  h2 Unrecognized for IE
+  p IE < 9 does not create DOM nodes for unrecognized semantic elements
+  pre
+    code.
+      #{'<!--[if lt IE 9]>'}
+      #{'<script>'}
+        var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+        "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+        "progress,section,time,video").split(',');
+        for (var i = 0; i < e.length; i++) {
+          document.createElement(e[i]);
+        }
+      #{'</script>'}
+      #{'<![endif]-->'}
+
+section
+  h2 Short version
+  pre
+    code.
+      #{'<!--[if lt IE 9]>'}
+      &lt;script src="<b>http://html5shiv.googlecode.com/svn/trunk/html5.js</b>">
+      #{'</script>'}
+      #{'<![endif]-->'}
 
 section(data-state="lab")
   h2 Lab: Semantics

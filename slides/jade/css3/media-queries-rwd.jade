@@ -114,40 +114,10 @@ section(data-state="lab")
   p Use media queries with CSS
 
 section
-  h2 Screen sizes
-  img(src="assets/raster/screen-stats.png")
-
-section
-  h2 Goldilocks approach
-  p Keep it <b>simple</b>: Big, Right, Small
-  
-  style
-    #goldilocks-example > div {
-      background-image: url(assets/raster/responsive-sprite.jpg);
-      font-size: 50px;
-      text-transform: uppercase;
-      color: #ccc;
-      overflow: hidden;
-      height: 400px;
-      margin-right: 20px;
-      display: inline-block;
-    }
-    .goldilocks-big {
-      width: 385px;
-    }
-    .goldilocks-right {
-      width: 235px;
-      background-position: -400px 0;
-    }
-    .goldilocks-small {
-      width: 105px;
-      background-position: -635px 0;
-    }
-
-  .row-fluid#goldilocks-example
-    .goldilocks-big 
-    .goldilocks-right 
-    .goldilocks-small 
+  h2 Responsive web design
+  ul
+    li Media queries
+    li Fluid layout
 
 section
   h2 Fluid grids
@@ -185,76 +155,215 @@ section
       }
 
 section
-  h2 Media queries
-  p When fluid is not enough
-  iframe(src="assets/html/rwd.html", width="70%", height="400px")
-  iframe(src="assets/html/rwd.html", width="30%", height="400px")
+  h2 Flexible images
+  p Use max-width: 100%
+  style.
+    #flexible-images-example .parent {
+      height: 300px;
+      width: 80%;
+      margin: auto auto;
+      padding: 20px 10px;
+      box-sizing: border-box;
+    }
+    #flexible-images-example img {
+      display: block;
+      max-width: none;
+    }
+    #flexible-images-example p {
+      font-size: 14px;
+      color: white;
+      text-align: left;
+    }
+  #flexible-images-example
+
+    .row-fluid
+      .span4
+        .parent(style="background: darkgray;")
+          p Original size (width=100px)
+          img(src="assets/svg/blank-image.svg", width="130px")
+      .span2.fragment
+        .parent.red-bg
+          p width=100px
+          img(src="assets/svg/blank-image.svg", width="130px")
+      .span2.fragment
+        .parent.red-bg
+          p width=50%
+          img(src="assets/svg/blank-image.svg", width="50%")
+      .span2.fragment
+        .parent.green-bg
+          p max-width=100%
+          img(src="assets/svg/blank-image.svg", width="100%", style="margin: 0;")
+
+section
+  h2 Center background
+  pre
+    code.
+      .illustration {
+        background: url(someimage.png) no-repeat 50% 0;
+      }
+  style.
+    #responsive-image-centered > .responsive-image {
+      background: url(assets/raster/lens.jpg) no-repeat 50% 0;
+      height: 400px;
+      margin-right: 20px;
+      display: inline-block;
+    }
+  #responsive-image-centered
+    .responsive-image(style="width: 385px")
+    .responsive-image(style="width: 235px")
+    .responsive-image(style="width: 105px")
+  a(href="http://commons.wikimedia.org/wiki/File:Lens_Nikkor_50mm.jpg").source Picture from Wikimedia Commons
+
+section
+  h2 SVG
+  p XML based vector graphics
+  pre
+    code.
+      #{'<defs>'}
+        #{'<linearGradient y2="100%" id="our-gradient">'}
+          #{'<stop offset="30%" stop-color="#fff"></stop>'}
+          #{'<stop offset="70%" stop-color="#a34"></stop>'}
+        #{'</linearGradient>'}
+      #{'</defs>'}
+
+      #{'<circle cx="100" cy="100" r="80" fill="url(#our-gradient)" stroke="#a34" stroke-width="5"></circle>'}
+  svg(version="1.1", height="200", width="200")
+    defs
+      linearGradient(y2="100%")#our-gradient
+        stop(offset="30%", stop-color="#fff")
+        stop(offset="70%", stop-color="#a34")
+    circle(cx="100", cy="100", r="80", fill="url(#our-gradient)", stroke="#a34", stroke-width="5")
+
+section
+  mixin browserSupport('4+', '4+', '5+', '9+', '9.5+')
+  h2 SVG
+  p.read-block Suitable for <b>simple images</b>
+  p.read-block Support in mobile is <b>limited</b>
+  style.
+    .html5bg {
+      background: url(assets/svg/html5.svg) no-repeat; 
+      background-size: contain; 
+      height: 300px;
+      margin-top: 10px;
+    }
+  .row-fluid
+    .offset1.span1.html5bg
+    .span2.html5bg
+    .span4.html5bg
+
+section
+  h2 How to use SVG
+  p as &lt;img>:
+  pre
+    code.
+      #{'<img src=”diagram.svg”>'}
+
+  p as CSS background:
+  pre
+    code.
+      .diagram {
+        background-image: url(diagram.svg);
+      }
+
+  p inline:
+  pre
+    code.
+      &lt;svg height=86 width=90 viewBox="5 9 90 86" style="float: right;">
+        #{'<path stroke=#F53F0C ... />'}
+        #{'<line stroke-width=10 ... />'}
+      #{'</svg>'}
 
 section
   section
-    h2 Flexible images
-    p Use max-width: 100%
-    style.
-      #flexible-images-example .parent {
-        height: 300px;
-        width: 80%;
-        margin: auto auto;
-        padding: 20px 10px;
-        box-sizing: border-box;
-      }
-      #flexible-images-example img {
-        display: block;
-        max-width: none;
-      }
-      #flexible-images-example p {
-        font-size: 14px;
-        color: white;
-        text-align: left;
-      }
-    #flexible-images-example
+    h2 Media queries
+    p When fluid is not enough
+    .row-fluid
+      pre.span6
+        code.
+          &nbsp;
+            nav li {
+              display: inline-block;
+            }
 
-      .row-fluid
-        .span4
-          .parent(style="background: darkgray;")
-            p Original size (width=100px)
-            img(src="assets/svg/blank-image.svg", width="130px")
-        .span2.fragment
-          .parent.red-bg
-            p width=100px
-            img(src="assets/svg/blank-image.svg", width="130px")
-        .span2.fragment
-          .parent.red-bg
-            p width=50%
-            img(src="assets/svg/blank-image.svg", width="50%")
-        .span2.fragment
-          .parent.green-bg
-            p max-width=100%
-            img(src="assets/svg/blank-image.svg", width="100%", style="margin: 0;")
+            aside {
+              float: left;
+            }
+
+      pre.span6
+        code.
+          @media(max-width: 500px) {
+            nav li {
+              display: block;
+            }
+
+            aside {
+              float: none;
+            }
+          }
 
   section
-    h2 Center background
-    pre
-      code.
-        .illustration {
-          background: url(someimage.png) no-repeat 50% 0;
+    h2 Media queries
+    iframe(src="assets/html/rwd.html", width="70%", height="400px")
+    iframe(src="assets/html/rwd.html", width="30%", height="400px")
+
+section
+  h2 Screen sizes
+  img(src="assets/raster/screen-stats.png")
+
+section
+  h2 Goldilocks approach
+  p Keep it <b>simple</b>: Big, Right, Small
+  
+  style
+    #goldilocks-example > div {
+      background-image: url(assets/raster/responsive-sprite.jpg);
+      font-size: 50px;
+      text-transform: uppercase;
+      color: #ccc;
+      overflow: hidden;
+      height: 400px;
+      margin-right: 20px;
+      display: inline-block;
+    }
+    .goldilocks-big {
+      width: 385px;
+    }
+    .goldilocks-right {
+      width: 235px;
+      background-position: -400px 0;
+    }
+    .goldilocks-small {
+      width: 105px;
+      background-position: -635px 0;
+    }
+
+  .row-fluid#goldilocks-example
+    .goldilocks-big 
+    .goldilocks-right 
+    .goldilocks-small 
+
+section
+  h2 Responsive text
+  p No such thing yet!
+  #ex-responsive-text
+    p Resize any slide
+
+section
+  h2 Optimize images
+  p Serving different images for different displays
+  pre
+    code.
+      .block {
+        background: url('funny_bg.jpg');
+      }
+
+      @media (max-width: 450px) {
+        .block {
+          background: url('funny_bg_low_res.jpg');
         }
-    style.
-      #responsive-image-centered > .responsive-image {
-        background: url(assets/raster/lens.jpg) no-repeat 50% 0;
-        height: 400px;
-        margin-right: 20px;
-        display: inline-block;
       }
-    #responsive-image-centered
-      .responsive-image(style="width: 385px")
-      .responsive-image(style="width: 235px")
-      .responsive-image(style="width: 105px")
-    a(href="http://commons.wikimedia.org/wiki/File:Lens_Nikkor_50mm.jpg").source Picture from Wikimedia Commons
-    
-  section
-    h2 Responsive images
-    p Serving different images for different displays
 
+section
   section
     h2 High density displays
     p Pixel density above 200 PPI
@@ -267,97 +376,59 @@ section
   section
     h2 device-pixel-ratio
     pre
-      code.
+      code.css.
         @media only screen and (min--moz-device-pixel-ratio: 2),
         only screen and (-o-min-device-pixel-ratio: 2/1),
         only screen and (-webkit-min-device-pixel-ratio: 2),
         only screen and (min-device-pixel-ratio: 2) {
 
-           .mybg {
+          .mybg {
             background-image: url(imgx2.jpg);
-           }
+          }
 
         }
 
-  section
-    h2 Avoid duplicate downloads
-    p Using cookies
-
-    pre
-      code.
-        &lt;img src="picture.jpg" data-large="picture-large.jpg">
-        &lt;script>
-          document.cookie ="dimensions=" + screen.width + "x" + screen.height;
-        &lt;/script>
-    p Using noscript
-
-    pre
-      code.
-        &lt;noscript data-img="picture-default.jpg" data-imgsmall="picture-small.jpg">
-          #{'<img src="picture-default.jpg">'}
-        #{'</noscript>'}
-
-        &lt;script>
-          $('noscript[data-img]').replaceWith(getImage(this));
-        &lt;/script>
-  section
-    h2 SVG
-    p XML based vector graphics
-    pre
-      code.
-        #{'<defs>'}
-          #{'<linearGradient y2="100%" id="our-gradient">'}
-            #{'<stop offset="30%" stop-color="#fff"></stop>'}
-            #{'<stop offset="70%" stop-color="#a34"></stop>'}
-          #{'</linearGradient>'}
-        #{'</defs>'}
-
-        #{'<circle cx="100" cy="100" r="80" fill="url(#our-gradient)" stroke="#a34" stroke-width="5"></circle>'}
-    svg(version="1.1", height="200", width="200")
-      defs
-        linearGradient(y2="100%")#our-gradient
-          stop(offset="30%", stop-color="#fff")
-          stop(offset="70%", stop-color="#a34")
-      circle(cx="100", cy="100", r="80", fill="url(#our-gradient)", stroke="#a34", stroke-width="5")
-
-  section
-    mixin browserSupport('4+', '4+', '5+', '9+', '9.5+')
-    h2 SVG
-    p.read-block Suitable for <b>simple images</b>
-    p.read-block Support in mobile is <b>limited</b>
-    style.
-      .html5bg {
-        background: url(assets/svg/html5.svg) no-repeat; 
-        background-size: contain; 
-        height: 300px;
-        margin-top: 10px;
+section
+  h2 Duplicate downloads
+  p Cascade override fails in Android 3- and mobile Safari 4
+  pre
+    code.
+      @media (min-width: 500px) {
+        .my-component {
+          background-image: url('large-logo.png')
+        }
       }
-    .row-fluid
-      .offset1.span1.html5bg
-      .span2.html5bg
-      .span4.html5bg
 
-  section
-    h2 How to use SVG
-    p as &lt;img>:
-    pre
-      code.
-        #{'<img src=”diagram.svg”>'}
-
-    p as CSS background:
-    pre
-      code.
-        .diagram {
-          background-image: url(diagram.svg);
+      @media (max-width: 500px) {
+        .my-component {
+          background-image: url('tiny-logo.png')
         }
+      }
 
-    p inline:
-    pre
-      code.
-        &lt;svg height=86 width=90 viewBox="5 9 90 86" style="float: right;">
-          #{'<path stroke=#F53F0C ... />'}
-          #{'<line stroke-width=10 ... />'}
-        #{'</svg>'}
+
+  a(href="http://timkadlec.com/2012/04/media-query-asset-downloading-results/").source TimKadlec.com
+
+section
+  h2 Responsive images
+  p Using cookies
+
+  pre
+    code.
+      &lt;img src="picture.jpg" data-large="picture-large.jpg">
+      &lt;script>
+        document.cookie ="dimensions=" + screen.width + "x" + screen.height;
+      &lt;/script>
+  p Using noscript
+
+  pre
+    code.
+      &lt;noscript data-img="picture-default.jpg" data-imgsmall="picture-small.jpg">
+        #{'<img src="picture-default.jpg">'}
+      #{'</noscript>'}
+
+      &lt;script>
+        $('noscript[data-img]').replaceWith(getImage(this));
+      &lt;/script>
 
 section
   h2 Responsive Bootstrap

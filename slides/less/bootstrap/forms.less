@@ -235,9 +235,13 @@ textarea {
   margin-left: -18px;
 }
 
+//instructormatters
+// Bootstrap class .controls renamed to .controls-bs
+// to prevent collision with reveal.js
+
 // Move the options list down to align with labels
-.controls > .radio:first-child,
-.controls > .checkbox:first-child {
+.controls-bs > .radio:first-child,
+.controls-bs > .checkbox:first-child {
   padding-top: 5px; // has to be padding because margin collaspes
 }
 
@@ -623,9 +627,9 @@ legend + .control-group {
     text-align: right;
   }
   // Move over all input controls and content
-  .controls {
+  .controls-bs {
     // Super jank IE7 fix to ensure the inputs in .input-append and input-prepend
-    // don't inherit the margin of the parent, in this case .controls
+    // don't inherit the margin of the parent, in this case .controls-bs
     *display: inline-block;
     *padding-left: 20px;
     margin-left: @horizontalComponentOffset;
@@ -646,7 +650,7 @@ legend + .control-group {
       margin-top: @baseLineHeight / 2;
     }
   }
-  // Move over buttons in .form-actions to align with .controls
+  // Move over buttons in .form-actions to align with .controls-bs
   .form-actions {
     padding-left: @horizontalComponentOffset;
   }
