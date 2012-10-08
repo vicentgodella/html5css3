@@ -106,21 +106,24 @@ section
     h2 Parametric mixins
     pre
       code.no-highlight.
-        .coolShadow(<b>@blur</b>) {
-          -moz-box-shadow: 0 0 <b>@blur</b> rgba(0, 0, 0, .7);
-          -webkit-box-shadow: 0 0 <b>@blur</b> rgba(0, 0, 0, .7);
-          box-shadow: 0 0 <b>@blur</b> rgba(0, 0, 0, .7);
+        .coolGradient(<b>@color1</b>, <b>@color2</b>) {
+          background-color: <b>@color1</b>;
+          background: -moz-linear-gradient(top,  <b>@color1</b> 5%, <b>@color2</b> 90%);
+          background: -webkit-linear-gradient(top,  <b>@color1</b> 5%, <b>@color2</b> 90%);
+          ...
         }
 
         #my-block {
           line-height: 1.5em;
-          <b>.coolShadow(3px)</b>;
+          <b>.coolGradient(#1ac, #6a9)</b>;
         }
     pre
       code.
         #my-block {
           line-height: 1.5em;
-          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          background-color: #1ac;
+          background: -moz-linear-gradient(top,  #1ac 5%, #6a9 90%);
+          background: -webkit-linear-gradient(top,  #1ac 5%, #6a9 90%);
           ...
         }
   section
@@ -189,8 +192,8 @@ section
 
           // My mixins
           .center() {
-            margin-left: 0;
-            margin-right: 0;
+            margin-left: auto;
+            margin-right: auto;
           }
           ...
     .span6

@@ -280,31 +280,6 @@ section
           button.btn(type="submit") Submit
 
 section.browser-support-container
-  mixin browserSupport('6+', '4+', 'No', '10+', '10.6+')
-  h2 novalidate
-  pre
-    code.
-      &lt;form <b>novalidate</b>>
-        #{'<input type="text" name="username" required>'}
-      #{'</form>'}
-
-      #{'<form>'}
-        #{'<input type="text" name="username" required>'}
-        #{'<button type="submit">Publish</button>'}
-        &lt;button type="submit" <b>formnovalidate</b> action="/save">Save as draft</button>
-      #{'</form>'}
-  #ex-novalidate
-    form.form-inline
-      fieldset
-        label.checkbox Email
-        | 
-        input(type="email", required)
-        | 
-        button.btn(type="submit") Publish
-        | 
-        button.btn(type="submit", formnovalidate) Save as draft
-
-section.browser-support-container
   mixin browserSupport('10+', '4+', 'No', '10+', '10.6+')
   h2 New submit button attrs
   p formaction, formenctype, formmethod, formnovalidate and formtarget
@@ -316,6 +291,31 @@ section.browser-support-container
         &lt;input type="submit" value="save_draft" <b>formaction="/save"</b> />
         &lt;input type="submit" value="delete" <b>formaction="/delete"</b> />
       #{'</form>'}
+
+section.browser-support-container
+  mixin browserSupport('6+', '4+', 'No', '10+', '10.6+')
+  h2 novalidate
+  pre
+    code.
+      &lt;form <b>novalidate</b>>
+        #{'<input type="text" name="username" required>'}
+      #{'</form>'}
+
+      #{'<form>'}
+        #{'<input type="text" name="username" required>'}
+        #{'<button type="submit">Publish</button>'}
+        &lt;button type="submit" <b>formnovalidate</b> action="/save">Save as draft&lt;/button>
+      #{'</form>'}
+  #ex-novalidate
+    form.form-inline
+      fieldset
+        label.checkbox Email
+        | 
+        input(type="email", required)
+        | 
+        button.btn(type="submit") Publish
+        | 
+        button.btn(type="submit", formnovalidate) Save as draft
 
 include attributes-support
 

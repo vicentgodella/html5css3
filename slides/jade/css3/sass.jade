@@ -49,27 +49,30 @@ section
     pre.span6
       code.
         @mixin stuff {
-          background-color: $redBlood;
+          line-height: $paragraphLine;
           width: $size;
         }
 
-        @mixin coolShadow($blur) {
-          -moz-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
-          -webkit-box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
-          box-shadow: 0 0 $blur rgba(0, 0, 0, .7);
+        @mixin coolGradient(<b>$color1</b>, <b>$color2</b>) {
+          background-color: <b>$color1</b>;
+          background: -moz-linear-gradient(top,  <b>$color1</b> 5%, <b>$color2</b> 90%);
+          background: -webkit-linear-gradient(top,  <b>$color1</b> 5%, <b>$color2</b> 90%);
+          ...
         }
 
         #footer {
           @include stuff;
-          @include coolShadow(3px);
+          <b>@include coolGradient(#1ac, #6a9)</b>;
         }
 
     pre.span6
       code.
         #footer {
-          background-color: #f00;
+          line-height: 1.7em;
           width: 100px;
-          -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+          background-color: #1ac;
+          background: -moz-linear-gradient(top,  #1ac 5%, #6a9 90%);
+          background: -webkit-linear-gradient(top,  #1ac 5%, #6a9 90%);
           ...
         }
 
