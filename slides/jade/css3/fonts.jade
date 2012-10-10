@@ -53,7 +53,7 @@ section
         | <td>no</td> <td>2.2+</td> <td>no</td> <td>yes</td>
       tr
         | <td>iPhone</td>
-        | <td>no</td> <td>no</td> <td>no</td> <td>yes</td>
+        | <td>no</td> <td>4.2+</td> <td>5+</td> <td>yes</td>
 
 section
   h2 Font features
@@ -148,41 +148,6 @@ section
   p.iconic &#xe06a; &#xe033; &#x00b6; &#x2717; &#xe02e; &#xe01b; &#xe04d;
 
 section
-  h2 sFIR icons
-  pre
-    code.
-      .icon {
-        background: url('icons-sprite.png') no-repeat;
-        width: 0px;
-        height: 12px;
-        display: inline-block;
-      }
-
-      .icon-mail {
-        background-position: -10px -40px;
-      }
-      ...
-  pre
-    code.
-      #{'<span class="icon icon-mail"></span>'}
-      #{'<span class="icon icon-star"></span>'}
-  style
-    #ex-sfir-icons span {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
-      background-size: 30px;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      display: inline-block;
-    }
-  #ex-sfir-icons
-    div(style="text-align: center;")
-      span(style="background-image: url(assets/svg/icon-mail.svg);") 
-      span(style="background-image: url(assets/svg/icon-star.svg);") 
-
-
-section
   h2 Font-face icons
   pre
     code.
@@ -191,11 +156,11 @@ section
         ...
       }
 
-      .icon  {  font-family: iconic;  }
+      [class*="icon-"]  {  font-family: iconic;  }
 
-      .icon-mail:before {
-        content: '✉';
-      }
+      .icon-mail:before { content: '✉'; }
+      ...
+
   pre
     code.
       #{'<span class="icon icon-mail"></span>'}

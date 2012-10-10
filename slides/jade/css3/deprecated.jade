@@ -75,3 +75,36 @@ section
           height: 250px;")
           img(src="assets/svg/blank-image.svg", width="70%",
             style="")
+section
+  h2 sFIR icons
+  pre
+    code.
+      .icon {
+        background: url('icons-sprite.png') no-repeat;
+        width: 0px;
+        height: 12px;
+        display: inline-block;
+      }
+
+      .icon-mail {
+        background-position: -10px -40px;
+      }
+      ...
+  pre
+    code.
+      #{'<span class="icon icon-mail"></span>'}
+      #{'<span class="icon icon-star"></span>'}
+  style
+    #ex-sfir-icons span {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      display: inline-block;
+    }
+  #ex-sfir-icons
+    div(style="text-align: center;")
+      span(style="background-image: url(assets/svg/icon-mail.svg);") 
+      span(style="background-image: url(assets/svg/icon-star.svg);") 
