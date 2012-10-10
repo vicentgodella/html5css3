@@ -4,13 +4,13 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-#content {
+.content {
 	float: left;
 	width: 718px;
 	padding: 0 10px;
 	border: 1px solid #dadada;
 }
-#content img {
+.content img {
 	float: left;
 	margin: 0 14px 10px 0;
 	width: 320px;
@@ -36,6 +36,6 @@ a:hover {
 	text-decoration: none;
 }
 
-img#qr-code {
+#qr-code {
 	display:none;
 }
