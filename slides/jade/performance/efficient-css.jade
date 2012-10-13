@@ -1,0 +1,197 @@
+section
+  h2 Efficient CSS
+  p.read-block CSS rules are evaluated <b>right to left</b>
+
+  p(style="margin-top: 60px;") First a.home, then upwards
+  pre
+    code.
+      ul > li a.home {
+        ...
+      }
+
+section
+  h2 Selector performance
+  p Best to worst
+  ul.read-block
+    li #id
+    li .class
+    li div
+    li *
+
+section
+  h2 Improve performance
+  .row-fluid
+    .span6
+      p BAD:
+      pre
+        code.
+          /* avoid generic selectors */
+          * {
+            font-size: 12px;
+          }
+          /* do not tag-qualify an id */  
+          div#main {
+            width: 960px;
+          }
+          /* avoid descendants */
+          table.bill tbody tr td.cell {
+            border: 1px solid #ccc;
+          }
+          /* avoid tag selectors */
+          .contact-data div {
+            background: #fcc;
+          }
+    .span6
+      p GOOD:
+      pre
+        code.
+          &nbsp;
+          body {
+            font-size: 12px;
+          }
+
+          #main {
+            width: 960px;
+          }
+
+          .cell {
+            border: 1px solid #ccc;
+          }
+
+          .div-contact-data {
+            background: #fcc;
+          }
+
+section
+  h2 Improve more
+  .row-fluid
+    .span4
+      p BAD:
+      pre
+        code.
+          ul.links li a {
+            color: #ccc;
+          }
+    .span4
+      p BETTER:
+      pre
+        code.
+          .links > li > a {
+            color: #ccc;
+          }
+    .span4
+      p BEST:
+      pre
+        code.
+          .a-link {
+            color: #ccc;
+          }
+
+section
+  h2 Avoid sibling selectors
+  pre
+    code.
+      h1 + p {
+        border: 1px solid #fff;
+      }
+  p.small-text.read-block WebKit typically achieves a 75% memory reduction in style footprint on pages that <b>don’t make use of sibling selectors</b> – Dave Hyatt, (webkit architect) May 2008
+
+section
+  h2 Avoid :hover on non-link
+  p.read-block :hover on non-link elements (div, p, etc) <b>will fail or cause degraded performance</b> on IE
+
+section
+  h2 Not to be taken too seriously
+  p Performance gains are typically below <b>50ms</b>, but many of these rules (like descendant selectors) also apply to reflows
+  a.source(href="http://www.stevesouders.com/blog/2009/03/10/performance-impact-of-css-selectors/") Source: Steve Souders
+
+section
+  h2 Avoid reflows
+  p A reflow is triggered in this video at minute 0:15
+  iframe(width="420", height="315", src="http://www.youtube.com/embed/ZTnIxIA5KGw", frameborder="0", allowfullscreen)
+
+section
+  h2 Reflow triggered by images
+  p.read-block Specify <b>width</b> and <b>height</b> on all your images
+
+section
+  h2 Reflows triggered by animations
+  p Get your animations out of the rendering tree by using <b>position=absolute or fixed</b>
+
+section
+  h2 Reflows triggered by :hover
+  p Avoid changing the size of your elements using :hover (font-size, border-width, etc)
+  #ex-reflow-hover
+    p.hover-p <b>Hover!</b>
+    style
+      #ex-reflow-hover > .hover-p {
+        -webkit-transition: all 0.5s linear;
+        margin-bottom: 0;
+      }
+      #ex-reflow-hover > .hover-p:hover {
+        font-size: 200%;
+      }
+
+section
+  h2 Reflows triggered by JavaScript
+  p Avoid Javascript manipulations of the DOM in a loop
+  .row-fluid
+    .span6
+      p <b>BAD</b>
+      pre
+        code.
+          var $ul = $('#myList');
+          myCollection.each(function(e) {
+            $ul.append('&lt;li>' + e.name);
+          })
+    .span6
+      p <b>GOOD</b>
+      pre
+        code.
+          var items = '';
+          myCollection.each(function(e) {
+            items += '&lt;li>' + e.name;
+          })
+          $('#myList').append(items);
+  a.source(href="http://www.stevesouders.com/blog/2009/03/10/performance-impact-of-css-selectors/") Source: Steve Souders
+
+section
+  h2 Specificity has collisions
+  p Use classes to override styles
+  #priority-collisions
+    style
+      #priority-collisions {
+        -webkit-transform: scale(0.7, 0.7);
+      }
+      #priority-collisions p {
+        margin-top: 70px;
+      }
+    .row-fluid
+      .span5
+        p h3
+      .span7
+        mixin priorities(0, 0, 0, 1)
+    .row-fluid
+      .span5
+        p #sidebar h3 { ... }
+      .span7
+        mixin priorities(0, 1, 0, 1)
+    .row-fluid
+      .span5
+        p(style="font-size: 90%;") #sidebar .account h3 { ... }
+      .span7
+        mixin priorities(0, 1, 1, 1)
+  a(href="http://www.slideshare.net/stubbornella/our-best-practices-are-killing-us").source Source: Nicole Sullivan
+section
+  h2 !important
+  p Duplicates the problem
+  .row-fluid
+    .span5
+        p(style="margin-top: 70px") Normal styles
+    .span7
+        mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
+  .row-fluid
+    .span5
+        p(style="margin-top: 70px") Important styles
+    .span7
+        mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')

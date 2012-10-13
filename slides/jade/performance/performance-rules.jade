@@ -1,0 +1,92 @@
+section
+  h2 Improve performance
+  p by following <b>14 rules</b> by Steve Souders
+
+section
+  h2 Pre-process JavaScript and CSS
+  ul
+    li Rule 1 - Make <b>Fewer HTTP Requests</b>
+    li Rule 4 - <b>Gzip Components</b>
+    li Rule 10 - <b>Minify JavaScript</b>
+    li Rule 2 - Use a <b>Content Delivery Network</b>
+
+section
+  h2 Content-delivery network
+  p.read-block Use a third-party CDN
+  pre
+    code.
+      https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
+  p.read-block Create your own CDN
+
+section
+  h2 Active open connections
+  p <b>6 connections</b> (used to be 2)
+  p These are <b>shared for all active tabs</b>
+  a.source(href="http://www.browserscope.org/?category=network") Source: BrowserScope
+
+section
+  h2 Location
+  ul
+    li Rule 5 - Put <b>stylesheets at the &lt;head></b>
+    li Rule 6 - Put <b>scripts at the bottom</b> (&lt;body>)
+    li Rule 8 - Make <b>JavaScript and CSS external</b>
+
+section
+  h2 Measure, don't guess
+  p What's faster, Facebook or LinkedIn?
+
+section
+  h2 It used to be like this
+  img(src="assets/raster/facebook-vs-linkedin.png")
+
+section(data-state="lab")
+  h2 Lab: performance 1
+  p Compare performance of multiple websites using online tools
+
+section
+  h2 Performance tools
+  ul
+    li Google PageSpeed
+    li Webpagetest.org
+    li Chrome resources tab
+
+section
+  h2 Some stats
+  ul
+    li Extracted from http://httparchive.org/
+    li +17000 URLs analyzed:
+      ul
+        li Alexa 500, US 500, 10,000
+        li Fortune 500
+        li Global 500
+        li Quantcast10K
+
+section
+  h2 Load times
+  img(src="assets/raster/load-times.png")
+
+section
+  section
+    h2 Resource size
+    img(src="assets/raster/resource-size-1.png")
+    img(src="assets/raster/resource-size-2.png")
+
+  section
+    h2 Resource size
+    img(src="assets/raster/resource-size-1.png")
+    ul
+      li Lossy JPG compression
+      li Lossless image compressors
+
+section
+  h2 External resources
+  img(src="assets/raster/external-resources-1.png")
+  img(src="assets/raster/external-resources-2.png")
+
+section
+  h2 PageSpeed score
+  img(src="assets/raster/pagespeed-score.png")
+
+section(data-state="lab")
+  h2 Lab: performance 2
+  p Track performance with PageSpeed

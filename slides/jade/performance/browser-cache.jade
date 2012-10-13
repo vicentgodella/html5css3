@@ -1,0 +1,95 @@
+section
+  h2 Browser cache
+  p.read-block <b>304</b> (Not Modified) responses
+  p.read-block <b>Expires</b> headers
+  p.read-block <b>Strong</b> and <b>weak</b> cache indicators
+
+section
+  h2 304
+  p.read-block Means "the browser already has the latest version of this file"
+  p.read-block Will happen with every click <b>unless Expires is used</b>
+
+
+section
+  h2 304 with Last-Modified
+  p If the server includes <b>Last-Modified</b> the browser will include <b>If-Modified-Since</b> with each subsequent request
+  p Example: static files with apache / tomcat
+  img(src="assets/raster/304-last-modified.png")
+
+section
+  h2 304 with ETag
+  p If server includes <b>ETag</b> the browser will include <b>If-None-Match</b> with each further request
+  p Example: &lt;inode>-&lt;file-size>-&lt;last-modified> with apache
+  img(src="assets/raster/304-etag.png")
+
+section
+  h2 Expires header
+  p Indicates for <b>how long the file should not be retrieved again</b>.
+  img(src="assets/raster/expires.png")
+
+section
+  h2 Expires header
+  ul
+    li Cache-control (max-age)
+      ul
+        li HTTP 1.1
+        li Seconds to expire
+        li Used by the browser
+    li Expires:
+      ul
+        li HTTP 1.0
+        li Date
+        li Used by proxies installed during the Roman Empire
+
+section
+  h2 The Refresh button
+  ul
+    li <b>Refresh (or F5)</b>: a new request will be sent for each file.
+      ul
+        li Any <b>If-Modified-Since</b> or <b>If-None-Match</b> headers will be sent.
+        li The server may return a 304 response.
+    li <b>Shift + Refresh (or Ctrl + F5)</b>: a new request will be sent for each file.
+      ul
+        li Any <b>If-Modified-Since</b> or <b>If-None-Match</b> headers will not be sent.
+        li The server cannot return a 304 response.
+
+section
+  h2 And that's all
+  ul
+    li <b>304 and Expires</b>. That's all you have.
+    li Now, <b>which data indicator</b> do you plan to use for caching?
+      ul
+        li Last modified, MD5 checksum...
+
+section
+  h2 Weak and strong indicators
+  ul
+    li <b>Weak</b>: The indicator may change even if the file did not.
+      ul
+        li Last-Modified, default ETag implementations.
+    li <b>Strong</b>: The indicator changes only with the resource contents.
+      ul
+        li MD5, version numbers.
+    li Strong indicators can be inserted in the URL or used as ETag.
+
+section
+  h2 Strong indicators
+  ul
+    li <b>Version numbers</b>
+      ul
+        li http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js
+    li <b>Revision numbers</b>
+      ul
+        li http://localhost/myentity?id=5&revision=20
+    li <b>MD5</b>
+      ul
+        li http://localhost/images/photo.gif?checksum=9e0bee8ace86b2230140642adcf57c4c
+
+section
+  h2 Expires & strong indicators
+  p Using strong indicators, you can set your Expires header to cache forever (1-10 years)
+  p <b>Use only with immutable resources</b>
+
+section(data-state="lab")
+  h2 Lab: Browser Cache
+  p Test the browser cache
