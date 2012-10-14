@@ -27,3 +27,8 @@ mixin priorities(inline, ids, classes, elements)
         !{classes}
       .priority-level
         !{elements}
+
+mixin labHeader(title)
+  //- For IDs, exclude everything after a colon ':'
+  -var labId = title.match(/([^:]+)(:.+)?/)[1];
+  h2(id="lab-" + labId.toLowerCase().replace(' ', '-')) !{title}

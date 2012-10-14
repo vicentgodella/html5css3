@@ -1,0 +1,46 @@
+article
+  mixin labHeader('Forms 1: Forms with HTML5 (controls\)')
+
+  h3 Duration
+  p 20 minutes
+
+  h3 Description
+  p Write a form for periodical transfers in a bank using the new input types included in HTML5. To confirm the browser support visit <a href="http://wufoo.com/html5/">wuffo.com</a>.
+  p The form should be tested in <b>Chrome and Firefox</b>. Notice that each browser supports these attributes with a different implementation. 
+  p The form fields to be included are:
+
+  table.table.table-bordered
+    thead
+      tr
+        th Field
+        th Description
+        th Required
+    tbody
+      tr
+        td Recipient
+        td autocompleter (datalist) with "John Doe" and "Jane Doe",<br> but allowing for new values
+        td Yes
+      tr
+        td Amount
+        td Number
+        td Yes
+      tr
+        td Email
+        td Confirmation email
+        td No
+      tr
+        td Phone
+        td Phone for SMS confirmation.
+        td No
+      tr
+        td Periodicity
+        td Periodicity in weeks: <range> between 1 and 4. 
+        td No
+      tr
+        td Init date
+        td Start date
+        td Yes
+
+  p Once completed, test the lab in IE 8 / 9.
+  h4 Using a mobile phone
+  p If in time, this lab can be tested with an Android or iPhone mobile phone following the steps mentioned in the <a href="#appendix">Appendix</a>. The student should check the keyboard displayed for numbers and email fields.

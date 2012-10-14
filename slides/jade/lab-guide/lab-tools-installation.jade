@@ -1,0 +1,44 @@
+article
+  mixin labHeader('Tools Installation')
+
+  h3 Duration
+  p 20 minutes
+
+  h3 Description
+  p Download the labs folder as described in the Introduction. 
+  p Install the required tools for the labs. The installation and configuration instructions for each application can be found at the Appendix. Use them and install:
+  ul
+    li Node.js
+    li Sublime Text Editor with the LESS package.
+  p Once installed, execute the following inside the labs folder to install the tools that are required by the labs (no administrator privileges are required for this):
+  pre
+    code npm install
+  p Now, open Sublime Text Editor and select Project → Open Project. Openlabs/labs.sublime-project and execute the following steps to get familiarized with the editor.
+
+  h4 Manage files
+  ul
+    li Toggle sidebar on/off: <b>Ctrl + K</b>, <b>Ctrl + B</b>. 
+    li Open file: <b>Ctrl+P</b>
+    li See several files at once: <b>Shift + Alt + [1234589]</b> (choose one number). Files can get aligned side by side, top vs bottom, etc. Once done, you can switch back with <b>Shift+Alt+1</b>.
+
+  h4 Simple actions
+  ul
+    li Write any text, select a word, then press  <b>Shift+Alt+W</b> and type <b>b</b>.
+    li Prepare a list of data, select all the text and hit <b>Tab</b> to indent it a bit. Now while holding the  <b>Shift</b> key, right click and drag  to select a rectangular selection of code. Type the start tag to get it inserted at the beginning of each line.
+
+
+  h4 Multiple cursors
+  p The previous step is just a concrete example of using multiple cursors:
+  ul
+    li <b>Ctrl + click</b>: create new cursor.
+    li <b>Ctrl + double click</b>: create a new cursor selecting the word that was double-clicked.
+    li <b>Shift + click</b>: select using the latest cursor (so: <b>ctrl + click</b>, then <b>shift + click</b> to add a selection to the set of cursors)
+    li Any keyboard action: Operate on all cursors at once. Keyboard operations (like <b>Ctrl+V</b>) will work, and so will normal typing (like hitting <b>End</b> to write the ending tag at the end of each line).
+  p To test this:
+  ul
+    li Write any text, <b>ctrl+click</b> at the beginning of each line. Write #{'<p>'} or #{'<li>'}
+    li <b>Ctrl + double click</b> on several words,then type <b>"</b> (double quote)
+    li <b>Ctrl + double click</b> on several words, hit  <b>Shift + Alt + W</b>, then type <b>b</b>
+
+
+

@@ -9,7 +9,7 @@
     {
       "name": "compile_LESS",
       "working_dir": "$project_path",
-      "cmd": ["node_modules/less/bin/lessc", "less/style.less", "generated/assets/css/style.css"],
+      "cmd": ["bin/less-build", "$file"],
       "selector": "source.css.less"
     }
   ],

@@ -1,0 +1,38 @@
+extends includes/lab-guide-layout
+
+include includes/mixins
+
+append labs
+  include lab-guide/labs-introduction
+
+  section
+    h1#introduction Introduction
+    include lab-guide/lab-tools-installation
+    include lab-guide/lab-wireframe
+
+  section
+    h1#classic-html Classic HTML and CSS
+    include lab-guide/lab-icon-bar
+
+  section
+    h1#css3 CSS3
+    include lab-guide/lab-css3-maker
+
+  section
+    h1#html5 HTML5
+    include lab-guide/lab-forms-1
+
+  section
+    h1#javascript JavaScript
+    include lab-guide/lab-localstorage
+
+  section
+    h1#browsers-and-seo Browsers and SEO
+    include lab-guide/lab-ie-compatibility
+
+  section
+    h1#performance Performance
+    include lab-guide/lab-comparison
+
+  //- article
+  //-   h1#ui-patterns UI Patterns

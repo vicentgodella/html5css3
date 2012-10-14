@@ -1,0 +1,12 @@
+#!/bin/bash
+
+NAME=`basename "$1"`;
+
+if [[ "${NAME}" == "lab-guide-style.less" ]]; then
+  node_modules/less/bin/lessc less/lab-guide-style.less --yui-compress generated/assets/css/lab-guide-style.css
+elif [[ "${NAME}" == "style.less" ]]; then
+  node_modules/less/bin/lessc less/style.less --yui-compress generated/assets/css/style.css
+else
+  node_modules/less/bin/lessc less/lab-guide-style.less --yui-compress generated/assets/css/lab-guide-style.css
+  node_modules/less/bin/lessc less/style.less --yui-compress generated/assets/css/style.css
+fi

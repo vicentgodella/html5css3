@@ -1,0 +1,26 @@
+article
+  mixin labHeader('IE Compatibility')
+
+  h3 Duration
+  p 30 minutes
+
+  h3 Description
+  p Correct the styles in the provided page to make them compatible with IE.
+
+  h4 Gradient
+  p The gradients are not visible in IE, showing instead the fallback background. To fix this, add to style.css the following rule to each selector with the appropriate colors (without line breaks):
+  pre
+    code.
+      /* IE6, IE7 */
+      filter: 
+      progid:DXImageTransform.Microsoft.gradient(startColorStr='#9c9c9c',EndColorStr='#7c7c7c');
+
+      /* IE8, IE9 */
+      -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#9c9c9c',EndColorStr='#7c7c7c')";
+  p After this change the first two buttons should display correctly, but the third button uses selectors that are not supported by IE < 9.
+  h4 Third button
+  p Create three different HTML pages, each one using a different technique:
+  ul
+    li <b>CSS selectors for IE < 9</b>, that style <code>.button3</code> correctly.
+    li Include <b>ie7.js</b>. 
+    li Use <b>Google ChromeFrame</b>. It will not be possible to test this code locally, due to a ChromeFrame bug. You will have to use a local server as described in the <a href="#appendix">Appendix</a>.
