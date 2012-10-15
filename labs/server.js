@@ -27,7 +27,7 @@ app.get(/\/$/, function (req, res) {
               .isDirectory();
     },
     response = css;
-  if(fs.existsSync(localPath)) {
+  if((fs.existsSync && fs.existsSync(localPath)) || (path.existsSync && path.existsSync(localPath))) {
     response += '<h1>Files in ' + req.path + '</h1>' + 
       '<ul>',
       files = fs.readdirSync(localPath).sort();
