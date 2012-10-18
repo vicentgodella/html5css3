@@ -3,19 +3,6 @@ HTML5 and CSS3 course
 
 These are the contents of the **HTML5 and CSS3** course available at http://html5.instructormatters.com.
 
-Slides
-------
-
-To generate the static HTML files from the jade sources, execute:
-
-	$ cd slides
-	$ npm install
-	$ ./bin/build
-
-The HTML files will be written into the `generated` folder.
-
-These slides are based on [reveal.js](http://lab.hakim.se/reveal-js/), [jade](http://jade-lang.com/) and [LESS](http://lesscss.org/). They are tested only in the latest version of Chrome.
-
 Labs
 ----
 
@@ -25,6 +12,10 @@ To generate the node.js dependencies of the labs:
 	$ npm install
 
 Each lab is contained in its own folder with two subfolders: `before`, containing the source code for the lab, and `after` with a finished version, useful for peeking in case of getting lost.
+
+Slides
+------
+The `slides` contains the source code for the slides (and the lab guide). If you want to contribute or just to mess with them, read the [wiki](html5css3/wiki)!
 
 License
 -------

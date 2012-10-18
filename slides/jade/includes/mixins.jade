@@ -1,3 +1,4 @@
+//- Browser support panel
 mixin browserSupport(chrome, ff, safari, msie, opera)
   .browser-support
     .support.chrome
@@ -11,6 +12,7 @@ mixin browserSupport(chrome, ff, safari, msie, opera)
     .support.opera
     .support-version !{opera}
 
+//- CSS priorities component
 mixin priorities(inline, ids, classes, elements)
   .priorities
     .labels
@@ -28,6 +30,7 @@ mixin priorities(inline, ids, classes, elements)
       .priority-level
         !{elements}
 
+//- Header for a lab, with the appropiate ID 
 mixin labHeader(title)
   //- For IDs, exclude everything after a colon ':'
   -var labId = title.match(/([^:]+)(:.+)?/)[1];

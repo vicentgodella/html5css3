@@ -13,10 +13,6 @@ section
       ul
         li Started in 1998 as a list of CSS extensions, and still under development.
 
-//- section
-//-   h2 CSS Zen Garden
-//-   p Separation between presentation and content
-
 section#css-insertion
   h2 CSS insertion
 
@@ -58,6 +54,16 @@ section#css-insertion
             #{'</body>'}
 
 section
+  h2 @import
+  p Import calls to other stylesheets
+  p Before <b>any</b> other content in the file
+  pre
+    code.
+      @import url('template-stylesheet.css');
+
+      /* The rest of your styles */
+
+section
   h2 Indenting
   .row-fluid
     .span6
@@ -66,6 +72,7 @@ section
         code.
           a {
             color: #ccc;
+            /* Your comment here */
           }
 
           p, div, .foo .bar {
@@ -76,7 +83,7 @@ section
       p <b>Compact</b>
       pre
         code.
-          a { color: #ccc; }
+          a { color: #ccc; } /* Foo */
 
           p,
           div,
@@ -304,6 +311,21 @@ section
     mixin priorities(0, 0, 1, 0)
     code ul li li li li li li li li { ... }
     mixin priorities(0, 0, 0, 9)
+
+section
+  h2 !important
+  p Overrides not <b>!important</b> rules
+  .fragment
+    .row-fluid
+      .span5
+          p(style="margin-top: 70px") Normal styles
+      .span7
+          mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
+    .row-fluid
+      .span5
+          p(style="margin-top: 70px") Important styles
+      .span7
+          mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
 
 section
   h2 Box model
@@ -988,12 +1010,3 @@ section
   h2 Browser zoom
   p Ctrl +, Ctrl -, Ctrl 0
   p Not everyone has 20/20 vision
-
-section
-  h2 Pixel vs Percentage
-  ul
-    li YUI fonts default:
-    ul
-      li Base size: 13px/16px
-      li Everything else: percentages
-    li Not needed anymore.
