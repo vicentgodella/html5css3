@@ -2,7 +2,6 @@ extends includes/index-layout
 
 append title
   title HTML5 and CSS3 &dash; Lab guide
-  link(rel='stylesheet', href='assets/css/labs.css')
   link(rel='stylesheet', href='assets/css/zenburn.css')
 
 append contents
@@ -10,7 +9,7 @@ append contents
     nav
       h1 Index
       ul#index
-        li.how-to-li
+        li
           a(href="#labs-introduction") How to use this lab guide
 
     include lab-guide/labs-introduction
@@ -18,68 +17,34 @@ append contents
     section
       h1#introduction Introduction
       include lab-guide/lab-tools-installation
+      include lab-guide/lab-wireframe
 
     section
       h1#classic-html Classic HTML and CSS
       include lab-guide/lab-icon-bar
-      include lab-guide/lab-button-bar
-      include lab-guide/lab-bootstrap-1
-      include lab-guide/lab-bootstrap-2
-      include lab-guide/lab-print-css
 
     section
       h1#css3 CSS3
       include lab-guide/lab-css3-maker
-      include lab-guide/lab-badges
-      include lab-guide/lab-css3-buttons
-      include lab-guide/lab-fonts
-      include lab-guide/lab-transitions
-      include lab-guide/lab-animations
-      include lab-guide/lab-multicolumn
-      include lab-guide/lab-media-queries
-      include lab-guide/lab-responsive-design
-      include lab-guide/lab-sass
-      include lab-guide/lab-less
 
     section
       h1#html5 HTML5
-      include lab-guide/lab-semantics
       include lab-guide/lab-forms-1
-      include lab-guide/lab-forms-2
-      include lab-guide/lab-modernizr
-      include lab-guide/lab-schema
-      include lab-guide/lab-html5-boilerplate
-      include lab-guide/lab-video-for-everybody
 
     section
       h1#javascript JavaScript
       include lab-guide/lab-localstorage
-      include lab-guide/lab-appcache
 
     section
       h1#browsers-and-seo Browsers and SEO
       include lab-guide/lab-ie-compatibility
-      include lab-guide/lab-css3-pie
 
     section
       h1#performance Performance
       include lab-guide/lab-comparison
-      include lab-guide/lab-performance
-      include lab-guide/lab-css-lint
-      include lab-guide/lab-browser-cache
 
-    section
-      h1#ui-patterns UI Patterns
-      include lab-guide/lab-wireframe
-
-    section
-      h1#appendix Appendix
-      include lab-guide/lab-app-browsers
-      include lab-guide/lab-app-sublime
-      include lab-guide/lab-app-node
-      include lab-guide/lab-app-ruby
-      include lab-guide/lab-app-local-webserver
-      include lab-guide/lab-app-testing-online
+    //- article
+    //-   h1#ui-patterns UI Patterns
 
 append scripts
   script(src='assets/js/highlight.js')
@@ -89,7 +54,7 @@ append scripts
   //-
   script
     //- Section links  
-    $('section > h1').map(function (i, section) {
+    $('article > h1').map(function (i, section) {
       return $('<li></li>')
               .append($('<a></a>')
                       .text($(section).text())
@@ -104,12 +69,12 @@ append scripts
     }).appendTo('#index');
 
     //- Labs links inside collapsables  
-    $('article > header').each( function (i, lab) {
-      var sectionHeaderId = $($(lab).closest('section').children()[0]).attr('id');
-      $('ul.' +  sectionHeaderId  + '-labs-list')
+    $('article > h1 ~ h2').each( function (i, section) {
+      var parentHeaderId = $($(section).parent().children()[0]).attr('id');
+      $('ul.' +  parentHeaderId  + '-labs-list')
         .append($('<li></li>').append($('<a></a>')
-          .attr('href', '#' + $(lab).attr('id'))
-          .text($($(lab).children()[0]).text())
+          .attr('href', '#' + $(section).attr('id'))
+          .text($(section).text())
         ));
     });
     //- Highlighting

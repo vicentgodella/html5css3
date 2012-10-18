@@ -1,80 +1,39 @@
-//@import "bootstrap/index-bootstrap";
-//@import "bootstrap/responsive";
-@import "bootstrap/mixins";
-@import "index/palette";
+@import "bootstrap/index-bootstrap";
 
-section {
-  padding: 20px;
+@baseFontSize:          18px;
+@baseLineHeight:        25px;
+
+h1 {
+  margin-top: 50px;
 }
 
-.bg-acqua {
-  .box-shadow(0 0 5px #000 inset); 
-  color: white;
-  background-color: @acquaprofonda;
-  background-position: 90% 50%;
-}
-section {
-  background-repeat: no-repeat;
+h2 {
+  margin-top: 30px;
+  border-bottom: 1px solid black;
 }
 
-.bg-html5 {
-  background-image: url(../raster/html5css3.png);
-  background-position: 90% 50%;
-}
-.bg-instmatters {
-  background-image: url(../raster/logo-white.png);
-}
-.bg-chrome {
-  background-image: url(../raster/chrome-white.png);
+h3 {
+  margin-top: 20px;
 }
 
-@media (min-width: 551px) {
-  .ribbon {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 150px;
-    height: 150px;
-
-    & > .forkme {
-      display: block;
-      width: 150px;
-      height: 150px;
-
-      text-indent: 110%;
-      white-space: nowrap;
-      overflow: hidden;
-
-      background: url(https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png) no-repeat 0 0;
-      border: none;
-      box-shadow: none;
-    }
-  }
-}
-@media (max-width: 767px) {
-
-  .bg-acqua {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
+h4 {
+  margin-top: 20px;
 }
 
-@media (min-width: 980px) {
-  //Fix for responsive navbar
-  .ribbon {
-    top: 55px;
-  }
+li {
+  line-height: @baseLineHeight*1.2;
 }
 
-@media (max-width: 550px) {
+pre {
+  word-wrap: break-word;
+}
 
-  .bg-html5 {
-    background-image: none;
+@media print {
+  h1 {
+    margin-top: 0;
   }
 
-  .ribbon {
-    text-align: center;
-    margin: 10px auto;
+  article {
+    page-break-before: always;
   }
-
 }
