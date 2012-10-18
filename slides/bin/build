@@ -5,19 +5,18 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd ..
 
 echo 'Copying static files...'
-if [[ ! ( -d generated ) ]]; then
-  mkdir generated
-fi
+mkdir -p generated
+cp -r assets generated/
 
-cp -r statics/* generated
-
-echo 'Parsing slides...'
+echo 'Jade to HTML...'
 for f in jade/*.jade; do
   node_modules/jade/bin/jade $f -O generated
 done
 
-echo 'Parsing CSS...'
-node_modules/less/bin/lessc less/style.less > generated/assets/css/style.css
+echo 'LESS to CSS...'
+for f in less/*.less; do
+  node_modules/less/bin/lessc $f > generated/assets/css/`basename $f .less`.css
+done
 
 echo 'Done!'
 exit 0
