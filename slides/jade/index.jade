@@ -2,8 +2,47 @@ extend includes/index-layout
 
 append title
   title HTML5 and CSS3 &dash; Index
+  link(rel='stylesheet', href='assets/css/index.css')
 
 append contents
+
+  .container
+    aside.ribbon
+      a.forkme.btn.btn-danger(href="https://github.com/instructormatters/html5css3") Fork me on GitHub
+
   section
-    h1 HTML5 and CSS3
-    include index/contents
+    .container
+      h1 HTML5 and CSS3
+      p This course introduces the latest updates to <b>HTML5 and CSS3</b>. It is intended to be an easy introduction to get up-to-date with the current standard, but not a complete reference. You have the W3C for that.
+    
+      p What we <b>do</b> provide:
+      ul
+        li <b>600 slides</b>
+        li <b>30 labs</b>
+        li <b>90+ interactive examples</b> embedded in the slides
+      p The course is designed to be delivered in 24 hours including the labs. It is full of interactive examples, but still the slides are deliberately sketchy since we strongly believe that <b>Instructor Matters</b>.
+
+  section.bg-acqua.bg-instmatters
+    .container 
+      h1 Open Source
+      
+      p This course is distributed under a <b>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</b>. This means that you can use it for your own courses, modify it, and/or contribute back. We only ask you to keep a reference to the original authors. 
+
+      p Check the full <a href="http://html5.instructormatters.com/license.html">license</a> for details.</p>
+        
+  section.bg-html5
+    .container
+      h1 Index
+      include index/contents
+    
+  section.bg-acqua.bg-chrome
+    .container
+      //- Chrome
+      h1 Not tested in all browsers
+      p We are a bunch of lazy bastards. We prefer to introduce the latest crazy-ass technology instead of making the slides work with every browser under the sun. This means that the slides themselves have only been tested to work with Google Chrome. If you have a standards-compliant way of doing things better please pull-request us, but don't waste your time including compatibility with MyBrowser(tm), be it retro, mobile, desktop or DeathStar-compliant because we just don't care.
+
+      p These slides have been built with <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>, a framework for HTML presentations. <a href="introduction.html#/slideshow-controls" target="_blank">Learn by using it.</a>
+  section
+    .container
+      h1 Older versions
+      p Looking for <b>previous versions</b> of the course? <a href="http://html5.instructormatters.com/versions.html">Here they are.</a>

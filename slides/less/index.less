@@ -1,39 +1,65 @@
 @import "bootstrap/index-bootstrap";
+@import "bootstrap/responsive";
+@import "index/palette";
 
-@baseFontSize:          18px;
-@baseLineHeight:        25px;
-
-h1 {
-  margin-top: 50px;
+section {
+  padding: 20px;
 }
 
-h2 {
-  margin-top: 30px;
-  border-bottom: 1px solid black;
+.bg-acqua {
+  .box-shadow(0 0 5px #000 inset); 
+  color: white;
+  background-color: @acquaprofonda;
+  background-position: 90% 50%;
+}
+section {
+  background-repeat: no-repeat;
 }
 
-h3 {
-  margin-top: 20px;
+.bg-html5 {
+  background-image: url(../raster/html5css3.png);
+  background-position: 90% 50%;
+}
+.bg-instmatters {
+  background-image: url(../raster/logo-white.png);
+}
+.bg-chrome {
+  background-image: url(../raster/chrome-white.png);
 }
 
-h4 {
-  margin-top: 20px;
+@media (min-width: 551px) {
+  .ribbon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+
+    & > .forkme {
+      display: block;
+      width: 150px;
+      height: 150px;
+
+      text-indent: 110%;
+      white-space: nowrap;
+      overflow: hidden;
+
+      background: url(https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png) no-repeat 0 0;
+      border: none;
+      box-shadow: none;
+    }
+  }
 }
 
-li {
-  line-height: @baseLineHeight*1.2;
-}
+@media (max-width: 550px) {
 
-pre {
-  word-wrap: break-word;
-}
-
-@media print {
-  h1 {
-    margin-top: 0;
+  .bg-html5 {
+    background-image: none;
   }
 
-  article {
-    page-break-before: always;
+  .ribbon {
+    text-align: center;
+    margin: 10px auto;
   }
+
 }
