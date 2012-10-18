@@ -1,38 +1,81 @@
-extends includes/lab-guide-layout
+extends includes/index-layout
 
-include includes/mixins
+append title
+  title HTML5 and CSS3 &dash; Lab guide
+  link(rel='stylesheet', href='assets/css/zenburn.css')
 
-append labs
-  include lab-guide/labs-introduction
+append contents
+  .container
+    nav
+      h1 Index
+      ul#index
+        li
+          a(href="#labs-introduction") How to use this lab guide
 
-  section
-    h1#introduction Introduction
-    include lab-guide/lab-tools-installation
-    include lab-guide/lab-wireframe
+    include lab-guide/labs-introduction
 
-  section
-    h1#classic-html Classic HTML and CSS
-    include lab-guide/lab-icon-bar
+    section
+      h1#introduction Introduction
+      include lab-guide/lab-tools-installation
+      include lab-guide/lab-wireframe
 
-  section
-    h1#css3 CSS3
-    include lab-guide/lab-css3-maker
+    section
+      h1#classic-html Classic HTML and CSS
+      include lab-guide/lab-icon-bar
 
-  section
-    h1#html5 HTML5
-    include lab-guide/lab-forms-1
+    section
+      h1#css3 CSS3
+      include lab-guide/lab-css3-maker
 
-  section
-    h1#javascript JavaScript
-    include lab-guide/lab-localstorage
+    section
+      h1#html5 HTML5
+      include lab-guide/lab-forms-1
 
-  section
-    h1#browsers-and-seo Browsers and SEO
-    include lab-guide/lab-ie-compatibility
+    section
+      h1#javascript JavaScript
+      include lab-guide/lab-localstorage
 
-  section
-    h1#performance Performance
-    include lab-guide/lab-comparison
+    section
+      h1#browsers-and-seo Browsers and SEO
+      include lab-guide/lab-ie-compatibility
 
-  //- article
-  //-   h1#ui-patterns UI Patterns
+    section
+      h1#performance Performance
+      include lab-guide/lab-comparison
+
+    //- article
+    //-   h1#ui-patterns UI Patterns
+
+append scripts
+  script(src='assets/js/highlight.js')
+
+  //-
+  //- Generate Page index
+  //-
+  script
+    //- Section links  
+    $('article > h1').map(function (i, section) {
+      return $('<li></li>')
+              .append($('<a></a>')
+                      .text($(section).text())
+                      .attr('href', '#' + $(section).attr('id') + '-collapse')
+                      .attr('data-toggle', 'collapse')
+                    )
+              .append($('<div></div>')
+                      .addClass('collapse')
+                      .attr('id', $(section).attr('id') + '-collapse')
+                      .append($('<ul></ul>').addClass($(section).attr('id') + '-labs-list'))
+                    );
+    }).appendTo('#index');
+
+    //- Labs links inside collapsables  
+    $('article > h1 ~ h2').each( function (i, section) {
+      var parentHeaderId = $($(section).parent().children()[0]).attr('id');
+      $('ul.' +  parentHeaderId  + '-labs-list')
+        .append($('<li></li>').append($('<a></a>')
+          .attr('href', '#' + $(section).attr('id'))
+          .text($(section).text())
+        ));
+    });
+    //- Highlighting
+    window.hljs.initHighlightingOnLoad();
