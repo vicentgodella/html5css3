@@ -55,7 +55,7 @@ append scripts
   //-
   script
     //- Section links  
-    $('article > h1').map(function (i, section) {
+    $('section > h1').map(function (i, section) {
       return $('<li></li>')
               .append($('<a></a>')
                       .text($(section).text())
@@ -70,12 +70,12 @@ append scripts
     }).appendTo('#index');
 
     //- Labs links inside collapsables  
-    $('article > h1 ~ h2').each( function (i, section) {
-      var parentHeaderId = $($(section).parent().children()[0]).attr('id');
-      $('ul.' +  parentHeaderId  + '-labs-list')
+    $('section > article > h2').each( function (i, lab) {
+      var sectionHeaderId = $($(lab).parent().parent().children()[0]).attr('id');
+      $('ul.' +  sectionHeaderId  + '-labs-list')
         .append($('<li></li>').append($('<a></a>')
-          .attr('href', '#' + $(section).attr('id'))
-          .text($(section).text())
+          .attr('href', '#' + $(lab).attr('id'))
+          .text($(lab).text())
         ));
     });
     //- Highlighting
