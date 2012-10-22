@@ -1,0 +1,15 @@
+article
+  mixin labHeader('Animations')
+  h3 Duration
+  p 25 minutes
+  h3 Description
+  p Using the icon menu from module 3, reproduce the behaviour of the Mac OS X buttons using CSS animations.
+  p To achieve this effect, create a 'bounce' animation at <a href="http://daneden.me/animate/">http://daneden.me/animate/</a> using the option 'Create custom build', selecting only the effects 'Attention seekers' and clicking 'Build it'. In the CSS file add this animation to the selector <b>li:target a</b> (selects links that are clicked) 
+  p Inside the downloaded .css file, there are different animations for Firefox, Webkit and IE. Each one has a certain number of keyframes within the animation. Add the following:
+  ul
+    li <b>animation-direction:</b> alternate
+    li <b>iterations:</b> 2
+    li <b>duration:</b> 0.5 seconds
+
+  p Next, link this .css in the head of the html page.
+  p If in time, try any other animation like 'tada'.

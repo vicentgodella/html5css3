@@ -1,0 +1,22 @@
+article
+  mixin labHeader('Media Queries')
+  h3 Duration
+  p 30 minutes
+  h3 Tools
+  p When working with media queries or responsive pages, it is necessary to resize the browser window constantly. A useful trick for Chrome users is to activate the <b>Dock to Right</b> option in the settings menu (small gears icon in the bottom right corner of the developers panel). After that, it is possible to resize the web page using the developers tools without resizing the window.
+  p You can also use <b>Web console options → User Agent → Override device metrics</b> to specify a concrete dimension to be used by the browser.
+
+  h3 Description
+  p Modify the provided page using media queries in order to give support to Android and iPhone mobile phones:
+  ul
+    li Remove the h1,  #info, and #footer elements.
+    li Place the navigation bar (#nav) at the top of the page instead of the left, and make it fill the whole page width.
+    li Add the <meta> tag required to prevent the default 980px-wide zoom out of the iPhone.
+      pre
+        code.
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    li The final layout of the page should look like the screenshot below.
+  p To test this lab, open the page with Chrome and reduce gradually the window's width until you see the new styles kicking in.
+
+  h3 Using a mobile phone
+  p Once the lab is finished, it can be tested in the mobile phone. To do so, follow the steps in the <b>Appendix</b> for testing a lab online.

@@ -1,0 +1,42 @@
+article
+  mixin labHeader('Forms 2: Forms with HTML5 (attributes\)')
+
+  h3 Duration
+  p 20 minutes
+
+  h3 Description
+  p Modify the form from the previous lab to use the new field attributes:
+
+  table.table.table-bordered
+    thead
+      tr
+        th Field
+        th Description
+    tbody
+      tr
+        td Recipient
+        td Autofocus. Should not allow numbers, only text.
+
+      tr
+        td Amount
+        td Number between 0 and 1000000, with two decimal places. Required.
+      tr
+        td Email
+        td
+      tr
+        td Phone
+        td
+      tr
+        td Periodicity
+        td Periodicity in weeks: &lt;range> between 1 and 4. 
+      tr
+        td Init date
+        td Required.
+
+  ul
+    li Use <b>:invalid</b> to display a red border for fields with invalid values.
+    li Customize the error message in Firefox using the <b>x-moz-errormessage</b> attribute for one field.
+    li Add a placeholder to at least one field.
+    li Use <b>::-webkit-validation-bubble-message</b> to set the font-size of error messages in Chrome to 13px.
+
+  p Once tested with Chrome, repeat the test with IE.

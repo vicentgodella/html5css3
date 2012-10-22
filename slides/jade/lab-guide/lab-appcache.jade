@@ -1,0 +1,18 @@
+article
+  mixin labHeader('AppCache')
+
+  h3 Important
+  p This lab tests the offline behavior of browsers. Use the local server described in the <b>Appendix</b> to test this lab. <b>This lab will not work unless executed using localhost:8000 instead of file:///</b>
+
+
+  h3 Duration
+  p 20 min
+
+  h3 Description
+  p A simple web application composed by two pages (awesomizer.html and switcher.html) is provided. Create a cache manifest to enable this app to work offline.
+  p In Chrome, it is possible to check the status of the application cache in <b>chrome://appcache-internals</b>. This is very useful to simulate a first request to the local server, or examine the files that have been cached. 
+  p The manifest should include all the static files in the CACHE section: the stylesheets and the application scripts. Some of the stylesheets are located in the labs/lib folder. Specify the absolute path for these resources.
+  p In addition to this, the page includes a Twitter widget that consists of widget.js and an external script hosted in <b>widgets.twimg.com</b>. To allow the application to download an external resource, you should add a wildcard (*) in the NETWORK section.
+  p When offline, the script sorry.js should be used instead of widget.js to notice the user that Twitter is not available. Specify this in the FALLBACK section.
+  p Be aware while testing the offline behavior that even if the local server is not running your computer will probably be still connected to the Internet,  
+  p Also, remember that anything that is not listed in the manifest (whether in the explicit cached section or not) will not work offline.

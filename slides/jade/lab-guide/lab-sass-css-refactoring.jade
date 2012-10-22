@@ -1,0 +1,22 @@
+article
+  mixin labHeader('Sass: CSS refactoring')
+
+  h3 Duration
+  p 20 minutes
+
+  h3 Description
+  p Starting with the page designed in the Bootstrap 1 lab (the files are again provided in the 'before' folder), adapt it to be responsive.
+  ul
+    li Include a link to the bootstrap-responsive.css stylesheet.
+    li Resize the browser's window and check the layout changes. These come from the default media queries implemented in the responsive version of Bootstrap.
+    li In order to make the layout fluid, change the .row classes of the .marketing div by .row-fluid. 
+    li Check that the layout is not fluid yet. This is due to the container div, with class .container, since its width is absolute (despite it changes through media queries). Change the class to .container-fluid.
+    li The .container-fluid div takes the whole width of the body. In order to avoid this, add a 'max-width' rule for the inner divs (.marketing and .big-title). It is also possible to add a .wrapper class to the .container-fluid div and style it.
+    li In order to make the navigation bar responsive, wrap the .nav list inside a .nav-collapse div. Check that the navigation hides when the width of the window is under 980 pixels.
+    li Include two script tags for the jQuery library jquery.js and the bootstrap-collapse.js plugin.
+    li Add a a.btn.btn-navbar button inside the navigation bar .container, with the attributes
+    pre
+      code.
+        data-toggle="collapse" data-target=".nav-collapse"
+
+  p Now the JavaScript plugin should permit to unfold the navigation bar by clicking this button. 

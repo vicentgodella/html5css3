@@ -1,0 +1,51 @@
+article
+  mixin labHeader('Modernizr: Polyfill con Modernizr')
+
+  h3 Duration
+  p 40 minutes
+
+  h3 Modernizr Customization
+  p The full Modernizr build is too big for real projects. For this lab the student should create a custom Modernizr build including:
+  ul
+    li Input Types
+    li Input Attributes
+    li HTML5 Shim/IEPP
+    li Modernizr.load (yepnope.js)
+  p Once downloaded, it should be included using a script tag at the end of the &lt;body> tag. After this tag you can start using yepnope to load the required polyfills.
+  pre
+    code.
+      &lt;script src="modernizr.custom.90810.js">&lt;/script> 
+      &lt;script> 
+        yepnope(...); 
+      &lt;/script>
+
+  h3 Description
+  p Make the previous lab work in Firefox 3.6 or IE8 using polyfills:
+  p <a href="http://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">http://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills</a>
+  p The following features should be implemented:
+  ul
+    li <b>autofocus:</b> use <b>autofocus.js</b>, which does not need initialization.
+    li <b>placeholder and required:</b> Use H5F, and initialize it indicating the forms it should process:
+      pre
+        code.
+          { 
+            test: Modernizr.input.required && Modernizr.input.placeholder, 
+            nope: 'h5f.js', 
+            callback : function() { 
+              H5F.setup( [ document.getElementById("form1") ]); 
+            }
+          }
+    li <b>date picker:</b> If the browser does not include a native datepicker we will use JQuery UI, loading several javascript files:
+      pre
+        code.
+          { 
+            test: Modernizr.inputtypes.date, 
+            nope: [ 
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', 
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js' 
+            ], 
+            complete: function() {
+              $("#initdate").datepicker();
+            }
+          }
