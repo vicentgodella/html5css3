@@ -1,0 +1,21 @@
+article
+  mixin labHeader('Local Web Server')
+
+  p Some labs require a local HTTP server to work. There are two different alternatives to do this.
+
+  h3 Node
+  p After configuring Node, you can start a simple HTTP server by executing this in the labs folder:
+  pre
+    code.
+      #{'node server.js'}
+  p After this, you can open your browser at <a href="http://localhost:8000/">http://localhost:8000/</a>
+
+  h3 Python
+  p If you have Python installed (it comes included in Linux and Mac by default), you can start a server by executing this in the labs folder:
+  pre
+    code.
+      #{'./server.sh'}
+
+  p (You should use server.bat in Windows). After this you can open your browser at <a href="http://localhost:8000/">http://localhost:8000/</a>
+  
+  p Windows users may download Python from <a href="http://www.python.org">http://www.python.org</a>. In order to be able to execute Python from the command line, you may to add C:\Python27 to the Path variable (My Computer > Properties > Advanced > Environment Variables) and restart your computer.
