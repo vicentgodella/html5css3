@@ -1,5 +1,6 @@
-@import "bootstrap/index-bootstrap";
-@import "bootstrap/responsive";
+//@import "bootstrap/index-bootstrap";
+//@import "bootstrap/responsive";
+@import "bootstrap/mixins";
 @import "index/palette";
 
 section {
@@ -29,9 +30,9 @@ section {
 
 @media (min-width: 551px) {
   .ribbon {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 60px;
+    right: 0;
     width: 150px;
     height: 150px;
 
@@ -44,11 +45,19 @@ section {
       white-space: nowrap;
       overflow: hidden;
 
-      background: url(https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png) no-repeat 0 0;
+      background: url(https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png) no-repeat 0 0;
       border: none;
       box-shadow: none;
     }
   }
+}
+@media (max-width: 767px) {
+
+  .bg-acqua {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
 }
 
 @media (max-width: 550px) {
