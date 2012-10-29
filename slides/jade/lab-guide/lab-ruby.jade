@@ -3,23 +3,23 @@ article
 
   p Courses for communities focused on Ruby can switch some of the tools from node to ruby (e.g.: use Sass instead of LESS labs).
   ul
-    li <b>Windows</b>: The Ruby installer for Windows can be downloaded from <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a>.
+    li <b>Windows</b>: The Ruby installer for Windows can be downloaded from <a href="http://rubyinstaller.org/">Ruby's website</a>.
     li <b>Ubuntu</b>: Ruby can be installed for Ubuntu using this one-liner:
       pre
-        code.
-          #{'sudo apt-get install ruby ruby-dev rubygems'}
+        code.bash.
+          sudo apt-get install ruby ruby-dev rubygems
 
   h3 Installing the course gems
   p Once Ruby is available, the easiest way to install the tools for the labs is typing in a terminal (with admin permissions):
   pre
-    code.
-      #{'gem install -V bundle sass compass'}
+    code.bash.
+      gem install -V bundle sass compass
 
   h3 LiveReload
   p LiveReload is a Ruby plugin for Guard that watches a folder and refreshes any modified files in a client browser. If the file is a stylesheet, the browser redraws the HTML document without reloading it. Though not required by any lab, developers can experience a productivity boost by installing it.
   p To install LiveReload follow these instructions:
   ul
-    li <b>Linux</b>: <a href="http://icoloma.blogspot.com.es/2012/06/using-livereload-on-linux.html">http://icoloma.blogspot.com.es/2012/06/using-livereload-on-linux.html</a>
-    li <b>Windows and Mac</b>: either follow the instructions for Linux or install the LiveReload GUI from <a href="http://livereload.com/">http://livereload.com/</a>
+    li <b>Linux</b>: <a href="http://icoloma.blogspot.com.es/2012/06/using-livereload-on-linux.html">Using LiveReload on Linux</a>.
+    li <b>Windows and Mac</b>: either follow the instructions for Linux or install the LiveReload GUI from <a href="http://livereload.com/">livereload.com</a>.
 
   p There is a Guardfile already configured in html5css3/labs. Once installed, run guard with 'bundle exec guard' in that directory.

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[  "$1" =~ "slides/assets" ]]; then
+  cp -r assets generated
+fi

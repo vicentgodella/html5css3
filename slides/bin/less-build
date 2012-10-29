@@ -6,6 +6,8 @@ if [[ "${NAME}" == "index.less" ]]; then
   node_modules/less/bin/lessc less/index.less --yui-compress generated/assets/css/index.css
 elif [[ "${NAME}" == "style.less" ]]; then
   node_modules/less/bin/lessc less/style.less --yui-compress generated/assets/css/style.css
+elif [[ "${NAME}" == "labs.less" ]]; then
+  node_modules/less/bin/lessc less/labs.less --yui-compress generated/assets/css/labs.css
 else
   node_modules/less/bin/lessc less/index.less --yui-compress generated/assets/css/index.css
   node_modules/less/bin/lessc less/style.less --yui-compress generated/assets/css/style.css

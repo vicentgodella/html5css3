@@ -11,6 +11,12 @@
       "working_dir": "$project_path",
       "cmd": ["bin/less-build", "$file"],
       "selector": "source.css.less"
+    },
+    {
+      "name": "copy_assets",
+      "working_dir": "$project_path",
+      "cmd": ["bin/assets-build", "$file"],
+      "selector": "text.html, source.css, source.js, text.xml"
     }
   ],
   "folders":
