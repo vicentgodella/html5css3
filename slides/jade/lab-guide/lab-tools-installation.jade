@@ -6,29 +6,25 @@ article
 
   h3 Description
   p Download the labs folder as described in the Introduction. 
-  p Install the required tools for the labs. The installation and configuration instructions for each application can be found at the <a href="#Appendix">Appendix</a>. Use them and install:
+  p Install the required tools for the labs. The installation and configuration instructions for each application can be found at the Appendix. Use them and install:
   ul
-    li <b>Node.js</b>
-    li <b>Sublime Text Editor</b> with the LESS package.
+    li Node.js
+    li Sublime Text Editor with the LESS package.
   p Once installed, execute the following inside the labs folder to install the tools that are required by the labs (no administrator privileges are required for this):
   pre
     code.bash npm install
-  p Now, open Sublime Text Editor and select <b>Project → Open Project</b>. Open <code>labs/labs.sublime-project</code> and execute the following steps to get familiarized with the editor.
+  p Now, open Sublime Text Editor and select Project → Open Project. Openlabs/labs.sublime-project and execute the following steps to get familiarized with the editor.
 
   h4 Manage files
   ul
     li Toggle sidebar on/off: <b>Ctrl + K</b>, <b>Ctrl + B</b>. 
     li Open file: <b>Ctrl+P</b>
     li See several files at once: <b>Shift + Alt + [1234589]</b> (choose one number). Files can get aligned side by side, top vs bottom, etc. Once done, you can switch back with <b>Shift+Alt+1</b>.
-      img(src="assets/raster/two-columns.png", width="700")
 
   h4 Simple actions
   ul
     li Write any text, select a word, then press  <b>Shift+Alt+W</b> and type <b>b</b>.
-      img(src="assets/raster/surround-with-tags.png", width="250")
     li Prepare a list of data, select all the text and hit <b>Tab</b> to indent it a bit. Now while holding the  <b>Shift</b> key, right click and drag  to select a rectangular selection of code. Type the start tag to get it inserted at the beginning of each line.
-      img(src="assets/raster/block-select.png", width="250")
-      img(src="assets/raster/block-select-after.png", width="250")
 
 
   h4 Multiple cursors
@@ -36,19 +32,13 @@ article
   ul
     li <b>Ctrl + click</b>: create new cursor.
     li <b>Ctrl + double click</b>: create a new cursor selecting the word that was double-clicked.
-    li <b>Shift + click</b>: select using the latest cursor (so: <b>ctrl + click</b>, then <b>shift + click</b> to add a selection to the set of cursors).
+    li <b>Shift + click</b>: select using the latest cursor (so: <b>ctrl + click</b>, then <b>shift + click</b> to add a selection to the set of cursors)
     li Any keyboard action: Operate on all cursors at once. Keyboard operations (like <b>Ctrl+V</b>) will work, and so will normal typing (like hitting <b>End</b> to write the ending tag at the end of each line).
   p To test this:
   ul
-    li Write any text, <b>ctrl+click</b> at the beginning of each line. Write <b>#{'<p>'}</b> or <b>#{'<li>'}</b>.
-      img(src="http://1.bp.blogspot.com/-yk9PinKMYfM/UGBA_VDaRrI/AAAAAAAAAjI/LIzPbr7YN04/s1600/before+ctrl+click.png")
-      img(src="http://4.bp.blogspot.com/-OBXoRygbuNw/UGBA70rsiSI/AAAAAAAAAis/wQgdClqpIss/s1600/after+ctrl+click.png")
+    li Write any text, <b>ctrl+click</b> at the beginning of each line. Write #{'<p>'} or #{'<li>'}
     li <b>Ctrl + double click</b> on several words,then type <b>"</b> (double quote)
-      img(src="http://3.bp.blogspot.com/-Pq8PMdN9aNU/UGBA8krRcbI/AAAAAAAAAiw/ELofCqvBOy8/s1600/after+ctrl+dblclick.png")
-      img(src="http://3.bp.blogspot.com/-KYthV3iheUU/UGBA9BSeFRI/AAAAAAAAAi4/LdAygUirHnc/s1600/after+quotes.png")
     li <b>Ctrl + double click</b> on several words, hit  <b>Shift + Alt + W</b>, then type <b>b</b>
-      img(src="http://3.bp.blogspot.com/-1VW1l50qEHs/UGBBBQAb40I/AAAAAAAAAjU/CyqRPlyG_CU/s1600/before+shift+alt+W.png")
-      img(src="http://3.bp.blogspot.com/-kPXV5_cPAaM/UGBA-DCydcI/AAAAAAAAAjE/LDT0TkjFSQA/s1600/after+shoft+alt+W.png")
 
 
 

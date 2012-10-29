@@ -1,17 +1,17 @@
 article
   mixin labHeader('Node.js')
 
-  p Several tools used in the labs require Node.js to work. To install it, download the appropriate version from <a href="http://nodejs.org/#download">http://nodejs.org/#download</a>
+  p Several tools used in the labs require Node.js to work. To install it, download the appropriate version from the <a href="http://nodejs.org/#download">Node website</a>.
   p Ubuntu users can install it executing the following code:
   pre
-    code.
-      #{'sudo add-apt-repository ppa:chris-lea/node.js'}
-      #{'sudo apt-get update'}
-      #{'sudo apt-get install nodejs npm'}
+    code.bash.
+      sudo add-apt-repository ppa:chris-lea/node.js
+      sudo apt-get update
+      sudo apt-get install nodejs npm
 
   p Once installed, run inside the labs folder:
   pre
-    code.
-      #{'npm install'}
+    code.bash.
+      npm install
 
   p This should install the tools required by the different labs.
