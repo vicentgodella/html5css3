@@ -22,7 +22,7 @@ append contents
     section
       h1#classic-html Classic HTML and CSS
       include lab-guide/lab-icon-bar
-      include lab-guide/lab-icon-button
+      include lab-guide/lab-button-bar
       include lab-guide/lab-bootstrap-1
       include lab-guide/lab-bootstrap-2
       include lab-guide/lab-print-css
@@ -40,15 +40,14 @@ append contents
       include lab-guide/lab-responsive-design
       include lab-guide/lab-sass
       include lab-guide/lab-less
-      include lab-guide/lab-css-lint
 
     section
       h1#html5 HTML5
+      include lab-guide/lab-semantics
       include lab-guide/lab-forms-1
       include lab-guide/lab-forms-2
       include lab-guide/lab-modernizr
       include lab-guide/lab-schema
-      include lab-guide/lab-semantics
       include lab-guide/lab-html5-boilerplate
       include lab-guide/lab-video-for-everybody
 
@@ -66,6 +65,7 @@ append contents
       h1#performance Performance
       include lab-guide/lab-comparison
       include lab-guide/lab-performance
+      include lab-guide/lab-css-lint
       include lab-guide/lab-browser-cache
 
     section
@@ -74,12 +74,12 @@ append contents
 
     section
       h1#appendix Appendix
-      include lab-guide/lab-browsers
-      include lab-guide/lab-sublime
-      include lab-guide/lab-node
-      include lab-guide/lab-ruby
-      include lab-guide/lab-local-webserver
-      include lab-guide/lab-testing-online
+      include lab-guide/lab-app-browsers
+      include lab-guide/lab-app-sublime
+      include lab-guide/lab-app-node
+      include lab-guide/lab-app-ruby
+      include lab-guide/lab-app-local-webserver
+      include lab-guide/lab-app-testing-online
 
 append scripts
   script(src='assets/js/highlight.js')
@@ -104,8 +104,8 @@ append scripts
     }).appendTo('#index');
 
     //- Labs links inside collapsables  
-    $('section > article > h2').each( function (i, lab) {
-      var sectionHeaderId = $($(lab).parent().parent().children()[0]).attr('id');
+    $('article > header > h2').each( function (i, lab) {
+      var sectionHeaderId = $($(lab).closest('section').children()[0]).attr('id');
       $('ul.' +  sectionHeaderId  + '-labs-list')
         .append($('<li></li>').append($('<a></a>')
           .attr('href', '#' + $(lab).attr('id'))

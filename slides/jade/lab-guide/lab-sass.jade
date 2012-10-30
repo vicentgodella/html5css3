@@ -2,7 +2,7 @@ article
   mixin labHeader('Sass: CSS refactoring')
 
   h3 Important
-  p This lab is set as an alternative to <b>SASS: CSS refactoring</b>. The instructor will indicate which one should be executed.
+  p This lab is set as an alternative to <a href="#lab-less">LESS: CSS refactoring</a>. The instructor will indicate which one should be executed.
 
   h3 Duration
   p 30 minutes
@@ -17,9 +17,9 @@ article
   p The CSS stylesheet requires the following changes to remove duplicity: 
   ul
     li <b>Repeated values can be stored in variables.</b> Extract and use variables for colors (backgrounds, shadows, text color) and the width of links.
-    li <b>Replace then the values in the stylesheet with variables.</b> This allows also to show relations between magnitudes, such as the line height of a link and its width. These can also be used when calculating the size of the <b>.links</b> container.
-    li Use <b>nested syntax</b> to group the rules of <b>.links</b>, <b>.right</b> and <b>.left</b> in three blocks.
-    li Include compass in the stylesheet using <b>@import “compass”</b> 
-    li Use the <b>replace-text()</b> mixin to perform the image replacements. 
-    li Use the <b>border-radius()</b> and <b>box-shadow()</b> mixins to avoid writing the vendor prefixes.
-  p If in time, use the color functions <b>complement()</b> or <b>darken()</b> to transform the color of the links on the left into the right.
+    li <b>Replace then the values in the stylesheet with variables.</b> This allows also to show relations between magnitudes, such as the line height of a link and its width. These can also be used when calculating the size of the <b><code>.links</code></b> container.
+    li Use <b>nested syntax</b> to group the rules of <b><code>.links</code></b>, <b><code>.right</code></b> and <b><code>.left</code></b> in three blocks.
+    li Include compass in the stylesheet using <b><code>@import "compass"</code></b>.
+    li Use the <b><code>replace-text()</code></b> mixin to perform the image replacements. 
+    li Use the <b><code>border-radius()</code></b> and <b><code>box-shadow()</code></b> mixins to avoid writing the vendor prefixes.
+  p If in time, use the color functions <b><code>complement()</code></b> or <b><code>darken()</code></b> to transform the color of the links on the left into the right.

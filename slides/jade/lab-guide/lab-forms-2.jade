@@ -12,31 +12,38 @@ article
       tr
         th Field
         th Description
+        th Required
     tbody
       tr
         td Recipient
         td Autofocus. Should not allow numbers, only text.
+        td Yes
 
       tr
         td Amount
-        td Number between 0 and 1000000, with two decimal places. Required.
+        td Number between 0 and 1000000, with two decimal places.
+        td Yes
       tr
         td Email
         td
+        td No
       tr
         td Phone
         td
+        td No
       tr
         td Periodicity
-        td Periodicity in weeks: &lt;range> between 1 and 4. 
+        td Periodicity in weeks: <code>#{'<range>'}</code> between 1 and 4. 
+        td No
       tr
         td Init date
-        td Required.
+        td
+        td Yes
 
   ul
-    li Use <b>:invalid</b> to display a red border for fields with invalid values.
-    li Customize the error message in Firefox using the <b>x-moz-errormessage</b> attribute for one field.
-    li Add a placeholder to at least one field.
-    li Use <b>::-webkit-validation-bubble-message</b> to set the font-size of error messages in Chrome to 13px.
+    li Use <b><code>:invalid</code></b> to display a red border for fields with invalid values.
+    li Customize the error message in Firefox using the <b><code>x-moz-errormessage</code></b> attribute for one field.
+    li Add a <b><code>placeholder</code></b> to at least one field.
+    li Use <b><code>::-webkit-validation-bubble-message</code></b> to set the font-size of error messages in Chrome to 13px.
 
   p Once tested with Chrome, repeat the test with IE.
