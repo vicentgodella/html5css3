@@ -1,1 +1,2 @@
-document.getElementById('searchbox').focus();
+var input = document.querySelector('[autofocus]');
+input && input.focus();

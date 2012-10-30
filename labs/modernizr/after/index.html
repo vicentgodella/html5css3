@@ -64,8 +64,8 @@
 			'http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js', 
 			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'
 			], 
-		callback : function() {		
-			$("[name=initdate]").datepicker();
+		complete : function() {		
+			window.$ && $("[name=initdate]").datepicker();
 		}
 	} 
 
