@@ -46,4 +46,12 @@ mixin analytics
 mixin labHeader(title)
   //- For IDs, exclude everything after a colon ':'
   -var labId = title.match(/([^:]+)(:.+)?/)[1];
-  h2(id="lab-" + labId.toLowerCase().replace(' ', '-')) !{title}
+  header
+    h2(id="lab-" + labId.toLowerCase().replace(' ', '-')) !{title}
+    a(href="#index").back « Back to index
+
+mixin appHeader(title)
+  -var labId = title.match(/([^:]+)(:.+)?/)[1];
+  header
+    h2(id="lab-app-" + labId.toLowerCase().replace(' ', '-')) !{title}
+    a(href="#index").back « Back to index
