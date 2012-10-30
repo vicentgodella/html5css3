@@ -3,6 +3,10 @@
 @baseFontSize:          18px;
 @baseLineHeight:        25px;
 
+.how-to-li {
+  list-style-type: circle;
+}
+
 h1 {
   margin-top: 50px;
 }
@@ -45,9 +49,14 @@ li > table {
   margin-top: 20px;
 }
 
+img {
+  display: block;
+  margin: 20px auto;
+}
+
 @media print {
 
-  .navbar-fixed-top {
+  .navbar-fixed-top, nav, footer, .back {
     display: none;
   }
 
@@ -55,32 +64,32 @@ li > table {
     color: black;
   }
 
-  h1 {
+  header {
     margin-top: 0;
   }
 
   section {
-    page-break-before: always;
+    page-break-after: always;
+
+    &:last-child {
+      page-break-after: avoid;
+    }
   }
 
-  .back {
-    display: none;
+  img {
+    max-width: 80%;
   }
 
   a {
     color: #333;
-  }
 
-  a:after {
+    &:after {
     content: " ("attr(href)")";
-  }
+    }
 
-  a[href^="#"]:after {
+    &[href^="#"]:after {
     content: "";
-  }
-
-  footer {
-    display: none;
+    }
   }
 
   pre > code {
@@ -91,12 +100,14 @@ li > table {
     background-color: #ddd !important;
     opacity: 1;
     -webkit-print-color-adjust:exact;
+    page-break-inside: avoid;
+
+    span {
+      color: #222 !important;
+      opacity: 1 !important;
+    }
   }
 
-  pre > code span {
-    color: #222 !important;
-    opacity: 1 !important;
-  }
 }
 
 @media (min-width: 551px) {
