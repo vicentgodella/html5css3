@@ -4,19 +4,25 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ..
 
+SUCCESS=1
+
 echo 'Copying static files...'
-mkdir -p generated
-cp -r assets generated/
+mkdir -p generated && cp -r assets generated/ || SUCCESS=0
 
 echo 'Jade to HTML...'
 for f in jade/*.jade; do
-  node_modules/jade/bin/jade $f -O generated
+  node_modules/jade/bin/jade $f -O generated || SUCCESS=0
 done
 
 echo 'LESS to CSS...'
 for f in less/*.less; do
-  node_modules/less/bin/lessc $f > generated/assets/css/`basename $f .less`.css
+  node_modules/less/bin/lessc --yui-compress $f > generated/assets/css/`basename $f .less`.css || SUCCESS=0
 done
 
-echo 'Done!'
-exit 0
+if [[ $SUCCESS == 0 ]]; then
+  echo 'Something went wrong!'
+  exit 1
+else
+  echo 'Done!'
+  exit 0
+fi
