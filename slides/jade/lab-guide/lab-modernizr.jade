@@ -22,30 +22,27 @@ article
   h3 Description
   p Make the previous lab work in Firefox 3.6 or IE8 using polyfills:
   p <a href="http://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">Cross browser polyfills</a>
+  p <b>All the polyfills needed are in the after folder of this lab</b>
   p The following features should be implemented:
   ul
     li <b>autofocus:</b> use <b>autofocus.js</b>, which does not need initialization.
-    li <b>placeholder and required:</b> Use H5F, and initialize it indicating the forms it should process:
+    li <b>placeholder:</b> Use the jQuery placeholder plugin (by Mathias Bynens) and initialize it indicating the inputs it should process:
       pre
         code.javascript.
           { 
-            test: Modernizr.input.required && Modernizr.input.placeholder, 
-            nope: 'h5f.js', 
-            callback : function() { 
-              H5F.setup( [ document.getElementById("form1") ]); 
+            test: Modernizr.input.placeholder, 
+            nope: 'jquery.placeholder.min.js',
+            callback: function() {
+              $('input').placeholder();
             }
           }
-    li <b>date picker:</b> If the browser does not include a native datepicker we will use JQuery UI, loading several javascript files:
+    li <b>required and input types:</b> If the browser does not include a native support for required inputs and several input types, as range type, we will use the jQuery plugin created by Andrew Dodson, loading the javascript and its css styles:
       pre
         code.javascript.
           { 
-            test: Modernizr.inputtypes.date, 
-            nope: [ 
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', 
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js' 
-            ], 
-            complete: function() {
-              $("#initdate").datepicker();
+            test: Modernizr.input.required, 
+            nope: ['jquery.form.css','jquery.form.js'], 
+            callback : function(url, test, key) {
+              url == 'jquery.form.js' && $('#form1').form();
             }
           }
