@@ -104,12 +104,12 @@ append scripts
     }).appendTo('#index');
 
     //- Labs links inside collapsables  
-    $('article > header > h2').each( function (i, lab) {
+    $('article > header').each( function (i, lab) {
       var sectionHeaderId = $($(lab).closest('section').children()[0]).attr('id');
       $('ul.' +  sectionHeaderId  + '-labs-list')
         .append($('<li></li>').append($('<a></a>')
           .attr('href', '#' + $(lab).attr('id'))
-          .text($(lab).text())
+          .text($($(lab).children()[0]).text())
         ));
     });
     //- Highlighting

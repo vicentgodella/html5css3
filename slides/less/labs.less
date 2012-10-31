@@ -3,6 +3,14 @@
 @baseFontSize:          18px;
 @baseLineHeight:        25px;
 
+body {
+  padding-top: 0;
+}
+
+.navbar-fixed-top {
+  position: static;
+}
+
 .how-to-li {
   list-style-type: circle;
 }
@@ -52,6 +60,26 @@ li > table {
 img {
   display: block;
   margin: 20px auto;
+}
+
+.lab_target() {
+  padding-left: 20px;
+  line-height: 2em;
+  background: @terraterra;
+}
+
+@media screen {
+  h1, h2, h3 {
+    &:target {
+      .lab_target();
+      box-shadow: 0 0 2px 3px @terraterra;
+    }
+  }
+
+  header:target {
+    .lab_target();
+    box-shadow: 0 0 4px 7px @terraterra;
+  }
 }
 
 @media print {
