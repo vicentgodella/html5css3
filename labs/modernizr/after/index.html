@@ -14,7 +14,7 @@
 	<p>Polyfill with Modernizr</p>
 	<form id="form1">
 		<p>Fields marked with <span class="required">*</span> are required:</p>
-		<label for="recipient">Recipient <sup>*</sup></label> 
+		<label for="recipient">Recipient <sup>*</sup></label>
 		<input type="text" name="recipient" list="common-recipients" 
 			x-moz-errormessage="Introduce a valid recipient" 
 			placeholder="Try with John or Jane Doe"
@@ -24,7 +24,6 @@
 			<option value="John Doe">
 			<option value="Jane Doe">
 		</datalist>
-
 		<label for="amount">Amount <sup>*</sup></label> 
 		<input type="number" name="amount" min="0" max="1000000" step="0.01" required>
 		
@@ -40,34 +39,32 @@
 		<label for="initdate">Init date <sup>*</sup></label> 
 		<input type="date" name="initdate" required x-moz-errormessage="Introduce init date" /
 		>
+		
 		<input type="submit" value="Send">
 	</form>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 	<script>
 	yepnope([{
-		test: Modernizr.input.required && Modernizr.input.placeholder, 
-		nope: 'h5f.min.js', 
-		callback : function() {
-			H5F.setup([ document.getElementById("form1") ]);
+		test: Modernizr.input.required, 
+		nope: ['jquery.form.css','jquery.form.js'], 
+		callback : function(url, test, key) {
+			url == 'jquery.form.js' && $('#form1').form();
+		}
+	},
+
+	{
+		test: Modernizr.input.placeholder, 
+		nope: 'jquery.placeholder.min.js',
+		callback: function() {
+			$('input').placeholder();
 		}
 	}, 
 	
 	{
 		test: Modernizr.input.autofocus, 
 		nope: 'autofocus.js'
-	}, 
-
-	{
-		test: Modernizr.inputtypes.date, 
-		nope: [
-			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css',
-			'http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js', 
-			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'
-			], 
-		complete : function() {		
-			window.$ && $("[name=initdate]").datepicker();
-		}
-	} 
+	}
 
 	]);
 </script>
