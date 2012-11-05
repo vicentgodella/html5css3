@@ -9,36 +9,27 @@ append slides
 
   section
     h2 Introduction
-    ul.read-block
-      li <b>The instructor</b>
-      li <b>The audience</b>
-      li <b>The goal</b>
+    pre
+      code.javascript.
+        {
+           name : 'Ricardo Borillo',
+           company : 'Universitat Jaume I',
+           mail : 'borillo@uji.es',
+           social : {
+              twitter : '@borillo',
+              blog : 'xml-utils.com',
+              linkedin : 'linkedin.com/in/borillo'
+           }
+        }
+
+  section
+    h2 Introduction
+    div(style="width:60%; margin: auto; background-color: white;")
+      img(src="assets/raster/yo.png")
 
   section
     h2 Content
     include index/contents
-
-  section
-    h2 This is an introductory course
-    p.read-block Emphasis is given to present <b>filtered and useful</b> information instead of being complete. 
-
-  section
-    h2 Opinionated contents
-    p.read-block We strive to include the <b>most useful tools</b> for the task at hand.
-    p.read-block The contents of this course are largely based on opinions from the authors.
-
-  section
-    section#slideshow-controls
-      h2 About this slides...
-      ul.read-block
-        li <b>Mouse wheel</b>, <b>PageDown</b> or <b>space</b> for next slide... <span class="fragment">or fragment</span>
-        li.fragment <b>Mouse wheel</b> or <b>PageUp</b> for previous slide or fragment
-    section
-      h2 About this slides...
-      ul.read-block
-        li Arrow keys also work, but <code><b>&rarr;</b></code> ignores nested slides!
-        li Press <b>z</b> for thumbnails mode, then press <b>z</b> or click a slide to exit it.
-        li Also, <b>ESC</b> triggers a 3D overview mode.
 
   section
     h2 A-grade browsers
@@ -85,6 +76,17 @@ append slides
 
   section
     h1 Introduction to the tools
+
+  section
+    h2 Try all browser versions online
+    p Adobe Browser Lab: http://browserlab.adobe.com/
+
+  section
+    h2 Try all browser versions online
+    p http://www.browserstack.com/
+
+  section
+    h2 Your developer tools
     ul.read-block
       li Chrome
       li Sublime Text Editor 2
