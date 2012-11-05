@@ -1,21 +1,16 @@
 section
   h2 Offline limits
-  p.read-block Web applications vs Native apps
-  br
-  div.read-block 
-    p Lower common values:
+  p Lower common values:
     ul
       li localStorage: 5MB
       li Appcache & IndexedDB: 50MB
+
+section
+  h2 Real life limits
+  p.read-block JS uses <b>UTF-16</b> (2 bytes per character)
+  p.read-block Consider <b>reencoding</b>
+
   br
-  div.read-block.fragment
-    p Real life limits
-    ul
-      li UTF-16: two bytes per character 
-      li Solution: Compress
-        ul
-          li.fragment Create a UTF-8 bytestream
-          li.fragment As you were, but with ASCII
-          li.fragment Bit shifting base64 data into UTF-16
+  p String → base64 → UTF-16
           
-  a(href="http://labs.ft.com/2012/06/text-re-encoding-for-optimising-storage-capacity-in-the-browser/").source Financial Times Labs
+  a(href="http://labs.ft.com/2012/06/text-re-encoding-for-optimising-storage-capacity-in-the-browser/").source Source: Financial Times Labs
