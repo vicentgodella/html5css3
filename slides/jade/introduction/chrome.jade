@@ -9,6 +9,21 @@ section
   p Dock to right
 
 section
+  h2 Override user agent
+  p <a href="http://fonts.googleapis.com/css?family=Ranchers" target="_blank">Test it here</a>
+  img(src="assets/raster/override-user-agent.png")
+
+section
+  h2 Responsive design
+  p Override device metrics
+  img(src="assets/raster/override-device-metrics.png")
+
+section
+  h2 Elements tab
+  img(src="assets/raster/panelelements.png")
+  p Persistence of the changes in the sources tab
+
+section
   h2 CSS inspector
   p.read-block <b>Alt + Up/Down</b>: &plusmn;0.1
   p.read-block <b>Up/Down</b>: &plusmn;1
@@ -20,23 +35,42 @@ section
   h2 Inline HTML edition
   img(src="assets/raster/edit-html.png")
 
+section
+  h2 Resources tab
+  img(src="assets/raster/panelresources.png")
 
 section
-  h2 Override user agent
-  p <a href="http://fonts.googleapis.com/css?family=Ranchers" target="_blank">Test it here</a>
-  img(src="assets/raster/override-user-agent.png")
+  h2 Resources tab
+  ul
+    li Resources
+    li HTML5 database
+    li LocalStorage
+    li Cookies
+    li Offline cache
 
 section
-  h2 Responsive design
-  p Override device metrics
-  img(src="assets/raster/override-device-metrics.png")
+  h2 Network tab
+  img(src="assets/raster/panelnetwork.png")
 
 section
   h2 Network tab
   p.read-block Measure performance
-  p.read-block Trace cache behavior (enable / disable cache or Shift+Ctrl+N)
+  p.read-block Trace cache behavior (enable/disable cache or Shift+Ctrl+N)
   p.read-block Follow redirects
-  img(src="assets/raster/network-tab.png")
+
+section
+  h2 Network tab
+  p.read-block Blue line = DOMContentLoaded event
+  p.read-block Red line = Load event
+
+section
+  h2 Network tab
+  p.read-block Multiple filters:
+  p.read-block All, Documents, Stylesheets, Images, Scripts, XHR (AJAX requests), Fonts, WebSockets and Others
+
+section
+  h2 Network tab
+  img(src="assets/raster/panelnetwork-detail.png")
 
 section
   h2 Sources tab
@@ -55,3 +89,34 @@ section
     li <b>Shift + Ctrl + O</b>: Go to member
     li <b>?</b>: see help
     img(src="assets/raster/open-file.png")
+
+section
+  h2 Sources tab
+  p Call stack view
+  img(src="assets/raster/panelscripts-callstack.png")
+
+section
+  h2 Console tab
+  img(src="assets/raster/panelconsole.png")
+
+section
+  h2 Other tabs
+  p Timeline
+  img(src="assets/raster/paneltimeline.png")
+
+section
+  h2 Other tabs
+  p Timeline
+  img(src="assets/raster/panelprofiles.png")
+
+section
+  h2 Other tabs
+  p Timeline
+  img(src="assets/raster/panelaudits.png")
+
+section
+  h2 Skins
+  p.read-block Change your skin for Chrome Developer Tools:
+  ul
+    li 
+      a(href="https://raw.github.com/gist/1150520/df4598f883fa4890ce8635842cdcb160c163ff67/Custom.css") Custom.css example
