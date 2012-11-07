@@ -8,7 +8,8 @@ section
 
 section
   h2 960 Grid System
-  img(src="assets/raster/960.png")
+  div(style="background-color:white")
+    img(src="assets/raster/960.png")
 
 section
   h2 Twitter Bootstrap
@@ -66,32 +67,83 @@ section(data-state="lab")
   p Build a layout with Bootstrap
 
 section
-  h2 Bootstrap base CSS
-  iframe(src="assets/html/bootstrap-base-css.html", width="1000", height="600", style="margin-top: 20px;")
+  h2 Bootstrap base CSS: Tables
+  pre
+    code.
+      &lt;table class="table">
+      ...
+      &lt;/table>    
+  p Optional classes:
+  ul
+    li <b>.table-striped</b>
+    li <b>.table-bordered</b>
+    li <b>.table-hover</b> Same as striped but in hover
+    li <b>.table-condensed</b>
+
+section
+  h2 Bootstrap base CSS: Forms
+  p.read-block Default style is vertical
+  iframe(src="assets/html/bootstrap-base-forms1.html", width="700", height="400", style="margin-top: 20px; background-color: white;") 
+
+section
+  h2 Bootstrap base CSS: Forms
+  p.read-block Optional layouts (applied to the form tag):
+  ul
+    li <b>.form-search</b>: Inline search like layout
+    li <b>.form-inline</b>: Inline components 
+    li <b>.form-horizontal</b>: Labels to the right of the components. Control groups needed:
+      pre
+        code.
+          &lt;div class="control-group">
+            &lt;label class="control-label" for="inputEmail">Email&lt;/label>
+            &lt;div class="controls">
+              &lt;input type="text" id="inputEmail" placeholder="Email">
+            &lt;/div>
+          &lt;/div>
+
+section
+  h2 Bootstrap base CSS: Forms
+  p.read-block Horizontal form:
+  iframe(src="assets/html/bootstrap-base-forms3.html", width="700", height="400", style="margin-top: 20px; background-color: white;") 
+
+section
+  h2 Bootstrap base CSS: Forms
+  p.read-block Extending controls with addon prepend and append:
+  iframe(src="assets/html/bootstrap-base-forms2.html", width="700", height="400", style="margin-top: 20px; background-color: white;") 
+
+section
+  h2 Bootstrap base CSS: Forms
+  p.read-block Extending controls:
+  iframe(src="assets/html/bootstrap-base-forms4.html", width="700", height="400", style="margin-top: 20px; background-color: white;") 
+
+section
+  h2 Bootstrap base CSS: Forms
+  p.read-block Extending controls:
+  iframe(src="assets/html/bootstrap-base-forms5.html", width="700", height="400", style="margin-top: 20px; background-color: white;") 
 
 section
   h2 Bootstrap components
-  iframe(src="assets/html/bootstrap-reusable-components.html", width="1000", height="600", style="margin-top: 20px;")
+  iframe(src="assets/html/bootstrap-reusable-components.html", width="1000", height="400", style="margin-top: 20px; background-color:white;")
 
 section
-  section
-    h2 Bootstrap components
-    p Navigation bar
-    iframe(src="assets/html/bootstrap-navigation-bar.html", width="1000", height="300", style="margin-top: 20px;")
-  section
-    h2 Bootstrap components
-    p Responsive navigation bar
-    iframe(src="assets/html/bootstrap-navigation-bar-collapsed.html", width="500", height="600", style="margin-top: 20px;")
+  h2 Bootstrap components
+  p Navigation bar
+  iframe(src="assets/html/bootstrap-navigation-bar.html", width="1000", height="300", style="margin-top: 20px; background-color: white;")
+
+section
+  h2 Bootstrap components
+  p Responsive navigation bar
+  iframe(src="assets/html/bootstrap-navigation-bar-collapsed.html", width="500", height="600", style="margin-top: 20px; background-color: white;")
 
 section
   h2 Bootstrap components
   p Navigation components
-  iframe(src="assets/html/bootstrap-navigation-components.html", width="1000", height="600", style="margin-top: 20px;")
+  iframe(src="assets/html/bootstrap-navigation-components.html", width="1000", height="470", style="margin-top: 20px; background-color: white;")
 
 section
   h2 Bootstrap JS plugins
   p Pure markup, zero lines of JS
-  iframe(src="assets/html/bootstrap-js-plugins.html", width="1000", height="600", style="margin-top: 20px;")
+  iframe(src="assets/html/bootstrap-js-plugins.html", width="1000", height="480", style="margin-top: 20px; background-color: white;")
 
 section
   h2 Customization
