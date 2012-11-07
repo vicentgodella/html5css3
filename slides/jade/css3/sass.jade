@@ -1,5 +1,12 @@
 section#sass
-  h2 CSS preprocessors
+  h2 CSS preprocessors: SASS
+  p Two syntaxis available:
+  ul
+    li SCSS With "{", "}" and ";"
+    li SASS Modern space based
+
+section
+  h2 CSS preprocessors variables
 
   pre
     code.
@@ -7,8 +14,8 @@ section#sass
       $size: 300px;
 
       .class {
-        background-color: $redBlood;
-        width: $size;
+      &nbsp;&nbsp;background-color: $redBlood;
+      &nbsp;&nbsp;width: $size;
       }
 
 section
@@ -51,31 +58,31 @@ section
     pre.span6
       code.
         @mixin stuff {
-          line-height: $paragraphLine;
-          width: $size;
+        &nbsp;&nbsp;line-height: $paragraphLine;
+        &nbsp;&nbsp;width: $size;
         }
 
         @mixin coolGradient(<b>$color1</b>, <b>$color2</b>) {
-          background-color: <b>$color1</b>;
-          background: -moz-linear-gradient(top,  <b>$color1</b> 5%, <b>$color2</b> 90%);
-          background: -webkit-linear-gradient(top,  <b>$color1</b> 5%, <b>$color2</b> 90%);
-          ...
+        &nbsp;&nbsp;background-color: <b>$color1</b>;
+        &nbsp;&nbsp;background: -moz-linear-gradient(top,  <b>$color1</b> 5%, <b>$color2</b> 90%);
+        &nbsp;&nbsp;background: -webkit-linear-gradient(top,  <b>$color1</b> 5%, <b>$color2</b> 90%);
+        &nbsp;&nbsp;...
         }
 
         #footer {
-          @include stuff;
-          <b>@include coolGradient(#1ac, #6a9)</b>;
+        &nbsp;&nbsp;@include stuff;
+        &nbsp;&nbsp;<b>@include coolGradient(#1ac, #6a9)</b>;
         }
 
     pre.span6
       code.
         #footer {
-          line-height: 1.7em;
-          width: 100px;
-          background-color: #1ac;
-          background: -moz-linear-gradient(top,  #1ac 5%, #6a9 90%);
-          background: -webkit-linear-gradient(top,  #1ac 5%, #6a9 90%);
-          ...
+        &nbsp;&nbsp;line-height: 1.7em;
+        &nbsp;&nbsp;width: 100px;
+        &nbsp;&nbsp;background-color: #1ac;
+        &nbsp;&nbsp;background: -moz-linear-gradient(top,  #1ac 5%, #6a9 90%);
+        &nbsp;&nbsp;background: -webkit-linear-gradient(top,  #1ac 5%, #6a9 90%);
+        &nbsp;&nbsp;...
         }
 
 section
@@ -85,18 +92,17 @@ section
   pre
     code.
       @function moreGreen($color) {
-        @return $color + #030;
+      &nbsp;&nbsp;@return $color + #030;
       }
 
-
       #footer {
-        background-color: moreGreen(#576);
+      &nbsp;&nbsp;background-color: moreGreen(#576);
       }
 
   pre
     code.
       #footer {
-        background-color: #5a6;
+      &nbsp;&nbsp;background-color: #5a6;
       }
 
 
@@ -108,27 +114,27 @@ section
     pre.span6
       code.
         .content {
-          font-size: 14px;
-          ul {
-            list-style: none;
-            & > li {
-              display: block;
-            }
-          }
+        &nbsp;&nbsp;font-size: 14px;
+        &nbsp;&nbsp;ul {
+        &nbsp;&nbsp;&nbsp;&nbsp;list-style: none;
+        &nbsp;&nbsp;&nbsp;&nbsp;& > li {
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;
+        &nbsp;&nbsp;&nbsp;&nbsp;}
+        &nbsp;&nbsp;}
         }
 
     pre.span6
       code.
         .content {
-          font-size: 14px;
+        &nbsp;&nbsp;font-size: 14px;
         }
 
         .content ul {
-          list-style: none;
+        &nbsp;&nbsp;list-style: none;
         }
 
         .content ul > li {
-          display: block;
+        &nbsp;&nbsp;display: block;
         }
 
 section
@@ -139,19 +145,19 @@ section
     pre.span6
       code.
         .content {
-          background: {
-            color: white;
-            image: url('nice-bg.png');
-            size: cover;
-          }
+        &nbsp;&nbsp;background: {
+        &nbsp;&nbsp;&nbsp;&nbsp;color: white;
+        &nbsp;&nbsp;&nbsp;&nbsp;image: url('nice-bg.png');
+        &nbsp;&nbsp;&nbsp;&nbsp;size: cover;
+        &nbsp;&nbsp;}
         }
 
     pre.span6
       code.
         .content {
-          background-color: white;
-          background-image: url("nice-bg.png");
-          background-size: cover;
+        &nbsp;&nbsp;background-color: white;
+        &nbsp;&nbsp;background-image: url("nice-bg.png");
+        &nbsp;&nbsp;background-size: cover;
         }
 
 
@@ -163,32 +169,32 @@ section
     pre.span6
       code.
         .button {
-          width: 20px;
-          border-radius: 2px;
+        &nbsp;&nbsp;width: 20px;
+        &nbsp;&nbsp;border-radius: 2px;
         }
 
         .navbar .button {
-          color: white;
+        &nbsp;&nbsp;color: white;
         }
 
         .big-button {
-          @extend .button;
-          width: 30px;
+        &nbsp;&nbsp;@extend .button;
+        &nbsp;&nbsp;width: 30px;
         }
 
     pre.span6
       code.
         .button, .big-button {
-          width: 20px;
-          border-radius: 2px;
+        &nbsp;&nbsp;width: 20px;
+        &nbsp;&nbsp;border-radius: 2px;
         }
 
         .navbar .button, .navbar .big-button {
-          color: white;
+        &nbsp;&nbsp;color: white;
         }
 
         .big-button {
-          width: 30px;
+        &nbsp;&nbsp;width: 30px;
         }
 
 section
@@ -199,39 +205,39 @@ section
     pre.span6
       code.
         @mixin table-base {
-          th {
-            text-align: center;
-            font-weight: bold;
-          }
-          td, th {padding: 2px}
+        &nbsp;&nbsp;th {
+        &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;
+        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;
+        &nbsp;&nbsp;}
+        &nbsp;&nbsp;td, th {padding: 2px}
         }
 
         @mixin left($dist) {
-          float: left;
-          margin-left: $dist;
+        &nbsp;&nbsp;float: left;
+        &nbsp;&nbsp;margin-left: $dist;
         }
 
         #data {
-          @include left(10px);
-          @include table-base;
+        &nbsp;&nbsp;@include left(10px);
+        &nbsp;&nbsp;@include table-base;
         }
 
     pre.span6
       code.
         =table-base
-          th
-            text-align: center
-            font-weight: bold
-          td, th
-            padding: 2px
+        &nbsp;&nbsp;th
+        &nbsp;&nbsp;&nbsp;&nbsp;text-align: center
+        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold
+        &nbsp;&nbsp;td, th
+        &nbsp;&nbsp;&nbsp;&nbsp;padding: 2px
 
         =left($dist)
-          float: left
-          margin-left: $dist
+        &nbsp;&nbsp;float: left
+        &nbsp;&nbsp;margin-left: $dist
 
         #data
-          +left(10px)
-          +table-base
+        &nbsp;&nbsp;+left(10px)
+        &nbsp;&nbsp;+table-base
 
 section
   h2 Sass
@@ -240,15 +246,15 @@ section
   pre
     code.
       .class {
-        @if $type == ocean {
-          color: blue;
-        }
+      &nbsp;&nbsp;@if $type == ocean {
+      &nbsp;&nbsp;&nbsp;&nbsp;color: blue;
+      &nbsp;&nbsp;}
       }
 
       @for $i from 1 through $number {
-        .item-\#{$i} {
-          width: 500px/$i;
-        }
+      &nbsp;&nbsp;.item-\#{$i} {
+      &nbsp;&nbsp;&nbsp;&nbsp;width: 500px/$i;
+      &nbsp;&nbsp;}
       }
 
 section
@@ -257,21 +263,21 @@ section
 
   pre
     code.
-      @import "compass";
+      @import "compass/css3";
 
       // CSS3 mixins
       .container {
-        @include background-image(linear-gradient(#FFF, #000));
+      &nbsp;&nbsp;@include background-image(linear-gradient(#FFF, #000));
 
-        @include transition-property(color);
-        @include transition-duration(.5s)
-        ...
+      &nbsp;&nbsp;@include transition-property(color);
+      &nbsp;&nbsp;@include transition-duration(.5s)
+      &nbsp;&nbsp;...
       }
 
       // Sprite generation
       $icons: sprite-map("icons/*.png");
       .links{
-        background: $icons;
+      &nbsp;&nbsp;background: $icons;
       }
 
 
@@ -281,16 +287,14 @@ section
 
   pre
     code.
-      @import "compass";
-
       // Text replacement
       li.hidden {
-        @import replace-text($image);
+      &nbsp;&nbsp;@import replace-text($image);
       }
 
       // Image dimension
       div {
-        width: image-width($image) * 1.2;
+      &nbsp;&nbsp;width: image-width($image) * 1.2;
       }
 
       // Sticky footer
@@ -309,13 +313,13 @@ section
           @myBlue = #12F;
 
           .my-background(@color) {
-            background-color: @color + #100;
+          &nbsp;&nbsp;background-color: @color + #100;
           }
 
           .class {
-            .my-background(@myBlue)
-            div {
-              width: 100px;
+          &nbsp;&nbsp;.my-background(@myBlue)
+          &nbsp;&nbsp;div {
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 100px;
           }
     .span6
       p Stylus:
@@ -326,12 +330,12 @@ section
           myBlue = #12F
 
           my-background(color)
-            background-color: color + #100
+          &nbsp;&nbsp;background-color: color + #100
 
           .class
-            my-background(myBlue)
-            div
-              width: 100px
+          &nbsp;&nbsp;my-background(myBlue)
+          &nbsp;&nbsp;div
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 100px
 
 section(data-state="lab")
   h2 Lab: Sass
