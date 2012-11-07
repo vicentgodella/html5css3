@@ -31,7 +31,7 @@ section.browser-support-container
     #ex-transitions a:hover {
       font-size: 200%;
     }
-  #ex-transitions.row-fluid
+  #ex-transitions.row-fluid(style="background:none;")
     .span6
       a Hover
     .span6
@@ -73,7 +73,7 @@ section
 
   p default | linear | ease | <b>ease-in | ease-out | ease-in-out</b> | cubic-bezier(x1, y1, x2, y2)
 
-  #ex-timing-functions
+  #ex-timing-functions(style="background:none; color:#555")
     style
 
       #ex-timing-functions .cont {
@@ -135,7 +135,7 @@ section
   pre
     code.
       a {
-        transition: color .5s ease-in 1s;
+        transition: font-size .5s ease-in 1s;
       }
   style.
     #ex-transition-delay a:hover {
@@ -148,7 +148,7 @@ section
       -webkit-transition: font-size .5s 1s ease-in;
     }
 
-  #ex-transition-delay
+  #ex-transition-delay(style="background:none")
     p.not-delayed Without delay: <a>Link1</a> <a>Link2</a> <a>Link3</a> <a>Link4</a> <a>Link5</a>
     p.delayed With delay: <a>Link1</a> <a>Link2</a> <a>Link3</a> <a>Link4</a> <a>Link5</a>
 
