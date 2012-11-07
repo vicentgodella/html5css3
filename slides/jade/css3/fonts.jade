@@ -151,12 +151,9 @@ section
   h2 Font-face icons
   pre
     code.
-      @font-face {
-        font-family: 'iconic';
-        ...
-      }
+      @font-face { font-family: 'iconic'; ... }
 
-      [class*="icon-"]  {  font-family: iconic;  }
+      [class*="icon-"] { font-family: iconic; }
 
       .icon-mail:before { content: '✉'; }
       ...
@@ -165,7 +162,7 @@ section
     code.
       #{'<span class="icon icon-mail"></span>'}
       #{'<span class="icon icon-star"></span>'}
-  #ex-font-icons
+  #ex-font-icons(style="background:none;")
     p.iconic(style="font-size: 40px;") &#x2709; &#x2605;
 
 section
@@ -188,7 +185,7 @@ section
 
   p.read-block <b>Font files sizes:</b> You don't need everything! Subset your fonts.
   p.read-block <b>Arbitrary character bindings</b>
-  p.read-block <b>Non-semantic content</b> (Use aria-hidden)
+  p.read-block <b>Non-semantic content</b> (Use <code>aria-hidden="true"</code>)
 
 
 section(data-state="lab")
