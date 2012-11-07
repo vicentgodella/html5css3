@@ -45,7 +45,7 @@ section
         content: " (http://myhost.com" attr(href) ") ";
       }
 
-  #ex-print-link
+  #ex-print-link(style="background:none;")
     style
       #ex-print-link .print {
         text-decoration: underline;
@@ -61,7 +61,8 @@ section
 section
   h2 QR code
   p You cannot click it but...
-  img(src="assets/svg/qr.svg", width="400")
+  div(style="background-color:white; width:410px; margin:0 auto;")
+    img(src="assets/svg/qr.svg", width="400")
 
 section
   h2 Page breaks
@@ -73,6 +74,9 @@ section
         page-break-before: always;
       }
 
+  ul
+    li <b>page-break-before</b>: auto, always, avoid, left, right, inherit
+    li <b>page-break-after:</b> auto, always, avoid, left, right, inherit
 section
   h2 How to test
   p.read-block Temporarily <b>remove the "media" attribute</b>

@@ -62,6 +62,7 @@ section
       @import url('template-stylesheet.css');
 
       /* The rest of your styles */
+  p.fragment Not recommended!!!
 
 section
   h2 Indenting
@@ -88,10 +89,11 @@ section
           p,
           div,
           .foo .bar {  width: 10px; height: 5px; }
+  p.fragment Also minified!!!
 
 section
   h2 CSS Selector
-  img(src="assets/svg/css-selector.svg", width="600")
+  img(src="assets/raster/regla.png", width="500")
 
 section
   h2 Most common selectors
@@ -176,12 +178,12 @@ section
         code.
           #{'<ul class="data">'}
             #{'<li> <!-- match -->'}
-            My friends:
-            #{'<ul>'}
-              #{'<li>Bob</li> <!-- not match -->'}
-              #{'<li>Kate</li> <!-- not match -->'}
-            #{'<ul>'}
-            #{'<li>'}
+              My friends:
+              #{'<ul>'}
+                #{'<li>Bob</li> <!-- not match -->'}
+                #{'<li>Kate</li> <!-- not match -->'}
+              #{'</ul>'}
+            #{'</li>'}
           #{'</ul>'}
 
           #{'<h2>Title</h2>'}
@@ -317,17 +319,6 @@ section
 section
   h2 !important
   p Overrides not <b>!important</b> rules
-  .fragment
-    .row-fluid
-      .span5
-          p(style="margin-top: 70px") Normal styles
-      .span7
-          mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
-    .row-fluid
-      .span5
-          p(style="margin-top: 70px") Important styles
-      .span7
-          mixin priorities('&nbsp;', '&nbsp;', '&nbsp;', '&nbsp;')
 
 section
   h2 Box model
@@ -657,7 +648,7 @@ section
       height: 120px;
     }
 
-  #ex-overflow
+  #ex-overflow(style="background:none")
     .row-fluid.small-text
       .span4 <b>overflow: visible</b>
       .span4 <b>overflow: hidden</b>
@@ -708,6 +699,10 @@ section
         font: italic bold 0.9em/1.5em verdana, serif;
       }
 
+  p.read-block <b>font-style</b>: normal, italic, oblique, inherit
+  p.read-block <b>font-variant</b>: normal, small-caps, inherit
+  p.read-block <b>font-weight</b>: normal, bold, bolder, lighter, &lt;thin>, inherit
+
 section
   h2 Shortcuts: border
   p border: <b>{border-width} {border-style} {border-color}</b>
@@ -717,6 +712,8 @@ section
       p {
         border: 1px solid #0f0f0f;
       }
+
+  p.read-block <b>border-style</b>: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset, inherit
 
 section
   h2 Color notation examples
@@ -880,7 +877,8 @@ section
       ul.data li<b>:first-child</b> {
          border-top: none;
       }
-  #ex-first-child
+
+  #ex-first-child(style="background:none")
     style
       #ex-first-child li {
         border-top: 2px dotted #06336F;
@@ -906,7 +904,7 @@ section
       ul.data li<b>:nth-child(even)</b> {
          background: #ccc;
       }
-  #ex-nth-child
+  #ex-nth-child(style="background:none")
     style
       #ex-nth-child li:nth-child(even) {
         background-color: #ccc;
@@ -929,7 +927,7 @@ section
       ul.data li:nth-child(3n + 1) {
          clear: left;
       }
-  #ex-nth-child-formula
+  #ex-nth-child-formula(style="background:none")
     style
       #ex-nth-child-formula ul {
         list-style: none;
@@ -952,22 +950,26 @@ section
       li item 4
       li item 5
       li item 6
+
+  p More examples on <a href="http://nthmaster.com/">http://nthmaster.com/</a>
+
 section
   h2 Pseudo-elements
   p <b>:after, :before, :first-letter, :first-line</b>
 
   pre
     code.
-      a<b>:after</b> {
-        content: " (mydomain.com" attr(href) ")";
+      a:after {
+        content: "("attr(href)")";
       }
 
-      .clearfix<b>:after</b> {
-              content: ".";
-              display: block;
-              clear: both;
-              height: 0;
-              visibility: hidden;
+      a[href^=/]:after {
+        content: "(http://instructormatters.com"attr(href)")";
+      }
+
+      p:first-letter {
+        font-size: 200%;
+        font-family: "Times New Roman", serif;
       }
 
 section
