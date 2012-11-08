@@ -340,6 +340,18 @@ section
       @import sticky-footer(60px, "#my_footer");
 
 section
+  h2 SASS on Chrome Developer Tools
+  p.read-block Support for Source Maps in Chrome 24+:
+  ul
+    li Enable experiments in <code>chrome://flags</code>
+    li Enable Source Maps in Chrome Tools General tab config
+    li Enable SASS in Chrome Tools Experiments tab config
+  p(style="margin-top:0.5em").read-block CSS generated files linked to original ones if compiled with debug info:
+  pre
+    code.
+      sass --watch . --debug-info
+
+section
   h2 More syntactic sugar
 
   .row-fluid
