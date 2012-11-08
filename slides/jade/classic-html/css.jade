@@ -865,13 +865,12 @@ section
 
 section
   h2 first-child, last-child
-  p <b>:first-child</b>   IE7+
-  p <b>:last-child</b>    IE8+
+  p <b>:first-child</b> IE7+ &amp; <b>:last-child</b> IE8+
 
   pre
     code.
       ul.data li {
-        border-top: 1px dotted #ccc;
+        border-top: 4px dotted #fff;
       }
 
       ul.data li<b>:first-child</b> {
@@ -881,7 +880,7 @@ section
   #ex-first-child(style="background:none")
     style
       #ex-first-child li {
-        border-top: 2px dotted #06336F;
+        border-top: 4px dotted #fff;
       }
       #ex-first-child li:first-child {
         border-top: none;
