@@ -7,7 +7,7 @@ section.browser-support-container
   pre
     code.
       &lt;p contenteditable>Click to edit
-  #ex-contenteditable
+  #ex-contenteditable(style="background:none")
     h3(contenteditable) This is a &lt;h3>. Click to edit
     | 
     p(contenteditable) Paste something into this &lt;p> 
@@ -18,7 +18,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="q" <b>required</b>>
-  #ex-required-input
+  #ex-required-input(style="background:none")
     form.form-inline
       fieldset
         label.checkbox Required field
@@ -33,7 +33,7 @@ section.browser-support-container
   pre
     code.
       #{'<input name="q" placeholder="Search Bookmarks and History">'}
-  #ex-input-placeholder
+  #ex-input-placeholder(style="background:none")
     form.form-inline
       fieldset
         label.checkbox Search
@@ -48,7 +48,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="q" <b>autofocus</b>>
-  #ex-input-autofocus
+  #ex-input-autofocus(style="background:none")
     label Cannot use autofocus in this presentation, sorry
 
 section.browser-support-container
@@ -57,7 +57,7 @@ section.browser-support-container
   pre
     code.
       &lt;input type="text" <b>pattern="[a-z]{3}[0-9]{3}"</b>>
-  #ex-input-pattern
+  #ex-input-pattern(style="background:none")
     form.form-inline
       fieldset
         label.checkbox 3 alpha chars followed by 3 digits
@@ -74,7 +74,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="amount" type="number" value="0" <b>min="0" max="100" step="2"</b> >
-  #ex-input-max-min
+  #ex-input-max-min(style="background:none")
     form.form-inline
       fieldset
         label.checkbox Select an even number
@@ -137,7 +137,7 @@ section.browser-support-container
         #{'<!-- Alternate address -->'}
         #{'<input type="text" name="billing-adress">'}
       #{'</fieldset>'}
-  #ex-disabled-fieldset
+  #ex-disabled-fieldset(style="background:none")
     form.form-horizontal
       fieldset
         .control-group
@@ -179,7 +179,7 @@ section.browser-support-container
   pre
     code.
       #{'<textarea name="comments" maxlength="140" spellcheck="true">'}
-  #ex-textarea-attributes
+  #ex-textarea-attributes(style="background:none")
     form.form
       label Comments (max = 140 chars):
       textarea(maxlength=140, spellcheck="true", style="width: 80%; min-height: 100px")
@@ -206,7 +206,7 @@ section
       .ex-validation-required:required {
         border: 2px solid black;
       }
-    #ex-validation-selectors-1
+    #ex-validation-selectors-1(style="background:none")
       form.form-inline
         fieldset
           p
@@ -306,7 +306,7 @@ section.browser-support-container
         #{'<button type="submit">Publish</button>'}
         &lt;button type="submit" <b>formnovalidate</b> action="/save">Save as draft&lt;/button>
       #{'</form>'}
-  #ex-novalidate
+  #ex-novalidate(style="background:none")
     form.form-inline
       fieldset
         label.checkbox Email

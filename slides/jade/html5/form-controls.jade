@@ -12,7 +12,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="email" <b>type="email"</b>>
-  #ex-email-input
+  #ex-email-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox E-mail
@@ -28,7 +28,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="homepage" <b>type="url"</b>>
-  #ex-email-input
+  #ex-email-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Url
@@ -44,7 +44,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="amount" <b>type="number"</b> value="0">
-  #ex-number-input
+  #ex-number-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Number
@@ -60,7 +60,7 @@ section.browser-support-container
   pre
     code.
       &lt;input name="amount" <b>type="range" min="0" max="50"</b> value="10">
-  #ex-range-input
+  #ex-range-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Range
@@ -75,7 +75,7 @@ section.browser-support-container
   pre
     code.
       &lt;input <b>type="search"</b> results="10">
-  #ex-search-input
+  #ex-search-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Search
@@ -90,7 +90,7 @@ section.browser-support-container
   pre
     code.
       &lt;input <b>type="tel"</b> placeholder="(555) 555-5555">
-  #ex-tel-input
+  #ex-tel-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Telephone
@@ -108,7 +108,7 @@ section.browser-support-container
   pre
     code.
       &lt;input <b>type="date" min="2012-09-05" max="2012-09-21"</b> value="2011-05-20">
-  #ex-date-input
+  #ex-date-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Date
@@ -123,7 +123,7 @@ section.browser-support-container
   pre
     code.
       &lt;input type="file" <b>multiple="multiple"</b>>
-  #ex-multiple-file-input
+  #ex-multiple-file-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Select files
@@ -138,7 +138,7 @@ section.browser-support-container
   pre
     code.
       &lt;input <b>type="color"</b> placeholder="e.g. #2a2a2a">
-  #ex-color-input
+  #ex-color-input(style="background:none")
     form.form-inline
       fieldset 
         label.checkbox Color
@@ -158,7 +158,7 @@ section.browser-support-container
         #{'<option label="Mrs" value="Mistress">'}
         #{'<option label="Ms" value="Miss">'}
       #{'</datalist>'}
-  #ex-datalist-input
+  #ex-datalist-input(style="background:none")
     form.form-inline
       datalist#mydata
         option(label="Mr", value="Mister")
@@ -177,7 +177,7 @@ section.browser-support-container
   pre
     code.
       #{'<progress value="75" max="100">75 of 100</progress>'}
-  #ex-progress
+  #ex-progress(style="background:none")
     progress(value="75", max="100") 75 of 100
 
 section.browser-support-container
@@ -187,7 +187,7 @@ section.browser-support-container
   pre
     code.
       #{'<meter min="0" max="100" value="91">91 of 100</meter>'}
-  #ex-meter
+  #ex-meter(style="background:none")
     meter(value="91", max="100", min="0") 75 of 100
 
 include forms-support
