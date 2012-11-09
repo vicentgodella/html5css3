@@ -539,21 +539,24 @@ section
   section
     h2 float: none
     p No float
-    pre
-      code.
-        #{'<div>A</div>'}
-        #{'<div>B</div>'}
-        #{'<div>C</div>'}
-    #float-left-example-1
-      .row-fluid
-        .span4.offset4
-          .display-example A
-      .row-fluid
-        .span4.offset4
-          .display-example B
-      .row-fluid
-        .span4.offset4
-          .display-example C
+    .row-fluid
+      .span4
+        pre
+          code.
+            #{'<div>A</div>'}
+            #{'<div>B</div>'}
+            #{'<div>C</div>'}
+      .span8
+          .row
+            .span9.offset3
+              .display-example A
+          .row
+            .span9.offset3
+              .display-example B
+          .row
+            .span9.offset3
+              .display-example C
+
   section
     h2 float: left
     p Float left
